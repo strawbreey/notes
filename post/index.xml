@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on strawbreey Notes</title>
+    
+    
+    
+    <link>/post/</link>
+    <description>Recent content in Posts on strawbreey Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2020 16:47:25 +0800</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sql</title>
+      <link>/post/sql/</link>
+      <pubDate>Thu, 10 Sep 2020 16:47:25 +0800</pubDate>
+      
+      <guid>/post/sql/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          数据库 数据库是一以某种方式存储的数据集合
+使用crashcourse
+use crashcourse;显示数据库
+show DATABASES; // 返回可用数据库的列表显示数据库内表的列表
+show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Dont Need Lodash</title>
+      <link>/post/dont-need-lodash/</link>
+      <pubDate>Wed, 09 Sep 2020 10:26:37 +0800</pubDate>
+      
+      <guid>/post/dont-need-lodash/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Lodash and Underscore are great modern JavaScript utility libraries, and they are widely used by Front-end developers. However, when you are targeting modern browsers, you may find out that there are many methods which are already supported natively thanks to ECMAScript5 [ES5] and ECMAScript2015 [ES6]. If you want your project to require fewer dependencies, and you know your target browser clearly, then you may not need Lodash/Underscore.
+Quick Links Array
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Dependency Injection</title>
+      <link>/post/dependency-injection/</link>
+      <pubDate>Tue, 08 Sep 2020 15:19:09 +0800</pubDate>
+      
+      <guid>/post/dependency-injection/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          依赖注入
+In software engineering, dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. In the typical &amp;ldquo;using&amp;rdquo; relationship the receiving object is called a client and the passed (that is, &amp;ldquo;injected&amp;rdquo;) object is called a service. The code that passes the service to the client can be many kinds of things and is called the injector. Instead of the client specifying which service it will use, the injector tells the client what service to use.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Closure</title>
+      <link>/post/js-closure/</link>
+      <pubDate>Mon, 07 Sep 2020 17:02:22 +0800</pubDate>
+      
+      <guid>/post/js-closure/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起构成闭包（closure）。也就是说，闭包可以让你从内部函数访问外部函数作用域。在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包。
+词法作用域 function init() {var name = &amp;#34;Mozilla&amp;#34;; // name 是一个被 init 创建的局部变量 function displayName() { // displayName() 是内部函数，一个闭包 alert(name); // 使用了父函数中声明的变量 }displayName();}init();init() 创建了一个局部变量 name 和一个名为 displayName() 的函数。displayName() 是定义在 init() 里的内部函数，并且仅在 init() 函数体内可用。请注意，displayName() 没有自己的局部变量。然而，因为它可以访问到外部函数的变量，所以 displayName() 可以使用父函数 init() 中声明的变量 name 。
+闭包 function makeFunc() {var name = &amp;#34;Mozilla&amp;#34;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();myFunc();// =&amp;gt; function makeFunc() {var name = &amp;#34;Mozilla&amp;#34;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();var myFunc = displayName() {alert(name);}(displayName() {alert(name);})()function makeAdder(x) {return function(y) {return x + y;};}var add5 = makeAdder(5);var add10 = makeAdder(10);console.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Workflow</title>
+      <link>/post/git-workflow/</link>
+      <pubDate>Mon, 07 Sep 2020 15:49:49 +0800</pubDate>
+      
+      <guid>/post/git-workflow/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Git 作为一个源码管理系统，不可避免涉及到多人协作。
+协作必须有一个规范的工作流程，让大家有效地合作，使得项目井井有条地发展下去。&amp;ldquo;工作流程&amp;quot;在英语里，叫做&amp;quot;workflow&amp;quot;或者&amp;quot;flow&amp;rdquo;，原意是水流，比喻项目像水流那样，顺畅、自然地向前流动，不会发生冲击、对撞、甚至漩涡。
+相关文章  《Git 使用规范流程》 《常用 Git 命令清单》 《Git 远程操作详解》  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Debounce and Throttle</title>
+      <link>/post/debounce-and-throttle/</link>
+      <pubDate>Mon, 07 Sep 2020 14:51:32 +0800</pubDate>
+      
+      <guid>/post/debounce-and-throttle/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
+  实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6+import { of, timer } from &amp;#39;rxjs&amp;#39;;import { debounce } from &amp;#39;rxjs/operators&amp;#39;;// 发出四个字符串const example = of(&amp;#39;WAIT&amp;#39;, &amp;#39;ONE&amp;#39;, &amp;#39;SECOND&amp;#39;, &amp;#39;Last will display&amp;#39;);/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&amp;gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: &amp;#39;Last will display&amp;#39;*/const subscribe = debouncedExample.subscribe(val =&amp;gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])实现方式: 参考资料  rxjs debounce debounce lodash debounce source code  截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Service</title>
+      <link>/post/angular-service/</link>
+      <pubDate>Thu, 03 Sep 2020 10:49:58 +0800</pubDate>
+      
+      <guid>/post/angular-service/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Why services Components shouldn&amp;rsquo;t fetch or save data directly and they certainly shouldn&amp;rsquo;t knowingly present fake data. They should focus on presenting data and delegate data access to a service.
+services are a great way to share information among classes that don&amp;rsquo;t know each other.
+ hile you could call getHeroes() in the constructor, that&amp;rsquo;s not the best practice.
+Reserve the constructor for simple initialization such as wiring constructor parameters to properties.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Css Interivew Repaint and Refolw</title>
+      <link>/post/css-interivew-repaint-and-refolw/</link>
+      <pubDate>Thu, 03 Sep 2020 10:48:27 +0800</pubDate>
+      
+      <guid>/post/css-interivew-repaint-and-refolw/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          repaint-and-refolw (重绘和回流) 从上面这个图上，我们可以看到，浏览器渲染过程如下：
+  解析HTML，生成DOM树，解析CSS，生成CSSOM树
+  将DOM树和CSSOM树结合，生成渲染树(Render Tree)
+  Layout(回流):根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
+  Painting(重绘):根据渲染树以及回流得到的几何信息，得到节点的绝对像素
+  Display:将像素发送给GPU，展示在页面上。（这一步其实还有很多内容，比如会在GPU将多个合成层合并为同一个层，并展示在页面中。而css3硬件加速的原理则是新建合成层，这里我们不展开，之后有机会会写一篇博客）
+  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
+什么节点是不可见的。不可见的节点包括： 一些不会渲染输出的节点，比如script、meta、link等。 一些通过css进行隐藏的节点。比如display:none。注意，利用visibility和opacity隐藏的节点，还是会显示在渲染树上的。只有display:none的节点才不会显示在渲染树上。
+ 注意：渲染树只包含可见的节点
+ 何时发生回流  添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）   注意：回流一定会触发重绘，而重绘不一定会回流
+ 重绘 (重新构造渲染树) 我们通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。
+浏览器的优化机制 现代的浏览器都是很聪明的，由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才清空队列。
+ 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  减少回流和重绘  合并多次对DOM和样式的修改 批量修改DOM  使元素脱离文档流 对其进行多次修改 将元素带回到文档中。
+有三种方式可以让DOM脱离文档流：
+隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。
+对于复杂动画效果,使用绝对定位让其脱离文档流
+比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Css Interview BFC</title>
+      <link>/post/css-interview-bfc/</link>
+      <pubDate>Thu, 03 Sep 2020 10:02:39 +0800</pubDate>
+      
+      <guid>/post/css-interview-bfc/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Describe BFC (Block Formatting Context) and how it works.
+ BFC(Block formatting context) 块级格式化上下文 A block formatting context is a part of a visual CSS rendering of a web page. It&amp;rsquo;s the region in which the layout of block boxes occurs and in which floats interact with other elements.
+BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域
+what A block formatting context is created by at least one of the following:
+ The root element of the document ().
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Permissions</title>
+      <link>/post/linux-permissions/</link>
+      <pubDate>Mon, 31 Aug 2020 11:17:11 +0800</pubDate>
+      
+      <guid>/post/linux-permissions/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          look auth r = 读取权限 (4) w = 写入权限 (2) x = 执行权限 (1)
+1-3位数字代表文件所有者的权限，4-6位数字代表同组用户的权限，7-9数字代表其他用户的权限。
+444 r&amp;ndash;r&amp;ndash;r&amp;ndash; 600 rw&amp;mdash;&amp;mdash;- 644 rw-r&amp;ndash;r&amp;ndash; 666 rw-rw-rw- 700 rwx&amp;mdash;&amp;mdash; 744 rwxr&amp;ndash;r&amp;ndash; 755 rwxr-xr-x 777 rwxrwxrwx
+Quote   Linux修改目录权限
+  How do I change permissions for a folder and all of its subfolders and files in one step in Linux?
+  chmod command
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Hugo Start</title>
+      <link>/post/hugo-start/</link>
+      <pubDate>Mon, 31 Aug 2020 10:15:27 +0800</pubDate>
+      
+      <guid>/post/hugo-start/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          start Install Hugo # macOS install brew intall hugohugo versionCreate a New Site hugo new site quickStartAdd a Theme cd quickstartgit initgit submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/anankeAdd Some Content hugo new posts/new-content.mdStart the Hugo server hugo serve -DBuild Static pages hugo -D
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

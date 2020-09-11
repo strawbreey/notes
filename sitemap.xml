@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-09-10T16:47:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/sql/</loc>
+    <lastmod>2020-09-10T16:47:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-09-10T16:47:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/dont-need-lodash/</loc>
+    <lastmod>2020-09-09T10:26:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/dependency-injection/</loc>
+    <lastmod>2020-09-08T15:19:09+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/js-closure/</loc>
+    <lastmod>2020-09-07T17:02:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/git-workflow/</loc>
+    <lastmod>2020-09-07T15:49:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/debounce-and-throttle/</loc>
+    <lastmod>2020-09-07T14:51:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/angular-service/</loc>
+    <lastmod>2020-09-03T10:49:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/css-interivew-repaint-and-refolw/</loc>
+    <lastmod>2020-09-03T10:48:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/css-interview-bfc/</loc>
+    <lastmod>2020-09-03T10:02:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/linux-permissions/</loc>
+    <lastmod>2020-08-31T11:17:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hugo-start/</loc>
+    <lastmod>2020-08-31T10:15:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+</urlset>
