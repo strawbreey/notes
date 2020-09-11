@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello Friend</title>
+    <title>Posts on Hello Friend</title>
     
     
     
-    <link>/</link>
-    <description>Recent content on Hello Friend</description>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2020 10:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2020 15:51:38 +0800</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -627,26 +627,6 @@ Quote   Linux修改目录权限
     </item>
     
     <item>
-      <title>Git Submodule</title>
-      <link>/git-submodule/</link>
-      <pubDate>Mon, 31 Aug 2020 10:20:39 +0800</pubDate>
-      
-      <guid>/git-submodule/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
       <title>Hugo Start</title>
       <link>/posts/hugo-start/</link>
       <pubDate>Mon, 31 Aug 2020 10:15:27 +0800</pubDate>
@@ -701,50 +681,6 @@ Quote   Linux修改目录权限
         
         
           
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>/hugo/</link>
-      <pubDate>Fri, 28 Aug 2020 19:18:18 +0800</pubDate>
-      
-      <guid>/hugo/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          创建文章 创建一个hugo页面
-hugo new hugo.md内容是 Markdown 格式的，+++ 之间的内容是 TOML 格式的，根据你的喜好，你可以换成 YAML 格式（使用 &amp;mdash; 标记）或者 JSON 格式。
-安装皮肤 cd themesgit clone https://github.com/spf13/hyde.git运行hugo hugo server --theme=hyde --buildDrafts
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Fri, 28 Aug 2020 19:17:20 +0800</pubDate>
-      
-      <guid>/about/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          创建文章 创建一个hugo页面
-hugo new hugo.md内容是 Markdown 格式的，+++ 之间的内容是 TOML 格式的，根据你的喜好，你可以换成 YAML 格式（使用 &amp;mdash; 标记）或者 JSON 格式。
-安装皮肤 cd themesgit clone https://github.com/spf13/hyde.git运行hugo hugo server --theme=hyde --buildDrafts
           
         
         </description>

@@ -162,11 +162,11 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/test/">Test</a></h1>
+      <h1 class="post-title"><a href="/posts/git-workflow/">Git Workflow</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-11
+            2020-09-07
           </span>
 
           
@@ -187,16 +187,16 @@
         
       </div>
       
-        <div><a class="read-more button" href="/posts/test/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/git-workflow/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/sql/">Sql</a></h1>
+      <h1 class="post-title"><a href="/posts/debounce-and-throttle/">Debounce and Throttle</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-10
+            2020-09-07
           </span>
 
           
@@ -214,25 +214,22 @@
       <div class="post-content">
         
           
-            数据库 数据库是一以某种方式存储的数据集合
-使用crashcourse
-use crashcourse;显示数据库
-show DATABASES; // 返回可用数据库的列表显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; &ndash; 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; &ndash; 检索多列数据SELECT * FROM products; &ndash; 检索所有数据SELECT vend_id FROM products; &ndash; 检索vend—id 列SELECT DISTINCT vend_id FROM products; &ndash; 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; &ndash; 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; &ndash; 检索prod_name, 并只返回5条数据SELECT product.
+            防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
+实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6+import { of, timer } from 'rxjs';import { debounce } from 'rxjs/operators';// 发出四个字符串const example = of('WAIT', 'ONE', 'SECOND', 'Last will display');/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: 'Last will display'*/const subscribe = debouncedExample.subscribe(val =&gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])实现方式: 参考资料  rxjs debounce debounce lodash debounce source code  截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/sql/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/debounce-and-throttle/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-install-mysql/">Linux Install Mysql</a></h1>
+      <h1 class="post-title"><a href="/posts/go-interview/">Go Interview</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-10
+            2020-09-03
           </span>
 
           
@@ -250,19 +247,21 @@ show TABLES; // 显示当前数据库内的表show status // 显示数据库的
       <div class="post-content">
         
           
+            func main(){s := []int{5}fmt.Println(len(s), cap(s))s = append(s, 7)fmt.Println(len(s), cap(s))s = append(s, 9)fmt.Println(len(s), cap(s))x := append(s, 11)fmt.Println(len(s), cap(s))y := append(s, 12)fmt.Println(len(s), cap(s))fmt.Println(s, x, y)// 输出结果 [5 7 9] [5 7 9 12] [5 7 9 12]s := []int{5, 7, 9}x := append(s, 11)y := append(s, 12)fmt.Println(s,x,y)// 输出结果 [5 7 9] [5 7 9 11] [5 7 9 12]s := []int{5} // 初始化切片为[5], cap(s) = 1 len (s) = 1 fmt.
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/linux-install-mysql/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/go-interview/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/dont-need-lodash/">Dont Need Lodash</a></h1>
+      <h1 class="post-title"><a href="/posts/go-slice/">Go Slice</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-09
+            2020-09-03
           </span>
 
           
@@ -280,22 +279,26 @@ show TABLES; // 显示当前数据库内的表show status // 显示数据库的
       <div class="post-content">
         
           
-            Lodash and Underscore are great modern JavaScript utility libraries, and they are widely used by Front-end developers. However, when you are targeting modern browsers, you may find out that there are many methods which are already supported natively thanks to ECMAScript5 [ES5] and ECMAScript2015 [ES6]. If you want your project to require fewer dependencies, and you know your target browser clearly, then you may not need Lodash/Underscore.
-Quick Links Array
+            go slice Go 语言切片是对数组的抽象。
+Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片(“动态数组”),与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。
+定义切片 var identifier []type切片不需要说明长度。
+或使用make()函数来创建切片:
+var slice1 []type = make([]type, len)// 也可以简写为slice1 := make([]type, len)也可以指定容量，其中capacity为可选参数。
+make([]T, length, capacity)slice init s := [] int {1,2,3 } // 直接初始化切片，[]表示是切片类型，{1,2,3}初始化值依次是1,2,3.其cap=len=3s := arr[:]// 初始化切片s,是数组arr的引用s := arr[startIndex:endIndex] // 将arr中从下标startIndex到endIndex-1 下的元素创建为一个新的切片s1 := s[startIndex:endIndex] // 通过切片s初始化切片s1s :=make([]int,len,cap) // 通过内置函数make()初始化切片s,[]int 标识为其元素类型为int的切片len() 和 cap() 切片是可索引的，并且可以由 len() 方法获取长度。
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/dont-need-lodash/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/go-slice/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/scope-and-closures/">Scope and Closures</a></h1>
+      <h1 class="post-title"><a href="/posts/go-start/">Go Start</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-08
+            2020-09-03
           </span>
 
           
@@ -313,19 +316,28 @@ Quick Links Array
       <div class="post-content">
         
           
+            go command ( go 常用命令) Usage:go &lt;command&gt; [arguments]The commands are:bug start a bug reportbuild compile packages and dependenciesclean remove object files and cached filesdoc show documentation for package or symbolenv print Go environment informationfix update packages to use new APIsfmt gofmt (reformat) package sourcesgenerate generate Go files by processing sourceget add dependencies to current module and install theminstall compile and install packages and dependencieslist list packages or modulesmod module maintenancerun compile and run Go programtest test packagestool run specified go toolversion print Go versionvet report likely mistakes in packagesUse &quot;go help &lt;command&gt;&quot; for more information about a command.
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/scope-and-closures/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/go-start/">Read more →</a></div>
       
     </div>
     
     <div class="pagination">
   <div class="pagination__buttons">
     
+      <span class="button previous">
+        <a href="/page/2/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
     
       <span class="button next">
-        <a href="/page/2/">
+        <a href="/page/4/">
           <span class="button__text">Older posts</span>
           <span class="button__icon">→</span>
         </a>
