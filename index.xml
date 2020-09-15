@@ -9,10 +9,193 @@
     <description>Recent content on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2020 10:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 16:46:08 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Netty</title>
+      <link>/posts/netty/</link>
+      <pubDate>Tue, 15 Sep 2020 10:29:58 +0800</pubDate>
+      
+      <guid>/posts/netty/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers &amp;amp; clients.
+Netty 是一个利用 Java 的高级网络的能力，隐藏其背后的复杂性而提供一个易于使用的 API 的客户端/服务器框架。
+todo: References  netty/netty netty developer guide netty.io  Wrods rapidperformancemaintainableasynchronousevent-drivens
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Remote Procedure Call</title>
+      <link>/posts/remote-procedure-call/</link>
+      <pubDate>Tue, 15 Sep 2020 09:40:57 +0800</pubDate>
+      
+      <guid>/posts/remote-procedure-call/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在分布式计算(distributed computing)，远程请求（英語：Remote Procedure Call，縮寫為 RPC）是一个计算机通信协议。该协议允许运行于一台计算机的程序调用另一个地址空间（通常为一个开放网络的一台计算机）的子程序，就像调用本地程序一样，无需额外地为这个交互作用编程（无需关注细节）。RPC是一种服务器-客户端（Client/Server）模式，经典实现是一个通过发送请求-接受回应进行信息交互的系统。
+如果涉及的软件采用面向对象编程，那么远程过程调用亦可称作遠端呼叫或遠端方法呼叫，例：Java RMI。
+RPC是一种进程间通信的模式，程序分布在不同的地址空间里。如果在同一主机里，RPC可以通过不同的虚拟地址空间（即便使用相同的物理地址）进行通讯，而在不同的主机间，则通过不同的物理地址进行交互。许多技术（常常是不兼容）都是基于这种概念而实现的。
+References Words distributed Procedureexecute 执行
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>/showcase/</link>
+      <pubDate>Mon, 14 Sep 2020 16:46:08 +0800</pubDate>
+      
+      <guid>/showcase/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Directive</title>
+      <link>/posts/angular-directive/</link>
+      <pubDate>Mon, 14 Sep 2020 16:31:10 +0800</pubDate>
+      
+      <guid>/posts/angular-directive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Angular Directive
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Reactive Forms</title>
+      <link>/posts/reactive-forms/</link>
+      <pubDate>Mon, 14 Sep 2020 15:33:34 +0800</pubDate>
+      
+      <guid>/posts/reactive-forms/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          响应式表单提供了一种模型驱动的方式来处理表单输入，其中的值会随时间而变化。
+响应式表单和模板驱动表单的区别 响应式表单和模板驱动表单以不同的方式处理和管理表单数据。每种方法都有各自的优点。
+响应式表单提供对底层表单对象模型直接、显式的访问。它们与模板驱动表单相比，更加健壮：它们的可扩展性、可复用性和可测试性都更高。如果表单是你的应用程序的关键部分，或者你已经在使用响应式表单来构建应用，那就使用响应式表单。
+模板驱动表单依赖模板中的指令来创建和操作底层的对象模型。它们对于向应用添加一个简单的表单非常有用，比如电子邮件列表注册表单。它们很容易添加到应用中，但在扩展性方面不如响应式表单。如果你有可以只在模板中管理的非常基本的表单需求和逻辑，那么模板驱动表单就很合适。
+   Tables 响应式 模板驱动     建立表单模型 显式的，在组件类中创建 隐式的，由指令创建   数据模型 结构化和不可变的 非结构化和可变的   可预测性 同步 异步   表单验证 函数 指令    响应式表单比模板驱动表单更有可伸缩性。它们提供对底层表单 API 的直接访问，以及对表单数据模型的同步访问，从而可以更轻松地创建大型表单。响应式表单需要较少的测试设置，测试时不需要深入理解变更检测，就能正确测试表单更新和验证。
+模板驱动表单专注于简单的场景，可复用性没那么高。它们抽象出了底层表单 API，并且只提供对表单数据模型的异步访问。对模板驱动表单的这种抽象也会影响测试。测试程序非常依赖于手动触发变更检测才能正常运行，并且需要进行更多设置工作。
+常用表单基础类 响应式表单和模板驱动表单都建立在下列基础类之上。
+ FormControl 实例用于追踪单个表单控件的值和验证状态 FormGroup 用于追踪一个表单控件组的值和状态 FormArray 用于追踪表单控件数组的值和状态 ControlValueAccessor 用于在 Angular 的 FormControl 实例和原生 DOM 元素之间创建一个桥梁。  interface ControlValueAccessor {writeValue(obj: any): void // Writes a new value to the element.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>/posts/elasticsearch/</link>
+      <pubDate>Mon, 14 Sep 2020 10:09:20 +0800</pubDate>
+      
+      <guid>/posts/elasticsearch/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          全文搜索属于最常见的需求，开源的 Elasticsearch （以下简称 Elastic）是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它
+Elastic 的底层是开源库 Lucene。但是，你没法直接用 Lucene，必须自己写代码去调用它的接口。Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。
+全文搜索引擎(elasticsearch) install # 下载,解压wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zipunzip elasticsearch-5.5.1.zipcd elasticsearch-5.5.1/ # 启动./bin/elasticsearch注: Elastic 需要 Java 8 环境。默认情况下，Elastic 只允许本机访问，如果需要远程访问，可以修改 Elastic 安装目录的config/elasticsearch.yml文件，去掉network.host的注释，将它的值改成0.0.0.0，然后重新启动Elastic。
+introduction Node 与 Cluster Elastic 本质上是一个分布式数据库，允许多台服务器协同工作，每台服务器可以运行多个Elastic 实例。 单个 Elastic 实例称为一个节点（node）。一组节点构成一个集群（cluster）。
+Index Elastic 会索引所有字段，经过处理后写入一个反向索引（Inverted Index）。查找数据的时候，直接查找该索引。
+所以，Elastic 数据管理的顶层单位就叫做 Index（索引）。它是单个数据库的同义词。每个 Index （即数据库）的名字必须是小写。
+curl -X GET &amp;#39;http://localhost:9200/_cat/indices?v&amp;#39;Document Index 里面单条的记录称为 Document（文档）。许多条 Document 构成了一个 Index。
+// document demo{&amp;#34;user&amp;#34;: &amp;#34;张三&amp;#34;,&amp;#34;title&amp;#34;: &amp;#34;工程师&amp;#34;,&amp;#34;desc&amp;#34;: &amp;#34;数据库管理&amp;#34;}同一个 Index 里面的 Document，不要求有相同的结构（scheme），但是最好保持相同，这样有利于提高搜索效率。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Redis Cache</title>
+      <link>/posts/redis-cache/</link>
+      <pubDate>Mon, 14 Sep 2020 10:00:18 +0800</pubDate>
+      
+      <guid>/posts/redis-cache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          todo:   redis cache
+  缓存穿透
+  缓存雪崩
+  《Redis 设计与实现》
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Array Index</title>
+      <link>/posts/js-array-index/</link>
+      <pubDate>Fri, 11 Sep 2020 19:54:40 +0800</pubDate>
+      
+      <guid>/posts/js-array-index/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          JS 中数组字符串索引和数值索引研究 Javascript的数组其实不像PHP或者其他一些语言一样拥有真正的字符串下标，当我们试图为一个js数组添加字符串下标的时候，其实就相当于为该数组对象添加了一个属性，属性名称就是我们所谓的“字符串下标”。由于为数组对象添加属性不会影响到同为该对象属性的length的值，因此该值将始终为零。同样地，.pop()和.shift()等作用于数组元素的方法也不能够作用于这些对象属性。因此，如果要使用的是一个完全由“字符串下标”组成的数组，那还是将其声明为一个Object类型的对象要更好一些。
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Test</title>
@@ -372,10 +555,7 @@ Efficient and fast Safe Open and debuggable Part of the open web platform Start 
         
         
         
-          Why services Components shouldn&amp;rsquo;t fetch or save data directly and they certainly shouldn&amp;rsquo;t knowingly present fake data. They should focus on presenting data and delegate data access to a service.
-services are a great way to share information among classes that don&amp;rsquo;t know each other.
- hile you could call getHeroes() in the constructor, that&amp;rsquo;s not the best practice.
-Reserve the constructor for simple initialization such as wiring constructor parameters to properties.
+          Angular Directive
           
         
         </description>

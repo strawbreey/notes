@@ -56,7 +56,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-31T10:20:39+08:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Hello Friend" />
 
 
 
@@ -160,6 +160,234 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/netty/">Netty</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/netty/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/remote-procedure-call/">Remote Procedure Call</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/remote-procedure-call/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/angular-directive/">Angular Directive</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          Angular Directive
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/angular-directive/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/reactive-forms/">Reactive Forms</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            响应式表单提供了一种模型驱动的方式来处理表单输入，其中的值会随时间而变化。
+响应式表单和模板驱动表单的区别 响应式表单和模板驱动表单以不同的方式处理和管理表单数据。每种方法都有各自的优点。
+响应式表单提供对底层表单对象模型直接、显式的访问。它们与模板驱动表单相比，更加健壮：它们的可扩展性、可复用性和可测试性都更高。如果表单是你的应用程序的关键部分，或者你已经在使用响应式表单来构建应用，那就使用响应式表单。
+模板驱动表单依赖模板中的指令来创建和操作底层的对象模型。它们对于向应用添加一个简单的表单非常有用，比如电子邮件列表注册表单。它们很容易添加到应用中，但在扩展性方面不如响应式表单。如果你有可以只在模板中管理的非常基本的表单需求和逻辑，那么模板驱动表单就很合适。
+Tables 响应式 模板驱动     建立表单模型 显式的，在组件类中创建 隐式的，由指令创建   数据模型 结构化和不可变的 非结构化和可变的   可预测性 同步 异步   表单验证 函数 指令    响应式表单比模板驱动表单更有可伸缩性。它们提供对底层表单 API 的直接访问，以及对表单数据模型的同步访问，从而可以更轻松地创建大型表单。响应式表单需要较少的测试设置，测试时不需要深入理解变更检测，就能正确测试表单更新和验证。
+模板驱动表单专注于简单的场景，可复用性没那么高。它们抽象出了底层表单 API，并且只提供对表单数据模型的异步访问。对模板驱动表单的这种抽象也会影响测试。测试程序非常依赖于手动触发变更检测才能正常运行，并且需要进行更多设置工作。
+常用表单基础类 响应式表单和模板驱动表单都建立在下列基础类之上。
+FormControl 实例用于追踪单个表单控件的值和验证状态 FormGroup 用于追踪一个表单控件组的值和状态 FormArray 用于追踪表单控件数组的值和状态 ControlValueAccessor 用于在 Angular 的 FormControl 实例和原生 DOM 元素之间创建一个桥梁。  interface ControlValueAccessor {writeValue(obj: any): void // Writes a new value to the element.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/reactive-forms/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/elasticsearch/">Elasticsearch</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            全文搜索属于最常见的需求，开源的 Elasticsearch （以下简称 Elastic）是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它
+Elastic 的底层是开源库 Lucene。但是，你没法直接用 Lucene，必须自己写代码去调用它的接口。Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。
+全文搜索引擎(elasticsearch) install # 下载,解压wget <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip</a>unzip elasticsearch-5.5.1.zipcd elasticsearch-5.5.1/ # 启动./bin/elasticsearch注: Elastic 需要 Java 8 环境。默认情况下，Elastic 只允许本机访问，如果需要远程访问，可以修改 Elastic 安装目录的config/elasticsearch.yml文件，去掉network.host的注释，将它的值改成0.0.0.0，然后重新启动Elastic。
+introduction Node 与 Cluster Elastic 本质上是一个分布式数据库，允许多台服务器协同工作，每台服务器可以运行多个Elastic 实例。 单个 Elastic 实例称为一个节点（node）。一组节点构成一个集群（cluster）。
+Index Elastic 会索引所有字段，经过处理后写入一个反向索引（Inverted Index）。查找数据的时候，直接查找该索引。
+所以，Elastic 数据管理的顶层单位就叫做 Index（索引）。它是单个数据库的同义词。每个 Index （即数据库）的名字必须是小写。
+curl -X GET 'http://localhost:9200/_cat/indices?v'Document Index 里面单条的记录称为 Document（文档）。许多条 Document 构成了一个 Index。
+// document demo{&quot;user&quot;: &quot;张三&quot;,&quot;title&quot;: &quot;工程师&quot;,&quot;desc&quot;: &quot;数据库管理&quot;}同一个 Index 里面的 Document，不要求有相同的结构（scheme），但是最好保持相同，这样有利于提高搜索效率。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/elasticsearch/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/redis-cache/">Redis Cache</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/redis-cache/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-array-index/">Js Array Index</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-11
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-array-index/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/test/">Test</a></h1>
@@ -317,6 +545,261 @@ Quick Links Array
       </div>
       
         <div><a class="read-more button" href="/posts/scope-and-closures/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/nginx-install/">Nginx Install</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. For a long time, it has been running on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler. According to Netcraft, nginx served or proxied 25.75% busiest sites in August 2020. Here are some of the success stories: Dropbox, Netflix, Wordpress.com, FastMail.FM.
+安装Nginx 下载nginx
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/nginx-install/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-character/">Mysql Character</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-character/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/dependency-injection/">Dependency Injection</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            依赖注入
+In software engineering, dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. In the typical “using” relationship the receiving object is called a client and the passed (that is, “injected”) object is called a service. The code that passes the service to the client can be many kinds of things and is called the injector. Instead of the client specifying which service it will use, the injector tells the client what service to use.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/dependency-injection/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-fpm/">Php Fpm</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-fpm/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-closure/">Js Closure</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起构成闭包（closure）。也就是说，闭包可以让你从内部函数访问外部函数作用域。在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包。
+词法作用域 function init() {var name = &quot;Mozilla&quot;; // name 是一个被 init 创建的局部变量 function displayName() { // displayName() 是内部函数，一个闭包 alert(name); // 使用了父函数中声明的变量 }displayName();}init();init() 创建了一个局部变量 name 和一个名为 displayName() 的函数。displayName() 是定义在 init() 里的内部函数，并且仅在 init() 函数体内可用。请注意，displayName() 没有自己的局部变量。然而，因为它可以访问到外部函数的变量，所以 displayName() 可以使用父函数 init() 中声明的变量 name 。
+闭包 function makeFunc() {var name = &quot;Mozilla&quot;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();myFunc();// =&gt; function makeFunc() {var name = &quot;Mozilla&quot;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();var myFunc = displayName() {alert(name);}(displayName() {alert(name);})()function makeAdder(x) {return function(y) {return x + y;};}var add5 = makeAdder(5);var add10 = makeAdder(10);console.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-closure/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-workflow/">Git Workflow</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-workflow/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/debounce-and-throttle/">Debounce and Throttle</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
+实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6+import { of, timer } from 'rxjs';import { debounce } from 'rxjs/operators';// 发出四个字符串const example = of('WAIT', 'ONE', 'SECOND', 'Last will display');/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: 'Last will display'*/const subscribe = debouncedExample.subscribe(val =&gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])实现方式: 参考资料  rxjs debounce debounce lodash debounce source code  截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/debounce-and-throttle/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/go-interview/">Go Interview</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            func main(){s := []int{5}fmt.Println(len(s), cap(s))s = append(s, 7)fmt.Println(len(s), cap(s))s = append(s, 9)fmt.Println(len(s), cap(s))x := append(s, 11)fmt.Println(len(s), cap(s))y := append(s, 12)fmt.Println(len(s), cap(s))fmt.Println(s, x, y)// 输出结果 [5 7 9] [5 7 9 12] [5 7 9 12]s := []int{5, 7, 9}x := append(s, 11)y := append(s, 12)fmt.Println(s,x,y)// 输出结果 [5 7 9] [5 7 9 11] [5 7 9 12]s := []int{5} // 初始化切片为[5], cap(s) = 1 len (s) = 1 fmt.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/go-interview/">Read more →</a></div>
       
     </div>
     
