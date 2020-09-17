@@ -6,12 +6,6 @@ draft: true
 
 ## undo 
 ```shell
-  #Clone your git repo
-  git clone https://github.com/lestatzhang/lestatzhang.github.io.git;
-
-  #Entre your local repo
-  cd lestatzhang.github.io;
-
   #Checkout
   git checkout --orphan latest_branch;
 

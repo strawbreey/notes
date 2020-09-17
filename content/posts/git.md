@@ -59,9 +59,13 @@ echo "public" >> .gitignore
 ## Set Git Account
 
 ```shell
-git config user.name "strawbreey" 
-git config user.email "2675882608@qq.com" test
+# 查看当前用户
+git config user.name
+git config user.email
 
+# 设置当前的用户信息
+git config user.name "strawbreey" 
+git config user.email "2675882608@qq.com"
 ```
 
 
