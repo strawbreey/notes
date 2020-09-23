@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Angular Intervivew ::
+        Hello Friend — A simple theme for Hugo
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=" 数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？如何避免不收敛的数据变更？Knockout和Vue分别怎么做的，他们为什么要这样做？ 作用域树、作用域之间的继承、作用域上的事件、赋值分别是怎样实现的- 表达式如何动态解析，如何避免不安全的表达式？ 数据如何跟DOM建立关联？索引如何建立，如何确定唯一索引，如何显式指定索引？ 常用的事件是如何封装的？ 模块和依赖注入是怎么实现的？是否确有必要？  "
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/angular-intervivew/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Angular Intervivew"/>
+<meta name="twitter:description" content=" 数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？如何避免不收敛的数据变更？Knockout和Vue分别怎么做的，他们为什么要这样做？ 作用域树、作用域之间的继承、作用域上的事件、赋值分别是怎样实现的- 表达式如何动态解析，如何避免不安全的表达式？ 数据如何跟DOM建立关联？索引如何建立，如何确定唯一索引，如何显式指定索引？ 常用的事件是如何封装的？ 模块和依赖注入是怎么实现的？是否确有必要？  "/>
+
+
+
+<meta property="og:title" content="Angular Intervivew" />
+<meta property="og:description" content=" 数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？如何避免不收敛的数据变更？Knockout和Vue分别怎么做的，他们为什么要这样做？ 作用域树、作用域之间的继承、作用域上的事件、赋值分别是怎样实现的- 表达式如何动态解析，如何避免不安全的表达式？ 数据如何跟DOM建立关联？索引如何建立，如何确定唯一索引，如何显式指定索引？ 常用的事件是如何封装的？ 模块和依赖注入是怎么实现的？是否确有必要？  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/angular-intervivew/" />
+<meta property="article:published_time" content="2020-09-21T09:57:06+08:00" />
+<meta property="article:modified_time" content="2020-09-21T09:57:06+08:00" /><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Angular Intervivew</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-09-21
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <ul>
+<li>数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？如何避免不收敛的数据变更？Knockout和Vue分别怎么做的，他们为什么要这样做？</li>
+<li>作用域树、作用域之间的继承、作用域上的事件、赋值分别是怎样实现的- 表达式如何动态解析，如何避免不安全的表达式？</li>
+<li>数据如何跟DOM建立关联？索引如何建立，如何确定唯一索引，如何显式指定索引？</li>
+<li>常用的事件是如何封装的？</li>
+<li>模块和依赖注入是怎么实现的？是否确有必要？</li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/redis-tutorial/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Redis Tutorial</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/angular-schematic/">
+                  <span class="button__text">Angular Schematic</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2020 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

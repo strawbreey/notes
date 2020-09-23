@@ -1,25 +1,869 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on strawbreey Notes</title>
+    <title>Posts on Hello Friend</title>
     
     
     
     <link>/post/</link>
-    <description>Recent content in Posts on strawbreey Notes</description>
+    <description>Recent content in Posts on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2020 16:47:25 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 16:36:26 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Sql Optimization</title>
+      <link>/posts/sql-optimization/</link>
+      <pubDate>Wed, 23 Sep 2020 16:36:26 +0800</pubDate>
+      
+      <guid>/posts/sql-optimization/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Sql Optimization</title>
+      <link>/post/sql-optimization/</link>
+      <pubDate>Wed, 23 Sep 2020 16:35:33 +0800</pubDate>
+      
+      <guid>/post/sql-optimization/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Sql Insert</title>
+      <link>/posts/sql-insert/</link>
+      <pubDate>Wed, 23 Sep 2020 16:24:30 +0800</pubDate>
+      
+      <guid>/posts/sql-insert/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Quotation Marks</title>
+      <link>/posts/php-quotation-marks/</link>
+      <pubDate>Wed, 23 Sep 2020 16:18:58 +0800</pubDate>
+      
+      <guid>/posts/php-quotation-marks/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在PHP中
+单引号代表纯字符串，不论里面有什么东西，当字符串处理
+$a = &amp;#39;abc&amp;#39;;ehco &amp;#39;i am $a&amp;#39;; // i am $a双引号代表可以处理的字符串，如果字符串中有变量，那么，会优先解析变量
+$a = &amp;#39;abc&amp;#39;;echo &amp;#34;i am $a&amp;#34;; // i am abc理论上, 单引号的速度 &amp;gt; 双引号的速度，因为不用解析变量
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Filter</title>
+      <link>/posts/php-filter/</link>
+      <pubDate>Wed, 23 Sep 2020 15:56:14 +0800</pubDate>
+      
+      <guid>/posts/php-filter/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          过滤器函数 filter_has_var — 检测是否存在指定类型的变量 filter_id — 返回与某个特定名称的过滤器相关联的id filter_input_array — 获取一系列外部变量，并且可以通过过滤器处理它们 filter_input — 通过名称获取特定的外部变量，并且可以通过过滤器处理它 filter_list — 返回所支持的过滤器列表 filter_var_array — 获取多个变量并且过滤它们 filter_var — 使用特定的过滤器过滤一个变量
+filter_has_var 检测是否存在指定类型的变量
+filter_has_var ( int $type , string $variable_name ) : booltype: INPUT_GET、 INPUT_POST、 INPUT_COOKIE、 INPUT_SERVER、 INPUT_ENV 里的其中一个。
+variable_name 要检查的变量名。
+filter_id 返回与某个特定名称的过滤器相关联的id filter_id ( string $filtername ) : int
+filter_input_array 获取一系列外部变量，并且可以通过过滤器处理它们 filter_input_array ( int $type [, mixed $definition [, bool $add_empty = true ]] ) : mixed
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Variable Handle</title>
+      <link>/posts/php-variable-handle/</link>
+      <pubDate>Wed, 23 Sep 2020 15:36:50 +0800</pubDate>
+      
+      <guid>/posts/php-variable-handle/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          boolval — 获取变量的布尔值 echo &amp;#39;0: &amp;#39;.(boolval(0) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;42: &amp;#39;.(boolval(42) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;0.0: &amp;#39;.(boolval(0.0) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;4.2: &amp;#39;.(boolval(4.2) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;&amp;#34;&amp;#34;: &amp;#39;.(boolval(&amp;#34;&amp;#34;) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;&amp;#34;string&amp;#34;: &amp;#39;.(boolval(&amp;#34;string&amp;#34;) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;&amp;#34;0&amp;#34;: &amp;#39;.(boolval(&amp;#34;0&amp;#34;) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;&amp;#34;1&amp;#34;: &amp;#39;.(boolval(&amp;#34;1&amp;#34;) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;[1, 2]: &amp;#39;.(boolval([1, 2]) ? &amp;#39;true&amp;#39; : &amp;#39;false&amp;#39;).&amp;#34;\n&amp;#34;;echo &amp;#39;[]: &amp;#39;.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Array Function</title>
+      <link>/posts/php-array-function/</link>
+      <pubDate>Wed, 23 Sep 2020 11:41:22 +0800</pubDate>
+      
+      <guid>/posts/php-array-function/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
+// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER（默认值）。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
+$input_array = array(&amp;#34;FirSt&amp;#34; =&amp;gt; 1, &amp;#34;SecOnd&amp;#34; =&amp;gt; 4);print_r(array_change_key_case($input_array, CASE_UPPER));// Array// (// [FIRST] =&amp;gt; 1// [SECOND] =&amp;gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
+将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Object</title>
+      <link>/posts/php-object/</link>
+      <pubDate>Wed, 23 Sep 2020 11:36:50 +0800</pubDate>
+      
+      <guid>/posts/php-object/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          对象初始化 class foo{function do_foo(){echo &amp;#34;Doing foo.&amp;#34;; }}$bar = new foo;$bar-&amp;gt;do_foo();转换为对象 如果将一个对象转换成对象，它将不会有任何变化。如果其它任何类型的值被转换成对象，将会创建一个内置类 stdClass 的实例。如果该值为 NULL，则新的实例为空。 array 转换成 object 将使键名成为属性名并具有相对应的值。注意：在这个例子里， 使用 PHP 7.2.0 之前的版本，数字键只能通过迭代访问。
+$obj = (object) array(&amp;#39;1&amp;#39; =&amp;gt; &amp;#39;foo&amp;#39;);var_dump(isset($obj-&amp;gt;{&amp;#39;1&amp;#39;})); // PHP 7.2.0 后输出 &amp;#39;bool(true)&amp;#39;，之前版本会输出 &amp;#39;bool(false)&amp;#39; var_dump(key($obj)); // PHP 7.2.0 后输出 &amp;#39;string(1) &amp;#34;1&amp;#34;&amp;#39;，之前版本输出 &amp;#39;int(1)&amp;#39; 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Array</title>
+      <link>/posts/php-array/</link>
+      <pubDate>Wed, 23 Sep 2020 10:09:47 +0800</pubDate>
+      
+      <guid>/posts/php-array/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          An array in PHP is actually an ordered map. A map is a type that associates values to keys. This type is optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+PHP 中的数组实际上是一个有序映射。映射是一种把 values 关联到 keys 的类型。此类型在很多方面做了优化，因此可以把它当成真正的数组，或列表（向量），散列表（是映射的一种实现），字典，集合，栈，队列以及更多可能性。由于数组元素的值也可以是另一个数组，树形结构和多维数组也是允许的。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Web Safe</title>
+      <link>/posts/web-safe/</link>
+      <pubDate>Tue, 22 Sep 2020 14:38:14 +0800</pubDate>
+      
+      <guid>/posts/web-safe/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          web 安全领域中，常见的攻击方式，大概以下几种
+ 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username=&amp;#39;plhwin&amp;#39;-- 把plhwin 改成 plhwin&amp;#39;;SHOW TABLES-- hack&amp;#39;SELECT uid,username FROM user WHERE username=&amp;#39;plhwin&amp;#39;;SHOW TABLES-- hack&amp;#39;客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
+XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
+防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
+ 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
+   类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vim Tutorial</title>
+      <link>/posts/vim-tutorial/</link>
+      <pubDate>Tue, 22 Sep 2020 10:41:46 +0800</pubDate>
+      
+      <guid>/posts/vim-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
+命令模式： 用户刚刚启动 vi/vim，便进入了命令模式。
+此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
+以下是常用的几个命令：
+ i 切换到输入模式，以输入字符。 (i: 当前光标处编辑, o: 当前光标换行，a, 当前光标右移一位) x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令。  输入模式 在命令模式下按下i就进入了输入模式。
+在输入模式中，可以使用以下按键：
+ 字符按键以及Shift组合，输入字符 ENTER，回车键，换行 BACKSPACE，退格键，删除光标前一个字符 DEL，删除键，删除光标后一个字符 方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 Page Up/Page Down，上/下翻页 Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 ESC，退出输入模式，切换到命令模式  底线命令模式 在命令模式下按下:（英文冒号）就进入了底线命令模式。
+在底线命令模式中，基本的命令有（已经省略了冒号）:
+q 退出程序 w 保存文件
+按ESC键可随时退出底线命令模式。
+Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式(也称为编辑模式)，开始编辑文字# 按下 ESC 按钮回到一般模式# 在一般模式中按下 :wq 储存后离开 vivi/vim 按键说明 第一部分：一般模式可用的光标移动、复制粘贴、搜索替换等  h 或 向左箭头键(←)	光标向左移动一个字符 j 或 向下箭头键(↓)	光标向下移动一个字符 k 或 向上箭头键(↑)	光标向上移动一个字符 l 或 向右箭头键(→)	光标向右移动一个字符  如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。 如果想要进行多次移动的话，例如向下移动 30 行，可以使用 &amp;ldquo;30j&amp;rdquo; 或 &amp;ldquo;30↓&amp;rdquo; 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Shell Tutorial</title>
+      <link>/posts/shell-tutorial/</link>
+      <pubDate>Tue, 22 Sep 2020 10:18:30 +0800</pubDate>
+      
+      <guid>/posts/shell-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。
+Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。
+Shell 脚本 Shell 脚本（shell script），是一种为 shell 编写的脚本程序。业界所说的 shell 通常都是指 shell 脚本，但读者朋友要知道，shell 和 shell script 是两个不同的概念。由于习惯的原因，简洁起见，本文出现的 &amp;ldquo;shell编程&amp;rdquo; 都是指 shell 脚本编程，不是指开发 shell 自身。
+#!/bin/bashecho &amp;#34;Hello World!&amp;#34;#! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。echo 命令用于向窗口输出文本。chmod +x ./test.sh #使脚本具有执行权限 ./test.sh #执行脚本
+shell 变量 变量名的命名须遵循如下规则：
+ 命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用bash里的关键字（可用help命令查看保留关键字）。  # 变量your_name = &amp;#34;qinjx&amp;#34;echo $your_nameecho ${your_name}Shell 字符串 字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号，也可以不用引号。
+单引号
+str = &amp;#39;this is a string&amp;#39;单引号字符串的限制：
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Sql Transaction Processing</title>
+      <link>/posts/sql-transaction-processing/</link>
+      <pubDate>Mon, 21 Sep 2020 17:17:43 +0800</pubDate>
+      
+      <guid>/posts/sql-transaction-processing/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          transaction processing (事务处理) 使用事务处理，要么完全支持，要么完全不执行，来维护数据库的完整性。
+-- 开始事务BEGIN TRANSACTION COMMIT TRANSACTIONROLLBACL 回退/测回 DELECT FORM ORDER;ROLLBACK;COMMIT 一般的sql语句都是针对数据库的直接执行, 而事务处理中，提交
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Golang Goroutine</title>
+      <link>/posts/golang-goroutine/</link>
+      <pubDate>Mon, 21 Sep 2020 16:28:10 +0800</pubDate>
+      
+      <guid>/posts/golang-goroutine/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Go 语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
+goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。
+// go 函数名 (参数列表)// examplego f (x, y, z)f(x,y, z) //开启一个新的goroutine// 执行以下代码，你会看到输出的 hello 和 world 是没有固定先后顺序。因为它们是两个 goroutine 在执行：// world// hello// hello// world// world// hello// hello// world// world// hellopackage mainimport ( &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; )func say(s string) {for i := 0; i &amp;lt; 5; i++ {time.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Redis Tutorial</title>
+      <link>/posts/redis-tutorial/</link>
+      <pubDate>Mon, 21 Sep 2020 10:29:08 +0800</pubDate>
+      
+      <guid>/posts/redis-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Install # download rediswget http://download.redis.io/releases/redis-2.8.17.tar.gz# Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录tar xzf redis-2.8.17.tar.gz # xvfzcd redis-2.8.17# makemake# servercd src./redis-server./redis-server ../redis.confUbuntu 安装 # install redisapt-get updateapt-get install redis-server# start redisredis-server# test redisredis-cli# Redis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
+String
+SET runoob &amp;#34;菜鸟教程&amp;#34;GET runoob #菜鸟教程 一个键最大能存储512MBHash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Intervivew</title>
+      <link>/posts/angular-intervivew/</link>
+      <pubDate>Mon, 21 Sep 2020 09:57:06 +0800</pubDate>
+      
+      <guid>/posts/angular-intervivew/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+           数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？如何避免不收敛的数据变更？Knockout和Vue分别怎么做的，他们为什么要这样做？ 作用域树、作用域之间的继承、作用域上的事件、赋值分别是怎样实现的- 表达式如何动态解析，如何避免不安全的表达式？ 数据如何跟DOM建立关联？索引如何建立，如何确定唯一索引，如何显式指定索引？ 常用的事件是如何封装的？ 模块和依赖注入是怎么实现的？是否确有必要？  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Schematic</title>
+      <link>/posts/angular-schematic/</link>
+      <pubDate>Fri, 18 Sep 2020 19:40:57 +0800</pubDate>
+      
+      <guid>/posts/angular-schematic/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
+原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
+Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
+# 生成原理图ng generate my-schematic-collection:my-schematic-name# orng generate my-schematic-name --collection collection-name配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
+为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
+添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
+生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
+更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
+生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
+ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &amp;ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Yarn Cli</title>
+      <link>/posts/yarn-cli/</link>
+      <pubDate>Fri, 18 Sep 2020 10:11:16 +0800</pubDate>
+      
+      <guid>/posts/yarn-cli/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. Yarn does this quickly, securely, and reliably so you don&amp;rsquo;t ever have to worry.
+Yarn allows you to use other developers&amp;rsquo; solutions to different problems, making it easier for you to develop your software. If you have problems, you can report issues or contribute back, and when the problem is fixed, you can use Yarn to keep it all up to date.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Performance Optimization</title>
+      <link>/posts/angular-performance-optimization/</link>
+      <pubDate>Wed, 16 Sep 2020 17:39:04 +0800</pubDate>
+      
+      <guid>/posts/angular-performance-optimization/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Angualr 性能优化 angular编译的js基本都很大达到了mb级别，加载起来很占用带宽，不过angualr也提供了编译时压缩代码的功能，angular build指定为 &amp;ndash;prod即可
+// 注释下面这一行可以激活延迟加载策略export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {// preloadingStrategy: PreloadAllModules, // useHash: true});ng build --prod --build--optimizer // 编译后进一步压缩文件的大小
+Angular脏检查（Change Detection）机制 当我们遇到了性能问题，首先我们需要明白是什么导致我们的Angular应用变慢了。众所周知，在Angular中使用了双向绑定连接了model和DOM，当我们在component中改变了model的值，DOM中对应的值也会改变。但是Angular是怎么知道它需要在什么时候去更新DOM呢？这就是Angular Change Detection机制需要完成的事。
+而通常情况下，Angular Change Detection会由下几类事件触发：
+ 所有的浏览器事件（click, mouseover, keyup等） Ajax异步请求 setTimeout()和setInterval()  一旦我们触发了这些事件，Change Detection机制就会开始运行。在这些事件所绑定的方法执行完成之后，Change Detection会根据当前模板中数据绑定的情况来更新DOM。
+Angular的性能好坏就和每一次Change Detection周期的执行时间长短有关。理想情况下如果每次Change Detection周期能控制在17ms以内，那么界面将会十分流畅。而在这个周期中，触发事件是周期的开始，这个时间可以忽略不计。浏览器渲染是浏览器的行为，不受Angular控制。所以我们可以优化的就是在Event Handler执行和Chanege Detection检测绑定这两个步骤。
+减少Event Handler的运行时间 CDN加速 nginx缓存 events {#的最大连接数（包含所有连接数）1024worker_connections 1024; ## Default: 1024}http{# 代理缓存配置 nginx根目录指定缓存文件夹 kawa_cachedata名字自己定义跟proxy_cache_path对应上proxy_cache_path &amp;quot;.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vscode Hotkeys</title>
+      <link>/posts/vscode-hotkeys/</link>
+      <pubDate>Wed, 16 Sep 2020 15:33:08 +0800</pubDate>
+      
+      <guid>/posts/vscode-hotkeys/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          keyboard-shortcuts-windows
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vim Command</title>
+      <link>/posts/vim-command/</link>
+      <pubDate>Wed, 16 Sep 2020 14:51:41 +0800</pubDate>
+      
+      <guid>/posts/vim-command/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Cli</title>
+      <link>/posts/linux-cli/</link>
+      <pubDate>Wed, 16 Sep 2020 11:42:08 +0800</pubDate>
+      
+      <guid>/posts/linux-cli/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          create a new file touch readme.txt# or &amp;gt; &amp;#39;readme.txt&amp;#39;create a new directory mkdir documentsmkdir -p docmentsCopy readme.txt to the documents/ directory cp readme.txt documentsduplicate a file cp readme.txt readme.bak.txtcp readme{,.bak}.txt# Note: learn how the {} works with touch foo{1,2,3}.txt and see what happens.copy a direcatory cp -a myMusic myMedia/# orcp -a myMusic myMedia/myMusicduplicate a directory cp -a myMusic/ myMedia/# orcp -a myMusic myMedia/move a file mv readme.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Remote Procedure</title>
+      <link>/posts/php-remote-procedure/</link>
+      <pubDate>Wed, 16 Sep 2020 11:11:43 +0800</pubDate>
+      
+      <guid>/posts/php-remote-procedure/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          php 请求远程 php请求远程url有两个方法fopen/file_get_contents 和 curl
+1，fopen/file_get_contents与curl的差异
+（1）fopen /file_get_contents 每次请求都会重新做DNS查询，并不对DNS信息进行缓存。但是CURL会自动对DNS信息进行缓存。对同一域名下的网页或者图片的请求只需要一次DNS查询。这大大减少了DNS查询的次数。所以CURL的性能比fopen /file_get_contents 好很多。 （2）fopen /file_get_contents在请求HTTP时，使用的是http_fopen_wrapper，不会keeplive。而curl却可以。这样在多次请求多个链接时，curl效率会好一些。 （3）curl可以模拟多种请求，例如：POST数据，表单提交等，用户可以按照自己的需求来定制请求。而fopen / file_get_contents只能使用get方式获取数据。
+php中流行的rpc框架 php中流行的rpc框架 phprpc，yar, thrift, gRPC, swoole, hprose 等
+phprpc 简介 是一个轻型的、安全的、跨网际的、跨语言的、跨平台的、跨环境的、跨域的、支持复杂对象传输的、支持引用参数传递的、支持内容输出重定向的、支持分级错误处理的、支持会话的、面向服务的高性能远程过程调用协议。
+// 服务端include(&amp;#39;../phprpc_server.php&amp;#39;);class Hello{static function helloWorld(){return &amp;#34;hello world&amp;#34;;}}$server = new PHPRPC_Server();$server-&amp;gt;add(&amp;#39;helloWorld&amp;#39;,&amp;#39;hello&amp;#39;);$server-&amp;gt;start()// 客户端include(&amp;#34;../phprpc_client.php&amp;#34;);$client = new PHPRPC_Client(&amp;#39;http://www.test.com/phprpc/test/server.php&amp;#39;);echo $client-&amp;gt;helloWorld();[](https://www.php.net/manual/en/ref.xmlrpc.php)
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Rpc and Http</title>
+      <link>/posts/rpc-and-http/</link>
+      <pubDate>Wed, 16 Sep 2020 10:39:40 +0800</pubDate>
+      
+      <guid>/posts/rpc-and-http/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          rpc
+标准化 为了允许不同的客户端均能访问服务器，许多标准化的 RPC 系统应运而生了。其中大部分采用IDL(Interface Description Language)，方便跨平台的远程过程调用。
+References Remote Procedure Call gRPC 深入剖析通信层和 RPC 调用的异步化
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Yii Run Applications</title>
+      <link>/posts/yii-run-applications/</link>
+      <pubDate>Tue, 15 Sep 2020 15:22:56 +0800</pubDate>
+      
+      <guid>/posts/yii-run-applications/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
+一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Javascript Prototype Apply</title>
+      <link>/posts/javascript-prototype-apply/</link>
+      <pubDate>Tue, 15 Sep 2020 14:39:37 +0800</pubDate>
+      
+      <guid>/posts/javascript-prototype-apply/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。
+const numbers = [5, 6, 2, 3, 7];const max = Math.max.apply(null, numbers); // expected output: 7const min = Math.min.apply(null, numbers); // expected output: 2Syntax func.apply(thisArg, [argsArray])
+thisArg
+  The value of this provided for the call to func.
+  Note that this may not be the actual value seen by the method: if the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>What Happens When You Open Website</title>
+      <link>/posts/what-happens-when-you-open-website/</link>
+      <pubDate>Tue, 15 Sep 2020 11:41:59 +0800</pubDate>
+      
+      <guid>/posts/what-happens-when-you-open-website/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          url =&amp;gt; host -&amp;gt; ip -&amp;gt; nginx -&amp;gt; php url =&amp;gt; host -&amp;gt; ip -&amp;gt; nginx -&amp;gt; html url =&amp;gt; host -&amp;gt; ip -&amp;gt; nginx -&amp;gt; img 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Nginx Try Files</title>
+      <link>/posts/nginx-try-files/</link>
+      <pubDate>Tue, 15 Sep 2020 11:29:43 +0800</pubDate>
+      
+      <guid>/posts/nginx-try-files/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          基本配置 location / {root /data/website/baidu;try_files $uri $uri/ /index.php? $query_string;}Nginx的配置语法灵活，可控制度非常高。在0.7以后的版本中加入了一个try_files指令，配合命名location，可以部分替代原本常用的rewrite配置方式，提高解析效率。
+当用户请求 http://localhost/example 时，这里的 $uri 就是 /example。 try_files 会尝试寻找这个文件, 如果存在名为 /$root/example的文件，就直接把这个文件的内容发送给用户。 显然，目录中没有叫 example 的文件。然后就看 $uri/，增加了一个 /，也就是看有没有名为 /$root/example/ 的目录。 又找不到，就会 fall back 到 try_files 的最后一个选项 /index.php，发起一个内部 “子请求”，也就是相当于 nginx 发起一个 HTTP 请求到 http://localhost/index.php。
+try_files指令说明 try_files指令语法：try_files file ... uri 或 try_files file ... = code默认值：无作用域：server location其作用是按顺序检查文件是否存在，返回第一个找到的文件或文件夹(结尾加斜线表示为文件夹)，如果所有的文件或文件夹都找不到，会进行一个内部重定向到最后一个参数。
+需要注意的是，只有最后一个参数可以引起一个内部重定向，之前的参数只设置内部URI的指向。最后一个参数是回退URI且必须存在，否则会出现内部500错误。命名的location也可以使用在最后一个参数中。与rewrite指令不同，如果回退URI不是命名的location那么$args不会自动保留，如果你想保留$args，则必须明确声明。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Auth</title>
+      <link>/posts/auth/</link>
+      <pubDate>Tue, 15 Sep 2020 10:45:56 +0800</pubDate>
+      
+      <guid>/posts/auth/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          前后端中常用的鉴权方式有四种
+ HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权)  HTTP Basic Authentication  客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步请求，此时，假设客户端尚未被验证，则客户端提供如下请求至服务器:   Get /index.html HTTP/1.0 Host:www.google.com 服务器向客户端发送验证请求代码401,（WWW-Authenticate: Basic realm=”google.com”这句话是关键，如果没有客户端不会弹出用户名和密码输入界面）服务器返回的数据大抵如下：  HTTP/1.0 401 Unauthorised Server: SokEvo/1.0 WWW-Authenticate: Basic realm=”google.com” Content-Type: text/html Content-Length: xxx  当符合http1.0或1.1规范的客户端（如IE，FIREFOX）收到401返回值时，将自动弹出一个登录窗口，要求用户输入用户名和密码。
+  用户输入用户名和密码后，将用户名及密码以BASE64加密方式加密，并将密文放入前一条请求信息中，则客户端发送的第一条请求信息则变成如下内容：
+  Get /index.html HTTP/1.0 Host:www.google.com Authorization: Basic d2FuZzp3YW5n 服务器收到上述请求信息后，将 Authorization 字段后的用户信息取出、解密，将解密后的用户名及密码与用户数据库进行比较验证，如用户名及密码正确，服务器则根据请求，将所请求资源发送给客户端  优点：
+  基本认证的一个优点是基本上所有流行的网页浏览器都支持基本认证。基本认证很少在可公开访问的互联网网站上使用，有时候会在小的私有系统中使用（如路由器网页管理接口）。后来的机制HTTP摘要认证是为替代基本认证而开发的，允许密钥以相对安全的方式在不安全的通道上传输。
+  程序员和系统管理员有时会在可信网络环境中使用基本认证，使用Telnet或其他明文网络协议工具手动地测试Web服务器。这是一个麻烦的过程，但是网络上传输的内容是人可读的，以便进行诊断。
+  缺点：
+  虽然基本认证非常容易实现，但该方案创建在以下的假设的基础上，即：客户端和服务器主机之间的连接是安全可信的。特别是，如果没有使用SSL/TLS这样的传输层安全的协议，那么以明文传输的密钥和口令很容易被拦截。该方案也同样没有对服务器返回的信息提供保护。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Netty</title>
+      <link>/posts/netty/</link>
+      <pubDate>Tue, 15 Sep 2020 10:29:58 +0800</pubDate>
+      
+      <guid>/posts/netty/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers &amp;amp; clients.
+Netty 是一个利用 Java 的高级网络的能力，隐藏其背后的复杂性而提供一个易于使用的 API 的客户端/服务器框架。
+todo: References  netty/netty netty developer guide netty.io  Wrods rapidperformancemaintainableasynchronousevent-drivens
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Remote Procedure Call</title>
+      <link>/posts/remote-procedure-call/</link>
+      <pubDate>Tue, 15 Sep 2020 09:40:57 +0800</pubDate>
+      
+      <guid>/posts/remote-procedure-call/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在分布式计算(distributed computing)，远程请求（英語：Remote Procedure Call，縮寫為 RPC）是一个计算机通信协议。该协议允许运行于一台计算机的程序调用另一个地址空间（通常为一个开放网络的一台计算机）的子程序，就像调用本地程序一样，无需额外地为这个交互作用编程（无需关注细节）。RPC是一种服务器-客户端（Client/Server）模式，经典实现是一个通过发送请求-接受回应进行信息交互的系统。
+如果涉及的软件采用面向对象编程，那么远程过程调用亦可称作遠端呼叫或遠端方法呼叫，例：Java RMI。
+RPC是一种进程间通信的模式，程序分布在不同的地址空间里。如果在同一主机里，RPC可以通过不同的虚拟地址空间（即便使用相同的物理地址）进行通讯，而在不同的主机间，则通过不同的物理地址进行交互。许多技术（常常是不兼容）都是基于这种概念而实现的。
+References Words distributed Procedureexecute 执行
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Directive</title>
+      <link>/posts/angular-directive/</link>
+      <pubDate>Mon, 14 Sep 2020 16:31:10 +0800</pubDate>
+      
+      <guid>/posts/angular-directive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Angular Directive
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Reactive Forms</title>
+      <link>/posts/reactive-forms/</link>
+      <pubDate>Mon, 14 Sep 2020 15:33:34 +0800</pubDate>
+      
+      <guid>/posts/reactive-forms/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          响应式表单提供了一种模型驱动的方式来处理表单输入，其中的值会随时间而变化。
+响应式表单和模板驱动表单的区别 响应式表单和模板驱动表单以不同的方式处理和管理表单数据。每种方法都有各自的优点。
+响应式表单提供对底层表单对象模型直接、显式的访问。它们与模板驱动表单相比，更加健壮：它们的可扩展性、可复用性和可测试性都更高。如果表单是你的应用程序的关键部分，或者你已经在使用响应式表单来构建应用，那就使用响应式表单。
+模板驱动表单依赖模板中的指令来创建和操作底层的对象模型。它们对于向应用添加一个简单的表单非常有用，比如电子邮件列表注册表单。它们很容易添加到应用中，但在扩展性方面不如响应式表单。如果你有可以只在模板中管理的非常基本的表单需求和逻辑，那么模板驱动表单就很合适。
+   Tables 响应式 模板驱动     建立表单模型 显式的，在组件类中创建 隐式的，由指令创建   数据模型 结构化和不可变的 非结构化和可变的   可预测性 同步 异步   表单验证 函数 指令    响应式表单比模板驱动表单更有可伸缩性。它们提供对底层表单 API 的直接访问，以及对表单数据模型的同步访问，从而可以更轻松地创建大型表单。响应式表单需要较少的测试设置，测试时不需要深入理解变更检测，就能正确测试表单更新和验证。
+模板驱动表单专注于简单的场景，可复用性没那么高。它们抽象出了底层表单 API，并且只提供对表单数据模型的异步访问。对模板驱动表单的这种抽象也会影响测试。测试程序非常依赖于手动触发变更检测才能正常运行，并且需要进行更多设置工作。
+常用表单基础类 响应式表单和模板驱动表单都建立在下列基础类之上。
+ FormControl 实例用于追踪单个表单控件的值和验证状态 FormGroup 用于追踪一个表单控件组的值和状态 FormArray 用于追踪表单控件数组的值和状态 ControlValueAccessor 用于在 Angular 的 FormControl 实例和原生 DOM 元素之间创建一个桥梁。  interface ControlValueAccessor {writeValue(obj: any): void // Writes a new value to the element.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>/posts/elasticsearch/</link>
+      <pubDate>Mon, 14 Sep 2020 10:09:20 +0800</pubDate>
+      
+      <guid>/posts/elasticsearch/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          全文搜索属于最常见的需求，开源的 Elasticsearch （以下简称 Elastic）是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它
+Elastic 的底层是开源库 Lucene。但是，你没法直接用 Lucene，必须自己写代码去调用它的接口。Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。
+全文搜索引擎(elasticsearch) install # 下载,解压wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zipunzip elasticsearch-5.5.1.zipcd elasticsearch-5.5.1/ # 启动./bin/elasticsearch注: Elastic 需要 Java 8 环境。默认情况下，Elastic 只允许本机访问，如果需要远程访问，可以修改 Elastic 安装目录的config/elasticsearch.yml文件，去掉network.host的注释，将它的值改成0.0.0.0，然后重新启动Elastic。
+introduction Node 与 Cluster Elastic 本质上是一个分布式数据库，允许多台服务器协同工作，每台服务器可以运行多个Elastic 实例。 单个 Elastic 实例称为一个节点（node）。一组节点构成一个集群（cluster）。
+Index Elastic 会索引所有字段，经过处理后写入一个反向索引（Inverted Index）。查找数据的时候，直接查找该索引。
+所以，Elastic 数据管理的顶层单位就叫做 Index（索引）。它是单个数据库的同义词。每个 Index （即数据库）的名字必须是小写。
+curl -X GET &amp;#39;http://localhost:9200/_cat/indices?v&amp;#39;Document Index 里面单条的记录称为 Document（文档）。许多条 Document 构成了一个 Index。
+// document demo{&amp;#34;user&amp;#34;: &amp;#34;张三&amp;#34;,&amp;#34;title&amp;#34;: &amp;#34;工程师&amp;#34;,&amp;#34;desc&amp;#34;: &amp;#34;数据库管理&amp;#34;}同一个 Index 里面的 Document，不要求有相同的结构（scheme），但是最好保持相同，这样有利于提高搜索效率。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Redis Cache</title>
+      <link>/posts/redis-cache/</link>
+      <pubDate>Mon, 14 Sep 2020 10:00:18 +0800</pubDate>
+      
+      <guid>/posts/redis-cache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          todo:   redis cache
+  缓存穿透
+  缓存雪崩
+  《Redis 设计与实现》
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Array Index</title>
+      <link>/posts/js-array-index/</link>
+      <pubDate>Fri, 11 Sep 2020 19:54:40 +0800</pubDate>
+      
+      <guid>/posts/js-array-index/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          JS 中数组字符串索引和数值索引研究 Javascript的数组其实不像PHP或者其他一些语言一样拥有真正的字符串下标，当我们试图为一个js数组添加字符串下标的时候，其实就相当于为该数组对象添加了一个属性，属性名称就是我们所谓的“字符串下标”。由于为数组对象添加属性不会影响到同为该对象属性的length的值，因此该值将始终为零。同样地，.pop()和.shift()等作用于数组元素的方法也不能够作用于这些对象属性。因此，如果要使用的是一个完全由“字符串下标”组成的数组，那还是将其声明为一个Object类型的对象要更好一些。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/posts/test/</link>
+      <pubDate>Fri, 11 Sep 2020 15:51:38 +0800</pubDate>
+      
+      <guid>/posts/test/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ssss
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Sql</title>
-      <link>/post/sql/</link>
+      <link>/posts/sql/</link>
       <pubDate>Thu, 10 Sep 2020 16:47:25 +0800</pubDate>
       
-      <guid>/post/sql/</guid>
+      <guid>/posts/sql/</guid>
       <description>
         
           
@@ -32,7 +876,27 @@
 使用crashcourse
 use crashcourse;显示数据库
 show DATABASES; // 返回可用数据库的列表显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product.
+show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Install Mysql</title>
+      <link>/posts/linux-install-mysql/</link>
+      <pubDate>Thu, 10 Sep 2020 10:38:04 +0800</pubDate>
+      
+      <guid>/posts/linux-install-mysql/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
           
         
         </description>
@@ -40,10 +904,10 @@ show TABLES; // 显示当前数据库内的表show status // 显示数据库的
     
     <item>
       <title>Dont Need Lodash</title>
-      <link>/post/dont-need-lodash/</link>
+      <link>/posts/dont-need-lodash/</link>
       <pubDate>Wed, 09 Sep 2020 10:26:37 +0800</pubDate>
       
-      <guid>/post/dont-need-lodash/</guid>
+      <guid>/posts/dont-need-lodash/</guid>
       <description>
         
           
@@ -60,11 +924,74 @@ Quick Links Array
     </item>
     
     <item>
+      <title>Scope and Closures</title>
+      <link>/posts/scope-and-closures/</link>
+      <pubDate>Tue, 08 Sep 2020 19:52:11 +0800</pubDate>
+      
+      <guid>/posts/scope-and-closures/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          reference [ˈrefrəns]n. 说到(或写到)的事;提到;谈及;涉及;参考;查询;查阅;(帮助或意见的)征求，征询v. 查阅;参考;给(书等)附参考资料By contrast 作为对比invokes [ɪnˈvoʊks]v. 援引，援用(法律、规则等作为行动理由);提及，援引(某人、某理论、实例等作为支持);提出(某人的名字，以激发某种感觉或行动)
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Nginx Install</title>
+      <link>/posts/nginx-install/</link>
+      <pubDate>Tue, 08 Sep 2020 17:32:46 +0800</pubDate>
+      
+      <guid>/posts/nginx-install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. For a long time, it has been running on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler. According to Netcraft, nginx served or proxied 25.75% busiest sites in August 2020. Here are some of the success stories: Dropbox, Netflix, Wordpress.com, FastMail.FM.
+安装Nginx 下载nginx
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Character</title>
+      <link>/posts/mysql-character/</link>
+      <pubDate>Tue, 08 Sep 2020 16:08:54 +0800</pubDate>
+      
+      <guid>/posts/mysql-character/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          mysql 字符集选择
+对数据库来说，字符集更加重要，因为数据库存储的数据大部分都是各种文字，字符集对数据库的存储，处理性能，以及日后系统的移植，推广都会有影响。 MySQL5.6目前支持几十种字符集，包括UCS-2，UTF-16，UTF-16LE,UTF-32，UTF-8和utf8mb4等Unicode字符集。 根据应用的需求，考虑以下几方面的因素。
+ 满足应用支持语言的需求，如果应用要处理各种各样的文字，或者将发布到使用不同语言的国家或地区，就应该选择Unicode字符集。对MySQL来说，目前就是UTF-8 如果应用中涉及已有数据的导入，就要充分考虑数据库字符集对已有数据的兼容性。假如已有数据是GBK文字，如果选择GB2312-80为数据库字符集，就很有可能出现某些文字无法正确导入的问题 如果数据库只支持一般中文，数据量很大，性能要求也很高，那就应该选择双字节长编码的中文字符集，比如GBK。因为，相对于UTF-8而言，GBK比较“小”，每个汉字只占2个字节，而UTF-8汉字编码需要3个字节，这样可以减少磁盘I/O，数据库Cache以及网络传输的时间，从而提高性能。相反，如果应用主要处理英文字符，仅有少量汉字数据，那么选择UTF-8更好，因为GBK,UCS-2，UTF-16的西文字符编码都是2个字节，会造成很多不必要的开销。 如果数据库需要做大量的字符运算，如比较，排序等，那么选择定长字符集可能更好，因为定长字符集的处理速度要比变长字符集的处理速度快。 如果所有客户端程序都支持相同的字符集，则应该优先选择该字符集作为数据库字符集，这样可以避免因字符集转换带来的性能开销和数据损失  
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Dependency Injection</title>
-      <link>/post/dependency-injection/</link>
+      <link>/posts/dependency-injection/</link>
       <pubDate>Tue, 08 Sep 2020 15:19:09 +0800</pubDate>
       
-      <guid>/post/dependency-injection/</guid>
+      <guid>/posts/dependency-injection/</guid>
       <description>
         
           
@@ -81,11 +1008,35 @@ In software engineering, dependency injection is a technique in which an object 
     </item>
     
     <item>
+      <title>Php Fpm</title>
+      <link>/posts/php-fpm/</link>
+      <pubDate>Mon, 07 Sep 2020 17:25:15 +0800</pubDate>
+      
+      <guid>/posts/php-fpm/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          PHP-FPM是一个PHP的PHPFastCGI管理器。
+PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
+kill -INT cat /var/run/php-fpm/php-fpm.pid
+杀死进程 killall php-fpm
+开启进程 /usr/local/php72/sbin/php-fpm
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Js Closure</title>
-      <link>/post/js-closure/</link>
+      <link>/posts/js-closure/</link>
       <pubDate>Mon, 07 Sep 2020 17:02:22 +0800</pubDate>
       
-      <guid>/post/js-closure/</guid>
+      <guid>/posts/js-closure/</guid>
       <description>
         
           
@@ -104,10 +1055,10 @@ In software engineering, dependency injection is a technique in which an object 
     
     <item>
       <title>Git Workflow</title>
-      <link>/post/git-workflow/</link>
+      <link>/posts/git-workflow/</link>
       <pubDate>Mon, 07 Sep 2020 15:49:49 +0800</pubDate>
       
-      <guid>/post/git-workflow/</guid>
+      <guid>/posts/git-workflow/</guid>
       <description>
         
           
@@ -126,10 +1077,10 @@ In software engineering, dependency injection is a technique in which an object 
     
     <item>
       <title>Debounce and Throttle</title>
-      <link>/post/debounce-and-throttle/</link>
+      <link>/posts/debounce-and-throttle/</link>
       <pubDate>Mon, 07 Sep 2020 14:51:32 +0800</pubDate>
       
-      <guid>/post/debounce-and-throttle/</guid>
+      <guid>/posts/debounce-and-throttle/</guid>
       <description>
         
           
@@ -146,11 +1097,11 @@ In software engineering, dependency injection is a technique in which an object 
     </item>
     
     <item>
-      <title>Angular Service</title>
-      <link>/post/angular-service/</link>
-      <pubDate>Thu, 03 Sep 2020 10:49:58 +0800</pubDate>
+      <title>Go Interview</title>
+      <link>/posts/go-interview/</link>
+      <pubDate>Thu, 03 Sep 2020 16:18:11 +0800</pubDate>
       
-      <guid>/post/angular-service/</guid>
+      <guid>/posts/go-interview/</guid>
       <description>
         
           
@@ -159,10 +1110,93 @@ In software engineering, dependency injection is a technique in which an object 
         
         
         
-          Why services Components shouldn&amp;rsquo;t fetch or save data directly and they certainly shouldn&amp;rsquo;t knowingly present fake data. They should focus on presenting data and delegate data access to a service.
-services are a great way to share information among classes that don&amp;rsquo;t know each other.
- hile you could call getHeroes() in the constructor, that&amp;rsquo;s not the best practice.
-Reserve the constructor for simple initialization such as wiring constructor parameters to properties.
+          func main(){s := []int{5}fmt.Println(len(s), cap(s))s = append(s, 7)fmt.Println(len(s), cap(s))s = append(s, 9)fmt.Println(len(s), cap(s))x := append(s, 11)fmt.Println(len(s), cap(s))y := append(s, 12)fmt.Println(len(s), cap(s))fmt.Println(s, x, y)// 输出结果 [5 7 9] [5 7 9 12] [5 7 9 12]s := []int{5, 7, 9}x := append(s, 11)y := append(s, 12)fmt.Println(s,x,y)// 输出结果 [5 7 9] [5 7 9 11] [5 7 9 12]s := []int{5} // 初始化切片为[5], cap(s) = 1 len (s) = 1 fmt.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Slice</title>
+      <link>/posts/go-slice/</link>
+      <pubDate>Thu, 03 Sep 2020 15:42:47 +0800</pubDate>
+      
+      <guid>/posts/go-slice/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          go slice Go 语言切片是对数组的抽象。
+Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片(&amp;ldquo;动态数组&amp;rdquo;),与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。
+定义切片 var identifier []type切片不需要说明长度。
+或使用make()函数来创建切片:
+var slice1 []type = make([]type, len)// 也可以简写为slice1 := make([]type, len)也可以指定容量，其中capacity为可选参数。
+make([]T, length, capacity)slice init s := [] int {1,2,3 } // 直接初始化切片，[]表示是切片类型，{1,2,3}初始化值依次是1,2,3.其cap=len=3s := arr[:]// 初始化切片s,是数组arr的引用s := arr[startIndex:endIndex] // 将arr中从下标startIndex到endIndex-1 下的元素创建为一个新的切片s1 := s[startIndex:endIndex] // 通过切片s初始化切片s1s :=make([]int,len,cap) // 通过内置函数make()初始化切片s,[]int 标识为其元素类型为int的切片len() 和 cap() 切片是可索引的，并且可以由 len() 方法获取长度。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Start</title>
+      <link>/posts/go-start/</link>
+      <pubDate>Thu, 03 Sep 2020 15:17:10 +0800</pubDate>
+      
+      <guid>/posts/go-start/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          go command ( go 常用命令) Usage:go &amp;lt;command&amp;gt; [arguments]The commands are:bug start a bug reportbuild compile packages and dependenciesclean remove object files and cached filesdoc show documentation for package or symbolenv print Go environment informationfix update packages to use new APIsfmt gofmt (reformat) package sourcesgenerate generate Go files by processing sourceget add dependencies to current module and install theminstall compile and install packages and dependencieslist list packages or modulesmod module maintenancerun compile and run Go programtest test packagestool run specified go toolversion print Go versionvet report likely mistakes in packagesUse &amp;#34;go help &amp;lt;command&amp;gt;&amp;#34; for more information about a command.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>WebAssembly</title>
+      <link>/posts/webassembly/</link>
+      <pubDate>Thu, 03 Sep 2020 14:57:11 +0800</pubDate>
+      
+      <guid>/posts/webassembly/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          WebAssembly WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.
+Efficient and fast Safe Open and debuggable Part of the open web platform Start $ git clone https://github.com/juj/emsdk.git$ cd emsdk$ ./emsdk install sdk-incoming-64bit binaryen-master-64bit$ ./emsdk activate sdk-incoming-64bit binaryen-master-64bit$ source ./emsdk_env.sh如何使用 WebAssembly 整个代码库都用 WebAssembly。主要使用 WebAssembly 计算，UI 使用 JavaScript/HTML。在大型 JavaScript/HTML 应用中复用已经存在的 WebAssembly 代码。像使用助手库一样，分担一些计算任务。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Service</title>
+      <link>/posts/angular-service/</link>
+      <pubDate>Thu, 03 Sep 2020 10:49:58 +0800</pubDate>
+      
+      <guid>/posts/angular-service/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Angular Directive
           
         
         </description>
@@ -170,10 +1204,10 @@ Reserve the constructor for simple initialization such as wiring constructor par
     
     <item>
       <title>Css Interivew Repaint and Refolw</title>
-      <link>/post/css-interivew-repaint-and-refolw/</link>
+      <link>/posts/css-interivew-repaint-and-refolw/</link>
       <pubDate>Thu, 03 Sep 2020 10:48:27 +0800</pubDate>
       
-      <guid>/post/css-interivew-repaint-and-refolw/</guid>
+      <guid>/posts/css-interivew-repaint-and-refolw/</guid>
       <description>
         
           
@@ -206,10 +1240,10 @@ Reserve the constructor for simple initialization such as wiring constructor par
     
     <item>
       <title>Css Interview BFC</title>
-      <link>/post/css-interview-bfc/</link>
+      <link>/posts/css-interview-bfc/</link>
       <pubDate>Thu, 03 Sep 2020 10:02:39 +0800</pubDate>
       
-      <guid>/post/css-interview-bfc/</guid>
+      <guid>/posts/css-interview-bfc/</guid>
       <description>
         
           
@@ -229,11 +1263,130 @@ what A block formatting context is created by at least one of the following:
     </item>
     
     <item>
+      <title>Mysql Command</title>
+      <link>/posts/mysql-command/</link>
+      <pubDate>Tue, 01 Sep 2020 16:19:22 +0800</pubDate>
+      
+      <guid>/posts/mysql-command/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Can&amp;#39;t connect to local MySQL server through socket &amp;#39;/var/lib/mysql/mysql.sock&amp;#39; 导出数据 mysqldump -u root -p ieg_waibao_test &amp;gt; test_db.sql;
+登录mysql mysql -u root -p
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Types</title>
+      <link>/posts/go-types/</link>
+      <pubDate>Tue, 01 Sep 2020 11:20:46 +0800</pubDate>
+      
+      <guid>/posts/go-types/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Go 数据类型  布尔类型 boolean 数字类型 int float32 float64 字符串类型 string 派生类型  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Install Php</title>
+      <link>/posts/linux-install-php/</link>
+      <pubDate>Tue, 01 Sep 2020 10:10:41 +0800</pubDate>
+      
+      <guid>/posts/linux-install-php/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Install PHP install php5.6 wget -c http://cn2.php.net/distributions/php-5.6.21.tar.gztar -zxvf php-5.6.21.tar.gz格式：tar zcvf 压缩后的路径及包名 你要压缩的文件
+　z:gzip压缩
+　c:创建压缩包
+　v:显示打包压缩解压过程
+　f:接着压缩
+　t:查看压缩包内容
+　x:解压
+　X:指定文件列表形式排除不需要打包压缩的文件或目录
+　-exclude:指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等）
+　-C:解压到指定目录
+例如：将/root/cs/test/下文件压缩到/root/cs/test1文件下命名为1
+tar zcf /root/cs/test1/1.tar.gz /root/cs/test/
+zcvf : 打包压缩 xvf: 解压缩
+php 下载 解压 配置 编译 https://www.php.net/distributions/php-7.2.33.tar.gz
+wget http://cn2.php.net/distributions/php-7.2.33.tar.gz tar xf php-7.2.33.tar.xz
+tar -zxvf php-7.2.33.tar.xz
+./configure &amp;ndash;prefix=/usr/local/php72 &amp;ndash;with-config-file-path=/usr/local/php72/etc &amp;ndash;with-mysql=mysqlnd &amp;ndash;with-mysqli=mysqlnd &amp;ndash;with-pdo-mysql=mysqlnd &amp;ndash;with-gd &amp;ndash;with-iconv &amp;ndash;with-zlib &amp;ndash;enable-xml &amp;ndash;enable-bcmath &amp;ndash;enable-shmop &amp;ndash;enable-sysvsem &amp;ndash;enable-inline-optimization &amp;ndash;enable-mbregex &amp;ndash;enable-fpm &amp;ndash;enable-mbstring &amp;ndash;enable-ftp &amp;ndash;enable-gd-native-ttf &amp;ndash;with-openssl &amp;ndash;enable-pcntl &amp;ndash;enable-sockets &amp;ndash;with-xmlrpc &amp;ndash;enable-zip &amp;ndash;enable-soap &amp;ndash;with-pear &amp;ndash;with-gettext &amp;ndash;enable-session &amp;ndash;with-mcrypt &amp;ndash;with-curl
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Common Commands</title>
+      <link>/posts/git-common-commands/</link>
+      <pubDate>Mon, 31 Aug 2020 15:39:29 +0800</pubDate>
+      
+      <guid>/posts/git-common-commands/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Git不需要输入用户名密码的两种方式   采用ssh连接方式: 将自己主机的id_ras.pub 加到git 的ssh Keys 中
+  采用https的连接方式:
+  git config --global credential.helper store
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Undo</title>
+      <link>/posts/git-undo/</link>
+      <pubDate>Mon, 31 Aug 2020 15:11:27 +0800</pubDate>
+      
+      <guid>/posts/git-undo/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          undo #Checkoutgit checkout --orphan latest_branch;#Add all the filesgit add -A;#Commit the changesgit commit -am &amp;#34;Reinitialize&amp;#34;;#Delete the branchgit branch -D master;#Rename the current branch to mastergit branch -m master;#Finally, force update your repositorygit push -f origin master;  git reset --hard HEAD^ git push --force
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Linux Permissions</title>
-      <link>/post/linux-permissions/</link>
+      <link>/posts/linux-permissions/</link>
       <pubDate>Mon, 31 Aug 2020 11:17:11 +0800</pubDate>
       
-      <guid>/post/linux-permissions/</guid>
+      <guid>/posts/linux-permissions/</guid>
       <description>
         
           
@@ -255,11 +1408,51 @@ Quote   Linux修改目录权限
     </item>
     
     <item>
+      <title>Common Commands</title>
+      <link>/posts/common-commands/</link>
+      <pubDate>Mon, 31 Aug 2020 10:36:43 +0800</pubDate>
+      
+      <guid>/posts/common-commands/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # 测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm# 下载phpwget php-7.2.15.tar.bz2 http://cn2.php.net/distributions/php-7.2.15.tar.bz2yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpmrpm -Uvh https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm# linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Host on Github</title>
+      <link>/posts/host-on-github/</link>
+      <pubDate>Mon, 31 Aug 2020 10:32:49 +0800</pubDate>
+      
+      <guid>/posts/host-on-github/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Assumptions  Git 2.8 Github Account  
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Hugo Start</title>
-      <link>/post/hugo-start/</link>
+      <link>/posts/hugo-start/</link>
       <pubDate>Mon, 31 Aug 2020 10:15:27 +0800</pubDate>
       
-      <guid>/post/hugo-start/</guid>
+      <guid>/posts/hugo-start/</guid>
       <description>
         
           
@@ -269,6 +1462,46 @@ Quote   Linux修改目录权限
         
         
           start Install Hugo # macOS install brew intall hugohugo versionCreate a New Site hugo new site quickStartAdd a Theme cd quickstartgit initgit submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/anankeAdd Some Content hugo new posts/new-content.mdStart the Hugo server hugo serve -DBuild Static pages hugo -D
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>/posts/git/</link>
+      <pubDate>Fri, 28 Aug 2020 19:29:52 +0800</pubDate>
+      
+      <guid>/posts/git/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          create a new repository on the command line git initgit add README.mdgit commit -m &amp;quot;first commit&amp;quot;git branch -M mastergit remote add origin https://github.com/strawbreey/notes.gitgit push -u origin masterpush an existing repository from the command line git remote add origin https://github.com/strawbreey/notes.gitgit branch -M mastergit push -u origin mastercreate gh-pages branch git checkout --orphan gh-pagesgit reset --hardgit commit --allow-empty -m &amp;#34;Initializing gh-pages branch&amp;#34;git push upstream gh-pagesgit checkout mastergit remote add origin https://github.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Interview</title>
+      <link>/posts/interview/</link>
+      <pubDate>Fri, 28 Aug 2020 19:20:30 +0800</pubDate>
+      
+      <guid>/posts/interview/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
           
         
         </description>

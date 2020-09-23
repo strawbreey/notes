@@ -15,7 +15,7 @@
 使用crashcourse
 use crashcourse;显示数据库
 show DATABASES; // 返回可用数据库的列表显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product."
+show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product."
 />
 <meta
   name="keywords"
@@ -55,7 +55,7 @@ show TABLES; // 显示当前数据库内的表show status // 显示数据库的
 使用crashcourse
 use crashcourse;显示数据库
 show DATABASES; // 返回可用数据库的列表显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product."/>
+show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product."/>
 
 
 
@@ -64,7 +64,7 @@ show TABLES; // 显示当前数据库内的表show status // 显示数据库的
 使用crashcourse
 use crashcourse;显示数据库
 show DATABASES; // 返回可用数据库的列表显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product." />
+show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/sql/" />
 <meta property="article:published_time" content="2020-09-10T16:47:25+08:00" />
@@ -203,13 +203,20 @@ show create table <span style="color:#75715e">#显示创建特定数据库/表</
 show GRANTS // 显示
 </code></pre></div><h3 id="检索数据select">检索数据(SELECT)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products;  <span style="color:#75715e">-- 检索一列数据
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name, prod_price <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索多列数据
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索所有数据
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> vend_id <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索vend—id 列
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> vend_id <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索vend_id列, 并只返回不同的值
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">-- 检索prod_name, 并只返回5条数据
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>; <span style="color:#75715e">-- 检索prod_name, 并只返回5条数据
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> product.prod_name <span style="color:#66d9ef">FROM</span> crashcourse.products; <span style="color:#75715e">-- = SELECT prod_name FROM products;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> prod_id, prod_name, prod_price <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索多列数据
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索所有数据
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> vend_id <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索vend—id 列
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> vend_id <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索vend_id列, 并只返回不同的值
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">-- 检索prod_name, 并只返回5条数据
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>; <span style="color:#75715e">-- 检索prod_name, 并只返回5条数据
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> product.prod_name <span style="color:#66d9ef">FROM</span> crashcourse.products; <span style="color:#75715e">-- = SELECT prod_name FROM products;
 </span></code></pre></div><h3 id="排序数据-order-by">排序数据 (ORDER By)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products;
 
@@ -239,7 +246,8 @@ show GRANTS // 显示
 <span style="color:#66d9ef">SELECT</span> prod_name, prod_price <span style="color:#66d9ef">FROM</span> prod_price <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">--范围值检查
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> prod_name, prod_price <span style="color:#66d9ef">FROM</span> prod_price <span style="color:#66d9ef">WHERE</span> prod_price <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>; <span style="color:#75715e">-- 返回没有价格的所有产品
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> cust_id <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">WHERE</span> cust_email <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>;  
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> cust_id <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">WHERE</span> cust_email <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>;  
 </code></pre></div><h3 id="过滤数据2">过滤数据2</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_price, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1003</span> <span style="color:#66d9ef">AND</span> prod_price <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">-- AND
 </span><span style="color:#75715e"></span>
@@ -257,10 +265,74 @@ show GRANTS // 显示
 </span></code></pre></div><h3 id="通配符过滤">通配符过滤</h3>
 <h4 id="百分号-通配符-表示任何字符出现任意次数">百分号(%) 通配符： 表示任何字符出现任意次数</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;jet%&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROm</span> prodUcts <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%jet%&#39;</span>; <span style="color:#75715e">-- 检索所有含有jet的词
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROm</span> prodUcts <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%jet&#39;</span>; <span style="color:#75715e">-- 检索所有含有jet结尾的词
 </span><span style="color:#75715e"></span>
-</code></pre></div>
+<span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROm</span> prodUcts <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%jet%&#39;</span>; <span style="color:#75715e">-- 检索所有含有jet的词
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROm</span> prodUcts <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%jet&#39;</span>; <span style="color:#75715e">-- 检索所有含有jet结尾的词
+</span><span style="color:#75715e"></span>
+</code></pre></div><h4 id="下划线_-通配符-只能匹配单个字符而不是多个字符">下划线(_) 通配符： 只能匹配单个字符，而不是多个字符</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;__ inch teddy bear&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">-- 备注: 与%匹配多个字符不同, _ 总是刚好匹配一个字符
+</span></code></pre></div><h4 id="方括号-通配符-用来指定一个字符集">方括号([]) 通配符 用来指定一个字符集</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;__ inch teddy bear&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">-- 备注: 与%匹配多个字符不同, _ 总是刚好匹配一个字符
+</span></code></pre></div><p>注意: SQL的通配符很有用,但是这种功能需要消耗更长的时间处理</p>
+<ul>
+<li>不要过度使用通配符</li>
+<li>在使用通配符时，尽量别放在搜素开始处</li>
+<li>主要通配符的位置</li>
+</ul>
+<h4 id="创建计算字段">创建计算字段</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> vend_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> vend_countray <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#66d9ef">FROM</span> Vendors <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> vend_name;
+<span style="color:#66d9ef">SELECT</span> vend_name <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">||</span>  vend_countray <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#66d9ef">FROM</span> Vendors <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> vend_name;
+<span style="color:#66d9ef">SELECT</span> RTRIM(vend_name) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> RTRIM(vend_contry) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#66d9ef">FROM</span> Vendors <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> vend_name; <span style="color:#75715e">-- TRIM 去除两遍空格 LTRIM LTRIM 左右空格
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, quantily, item_price <span style="color:#66d9ef">FROM</span> OrderItem <span style="color:#66d9ef">WHERE</span> order_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2008</span>;
+<span style="color:#66d9ef">SELECT</span> prod_id, quantily, item_price, quantily <span style="color:#f92672">*</span> item_price <span style="color:#66d9ef">AS</span> expanded_prce <span style="color:#66d9ef">FROM</span> OrderItems <span style="color:#66d9ef">WHERE</span> order_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2008</span>; <span style="color:#75715e">-- 算术表达式 + - * /
+</span></code></pre></div><h3 id="汇总数据">汇总数据</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#75715e">-- 聚合函数
+</span><span style="color:#75715e"></span> 
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">AVG</span>(prod_price) <span style="color:#66d9ef">AS</span> avg_price <span style="color:#66d9ef">FROM</span> Products; <span style="color:#75715e">-- 平均数
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">AVG</span>(prod_price) <span style="color:#66d9ef">AS</span> avg_price <span style="color:#66d9ef">FROM</span> Products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;DLL01&#39;</span>
+
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> num_cust <span style="color:#66d9ef">FROM</span> Custiomers; <span style="color:#75715e">-- 确定表中的行数 count(*) 
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(cust_email) <span style="color:#66d9ef">AS</span> num_cust <span style="color:#66d9ef">FROM</span> Custiomers;
+
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(prid_price) <span style="color:#66d9ef">AS</span> max_price <span style="color:#66d9ef">FROM</span> Products;
+
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MIN</span>(prid_price) <span style="color:#66d9ef">AS</span> min_price <span style="color:#66d9ef">FROM</span> Products;
+
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(quantity) <span style="color:#66d9ef">AS</span> item_ordered <span style="color:#66d9ef">FROM</span> OrderItem;
+
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(item_price <span style="color:#f92672">*</span> quantity) <span style="color:#66d9ef">AS</span> total_price <span style="color:#66d9ef">FROM</span> OrderItem;
+
+<span style="color:#75715e">-- 聚合不同值
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">As</span> num_items, 
+       <span style="color:#66d9ef">MIN</span>(prod_price) <span style="color:#66d9ef">AS</span> price_min, 
+       <span style="color:#66d9ef">MAX</span>(prod_price) <span style="color:#66d9ef">AS</span> price_max, 
+       <span style="color:#66d9ef">AVG</span>(prod_price) <span style="color:#66d9ef">AS</span> price_avg;
+<span style="color:#66d9ef">FROM</span> Products;
+
+</code></pre></div><h4 id="分组数据">分组数据</h4>
+<p>数据分组</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> num_prods <span style="color:#66d9ef">FROM</span> Products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;DLL01&#39;</span> num_prods;
+<span style="color:#75715e">-- 创建分组
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> vend_id, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> num_prods <span style="color:#66d9ef">FROM</span> Products <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> vend_id;
+
+<span style="color:#66d9ef">SELECT</span> cust_id, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> orders <span style="color:#66d9ef">FROM</span> Orders <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> cust_id <span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>;
+
+<span style="color:#66d9ef">SELECT</span> order_num, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> items <span style="color:#66d9ef">FROM</span> OrderItems <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> order_num <span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">3</span>
+
+<span style="color:#66d9ef">SELECT</span> order_num, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> itmes <span style="color:#66d9ef">FROM</span> OrderItems <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> order_num <span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> items, order_num;
+
+
+</code></pre></div><h4 id="子查询">子查询</h4>
+
     </div>
     
       

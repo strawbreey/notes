@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Web Safe ::
+        Hello Friend — A simple theme for Hugo
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="web 安全领域中，常见的攻击方式，大概以下几种
+ 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username=&amp;#39;plhwin&amp;#39;-- 把plhwin 改成 plhwin&amp;#39;;SHOW TABLES-- hack&amp;#39;SELECT uid,username FROM user WHERE username=&amp;#39;plhwin&amp;#39;;SHOW TABLES-- hack&amp;#39;客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
+XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
+防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
+ 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
+   类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/web-safe/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web Safe"/>
+<meta name="twitter:description" content="web 安全领域中，常见的攻击方式，大概以下几种
+ 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;-- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39;SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;;SHOW TABLES-- hack&#39;客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
+XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
+防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
+ 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
+   类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。"/>
+
+
+
+<meta property="og:title" content="Web Safe" />
+<meta property="og:description" content="web 安全领域中，常见的攻击方式，大概以下几种
+ 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;-- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39;SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;;SHOW TABLES-- hack&#39;客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
+XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
+防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
+ 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
+   类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/web-safe/" />
+<meta property="article:published_time" content="2020-09-22T14:38:14+08:00" />
+<meta property="article:modified_time" content="2020-09-22T14:38:14+08:00" /><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Web Safe</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-09-22
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>web 安全领域中，常见的攻击方式，大概以下几种</p>
+<ul>
+<li>跨站脚本</li>
+<li>跨站伪造请求</li>
+<li>SQL 注入()</li>
+<li>文件上传漏洞</li>
+<li>分布式拒绝服务</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> uid,username <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">WHERE</span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;plhwin&#39;</span>
+
+<span style="color:#75715e">-- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> uid,username <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">WHERE</span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;plhwin&#39;</span>;<span style="color:#66d9ef">SHOW</span> TABLES<span style="color:#75715e">-- hack&#39;
+</span></code></pre></div><h2 id="客户端安全">客户端安全</h2>
+<h4 id="跨站脚本攻击-xss-cross-site-scripting">跨站脚本攻击 (xss: Cross-Site Scripting)</h4>
+<p>Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。</p>
+<p>XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。</p>
+<p>防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：</p>
+<ul>
+<li>来自用户的 UGC 信息</li>
+<li>来自第三方的链接</li>
+<li>URL 参数</li>
+<li>POST 参数</li>
+<li>Referer （可能来自不可信的来源）</li>
+<li>Cookie （可能来自其他子域注入）</li>
+</ul>
+<p>XSS 分类: 存储型、反射型和 DOM 型三种。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储区</th>
+<th>插入点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储型 XSS</td>
+<td>后端数据库</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>反射型 XSS</td>
+<td>URL</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>DOM 型 XSS</td>
+<td>后端数据库/前端存储/URL</td>
+<td>前端 JavaScript</td>
+</tr>
+</tbody>
+</table>
+<p>存储区：恶意代码存放的位置。
+插入点：由谁取得恶意代码，并插入到网页上。</p>
+<p>存储型 XSS: 攻击者将恶意代码提交到目标网站的数据库中。用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。这种攻击常见于带有用户保存数据的网站功能，如论坛发帖、商品评论、用户私信等。</p>
+<p>反射型 XSS: 攻击者构造出特殊的 URL，其中包含恶意代码。用户打开带有恶意代码的 URL 时，网站服务端将恶意代码从 URL 中取出，拼接在 HTML 中返回给浏览器。用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。反射型 XSS 跟存储型 XSS 的区别是：存储型 XSS 的恶意代码存在数据库里，反射型 XSS 的恶意代码存在 URL 里。</p>
+<p>反射型 XSS 漏洞常见于通过 URL 传递参数的功能，如网站搜索、跳转等。POST 的内容也可以触发反射型 XSS，只不过其触发条件比较苛刻（需要构造表单提交页面，并引导用户点击），所以非常少见。</p>
+<p>DOM 型 XSS: 攻击者构造出特殊的 URL，其中包含恶意代码。用户打开带有恶意代码的 URL。用户浏览器接收到响应后解析执行，前端 JavaScript 取出 URL 中的恶意代码并执行。恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。</p>
+<p>注意: DOM 型 XSS 跟前两种 XSS 的区别：DOM 型 XSS 攻击中，取出和执行恶意代码由浏览器端完成，属于前端 JavaScript 自身的安全漏洞，而其他两种 XSS 都属于服务端的安全漏洞。</p>
+<h4 id="xss-攻击的预防">XSS 攻击的预防</h4>
+<h4 id="服务端安全">服务端安全</h4>
+<ul>
+<li>sql注入</li>
+<li>文件上传漏洞</li>
+<li>访问控制</li>
+<li>应用层拒绝服务(分布式拒绝服务 doc攻击)</li>
+</ul>
+<p>严格的 CSP 在 XSS 的防范中可以起到以下的作用：</p>
+<p>禁止加载外域代码，防止复杂的攻击逻辑。
+禁止外域提交，网站被攻击后，用户的数据不会泄露到外域。
+禁止内联脚本执行（规则较严格，目前发现 GitHub 使用）。
+禁止未授权的脚本执行（新特性，Google Map 移动版在使用）。
+合理使用上报可以及时发现 XSS，利于尽快修复问题。</p>
+<h3 id="防范xss攻击">防范XSS攻击</h3>
+<ul>
+<li>XSS 防范是后端 RD 的责任，后端 RD 应该在所有用户提交数据的接口，对敏感字符进行转义，才能进行下一步操作。</li>
+<li>所有要插入到页面上的数据，都要通过一个敏感字符过滤函数的转义，过滤掉通用的敏感字符后，就可以插入到页面中</li>
+</ul>
+<p>虽然很难通过技术手段完全避免 XSS，但我们可以总结以下原则减少漏洞的产生</p>
+<ul>
+<li>利用模板引擎 开启模板引擎自带的 HTML 转义功能</li>
+<li>避免内联事件 尽量不要使用 onLoad=&quot;onload('{{data}}')&quot;、onClick=&quot;go('{{action}}')&rdquo; 这种拼接内联事件的写法。在 JavaScript 中通过 .addEventlistener() 事件绑定会更安全。</li>
+<li>避免拼接 HTML 前端采用拼接 HTML 的方法比较危险，如果框架允许，使用 createElement、setAttribute 之类的方法实现。或者采用比较成熟的渲染框架，如 Vue/React 等。</li>
+<li>时刻保持警惕 在插入位置为 DOM 属性、链接等位置时，要打起精神，严加防范。</li>
+<li>增加攻击难度，降低攻击后果 通过 CSP、输入长度配置、接口安全措施等方法，增加攻击的难度，降低攻击的后果。</li>
+<li>主动检测和发现 可使用 XSS 攻击字符串和自动扫描工具寻找潜在的 XSS 漏洞。</li>
+</ul>
+<h3 id="xss-攻击案例">XSS 攻击案例</h3>
+<h4 id="qq-邮箱-mexmailqqcom-域名反射型-xss-漏洞">QQ 邮箱 m.exmail.qq.com 域名反射型 XSS 漏洞</h4>
+<p>攻击者发现 <a href="http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb">http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb</a> 这个 URL 的参数 uin、domain 未经转义直接输出到 HTML 中。</p>
+<p>于是攻击者构建出一个 URL，并引导用户去点击：</p>
+<p><a href="http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb%26quot%3B%3Breturn+false%3B%26quot%3B%26lt%3B%2Fscript%26gt%3B%26lt%3Bscript%26gt%3Balert(document.cookie)%26lt%3B%2Fscript%26gt%3B">http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb%26quot%3B%3Breturn+false%3B%26quot%3B%26lt%3B%2Fscript%26gt%3B%26lt%3Bscript%26gt%3Balert(document.cookie)%26lt%3B%2Fscript%26gt%3B</a></p>
+<p>浏览器接收到响应后就会执行 alert(document.cookie)，攻击者通过 JavaScript 即可窃取当前用户在 QQ 邮箱域名下的 Cookie ，进而危害数据安全。</p>
+<h4 id="新浪微博名人堂反射型-xss-漏洞">新浪微博名人堂反射型 XSS 漏洞</h4>
+<p>攻击者发现 <a href="http://weibo.com/pub/star/g/xyyyd">http://weibo.com/pub/star/g/xyyyd</a> 这个 URL 的内容未经过滤直接输出到 HTML 中。</p>
+<p>于是攻击者构建出一个 URL，然后诱导用户去点击：</p>
+<p><a href="http://weibo.com/pub/star/g/xyyyd%22%3E">http://weibo.com/pub/star/g/xyyyd&quot;&gt;</a><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>用户点击这个 URL 时，服务端取出请求 URL，拼接到 HTML 响应中：</p>
+<h2 id="跨站点请求伪造csrf">跨站点请求伪造(csrf)</h2>
+<h2 id="点击劫持">点击劫持</h2>
+<h2 id="html5-安全">html5 安全</h2>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/php-array/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Php Array</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/vim-tutorial/">
+                  <span class="button__text">Vim Tutorial</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2020 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
