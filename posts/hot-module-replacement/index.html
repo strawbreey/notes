@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Hot Module Replacement ::
+        Hello Friend — A simple theme for Hugo
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
+无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
+Location.replace // 语法object.replace(url);// demodocument.location.replace(&amp;#39;https://developer.mozilla.org/en-US/docs/Web/API/Location/reload&amp;#39;);Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
+因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
+Location.assign // 语法location.assign(url);// demodocument.location.assign(&amp;#39;https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload&amp;#39;);Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
+JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand(&amp;#39;Refresh&amp;#39;)window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &amp;lt;!-- 页面自动刷新 --&amp;gt;&amp;lt;meta http-equiv=&amp;#34;refresh&amp;#34; content=&amp;#34;20&amp;#34;&amp;gt;&amp;lt;!"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/hot-module-replacement/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hot Module Replacement"/>
+<meta name="twitter:description" content="浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
+无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
+Location.replace // 语法object.replace(url);// demodocument.location.replace(&#39;https://developer.mozilla.org/en-US/docs/Web/API/Location/reload&#39;);Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
+因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
+Location.assign // 语法location.assign(url);// demodocument.location.assign(&#39;https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload&#39;);Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
+JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand(&#39;Refresh&#39;)window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &lt;!-- 页面自动刷新 --&gt;&lt;meta http-equiv=&#34;refresh&#34; content=&#34;20&#34;&gt;&lt;!"/>
+
+
+
+<meta property="og:title" content="Hot Module Replacement" />
+<meta property="og:description" content="浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
+无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
+Location.replace // 语法object.replace(url);// demodocument.location.replace(&#39;https://developer.mozilla.org/en-US/docs/Web/API/Location/reload&#39;);Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
+因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
+Location.assign // 语法location.assign(url);// demodocument.location.assign(&#39;https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload&#39;);Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
+JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand(&#39;Refresh&#39;)window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &lt;!-- 页面自动刷新 --&gt;&lt;meta http-equiv=&#34;refresh&#34; content=&#34;20&#34;&gt;&lt;!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/hot-module-replacement/" />
+<meta property="article:published_time" content="2020-09-25T10:14:13+08:00" />
+<meta property="article:modified_time" content="2020-09-25T10:14:13+08:00" /><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Hot Module Replacement</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-09-25
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h3 id="浏览器刷新页面的方法">浏览器刷新页面的方法</h3>
+<h4 id="locationreload">Location.reload</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>([<span style="color:#a6e22e">forcedReload</span>])
+
+<span style="color:#75715e">// demo
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>(<span style="color:#66d9ef">true</span>);
+</code></pre></div><p><code>forcedReload</code> 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。</p>
+<p>无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）</p>
+<h4 id="locationreplace">Location.replace</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">url</span>);
+
+<span style="color:#75715e">// demo
+</span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#39;https://developer.mozilla.org/en-US/docs/Web/API/Location/reload&#39;</span>);
+</code></pre></div><p>Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。</p>
+<p>因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。</p>
+<h4 id="locationassign">Location.assign</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">url</span>);
+
+<span style="color:#75715e">// demo
+</span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">assign</span>(<span style="color:#e6db74">&#39;https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload&#39;</span>);
+</code></pre></div><p>Location.assign  方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误</p>
+<h4 id="javascript刷新页面的几种方法">JavaScript刷新页面的几种方法</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">go</span>(<span style="color:#ae81ff">0</span>)
+  <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>()
+  <span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#a6e22e">location</span>
+  <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">location</span>)
+  document.<span style="color:#a6e22e">execCommand</span>(<span style="color:#e6db74">&#39;Refresh&#39;</span>)
+  window.<span style="color:#a6e22e">navigate</span>(<span style="color:#a6e22e">location</span>)
+  <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">location</span>)
+  document.<span style="color:#a6e22e">URL</span><span style="color:#f92672">=</span><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>
+</code></pre></div><h4 id="自动刷新页面的方法">自动刷新页面的方法</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 页面自动刷新 --&gt;</span>
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20&#34;</span>&gt;
+
+<span style="color:#75715e">&lt;!-- 页面自动跳转 --&gt;</span>
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20;url=http://www.baidu.com&#34;</span>&gt;
+
+<span style="color:#75715e">&lt;!-- js自动刷新 --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myrefresh</span>()
+{
+   window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>();
+}
+<span style="color:#a6e22e">setTimeout</span>(<span style="color:#e6db74">&#39;myrefresh()&#39;</span>,<span style="color:#ae81ff">1000</span>); <span style="color:#75715e">//指定1秒刷新一次
+</span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h3 id="浏览器更热新">浏览器更热新</h3>
+<p>Hot Module Replacement，简称HMR，无需完全刷新整个页面的同时，更新模块。HMR的好处，在日常开发工作中体会颇深：节省宝贵的开发时间、提升开发体验。</p>
+<ul>
+<li>页面刷新，不保留页面状态，就是简单粗暴，直接window.location.reload()。</li>
+<li>基于WDS (<a href="https://github.com/webpack/webpack-dev-server">Webpack-dev-server</a>)的模块热替换，只需要局部刷新页面上发生变化的模块，同时可以保留当前的页面状态，比如复选框的选中状态、输入框的输入等。</li>
+</ul>
+<h4 id="webpack-dev-server-实现原理">Webpack-dev-server 实现原理</h4>
+<p>修改代码 -&gt; webpack-dev-middleware (监听本地代码变化) -&gt; Webpack-dev-server(webpack 变化通知) -&gt; websoket通知浏览器 -&gt; 浏览器接收通知 -&gt; 使用reload 变化?</p>
+<p>首先是建立起浏览器端和服务器端之间的通信，浏览器会接收服务器端推送的消息，如果需要热更新，浏览器发起http请求去服务器端获取打包好的资源解析并局部刷新页面。</p>
+<h4 id="webpack-dev-server-在三个框架中使用情况">webpack-dev-server 在三个框架中使用情况</h4>
+<p>angular -&gt; angular-cli -&gt; webpack -&gt; webpack-dev-server
+react -&gt; angular-cli -&gt; webpack -&gt; webpack-dev-server</p>
+<p><a href="https://github.com/angular/angular/blob/3e57ca1d98ab6d263762a6e9a57512e50a1fb27e/aio/content/guide/deployment.md">angular webpack-dev-server</a></p>
+<h3 id="参考文献">参考文献</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload">Location.reload()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Location/replace">Location.replace()</a></li>
+<li><a href="https://juejin.im/post/6844904008432222215">轻松理解webpack热更新原理</a></li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="/posts/git-tutorial/">
+                  <span class="button__text">Git Tutorial</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2020 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

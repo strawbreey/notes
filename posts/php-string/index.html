@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Php String ::
+        Hello Friend — A simple theme for Hugo
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
+语法 一个字符串可以用 4 种方式表达：
+ 单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &amp;lsquo;）。
+要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
+echo &amp;#39;this is a simple string&amp;#39;;echo &amp;#39;You can also have embedded newlines in strings this way as it isokay to do&amp;#39;; // 可以录入多行echo &amp;#39;Arnold once said: &amp;#34;I\&amp;#39;ll be back&amp;#34;&amp;#39;; // 输出： Arnold once said: &amp;#34;I&amp;#39;ll be back&amp;#34; 单引号转义echo &amp;#39;You deleted C:\\*."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/php-string/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php String"/>
+<meta name="twitter:description" content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
+语法 一个字符串可以用 4 种方式表达：
+ 单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &lsquo;）。
+要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
+echo &#39;this is a simple string&#39;;echo &#39;You can also have embedded newlines in strings this way as it isokay to do&#39;; // 可以录入多行echo &#39;Arnold once said: &#34;I\&#39;ll be back&#34;&#39;; // 输出： Arnold once said: &#34;I&#39;ll be back&#34; 单引号转义echo &#39;You deleted C:\\*."/>
+
+
+
+<meta property="og:title" content="Php String" />
+<meta property="og:description" content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
+语法 一个字符串可以用 4 种方式表达：
+ 单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &lsquo;）。
+要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
+echo &#39;this is a simple string&#39;;echo &#39;You can also have embedded newlines in strings this way as it isokay to do&#39;; // 可以录入多行echo &#39;Arnold once said: &#34;I\&#39;ll be back&#34;&#39;; // 输出： Arnold once said: &#34;I&#39;ll be back&#34; 单引号转义echo &#39;You deleted C:\\*." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/php-string/" />
+<meta property="article:published_time" content="2020-09-24T15:09:55+08:00" />
+<meta property="article:modified_time" content="2020-09-24T15:09:55+08:00" /><meta property="og:site_name" content="Hello Friend" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Php String</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-09-24
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。</p>
+<h3 id="语法">语法</h3>
+<p>一个字符串可以用 4 种方式表达：</p>
+<ul>
+<li>单引号</li>
+<li>双引号</li>
+<li>heredoc 语法结构</li>
+<li>nowdoc 语法结构（自 PHP 5.3.0 起</li>
+</ul>
+<h3 id="单引号">单引号</h3>
+<p>定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &lsquo;）。</p>
+<p>要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">echo &#39;this is a simple string&#39;;
+
+echo &#39;You can also have embedded newlines in 
+strings this way as it is
+okay to do&#39;; // 可以录入多行
+
+
+echo &#39;Arnold once said: &#34;I\&#39;ll be back&#34;&#39;; // 输出： Arnold once said: &#34;I&#39;ll be back&#34;  单引号转义
+
+echo &#39;You deleted C:\\*.*?&#39;; // 输出：  You deleted C:\*.*? 单斜杠转义
+
+echo &#39;You deleted C:\*.*?&#39;; // 输出： You deleted C:\*.*?
+
+echo &#39;This will not expand: \n a newline&#39;; // 输出： This will not expand: \n a newline
+
+echo &#39;Variables do not $expand $either&#39;; // 输出： Variables do not $expand $either
+</code></pre></div><h3 id="双引号">双引号</h3>
+<p>如果字符串是包围在双引号（&quot;）中， PHP 将对一些特殊的字符进行解析：</p>
+<p>\n	换行（ASCII 字符集中的 LF 或 0x0A (10)）
+\r	回车（ASCII 字符集中的 CR 或 0x0D (13)）
+\t	水平制表符（ASCII 字符集中的 HT 或 0x09 (9)）
+\v	垂直制表符（ASCII 字符集中的 VT 或 0x0B (11)）（自 PHP 5.2.5 起）
+\e	Escape（ASCII 字符集中的 ESC 或 0x1B (27)）（自 PHP 5.4.0 起）
+\f	换页（ASCII 字符集中的 FF 或 0x0C (12)）（自 PHP 5.2.5 起）
+\	反斜线
+$	美元标记
+&quot;	双引号
+[0-7]{1,3}	符合该正则表达式序列的是一个以八进制方式来表达的字符
+\x[0-9A-Fa-f]{1,2}	符合该正则表达式序列的是一个以十六进制方式来表达的字符</p>
+<p>和单引号字符串一样，转义任何其它字符都会导致反斜线被显示出来。PHP 5.1.1 以前，{$var} 中的反斜线还不会被显示出来。</p>
+<h3 id="heredoc-结构">Heredoc 结构</h3>
+<p>第三种表达字符串的方法是用 heredoc 句法结构：&laquo;&lt;。在该运算符之后要提供一个标识符，然后换行。接下来是字符串 string 本身，最后要用前面定义的标识符作为结束标志。</p>
+<h3 id="nowdoc-结构">Nowdoc 结构</h3>
+<p>就象 heredoc 结构类似于双引号字符串，Nowdoc 结构是类似于单引号字符串的。Nowdoc 结构很象 heredoc 结构，但是 nowdoc 中不进行解析操作。这种结构很适合用于嵌入 PHP 代码或其它大段文本而无需对其中的特殊字符进行转义。与 SGML 的 <!-- raw HTML omitted --> 结构是用来声明大段的不用解析的文本类似，nowdoc 结构也有相同的特征。</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/php-array-helper/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Php Array Helper</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/php-array-practice/">
+                  <span class="button__text">Php Array Practice</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >hello friend</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2020 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

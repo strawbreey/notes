@@ -15,6 +15,165 @@
     
     
     <item>
+      <title>Hot Module Replacement</title>
+      <link>/posts/hot-module-replacement/</link>
+      <pubDate>Fri, 25 Sep 2020 10:14:13 +0800</pubDate>
+      
+      <guid>/posts/hot-module-replacement/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
+无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
+Location.replace // 语法object.replace(url);// demodocument.location.replace(&amp;#39;https://developer.mozilla.org/en-US/docs/Web/API/Location/reload&amp;#39;);Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
+因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
+Location.assign // 语法location.assign(url);// demodocument.location.assign(&amp;#39;https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload&amp;#39;);Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
+JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand(&amp;#39;Refresh&amp;#39;)window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &amp;lt;!-- 页面自动刷新 --&amp;gt;&amp;lt;meta http-equiv=&amp;#34;refresh&amp;#34; content=&amp;#34;20&amp;#34;&amp;gt;&amp;lt;!
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Tutorial</title>
+      <link>/posts/git-tutorial/</link>
+      <pubDate>Thu, 24 Sep 2020 19:29:58 +0800</pubDate>
+      
+      <guid>/posts/git-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
+其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
+Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
+  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &amp;ndash;system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
+  ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 &amp;ndash;global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
+  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &amp;ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+  每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
+查看git所有配置以及他所在的文件
+git config --list --show-origin用户信息 # 设置全局的用户信息$ git config --global user.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Array Helper</title>
+      <link>/posts/php-array-helper/</link>
+      <pubDate>Thu, 24 Sep 2020 15:45:24 +0800</pubDate>
+      
+      <guid>/posts/php-array-helper/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          获取值 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
+class User{public $name = &amp;#39;Alex&amp;#39;;}$array = [&amp;#39;foo&amp;#39; =&amp;gt; [&amp;#39;bar&amp;#39; =&amp;gt; new User(),]];$value = isset($array[&amp;#39;foo&amp;#39;][&amp;#39;bar&amp;#39;]-&amp;gt;name) ? $array[&amp;#39;foo&amp;#39;][&amp;#39;bar&amp;#39;]-&amp;gt;name : null;// or$value = ArrayHelper::getValue($array, &amp;#39;foo.bar.name&amp;#39;);// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&amp;gt;firstName . &amp;#39; &amp;#39; . $user-&amp;gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, &amp;#39;user.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php String</title>
+      <link>/posts/php-string/</link>
+      <pubDate>Thu, 24 Sep 2020 15:09:55 +0800</pubDate>
+      
+      <guid>/posts/php-string/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
+语法 一个字符串可以用 4 种方式表达：
+ 单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &amp;lsquo;）。
+要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
+echo &amp;#39;this is a simple string&amp;#39;;echo &amp;#39;You can also have embedded newlines in strings this way as it isokay to do&amp;#39;; // 可以录入多行echo &amp;#39;Arnold once said: &amp;#34;I\&amp;#39;ll be back&amp;#34;&amp;#39;; // 输出： Arnold once said: &amp;#34;I&amp;#39;ll be back&amp;#34; 单引号转义echo &amp;#39;You deleted C:\\*.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Array Practice</title>
+      <link>/posts/php-array-practice/</link>
+      <pubDate>Thu, 24 Sep 2020 14:57:21 +0800</pubDate>
+      
+      <guid>/posts/php-array-practice/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          合并两个二维数组 $arr1 = []$arr2 = []$
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Array Code Analysis</title>
+      <link>/posts/php-array-code-analysis/</link>
+      <pubDate>Thu, 24 Sep 2020 10:55:42 +0800</pubDate>
+      
+      <guid>/posts/php-array-code-analysis/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          php中, 数组既是一个连续的数组，也是K-V映射的map
+数组的定义  php 数组是一个字典，存储  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Common Code</title>
+      <link>/posts/php-common-code/</link>
+      <pubDate>Wed, 23 Sep 2020 19:53:01 +0800</pubDate>
+      
+      <guid>/posts/php-common-code/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+           分割字符串  $str = aaa,bbb,cccexplode(&amp;#39;,&amp;#39;, $str) // [aaa, bbb, ccc]数组push  array_push($arr, $new);获取对应列  array_column($arr, &amp;#39;key&amp;#39;)array_column($arr, 1)array_diff 取差  $arr = [1,2,3]$newArr = [2,3,4]array_diff($arr, $newArr) // [1]
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Sql Optimization</title>
       <link>/posts/sql-optimization/</link>
       <pubDate>Wed, 23 Sep 2020 16:36:26 +0800</pubDate>
@@ -28,7 +187,19 @@
         
         
         
-          
+          SQL语句执行步骤  语法分析&amp;gt; 语义分析&amp;gt; 视图转换 &amp;gt;表达式转换&amp;gt; 选择优化器 &amp;gt;选择连接方式 &amp;gt;选择连接顺序 &amp;gt;选择数据的搜索路径 &amp;gt;运行“执行计划”
+选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
+访问Table的方式  全表扫描
+全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
+通过ROWID访问表
+ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
+共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。 5. 选择最有效率的表名顺序
+ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。 当ORACLE处理多个表时，会运用排序及合并的方式连接它们。首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，然后扫描第二个表(FROM子句中最后第二个表)，最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。 只在基于规则的优化器中有效。 举例：
+表 TAB1 16,384 条记录
+表 TAB2 1 条记录
+/选择TAB2作为基础表 (最好的方法)/ select count(*) from tab1,tab2 执行时间0.96秒
+/选择TAB2作为基础表 (不佳的方法)/ select count(*) from tab2,tab1 执行时间26.09秒 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。
+SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
           
         
         </description>
@@ -68,7 +239,9 @@
         
         
         
-          
+          SQL INSERT INTO INSERT INTO table_name VALUES (value1, value2, value3, ...);INSERT INTO table_name (column1, column2， column3) VALUES (value1, value2, value3, ...);数据库大批量SQL插入性能优化
+ 一条SQL语句插入多条数据 在事务中进行插入 数据有序插入  从测试结果可以看到，合并数据+事务的方法在较小数据量时，性能提高是很明显的，数据量较大时（1千万以上），性能会急剧下降，这是由于此时数据量超过了innodb_buffer的容量，每次定位索引涉及较多的磁盘读写操作，性能下降较快。而使用合并数据+事务+有序数据的方式在数据量达到千万级以上表现依旧是良好，在数据量较大时，有序数据索引定位较为方便，不需要频繁对磁盘进行读写操作，所以可以维持较高的性能。
+insert-optimization
           
         
         </description>
@@ -346,7 +519,7 @@ goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行�
         
         
         
-          Install # download rediswget http://download.redis.io/releases/redis-2.8.17.tar.gz# Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录tar xzf redis-2.8.17.tar.gz # xvfzcd redis-2.8.17# makemake# servercd src./redis-server./redis-server ../redis.confUbuntu 安装 # install redisapt-get updateapt-get install redis-server# start redisredis-server# test redisredis-cli# Redis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
+          Install # download rediswget http://download.redis.io/releases/redis-2.8.17.tar.gz# Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录tar xzf redis-2.8.17.tar.gz # or xvfzcd redis-2.8.17make# servercd src./redis-server# or./redis-server ../redis.confUbuntu 安装 apt-get updateapt-get install redis-server# start redisredis-server# test redisredis-cliRedis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
 String
 SET runoob &amp;#34;菜鸟教程&amp;#34;GET runoob #菜鸟教程 一个键最大能存储512MBHash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象
           
