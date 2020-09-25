@@ -11,22 +11,20 @@ draft: false
 wget http://download.redis.io/releases/redis-2.8.17.tar.gz
 
 # Unzip  z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录
-tar xzf redis-2.8.17.tar.gz # xvfz
+tar xzf redis-2.8.17.tar.gz # or xvfz
 cd redis-2.8.17
-# make
 make
 
 # server
 cd src
 ./redis-server
-
+# or
 ./redis-server ../redis.conf
 ```
 
 #### Ubuntu 安装
 
 ```shell
-# install redis
 apt-get update
 apt-get install redis-server
 
@@ -35,8 +33,6 @@ redis-server
 
 # test redis
 redis-cli
-
-# 
 ```
 
 
