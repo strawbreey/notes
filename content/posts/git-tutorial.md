@@ -274,9 +274,12 @@ git checkout -b iss53
 git branch iss53
 git checkout iss53
 
+<<<<<<< HEAD
 # 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。
 git stash
 
+=======
+>>>>>>> 84a482716f1a162f2b4b989a7ece28cdb4ee5332
 git checkout master
 
 # 切换一个紧急分支, 并修复bug
