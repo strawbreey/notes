@@ -74,3 +74,5 @@ vi php-fpm.conf
 [CentOs 同时使用多个php版本](https://www.jianshu.com/p/600ef6e83af1)
 
 
+
+https://www.osyunwei.com/archives/5327.html

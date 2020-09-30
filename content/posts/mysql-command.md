@@ -14,3 +14,6 @@ mysqldump -u root -p ieg_waibao_test > test_db.sql;
 
 ## 登录mysql
 mysql -u root -p
+
+
+mysql -h 服务器ip地址 -P 3306 -u root -p

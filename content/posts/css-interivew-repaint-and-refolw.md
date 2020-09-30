@@ -10,7 +10,9 @@ draft: false
 
 从上面这个图上，我们可以看到，浏览器渲染过程如下：
 
-- 解析HTML，生成DOM树，解析CSS，生成CSSOM树
+- 解析HTML，生成DOM树
+
+- 解析CSS，生成CSSOM树
 
 - 将DOM树和CSSOM树结合，生成渲染树(Render Tree)
 

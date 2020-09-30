@@ -5,7 +5,7 @@ draft: false
 ---
 
 
-### 获取值
+### 获取值 getValue()
 
 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
 
@@ -43,7 +43,7 @@ $username = ArrayHelper::getValue($comment, 'user.username', 'Unknown');
 ```
 
 
-### 设置值（Setting values)
+### 设置值 setValue()
 
 ```php
 $array = [
@@ -82,7 +82,7 @@ ArrayHelper::setValue($array, 'key.in.arr0', ['arr1' => 'val']);
 ]
 ```
 
-### 删除值
+### 删除值 remove()
 
 如果你想获得一个值，然后立即从数组中删除它，你可以使用 remove 方法：
 
@@ -91,7 +91,7 @@ $array = ['type' => 'A', 'options' => [1, 2]];
 $type = ArrayHelper::remove($array, 'type');
 ```
 
-### 检查键名是否存在
+### 检查键名是否存在 keyExists
 
 ArrayHelper::keyExists 工作原理和 array_key_exists 差不多，除了 它还可支持大小写不敏感的键名比较
 
@@ -110,7 +110,7 @@ if (!ArrayHelper::keyExists('username', $data1, false) || !ArrayHelper::keyExist
 ```
 
 
-### 检索列 
+### 检索列  getColumn()
 
 通常你要从多行数据或者多个对象构成的数组中获取某列的值，一个普通的例子是获取 id 值列表。
 
@@ -130,7 +130,7 @@ $result = ArrayHelper::getColumn($array, function ($element) {
 });
 ```
 
-### 重建数组索引
+### 重建数组索引 index()
 ```php
 $array = [
     ['id' => '123', 'data' => 'abc', 'device' => 'laptop'],
@@ -152,7 +152,7 @@ $result = ArrayHelper::index($array, function ($element) {
 });
 ```
 
-### 建立哈希表 
+### 建立哈希表 map()
 
 为了从一个多维数组或者一个对象数组中建立一个映射表（键值对），你可以使用 map 方法。$from 和 $to 参数分别指定了欲构建的映射表的键名和属性名。 根据需要，你可以按照一个分组字段 $group 将映射表进行分组，例如
 
@@ -353,3 +353,7 @@ array_values(array_diff_key(ArrayHelper::index($b, key), ArrayHelper::index($a, 
 
 ```
 
+## 参考文档
+
+- [github yii](https://github.com/yiisoft/yii2/blob/master/framework/helpers/BaseArrayHelper.php)
+- [helper-array](https://www.yiiframework.com/doc/guide/2.0/zh-cn/helper-array)

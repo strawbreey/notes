@@ -225,6 +225,50 @@ $source = [1, 2, 3, 4];
 $filter = [3, 4, [5], 6];
 $result = array_diff($source, $filter);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 而这个就可以，因为对象可以转换成字符串
 class S {
   private $v;
