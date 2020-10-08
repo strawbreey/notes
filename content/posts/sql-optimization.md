@@ -27,6 +27,7 @@ RULE（基于规则）  COST（基于成本）  CHOOSE（选择性）
 Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。
 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。
 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
+
 5. 选择最有效率的表名顺序
 
 ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
@@ -55,35 +56,41 @@ SELECT * FROM EMP E, LOCATION L, CATEGORY C
 WHERE E.CAT_NO = C.CAT_NO
      AND E.LOCN = L.LOCN
      AND E.EMP_NO BETWEEN 1000 AND 2000
+
+     
 6. Where子句中的连接顺序
 
 Oracle采用自下而上的顺序解析WHERE子句。 根据这个原理,表之间的连接必须写在其他WHERE条件之前，那些可以过滤掉最大数量记录的条件必须写在WHERE子句的末尾。
 
 复制代码
+```sql
 /*低效,执行时间156.3秒*/
 SELECT … 
   FROM EMP E
 WHERE  SAL > 50000
-     AND  JOB = ‘MANAGER’
+     AND  JOB = 'MANAGER'
      AND  25 < (SELECT COUNT(*) FROM EMP
                          WHERE MGR = E.EMPNO)
-复制代码
-复制代码
+
+```
+
+```sql
 /*高效,执行时间10.6秒*/
 SELECT … 
   FROM EMP E
 WHERE 25 < (SELECT COUNT(*) FROM EMP
                         WHERE MGR=E.EMPNO)
      AND SAL > 50000
-     AND JOB = ‘MANAGER’
-复制代码
+     AND JOB = 'MANAGER'
+```
 7. SELECT子句中避免使用“*”
 
 Oracle在解析SQL语句的时候，对于“*”将通过查询数据库字典来将其转换成对应的列名。
 如果在Select子句中需要列出所有的Column时，建议列出所有的Column名称，而不是简单的用“*”来替代，这样可以减少多于的数据库查询开销。
+
 8. 减少访问数据库的次数
 
-当执行每条SQL语句时, ORACLE在内部执行了许多工作：  解析SQL语句 > 估算索引的利用率 > 绑定变量 > 读数据块等等
+当执行每条SQL语句时, ORACLE在内部执行了许多工作: 解析SQL语句 > 估算索引的利用率 > 绑定变量 > 读数据块等等
 
 由此可见, 减少访问数据库的次数 , 就能实际上减少ORACLE的工作量。
 
@@ -98,6 +105,7 @@ Oracle在解析SQL语句的时候，对于“*”将通过查询数据库字典�
 Delete表中记录的时候，Oracle会在Rollback段中保存删除信息以备恢复。Truncate删除表中记录的时候不保存删除信息，不能恢复。因此Truncate删除记录比Delete快，而且占用资源少。
 删除表中记录的时候，如果不需要恢复的情况之下应该尽量使用Truncate而不是Delete。
 Truncate仅适用于删除全表的记录。
+
 11. 尽量多使用COMMIT
 
 只要有可能,在程序中尽量多使用COMMIT, 这样程序的性能得到提高,需求也会因为COMMIT所释放的资源而减少。
@@ -108,11 +116,13 @@ COMMIT所释放的资源：
 被程序语句获得的锁
 redo log buffer 中的空间
 ORACLE为管理上述3种资源中的内部花费
+
 12. 计算记录条数
 
 Select count(*) from tablename; 
 Select count(1) from tablename; 
 Select max(rownum) from tablename;
+
  一般认为，在没有索引的情况之下，第一种方式最快。 如果有索引列，使用索引列当然最快。
 
 13. 用Where子句替换Having子句
@@ -136,11 +146,13 @@ WHERE TAB_NAME =（SELECT TAB_NAME
 复制代码
 高效：
 
+```sql
 SELECT TAB_NAME  FROM TABLES
-WHERE （TAB_NAME，DB_VER）=
-             （SELECT TAB_NAME，DB_VER
+WHERE (TAB_NAME，DB_VER)=
+             (SELECT TAB_NAME，DB_VER
                   FROM TAB_COLUMNS
-                WHERE VERSION = 604） 
+                WHERE VERSION = 604)
+```
 15. 使用表的别名（Alias）
 
 当在SQL语句中连接多个表时, 请使用表的别名并把别名前缀于每个Column上.这样一来,就可以减少解析的时间并减少那些由Column歧义引起的语法错误。
@@ -193,6 +205,7 @@ WHERE NOT EXISTS （SELECT ‘X’
 
 低效：
 
+choco install hugo -confirm
 SELECT ENAME
    FROM EMP E
 WHERE EXISTS （SELECT ‘X’ 
@@ -574,48 +587,57 @@ SELECT *
       FROM LODGING
     WHERE MANAGER = ‘BILL GATES’
            OR MANAGER = ’KEN MULLER’
+
+        
 35. CBO下使用更具选择性的索引
 
 基于成本的优化器（CBO，Cost-Based Optimizer）对索引的选择性进行判断来决定索引的使用是否能提高效率。
 如果检索数据量超过30%的表中记录数，使用索引将没有显著的效率提高。
 在特定情况下，使用索引也许会比全表扫描慢。而通常情况下，使用索引比全表扫描要块几倍乃至几千倍！
+
 36. 避免使用耗费资源的操作
 
-带有DISTINCT，UNION，MINUS，INTERSECT，ORDER BY的SQL语句会启动SQL引擎执行耗费资源的排序（SORT）功能。DISTINCT需要一次排序操作，而其他的至少需要执行两次排序。
-通常，带有UNION，MINUS，INTERSECT的SQL语句都可以用其他方式重写。
+带有`DISTINCT`，`UNION`，`MINUS`，`INTERSECT`，`ORDER BY`的SQL语句会启动SQL引擎执行耗费资源的排序（SORT）功能。`DISTINCT`需要一次排序操作，而其他的至少需要执行两次排序。
+通常，带有`UNION`，`MINUS`，`INTERSECT`的SQL语句都可以用其他方式重写。
+
+
 37. 优化GROUP BY
 
 提高GROUP BY语句的效率，可以通过将不需要的记录在GROUP BY之前过滤掉。
 
 低效：
-
- SELECT JOB ，AVG（SAL）
+```sql
+SELECT JOB ，AVG（SAL）
     FROM EMP
-  GROUP BY JOB
-HAVING JOB = ‘PRESIDENT’
-         OR JOB = ‘MANAGER’
+    GROUP BY JOB
+HAVING JOB = 'PRESIDENT'
+    OR JOB = 'MANAGER'
+```
 高效：
-
+```sql
 SELECT JOB，AVG（SAL）
-   FROM EMP
+    FROM EMP
 WHERE JOB = ‘PRESIDENT’
-        OR JOB = ‘MANAGER’
+    OR JOB = ‘MANAGER’
 GROUP BY JOB
+```
+
 38. 使用日期
 
 当使用日期时，需要注意如果有超过5位小数加到日期上，这个日期会进到下一天!
 
-复制代码
-SELECT TO_DATE（‘01-JAN-93’+.99999）
+```sql
+SELECT TO_DATE('01-JAN-93' + .99999）
   FROM DUAL
-Returns：
-’01-JAN-93 23:59:59’
+Returns:
+'01-JAN-93 23:59:59'
 
-SELECT TO_DATE（‘01-JAN-93’+.999999）
+SELECT TO_DATE('01-JAN-93' + .999999）
   FROM DUAL
-Returns：
-’02-JAN-93 00:00:00’
-复制代码
+Returns:
+'02-JAN-93 00:00:00'
+```
+
 39. 使用显示游标(CURSORS)
 
 使用隐式的游标，将会执行两次操作。第一次检索记录，第二次检查TOO MANY ROWS 这个exception。而显式游标不执行第二次操作。
