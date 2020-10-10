@@ -21,6 +21,17 @@ x = 执行权限 (1)
 755 rwxr-xr-x
 777 rwxrwxrwx
 
+
+### 添加软链接
+
+```shell
+# /sub/uploads 添加 /uploads 软链接
+ln -s  /uploads /sub/uploads
+
+# 修改权限
+chmod -R 777 uploads
+```
+
 ## Quote
 
 

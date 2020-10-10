@@ -70,6 +70,7 @@ vi php-fpm.conf
 
 
 /usr/local/php56/bin/phpize  ./configure  --with-php-config=/usr/local/php56/bin/php-config
+
 ## quote
 [CentOs 同时使用多个php版本](https://www.jianshu.com/p/600ef6e83af1)
 
