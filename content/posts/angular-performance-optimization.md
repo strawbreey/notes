@@ -39,7 +39,7 @@ Angular的性能好坏就和每一次Change Detection周期的执行时间长短
 
 
 ### nginx缓存
-```conf
+```shell
 events {
   #的最大连接数（包含所有连接数）1024
   worker_connections  1024;  ## Default: 1024
@@ -48,7 +48,10 @@ events {
 http{
  
    # 代理缓存配置 nginx根目录指定缓存文件夹 kawa_cachedata名字自己定义跟proxy_cache_path对应上
-   proxy_cache_path "./kawa_cachedata"  levels=1:2 keys_zone=kawacache:256m inactive=1d max_size=1000g;
+   proxy_cache_path "./kawa_cachedata"  levels=1:2 keys_zone=kawacache:256m inactive=1d 
+   
+   max_size=1000g;
+
    server {
      listen 80;
      location /{

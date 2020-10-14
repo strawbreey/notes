@@ -10,8 +10,11 @@ WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based 
 
 
 ### Efficient and fast
+
 ### Safe
+
 ### Open and debuggable
+
 ### Part of the open web platform
 
 

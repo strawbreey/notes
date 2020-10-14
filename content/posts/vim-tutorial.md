@@ -4,9 +4,19 @@ date: 2020-09-22T10:41:46+08:00
 draft: false
 ---
 
+在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了
+
+### 为什么要学vim
+
+- 所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在；
+- 很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)；
+- vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计；
+- 因为程序简单，编辑速度相当快速
+
 基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 
 
 ![vi-vim-cheat-sheet-sch](/images/vi-vim-cheat-sheet-sch.gif)
+
 
 #### 命令模式：
 

@@ -32,5 +32,4 @@ git clone https://github.com/gohugoio/hugo.git
 cd hugo
 # Remove --tags extended if you do not want/need Sass/SCSS support.
 go install --tags extended
-
 ```

@@ -31,41 +31,53 @@ Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓�
 5. 选择最有效率的表名顺序
 
 ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
-当ORACLE处理多个表时，会运用排序及合并的方式连接它们。首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，然后扫描第二个表(FROM子句中最后第二个表)，最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
+
+当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
+
+首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
+
+然后扫描第二个表(FROM子句中最后第二个表)，
+
+最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
+
 只在基于规则的优化器中有效。
 举例：
 
 表 TAB1 16,384 条记录
 
 表 TAB2 1 条记录
-
-   /*选择TAB2作为基础表 (最好的方法)*/
+```sql
+  -- 选择TAB2作为基础表 (最好的方法)
   select count(*) from tab1,tab2   执行时间0.96秒
   
-   /*选择TAB2作为基础表 (不佳的方法)*/
+  -- 选择TAB2作为基础表 (不佳的方法)
   select count(*) from tab2,tab1   执行时间26.09秒
-如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。
+  
+  -- 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。
 
-SELECT * FROM LOCATION L, CATEGORY C, EMP E 
-WHERE E.EMP_NO BETWEEN 1000 AND 2000
-     AND E.CAT_NO = C.CAT_NO
-     AND E.LOCN = L.LOCN
-将比下列SQL更有效率
+  SELECT * FROM LOCATION L, CATEGORY C, EMP E 
+          WHERE E.EMP_NO BETWEEN 1000 AND 2000
+              AND E.CAT_NO = C.CAT_NO
+              AND E.LOCN = L.LOCN
+  
+  -- 将比下列SQL更有效率
 
-SELECT * FROM EMP E, LOCATION L, CATEGORY C
-WHERE E.CAT_NO = C.CAT_NO
-     AND E.LOCN = L.LOCN
-     AND E.EMP_NO BETWEEN 1000 AND 2000
-
+  SELECT * FROM EMP E, LOCATION L, CATEGORY C
+  WHERE E.CAT_NO = C.CAT_NO
+      AND E.LOCN = L.LOCN
+      AND E.EMP_NO BETWEEN 1000 AND 2000
+```
      
 6. Where子句中的连接顺序
 
-Oracle采用自下而上的顺序解析WHERE子句。 根据这个原理,表之间的连接必须写在其他WHERE条件之前，那些可以过滤掉最大数量记录的条件必须写在WHERE子句的末尾。
+Oracle采用自下而上的顺序解析WHERE子句。 
+
+根据这个原理, 表之间的连接必须写在其他WHERE条件之前，那些可以过滤掉最大数量记录的条件必须写在WHERE子句的末尾。
 
 复制代码
 ```sql
-/*低效,执行时间156.3秒*/
-SELECT … 
+-- 低效,执行时间156.3秒
+SELECT *
   FROM EMP E
 WHERE  SAL > 50000
      AND  JOB = 'MANAGER'
@@ -75,18 +87,19 @@ WHERE  SAL > 50000
 ```
 
 ```sql
-/*高效,执行时间10.6秒*/
-SELECT … 
+-- 高效,执行时间10.6秒
+SELECT *
   FROM EMP E
 WHERE 25 < (SELECT COUNT(*) FROM EMP
                         WHERE MGR=E.EMPNO)
      AND SAL > 50000
      AND JOB = 'MANAGER'
 ```
-7. SELECT子句中避免使用“*”
+7. SELECT子句中避免使用"*"
 
-Oracle在解析SQL语句的时候，对于“*”将通过查询数据库字典来将其转换成对应的列名。
-如果在Select子句中需要列出所有的Column时，建议列出所有的Column名称，而不是简单的用“*”来替代，这样可以减少多于的数据库查询开销。
+Oracle在解析SQL语句的时候，对于"*"将通过查询数据库字典来将其转换成对应的列名。
+
+如果在Select子句中需要列出所有的Column时，建议列出所有的Column名称，而不是简单的用"*"来替代，这样可以减少多于的数据库查询开销。
 
 8. 减少访问数据库的次数
 
@@ -96,38 +109,50 @@ Oracle在解析SQL语句的时候，对于“*”将通过查询数据库字典�
 
 9. 整个简单无关联的数据库访问
 
-如果有几个简单的数据库查询语句，你可以把它们整合到一个查询中（即使它们之间没有关系），以减少多于的数据库IO开销。
+如果有几个简单的数据库查询语句，你可以把它们整合到一个查询中（即使它们之间没有关系），以减少多余的数据库IO开销。
 
 虽然采取这种方法，效率得到提高，但是程序的可读性大大降低，所以还是要权衡之间的利弊。
 
 10. 使用Truncate而非Delete
 
-Delete表中记录的时候，Oracle会在Rollback段中保存删除信息以备恢复。Truncate删除表中记录的时候不保存删除信息，不能恢复。因此Truncate删除记录比Delete快，而且占用资源少。
+Delete表中记录的时候，Oracle会在Rollback段中保存删除信息以备恢复。
+
+Truncate删除表中记录的时候不保存删除信息，不能恢复。因此Truncate删除记录比Delete快，而且占用资源少。
+
 删除表中记录的时候，如果不需要恢复的情况之下应该尽量使用Truncate而不是Delete。
+
 Truncate仅适用于删除全表的记录。
 
 11. 尽量多使用COMMIT
 
-只要有可能,在程序中尽量多使用COMMIT, 这样程序的性能得到提高,需求也会因为COMMIT所释放的资源而减少。
+只要有可能,在程序中尽量多使用COMMIT, 这样程序的性能得到提高, 需求也会因为COMMIT所释放的资源而减少。
 
 COMMIT所释放的资源：
 
 回滚段上用于恢复数据的信息.
-被程序语句获得的锁
-redo log buffer 中的空间
+
+被程序语句获得的锁 redo log buffer 中的空间
+
 ORACLE为管理上述3种资源中的内部花费
 
 12. 计算记录条数
 
+ 一般认为，在没有索引的情况之下，第一种方式最快。 如果有索引列，使用索引列当然最快。
+
+```sql
 Select count(*) from tablename; 
 Select count(1) from tablename; 
 Select max(rownum) from tablename;
+```
 
- 一般认为，在没有索引的情况之下，第一种方式最快。 如果有索引列，使用索引列当然最快。
 
 13. 用Where子句替换Having子句
 
-避免使用HAVING子句，HAVING 只会在检索出所有记录之后才对结果集进行过滤。这个处理需要排序、总计等操作。 如果能通过WHERE子句限制记录的数目，就能减少这方面的开销。
+避免使用HAVING子句，HAVING 只会在检索出所有记录之后才对结果集进行过滤。
+
+这个处理需要排序、总计等操作。 
+
+如果能通过WHERE子句限制记录的数目，就能减少这方面的开销。
 
 14. 减少对表的查询操作
 
@@ -135,7 +160,7 @@ Select max(rownum) from tablename;
 
 低效：
 
-复制代码
+```sql
 SELECT TAB_NAME  FROM TABLES
 WHERE TAB_NAME =（SELECT TAB_NAME
                            FROM TAB_COLUMNS
@@ -143,9 +168,9 @@ WHERE TAB_NAME =（SELECT TAB_NAME
      AND DB_VER =（SELECT DB_VER
                            FROM TAB_COLUMNS
                          WHERE VERSION = 604） 
-复制代码
-高效：
+```
 
+高效：
 ```sql
 SELECT TAB_NAME  FROM TABLES
 WHERE (TAB_NAME，DB_VER)=
@@ -163,21 +188,26 @@ Column歧义指的是由于SQL中不同的表具有相同的Column名,当SQL语�
 
 在许多基于基础表的查询中，为了满足一个条件 ，往往需要对另一个表进行联接。在这种情况下，使用EXISTS(或NOT EXISTS)通常将提高查询的效率。
 
-低效：
-
-SELECT * FROM EMP (基础表)
+```sql
+SELECT * FROM EMP
 WHERE EMPNO > 0
       AND DEPTNO IN (SELECT DEPTNO 
-                          FROM DEPT 
-                        WHERE LOC = ‘MELB’)
+                        FROM DEPT 
+                        WHERE LOC = 'MELB')
+```
+
 高效：
 
-SELECT * FROM EMP (基础表)
+```sql
+SELECT * FROM EMP
 WHERE EMPNO > 0
-     AND EXISTS (SELECT ‘X’ 
+     AND EXISTS (SELECT 'X'
                       FROM DEPT 
-                    WHERE DEPT.DEPTNO = EMP.DEPTNO
-                                 AND LOC = ‘MELB’)
+                      WHERE DEPT.DEPTNO = EMP.DEPTNO
+                            AND LOC = 'MELB')
+```
+
+
 17. 用NOT EXISTS替代NOT IN
 
 在子查询中，NOT IN子句将执行一个内部的排序和合并，对子查询中的表执行一个全表遍历，因此是非常低效的。
@@ -185,20 +215,22 @@ WHERE EMPNO > 0
 为了避免使用NOT IN，可以把它改写成外连接（Outer Joins）或者NOT EXISTS。
 
 低效：
-
+```sql
 SELECT …
-  FROM EMP
-WHERE DEPT_NO NOT IN （SELECT DEPT_NO 
+    FROM EMP
+    WHERE DEPT_NO NOT IN (SELECT DEPT_NO 
                               FROM DEPT 
-                          WHERE DEPT_CAT=’A’） 
+                              WHERE DEPT_CAT='A')
+```
 高效：
-
-SELECT ….
+```sql
+SELECT *
   FROM EMP E
-WHERE NOT EXISTS （SELECT ‘X’ 
+WHERE NOT EXISTS （SELECT 'X'
                        FROM DEPT D
                     WHERE D.DEPT_NO = E.DEPT_NO
-                                  AND DEPT_CAT = ‘A’） 
+                                  AND DEPT_CAT = 'A'） 
+```
 18. 用表连接替换EXISTS
 
 通常来说 ，采用表连接的方式比EXISTS更有效率 。
