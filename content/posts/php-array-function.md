@@ -8,17 +8,18 @@ draft: true
 
 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
 
-// 参数  array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER（默认值）。
+// 参数  array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。
 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
 
 ```php
 $input_array = array("FirSt" => 1, "SecOnd" => 4);
-print_r(array_change_key_case($input_array, CASE_UPPER));
+
+array_change_key_case($input_array, CASE_LOWER);
 
 // Array
 // (
-//     [FIRST] => 1
-//     [SECOND] => 4
+//     [first] => 1
+//     [second] => 4
 // )
 ```
 

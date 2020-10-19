@@ -72,7 +72,9 @@ git config user.email "2675882608@qq.com"
 # 删除分支
  
 ```shell
+
 git branch -d [branch-name]
+
 ``` 
  
  
@@ -85,7 +87,6 @@ git branch -dr [remote/branch]
 
 
 ## gh-pages 分之
-
 
 
 ```shell
