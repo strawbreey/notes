@@ -456,6 +456,114 @@ Where is Dr.Browne
 
 布朗去哪儿了
 
+07:27
+
+Here's your liver
+
+这是你要的肝源
+
+I'm goning to need (我需要) you to sign for it
+
+需要你的签字
+
+Standard operating procedure (程序, 流程) is the leave the liver
+
+标准流程是要把肝源留在
+
+in he safety of the body cavity (体内)
+
+捐献者的体内
+
+I'm aware of the procedure
+
+我知道流程
+
+we had a John Doe (无名氏, 某人) at the top of the rigistry
+
+本来有一个人排在移植名单的前面
+
+but that John Doe died before we cloud plant (植物, 栽种, 种植)
+
+但他在移植前死了
+
+How long ago did you take it out 
+
+你取出他来多久了
+
+Three hours
+
+We just lost three hours
+
+我们失去了三个小时时间
+
+Technically three hours and five minutes
+
+准确上来说是三个小时零五分钟
+
+True clock is on the cooker (箱子).
+
+冷藏箱上有准确时间
+
+Can't go below 39 degrees or above 47 degerees 
+
+不能低于39华摄氏度且不能高度47摄氏度
+
+you want to sign for it 
+
+可以签字了吗
+
+Tissue （组织） look healthy
+
+组织看起来很健康
+
+what are you doing 
+
+你在做什么
+
+What are you looking for ?
+
+你在找什么 ？
+
+What's he doing ? I'm not sure
+
+他在干什么， 我不确定
+
+Shaun, what are you looking for 
+
+Shaun, 你在找什么
+
+Masses? Cysts
+
+肿块还是蘘肿
+
+They're clen
+
+他们没问题
+
+You think we'd miss a tumor
+
+你是认为我们会漏掉肿瘤吗
+
+There's nothing there
+
+没有问题
+
+I Know
+
+我知道
+
+There nothing there
+
+没有问题
+
+Okay, the liver needs to back into clod storage
+
+好了，得把肝脏放回冷藏箱
+
+
+and we got to go.
+
+我们的刚快走了
 
 
 
