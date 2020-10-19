@@ -281,10 +281,13 @@ git checkout master
 
 # 切换一个紧急分支, 并修复bug
 git checkout -b hotfix
+
 # 切回master
 git checkout master
+
 # 合并hotfix分支
 git merge hotfix
+
 # 删除hotfix分支
 git branch -d hotfix
 
@@ -293,6 +296,19 @@ git checkout iss53
 git checkout master
 git merge iss53
 git branch -d iss53
+
+# 查看所有分支
+git branch -a
+
+# 切换远程分支
+# git checkout -b 本地分支名 origin/远程分支名
+git checkout -b test origin/test
+
+
+# 将本地分支推送到远程
+# git push <远程主机名> <本地分支名>:<远程分支名>
+git push -u origin dev:release/caigou_v1.0
+
 ```
 
 

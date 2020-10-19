@@ -6,7 +6,7 @@ draft: true
 
 良医 第一季 第三集 01:35
 
-so I'm in the middle of "Uncharted", and I'm dead
+so I'm in the middle of (正忙于) "Uncharted", and I'm dead
 
 我正在玩无人之地，但是没电了
 

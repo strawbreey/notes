@@ -4,7 +4,7 @@ date: 2020-08-31T15:11:27+08:00
 draft: true
 ---
 
-删除commit提交记录
+### 删除commit提交记录
 
 ```shell
   # Checkout
@@ -26,7 +26,7 @@ draft: true
   git push -f origin master;
 ```
 
-撤销上一次的commit
+### 撤销上一次的commit
 
 ```shell
   git reset --hard HEAD^ 
