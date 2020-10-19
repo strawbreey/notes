@@ -566,6 +566,238 @@ and we got to go.
 我们的刚快走了
 
 
+08:34
+
+then I'll release the vascular (血管) clamp (夹子)
+
+然后我会放开血管钳
+
+and let your blood perfuse (灌注) in your donor (捐赠者) liver
+
+让你的血液注入到移植的肝脏里
+
+That's it ? Connect the bile ducts
+
+就这样吗? 连接胆管
+
+sew you up, and then we want
+
+缝合, 然后等待一段时间
+
+Does the new one always take ?
+
+新器官都能适应吗?
+
+Over 70% of the time
+
+70% 以上
+
+Oh, I can live with those odds (可能性)
+
+哦，我能接受这种可能性
+
+You get some rest
+
+好好休息
+
+See you later 
+
+待会见
+
+8:50
+
+He looks at something. I don't know what he's looking at .
+
+我盯着某些东西，我不知道他在看什么
+
+Is he, you know, is... is he curious ?
+
+他是在好奇吗 ？
+
+Is he concerned ? He won't answer me 
+
+还是担心，他重来不回答我的问题
+
+You're having trouble communicating with him
+
+你和他沟通有困难
+
+It's a weekday, It's Shaun
+
+工作日里的肖恩
+
+Hm, let's see. That seems about right
+
+再看看吧, 看起来没什么问题
+
+He seemed different at the hospital.
+
+他看起来和在医院里不一样
+
+I could kind of talk to him
+
+在医院我们还能交流
+
+Well, he knows what to expect in the hospital
+
+他知道在医院里会发生什么
+
+Outside, everything' different. Everything's new
+
+但是外面不一样, 对他来说, 到处都是新事物
+
+New stimuli (刺激)
+
+新刺激
+
+So, what do I do ?
+
+那, 我该做什么
+
+I don't know what he's thinking
+
+我不知道他在想什么
+
+Claire, you're not gonna (即将，将要，即going to) figure out (计算出; 弄明白; 解决; 想出) what he's thinking.
+
+Claire, 你不会知道她在想什么的
+
+so don't even (甚至; 更加; 甚至可以说) try
+
+所以也不必尝试了
+
+In fact, if he's thinking about something in his own mind
+
+如果她在想什么东西
+
+just let him be
+
+就随他去好了
+
+I'd appreciate it if people gave me the same courtesy (礼貌; 客气话; 尊称)
+
+如果有人也能这么对我，我一定很感激
+
+I thought with your history
+
+我想用你以前
+
+Claire if you want to connect with him
+
+claire 如果你想和他交流
+
+you're gonna hava to figure out you own way in
+
+得找到自己的方式
+
+How's Chunk
+
+Chunk 怎么样了
+
+
+chunk ? chunk he's fine
+
+He's waiting for a liver
+
+他在等着肝源
+
+So come home , please
+
+所以, 快回来吧
+
+Okay
+
+09:37
+
+Doctor ?
+
+医生
+
+what's up ?
+
+什么事？
+
+I just wanted to thank you 
+
+我只是想谢谢你
+
+I haven't done anything yet
+
+我还什么都没做呢
+
+you have 
+
+你已经做了
+
+You've given my dad hope
+
+你给了我爸爸希望
+
+09:52
+
+you know, chuck was my first patient
+
+chuck 是我第一个病人
+
+sex months ago, first day at St.Bonaventure
+
+六个月前, 我来St.Bonaventure 的第一天
+
+I get a liver failure
+
+收到一位肾衰竭的病人
+
+And the nicest guy in the world
+
+他是世界上最善良的人
+
+I wanted to be the one to give him the good news.
+
+我想成为那个给他带来好消息的人
+
+We're not leaving
+
+我们走不了了
+
+you said you liked helicopters
+
+你刚刚还说你喜欢直升机
+
+We are not leaving
+
+我们走不了了
+
+We... we made it here safe
+
+这架直升机很安全
+
+we are not leaving
+
+Fog's rolling in too quick
+
+雾迅速弥漫开来
+
+Does that mean it rolls out quick ?
+
+是不是说明也会迅速散开
+
+Could be an hour, Cloud be three
+
+可能一个小时, 可能三个小时
+
+Don't know
+
+还不确定
+
+Okey, uh...we're gonna need a new ride
+
+好吧， 我们需要新的交通工具
+
+10:34
+
+
+
+
 
 
 
