@@ -795,6 +795,151 @@ Okey, uh...we're gonna need a new ride
 
 10:34
 
+Excuse me! I need na ambulance (救护车) to St. Bonaventure.
+
+打扰一下, 我需要一辆去St. bonaventure 的救护车
+
+Sorry, I just don't have the EMS
+
+抱歉, 我们不提供邮政服务
+
+I' ve got a plie-up on I-80 and four other vehicles out on call
+
+在80号州际公路，有数车相撞, 还有四辆车待命
+
+Not one ambulance 
+
+没有一辆救护车了吗?
+
+Let me be clear... this is emergent
+
+我明确一点，这是紧急情况
+
+It's time sensitive  (敏感的)
+
+刻不容缓
+
+Honey, this ain't Hertz.
+
+这里不是Hertz
+
+what about a police escort (护送)
+
+可以叫俩警车吗
+
+That can be arranged
+
+这可以安排
+
+
+11:00
+
+Don't want to ruin the festivities (气氛)
+
+不是想破环这气氛
+
+But if I cloud just get a few minutes with my patient, alone
+
+但我得和我的病人单独待一会
+
+How we doing today
+
+今天感觉咋样 ?
+
+Incomplete 
+
+不完美
+
+Let's see what we can do about that
+
+那我们来看看有什么能做的
+
+Look here
+
+看这儿
+
+Well, looking not too bad considering we cut out a tumor
+
+考虑到我们在不到两周前切除了肿瘤
+
+less than two weeks ago
+
+看起来还不算太坏
+
+Yeah, I've been walking around with a hole in my mouth
+
+我一直带着他四处游荡
+
+Ever drink scotch with a hole in your mouth
+
+你试过嘴上带着伤口喝酒吗?
+
+Waste of good Scotch
+
+真是浪费好酒
+
+We needed to give it time to heal
+
+需要时间治愈
+
+Yeah, yeah, You told me
+
+是的，你跟我说过了
+
+Have you continued to smoke
+
+你还继续抽烟吗
+
+It constricts the vessels, shows the healing.
+
+抽烟会收缩血管,减缓愈合速度
+
+I'm not a quitter
+
+我没戒烟
+
+We are going to graft some skin from your leg
+
+我们要从你的腿上移植一些皮肤
+
+and fix that cheek up better than new 
+
+修好你的脸蛋,焕然一新
+
+I'm a real estate guy
+
+我是个房地产商
+
+There's an old saying, you can have it fast
+
+有句老话，你做的这么快
+
+you can have it good, you can have it cheap
+
+要么优质，要么廉价
+
+pick two
+
+二选一
+
+It's not gonna be cheap
+
+肯定不会是廉价的
+
+I like doctors like you
+
+我喜欢你这样的医生
+
+you're good, and you know it
+
+你是好医生, 自己知道
+
+12:20
+
+
+
+
+
 
 
 
