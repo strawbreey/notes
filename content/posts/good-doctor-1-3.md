@@ -934,16 +934,128 @@ you're good, and you know it
 
 你是好医生, 自己知道
 
-12:20
+12:20  -> 2020/10/21:23:53
+
+Yes, It was harvested before we got there
+
+是的, 我们到那之前就摘除了
+
+We're waiting for transportation
+
+我们正在等送我们回去
+
+The itinerary and the life clock have changed
+
+行程和存活时间都有所改变
+
+Yeah, uh...Four hours and 14 minutes
+
+4小时14分钟
+
+Excuse me ! Are you talking  to the hospital
+
+打扰一下，你在和医院通话吗?
+
+Have someone tell Dr.Glassman that i might
+
+让人和Dr.Glassman 说说我的午餐
+
+be late for our lunch, please
+
+可能会迟到, 拜托了
+
+Yeah, Okey
+
+好的
+
+So, how did you know about the weather
+
+你怎么知道天气有变
+
+Is it some kind of gift
+
+是某种天赋吗
+
+Come on, I got to know 
+
+跟我说说嘛，我想知道
+
+What,lk shaun Murphy is zeus
+
+难道你是宙斯吗
+
+I whtch the weather Channel
+
+我看了天气预报
+
+You my doctors 
+
+你是我要送的医生吗
+
+Shaun ,we got to go
+
+Shaun, 我们的走了
+
+13:29
+
+You're home
+
+你们回家了
+
+You dad and mon had a tough night
+
+你父母忙活一晚上
+
+with you borther and all
+
+因为你弟弟的事
+
+Come on, let's go
+
+来吧, 我们走
+
+He...He promised me!
+
+他, 他答应我的
+
+13:53
+
+I think we'll get there much quicker if we drive, Shaun
+
+如果坐车的华，我们能快点到, Shaun
+
+Cloud you trun off the flashers, please ?
+
+你能关闭闪关灯吗?
+
+What the patient's name
+
+病人叫什么
+
+I told you, It's chunk
+
+我跟你说过了，Chunk
+
+No, No
+
+不是
+
+No, The... The donor
+
+不是，这个捐献者
+
+What's his name ?
+
+他叫什么名字
+
+What, the liver
+
+什么, 捐肝者
+
+Oliver ?
 
 
-
-
-
-
-
-
-
+14:40 
 
 
       
