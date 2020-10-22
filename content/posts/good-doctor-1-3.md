@@ -984,7 +984,7 @@ What,lk shaun Murphy is zeus
 
 难道你是宙斯吗
 
-I whtch the weather Channel
+I watch the weather Channel
 
 我看了天气预报
 
