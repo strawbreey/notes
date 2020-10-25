@@ -14,3 +14,4 @@ rpc
 [Remote Procedure Call](/pages/remote-procedure-call)
 [gRPC](https://en.wikipedia.org/wiki/GRPC)
 [深入剖析通信层和 RPC 调用的异步化](https://juejin.im/post/6844903761794564104)
+[](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1358237826197962753&__biz=MzUzNTY5MzU2MA==#wechat_redirect)

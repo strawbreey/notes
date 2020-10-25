@@ -1553,3 +1553,221 @@ you are genius
 你是天才
 
 21:55
+
+you don't like the cafeteria food ?
+
+你不喜欢食堂的饭吗
+
+They only make one thing well
+
+他们只有一样东西做的好
+
+What does it say when the staff sees the President of the hospital not eating their cafeteria food
+
+当员工看见院长没吃食堂的饭会怎么想
+
+Well, it says the president of the hospital isn't allowed in the kitchen
+
+这说明院长不允许进入餐厅
+
+You sat down. What can i do for you ?
+
+你坐下， 我能为你做什么
+
+I'd like you advice
+
+我想听听你的意见
+
+Where's Aoki, Did she die ?
+
+Aoki 呢， 她不在吗
+
+This was a mistake 
+
+这是个错误？
+
+That's insulting (失礼), Sit down
+
+这样很失礼, 坐下
+
+At least hear what I have to say
+
+至少听听我想说什么
+
+and then decide it's bad advice, sit
+
+然后决定是不是坏的建议
+
+Aoki is pushing Melendez on me for the VIP
+
+Aoki 把Molendez 推荐我去做VIP手术
+
+Ah, You didn't get the e-mail blast
+
+你没收到电子邮件的轰炸
+
+Rich people aren't allowed to die in this hospital
+
+富人不能死在医院里
+
+
+You're not the young star anymore
+
+你不再是明日之星
+
+Melendez is
+
+Melendez 是
+
+I know that
+
+我知道
+
+Any you're upset (沮丧的) about the why
+
+那你还对此苦恼
+
+Why does Aoki think that
+
+为什么Aoki 这么认为
+
+You should be asking "who"
+
+你应该问谁
+
+"who"? I know who. menlendez
+
+谁, 我知道是谁，menlendez
+
+Who are you
+
+你是谁
+
+Are you a chief who wants to be to surgeon
+
+你想当顶级的外科医生主任
+
+
+or are you a Chief who wants to be president
+
+或者你想做医院代表的主任
+
+Cause if it's the latter, take you ego (自负) shove it in a cupboard somewhere
+
+如果是后者, 收起你的自负, 塞进橱柜
+
+and start acting prisidential
+
+表现像个院长的样子
+
+23：04
+
+Dr.Melendez is going to argue to the board that you get this liver
+
+Melendez 正在和董事会沟通, 争取帮你获得肝脏
+
+And I think it's a pretty good argument
+
+我认为胜算很大
+
+Do I deserve it
+
+我值得吗
+
+I'm not sure that's relevant
+
+我认为与此无关
+
+You know...when you're dying
+
+当人快死的时候
+
+and I've been dying for a long time
+
+我已经临死很久了
+
+you start think about the you lift
+
+你开始思考你的人生
+
+I haven't led a great one 
+
+我过得并不如意
+
+I could've been a better dad
+
+我本该是一个好父亲
+
+a better man
+
+一个好丈夫
+
+New flash, I drank too much
+
+新闻快讯，我曾今酗酒
+
+You know, I also have a som
+
+我还有一个儿子
+
+Yeah, First marriage
+
+I haven't seen him in three years
+
+我已经三年没见过他了
+
+Geting a liver is not a second chance
+
+获得肝脏并不是第二次机会
+
+and It's not a reward for being perfect
+
+不是做好的奖赏
+
+It's just what we can do
+
+那就是我们能做的事
+
+Maybe
+
+可能吧
+
+But on the registry
+
+但是在移植登记系统里
+
+all of us wait in line together
+
+我们所有人一起排队
+
+
+And I see these...
+
+我看到这些
+
+these people here, waiting
+
+这些人在这等待
+
+I know their face
+
+我知道他们的脸
+
+Even their names
+
+甚至是他们的名字
+
+They have all stories
+
+他们都有自己的故事
+
+We're in it together
+
+我们都在等
+
+And I... I broke the...
+
+但是, 我破坏了
+
+24:42
+

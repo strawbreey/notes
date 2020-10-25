@@ -53,3 +53,9 @@ draft: true
 
 
 - [19CS小硕校招面试心得、自学CS经验及找工作分享](https://zhuanlan.zhihu.com/p/108911948)
+
+- [MIT的课表](http://catalog.mit.edu/degree-charts/computer-science-engineering-course-6-3/)
+
+- [如何评价 Scott H.Young 一年内自学完 MIT 计算机专业的全部 33 门课程？](https://www.zhihu.com/question/20571226)
+
+- [How Much Can You Change Yourself?](https://www.scotthyoung.com/blog/)
