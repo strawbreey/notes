@@ -38,3 +38,18 @@ draft: true
 
 - Java编程语言
 - Python核心编程
+
+### 计算机导论
+
+- [MIT 6.0001](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/) 
+
+- [Harvard的CS50](https://cs50.harvard.edu/college/2020/fall/)
+
+- [Berkeley的CS61A](https://cs61a.org/)
+
+
+
+- [每天一本编程书，每天进步一点点](https://salttiger.com/)
+
+
+- [19CS小硕校招面试心得、自学CS经验及找工作分享](https://zhuanlan.zhihu.com/p/108911948)

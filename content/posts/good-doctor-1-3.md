@@ -1055,7 +1055,501 @@ What, the liver
 Oliver ?
 
 
-14:40 
+14:40  2020/10/22 23:26
+
+Hey, you got a second
+
+你有空吗
+
+What's up ?
+
+什么事
+
+Just waiting on a liver
+
+只是在等肝脏捐赠者
+
+Transplant Everyone wants in
+
+移植手术, 每个人都想参与
+
+They'd trade (交易) their liver to do the liver
+
+用一个人的肝脏救活另一个人
+
+hey, look uh
+
+听着
+
+you want some help on the Free-Flap
+
+在游离瓣手术上，你需要什么帮助吗
+
+What's his name
+
+他叫什么来着
+
+Wannnamker. right
+
+Wannamaker, 没错
+
+you got the transplant
+
+你争取到移植手术
+
+That should keep any attending busy
+
+每个主治医生都应该会为此忙碌
+
+Well, I can make time
+
+我会挤出时间来的
+
+Aoki come to you about this
+
+青木让你来的吧
+
+Look, I get it. You're the Chief
+
+听着, 我理解, 你是主任
+
+That's right
+
+没错
+
+Look, this...this isn't a coup
+
+这不是什么政变
+
+What is it
+
+那是什么
+
+It's about making sure this hospital is first
+
+这是为了确保这家医院排在
+
+on Wannamaker's donnation list
+
+Wannamaker 捐赠名单的第一
+
+I'm aware of the stakes 
+
+其中的利害我很清楚
+
+Thank you coming by
+
+感谢你过来
+
+You know, it doesn't make you any less of a surgeon
+
+让我在手术中当你助手
+
+having me in there as you second 
+
+不会让你的地位有所下降
+
+I'm the Chief, you're my attending
+
+我是主任，你是我的主治医生
+
+Can't argue with that
+
+无法反驳
+
+And we both know what your presence in my O.R will say That's not my interntion
+
+我们都知道你如果出现在我的手术室会引起非议
+
+It's the impact (影响), Intention doesn't matter
+
+这是必然结果, 本意如何无所谓
+
+Thank... but I'm goog
+
+谢啦，但还是算了吧
+
+15:45
+
+These can't be right
+
+这不可能啊
+
+Whatever it is, It's right
+
+无论如何,这是你要的结果
+
+Chunk's labs
+
+Chunk's 的化验结果
+
+It's got to be a false flag or a bad reading
+
+要么是弄错了，否则数值太糟糕了
+
+For what
+
+怎么啦
+
+Medications, foods, I don't know 
+
+药物, 食物, 我不知道
+
+Look, if this is right, we lose our transplant
+
+听着，如果结果正确，我们将失去了一次移植的机会
+
+I'm sorry， That doesn't change the result
+
+很抱歉, 但这也改变不了结果
+
+There's alcohol in his system
+
+他身体里有酒精的成分
+
+He drank
+
+他喝酒了
+
+The blood doesn't lie
+
+血液不会说谎的
+
+Run the lab again
+
+再化验一次
+
+16:18
 
 
-      
+E.T.A to St.Bonaventure
+
+70 minutes
+
+70 分钟
+
+What you look for
+ 
+你在寻找什么
+
+What do you see
+
+你看到了什么
+
+I have a girl neighbor
+
+我的邻居是个女孩
+
+Okey
+
+好吧
+
+Is she nice
+
+她人好吗
+
+What does she do ？ Does she ... have a boyfried
+
+她是干什么的, 有男朋友吗
+
+Do you know her name
+
+你知道她的名字吗
+
+What the hell are you looking for a the scan
+
+你到底在扫描片上找什么
+
+What the...
+
+什么鬼
+
+The temperature is going up
+
+温度在上升
+
+Officer, we need to find a place with ice, like, now
+
+警官, 我们需要找一个有冰的地方
+
+17:05
+
+I tasted it, chuck, And re-tested it
+
+我化验完了, chuck, 两次
+
+I talk to me
+
+我们谈谈
+
+you know the six-month rule
+
+你知道六个月的规定
+
+was it a craving ? 
+
+你就这么想喝吗, 
+
+It was three age. My daughter's graduation
+
+三天前, 我女儿的毕业典礼
+
+Nobody in my family had ever gone to colleage
+
+我们家从没有上过大学
+
+There she was
+
+她是
+
+My Little girl wearing the robes
+
+我的女儿穿着学士服
+
+And for just that day, I...I wanted to be normal
+
+就在那一天, 我想做一个普通人
+
+So, I had a glass of champagne
+
+所以, 我喝了一杯酒
+
+17:55
+
+You're out of ice
+
+你们有冰块吗
+
+It's broken, Supermarket's about three miles down
+
+冰箱坏了, 超市离这儿有三英里
+
+We don't have time
+
+我们没有时间了
+
+The temperature's already at 47 degress
+
+已经达47度了
+
+We can't let it go any highter
+
+不能让温度升高了
+
+are you did help me
+
+你能帮帮我吗
+
+That won't work
+
+没用的
+
+how do you know
+
+你怎么知道
+
+You're right, It's not working! why
+
+你说的对，他没有用, 为什么啊
+
+Are you even listening to me ?
+
+你有在听我说话吗
+
+
+19：17
+
+Just one drink ?
+
+只是一口 ？
+
+That's what he said
+
+他是这么说的
+
+Should I inform the registry ?
+
+我应该通知登记处吗
+
+How long age dit chunk have that drink
+
+查克多久前喝的酒
+
+three days agos
+
+三天前
+
+Give me your marker
+
+给我你的笔
+
+That's
+
+那是
+
+Estimated blood-alcohol content
+
+估计血液中的酒精含量
+
+What type of alcohol
+
+什么酒
+
+Uh, champagne
+
+香槟
+
+What percentage of alcohol is that
+
+酒精浓度多少
+
+I don't know, What's this difference 
+
+我不知道, 有什么区别吗
+
+Take out your phone and look it up 
+
+拿出你的手机查查
+
+19:52
+
+I don't know why it not working?
+
+我不知道为什么没有用
+
+It need to be submerged（淹没的） to cool (凉爽的)
+
+需要冰淹没才可以
+
+Hey! Every five seconds is an XL
+
+嘿, 每五秒就是一大杯
+
+why did you answer me that last time, but not before 
+
+为什么你这次回答了我, 但之前没有
+
+was it because I was angry
+
+是因为我生气了吗
+
+Was it random 
+
+还是随机的
+
+Why cann't you answer my questions ?
+
+为什么你不能回答我的问题
+
+This better work
+
+这此最好能行
+
+It will work
+
+会有用的
+
+you answer when i don't ask
+
+我没问的时候你回答了
+
+you don't like questions
+
+你不喜欢被问问题
+
+I don't
+
+不喜欢
+
+20:50
+
+I didn't do well in calculus
+
+我不擅长微积分
+
+This is algebra
+
+这是代数
+
+With his severe cirrhosis, his alcohol-clearance rate
+
+他有重度肝硬化, 他的酒精清除率是
+
+is one milling per deciliter per hour
+
+每小时没分升一毫克
+
+One drink, say eight ounces
+
+一杯， 八盎司
+
+It it's champagne,six ounces, tops
+
+如果是香槟的话，最多六盎司
+
+Play it conservative
+
+留出余量
+
+Eight ounces results in a blood alcohol level
+
+八盎司换算成血液中的酒精浓度
+
+of 39 milligrams per deciliter
+
+39 毫克每公分
+
+One standard drink
+
+一单位酒精量
+
+Now, the purpose of abstinence
+
+目前, 戒酒的目的是
+
+at least according to the transplant registry is..
+
+至少根据移植中心来讲
+
+Patients who kill their livers
+
+过量饮酒导致肝脏受损的患者
+
+due to excessive (过度的) drinking prove （证明） they can be sober (冷静的)
+
+证明自己保持清醒
+
+
+Let me see the report
+
+让我看看那个报告
+
+Chunk was thlling the truth
+
+chunk 说的是实话
+
+He did just have one drink
+
+他只喝了一杯而已
+
+He didn't fall off the wagon
+
+他没有酒瘾复发
+
+Corporate (公司, 董事会) love its data
+
+董事会喜欢这个情况
+
+I'm not sure it'll actually make a difference
+
+我不确定, 这是否有用
+
+But it does give us an argument
+
+这他给了我们一个争取的机会
+
+you are genius
+
+你是天才
+
+21:55
