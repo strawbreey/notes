@@ -8,46 +8,41 @@ nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a
 
 ## 安装Nginx
 
-下载nginx
+
 ```shell
+
 cd /usr/local/src/
+
+# 下载nginx
 wget http://nginx.org/download/nginx-1.6.2.tar.gz
-```
 
-解压nginx
-```shell
- tar zxvf nginx-1.6.2.tar.gz
-```
 
-编译安装
-```shell
+# 解压nginx
+tar zxvf nginx-1.6.2.tar.gz
+
+# 编译安装
  cd nginx-1.6.2
  ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35
  make & make install
-```
 
-看出nginx 的目录
-```
+# 查看是否安装
 nginx -v
-```
 
-检测nginx
-```shell
+# nginx 测试
 /usr/local/webserver/nginx/sbin/nginx -t
-```
 
-启动nginx
-```shell
+# 启动nginx
 /usr/local/webserver/nginx/sbin/nginx
+
 ```
 
 常用命令
+
 ```shell
 nginx -s reload            # 重新载入配置文件
 nginx -s reopen            # 重启 Nginx
 nginx -s stop              # 停止 Nginx
 ```
-
 
 #### 相关文章
 [nginx.org](http://nginx.org/en/)
