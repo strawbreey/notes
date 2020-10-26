@@ -22,3 +22,28 @@ server {
   rewrite ^/ http://www.web.com # 域名跳转
 }
 ```
+
+location /img/ {
+    alias /var/www/image/;
+}
+#若按照上述配置的话，则访问/img/目录里面的文件时，ningx会自动去/var/www/image/目录找文件
+
+www.baidu.com/img/1  => /var/www/image/1
+
+
+
+location /img/ {
+    root /var/www/image;
+}
+#若按照这种配置的话，则访问/img/目录下的文件时，nginx会去/var/www/image/img/目录下找文件。
+
+www.baidu.com/img/1  => /var/www/image/img/1
+
+
+http://file.waibao.woa.com/download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
+
+文件 cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
+
+root /var/www/image/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
+
+alies //var/www/image/ + download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
