@@ -96,7 +96,29 @@ function MyConstructor() {
 let myArray = [4, 'Hello world!', false];
 let myInstance = MyConstructor.construct(myArray);
 
-console.log(myInstance.property1);                // logs 'Hello world!'
-console.log(myInstance instanceof MyConstructor); // logs 'true'
-console.log(myInstance.constructor);
+myInstance.property1;                // logs 'Hello world!'
+myInstance instanceof MyConstructor; // logs 'true'
+myInstance.constructor;
+```
+
+### bind
+
+bind 方法创建一个新的函数, 在bind()被调用时，这个新函数的this被指定为bind() 的第一个参数，其余参数将视为新函数的参数, 供调用时使用
+
+```js
+
+const module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+};
+
+const unboundGetX = module.getX;
+
+// The function gets invoked at the global scope
+unboundGetX(); // undefined
+
+const boundGetX = unboundGetX.bind(module); // 改变函数内部this指向
+boundGetX(); // expected output: 42
 ```
