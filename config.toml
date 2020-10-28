@@ -37,10 +37,10 @@ paginate = 20
 
 [languages]
   [languages.en]
-    title = "Hello Friend"
-    subtitle = "A simple theme for Hugo"
+    title = "Strawbreey Notes"
+    # subtitle = "A simple theme for Hugo"
     keywords = ""
-    copyright = ""
+    copyright = "Copyright©2019-2020 Strawbreey. All Rights Reserved"
     menuMore = "Show more"
     writtenBy = "Written by"
     readMore = "Read more"
@@ -48,18 +48,16 @@ paginate = 20
     newerPosts = "Newer posts"
     olderPosts = "Older posts"
     minuteReadingTime = "min read"
-    dateFormatSingle = "2006-01-02"
-    dateFormatList = "2006-01-02"
+    dateFormatSingle = "2019-01-02"
+    dateFormatList = "2019-01-02"
     # leave empty to disable, enter display text to enable
     # lastModDisplay = ""
 
     [languages.en.params.logo]
-      logoText = "hello friend"
+      logoText = "Strawbreey Notes"
       logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+      # path = "/img/your-example-logo.svg"
+      # alt = "Your example logo alt text"
 
     [languages.en.menu]
       [[languages.en.menu.main]]

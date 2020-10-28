@@ -22,6 +22,7 @@ draft: true
   header('Content-Disposition: attachment; filename="' . basename($file) . '"');
   header("Content-Length: ". filesize($file));
   echo $content; // 或者 readfile($file);
+
 ```
 
 
@@ -52,11 +53,12 @@ Apache 请参考mod_xsendfile模块。下面我介绍 Nginx 的用法。
 
 Nginx 默认支持该特性，不需要加载额外的模块。只是实现有些不同，需要发送的 HTTP 头为 X-Accel-Redirect。另外，需要在配置文件中做以下设定
 
-```conf
-; 表示这个路径只能在 Nginx 内部访问，不能用浏览器直接访问防止未授权的下载。
+```shell
+# 表示这个路径只能在 Nginx 内部访问，不能用浏览器直接访问防止未授权的下载。
 location /protected/ {
- internal;
- root  /some/path;
+  # 在 location 中加入 "internal", 声明仅限内部调用
+  internal; 
+  root  /some/path;
 }
 ```
 
@@ -66,11 +68,17 @@ PHP 发送 X-Accel-Redirect 给 Nginx：
   $filePath = '/protected/iso.img';
   header('Content-type: application/octet-stream');
   header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-  //让Xsendfile发送文件
+  // 让Xsendfile发送文件
   header('X-Accel-Redirect: '.$filePath);
 ```
 
+client -> php -> client - > nginx
+
+客户端访问php, php让client重定向访问nginx
+
+
 这样用户就会下载到 /some/path/protected/iso.img 这个路径下的文件。
+
 如果你想发送的是 /some/path/iso.img 文件，那么 Nginx 配置应该是
 ```conf
 location /protected/ {
@@ -94,6 +102,7 @@ header("X-Accel-Redirect:/protected_files/file?path=xxx.mp4");
 ```
 
 但是经过测试这种转发远程文件的速度，远不及，HTTP 302  (重定向) 的速度快。
+
 为了权限认证下载只能是妥协一下了。
 
 HTTP 302 Found 重定向状态码表明请求的资源被暂时的移动到了由Location 头部指定的 URL 上。浏览器会重定向到这个URL， 但是搜索引擎不会对该资源的链接进行更新 (In SEO-speak, it is said that the link-juice is not sent to the new URL)。
@@ -101,6 +110,7 @@ HTTP 302 Found 重定向状态码表明请求的资源被暂时的移动到了�
 即使规范要求浏览器在重定向时保证请求方法和请求主体不变，但并不是所有的用户代理都会遵循这一点，你依然可以看到有缺陷的软件的存在。所以推荐仅在响应 GET 或 HEAD 方法时采用 302 状态码，而在其他时候使用 307 Temporary Redirect 来替代，因为在这些场景下方法变换是明确禁止的。
 
 ### 参考资料
-
+- [nginx-xsendfile](https://www.nginx.com/resources/wiki/start/topics/examples/xsendfile/)
 - [在Nginx中使用X-Sendfile头提升PHP文件下载的性能（针对大文件下载）](https://www.jb51.net/article/51854.htm)
 - [php+nginx做下载服务器配置—X-Accel-Redirect](http://www.phpweblog.net/phpbaby/archive/2012/07/10/7709.html)
+

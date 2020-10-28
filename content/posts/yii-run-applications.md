@@ -47,3 +47,62 @@ basic/                  应用根目录
 - 动作会渲染一个视图，把数据模型提供给它。
 - 渲染结果返回给响应组件。
 - 响应组件发送渲染结果给用户浏览器。
+
+
+## 入口脚本
+
+入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。
+
+Web 应用的入口脚本必须放在终端用户能够访问的目录下， 通常命名为 index.php， 也可以使用 Web 服务器能定位到的其他名称。
+
+控制台应用的入口脚本一般在应用根目录下命名为 yii（后缀为.php）， 该文件需要有执行权限， 这样用户就能通过命令 ./yii <route> [arguments] [options] 来运行控制台应用。
+
+入口脚本主要完成以下工作：
+
+- 定义全局常量；
+- 注册 Composer 自动加载器；
+- 包含 Yii 类文件；
+- 加载应用配置；
+- 创建一个应用实例并配置;
+- 调用 yii\base\Application::run() 来处理请求。
+
+```php
+<?php
+
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+// 注册 Composer 自动加载器
+require __DIR__ . '/../vendor/autoload.php';
+
+// 包含 Yii 类文件
+require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+
+// 加载应用配置
+$config = require __DIR__ . '/../config/web.php';
+
+// 创建、配置、运行一个应用
+(new yii\web\Application($config))->run();
+```
+
+![application-lifecycle](/images/application-lifecycle.png)
+
+
+当运行 入口脚本 处理请求时， 应用主体会经历以下生命周期:
+
+- 入口脚本加载应用主体配置数组。
+- 入口脚本创建一个应用主体实例：
+- 调用 preInit() 配置几个高级别应用主体属性， 比如 basePath。
+- 注册 error handler 错误处理方法。
+- 配置应用主体属性。
+- 调用 init() 初始化，该函数会调用 bootstrap() 运行引导启动组件。
+- 入口脚本调用 yii\base\Application::run() 运行应用主体:
+- 触发 EVENT_BEFORE_REQUEST 事件。
+- 处理请求：解析请求 路由 和相关参数； 创建路由指定的模块、控制器和动作对应的类，并运行动作。
+- 触发 EVENT_AFTER_REQUEST 事件。
+- 发送响应到终端用户。
+- 入口脚本接收应用主体传来的退出状态并完成请求的处理。
+
+
+
+应用主体是服务定位器， 它部署一组提供各种不同功能的 应用组件 来处理请求。 例如，urlManager组件负责处理网页请求路由到对应的控制器。 db组件提供数据库相关服务等等。
