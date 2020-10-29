@@ -1771,3 +1771,307 @@ And I... I broke the...
 
 24:42
 
+what are you doing
+
+你先做什么
+
+shaun
+
+shaun
+
+what are you thinking
+
+你在干什么
+
+Okey, this isn't a question
+
+这不是一个问题
+
+I just, I don't know what you're looking for, shaun
+
+我只是, 不知道你在找什么
+
+yes, I can feel it, It's firmer
+
+我感觉到了，他变硬了
+
+And ? I don't know what that means
+
+我不懂那是什么意思
+
+These must be a clot, but there isn't a clot
+
+这里面一定有凝块， 但是我找不到
+
+The scan showed no clot
+
+扫描显示夜没有凝块
+
+That's because the scans were taken before they harverted the liver
+
+这是因为扫描在割肝之前拍的
+
+Prior to liver being flushed with UW solution
+
+那时候肝脏还没有用UW冲洗
+
+It's deying
+
+他快死了
+
+To preserve the liver, this replace all its blood
+
+为了保护肝，他们把里面的血液
+
+with a solution to protect it from the clod storage
+
+全部替换为防止肝脏冻伤的溶液
+
+but they must've left some blood behind, which clotted
+
+但是他们一定留下了一些血迹，形成了凝块
+
+how long to B.
+
+less than 3 minutes, 
+
+不到三十分钟
+
+can't wait, we have to immediately remove this clot and flash thi left lobe
+
+来不及了, 我们必须马上清除凝块，冲洗左肝叶
+
+to protect it from the ice bath
+
+防止肝脏冻伤
+
+Okey, we need to stop the car
+
+好吧, 我们需要停车
+
+Here, 
+
+这里
+
+yes, yes
+
+是的
+
+we need to operate right here, right now
+
+我们需要马上手术
+
+28:00
+
+how are you feeing 
+
+你感觉怎么样
+
+Like I'm writing a blank check
+
+我好像再开一张空头支票
+
+you're gonna be fin
+
+你会没事的
+
+you're the best
+
+你是最好的医生
+
+This bleed, this carices... this isn't good news
+
+出血, 静脉曲张，这不是一个好消息
+
+Tells us that your liver failure has progressed considerably
+
+说明你的肝脏衰竭已经进一步恶化
+
+how mush
+
+多少
+
+you have two to three months
+
+你只剩下两到三个月的时间
+
+we're getting the liver today, in an hour
+
+我们就快拿到肝源了，最多一个小时
+
+I don't get it
+
+我不明白你在说什么
+
+you don't tell them
+
+你们告诉他们吗
+
+what
+
+什么
+
+you father had a drink
+
+你父亲喝酒了
+
+He had one glass
+
+只喝了一口
+
+Transplant registry doesn't quantify things like that
+
+器官移植中心可不管喝了多少
+
+so, he doesn't get the liver
+
+所以，他不能使用肝脏
+
+I'm gonna try and get it for him
+
+我会试着给他争取一下
+
+what are you, a car salesman
+
+你是汽车销售员吗
+
+what, you're gonna try ?
+
+还要试一试
+
+this final decition is out of my hands
+
+最终决定权不在我手里
+
+and if you fail
+
+如果你失败了呢
+
+I'm gonna do everything that I can
+
+我一定会尽我所能
+
+I am meet with the committee in 10 minutes
+
+10分钟后我会和委员会见面
+
+Excuse me
+
+失陪
+
+I handed my dad the drink
+
+是我让我爸喝那杯酒的
+
+doesn't matter how it happened
+
+怎么发生的不重要
+
+
+He didn't want it, He just wanted to make me happy
+
+他本来不想喝的, 只是想让我开心
+
+If you let him die, I will have killed my father
+
+如果你让他死了，就是我杀了自己的父亲
+
+31:10
+
+29 minutes, that's lifetime
+
+29 分钟 存活时间
+
+Thank you, this a amazing
+
+谢谢，真是了不起
+
+Got to go, the whole team is waiting
+
+我得走了, 整个团队都在等待
+
+His name is Oliver
+
+他叫Oliver
+
+It was good day.
+
+真是美好的一天
+
+we saved a life
+
+我们救了一条生命
+
+Just not  chunk
+
+只是不是chunk
+
+35:46
+
+It's not you fault
+
+这不是你的错
+
+I want to believe that
+
+我也想相信
+
+36:35
+
+Hi
+
+你好
+
+Hello
+
+你好
+
+Are you a lab guy or something
+
+你在实验室之类的地方工作吗
+
+I am surgeon。
+
+我是一名外科医生
+
+That's insanes
+
+很酷
+
+
+May in hava my batteries back
+
+我可以拿回我的电池吗
+
+The ones you borrowed
+
+你之前借的
+
+Yeah
+
+当然
+
+There are you
+
+给你
+
+What your's name
+
+你叫啥
+
+I'm la
+
+I'm Dr.Shaun Murphy Nice to meet you
+
+我是Dr.Shaun Murphy 很高兴见到你
+
+you'll stay with me tonight
+
+你今晚就我在一起
+
+And tomorrow, well figure out the rest
+
+明天,我们再想别的事
+
+
+
