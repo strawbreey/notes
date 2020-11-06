@@ -4,6 +4,8 @@ date: 2020-08-31T10:36:43+08:00
 draft: true
 ---
 
+## linux common command
+
 ```shell
 
 # 测试镜像是否有用

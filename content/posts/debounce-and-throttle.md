@@ -34,22 +34,13 @@ const subscribe = debouncedExample.subscribe(val => console.log(val));
 // lodash 4.17
 _.debounce(func, [wait=0], [options={}])
 
-
 ```
 
-#### 实现方式:
+js 实现方式:
 
 ```js
 
 ```
-
-
-#### 参考资料
-
-- [rxjs debounce](https://rxjs-cn.github.io/learn-rxjs-operators/operators/filtering/debounce.html)
-- [debounce](https://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-debounce)
-- [lodash debounce source code](https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L10304)
-
 
 
 
@@ -80,6 +71,14 @@ const subscribe = example.subscribe(val => console.log(val));
 ```
 
 #### 参考资料
+
+节流:
+
+- [rxjs debounce](https://rxjs-cn.github.io/learn-rxjs-operators/operators/filtering/debounce.html)
+- [debounce](https://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-debounce)
+- [lodash debounce source code](https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L10304)
+
+防抖:
 
 - [Official documents throttle](https://cn.rx.js.org/class/es6/Observable.js~Observable.html#instance-method-throttle)
 - [rxjs throttle operators](https://rxjs-cn.github.io/learn-rxjs-operators/operators/filtering/throttle.html)

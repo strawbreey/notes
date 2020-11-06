@@ -14,3 +14,5 @@ webpack打包的时候，可以把框架, 组件，依赖库打包成公共库
 
 数据共享 可以 考虑使用 内存/stroge 持久化
 
+
+-[微前端在美团外卖的实践](https://tech.meituan.com/2020/02/27/meituan-waimai-micro-frontends-practice.html)
