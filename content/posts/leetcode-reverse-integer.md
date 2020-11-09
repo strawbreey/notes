@@ -35,7 +35,8 @@ Output: 0
 ```js
 var reverse = function(x) {
     if (x > 0) {
-      
+      // 数字转字符串 
+      // 字符串拆分成数字
     }
 };
 ```

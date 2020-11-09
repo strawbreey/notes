@@ -4,9 +4,9 @@ date: 2020-08-31T10:36:43+08:00
 draft: true
 ---
 
-## linux common command
+### linux common command
 
-```shell
+```bash
 
 # 测试镜像是否有用
 nslookup mirrors.tencent.com
