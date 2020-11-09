@@ -3,12 +3,547 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/hot-module-replacement/</loc>
-    <lastmod>2020-09-25T10:14:13+08:00</lastmod>
+    <loc>/posts/nginx-proxy-pass/</loc>
+    <lastmod>2020-11-09T16:03:57+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/posts/</loc>
+    <lastmod>2020-11-09T16:03:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-transaction/</loc>
+    <lastmod>2020-11-09T15:49:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/algorithm-banker/</loc>
+    <lastmod>2020-11-09T15:29:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-lock/</loc>
+    <lastmod>2020-11-09T14:43:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/leetcode-reverse-integer/</loc>
+    <lastmod>2020-11-06T19:54:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/reverse-integer/</loc>
+    <lastmod>2020-11-06T19:54:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/leetcode-two-sum/</loc>
+    <lastmod>2020-11-06T17:03:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/micro-front-ends/</loc>
+    <lastmod>2020-11-06T11:26:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/front-end-interview/</loc>
+    <lastmod>2020-11-06T09:46:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/scan-code-login/</loc>
+    <lastmod>2020-11-05T18:09:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/idempotent-operation/</loc>
+    <lastmod>2020-11-05T17:24:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/redis-design-and-implementation/</loc>
+    <lastmod>2020-11-05T15:35:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/cache/</loc>
+    <lastmod>2020-11-05T11:33:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/content-delivery-network/</loc>
+    <lastmod>2020-11-05T10:06:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-manual-new-word/</loc>
+    <lastmod>2020-11-04T17:20:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-intro/</loc>
+    <lastmod>2020-11-04T15:38:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mariadb/</loc>
+    <lastmod>2020-11-03T18:43:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-optimization-subqueries/</loc>
+    <lastmod>2020-11-03T17:07:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-innodb-memory/</loc>
+    <lastmod>2020-11-03T16:15:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-order-by/</loc>
+    <lastmod>2020-11-03T15:55:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-arrow-functions/</loc>
+    <lastmod>2020-11-02T19:27:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/ssl-tls/</loc>
+    <lastmod>2020-11-02T17:20:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/https/</loc>
+    <lastmod>2020-11-02T16:49:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-new-object/</loc>
+    <lastmod>2020-11-02T16:44:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/redis-best-practices/</loc>
+    <lastmod>2020-11-02T11:30:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/what-happens-when/</loc>
+    <lastmod>2020-11-02T11:12:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-operators/</loc>
+    <lastmod>2020-10-30T17:41:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-object-methods/</loc>
+    <lastmod>2020-10-30T15:51:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-object/</loc>
+    <lastmod>2020-10-30T15:50:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/chrome-waterfall/</loc>
+    <lastmod>2020-10-29T14:53:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-disk-space/</loc>
+    <lastmod>2020-10-29T11:16:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-this/</loc>
+    <lastmod>2020-10-29T11:15:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/good-doctor-1-4/</loc>
+    <lastmod>2020-10-29T00:21:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/message-queue/</loc>
+    <lastmod>2020-10-28T23:32:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/angular-trackby/</loc>
+    <lastmod>2020-10-27T17:40:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-fastcgi/</loc>
+    <lastmod>2020-10-27T10:39:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/http-load-balancer/</loc>
+    <lastmod>2020-10-27T10:32:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-apply-bind-and-call/</loc>
+    <lastmod>2020-10-26T19:48:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-apply/</loc>
+    <lastmod>2020-10-26T19:37:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-currying/</loc>
+    <lastmod>2020-10-26T19:21:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-chaining-methods/</loc>
+    <lastmod>2020-10-26T17:55:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/vue-optimize/</loc>
+    <lastmod>2020-10-26T17:45:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/angular-optimize/</loc>
+    <lastmod>2020-10-26T16:53:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/gitignore/</loc>
+    <lastmod>2020-10-26T09:57:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/webpack-tutorial/</loc>
+    <lastmod>2020-10-24T02:29:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/rxjs-tutorial/</loc>
+    <lastmod>2020-10-24T02:28:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-map-and-set/</loc>
+    <lastmod>2020-10-23T14:41:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-getter-and-setter/</loc>
+    <lastmod>2020-10-23T11:58:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/redis-interview/</loc>
+    <lastmod>2020-10-22T23:12:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/sql-interview/</loc>
+    <lastmod>2020-10-22T23:04:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/yii-active-query/</loc>
+    <lastmod>2020-10-22T11:41:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-promise/</loc>
+    <lastmod>2020-10-21T23:01:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-header/</loc>
+    <lastmod>2020-10-21T19:58:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/nignx-x-sendfile/</loc>
+    <lastmod>2020-10-21T19:28:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-flush-and-ob_flush/</loc>
+    <lastmod>2020-10-21T17:45:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-download/</loc>
+    <lastmod>2020-10-21T15:53:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/network-agent/</loc>
+    <lastmod>2020-10-20T19:51:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-timeout/</loc>
+    <lastmod>2020-10-20T18:16:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/vim-swap/</loc>
+    <lastmod>2020-10-20T11:26:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-exit-and-die/</loc>
+    <lastmod>2020-10-20T10:37:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-string-methods/</loc>
+    <lastmod>2020-10-20T09:53:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/recommended-books/</loc>
+    <lastmod>2020-10-20T00:14:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-shell/</loc>
+    <lastmod>2020-10-19T23:12:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-bash/</loc>
+    <lastmod>2020-10-19T23:08:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/curl/</loc>
+    <lastmod>2020-10-19T19:55:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-microtask-queue/</loc>
+    <lastmod>2020-10-18T23:38:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-utf8/</loc>
+    <lastmod>2020-10-17T20:53:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-garbage-colloction/</loc>
+    <lastmod>2020-10-17T17:59:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-optional-chaining/</loc>
+    <lastmod>2020-10-17T17:52:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/stanford/</loc>
+    <lastmod>2020-10-16T12:16:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-module/</loc>
+    <lastmod>2020-10-16T00:13:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-what/</loc>
+    <lastmod>2020-10-14T22:50:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/web-data-storage/</loc>
+    <lastmod>2020-10-14T22:36:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/web-components/</loc>
+    <lastmod>2020-10-14T21:45:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/good-doctor-1-3/</loc>
+    <lastmod>2020-10-13T23:28:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-regexp/</loc>
+    <lastmod>2020-10-13T17:41:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-command/</loc>
+    <lastmod>2020-10-13T10:59:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/golang-source-code/</loc>
+    <lastmod>2020-10-13T10:05:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/golang-builtin/</loc>
+    <lastmod>2020-10-12T15:32:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/golang-strings-api/</loc>
+    <lastmod>2020-10-12T11:50:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-session/</loc>
+    <lastmod>2020-10-12T10:56:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-core/</loc>
+    <lastmod>2020-10-12T10:39:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/sql-cross-join/</loc>
+    <lastmod>2020-10-10T22:00:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/nginx-rewrite/</loc>
+    <lastmod>2020-10-10T10:54:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/nginx-location/</loc>
+    <lastmod>2020-10-10T10:32:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/php-find-phpini/</loc>
+    <lastmod>2020-10-10T10:05:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-fdisk/</loc>
+    <lastmod>2020-10-09T19:52:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-soft-link/</loc>
+    <lastmod>2020-10-09T19:49:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-firewall/</loc>
+    <lastmod>2020-10-09T19:45:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linux-install-php-imagick/</loc>
+    <lastmod>2020-10-09T14:54:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/front-end-interview-standard/</loc>
+    <lastmod>2020-10-09T14:35:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/nestjs-tutorial/</loc>
+    <lastmod>2020-10-08T02:25:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/nestjs-deploy/</loc>
+    <lastmod>2020-10-08T02:16:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/beego/</loc>
+    <lastmod>2020-10-08T02:09:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-array-helper/</loc>
+    <lastmod>2020-09-28T16:31:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-array/</loc>
+    <lastmod>2020-09-28T11:06:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/js-deep-copy/</loc>
+    <lastmod>2020-09-27T19:38:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/swagger-php/</loc>
+    <lastmod>2020-09-27T16:24:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/chrome-devtools/</loc>
+    <lastmod>2020-09-27T16:14:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/http-status-code/</loc>
+    <lastmod>2020-09-27T15:42:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/hugo-install/</loc>
+    <lastmod>2020-09-27T15:42:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/http-cache/</loc>
+    <lastmod>2020-09-27T15:34:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/memcached/</loc>
+    <lastmod>2020-09-27T11:42:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/cors/</loc>
+    <lastmod>2020-09-27T11:05:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/es6-symbol/</loc>
+    <lastmod>2020-09-27T10:51:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/typescript-tutorial/</loc>
+    <lastmod>2020-09-27T10:24:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/webpack-tutoral/</loc>
+    <lastmod>2020-09-27T10:15:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/hot-module-replacement/</loc>
     <lastmod>2020-09-25T10:14:13+08:00</lastmod>
   </url>
   
@@ -45,11 +580,6 @@
   <url>
     <loc>/posts/sql-optimization/</loc>
     <lastmod>2020-09-23T16:36:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/sql-optimization/</loc>
-    <lastmod>2020-09-23T16:35:33+08:00</lastmod>
   </url>
   
   <url>
@@ -198,12 +728,12 @@
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/showcase/</loc>
     <lastmod>2020-09-14T16:46:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/showcase/</loc>
+    <loc>/</loc>
     <lastmod>2020-09-14T16:46:08+08:00</lastmod>
   </url>
   
@@ -368,7 +898,7 @@
   </url>
   
   <url>
-    <loc>/git-submodule/</loc>
+    <loc>/posts/git-submodule/</loc>
     <lastmod>2020-08-31T10:20:39+08:00</lastmod>
   </url>
   
@@ -388,7 +918,7 @@
   </url>
   
   <url>
-    <loc>/hugo/</loc>
+    <loc>/posts/hugo/</loc>
     <lastmod>2020-08-28T19:18:18+08:00</lastmod>
   </url>
   

@@ -1,18 +1,2750 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello Friend</title>
+    <title>Strawbreey Notes</title>
     
     
     
     <link>/</link>
-    <description>Recent content on Hello Friend</description>
+    <description>Recent content on Strawbreey Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
     <lastBuildDate>Mon, 14 Sep 2020 16:46:08 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx Proxy Pass</title>
+      <link>/posts/nginx-proxy-pass/</link>
+      <pubDate>Mon, 09 Nov 2020 16:03:57 +0800</pubDate>
+      
+      <guid>/posts/nginx-proxy-pass/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          server {listen 80;server_name cloudwave.cn;location /productlist {# 匹配所有以/productlist开头所有页面都被拦截# 将匹配到的页面请求转发到新的静态资源服务器proxy_pass http://new.cloudwave.cn;}}server {listen 443;server_name cloudwave.cn;location /productlist {proxy_pass https://new.cloudwave.cn;}}
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Transaction</title>
+      <link>/posts/mysql-transaction/</link>
+      <pubDate>Mon, 09 Nov 2020 15:49:56 +0800</pubDate>
+      
+      <guid>/posts/mysql-transaction/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          事务(Transaction) 是数据区别于文件系统重要的特性之一
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Algorithm Banker</title>
+      <link>/posts/algorithm-banker/</link>
+      <pubDate>Mon, 09 Nov 2020 15:29:25 +0800</pubDate>
+      
+      <guid>/posts/algorithm-banker/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Lock</title>
+      <link>/posts/mysql-lock/</link>
+      <pubDate>Mon, 09 Nov 2020 14:43:10 +0800</pubDate>
+      
+      <guid>/posts/mysql-lock/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          一方面要最大化程度利用数据库的并发访问，另一方面要确保每个用户能以一致性读取和修改数据。
+为此就有了锁的机制，也是数据库系统区别于文件系统的关键特征
+local 与 latch latch 是轻量级的锁，要求锁定的时间必须非常短。若持续的时间长，则性能会非常差
+innodb 中， latch 分为 mutex (互斥量) 和 rwlock(读写锁)。 目的是用来保证并发线程操作临界资源的正确性，通常没有死锁检测机制
+lock 的对象是事务，用来锁定数据库中的对象，如，表，页，行。并且尽在事务commit, rollback后释放。另外lock是由死锁机制
+锁的算法 行锁的3种算法
+ Record lock： 单个行记录上的锁 gap lock 间隙锁 锁定一个范围，但不包括记录本身 next-key lock: gap lock + record lock 锁定一个范围，且锁定记录本身  锁的问题
+锁定机制可以实现事务的隔离性要求，使得事务并发工作，锁提高了并发，却会带来其他的问题
+ 脏读 不可重复读 丢失更新  死锁 死锁是指两个或两个以上的事务在执行过程种，因夺锁资源而造成的一种互相等待的现象
+解决死锁的最简单的方式是不要等待，将任何等待都转化为回滚，并且事务重新开始。(缺点： 导致并发性能下降，甚至任何事务都不能进行。而且很难被发现，并且浪费资源)
+其次是超时，即当两个事务互相等待，当一个等待时间超过设置的某一个阙值时，其中一个事务进行回滚， 另一个等待事务继续进行。 innodb种 innodb_lock_wait_timeout 设置超时时间
+当前数据库普遍采用 wait-for graph (等待图) 的方式进行死锁检测
+避免死锁的方法: 银行家算法
+解决死锁的方法
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode Reverse Integer</title>
+      <link>/posts/leetcode-reverse-integer/</link>
+      <pubDate>Fri, 06 Nov 2020 19:54:54 +0800</pubDate>
+      
+      <guid>/posts/leetcode-reverse-integer/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Given a 32-bit signed integer, reverse digits of an integer.
+给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
+Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231, 231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
+Example:
+Input: x = 123Output: 321Input: x = -123Output: -321Input: x = 120Output: 21Input: x = 0Output: 0var reverse = function(x) {if (x &amp;gt; 0) {// 数字转字符串  // 字符串拆分成数字 }};
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Reverse Integer</title>
+      <link>/posts/reverse-integer/</link>
+      <pubDate>Fri, 06 Nov 2020 19:54:44 +0800</pubDate>
+      
+      <guid>/posts/reverse-integer/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode Two Sum</title>
+      <link>/posts/leetcode-two-sum/</link>
+      <pubDate>Fri, 06 Nov 2020 17:03:36 +0800</pubDate>
+      
+      <guid>/posts/leetcode-two-sum/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          两数之和
+给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+Two Sum
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
+Example: Input: nums = [2,7,11,15], target = 9Output: [0,1] Because nums[0] + nums[1] == 9, we return [0, 1].
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Micro Front Ends</title>
+      <link>/posts/micro-front-ends/</link>
+      <pubDate>Fri, 06 Nov 2020 11:26:18 +0800</pubDate>
+      
+      <guid>/posts/micro-front-ends/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          聊聊微前端 如果把前端拆分，可以分为框架, 组件, 依赖库，配置 (业务) 和 数据
+webpack打包的时候，可以把框架, 组件，依赖库打包成公共库
+前端路由，业务逻辑 打包成私有库
+数据共享 可以 考虑使用 内存/stroge 持久化
+-微前端在美团外卖的实践
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Front End Interview</title>
+      <link>/posts/front-end-interview/</link>
+      <pubDate>Fri, 06 Nov 2020 09:46:01 +0800</pubDate>
+      
+      <guid>/posts/front-end-interview/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          javascript js 基础题   深浅拷贝 -&amp;gt; 对象引用
+  作用域 -&amp;gt; {} -&amp;gt; this
+  原型 / 原型链 -&amp;gt; js 继承
+  es6 新特性
+  闭包
+  this
+  事件循环 -&amp;gt; 微宏任务
+  es6 set 内部实现
+  node 和 浏览器事件循环机制的区别
+  柯里化实现 / 链式调用
+  基本数据类型
+  前端性能优化
+  手写Promise实现
+  symbol应用深拷贝
+  防抖节流
+  模块化发展历程
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Scan Code Login</title>
+      <link>/posts/scan-code-login/</link>
+      <pubDate>Thu, 05 Nov 2020 18:09:25 +0800</pubDate>
+      
+      <guid>/posts/scan-code-login/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+           网页端请求登陆二维码  -网页端请求登陆二维码
+  手机端将用户id存入Redis
+  web端轮询成功
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Idempotent Operation</title>
+      <link>/posts/idempotent-operation/</link>
+      <pubDate>Thu, 05 Nov 2020 17:24:14 +0800</pubDate>
+      
+      <guid>/posts/idempotent-operation/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          幂等性 是指 多次执行所产生的影响均与一次执行的影响相同。幂等函数，或幂等方法，是指可以使用相同参数重复执行，并能获得相同结果的函数。这些函数不会影响系统状态，也不用担心重复执行会对系统造成改变。
+常见的幂等场景  查询操作  查询一次和查询多次，在数据不变的情况下，查询结果是一样的。select是天然的幂等操作；
+删除操作  删除操作也是幂等的，删除一次和多次删除都是把数据删除。
+唯一索引  防止新增脏数据
+token 机制  防止页面重复提交
+悲观锁  获取数据的时候加锁获取
+悲观锁  乐观锁只是在更新数据那一刻锁表，其他时间不锁表，所以相对于悲观锁，效率更高
+分布式锁  分布式系统，构建全局唯一索引比较困难，例如唯一性的字段没法确定，这时候可以引入分布式锁，通过第三方的系统(redis或zookeeper)，在业务系统插入数据或者更新数据，获取分布式锁，然后做操作，之后释放锁，这样其实是把多线程并发的锁的思路，引入多多个系统，也就是分布式系统中得解决思路
+select + insert 并发不高的后台系统，或者一些任务JOB  select + insert 并发不高的后台系统，或者一些任务JOB，为了支持幂等，支持重复执行，简单的处理方法是，先查询下一些关键数据，判断是否已经执行过，在进行业务处理，就可以了
+状态机幂等  状态机幂等 在设计单据相关的业务，或者是任务相关的业务，肯定会涉及到状态机(状态变更图)，就是业务单据上面有个状态，状态在不同的情况下会发生变更，一般情况下存在有限状态机，
+对外提供接口的api如何保证幂等  要接入商户提交付款请求时附带：source来源，seq序列号；source+seq在数据库里面做唯一索引，防止多次付款(并发时，只能处理一个请求) 。 重点：对外提供接口为了支持幂等调用，接口有两个字段必须传，一个是来源source，一个是来源方序列号seq，这个两个字段在提供方系统里面做联合唯一索引，这样当第三方调用时，先在本方系统里面查询一下，是否已经处理过，返回相应处理结果；没有处理过，进行相应处理，返回结果。注意，为了幂等友好，一定要先查询一下，是否处理过该笔业务，不查询直接插入业务系统，会报错，但实际已经处理了。
+总结 幂等与你是不是分布式高并发还有JavaEE都没有关系。关键是你的操作是不是幂等的。一个幂等的操作典型如：把编号为5的记录的A字段设置为0这种操作不管执行多少次都是幂等的。
+一个非幂等的操作典型如：把编号为5的记录的A字段增加1这种操作显然就不是幂等的。要做到幂等性，从接口设计上来说不设计任何非幂等的操作即可。
+譬如说需求是：当用户点击赞同时，将答案的赞同数量+1。改为：当用户点击赞同时，确保答案赞同表中存在一条记录，用户、答案。赞同数量由答案赞同表统计出来。
+总之幂等性应该是合格程序员的一个基因，在设计系统时，是首要考虑的问题，尤其是在像支付宝，银行，互联网金融公司等涉及的都是钱的系统，既要高效，数据也要准确，所以不能出现多扣款，多打款等问题，这样会很难处理，用户体验也不好。
+参考资料   What is an idempotent operation?
+  浅谈高并发下接口幂等性解决方案
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Redis Design and Implementation</title>
+      <link>/posts/redis-design-and-implementation/</link>
+      <pubDate>Thu, 05 Nov 2020 15:35:26 +0800</pubDate>
+      
+      <guid>/posts/redis-design-and-implementation/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          链表和链表节点的实现 redis 链表实现
+typedef struct listNode {struct listNode * prev;struct listNode * next;void * value;} listNode;多个listNode可以通过prev和next指针组成双端链表
+typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode *tail;// 节点复制函数 void *(*dup)(void *ptr);// 节点释放函数 void (*free)(void *ptr);// 节点值对比函数 int (*match)(void *ptr, void *key);// 链表所包含的节点数量 unsigned long len;} list;list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cache</title>
+      <link>/posts/cache/</link>
+      <pubDate>Thu, 05 Nov 2020 11:33:43 +0800</pubDate>
+      
+      <guid>/posts/cache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Content Delivery Network</title>
+      <link>/posts/content-delivery-network/</link>
+      <pubDate>Thu, 05 Nov 2020 10:06:23 +0800</pubDate>
+      
+      <guid>/posts/content-delivery-network/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          CDN的全称是Content Delivery Network，即内容分发网络 CDN的通俗理解就是网站加速，CPU均衡负载，可以解决跨运营商，跨地区，服务器负载能力过低，带宽过少等带来的网站打开速度慢等问题。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Manual New Word</title>
+      <link>/posts/mysql-manual-new-word/</link>
+      <pubDate>Wed, 04 Nov 2020 17:20:50 +0800</pubDate>
+      
+      <guid>/posts/mysql-manual-new-word/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+            Legal
+  Notices
+  Reference
+  present
+  intended
+  earlier
+  appropriate
+  Commercial
+  delivers
+  multithreaded
+  robust
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Intro</title>
+      <link>/posts/js-intro/</link>
+      <pubDate>Wed, 04 Nov 2020 15:38:15 +0800</pubDate>
+      
+      <guid>/posts/js-intro/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          前端新手指引 常见的新手引导效果场景
+  引导页
+  蒙层引导
+  气泡/弹窗提示
+  动画/视频引导
+  操作式引导
+  预设任务
+  主要包括三个部分: 蒙层、气泡、高亮。
+常见的开源软件   jquery-pagewalkthrough
+  intro.js
+  driver.js
+  参考资料  从王者荣耀里我学会的前端新手指引  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mariadb</title>
+      <link>/posts/mariadb/</link>
+      <pubDate>Tue, 03 Nov 2020 18:43:08 +0800</pubDate>
+      
+      <guid>/posts/mariadb/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Optimization Subqueries</title>
+      <link>/posts/mysql-optimization-subqueries/</link>
+      <pubDate>Tue, 03 Nov 2020 17:07:22 +0800</pubDate>
+      
+      <guid>/posts/mysql-optimization-subqueries/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          mysql 子查询优化 参考资料  Optimizing Subqueries and Derived Tables  mysql 内部手册 https://dev.mysql.com/doc/internals/en/memory-allocation.html
+参考手册
+https://dev.mysql.com/doc/refman/5.7/en/
+https://dev.mysql.com/doc/internals/en/
+https://dev.mysql.com/doc/refman/5.7/en/
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Innodb Memory</title>
+      <link>/posts/mysql-innodb-memory/</link>
+      <pubDate>Tue, 03 Nov 2020 16:15:02 +0800</pubDate>
+      
+      <guid>/posts/mysql-innodb-memory/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Order By</title>
+      <link>/posts/mysql-order-by/</link>
+      <pubDate>Tue, 03 Nov 2020 15:55:38 +0800</pubDate>
+      
+      <guid>/posts/mysql-order-by/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          不要直接使用MySQL排序做排名，使用Redis/GameServer
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Arrow Functions</title>
+      <link>/posts/js-arrow-functions/</link>
+      <pubDate>Mon, 02 Nov 2020 19:27:06 +0800</pubDate>
+      
+      <guid>/posts/js-arrow-functions/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Ssl Tls</title>
+      <link>/posts/ssl-tls/</link>
+      <pubDate>Mon, 02 Nov 2020 17:20:49 +0800</pubDate>
+      
+      <guid>/posts/ssl-tls/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Https</title>
+      <link>/posts/https/</link>
+      <pubDate>Mon, 02 Nov 2020 16:49:57 +0800</pubDate>
+      
+      <guid>/posts/https/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          HTTPS实际上是HTTP穿上了SSL/TLS的外套，我们都知道HTTP属于应用层的协议，是离程序员比较近的，而SSL（安全套接字）与TLS（运输层安全）都属于运输层协议。
+随着网络技术的发展，1999 年设计的 HTTP/1.1 已经不能满足需求，所以 Google 在 2009 年设计了基于 TCP 的 SPDY，后来 SPDY 的开发组推动 SPDY 成为正式标准，不过最终没能通过。不过 SPDY 的开发组全程参与了 HTTP/2 的制定过程，参考了 SPDY 的很多设计，所以我们一般认为 SPDY 就是 HTTP/2 的前身。无论 SPDY 还是 HTTP/2，都是基于 TCP 的，TCP 与 UDP 相比效率上存在天然的劣势，所以 2013 年 Google 开发了基于 UDP 的名为 QUIC 的传输层协议，QUIC 全称 Quick UDP Internet Connections，希望它能替代 TCP，使得网页传输更加高效。后经提议，互联网工程任务组正式将基于 QUIC 协议的 HTTP （HTTP over QUIC）重命名为 HTTP/3。
+SSL/TLS 简述 SSL/TLS 加密解密 参考资料 HTTP/3 原理实战
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js New Object</title>
+      <link>/posts/js-new-object/</link>
+      <pubDate>Mon, 02 Nov 2020 16:44:19 +0800</pubDate>
+      
+      <guid>/posts/js-new-object/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          常规的 {} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。
+这可以使用构造函数和 &amp;ldquo;new&amp;rdquo; 操作符来实现。
+构造函数 构造函数在技术上是常规函数。不过有两个约定：
+ 它们的命名以大写字母开头。 它们只能由 &amp;ldquo;new&amp;rdquo; 操作符来执行。  function User(name) {this.name = name;this.isAdmin = false;}let user = new User(&amp;#34;Jack&amp;#34;);alert(user.name); // Jackalert(user.isAdmin); // false当一个函数被使用 new 操作符执行时，它按照以下步骤：
+ 一个新的空对象被创建并分配给 this。 函数体执行。通常它会修改 this，为其添加新的属性。 返回 this 的值。  function User(name) {// this = {};（隐式创建）// 添加属性到 this this.name = name;this.isAdmin = false;// return this;（隐式返回）}所以 new User(&amp;ldquo;Jack&amp;rdquo;) 的结果是相同的对象：
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Redis Best Practices</title>
+      <link>/posts/redis-best-practices/</link>
+      <pubDate>Mon, 02 Nov 2020 11:30:44 +0800</pubDate>
+      
+      <guid>/posts/redis-best-practices/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>What Happens When</title>
+      <link>/posts/what-happens-when/</link>
+      <pubDate>Mon, 02 Nov 2020 11:12:33 +0800</pubDate>
+      
+      <guid>/posts/what-happens-when/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+            parse URL
+  DNS loopup
+  HTTP protocol
+  NGINX
+  Server Request Handle
+  Browser
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Operators</title>
+      <link>/posts/js-operators/</link>
+      <pubDate>Fri, 30 Oct 2020 17:41:28 +0800</pubDate>
+      
+      <guid>/posts/js-operators/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Object Methods</title>
+      <link>/posts/js-object-methods/</link>
+      <pubDate>Fri, 30 Oct 2020 15:51:06 +0800</pubDate>
+      
+      <guid>/posts/js-object-methods/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Object.assign Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象。
+const target = { a: 1, b: 2 };const source = { b: 4, c: 5 };const returnedTarget = Object.assign(target, source);console.log(target);// expected output: Object { a: 1, b: 4, c: 5 }console.log(returnedTarget);// expected output: Object { a: 1, b: 4, c: 5 }console.log(source);// expected output: Object { b: 4, c: 5 };returnedTarget = Object.assign({}, target, source);Object.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Object</title>
+      <link>/posts/js-object/</link>
+      <pubDate>Fri, 30 Oct 2020 15:50:58 +0800</pubDate>
+      
+      <guid>/posts/js-object/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Chrome Waterfall</title>
+      <link>/posts/chrome-waterfall/</link>
+      <pubDate>Thu, 29 Oct 2020 14:53:08 +0800</pubDate>
+      
+      <guid>/posts/chrome-waterfall/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Disk Space</title>
+      <link>/posts/mysql-disk-space/</link>
+      <pubDate>Thu, 29 Oct 2020 11:16:52 +0800</pubDate>
+      
+      <guid>/posts/mysql-disk-space/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          计算1000万条数据占了多大内存
+CREATE TABLE `table_name` (id bigint(20) not null auto_increment, -- 8字节 detail varchar(2000), --  createtime datetime, -- 8 字节 validity int default &amp;#39;0&amp;#39;, -- 4字节 primary key (id) -- 8字节);每个字段设计完成后占用的字节数
+(8+8+8+4) * 1000 0000 = 2 8000 0000 字节 == 18G
+电脑中存储常用的单位全称读法： 1Byte(Byte 字节) = 8Bit 1KB (Kilobyte 千字节) = 1024Byte， 1MB (Megabyte，兆字节，简称“兆”) = 1024KB， 1GB (Gigabyte，吉字节，又称“千兆”) = 1024MB， 1TB (Terabyte，太字节，或百万兆字节) = 1024GB，其中1024=2^10 ( 2 的10次方)。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js This</title>
+      <link>/posts/js-this/</link>
+      <pubDate>Thu, 29 Oct 2020 11:15:16 +0800</pubDate>
+      
+      <guid>/posts/js-this/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
+this 的值是在代码运行时计算出来的，它取决于代码上下文。
+let user = { name: &amp;#34;John&amp;#34; };let admin = { name: &amp;#34;Admin&amp;#34; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &amp;#34;this&amp;#34; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin[&amp;#39;f&amp;#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Good Doctor 1 4</title>
+      <link>/posts/good-doctor-1-4/</link>
+      <pubDate>Thu, 29 Oct 2020 00:21:20 +0800</pubDate>
+      
+      <guid>/posts/good-doctor-1-4/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          good doctor 第一季 第四集
+hello, I&amp;rsquo;ve looked everywhere
+我哪儿都找遍了
+All right, I&amp;rsquo;m here now, We&amp;rsquo;ll..
+好了,没事，我在这儿，我们要&amp;hellip;
+we&amp;rsquo;ll just keep looking until you find it
+我们一直找，找到为止
+why is furniture in the middle of the room
+为什么家具在房间中央
+I konw I packed it
+我记得我把他包起来了
+I make a list, &amp;ldquo;star tip screwdriver&amp;rdquo;
+我还列了个清单, 梅花螺丝刀
+Look, it&amp;quot;s checked
+你看, 已经打勾确定拿着了
+It&amp;rsquo;s checked
+真的打勾了
+Myabe, you&amp;hellip;you threw it out with the newspapers
+也许你是用包盘子的报纸包起来的
+you used to pack the dishes
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Message Queue</title>
+      <link>/posts/message-queue/</link>
+      <pubDate>Wed, 28 Oct 2020 23:32:19 +0800</pubDate>
+      
+      <guid>/posts/message-queue/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular TrackBy</title>
+      <link>/posts/angular-trackby/</link>
+      <pubDate>Tue, 27 Oct 2020 17:40:15 +0800</pubDate>
+      
+      <guid>/posts/angular-trackby/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          trackBy: trackByFn
+[ngForTrackBy]=&amp;quot;trackByFn&amp;rdquo;
+trackByFn(index, item) {return item.id ? item.id : index; // or item.id }参考文献  Using Pure Pipes To Generate NgFor TrackBy Identity Functions In Angular 7.2.7  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Fastcgi</title>
+      <link>/posts/php-fastcgi/</link>
+      <pubDate>Tue, 27 Oct 2020 10:39:26 +0800</pubDate>
+      
+      <guid>/posts/php-fastcgi/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          CGI CGI全称&amp;quot;通用网关接口&amp;rdquo;（Common Gateway Interface），用于HTTP服务器与其它机器上的程序服务通信交流的一种工具，CGI程序须运行在网络服务器上。
+传统CGI接口方式的主要缺点是性能较差，因为每次HTTP服务器遇到动态程序时都需要重启解析器来执行解析，然后结果被返回给HTTP服务器。这在处理高并发访问几乎是不可用的，因此就诞生了FastCGI。另外传统的CGI接口方式安全性也很差。
+FastCGI FastCGI是一个可伸缩地、高速地在HTTP服务器和动态脚本语言间通信的接口（FastCGI接口在Linux下是socket（可以是文件socket，也可以是ip socket）），主要优点是把动态语言和HTTP服务器分离开来。多数流行的HTTP服务器都支持FastCGI，包括Apache、Nginx和lightpd。
+同时，FastCGI也被许多脚本语言所支持，比较流行的脚本语言之一为PHP。FastCGI接口方式采用C/S架构，可以将HTTP服务器和脚本解析服务器分开，同时在脚本解析服务器上启动一个或多个脚本解析守护进程。当HTTP服务器每次遇到动态程序时，可以将其直接交付给FastCGI进程执行，然后将得到的结构返回给浏览器。这种方式可以让HTTP服务器专一地处理静态请求或者将动态脚本服务器的结果返回给客户端，这在很大程度上提高了整个应用系统的性能。
+FastCGI的重要特点：
+1、FastCGI是HTTP服务器和动态脚本语言间通信的接口或者工具。
+2、FastCGI优点是把动态语言解析和HTTP服务器分离开来。
+3、Nginx、Apache、Lighttpd以及多数动态语言都支持FastCGI。
+4、FastCGI接口方式采用C/S架构，分为客户端（HTTP服务器）和服务端（动态语言解析服务器）。
+5、PHP动态语言服务端可以启动多个FastCGI的守护进程。
+6、HTTP服务器通过FastCGI客户端和动态语言FastCGI服务端通信。
+FastCGI的主要优点是把动态语言和HTTP服务器分离开来，是Nginx专一处理静态请求和向后转发动态请求，而PHP/PHP-FPM服务器专一解析PHP动态请求。
+FPM FPM (FastCGI 进程管理器) 是一个可选的 PHP FastCGI 实现并且附加了一些（主要是）对高负载网站很有用的特性。
+CGI、FastCGI、php-fpm 之间的关系 CGI是为了保证web server传递过来的数据是标准格式的，它是一个协议，方便CGI程序的编写者。Fastcgi是CGI的更高级的一种方式，是用来提高CGI程序性能的。
+web server（如nginx）只是内容的分发者。比如，如果请求/index.html，那么web server会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态资源。
+那PHP-FPM又是什么呢？它是一个实现了Fastcgi协议的程序,用来管理Fastcgi起的进程的,即能够调度php-cgi进程的程序。现已在PHP内核中就集成了PHP-FPM，使用&amp;ndash;enalbe-fpm这个编译参数即可。另外，修改了php.ini配置文件后，没办法平滑重启，需要重启php-fpm才可。此时新fork的worker会用新的配置，已经存在的worker继续处理完手上的活。
+参考资料  FastCGI 进程管理器 ¶ CGI、FastCGI和PHP-FPM关系图解 如何通俗地解释 CGI、FastCGI、php-fpm 之间的关系？  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Load Balancer</title>
+      <link>/posts/http-load-balancer/</link>
+      <pubDate>Tue, 27 Oct 2020 10:32:00 +0800</pubDate>
+      
+      <guid>/posts/http-load-balancer/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          负载均衡
+服务器端负载均衡 负载均衡是我们处理高并发、缓解网络压力和进行服务端扩容的重要手段之一，但是一般情况下我们所说的负载均衡通常都是指服务端负载均衡，服务端负载均衡又分为两种，一种是硬件负载均衡，还有一种是软件负载均衡。
+硬件负载均衡主要通过在服务器节点之间安装专门用于负载均衡的设备，常见的如F5。
+软件负载均衡则主要是在服务器上安装一些具有负载均衡功能的软件来完成请求分发进而实现负载均衡，常见的就是Nginx。
+客户端负载 而在客户端负载均衡中，客户端可以知道所有服务端的详细信息，当需要调用 Server上的接口时，客户端从自身已知的Server列表中，根据提前配置的负载均衡策略，自己挑选一个服务端来调用，此时客户端知道自己调用的是哪一个 Server
+参考资料  nginx http load balancer 一道滴滴的负载均衡前端面试题 讲讲亿级PV的负载均衡架构 负载均衡有哪几种实现方式？  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Apply Bind and Call</title>
+      <link>/posts/js-apply-bind-and-call/</link>
+      <pubDate>Mon, 26 Oct 2020 19:48:50 +0800</pubDate>
+      
+      <guid>/posts/js-apply-bind-and-call/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Apply</title>
+      <link>/posts/js-apply/</link>
+      <pubDate>Mon, 26 Oct 2020 19:37:33 +0800</pubDate>
+      
+      <guid>/posts/js-apply/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Currying</title>
+      <link>/posts/js-currying/</link>
+      <pubDate>Mon, 26 Oct 2020 19:21:37 +0800</pubDate>
+      
+      <guid>/posts/js-currying/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          函数柯里化 函数柯里化概念： 柯里化（Currying）是把接受多个参数的函数转变为接受一个单一参数的函数，并且返回接受余下的参数且返回结果的新函数的技术
+柯里化（Currying）是一种关于函数的高阶技术。它不仅被用于 JavaScript，还被用于其他编程语言。
+柯里化是一种函数的转换，它是指将一个函数从可调用的 f(a, b, c) 转换为可调用的 f(a)(b)(c)。
+柯里化不会调用函数。它只是对函数进行转换。
+function add (a) {return function (b) {return function (c) {return a + b + c;}}}// 输入add(1)(2)(3); // 6// 柯里化解决方案const curry = (fn) =&amp;gt;(judge = (...args) =&amp;gt; args.length === fn.length ? fn(...args) : (...arg) =&amp;gt; judge(...args, ...arg));const add = (a, b, c) =&amp;gt; a + b + c;const curryAdd = curry(add);console.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Chaining Methods</title>
+      <link>/posts/js-chaining-methods/</link>
+      <pubDate>Mon, 26 Oct 2020 17:55:46 +0800</pubDate>
+      
+      <guid>/posts/js-chaining-methods/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Chaining Methods, also known as Cascading, means repeatedly calling one method after another on an object, in one continuous line of code. Let us look at an example where method chaining can help us avoid repetition.
+class Car {constructor() {this.wheels = 4this.doors = 4this.topSpeed = 100this.feulCapacity = &amp;#34;400 Litres&amp;#34;}setWheels(w) {this.wheels = w;return this;}setDoors(d) {this.doors = d;return this;}setTopSpeed(t) {this.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vue Optimize</title>
+      <link>/posts/vue-optimize/</link>
+      <pubDate>Mon, 26 Oct 2020 17:45:00 +0800</pubDate>
+      
+      <guid>/posts/vue-optimize/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Optimize</title>
+      <link>/posts/angular-optimize/</link>
+      <pubDate>Mon, 26 Oct 2020 16:53:01 +0800</pubDate>
+      
+      <guid>/posts/angular-optimize/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ChangeDetectionStrategy.OnPush
+  Detaching the Change Detector
+  Local Change Detection
+  Run outside Angular
+  Use trackBy option for *ngFor directive
+  Web Workers
+  Pure pipes instead of functions/getters in templates
+  Async pipe
+  Track by function
+  Unsubscribing
+  Webpack Bundle Analyzer
+  You probably don’t need external libraries
+  Styles per component
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Gitignore</title>
+      <link>/posts/gitignore/</link>
+      <pubDate>Mon, 26 Oct 2020 09:57:02 +0800</pubDate>
+      
+      <guid>/posts/gitignore/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          gitignore说明 在使用git的过程中，一般我们总会有些文件无需纳入git的管理，也不希望它们总出现在未跟踪文件列表，这些文件通常是日志文件、临时文件、编译产生的中间文件、工具自动生成的文件等等。 此时我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式，Git会根据这些模式规则来判断是否将文件添加到版本控制中。 注意：在windows下可以创建文件名为.gitignore.，保存之后系统会自动重命名为 .gitignore
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Webpack Tutorial</title>
+      <link>/posts/webpack-tutorial/</link>
+      <pubDate>Sat, 24 Oct 2020 02:29:20 +0800</pubDate>
+      
+      <guid>/posts/webpack-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Rxjs Tutorial</title>
+      <link>/posts/rxjs-tutorial/</link>
+      <pubDate>Sat, 24 Oct 2020 02:28:59 +0800</pubDate>
+      
+      <guid>/posts/rxjs-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Map and Set</title>
+      <link>/posts/js-map-and-set/</link>
+      <pubDate>Fri, 23 Oct 2020 14:41:10 +0800</pubDate>
+      
+      <guid>/posts/js-map-and-set/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Map Map 是一个带键的数据项的集合，就像一个 Object 一样。 但是它们最大的差别是 Map 允许任何类型的键（key）
+它的方法和属性如下：
+ new Map() —— 创建 map。 map.set(key, value) —— 根据键存储值。 map.get(key) —— 根据键来返回值，如果 map 中不存在对应的 key，则返回 undefined。 map.has(key) —— 如果 key 存在则返回 true，否则返回 false。 map.delete(key) —— 删除指定键的值。 map.clear() —— 清空 map。 map.size —— 返回当前元素个数。  let map = new Map();map.set(&amp;#39;1&amp;#39;, &amp;#39;str1&amp;#39;); // 字符串键map.set(1, &amp;#39;num1&amp;#39;); // 数字键map.set(true, &amp;#39;bool1&amp;#39;); // 布尔值键// 还记得普通的 Object 吗? 它会将键转化为字符串// Map 则会保留键的类型，所以下面这两个结果不同：alert( map.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Getter and Setter</title>
+      <link>/posts/js-getter-and-setter/</link>
+      <pubDate>Fri, 23 Oct 2020 11:58:24 +0800</pubDate>
+      
+      <guid>/posts/js-getter-and-setter/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          有两种类型的对象属性。
+第一种是 数据属性。我们已经知道如何使用它们了。到目前为止，我们使用过的所有属性都是数据属性。
+第二种类型的属性是新东西。它是 访问器属性（accessor properties）。它们本质上是用于获取和设置值的函数，但从外部代码来看就像常规属性。
+Getter 和 setter 访问器属性由 “getter” 和 “setter” 方法表示。在对象字面量中，它们用 get 和 set 表示：
+let obj = {get propName() {// 当读取 obj.propName 时，getter 起作用 },set propName(value) {// 当执行 obj.propName = value 操作时，setter 起作用 }};从外表看，访问器属性看起来就像一个普通属性。这就是访问器属性的设计思想。我们不以函数的方式 调用 user.fullName，我们正常 读取 它：getter 在幕后运行。
+访问器描述符 访问器属性的描述符与数据属性的不同。
+对于访问器属性，没有 value 和 writable，但是有 get 和 set 函数。
+所以访问器描述符可能有：
+ get —— 一个没有参数的函数，在读取属性时工作， set —— 带有一个参数的函数，当属性被设置时调用， enumerable —— 与数据属性的相同， configurable —— 与数据属性的相同。  更聪明的 getter/setter Getter/setter 可以用作“真实”属性值的包装器，以便对它们进行更多的控制。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Redis Interview</title>
+      <link>/posts/redis-interview/</link>
+      <pubDate>Thu, 22 Oct 2020 23:12:54 +0800</pubDate>
+      
+      <guid>/posts/redis-interview/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          简单介绍一下 Redis Redis 是一个用 C 语言内写的 开源高性能key-value非关系缓存(内存)数据库，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set &amp;ndash;有序集合)和hash（哈希类型） 。读写速度非常快，因此 Redis 被广泛应用于缓存方向。
+另外，Redis 除了做缓存之外，Redis 也经常用来做分布式锁，甚至是消息队列。
+Redis 提供了多种数据类型来支持不同的业务场景。Redis 还支持事务 、持久化、Lua 脚本、多种集群方案。
+优点
+ 读写性能优异， Redis能读的速度是110000次/s，写的速度是81000次/s。 支持数据持久化，支持AOF和RDB两种持久化方式。 支持事务，Redis的所有操作都是原子性的，同时Redis还支持对几个操作合并后的原子性执行。 数据结构丰富，除了支持string类型的value外还支持hash、set、zset、list等数据结构。 支持主从复制，主机会自动将数据同步到从机，可以进行读写分离。  缺点
+ 数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。 Redis 不具备自动容错和恢复功能，主机从机的宕机都会导致前端部分读写请求失败，需要等待机器重启或者手动切换前端的IP才能恢复。 主机宕机，宕机前有部分数据未能及时同步到从机，切换IP后还会引入数据不一致的问题，降低了系统的可用性。 Redis 较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。  为什么要用redis  高性能：  假如用户第一次访问数据库中的某些数据。这个过程会比较慢，因为是从硬盘上读取的。将该用户访问的数据存在数缓存中，这样下一次再访问这些数据的时候就可以直接从缓存中获取了。操作缓存就是直接操作内存，所以速度相当快。如果数据库中的对应数据改变的之后，同步改变缓存中相应的数据即可！
+ 高并发：  直接操作缓存能够承受的请求是远远大于直接访问数据库的，所以我们可以考虑把数据库中的部分数据转移到缓存中去，这样用户的一部分请求会直接到缓存这里而不用经过数据库。
+为什么要用 Redis 而不用 map/guava 做缓存?
+map/guava 要自己不能实现分布式
+redis 为什么这么快   完全基于内存，绝大部分请求是纯粹的内存操作，非常快速。数据存在内存中，类似于 HashMap，HashMap 的优势就是查找和操作的时间复杂度都是O(1)；
+  数据结构简单，对数据操作也简单，Redis 中的数据结构是专门进行设计的；
+  采用单线程，避免了不必要的上下文切换和竞争条件，也不存在多进程或者多线程导致的切换而消耗 CPU，不用去考虑各种锁的问题，不存在加锁释放锁操作，没有因为可能出现死锁而导致的性能消耗；
+  使用多路 I/O 复用模型，非阻塞 IO；
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Sql Interview</title>
+      <link>/posts/sql-interview/</link>
+      <pubDate>Thu, 22 Oct 2020 23:04:28 +0800</pubDate>
+      
+      <guid>/posts/sql-interview/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          数据库的命令规划  所有数据库对象名称必须使用小写字母并用下划线分割 所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来） 数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符 临时库表必须以 tmp_为前缀并以日期为后缀，备份表必须以 bak_为前缀并以日期 (时间戳) 为后缀 所有存储相同数据的列名和列类型必须一致（一般作为关联列，如果查询时关联列类型不一致会自动进行数据类型隐式转换，会造成列上的索引失效，导致查询效率降低）  数据库基本设计规范   所有表必须使用 Innodb 存储引擎
+  数据库和表的字符集统一使用 UTF8
+兼容性更好，统一字符集可以避免由于字符集转换产生的乱码，不同的字符集进行比较前需要进行转换会造成索引失效，如果数据库中有存储 emoji 表情的需要，字符集需要采用 utf8mb4 字符集。
+  所有表和字段都需要添加注释
+使用 comment 从句添加表和列的备注，从一开始就进行数据字典的维护
+  尽量控制单表数据量的大小,建议控制在 500 万以内。
+500 万并不是 MySQL 数据库的限制，过大会造成修改表结构，备份，恢复都会有很大的问题。
+可以用历史数据归档（应用于日志数据），分库分表（应用于业务数据）等手段来控制数据量大小
+  谨慎使用 MySQL 分区表
+分区表在物理上表现为多个文件，在逻辑上表现为一个表；
+谨慎选择分区键，跨分区查询效率可能更低；
+建议采用物理分表的方式管理大数据。
+  .尽量做到冷热数据分离,减小表的宽度
+MySQL 限制每个表最多存储 4096 列，并且每一行数据的大小不能超过 65535 字节。
+减少磁盘 IO,保证热数据的内存缓存命中率（表越宽，把表装载进内存缓冲池时所占用的内存也就越大,也会消耗更多的 IO）；
+更有效的利用缓存，避免读入无用的冷数据；
+经常一起使用的列放到一个表中（避免更多的关联操作）
+  禁止在表中建立预留字段
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Yii Active Query</title>
+      <link>/posts/yii-active-query/</link>
+      <pubDate>Thu, 22 Oct 2020 11:41:38 +0800</pubDate>
+      
+      <guid>/posts/yii-active-query/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ActiveQuery mainly provides the following methods to retrieve the query results:
+ one(): returns a single record populated with the first row of data. all(): returns all records based on the query results. count(): returns the number of records. sum(): returns the sum over the specified column. average(): returns the average over the specified column. min(): returns the min over the specified column. max(): returns the max over the specified column.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Promise</title>
+      <link>/posts/js-promise/</link>
+      <pubDate>Wed, 21 Oct 2020 23:01:58 +0800</pubDate>
+      
+      <guid>/posts/js-promise/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Promise 对象的构造器（constructor）语法如下：
+let promise = new Promise(function(resolve, reject) {// executor（生产者代码，“歌手”）});当 executor 获得了结果，无论是早还是晚都没关系，它应该调用以下回调之一：
+resolve(value) — 如果任务成功完成并带有结果 value。 reject(error) — 如果出现了 error，error 即为 error 对象。
+Promise 是一个对象，它代表了一个异步操作的最终完成或者失败。
+// 成功的回调函数function successCallback(result) {console.log(&amp;#34;音频文件创建成功: &amp;#34; + result);}// 失败的回调函数function failureCallback(error) {console.log(&amp;#34;音频文件创建失败: &amp;#34; + error);}createAudioFileAsync(audioSettings, successCallback, failureCallback)const promise = createAudioFileAsync(audioSettings); promise.then(successCallback, failureCallback);// 简写createAudioFileAsync(audioSettings).then(successCallback, failureCallback);约定 不同于“老式”的传入回调，在使用 Promise 时，会有以下约定：
+ 在本轮 事件循环 运行完成之前，回调函数是不会被调用的。 即使异步操作已经完成（成功或失败），在这之后通过 then() 添加的回调函数也会被调用。 通过多次调用 then() 可以添加多个回调函数，它们会按照插入顺序进行执行。  Promise 很棒的一点就是链式调用（chaining）。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Header</title>
+      <link>/posts/php-header/</link>
+      <pubDate>Wed, 21 Oct 2020 19:58:34 +0800</pubDate>
+      
+      <guid>/posts/php-header/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          fread
+fread — 读取文件（可安全用于二进制文件）
+fread ( resource $handle , int $length ) : string// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。// length 最多读取 length 个字节。fread() 从文件指针 handle 读取最多 length 个字节。 该函数在遇上以下几种情况时停止读取文件：
+ 读取了 length 个字节 到达了文件末尾（EOF） a packet becomes available or the socket timeout occurs (for network streams) if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Nignx X Sendfile</title>
+      <link>/posts/nignx-x-sendfile/</link>
+      <pubDate>Wed, 21 Oct 2020 19:28:35 +0800</pubDate>
+      
+      <guid>/posts/nignx-x-sendfile/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          很多时候用户需要从网站下载文件，如果文件是可以通过一个固定链接公开获取的，那么我们只需将文件存放到 webroot下的目录里就好。但大多数情况下，我们需要做权限控制，例如下载 PDF 账单，又例如下载网盘里的档案。这时，我们通常借助于脚本代码来实现，而这无疑会增加服务器的负担。
+// 用户身份认证，若验证失败跳转authenticate();// 获取需要下载的文件，若文件不存在跳转$file = determine_file();// 读取文件内容$content=file_get_contents($file);// 发送合适的 HTTP 头header(&amp;#34;Content-type: application/octet-stream&amp;#34;);header(&amp;#39;Content-Disposition: attachment; filename=&amp;#34;&amp;#39; . basename($file) . &amp;#39;&amp;#34;&amp;#39;);header(&amp;#34;Content-Length: &amp;#34;. filesize($file));echo $content; // 或者 readfile($file);这样做意味着我们的程序需要将文件内容从磁盘经过一个固定的 buffer 去循环读取到内存，再发送给前端 web 服务器，最后才到达用户。当需要下载的文件很大的时候，这种方式将消耗大量内存，甚至引发 php 进程超时或崩溃。Cache 也很头疼，更不用说中断重连的情况了。 一个理想的解决方式应该是，由 php 程序进行权限检查等逻辑判断，一切通过后，让前台的 web 服务器直接将文件发送给用户——像 Nginx 这样的前台更善于处理静态文件。这样一来 php 脚本就不会被 I/O 阻塞了。
+X-Sendfile X-Sendfile 是一种将文件下载请求由后端应用转交给前端 web 服务器处理的机制，它可以消除后端程序既要读文件又要处理发送的压力，从而显著提高服务器效率，特别是处理大文件下载的情形下。
+X-Sendfile 通过一个特定的 HTTP header 来实现：在 X-Sendfile 头中指定一个文件的地址来通告前端 web 服务器。当 web 服务器检测到后端发送的这个 header 后，它将忽略后端的其他输出，而使用自身的组件（包括 缓存头 和 断点重连 等优化）机制将文件发送给用户。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Flush and Ob_flush</title>
+      <link>/posts/php-flush-and-ob_flush/</link>
+      <pubDate>Wed, 21 Oct 2020 17:45:52 +0800</pubDate>
+      
+      <guid>/posts/php-flush-and-ob_flush/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          flush flush — 刷新输出缓冲
+flush ( void ) : void刷新PHP程序的缓冲，而不论PHP执行在何种情况下（CGI ，web服务器等等）。该函数将当前为止程序的所有输出发送到用户的浏览器。
+flush() 函数不会对服务器或客户端浏览器的缓存模式产生影响。因此，必须同时使用 ob_flush() 和flush() 函数来刷新输出缓冲。
+个别web服务器程序，特别是Win32下的web服务器程序，在发送结果到浏览器之前，仍然会缓存脚本的输出，直到程序结束为止。
+有些Apache的模块，比如mod_gzip，可能自己进行输出缓存，这将导致flush()函数产生的结果不会立即被发送到客户端浏览器。
+甚至浏览器也会在显示之前，缓存接收到的内容。例如 Netscape 浏览器会在接受到换行或 html 标记的开头之前缓存内容，并且在接受到 标记之前，不会显示出整个表格。
+ob_flush ob_flush — 冲刷出（送出）输出缓冲区中的内容
+ob_flush ( void ) : void这个函数将送出缓冲区的内容（如果里边有内容的话）。如果想进一步处理缓冲区中的内容，必须在ob_flush()之前调用ob_get_contents() ，因为在调用ob_flush()之后缓冲区内容将被丢弃。
+此函数不会销毁输出缓冲区，而像ob_end_flush() 函数会销毁缓冲区。
+ob_clean ob_clean — 清空（擦掉）输出缓冲区
+ob_clean ( void ) : void此函数用来丢弃输出缓冲区中的内容。
+此函数不会像 ob_end_clean() 函数那样销毁输出缓冲区。
+输出缓冲必须已被 ob_start() 以 PHP_OUTPUT_HANDLER_CLEANABLE 标记启动。否则 ob_clean() 不会有效果。
+ob_end_clean ob_end_clean — 清空（擦除）缓冲区并关闭输出缓冲
+ob_end_clean ( void ) : bool此函数丢弃最顶层输出缓冲区的内容并关闭这个缓冲区。如果想要进一步处理缓冲区的内容，必须在ob_end_clean()之前调用ob_get_contents()，因为当调用ob_end_clean()时缓冲区内容将被丢弃。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Download</title>
+      <link>/posts/php-download/</link>
+      <pubDate>Wed, 21 Oct 2020 15:53:03 +0800</pubDate>
+      
+      <guid>/posts/php-download/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          header(&#39;Access-Control-Allow-Origin: *&#39;);// header(&#39;location:http://www.baidu.com&#39;);// var_dump(&#39;66666&#39;);header(&amp;quot;Location: $file_path&amp;quot;);header(&#39;Content-type: application/octet-stream&#39;);//告诉浏览器这是一个文件header(&#39;Content-Disposition: attachment; filename=&amp;quot;&#39;.$file-&amp;gt;file_name.&#39;&amp;quot;&#39;);//文件描述，页面下载用的文件名，可以实现用不同的文件名下载同一个文件header(&amp;quot;X-Accel-Buffering: yes&amp;quot;);// header(&#39;X-Accel-Redirect:&#39;.$file_path);// header(&amp;quot;Location: http://file.waibao.woa.com&amp;quot;);die;  16:04
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Network Agent</title>
+      <link>/posts/network-agent/</link>
+      <pubDate>Tue, 20 Oct 2020 19:51:03 +0800</pubDate>
+      
+      <guid>/posts/network-agent/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          计算机网络结构体系 OSI 的全称是 Open Systems Interconnect, 是 ISO (国际标准化组织)针对当年每家网络公司都是私有网络协议，群雄争霸、互不兼容的情况，推出的一个通用通信协议。
+然而现实对于 OSI 而言是残酷的，最终在市场竞争中被 TCP/IP 四层协议给打败了。到了现在，整个因特网都是建立在 TCP/IP 协议栈的基础上的。
+而五层模型则是综合了 OSI 与 TCP/IP, 为了方便介绍计算机网络原理而设计，实际工业使用的还是 TCP/IP 四层协议。
+正向代理（Forward Proxy） 正向代理的用处主要有以下几种：
+ 访问『404』网站  这种情况下，就类似饿了么『跑腿代购』，我们并不能直接在网上购买香烟这类禁止网上销售或者没有在外卖平台上架的商品（404），但是我们可以通过骑手（代理服务器），去指定的店铺（目标服务器）购买我们需要的东西（目标资源），送到我们面前。
+ 加速访问  比较常见的便是『网游加速器』，比如《吃鸡》这种国外游戏产商的游戏服务器一般部署在国外，我们家里的网络环境如果直接进行游戏，『延迟』『卡顿』会伴随着我们整个游戏过程。 通过连接游戏加速器提供的代理服务器，利用代理服务器和目标游戏服务器之间优化过、甚至是专线的网络，我们便能愉快『吃鸡』了。
+反向代理 正向代理代理的是用户，而反向代理则相反，代理对象是目标服务器，是指服务端利用代理服务器给用户提供服务。
+和正向代理相比，二者都是利用代理服务器实现的，不过反向代理的主语是服务端，所以说反向代理对于用户来说是透明的，在用户的视野里，代理服务器便是目标服务器。
+类似饿了么『专星送』服务，我们（用户）在想喝咖啡的时候，并不需要知道我们附近哪个广场哪个角落有家星巴克（目标服务器），我们只需要打开专星送（代理服务器），直接下单就是，其会自动分配合适的门店为我们提供咖啡。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Timeout</title>
+      <link>/posts/php-timeout/</link>
+      <pubDate>Tue, 20 Oct 2020 18:16:26 +0800</pubDate>
+      
+      <guid>/posts/php-timeout/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          设置PHP脚本执行超时的时间有下面这样一些方法：
+php.ini 中限定程序的最长执行时间是 30 秒，这是由 php.ini 配置文件中的 max_execution_time 变量指定，倘若你有一个需要颇多时间才能完成的程序代码，代码会由于超时而执行失败，例如要发送很多电子邮件给大量收件者，或者要进行繁重的数据分析工作，服务器会在 30 秒后强行中止正在执行的程序，如何解决这个问题呢。
+  在php.ini里面设置 max_execution_time = 1800; 脚本被解析器中止之前允许的最大执行时间
+  通过PHP的 ini_set 函数设置 ini_set(&amp;ldquo;max_execution_time&amp;rdquo;, &amp;ldquo;1800&amp;rdquo;);
+  通过set_time_limit 函数设置 set_time_limit(1800) ;
+  在php-fpm.conf中设置 request_terminate_timeout 请求开始n秒
+  注意
+  request_terminate_timeout 适用于，当max_execution_time由于某种原因无法终止脚本的时候，会把这个php-fpm请求干掉。
+  web请求php执行时间受到2方面控制，一个是php.ini的max_execution_time（要注意的是sleep，http请求等待响应的时间是不算的，这里算的是真正的执行时间），另一个是php-fpm request_terminate_timeout 设置，这个算的是请求开始n秒。
+  nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeout，fastcgi_read_timeout，fastcgi_send_timeout
+  这几个 nginx 参数的主语都是 nginx，所以 fastcgi_connect_timeout 的意思是 nginx 连接到 fastcgi 的超时时间，fastcgi_read_timeout 是 nginx 读取 fastcgi 的内容的超时时间，fastcgi_send_timeout 是 nginx 发送内容到 fastcgi 的超时时间。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vim Swap</title>
+      <link>/posts/vim-swap/</link>
+      <pubDate>Tue, 20 Oct 2020 11:26:29 +0800</pubDate>
+      
+      <guid>/posts/vim-swap/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Found a swap file by the name E325: ATTENTIONFound a swap file by the name &amp;#34;.git/.MERGE_MSG.swp&amp;#34;owned by: xxxxxx dated: Mon Nov 12 23:17:40 2012file name: ~xxxxxx/Desktop/My-ios-App/.git/MERGE_MSGmodified: YESuser name: xxxxxx host name: unknown-b8-8d-12-22-27-72.lanprocess ID: 1639While opening file &amp;#34;.git/MERGE_MSG&amp;#34;dated: Tue Nov 13 14:06:48 2012NEWER than swap file!(1) Another program may be editing the same file.If this is the case, be careful not to end up with twodifferent instances of the same file when making changes.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Exit and Die</title>
+      <link>/posts/php-exit-and-die/</link>
+      <pubDate>Tue, 20 Oct 2020 10:37:01 +0800</pubDate>
+      
+      <guid>/posts/php-exit-and-die/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          PHP中exit()与die()的区别 PHP手册：die() Equivalent to exit()。
+说明：die()和exit()都是中止脚本执行函数；其实exit和die这两个名字指向的是同一个函数，die()是exit()函数的别名。该函数只接受一个参数，可以是一个程序返回的数值或是一个字符串，也可以不输入参数，结果没有返回值。
+参考：虽然两者相同，但通常使用中也有细微的选择性。例如：
+当传递给exit和die函数的值为0时，意味着提前终止脚本的执行，通常用exit()这个名字。
+总结： 1、功能上，die() 就等同于 exit();
+2、PHP有多种运行方式，即可网站形式，也可脚本形式(不需要Web服务器)。
+  当PHP为脚本形式运行时，建议用exit()：
+比如说 Bash Shell脚本语言，当它要停止运行时，会用 exit()函数终止脚本，并允许输出点内容到运行环境（一般是存储到一个全局变量中），但输出的内容只能是 数字，表示“命令的结束状态”。
+  当PHP为网站形式运行时，建议用die()：
+但此时 die(数字)，就没啥意义，因为它不会向页面输出 数字 字符串，也就是说，如果想让页面终止并且输出数字的话，得改成如下形式
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js String Methods</title>
+      <link>/posts/js-string-methods/</link>
+      <pubDate>Tue, 20 Oct 2020 09:53:26 +0800</pubDate>
+      
+      <guid>/posts/js-string-methods/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Recommended Books</title>
+      <link>/posts/recommended-books/</link>
+      <pubDate>Tue, 20 Oct 2020 00:14:11 +0800</pubDate>
+      
+      <guid>/posts/recommended-books/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          javascript angular vue react nest.js mysql redis php golang linux nginx git   计算机程序设计艺术
+  C Primer Plus
+  C程序设计语言
+  鸟哥的Linux私房菜
+  TCP/IP详解卷1：协议
+  Java编程语言
+  Python核心编程
+  计算机导论   MIT 6.0001
+  Harvard的CS50
+  Berkeley的CS61A
+  每天一本编程书，每天进步一点点
+  19CS小硕校招面试心得、自学CS经验及找工作分享
+  MIT的课表
+  如何评价 Scott H.Young 一年内自学完 MIT 计算机专业的全部 33 门课程？
+  How Much Can You Change Yourself?
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Shell</title>
+      <link>/posts/linux-shell/</link>
+      <pubDate>Mon, 19 Oct 2020 23:12:33 +0800</pubDate>
+      
+      <guid>/posts/linux-shell/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Bash</title>
+      <link>/posts/linux-bash/</link>
+      <pubDate>Mon, 19 Oct 2020 23:08:26 +0800</pubDate>
+      
+      <guid>/posts/linux-bash/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          bash 管理整个计算机硬件的其实是操作系统的核心 (kernel)，这个核心是需要被保护的！ 所以我们一般使用者就只能透过 shell 来跟核心沟通，以让核心达到我们所想要达到的工作。 那么系统有多少 shell 可用呢？为什么我们要使用 bash 啊？底下分别来谈一谈喔！
+bash 和 shell shell是运行在终端中的文本互动程序，bash（GNU Bourne-Again Shell）是最常用的一种shell。是当前大多数Linux发行版的默认Shell。
+Shell相当于是一个翻译，把我们在计算机上的操作或我们的命令，翻译为计算机可识别的二进制命令，传递给内核，以便调用计算机硬件执行相关的操作；同时，计算机执行完命令后，再通过Shell翻译成自然语言，呈现在我们面前。
+其他的shell还有：sh、bash、ksh、rsh、csh等。Ubuntu系统常用的是bash，Bio-linux系统是基于ubuntu定制的，但是却使用了zsh。
+查看当前系统中shell的类型？
+echo $SHELLshell命令 shell命令可以分为以下三类：
+ 内建函数(built-in function)：shell自带的功能 可执行文件(executable file)：保存在shell之外的脚本，提供了额外的功能。 别名(alias)：给某个命令的简称    认识与学习 BASH  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Curl</title>
+      <link>/posts/curl/</link>
+      <pubDate>Mon, 19 Oct 2020 19:55:15 +0800</pubDate>
+      
+      <guid>/posts/curl/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl。
+cURL是一个开源项目，主要的产品是curl（命令行工具）和libcurl（C语言的API库），两者功能均是：基于网络协议，对指定URL进行网络传输。[2][3]
+cURL涉及是任何网络协议传输，不涉及对具体数据的具体处理。（如：html的渲染等）
+# 简单模式curl http://example.com# 详细（verbose）模式：curl --verbose http://example.comcurl -v http://example.com# 下载（output）curl --output output.html http://example.com/curl -o output.html http://example.com/# 重定向：（curl默认不会重定向）curl --location output.html http://example.com/curl -L output.html http://example.com/curl http://httpbin.org/user-agentcurl https://httpbin.org/get?show_env=1curl 和 wget 区别 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。
+在下载上，也各有所长，wget可以递归，支持断点；而curl支持URL中加入变量，因此可以批量下载。
+libcurl libcurl主要功能就是用不同的协议连接和沟通不同的服务器~也就是相当封装了的sockPHP 支持libcurl（允许你用不同的协议连接和沟通不同的服务器）。 libcurl当前支持http, https, ftp, gopher, telnet, dict, file, 和ldap 协议。libcurl同样支持HTTPS证书授权，HTTP POST, HTTP PUT, FTP 上传（当然你也可以使用PHP的ftp扩展）, HTTP基本表单上传，代理，cookies,和用户认证。
+php cURL PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯各种服务器、使用各种协议。libcurl 目前支持的协议有 http、https、ftp、gopher、telnet、dict、file、ldap。 libcurl 同时支持 HTTPS 证书、HTTP POST、HTTP PUT、 FTP 上传(也能通过 PHP 的 FTP 扩展完成)、HTTP 基于表单的上传、代理、cookies、用户名+密码的认证。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Microtask Queue</title>
+      <link>/posts/js-microtask-queue/</link>
+      <pubDate>Sun, 18 Oct 2020 23:38:54 +0800</pubDate>
+      
+      <guid>/posts/js-microtask-queue/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          浏览器中 JavaScript 的执行流程和 Node.js 中的流程都是基于 事件循环 的。
+理解事件循环的工作方式对于代码优化很重要，有时对于正确的架构也很重要。
+事件循环 事件循环 的概念非常简单。它是一个在 JavaScript 引擎等待任务，执行任务和进入休眠状态等待更多任务这几个状态之间转换的无限循环。
+引擎的一般算法：
+ 当有任务时：  从最先进入的任务开始执行。   休眠直到出现任务，然后转到第 1 步。  两个细节：
+  引擎执行任务时永远不会进行渲染（render）。如果任务执行需要很长一段时间也没关系。仅在任务完成后才会绘制对 DOM 的更改。
+  如果一项任务执行花费的时间过长，浏览器将无法执行其他任务，无法处理用户事件，因此，在一定时间后浏览器会在整个页面抛出一个如“页面未响应”之类的警报，建议你终止这个任务。这种情况常发生在有大量复杂的计算或导致死循环的程序错误时。
+  拆分CPU过载任务 例如，语法高亮（用来给本页面中的示例代码着色）是相当耗费 CPU 资源的任务。为了高亮显示代码，它执行分析，创建很多着了色的元素，然后将它们添加到文档中 —— 对于文本量大的文档来说，需要耗费很长时间。
+当引擎忙于语法高亮时，它就无法处理其他 DOM 相关的工作，例如处理用户事件等。它甚至可能会导致浏览器“中断（hiccup）”甚至“挂起（hang）”一段时间，这是不可接受的。
+我们可以通过将大任务拆分成多个小任务来避免这个问题。高亮显示前 100 行，然后使用 setTimeout（延时参数为 0）来安排（schedule）后 100 行的高亮显示，依此类推
+进度指示 宏任务和微任务 除了本章中所讲的 宏任务（macrotask） 外，还有在 微任务（Microtask） 一章中提到的 微任务（microtask）。
+微任务仅来自于我们的代码。它们通常是由 promise 创建的：对 .then/catch/finally 处理程序的执行会成为微任务。微任务也被用于 await 的“幕后”，因为它是 promise 处理的另一种形式。
+每个宏任务之后，引擎会立即执行微任务队列中的所有任务，然后再执行其他的宏任务，或渲染，或进行其他任何操作。
+setTimeout(() =&amp;gt; alert(&amp;#34;timeout&amp;#34;));// 微任务Promise.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Utf8</title>
+      <link>/posts/mysql-utf8/</link>
+      <pubDate>Sat, 17 Oct 2020 20:53:10 +0800</pubDate>
+      
+      <guid>/posts/mysql-utf8/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串&amp;rdquo; &amp;lt;…&amp;ldquo;也是合法的 UTF-8。
+但, MySQL 的&amp;quot;utf8&amp;quot;实际上不是真正的 UTF-8。数据库的&amp;quot;utf8&amp;quot;只支持每个字符最多三个字节，而真正的 UTF-8 是每个字符最多四个字节。
+MySQL 的&amp;quot;utf8mb4&amp;quot;是真正的&amp;quot;UTF-8&amp;rdquo;。MySQL 的&amp;quot;utf8&amp;quot;是一种&amp;quot;专属的编码&amp;rdquo;，它能够编码的 Unicode 字符并不多。
+简史 MySQL 从 4.1 版本开始支持 UTF-8，也就是 2003 年，而今天使用的 UTF-8 标准（RFC 3629）是随后才出现的。
+旧版的 UTF-8 标准（RFC 2279）最多支持每个字符 6 个字节。2002 年 3 月 28 日，MySQL 开发者在第一个 MySQL 4.1 预览版中使用了 RFC 2279。
+同年 9 月，他们对 MySQL 源代码进行了一次调整：“UTF8 现在最多只支持 3 个字节的序列”。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Garbage Colloction</title>
+      <link>/posts/js-garbage-colloction/</link>
+      <pubDate>Sat, 17 Oct 2020 17:59:08 +0800</pubDate>
+      
+      <guid>/posts/js-garbage-colloction/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          垃圾回收 对于开发者来说，JavaScript 的内存管理是自动的、无形的。我们创建的原始值、对象、函数……这一切都会占用内存。
+当我们不再需要某个东西时会发生什么？JavaScript 引擎如何发现它并清理它 ?
+可达性（Reachability） JavaScript 中主要的内存管理概念是 可达性。
+简而言之，“可达”值是那些以某种方式可访问或可用的值。它们一定是存储在内存中的。
+ 这里列出固有的可达值的基本集合，这些值明显不能被释放。  比方说：
+ 当前函数的局部变量和参数。 嵌套调用时，当前调用链上所有函数的变量与参数。 全局变量。 还有一些内部的  这些值被称作 根（roots）。
+如果一个值可以通过引用或引用链从根访问任何其他值，则认为该值是可达的。  比方说，如果全局变量中有一个对象，并且该对象有一个属性引用了另一个对象，则该对象被认为是可达的。而且它引用的内容也是可达的。下面是详细的例子。
+在 JavaScript 引擎中有一个被称作 垃圾回收器 的东西在后台执行。它监控着所有对象的状态，并删除掉那些已经不可达的。
+总结 主要需要掌握的内容：
+ 垃圾回收是自动完成的，我们不能强制执行或是阻止执行。 当对象是可达状态时，它一定是存在于内存中的。 被引用与可访问（从一个根）不同：一组相互连接的对象可能整体都不可达。 现代引擎实现了垃圾回收的高级算法。  《The Garbage Collection Handbook: The Art of Automatic Memory Management》（R. Jones 等人著）这本书涵盖了其中一些内容。
+如果你熟悉底层（low-level）编程，关于 V8 引擎垃圾回收器的更详细信息请参阅文章 V8 之旅：垃圾回收。
+V8 博客 还不时发布关于内存管理变化的文章。当然，为了学习垃圾收集，你最好通过学习 V8 引擎内部知识来进行准备，并阅读一个名为 Vyacheslav Egorov 的 V8 引擎工程师的博客。我之所以说 “V8”，因为网上关于它的文章最丰富的。对于其他引擎，许多方法是相似的，但在垃圾收集上许多方面有所不同。
+当你需要底层的优化时，对引擎有深入了解将很有帮助。在熟悉了这门编程语言之后，把熟悉引擎作为下一步计划是明智之选。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Optional Chaining</title>
+      <link>/posts/js-optional-chaining/</link>
+      <pubDate>Sat, 17 Oct 2020 17:52:12 +0800</pubDate>
+      
+      <guid>/posts/js-optional-chaining/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          可选链 &amp;ldquo;?.&amp;rdquo; 可选链 ?. 是一种访问嵌套对象属性的防错误方法。即使中间的属性不存在，也不会出现错误。
+let user = {}; // 这个 user 恰巧没有 addressalert(user?.address); // undefined!alert(user?.address.street); // undefined! 不要过度使用可选链 我们应该只将 ?. 使用在一些东西可以不存在的地方。  例如，如果根据我们的代码逻辑，user 对象必须存在，但 address 是可选的，那么 user.address?.street 会更好。
+所以，如果 user 恰巧因为失误变为 undefined，我们会知道并修复这个失误。否则，代码中的 error 在不恰当的地方被消除了，这会导致调试更加困难。
+?. 前的变量必须已声明 如果未声明变量 user，那么 user?.anything 会触发一个错误：
+// ReferenceError: user is not defined user?.address;
+短路效应 正如前面所说的，如果 ?. 左边部分不存在，就会立即停止运算（“短路效应”）。
+所以，如果后面有任何函数调用或者副作用，它们均不会执行：
+其它情况：?.()，?.[] 可选链 ?. 不是一个运算符，而是一个特殊的语法结构。它还可以与函数和方括号一起使用。
+例如，将 ?.() 用于调用一个可能不存在的函数。
+在下面这段代码中，有些用户具有 admin 方法，而有些没有：
+let user1 = {admin() {alert(&amp;#34;I am admin&amp;#34;);}}let user2 = {};user1.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Stanford</title>
+      <link>/posts/stanford/</link>
+      <pubDate>Fri, 16 Oct 2020 12:16:44 +0800</pubDate>
+      
+      <guid>/posts/stanford/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          math 51 多维微积分 http://web.stanford.edu/class/math51
+  EE 103 线性代数 http://web.stanford.edu/class/ee103
+  CS 109 概率论 http://web.stanford.edu/class/cs109
+  CS 106 A 程序设计基础 http://web.stanford.edu/class/cs106a
+  CS 106 B 程序设计基础 http://web.stanford.edu/class/cs106b
+  CS 107 计算机系统导论 http://web.stanford.edu/class/cs107
+  CS 140 操作系统 http://web.stanford.edu/class/cs145
+  CS 143 编译器 http://web.stanford.edu/class/cs143
+  CS 145 数据库导论 http://web.stanford.edu/class/cs145
+  CS 149 并行计算 http://web.stanford.edu/class/cs149
+  CS 161 算法设计与分析 http://web.stanford.edu/class/cs161
+  CS 221 人工智能导论 http://web.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Module</title>
+      <link>/posts/js-module/</link>
+      <pubDate>Fri, 16 Oct 2020 00:13:48 +0800</pubDate>
+      
+      <guid>/posts/js-module/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
+AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
+语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
+什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.jsexport function sayHi(user) {alert(`Hello, ${user}!`);}// 📁 main.jsimport {sayHi} from &amp;#39;./sayHi.js&amp;#39;;alert(sayHi); // function...sayHi(&amp;#39;John&amp;#39;); // Hello, John!由于模块支持特殊的关键字和功能，因此我们必须通过使用 &amp;lt;script type=&amp;quot;module&amp;quot;&amp;gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
+&amp;lt;!doctype html&amp;gt;&amp;lt;script type=&amp;#34;module&amp;#34;&amp;gt;import {sayHi} from &amp;#39;./say.js&amp;#39;;document.body.innerHTML = sayHi(&amp;#39;John&amp;#39;);&amp;lt;/script&amp;gt;浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux What</title>
+      <link>/posts/linux-what/</link>
+      <pubDate>Wed, 14 Oct 2020 22:50:51 +0800</pubDate>
+      
+      <guid>/posts/linux-what/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Linux是什么
+请问Windows操作系统能否在苹果公司的麦金塔计算机(MAC)上面安装与运作？
+由上面的说明中，我们知道硬件是由『核心』来控制的，而每种操作系统都有他自己的核心。 在2006年以前的苹果计算机公司是请IBM公司帮忙开发硬件(所谓的Power CPU)， 而苹果计算机公司则在该硬件架构上发展自家的操作系统(就是俗称的麦金塔，MAC是也)。Windows则是开发在x86架构上的操作系统之一， 因此Windows是没有办法安装到麦金塔计算机硬件上面的。
+不过，在2006年以后，苹果计算机转而请Intel设计其硬件架构，亦即其硬件架构已经转为x86系统， 因此在2006年以后的苹果计算机若使用x86架构时，其硬件则『可能』可以安装Windows操作系统了。 不过，你可能需要自己想些方式来处理该硬件的兼容性啰！
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Web Data Storage</title>
+      <link>/posts/web-data-storage/</link>
+      <pubDate>Wed, 14 Oct 2020 22:36:39 +0800</pubDate>
+      
+      <guid>/posts/web-data-storage/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
+Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
+最常见的用处之一就是身份验证：
+登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
+alert(document.cookie)写入 document.cookie
+document.cookie = &amp;#34;user=John&amp;#34;; // 只会更新名称为 user 的 cookiealert(document.cookie); // 展示所有 cookie从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
+// 特殊字符（空格），需要编码let name = &amp;#34;my name&amp;#34;;let value = &amp;#34;John Smith&amp;#34;// 将 cookie 编码为 my%20name=John%20Smithdocument.cookie = encodeURIComponent(name) + &amp;#39;=&amp;#39; + encodeURIComponent(value);alert(document.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Web Components</title>
+      <link>/posts/web-components/</link>
+      <pubDate>Wed, 14 Oct 2020 21:45:06 +0800</pubDate>
+      
+      <guid>/posts/web-components/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          众所周知，开发复杂软件的原则是：不要让软件复杂
+如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
+只有让复杂的事情简单化的架构才是好架构。
+一个组件有：
+自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
+Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
+Custom elements (自定义标签) class MyElement extends HTMLElement {constructor() {super();// 元素在这里创建 }connectedCallback() {// 在元素被添加到文档之后，浏览器会调用这个方法 //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }disconnectedCallback() {// 在元素从文档移除到时候，浏览器会调用这个方法 // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }static get observedAttributes() {return [/* 属性数组，这些属性的变化会被被监视 */];}attributeChangedCallback(name, oldValue, newValue) {// 当上面数组里面的属性变化的时候，这个方法会被调用 }adoptedCallback() {// 在元素被移动到新的文档的时候，这个方法会被调用 // （document.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Good Doctor 1 3</title>
+      <link>/posts/good-doctor-1-3/</link>
+      <pubDate>Tue, 13 Oct 2020 23:28:53 +0800</pubDate>
+      
+      <guid>/posts/good-doctor-1-3/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          良医 第一季 第三集 01:35
+so I&amp;rsquo;m in the middle of (正忙于) &amp;ldquo;Uncharted&amp;rdquo;, and I&amp;rsquo;m dead
+我正在玩无人之地，但是没电了
+Can I borrow some triples A&amp;rsquo;s
+能借几节7号电池吗
+I&amp;rsquo;m your neighbor
+我是你的邻居
+hello
+你好
+34 ?
+34号
+I moved in last week. 33.
+我上周搬来，33号
+yeah， I know
+是 我知道
+I work at a hospital
+我在医院工作
+That&amp;rsquo;s cool
+很酷
+yes
+是
+Triple A&amp;rsquo;s pro favor ?
+7号电池 拜托
+Batteries
+电池
+Right
+没错
+Do you hava any ?
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Regexp</title>
+      <link>/posts/js-regexp/</link>
+      <pubDate>Tue, 13 Oct 2020 17:41:49 +0800</pubDate>
+      
+      <guid>/posts/js-regexp/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。
+创建正则表达式有两个方式
+// new RegExpregexp = new RegExp(&amp;#34;pattern&amp;#34;, &amp;#34;flags&amp;#34;);// 表达式regexp = /pattern/; // 没有修饰符regexp = /pattern/gmi; // 伴随修饰符 g、m 和 i（后面会讲到）用法
+字符串搜索
+let str = &amp;#34;I love Javascript&amp;#34;;let substr = &amp;#39;love&amp;#39;;alert(str.search(substr));所以搜索 /love/ 与搜索 &amp;ldquo;love&amp;rdquo; 是等价的。
+通常我们使用的都是简短语法 /&amp;hellip;/。但是它不接受任何变量插入，所以我们必须在写代码的时候就知道确切的 regexp。
+另一方面，new RegExp 允许从字符串中动态地构造模式。
+所以我们可以找出需要搜索的字段，然后根据搜索字段创建 new RegExp：
+// 弹窗提示框, 默认输入值lovelet search = prompt(&amp;#34;What you want to search?&amp;#34;, &amp;#34;love&amp;#34;); // love// let regexp = new RegExp(search);// 找到用户想要的任何东西alert( &amp;#34;I love JavaScript&amp;#34;.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Command</title>
+      <link>/posts/linux-command/</link>
+      <pubDate>Tue, 13 Oct 2020 10:59:36 +0800</pubDate>
+      
+      <guid>/posts/linux-command/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
+第二列Size，磁盘分区的大小
+第三列Used，已使用的空间
+第四列Avail，可用的空间
+第五列Use%，已使用的百分比
+第六列Mounted on，挂载点
+参数说明
+-a或&amp;ndash;all：包含全部的文件系统；
+&amp;ndash;block-size=&amp;lt;区块大小&amp;gt;：以指定的区块大小来显示区块数目；
+-h或&amp;ndash;human-readable：以可读性较高的方式来显示信息;
+-H或&amp;ndash;si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
+-i或&amp;ndash;inodes：显示inode的信息；
+-k或&amp;ndash;kilobytes：指定区块大小为1024字节；
+-l或&amp;ndash;local：仅显示本地端的文件系统;
+-m或&amp;ndash;megabytes：指定区块大小为1048576字节；
+&amp;ndash;no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
+-P或&amp;ndash;portability：使用POSIX的输出格式；
+&amp;ndash;sync：在取得磁盘使用信息前，先执行sync指令；
+-t&amp;lt;文件系统类型&amp;gt;或&amp;ndash;type=&amp;lt;文件系统类型&amp;gt;：仅显示指定文件系统类型的磁盘信息；
+-T或&amp;ndash;print-type：显示文件系统的类型；
+-x&amp;lt;文件系统类型&amp;gt;或&amp;ndash;exclude-type=&amp;lt;文件系统类型&amp;gt;：不要显示指定文件系统类型的磁盘信息；
+&amp;ndash;help：显示帮助；
+&amp;ndash;version：显示版本信息。
+查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
+-a或-all 显示目录中个别文件的大小。
+-b或-bytes 显示目录或文件大小时，以byte为单位。
+-c或&amp;ndash;total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
+-k或&amp;ndash;kilobytes 以KB(1024bytes)为单位输出。
+-m或&amp;ndash;megabytes 以MB为单位输出。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Golang Source Code</title>
+      <link>/posts/golang-source-code/</link>
+      <pubDate>Tue, 13 Oct 2020 10:05:50 +0800</pubDate>
+      
+      <guid>/posts/golang-source-code/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Go 的 源码在
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Golang Builtin</title>
+      <link>/posts/golang-builtin/</link>
+      <pubDate>Mon, 12 Oct 2020 15:32:11 +0800</pubDate>
+      
+      <guid>/posts/golang-builtin/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Package builtin provides documentation for Go&amp;rsquo;s predeclared identifiers (预声明的标识符). The items documented here are not actually in package builtin but their descriptions here allow godoc to present documentation for the language&amp;rsquo;s special identifiers (特殊标识符).
+Package files builtin.go
+Constants true and false are the two untyped boolean values.
+const (true = 0 == 0 // Untyped bool. false = 0 != 0 // Untyped bool.)iota is a predeclared identifier representing the untyped integer ordinal number of the current const specification in a (usually parenthesized) const declaration.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Golang Strings Api</title>
+      <link>/posts/golang-strings-api/</link>
+      <pubDate>Mon, 12 Oct 2020 11:50:11 +0800</pubDate>
+      
+      <guid>/posts/golang-strings-api/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Package strings implements simple functions to manipulate UTF-8 encoded strings.
+func Compare
+func Compare (a, b string) int// Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &amp;lt; b, and +1 if a &amp;gt; b.package mainimport (&amp;#34;fmt&amp;#34;&amp;#34;strings&amp;#34;)func main() {strings.Compare(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;) // -1 strings.Compare(&amp;#34;a&amp;#34;, &amp;#34;a&amp;#34;) // 0 strings.Compare(&amp;#34;b&amp;#34;, &amp;#34;a&amp;#34;) // 1}func Containes func Containes (s, substr string) bool
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Session</title>
+      <link>/posts/php-session/</link>
+      <pubDate>Mon, 12 Oct 2020 10:56:18 +0800</pubDate>
+      
+      <guid>/posts/php-session/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          会话机制(Session）在PHP 中用于保持用户连续访问Web应用时的相关数据，有助于创建高度定制化的程序、增加站点的吸引力。
+会话支持在 PHP 中是在并发访问时由一个方法来保存某些数据.从而使你能够构建更多的定制程序 从而提高你的 web 网站的吸引力.
+一个访问者访问你的 web 网站将被分配一个唯一的 id, 就是所谓的会话 id. 这个 id 可以存储在用户端的一个 cookie 中，也可以通过 URL 进行传递
+会话支持允许你将请求中的数据保存在超全局数组$_SESSION中. 当一个访问者访问你的网站，PHP 将自动检查(如果 session.auto_start 被设置为 1）或者在你要求下检查(明确通过 session_start() 或者隐式通过 session_register()) 当前会话 id 是否是先前发送的请求创建. 如果是这种情况， 那么先前保存的环境将被重建.
+&amp;lt;?php// Get the private context session_name(&amp;#39;Private&amp;#39;);session_start();$private_id = session_id();$b = $_SESSION[&amp;#39;pr_key&amp;#39;];session_write_close();// Get the global context session_name(&amp;#39;Global&amp;#39;);session_id(&amp;#39;TEST&amp;#39;);session_start();$a = $_SESSION[&amp;#39;key&amp;#39;];session_write_close();// Work &amp;amp; modify the global &amp;amp; private context (be ware of changing the global context!
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Core</title>
+      <link>/posts/php-core/</link>
+      <pubDate>Mon, 12 Oct 2020 10:39:08 +0800</pubDate>
+      
+      <guid>/posts/php-core/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Zend API 随着时间不断向前进化，PHP 已变成为一种更健壮与普及的编程语言。随着 PHP 5 的推出，Zend Engine 2 (ZE2)也到来了。ZE2 带来了全新的面向对象编程(OOP)模型，以及大量 API 的改进。PHP 6 ，在此文档编写时还处于活跃的开发状态，引入了 Zend Engine 3 (ZE3)，将在语言中带来完全的 Unicode 支持。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Sql Cross Join</title>
+      <link>/posts/sql-cross-join/</link>
+      <pubDate>Sat, 10 Oct 2020 22:00:12 +0800</pubDate>
+      
+      <guid>/posts/sql-cross-join/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Nginx Rewrite</title>
+      <link>/posts/nginx-rewrite/</link>
+      <pubDate>Sat, 10 Oct 2020 10:54:06 +0800</pubDate>
+      
+      <guid>/posts/nginx-rewrite/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Rewrite 是nginx 服务器提供的一个重要的基本功能，用于URL的重写
+地址重写和转发 &amp;ldquo;地址重写&amp;rdquo;，实际上是为了实现地址标准化。那么，什么是地址标准化呢? 我们来举一个例子。比如在访问Google首页的时候，我们在地址栏中可以输入www.google.com，也可以输入google.cn，它们都能够准确地指向Google首页，从客户端来看，Google首页同时对应了两个地址，实际上，Google服务器是在不同的地址中选择了确定的一个，即www.google.com，进而返回服务器响应的。这个过程就是地址标准化的过程。google.cn这个地址在服务器中被改变为www.google.com的过程就是地址重定向的过程。
+Rewrite规则 6.3.1 域名跳转
+server {listen 80;server_name jump.web.namerewrite ^/ http://www.web.com # 域名跳转}location /img/ { alias /var/www/image/; } #若按照上述配置的话，则访问/img/目录里面的文件时，ningx会自动去/var/www/image/目录找文件
+www.baidu.com/img/1 =&amp;gt; /var/www/image/1
+location /img/ { root /var/www/image; } #若按照这种配置的话，则访问/img/目录下的文件时，nginx会去/var/www/image/img/目录下找文件。
+www.baidu.com/img/1 =&amp;gt; /var/www/image/img/1
+http://file.waibao.woa.com/download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
+文件 cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
+root /var/www/image/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
+alies //var/www/image/ + download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Nginx Location</title>
+      <link>/posts/nginx-location/</link>
+      <pubDate>Sat, 10 Oct 2020 10:32:43 +0800</pubDate>
+      
+      <guid>/posts/nginx-location/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          nginx 指定文件路径有两种方式
+listen参数决定Nginx服务如何监听端口。在listen后可以只加IP地址、端口或主机名，非常灵活，例如：[插图]
+listen 127.0.0.1:8000listen 127.0.0.1; # 不加端口时, 默认监听80端口listen 8000 listen *:8000listen localhost: 8000 以root方式设置资源路径  # 例如，定义资源文件相对于HTTP请求的根目录。location /download/ {root /opt/web/html;}在上面的配置中，如果有一个请求的URI是/download/index/test.html，那么Web服务器将会返回服务器上/opt/web/html/download/index/test.html文件的内容。
+以alias方式设置资源路径  alias也是用来设置文件资源路径的，它与root的不同点主要在于如何解读紧跟location后面的uri参数，这将会致使alias与root以不同的方式将用户请求映射到真正的磁盘文件上。例如，如果有一个请求的URI是/conf/nginx.conf，而用户实际想访问的文件在/usr/local/nginx/conf/nginx.conf，那么想要使用alias来进行设置的话，可以采用如下方式：
+location /conf {alias /usr/local/nginx/conf;}# 等同于location /conf {root /usr/local/nginx}使用alias时，在URI向实际文件路径的映射过程中，已经把location后配置的/conf这部分字符串丢弃掉，因此，/conf/nginx.conf请求将根据alias path映射为path/nginx.conf。root则不然，它会根据完整的URI请求来映射，因此，/conf/nginx.conf请求会根据root path映射为path/conf/nginx.conf。这也是root可以放置到http、server、location或if块中，而alias只能放置到location块中的原因。
+alias后面还可以添加正则表达式，例如：
+location ~^/test/(\w+)\.(\w+)$ {alias /usr/local/nginx/$2/$1.$2;}访问首页
+有时，访问站点时的URI是/，这时一般是返回网站的首页，而这与root和alias都不同。这里用ngx_http_index_module模块提供的index配置实现。index后可以跟多个文件参数，Nginx将会按照顺序来访问这些文件，例如：
+location / {root path;index /index.html /html/index.php /index.php}根据HTTP返回码重定向页面
+当对于某个请求返回错误码时，如果匹配上了error_page中设置的code，则重定向到新的URI中。例如：
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Find Php</title>
+      <link>/posts/php-find-phpini/</link>
+      <pubDate>Sat, 10 Oct 2020 10:05:08 +0800</pubDate>
+      
+      <guid>/posts/php-find-phpini/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Linux下查找及修改PHP配置文件ini的路径
+一、查找PHP配置文件 说到查找，当然首先想到的是find命令。执行如下命令，即可查找到php.ini文件
+1 sudo find / -name php.ini 01.png
+可是，找到三个php.ini文件，具体哪个是当前正在运行的PHP使用的配置文件呢？ PHP提供了两种方式，可供使用。
+方法一
+这个是比较简单的方法，使用如下命令，可以清楚的看出当前的php使用的配置文件。
+1 php &amp;ndash;ini 01.png
+可以使用php &amp;ndash;help查看此命令
+01.png
+方法二
+打印出phpinfo()，然后就可以看出了，如下：
+01.png
+针对这个方法，也可以在命令行中查看，有如下两种方式：
+1 2 3 php -i |grep php.ini //php -i其实就是输出phpinfo
+php -r &amp;ldquo;phpinfo();&amp;rdquo; |grep php.ini 01.png
+二、修改PHP配置文件 很遗憾，尝试了一下，发现貌似只能在安装php的时候，通过&amp;ndash;with-config-file-path来指定，后续进一步探索吧。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Fdisk</title>
+      <link>/posts/linux-fdisk/</link>
+      <pubDate>Fri, 09 Oct 2020 19:52:22 +0800</pubDate>
+      
+      <guid>/posts/linux-fdisk/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          查看所有磁盘信息
+fdisk -lu
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Soft Link</title>
+      <link>/posts/linux-soft-link/</link>
+      <pubDate>Fri, 09 Oct 2020 19:49:01 +0800</pubDate>
+      
+      <guid>/posts/linux-soft-link/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          创建软链接 ln -s [源文件或目录] [目标文件或目录]
+例如：
+# 当前路径创建test 引向/var/www/test 文件夹 ln –s /var/www/test test# 创建/var/test 引向/var/www/test 文件夹 ln –s /var/www/test /var/test 删除软链接 和删除普通的文件是一眼的，删除都是使用rm来进行操作
+rm –rf 软链接名称（请注意不要在后面加”/”，rm –rf 后面加不加”/” 的区别，可自行去百度下啊）
+例如：
+# 删除testrm –rf test修改软链接 ln –snf [新的源文件或目录] [目标文件或目录]
+这将会修改原有的链接地址为新的地址
+例如：
+# 创建一个软链接ln –s /var/www/test /var/test# 修改指向的新路径ln –snf /var/www/test1 /var/test常用的参数：
+-b 删除，覆盖以前建立的链接
+-d 允许超级用户制作目录的硬链接
+-f 强制执行
+-i 交互模式，文件存在则提示用户是否覆盖
+-n 把符号链接视为一般目录
+-s 软链接(符号链接)
+-v 显示详细的处理过程
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Firewall</title>
+      <link>/posts/linux-firewall/</link>
+      <pubDate>Fri, 09 Oct 2020 19:45:59 +0800</pubDate>
+      
+      <guid>/posts/linux-firewall/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          curl: (7) Failed connect to 10.0.0.210:9200; 拒绝连接 没有到主机的路由这种问题很常见，多数是由机器的防火墙没有关闭。 Ubuntu 查看防火墙状态  ufw status 关闭防火墙  ufw disable centos6 查看防火墙状态  service iptables status 关闭防火墙  chkconfig iptables off centos7 查看防火墙状态  firewall-cmd --state 临时关闭防火墙  systemctl stop firewalld.service 永久关闭防火墙  systemctl disable firewalld 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Install Php Imagick</title>
+      <link>/posts/linux-install-php-imagick/</link>
+      <pubDate>Fri, 09 Oct 2020 14:54:01 +0800</pubDate>
+      
+      <guid>/posts/linux-install-php-imagick/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          说明：
+php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Nginx安装目录：/usr/local/nginx Nginx网站根目录：/usr/local/nginx/html
+ 安装编译工具  yum install wget make gcc gcc-c++ gtk+-devel zlib-devel openssl openssl-devel pcre-devel kernel keyutils patch perl安装ImageMagick  cd /usr/local/src #进入软件包存放目录wget http://www.imagemagick.org/download/ImageMagick.tar.gz #下载ImageMagicktar zxvf ImageMagick.tar.gz #解压cd ImageMagick-6.7.9-3 #进入安装目录./configure --prefix=/usr/local/imagemagick #配置make #编译make install #安装export PKG_CONFIG_PATH=/usr/local/imagemagick/lib/pkgconfig/ #设置环境变量安装imagick  cd /usr/local/srcwget http://pecl.php.net/get/imagick-3.0.1.tgz #下载imagicktar zxvf imagick-3.0.1.tgzcd imagick-3.0.1/usr/local/php5/bin/phpize #用phpize生成configure配置文件./configure --with-php-config=/usr/local/php5/bin/php-config --with-imagick=/usr/local/imagemagick #配置make #编译make install #安装备注：在安装过程中出现错误，一般是由于缺少编译工具包导致，可根据提示参照第一步安装相应的工具包即可 安装完成之后，出现下面的界面，记住以下路径，后面会用到 Installing shared extensions: /usr/local/php5/lib/php/extensions/no-debug-non-zts-20090626/ #imagick模块路径
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Front End Interview Standard</title>
+      <link>/posts/front-end-interview-standard/</link>
+      <pubDate>Fri, 09 Oct 2020 14:35:59 +0800</pubDate>
+      
+      <guid>/posts/front-end-interview-standard/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          不同公司，不同岗位，不同业务背景对优秀前端的要求可能会有差异，以阿里巴巴淘系技术部的一则JD为例，来拆解一下，不同级别的前端工程师应该具备什么样的技能。
+JD业务背景淘宝内部最大创新项目之一，大团队已有百人规模，大部分项目处于保密阶段，前景远大职位描述:
+ 负责组件库与业务页面开发。 带领团队完成技术产品实现。 负责大型多应用架构设计。 利用前端技术与服务端协同完成团队业务目标。  职位要求:
+掌握图形学，webgl或熟练使用threejs框架，熟练canvas相关渲染及动画操作的优先。 熟练掌握JavaScript。 熟悉常用工程化工具，掌握模块化思想和技术实现方案。 熟练掌握React前端框架，了解技术底层。同时了解vue以及angular等其他框架者优先。 熟练掌握react生态常用工具，redux/react-router等。 熟悉各种Web前端技术，包括HTML/XML/CSS等，有基于Ajax的前端应用开发经验。 有良好的编码习惯，对前端技术有持续的热情，个性乐观开朗,逻辑性强，善于和各种背景的人合作。 具有TS/移动设备上前端开发/NodeJS/服务端开发等经验者优先。  首先，总览全部的要求，会发现这个职位虽然提到了3d相关的技能，但是大部分却是应用开发相关的能力，所以这个职位并不是想找专业的3d领域同学，而是需要一个工程化能力强，对3d有了解的同学。
+掌握图形学，  webgl或熟练使用threejs框架，熟练canvas相关渲染及动画操作的优先。
+  初级：学习过图形学相关知识，知道矩阵等数学原理在动画中的作用，知道三维场景需要的最基础的构成，能用threejs搭3d场景，知道webgl和threejs的关系。知道canvas是干嘛的，聊到旋转能说出canvas的api。知道css动画，css动画属性知道关键字和用法(换句话说，电话面试会当场出题要求口喷css动画，至少能说对大概，而不是回答百度一下就会用)。知道js动画，能说出1~2个社区js动画库，知道js动画和css动画优缺点以及适用场景。知道raf和其他达到60fps的方法。
+  中级：如果没有threejs，你也能基于webgl自己封装一个简单的threejs出来。聊到原理能说出四元数，聊到鼠标操作能提到节流，聊到性能能提到restore，聊到帧说出raf和timeout的区别，以及各自在优化时候的作用。知道怎样在移动端处理加载问题，渲染性能问题。知道如何结合native能力优化性能。知道如何排查性能问题。对chrome动画、3d、传感器调试十分了解。
+  高级：搭建过整套资源加载优化方案，能说明白整体方案的各个细节，包括前端、客户端、服务端分别需要实现哪些功能点、依赖哪些基础能力，以及如何配合。设计并实现过前端动画引擎，能说明白一个复杂互动项目的技术架构，知道需要哪些核心模块，以及这些模块间如何配合。有自己实现的动画相关技术方案产出，这套技术方案必须是解决明确的业务或技术难点问题的。为了业务快速落地而封装一个库，不算这里的技术方案。如果有类似社区方案，必须能从原理上说明白和竞品的差异，各自优劣，以及技术选型的原因。
+   熟练掌握JavaScript。    初级：JavaScript各种概念都得了解，《JavaScript语言精粹》这本书的目录都得有概念，并且这些核心点都能脱口而出是什么。这里列举一些做参考：知道组合寄生继承，知道class继承。知道怎么创建类function + class。知道闭包在实际场景中怎么用，常见的坑。知道模块是什么，怎么用。知道event loop是什么，能举例说明event loop怎么影响平时的编码。掌握基础数据结构，比如堆、栈、树，并了解这些数据结构计算机基础中的作用。知道ES6数组相关方法，比如forEach，map，reduce, 及实现。
+  中级：知道class继承与组合寄生继承的差别，并能举例说明。知道event loop原理，知道宏微任务，并且能从个人理解层面说出为什么要区分。知道node和浏览器在实现loop时候的差别。能将继承、作用域、闭包、模块这些概念融汇贯通，并且结合实际例子说明这几个概念怎样结合在一起。能脱口而出2种以上设计模式的核心思想，并结合js语言特性举例或口喷基础实现。掌握一些基础算法核心思想或简单算法问题，比如排序，大数相加。
+  熟悉常用工程化工具，掌握模块化思想和技术实现方案。    初级：知道webpack，rollup以及他们适用的场景。知道webpack v4和v3的区别。脱口而出webpack基础配置。知道webpack打包结果的代码结构和执行流程，知道index.js，runtime.js是干嘛的。知道amd，cmd，commonjs，es module分别是什么。知道所有模块化标准定义一个模块怎么写。给出2个文件，能口喷一段代码完成模块打包和执行的核心逻辑。
+  中级：知道webpack打包链路，知道plugin生命周期，知道怎么写一个plugin和loader。知道常见loader做了什么事情，能几句话说明白，比如babel-loader，vue-loader。能结合性能优化聊webpack配置怎么做，能清楚说明白核心要点有哪些，并说明解决什么问题，需要哪些外部依赖，比如cdn，接入层等。了解异步模块加载的实现原理，能口喷代码实现核心逻辑。
+  高级：能设计出或具体说明白团队研发基础设施。具体包括但不限于：项目脚手架搭建，及如何以工具形态共享。团队eslint规范如何设计，及如何统一更新。工具化打包发布流程，包括本地调试、云构建、线上发布体系、一键部署能力。同时，方案不仅限于前端工程部分，包含相关服务端基础设施，比如cdn服务搭建，接入层缓存方案设计，域名管控等。客户端缓存及预加载方案。
+  3.熟练掌握React前端框架，了解技术底层。同时了解vue以及angular等其他框架者优先。
+  初级：知道react常见优化方案，脱口而出常用生命周期，知道他们是干什么的。知道react大致实现思路，能对比react和js控制原生dom的差异，能口喷一个简化版的react。知道diff算法大致实现思路。对state和props有自己的使用心得，结合受控组件、hoc等特性描述，需要说明各种方案的适用场景。以上几点react替换为vue或angular同样适用。
+  中级：能说明白为什么要实现fiber，以及可能带来的坑。能说明白为什么要实现hook。能说明白为什么要用immutable，以及用或者不用的考虑。知道react不常用的特性，比如context，portal。能用自己的理解说明白react like框架的本质，能说明白如何让这些框架共存。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Nestjs Tutorial</title>
+      <link>/posts/nestjs-tutorial/</link>
+      <pubDate>Thu, 08 Oct 2020 02:25:25 +0800</pubDate>
+      
+      <guid>/posts/nestjs-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Nest 是一个用于构建高效，可扩展的 Node.js 服务器端应用程序的框架。它使用渐进式 JavaScript，内置并完全支持 TypeScript（但仍然允许开发人员使用纯 JavaScript 编写代码）并结合了 OOP（面向对象编程），FP（函数式编程）和 FRP（函数式响应编程）的元素。
+在底层，Nest使用强大的 HTTP Server 框架，如 Express（默认）和 Fastify。Nest 在这些框架之上提供了一定程度的抽象，同时也将其 API 直接暴露给开发人员。这样可以轻松使用每个平台的无数第三方模块。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Nestjs Deploy</title>
+      <link>/posts/nestjs-deploy/</link>
+      <pubDate>Thu, 08 Oct 2020 02:16:35 +0800</pubDate>
+      
+      <guid>/posts/nestjs-deploy/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Beego</title>
+      <link>/posts/beego/</link>
+      <pubDate>Thu, 08 Oct 2020 02:09:21 +0800</pubDate>
+      
+      <guid>/posts/beego/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          deploy 通过 bee 创建的项目，beego 默认情况下是开发模式。
+我们可以通过如下的方式改变我们的模式：
+beego.RunMode = &amp;quot;prod&amp;quot;或者我们在 conf/app.conf 下面设置如下：
+runmode = prod发行部署
+Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：
+独立部署
+独立部署即为在后端运行程序，让程序跑在后台。
+在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：
+nohup ./beepkg &amp;amp;Windows 在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：
+制作 bat 文件，放在“启动”里面 制作成服务
+nginx 部署
+server {listen 80;server_name .a.com;charset utf-8;access_log /home/a.com.access.log;location /(css|js|fonts|img)/ {access_log off;expires 1d;root &amp;quot;/path/to/app_a/static&amp;quot;;try_files $uri @backend;}location / {try_files /_not_exists_ @backend;}location @backend {proxy_set_header X-Forwarded-For $remote_addr;proxy_set_header Host $http_host;proxy_pass http://127.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Array Helper</title>
+      <link>/posts/js-array-helper/</link>
+      <pubDate>Mon, 28 Sep 2020 16:31:39 +0800</pubDate>
+      
+      <guid>/posts/js-array-helper/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          js Array Helper 扩展 // 数组去重// 数组并集// 数组交集// 数组差集// 数组排序
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Array</title>
+      <link>/posts/js-array/</link>
+      <pubDate>Mon, 28 Sep 2020 11:06:27 +0800</pubDate>
+      
+      <guid>/posts/js-array/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Array.from() // Syntax// arrayLike: An array-like or iterable object to convert to an array.// mapFn Optional: Map function to call on every element of the array.// thisArg Optional: Value to use as this when executing mapFn.// return value: A new Array instance.Array.from(arrayLike [, mapFn [, thisArg]])console.log(Array.from(&amp;#39;foo&amp;#39;));// expected output: Array [&amp;#34;f&amp;#34;, &amp;#34;o&amp;#34;, &amp;#34;o&amp;#34;]console.log(Array.from([1, 2, 3], x =&amp;gt; x + x));// expected output: Array [2, 4, 6]Array.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Deep Copy</title>
+      <link>/posts/js-deep-copy/</link>
+      <pubDate>Sun, 27 Sep 2020 19:38:49 +0800</pubDate>
+      
+      <guid>/posts/js-deep-copy/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          JSON.parse/stringify if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。
+如果不使用复制的数据类型, JSON序列化是最快的复制方法
+JSON.parse(JSON.stringify(object))const a = {string: &amp;#39;string&amp;#39;,number: 123,bool: false,nul: null,date: new Date(), // stringified undef: undefined, // lost inf: Infinity, // forced to &amp;#39;null&amp;#39; re: /.*/, // lost}console.log(a);console.log(typeof a.date); // Date objectconst clone = JSON.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Swagger Php</title>
+      <link>/posts/swagger-php/</link>
+      <pubDate>Sun, 27 Sep 2020 16:24:23 +0800</pubDate>
+      
+      <guid>/posts/swagger-php/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Chrome Devtools</title>
+      <link>/posts/chrome-devtools/</link>
+      <pubDate>Sun, 27 Sep 2020 16:14:34 +0800</pubDate>
+      
+      <guid>/posts/chrome-devtools/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          chrome-devtools
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Status Code</title>
+      <link>/posts/http-status-code/</link>
+      <pubDate>Sun, 27 Sep 2020 15:42:31 +0800</pubDate>
+      
+      <guid>/posts/http-status-code/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          HTTP 响应状态代码指示特定 HTTP 请求是否已成功完成。响应分为五类：信息响应(100–199)，成功响应(200–299)，重定向(300–399)，客户端错误(400–499)和服务器错误 (500–599)。状态代码由 section 10 of RFC 2616定义
+信息响应 100 Continue
+这个临时响应表明，迄今为止的所有内容都是可行的，客户端应该继续请求，如果已经完成，则忽略它。
+101 Switching Protocol
+该代码是响应客户端的 Upgrade 标头发送的，并且指示服务器也正在切换的协议。
+102 Processing (WebDAV)
+此代码表示服务器已收到并正在处理该请求，但没有响应可用。
+103 Early Hints
+此状态代码主要用于与Link 链接头一起使用，以允许用户代理在服务器仍在准备响应时开始预加载资源。
+成功响应 200 OK
+请求成功。成功的含义取决于HTTP方法：
+ GET：资源已被提取并在消息正文中传输。 HEAD：实体标头位于消息正文中。 POST：描述动作结果的资源在消息体中传输。 TRACE：消息正文包含服务器收到的请求消息  201 Created
+该请求已成功，并因此创建了一个新的资源。这通常是在POST请求，或是某些PUT请求之后返回的响应。
+202 Accepted
+请求已经接收到，但还未响应，没有结果。意味着不会有一个异步的响应去表明当前请求的结果，预期另外的进程和服务去处理请求，或者批处理。
+203 Non-Authoritative Information
+服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。当前的信息可能是原始版本的子集或者超集。例如，包含资源的元数据可能导致原始服务器知道元信息的超集。使用此状态码不是必须的，而且只有在响应不使用此状态码便会返回200 OK的情况下才是合适的。
+204 No Content
+服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。响应可能通过实体头部的形式，返回新的或更新后的元信息。如果存在这些头部信息，则应当与所请求的变量相呼应。如果客户端是浏览器的话，那么用户浏览器应保留发送了该请求的页面，而不产生任何文档视图上的变化，即使按照规范新的或更新后的元信息应当被应用到用户浏览器活动视图中的文档。由于204响应被禁止包含任何消息体，因此它始终以消息头后的第一个空行结尾。
+205 Reset Content
+服务器成功处理了请求，且没有返回任何内容。但是与204响应不同，返回此状态码的响应要求请求者重置文档视图。该响应主要是被用于接受用户输入后，立即重置表单，以便用户能够轻松地开始另一次输入。与204响应一样，该响应也被禁止包含任何消息体，且以消息头后的第一个空行结束。
+206 Partial Content
+服务器已经成功处理了部分 GET 请求。类似于 FlashGet 或者迅雷这类的 HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。该请求必须包含 Range 头信息来指示客户端希望得到的内容范围，并且可能包含 If-Range 来作为请求条件。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Hugo Install</title>
+      <link>/posts/hugo-install/</link>
+      <pubDate>Sun, 27 Sep 2020 15:42:31 +0800</pubDate>
+      
+      <guid>/posts/hugo-install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          If you are on a Windows machine and use Chocolatey for package management, you can install Hugo with the following one-liner
+more # install-with-chocolatey.ps1choco install hugo -confirm# Or if you need the “extended” Sass/SCSS version:choco install hugo-extended -confirmIf you are on a Windows machine and use Scoop for package management, you can install Hugo with the following one-liner:
+scoop install hugo# Or install the extended version with:scoop install hugo-extendedSource
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Cache</title>
+      <link>/posts/http-cache/</link>
+      <pubDate>Sun, 27 Sep 2020 15:34:05 +0800</pubDate>
+      
+      <guid>/posts/http-cache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Http 缓存 通过复用以前获取的资源，可以显著提高网站和应用程序的性能。Web 缓存减少了等待时间和网络流量，因此减少了显示资源表示形式所需的时间。通过使用 HTTP缓存，变得更加响应性。
+不同种类的缓存 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。当 web 缓存发现请求的资源已经被存储，它会拦截请求，返回该资源的拷贝，而不会去源服务器重新下载。这样带来的好处有：缓解服务器端压力，提升性能(获取资源的耗时更短了)。对于网站来说，缓存是达到高性能的重要组成部分。缓存需要合理配置，因为并不是所有资源都是永久不变的：重要的是对一个资源的缓存应截止到其下一次发生改变（即不能缓存过期的资源）。
+缓存的种类有很多,其大致可归为两类：私有与共享缓存。共享缓存存储的响应能够被多个用户使用。私有缓存只能用于单独用户。本文将主要介绍浏览器与代理缓存，除此之外还有网关缓存、CDN、反向代理缓存和负载均衡器等部署在服务器上的缓存方式，为站点和 web 应用提供更好的稳定性、性能和扩展性。
+浏览器缓存 (私有) 私有缓存只能用于单独用户。你可能已经见过浏览器设置中的“缓存”选项。浏览器缓存拥有用户通过 HTTP 下载的所有文档。这些缓存为浏览过的文档提供向后/向前导航，保存网页，查看源码等功能，可以避免再次向服务器发起多余的请求。它同样可以提供缓存内容的离线浏览。
+代理缓存 (共享) 共享缓存可以被多个用户使用。例如，ISP 或你所在的公司可能会架设一个 web 代理来作为本地网络基础的一部分提供给用户。这样热门的资源就会被重复使用，减少网络拥堵与延迟。
+缓存操作 虽然 HTTP 缓存不是必须的，但重用缓存的资源通常是必要的。然而常见的 HTTP 缓存只能存储 GET 响应，对于其他类型的响应则无能为力。缓存的关键主要包括request method和目标URI（一般只有GET请求才会被缓存）。 普遍的缓存案例:
+  一个检索请求的成功响应: 对于 GET请求，响应状态码为：200，则表示为成功。一个包含例如HTML文档，图片，或者文件的响应。
+  永久重定向: 响应状态码：301。
+  错误响应: 响应状态码：404 的一个页面。
+  不完全的响应: 响应状态码 206，只返回局部的信息。
+  除了 GET 请求外，如果匹配到作为一个已被定义的cache键名的响应。
+  缓存控制  没有缓存  缓存中不得存储任何关于客户端请求和服务端响应的内容。每次由客户端发起的请求都会下载完整的响应内容。
+Cache-Control: no-store缓存但重新验证  如下头部定义，此方式下，每次有请求发出时，缓存会将此请求发到服务器（译者注：该请求应该会带有与本地缓存相关的验证字段），服务器端会验证请求中所描述的缓存是否过期，若未过期（注：实际就是返回304），则缓存才使用本地缓存副本。
+Cache-Control: no-cache私有和公共缓存  &amp;ldquo;public&amp;rdquo; 指令表示该响应可以被任何中间人（译者注：比如中间代理、CDN等）缓存。若指定了&amp;quot;public&amp;rdquo;，则一些通常不被中间人缓存的页面（译者注：因为默认是private）（比如 带有HTTP验证信息（帐号密码）的页面 或 某些特定状态码的页面），将会被其缓存。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Memcached</title>
+      <link>/posts/memcached/</link>
+      <pubDate>Sun, 27 Sep 2020 11:42:39 +0800</pubDate>
+      
+      <guid>/posts/memcached/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Memcached 是一个高性能的分布式内存对象缓存系统，用于动态Web应用以减轻数据库负载。它通过在内存中缓存数据和对象来减少读取数据库的次数，从而提高动态、数据库驱动网站的速度。Memcached基于一个存储键/值对的hashmap。其守护进程（daemon ）是用C写的，但是客户端可以用任何语言来编写，并通过memcached协议与守护进程通信
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cors</title>
+      <link>/posts/cors/</link>
+      <pubDate>Sun, 27 Sep 2020 11:05:18 +0800</pubDate>
+      
+      <guid>/posts/cors/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          跨源资源共享 (CORS: Cross-origin resource sharing) （或通俗地译为跨域资源共享）是一种机制，该机制使用附加的 HTTP 头来告诉浏览器，准许运行在一个源上的Web应用访问位于另一不同源选定的资源。 当一个Web应用发起一个与自身所在源（域，协议和端口）不同的HTTP请求时，它发起的即跨源HTTP请求。
+出于安全性，浏览器限制脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非响应报文包含了正确CORS响应头。
+跨源域资源共享（ CORS ）机制允许 Web 应用服务器进行跨源访问控制，从而使跨源数据传输得以安全进行。现代浏览器支持在 API 容器中（例如 XMLHttpRequest 或 Fetch ）使用 CORS，以降低跨源 HTTP 请求所带来的风险。
+整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。
+因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。
+浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）
+简单请求 （1) 请求方法是以下三种方法之一：
+ HEAD GET POST  （2）HTTP的头信息不超出以下几种字段：
+ Accept Accept-Language Content-Language Last-Event-ID Content-Type：application/x-www-form-urlencoded、multipart/form-data、text/plain  这是为了兼容表单（form），因为历史上表单一直可以发出跨域请求。AJAX 的跨域设计就是，只要表单可以发，AJAX 就可以直接发。
+对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。
+ GET /cors HTTP/1.1Origin: http://api.bob.comHost: api.alice.comAccept-Language: en-USConnection: keep-aliveUser-Agent: Mozilla/5.0...上面的头信息中，Origin字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Es6 Symbol</title>
+      <link>/posts/es6-symbol/</link>
+      <pubDate>Sun, 27 Sep 2020 10:51:49 +0800</pubDate>
+      
+      <guid>/posts/es6-symbol/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          symbol 是一种基本数据类型 （primitive data type）。Symbol()函数会返回symbol类型的值，该类型具有静态属性和静态方法。它的静态属性会暴露几个内建的成员对象；它的静态方法会暴露全局的symbol注册，且类似于内建对象类，但作为构造函数来说它并不完整，因为它不支持语法：&amp;ldquo;new Symbol()&amp;quot;。
+每个从Symbol()返回的symbol值都是唯一的。一个symbol值能作为对象属性的标识符；这是该数据类型仅有的目的。
+每次新建一个对象，判断对象内部的标识符是否相等，如果相等，就认为彼此相等。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Typescript Tutorial</title>
+      <link>/posts/typescript-tutorial/</link>
+      <pubDate>Sun, 27 Sep 2020 10:24:02 +0800</pubDate>
+      
+      <guid>/posts/typescript-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          TypeScript 是 JavaScript 的类型的超集，它可以编译成纯 JavaScript。编译出来的 JavaScript 可以运行在任何浏览器上。TypeScript 编译工具可以运行在任何服务器和任何系统上。TypeScript 是开源的。
+Install Typescript function sayHello(person: string) {return &amp;#39;Hello, &amp;#39; + person;}let user = &amp;#39;Tom&amp;#39;;console.log(sayHello(user));npm install -g typescripttsc hello.tsdata type JavaScript 的数据类型分为两种: 基本数据类型和复杂数据类型
+基本数据类型:
+  Undefined
+  Null
+  Boolean
+  Number
+  String
+  Symbol (ES6) symbol 是ES6中新增的一种特殊的、不可变的基本数据类型（primitive data type），可以作为对象属性的标识符使用
+  Tuple (TS) 元组 (元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同)
+  Enum (TS) 枚举
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Webpack Tutoral</title>
+      <link>/posts/webpack-tutoral/</link>
+      <pubDate>Sun, 27 Sep 2020 10:15:53 +0800</pubDate>
+      
+      <guid>/posts/webpack-tutoral/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          webpack 是一个开源的JavaScript模块打包工具，核心功能是解决模块之间的依赖,把各个模块安装特定的规则和顺序组织在一起，并合并成为一个js文件。这个过程叫做模块打包。
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Hot Module Replacement</title>
@@ -81,7 +2813,7 @@ git config --list --show-origin用户信息 # 设置全局的用户信息$ git
         
         
         
-          获取值 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
+          获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
 class User{public $name = &amp;#39;Alex&amp;#39;;}$array = [&amp;#39;foo&amp;#39; =&amp;gt; [&amp;#39;bar&amp;#39; =&amp;gt; new User(),]];$value = isset($array[&amp;#39;foo&amp;#39;][&amp;#39;bar&amp;#39;]-&amp;gt;name) ? $array[&amp;#39;foo&amp;#39;][&amp;#39;bar&amp;#39;]-&amp;gt;name : null;// or$value = ArrayHelper::getValue($array, &amp;#39;foo.bar.name&amp;#39;);// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&amp;gt;firstName . &amp;#39; &amp;#39; . $user-&amp;gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, &amp;#39;user.
           
         
@@ -193,33 +2925,16 @@ echo &amp;#39;this is a simple string&amp;#39;;echo &amp;#39;You can also have 
 全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
 通过ROWID访问表
 ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
-共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。 5. 选择最有效率的表名顺序
-ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。 当ORACLE处理多个表时，会运用排序及合并的方式连接它们。首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，然后扫描第二个表(FROM子句中最后第二个表)，最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。 只在基于规则的优化器中有效。 举例：
+共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
+选择最有效率的表名顺序  ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
+当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
+首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
+然后扫描第二个表(FROM子句中最后第二个表)，
+最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
+只在基于规则的优化器中有效。 举例：
 表 TAB1 16,384 条记录
 表 TAB2 1 条记录
-/选择TAB2作为基础表 (最好的方法)/ select count(*) from tab1,tab2 执行时间0.96秒
-/选择TAB2作为基础表 (不佳的方法)/ select count(*) from tab2,tab1 执行时间26.09秒 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。
-SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Sql Optimization</title>
-      <link>/post/sql-optimization/</link>
-      <pubDate>Wed, 23 Sep 2020 16:35:33 +0800</pubDate>
-      
-      <guid>/post/sql-optimization/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
+-- 选择TAB2作为基础表 (最好的方法) select count(*) from tab1,tab2 执行时间0.96秒-- 选择TAB2作为基础表 (不佳的方法) select count(*) from tab2,tab1 执行时间26.09秒-- 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
           
         
         </description>
@@ -330,8 +3045,8 @@ filter_input_array 获取一系列外部变量，并且可以通过过滤器处�
         
         
           array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
-// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER（默认值）。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
-$input_array = array(&amp;#34;FirSt&amp;#34; =&amp;gt; 1, &amp;#34;SecOnd&amp;#34; =&amp;gt; 4);print_r(array_change_key_case($input_array, CASE_UPPER));// Array// (// [FIRST] =&amp;gt; 1// [SECOND] =&amp;gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
+// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
+$input_array = array(&amp;#34;FirSt&amp;#34; =&amp;gt; 1, &amp;#34;SecOnd&amp;#34; =&amp;gt; 4);array_change_key_case($input_array, CASE_LOWER);// Array// (// [first] =&amp;gt; 1// [second] =&amp;gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
 将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。
           
         
@@ -419,7 +3134,8 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
         
         
         
-          基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
+          在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了
+为什么要学vim  所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在； 很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)； vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计； 因为程序简单，编辑速度相当快速  基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
 命令模式： 用户刚刚启动 vi/vim，便进入了命令模式。
 此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
 以下是常用的几个命令：
@@ -428,8 +3144,6 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
  字符按键以及Shift组合，输入字符 ENTER，回车键，换行 BACKSPACE，退格键，删除光标前一个字符 DEL，删除键，删除光标后一个字符 方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 Page Up/Page Down，上/下翻页 Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 ESC，退出输入模式，切换到命令模式  底线命令模式 在命令模式下按下:（英文冒号）就进入了底线命令模式。
 在底线命令模式中，基本的命令有（已经省略了冒号）:
 q 退出程序 w 保存文件
-按ESC键可随时退出底线命令模式。
-Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式(也称为编辑模式)，开始编辑文字# 按下 ESC 按钮回到一般模式# 在一般模式中按下 :wq 储存后离开 vivi/vim 按键说明 第一部分：一般模式可用的光标移动、复制粘贴、搜索替换等  h 或 向左箭头键(←)	光标向左移动一个字符 j 或 向下箭头键(↓)	光标向下移动一个字符 k 或 向上箭头键(↑)	光标向上移动一个字符 l 或 向右箭头键(→)	光标向右移动一个字符  如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。 如果想要进行多次移动的话，例如向下移动 30 行，可以使用 &amp;ldquo;30j&amp;rdquo; 或 &amp;ldquo;30↓&amp;rdquo; 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！
           
         
         </description>
@@ -541,7 +3255,16 @@ SET runoob &amp;#34;菜鸟教程&amp;#34;GET runoob #菜鸟教程 一个键最�
         
         
         
-           数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？如何避免不收敛的数据变更？Knockout和Vue分别怎么做的，他们为什么要这样做？ 作用域树、作用域之间的继承、作用域上的事件、赋值分别是怎样实现的- 表达式如何动态解析，如何避免不安全的表达式？ 数据如何跟DOM建立关联？索引如何建立，如何确定唯一索引，如何显式指定索引？ 常用的事件是如何封装的？ 模块和依赖注入是怎么实现的？是否确有必要？  
+            数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？
+  如何避免不收敛的数据变更？
+  Knockout和Vue分别怎么做的，他们为什么要这样做？
+  作用域树、作用域之间的继承、作用域上的事件、赋值分别是怎样实现的
+  表达式如何动态解析，如何避免不安全的表达式？
+  数据如何跟DOM建立关联？
+  索引如何建立，如何确定唯一索引，如何显式指定索引？
+  常用的事件是如何封装的？
+  模块和依赖注入是怎么实现的？是否确有必要？
+  
           
         
         </description>
@@ -617,7 +3340,7 @@ Angular脏检查（Change Detection）机制 当我们遇到了性能问题，�
 而通常情况下，Angular Change Detection会由下几类事件触发：
  所有的浏览器事件（click, mouseover, keyup等） Ajax异步请求 setTimeout()和setInterval()  一旦我们触发了这些事件，Change Detection机制就会开始运行。在这些事件所绑定的方法执行完成之后，Change Detection会根据当前模板中数据绑定的情况来更新DOM。
 Angular的性能好坏就和每一次Change Detection周期的执行时间长短有关。理想情况下如果每次Change Detection周期能控制在17ms以内，那么界面将会十分流畅。而在这个周期中，触发事件是周期的开始，这个时间可以忽略不计。浏览器渲染是浏览器的行为，不受Angular控制。所以我们可以优化的就是在Event Handler执行和Chanege Detection检测绑定这两个步骤。
-减少Event Handler的运行时间 CDN加速 nginx缓存 events {#的最大连接数（包含所有连接数）1024worker_connections 1024; ## Default: 1024}http{# 代理缓存配置 nginx根目录指定缓存文件夹 kawa_cachedata名字自己定义跟proxy_cache_path对应上proxy_cache_path &amp;quot;.
+减少Event Handler的运行时间 CDN加速 nginx缓存 events {#的最大连接数（包含所有连接数）1024worker_connections 1024; ## Default: 1024}http{# 代理缓存配置 nginx根目录指定缓存文件夹 kawa_cachedata名字自己定义跟proxy_cache_path对应上proxy_cache_path &amp;#34;.
           
         
         </description>
@@ -724,7 +3447,12 @@ phprpc 简介 是一个轻型的、安全的、跨网际的、跨语言的、跨
         
           rpc
 标准化 为了允许不同的客户端均能访问服务器，许多标准化的 RPC 系统应运而生了。其中大部分采用IDL(Interface Description Language)，方便跨平台的远程过程调用。
-References Remote Procedure Call gRPC 深入剖析通信层和 RPC 调用的异步化
+OSI网络七层模型 OSI的七层网络结构模型（虽然实际应用中基本上都是五层），它可以分为以下几层： （从上到下）
+第一层：应用层。定义了用于在网络中进行通信和传输数据的接口； (HTTP) 第二层：表示层。定义不同的系统中数据的传输格式，编码和解码规范等； 第三层：会话层。管理用户的会话，控制用户间逻辑连接的建立和中断；
+第四层：传输层。管理着网络中的端到端的数据传输；（TCP/IP） 第五层：网络层。定义网络设备间如何传输数据； 第六层：链路层。将上面的网络层的数据包封装成数据帧，便于物理层传输； 第七层：物理层。这一层主要就是传输这些二进制数据。
+实际应用过程中，五层协议结构里面是没有表示层和会话层的。应该说它们和应用层合并了。我们应该将重点放在应用层和传输层这两个层面。因为HTTP是应用层协议，而TCP是传输层协议。好，知道了网络的分层模型以后我们可以更好地理解为什么RPC服务相比HTTP服务要Nice一些！
+RPC服务 分别是RPC架构，同步异步调用以及流行的RPC框架。
+References Remote Procedure Call gRPC 深入剖析通信层和 RPC 调用的异步化 [](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;amp;album_id=1358237826197962753&amp;amp;__biz=MzUzNTY5MzU2MA==#wechat_redirect)
           
         
         </description>
@@ -747,7 +3475,7 @@ References Remote Procedure Call gRPC 深入剖析通信层和 RPC 调用的异�
           应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
 一个应用的静态结构
 每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
-请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。
           
         
         </description>
@@ -1066,10 +3794,10 @@ curl -X GET &amp;#39;http://localhost:9200/_cat/indices?v&amp;#39;Document Inde
         
         
           数据库 数据库是一以某种方式存储的数据集合
-使用crashcourse
-use crashcourse;显示数据库
-show DATABASES; // 返回可用数据库的列表显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示数据库的状态信息show create databaseshow create table #显示创建特定数据库/表show GRANTS // 显示检索数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product.
+选择数据库 crashcourse
+use crashcourse;查看数据库信息
+show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息显示数据库内表的列表
+show TABLES; // 显示当前数据库内的表show status // 显示服务器状态信息show create database / show create table #显示创建特定数据库/表show GRANTS // 显示4. 查询数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product.
           
         
         </description>
@@ -1151,7 +3879,7 @@ Quick Links Array
         
         
           nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. For a long time, it has been running on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler. According to Netcraft, nginx served or proxied 25.75% busiest sites in August 2020. Here are some of the success stories: Dropbox, Netflix, Wordpress.com, FastMail.FM.
-安装Nginx 下载nginx
+安装Nginx cd /usr/local/src/# 下载nginxwget http://nginx.
           
         
         </description>
@@ -1173,7 +3901,7 @@ Quick Links Array
         
           mysql 字符集选择
 对数据库来说，字符集更加重要，因为数据库存储的数据大部分都是各种文字，字符集对数据库的存储，处理性能，以及日后系统的移植，推广都会有影响。 MySQL5.6目前支持几十种字符集，包括UCS-2，UTF-16，UTF-16LE,UTF-32，UTF-8和utf8mb4等Unicode字符集。 根据应用的需求，考虑以下几方面的因素。
- 满足应用支持语言的需求，如果应用要处理各种各样的文字，或者将发布到使用不同语言的国家或地区，就应该选择Unicode字符集。对MySQL来说，目前就是UTF-8 如果应用中涉及已有数据的导入，就要充分考虑数据库字符集对已有数据的兼容性。假如已有数据是GBK文字，如果选择GB2312-80为数据库字符集，就很有可能出现某些文字无法正确导入的问题 如果数据库只支持一般中文，数据量很大，性能要求也很高，那就应该选择双字节长编码的中文字符集，比如GBK。因为，相对于UTF-8而言，GBK比较“小”，每个汉字只占2个字节，而UTF-8汉字编码需要3个字节，这样可以减少磁盘I/O，数据库Cache以及网络传输的时间，从而提高性能。相反，如果应用主要处理英文字符，仅有少量汉字数据，那么选择UTF-8更好，因为GBK,UCS-2，UTF-16的西文字符编码都是2个字节，会造成很多不必要的开销。 如果数据库需要做大量的字符运算，如比较，排序等，那么选择定长字符集可能更好，因为定长字符集的处理速度要比变长字符集的处理速度快。 如果所有客户端程序都支持相同的字符集，则应该优先选择该字符集作为数据库字符集，这样可以避免因字符集转换带来的性能开销和数据损失  
+ 满足应用支持语言的需求，如果应用要处理各种各样的文字，或者将发布到使用不同语言的国家或地区，就应该选择Unicode字符集。对MySQL来说，目前就是UTF-8 如果应用中涉及已有数据的导入，就要充分考虑数据库字符集对已有数据的兼容性。假如已有数据是GBK文字，如果选择GB2312-80为数据库字符集，就很有可能出现某些文字无法正确导入的问题 如果数据库只支持一般中文，数据量很大，性能要求也很高，那就应该选择双字节长编码的中文字符集，比如GBK。因为，相对于UTF-8而言，GBK比较“小”，每个汉字只占2个字节，而UTF-8汉字编码需要3个字节，这样可以减少磁盘I/O，数据库Cache以及网络传输的时间，从而提高性能。相反，如果应用主要处理英文字符，仅有少量汉字数据，那么选择UTF-8更好，因为GBK,UCS-2，UTF-16的西文字符编码都是2个字节，会造成很多不必要的开销。 如果数据库需要做大量的字符运算，如比较，排序等，那么选择定长字符集可能更好，因为定长字符集的处理速度要比变长字符集的处理速度快。 如果所有客户端程序都支持相同的字符集，则应该优先选择该字符集作为数据库字符集，这样可以避免因字符集转换带来的性能开销和数据损失  DB字符集建议都使用utf8mb4/utf8 表字符集建议都使用utf8mb4/utf8 库表字符集需统一,单个实例的所有库/表/字段的字符集唯一，同一个实例中不允许出现多个字符集
           
         
         </description>
@@ -1216,9 +3944,10 @@ In software engineering, dependency injection is a technique in which an object 
         
           PHP-FPM是一个PHP的PHPFastCGI管理器。
 PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
-kill -INT cat /var/run/php-fpm/php-fpm.pid
-杀死进程 killall php-fpm
-开启进程 /usr/local/php72/sbin/php-fpm
+kill -INT `cat /var/run/php-fpm/php-fpm.pid`# 杀死进程killall php-fpm# 开启进程/usr/local/php72/sbin/php-fpm# 查看端口号netstat -lnt | grep 9000# 查看php-fpmps aux | grep php-fpm# 重新启动并加载配置/usr/local/php/sbin-php-fpm -c php.ini1 修改php.ini或www.conf？ 修改php.ini文件：
+$ php &amp;ndash;ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
+$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
+2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6.
           
         
         </description>
@@ -1283,7 +4012,9 @@ kill -INT cat /var/run/php-fpm/php-fpm.pid
         
         
           防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
-  实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6+import { of, timer } from &amp;#39;rxjs&amp;#39;;import { debounce } from &amp;#39;rxjs/operators&amp;#39;;// 发出四个字符串const example = of(&amp;#39;WAIT&amp;#39;, &amp;#39;ONE&amp;#39;, &amp;#39;SECOND&amp;#39;, &amp;#39;Last will display&amp;#39;);/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&amp;gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: &amp;#39;Last will display&amp;#39;*/const subscribe = debouncedExample.subscribe(val =&amp;gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])实现方式: 参考资料  rxjs debounce debounce lodash debounce source code  截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
+  实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6+import { of, timer } from &amp;#39;rxjs&amp;#39;;import { debounce } from &amp;#39;rxjs/operators&amp;#39;;// 发出四个字符串const example = of(&amp;#39;WAIT&amp;#39;, &amp;#39;ONE&amp;#39;, &amp;#39;SECOND&amp;#39;, &amp;#39;Last will display&amp;#39;);/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&amp;gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: &amp;#39;Last will display&amp;#39;*/const subscribe = debouncedExample.subscribe(val =&amp;gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])js 实现方式:
+截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
+ 实现方式：每次触发事件时，如果当前周期内有等待执行的函数，则取消当前事件  import { interval } from &amp;#39;rxjs&amp;#39;;import { throttle } from &amp;#39;rxjs/operators&amp;#39;;// 每1秒发出值const source = interval(1000);// 节流2秒后才发出最新值const example = source.
           
         
         </description>
@@ -1410,22 +4141,22 @@ Efficient and fast Safe Open and debuggable Part of the open web platform Start 
         
         
           repaint-and-refolw (重绘和回流) 从上面这个图上，我们可以看到，浏览器渲染过程如下：
-  解析HTML，生成DOM树，解析CSS，生成CSSOM树
+  解析HTML，生成DOM树
+  解析CSS，生成CSSOM树
   将DOM树和CSSOM树结合，生成渲染树(Render Tree)
-  Layout(回流):根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
-  Painting(重绘):根据渲染树以及回流得到的几何信息，得到节点的绝对像素
-  Display:将像素发送给GPU，展示在页面上。（这一步其实还有很多内容，比如会在GPU将多个合成层合并为同一个层，并展示在页面中。而css3硬件加速的原理则是新建合成层，这里我们不展开，之后有机会会写一篇博客）
-  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
+  Layout(回流): 根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
+  Painting(重绘): 根据渲染树以及回流得到的几何信息，得到节点的绝对像素
+  Display:将像素发送给GPU，展示在页面上。
+   注意：回流一定会触发重绘，而重绘不一定会回流, 前端性能优化，一般是尽量避免回流
+ 产生回流的场景如下:
+ 添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）  针对回流和重绘的优化方案:
+ 合并多次对DOM和样式的修改 批量修改DOM 使元素脱离文档流,对其进行多次修改,将元素带回到文档中。 对于复杂动画效果,使用绝对定位让其脱离文档流 比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。  有三种方式可以让DOM脱离文档流：
+ 隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
 什么节点是不可见的。不可见的节点包括： 一些不会渲染输出的节点，比如script、meta、link等。 一些通过css进行隐藏的节点。比如display:none。注意，利用visibility和opacity隐藏的节点，还是会显示在渲染树上的。只有display:none的节点才不会显示在渲染树上。
  注意：渲染树只包含可见的节点
- 何时发生回流  添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）   注意：回流一定会触发重绘，而重绘不一定会回流
  重绘 (重新构造渲染树) 我们通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。
 浏览器的优化机制 现代的浏览器都是很聪明的，由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才清空队列。
- 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  减少回流和重绘  合并多次对DOM和样式的修改 批量修改DOM  使元素脱离文档流 对其进行多次修改 将元素带回到文档中。
-有三种方式可以让DOM脱离文档流：
-隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。
-对于复杂动画效果,使用绝对定位让其脱离文档流
-比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。
+ 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  参考资料  渲染树构建、布局及绘制  
           
         
         </description>
@@ -1471,6 +4202,7 @@ what A block formatting context is created by at least one of the following:
         
           Can&amp;#39;t connect to local MySQL server through socket &amp;#39;/var/lib/mysql/mysql.sock&amp;#39; 导出数据 mysqldump -u root -p ieg_waibao_test &amp;gt; test_db.sql;
 登录mysql mysql -u root -p
+mysql -h 服务器ip地址 -P 3306 -u root -p
           
         
         </description>
@@ -1568,7 +4300,7 @@ tar -zxvf php-7.2.33.tar.xz
         
         
         
-          undo #Checkoutgit checkout --orphan latest_branch;#Add all the filesgit add -A;#Commit the changesgit commit -am &amp;#34;Reinitialize&amp;#34;;#Delete the branchgit branch -D master;#Rename the current branch to mastergit branch -m master;#Finally, force update your repositorygit push -f origin master;  git reset --hard HEAD^ git push --force
+          删除commit提交记录 # Checkoutgit checkout --orphan latest_branch;# Add all the filesgit add -A;# Commit the changesgit commit -am &amp;#34;Reinitialize&amp;#34;;# Delete the branchgit branch -D master;# Rename the current branch to mastergit branch -m master;# Finally, force update your repositorygit push -f origin master;撤销上一次的commit git reset --hard HEAD^ git reset --mixed HEAD^ git reset --soft HEAD^ git push --force# --mixed 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add 。 操作这个为默认参数,git reset --mixed HEAD^ 和 git reset HEAD^ 效果是一样的。# --soft 不删除工作空间改动代码，撤销commit，不撤销git add .
           
         
         </description>
@@ -1588,13 +4320,8 @@ tar -zxvf php-7.2.33.tar.xz
         
         
         
-          look auth r = 读取权限 (4) w = 写入权限 (2) x = 执行权限 (1)
-1-3位数字代表文件所有者的权限，4-6位数字代表同组用户的权限，7-9数字代表其他用户的权限。
-444 r&amp;ndash;r&amp;ndash;r&amp;ndash; 600 rw&amp;mdash;&amp;mdash;- 644 rw-r&amp;ndash;r&amp;ndash; 666 rw-rw-rw- 700 rwx&amp;mdash;&amp;mdash; 744 rwxr&amp;ndash;r&amp;ndash; 755 rwxr-xr-x 777 rwxrwxrwx
-Quote   Linux修改目录权限
-  How do I change permissions for a folder and all of its subfolders and files in one step in Linux?
-  chmod command
-  
+          Linux 文件属性 查看文件
+ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x--- 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw------- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw------- 1 root root 199 Sep 8 17:14 .bash_history-rw-r--r-- 1 root root 24 Jan 6 2007 .bash_logout-rw-r--r-- 1 root root 191 Jan 6 2007 .bash_profile-rw-r--r-- 1 root root 176 Jan 6 2007 .
           
         
         </description>
@@ -1614,7 +4341,7 @@ Quote   Linux修改目录权限
         
         
         
-          # 测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm# 下载phpwget php-7.2.15.tar.bz2 http://cn2.php.net/distributions/php-7.2.15.tar.bz2yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpmrpm -Uvh https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm# linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常
+          linux common command # 测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm# 下载phpwget php-7.2.15.tar.bz2 http://cn2.php.net/distributions/php-7.2.15.tar.bz2yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpmrpm -Uvh https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm# linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常
           
         
         </description>
@@ -1642,10 +4369,10 @@ Quote   Linux修改目录权限
     
     <item>
       <title>Git Submodule</title>
-      <link>/git-submodule/</link>
+      <link>/posts/git-submodule/</link>
       <pubDate>Mon, 31 Aug 2020 10:20:39 +0800</pubDate>
       
-      <guid>/git-submodule/</guid>
+      <guid>/posts/git-submodule/</guid>
       <description>
         
           
@@ -1722,10 +4449,10 @@ Quote   Linux修改目录权限
     
     <item>
       <title>Hugo</title>
-      <link>/hugo/</link>
+      <link>/posts/hugo/</link>
       <pubDate>Fri, 28 Aug 2020 19:18:18 +0800</pubDate>
       
-      <guid>/hugo/</guid>
+      <guid>/posts/hugo/</guid>
       <description>
         
           

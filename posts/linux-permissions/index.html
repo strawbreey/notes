@@ -4,20 +4,15 @@
     
       <title>
         Linux Permissions ::
-        Hello Friend — A simple theme for Hugo
+        Strawbreey Notes
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="look auth r = 读取权限 (4) w = 写入权限 (2) x = 执行权限 (1)
-1-3位数字代表文件所有者的权限，4-6位数字代表同组用户的权限，7-9数字代表其他用户的权限。
-444 r&amp;ndash;r&amp;ndash;r&amp;ndash; 600 rw&amp;mdash;&amp;mdash;- 644 rw-r&amp;ndash;r&amp;ndash; 666 rw-rw-rw- 700 rwx&amp;mdash;&amp;mdash; 744 rwxr&amp;ndash;r&amp;ndash; 755 rwxr-xr-x 777 rwxrwxrwx
-Quote   Linux修改目录权限
-  How do I change permissions for a folder and all of its subfolders and files in one step in Linux?
-  chmod command
-  "
+  content="Linux 文件属性 查看文件
+ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x--- 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw------- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw------- 1 root root 199 Sep 8 17:14 .bash_history-rw-r--r-- 1 root root 24 Jan 6 2007 .bash_logout-rw-r--r-- 1 root root 191 Jan 6 2007 .bash_profile-rw-r--r-- 1 root root 176 Jan 6 2007 ."
 />
 <meta
   name="keywords"
@@ -53,28 +48,18 @@ Quote   Linux修改目录权限
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux Permissions"/>
-<meta name="twitter:description" content="look auth r = 读取权限 (4) w = 写入权限 (2) x = 执行权限 (1)
-1-3位数字代表文件所有者的权限，4-6位数字代表同组用户的权限，7-9数字代表其他用户的权限。
-444 r&ndash;r&ndash;r&ndash; 600 rw&mdash;&mdash;- 644 rw-r&ndash;r&ndash; 666 rw-rw-rw- 700 rwx&mdash;&mdash; 744 rwxr&ndash;r&ndash; 755 rwxr-xr-x 777 rwxrwxrwx
-Quote   Linux修改目录权限
-  How do I change permissions for a folder and all of its subfolders and files in one step in Linux?
-  chmod command
-  "/>
+<meta name="twitter:description" content="Linux 文件属性 查看文件
+ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x--- 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw------- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw------- 1 root root 199 Sep 8 17:14 .bash_history-rw-r--r-- 1 root root 24 Jan 6 2007 .bash_logout-rw-r--r-- 1 root root 191 Jan 6 2007 .bash_profile-rw-r--r-- 1 root root 176 Jan 6 2007 ."/>
 
 
 
 <meta property="og:title" content="Linux Permissions" />
-<meta property="og:description" content="look auth r = 读取权限 (4) w = 写入权限 (2) x = 执行权限 (1)
-1-3位数字代表文件所有者的权限，4-6位数字代表同组用户的权限，7-9数字代表其他用户的权限。
-444 r&ndash;r&ndash;r&ndash; 600 rw&mdash;&mdash;- 644 rw-r&ndash;r&ndash; 666 rw-rw-rw- 700 rwx&mdash;&mdash; 744 rwxr&ndash;r&ndash; 755 rwxr-xr-x 777 rwxrwxrwx
-Quote   Linux修改目录权限
-  How do I change permissions for a folder and all of its subfolders and files in one step in Linux?
-  chmod command
-  " />
+<meta property="og:description" content="Linux 文件属性 查看文件
+ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x--- 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw------- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw------- 1 root root 199 Sep 8 17:14 .bash_history-rw-r--r-- 1 root root 24 Jan 6 2007 .bash_logout-rw-r--r-- 1 root root 191 Jan 6 2007 .bash_profile-rw-r--r-- 1 root root 176 Jan 6 2007 ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/linux-permissions/" />
 <meta property="article:published_time" content="2020-08-31T11:17:11+08:00" />
-<meta property="article:modified_time" content="2020-08-31T11:17:11+08:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="article:modified_time" content="2020-08-31T11:17:11+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
@@ -97,9 +82,8 @@ Quote   Linux修改目录权限
 </svg>
 </span>
     <span class="logo__text"
-      >hello friend</span
+      >Strawbreey Notes</span
     >
-    <span class="logo__cursor"></span>
   
 </a>
 
@@ -173,7 +157,7 @@ Quote   Linux修改目录权限
     <div class="post-meta">
       
         <span class="post-date">
-          2020-08-31
+          31089-08-31
         </span>
 
         
@@ -193,7 +177,39 @@ Quote   Linux修改目录权限
 
     <div class="post-content">
       
-      <h2 id="look-auth">look auth</h2>
+      <h3 id="linux-文件属性">Linux 文件属性</h3>
+<p>查看文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ls -al <span style="color:#75715e"># 查看当前文件夹中文件的所有信息</span>
+
+<span style="color:#f92672">[</span>root@www ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls -al</span>
+
+total 156
+
+drwxr-x---   <span style="color:#ae81ff">4</span>    root   root     <span style="color:#ae81ff">4096</span>   Sep  <span style="color:#ae81ff">8</span> 14:06 .
+drwxr-xr-x  <span style="color:#ae81ff">23</span>    root   root     <span style="color:#ae81ff">4096</span>   Sep  <span style="color:#ae81ff">8</span> 14:21 ..
+-rw-------   <span style="color:#ae81ff">1</span>    root   root     <span style="color:#ae81ff">1474</span>   Sep  <span style="color:#ae81ff">4</span> 18:27 anaconda-ks.cfg
+-rw-------   <span style="color:#ae81ff">1</span>    root   root      <span style="color:#ae81ff">199</span>   Sep  <span style="color:#ae81ff">8</span> 17:14 .bash_history
+-rw-r--r--   <span style="color:#ae81ff">1</span>    root   root       <span style="color:#ae81ff">24</span>   Jan  <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2007</span> .bash_logout
+-rw-r--r--   <span style="color:#ae81ff">1</span>    root   root      <span style="color:#ae81ff">191</span>   Jan  <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2007</span> .bash_profile
+-rw-r--r--   <span style="color:#ae81ff">1</span>    root   root      <span style="color:#ae81ff">176</span>   Jan  <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2007</span> .bashrc
+-rw-r--r--   <span style="color:#ae81ff">1</span>    root   root      <span style="color:#ae81ff">100</span>   Jan  <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2007</span> .cshrc
+drwx------   <span style="color:#ae81ff">3</span>    root   root     <span style="color:#ae81ff">4096</span>   Sep  <span style="color:#ae81ff">5</span> 10:37 .gconf
+drwx------   <span style="color:#ae81ff">2</span>    root   root     <span style="color:#ae81ff">4096</span>   Sep  <span style="color:#ae81ff">5</span> 14:09 .gconfd
+-rw-r--r--   <span style="color:#ae81ff">1</span>    root   root    <span style="color:#ae81ff">42304</span>   Sep  <span style="color:#ae81ff">4</span> 18:26 install.log
+-rw-r--r--   <span style="color:#ae81ff">1</span>    root   root     <span style="color:#ae81ff">5661</span>   Sep  <span style="color:#ae81ff">4</span> 18:25 install.log.syslog
+
+</code></pre></div><p>ls是『list』的意思，重点在显示文件的文件名与相关属性。而选项『-al』则表示列出所有的文件详细的权限与属性</p>
+<ol>
+<li>第一栏代表这个文件的类型与权限(permission)</li>
+</ol>
+<p>第一个字符代表这个文件是『目录、文件或链接文件等等』：</p>
+<p>当为[ d ]则是目录，例如上表档名为『.gconf』的那一行；
+当为[ - ]则是文件，例如上表档名为『install.log』那一行；
+若是[ l ]则表示为连结档(link file)；
+若是[ b ]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；
+若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</p>
+<p>第二栏表示有多少档名连结到此节点(i-node)</p>
+<h2 id="look-auth">look auth</h2>
 <p>r = 读取权限 (4)
 w = 写入权限 (2)
 x = 执行权限 (1)</p>
@@ -206,7 +222,13 @@ x = 执行权限 (1)</p>
 744 rwxr&ndash;r&ndash;
 755 rwxr-xr-x
 777 rwxrwxrwx</p>
-<h2 id="quote">Quote</h2>
+<h3 id="添加软链接">添加软链接</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># /sub/uploads 添加 /uploads 软链接</span>
+ln -s  /uploads /sub/uploads
+
+<span style="color:#75715e"># 修改权限</span>
+chmod -R <span style="color:#ae81ff">777</span> uploads
+</code></pre></div><h2 id="quote">Quote</h2>
 <ul>
 <li>
 <p><a href="https://www.jianshu.com/p/ac4e994a47e2">Linux修改目录权限</a></p>
@@ -265,34 +287,8 @@ x = 执行权限 (1)</p>
         <footer class="footer">
   <div class="footer__inner">
     
-      <a
-  href="/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >hello friend</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span
-          >© 2020 Powered by
-          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
-        >
-        <span
-          >Theme created by
-          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
-        >
-      </div>
-    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
   </div>
 </footer>
 

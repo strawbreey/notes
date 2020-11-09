@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Cache ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/cache/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cache"/>
+<meta name="twitter:description" content="10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。"/>
+
+
+
+<meta property="og:title" content="Cache" />
+<meta property="og:description" content="10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/cache/" />
+<meta property="article:published_time" content="2020-11-05T11:33:43+08:00" />
+<meta property="article:modified_time" content="2020-11-05T11:33:43+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Strawbreey Notes</span
+    >
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Cache</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          5119-11-05
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>10.6.2 缓存的分类</p>
+<p>1.按照存储位置分类</p>
+<p>● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。</p>
+<p>● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。</p>
+<p>2.按照存储介质分类</p>
+<p>● 内存缓存：将数据缓存在内存里。</p>
+<p>● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。</p>
+<p>3.按照缓存的对象分类</p>
+<p>● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。</p>
+<p>● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。</p>
+<p>10.6.4 缓存使用场景</p>
+<p>（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。</p>
+<p>● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。</p>
+<p>● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。</p>
+<p>● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/redis-design-and-implementation/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Redis Design and Implementation</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/content-delivery-network/">
+                  <span class="button__text">Content Delivery Network</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

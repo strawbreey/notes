@@ -4,7 +4,7 @@
     
       <title>
         Css Interivew Repaint and Refolw ::
-        Hello Friend — A simple theme for Hugo
+        Strawbreey Notes
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -12,22 +12,22 @@
 <meta
   name="description"
   content="repaint-and-refolw (重绘和回流) 从上面这个图上，我们可以看到，浏览器渲染过程如下：
-  解析HTML，生成DOM树，解析CSS，生成CSSOM树
+  解析HTML，生成DOM树
+  解析CSS，生成CSSOM树
   将DOM树和CSSOM树结合，生成渲染树(Render Tree)
-  Layout(回流):根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
-  Painting(重绘):根据渲染树以及回流得到的几何信息，得到节点的绝对像素
-  Display:将像素发送给GPU，展示在页面上。（这一步其实还有很多内容，比如会在GPU将多个合成层合并为同一个层，并展示在页面中。而css3硬件加速的原理则是新建合成层，这里我们不展开，之后有机会会写一篇博客）
-  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
+  Layout(回流): 根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
+  Painting(重绘): 根据渲染树以及回流得到的几何信息，得到节点的绝对像素
+  Display:将像素发送给GPU，展示在页面上。
+   注意：回流一定会触发重绘，而重绘不一定会回流, 前端性能优化，一般是尽量避免回流
+ 产生回流的场景如下:
+ 添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）  针对回流和重绘的优化方案:
+ 合并多次对DOM和样式的修改 批量修改DOM 使元素脱离文档流,对其进行多次修改,将元素带回到文档中。 对于复杂动画效果,使用绝对定位让其脱离文档流 比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。  有三种方式可以让DOM脱离文档流：
+ 隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
 什么节点是不可见的。不可见的节点包括： 一些不会渲染输出的节点，比如script、meta、link等。 一些通过css进行隐藏的节点。比如display:none。注意，利用visibility和opacity隐藏的节点，还是会显示在渲染树上的。只有display:none的节点才不会显示在渲染树上。
  注意：渲染树只包含可见的节点
- 何时发生回流  添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）   注意：回流一定会触发重绘，而重绘不一定会回流
  重绘 (重新构造渲染树) 我们通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。
 浏览器的优化机制 现代的浏览器都是很聪明的，由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才清空队列。
- 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  减少回流和重绘  合并多次对DOM和样式的修改 批量修改DOM  使元素脱离文档流 对其进行多次修改 将元素带回到文档中。
-有三种方式可以让DOM脱离文档流：
-隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。
-对于复杂动画效果,使用绝对定位让其脱离文档流
-比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。"
+ 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  参考资料  渲染树构建、布局及绘制  "
 />
 <meta
   name="keywords"
@@ -64,47 +64,47 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Css Interivew Repaint and Refolw"/>
 <meta name="twitter:description" content="repaint-and-refolw (重绘和回流) 从上面这个图上，我们可以看到，浏览器渲染过程如下：
-  解析HTML，生成DOM树，解析CSS，生成CSSOM树
+  解析HTML，生成DOM树
+  解析CSS，生成CSSOM树
   将DOM树和CSSOM树结合，生成渲染树(Render Tree)
-  Layout(回流):根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
-  Painting(重绘):根据渲染树以及回流得到的几何信息，得到节点的绝对像素
-  Display:将像素发送给GPU，展示在页面上。（这一步其实还有很多内容，比如会在GPU将多个合成层合并为同一个层，并展示在页面中。而css3硬件加速的原理则是新建合成层，这里我们不展开，之后有机会会写一篇博客）
-  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
+  Layout(回流): 根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
+  Painting(重绘): 根据渲染树以及回流得到的几何信息，得到节点的绝对像素
+  Display:将像素发送给GPU，展示在页面上。
+   注意：回流一定会触发重绘，而重绘不一定会回流, 前端性能优化，一般是尽量避免回流
+ 产生回流的场景如下:
+ 添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）  针对回流和重绘的优化方案:
+ 合并多次对DOM和样式的修改 批量修改DOM 使元素脱离文档流,对其进行多次修改,将元素带回到文档中。 对于复杂动画效果,使用绝对定位让其脱离文档流 比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。  有三种方式可以让DOM脱离文档流：
+ 隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
 什么节点是不可见的。不可见的节点包括： 一些不会渲染输出的节点，比如script、meta、link等。 一些通过css进行隐藏的节点。比如display:none。注意，利用visibility和opacity隐藏的节点，还是会显示在渲染树上的。只有display:none的节点才不会显示在渲染树上。
  注意：渲染树只包含可见的节点
- 何时发生回流  添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）   注意：回流一定会触发重绘，而重绘不一定会回流
  重绘 (重新构造渲染树) 我们通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。
 浏览器的优化机制 现代的浏览器都是很聪明的，由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才清空队列。
- 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  减少回流和重绘  合并多次对DOM和样式的修改 批量修改DOM  使元素脱离文档流 对其进行多次修改 将元素带回到文档中。
-有三种方式可以让DOM脱离文档流：
-隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。
-对于复杂动画效果,使用绝对定位让其脱离文档流
-比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。"/>
+ 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  参考资料  渲染树构建、布局及绘制  "/>
 
 
 
 <meta property="og:title" content="Css Interivew Repaint and Refolw" />
 <meta property="og:description" content="repaint-and-refolw (重绘和回流) 从上面这个图上，我们可以看到，浏览器渲染过程如下：
-  解析HTML，生成DOM树，解析CSS，生成CSSOM树
+  解析HTML，生成DOM树
+  解析CSS，生成CSSOM树
   将DOM树和CSSOM树结合，生成渲染树(Render Tree)
-  Layout(回流):根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
-  Painting(重绘):根据渲染树以及回流得到的几何信息，得到节点的绝对像素
-  Display:将像素发送给GPU，展示在页面上。（这一步其实还有很多内容，比如会在GPU将多个合成层合并为同一个层，并展示在页面中。而css3硬件加速的原理则是新建合成层，这里我们不展开，之后有机会会写一篇博客）
-  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
+  Layout(回流): 根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）
+  Painting(重绘): 根据渲染树以及回流得到的几何信息，得到节点的绝对像素
+  Display:将像素发送给GPU，展示在页面上。
+   注意：回流一定会触发重绘，而重绘不一定会回流, 前端性能优化，一般是尽量避免回流
+ 产生回流的场景如下:
+ 添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）  针对回流和重绘的优化方案:
+ 合并多次对DOM和样式的修改 批量修改DOM 使元素脱离文档流,对其进行多次修改,将元素带回到文档中。 对于复杂动画效果,使用绝对定位让其脱离文档流 比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。  有三种方式可以让DOM脱离文档流：
+ 隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。  回流 (重新计算DOM节点) 前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。
 什么节点是不可见的。不可见的节点包括： 一些不会渲染输出的节点，比如script、meta、link等。 一些通过css进行隐藏的节点。比如display:none。注意，利用visibility和opacity隐藏的节点，还是会显示在渲染树上的。只有display:none的节点才不会显示在渲染树上。
  注意：渲染树只包含可见的节点
- 何时发生回流  添加或删除可见的DOM元素 元素的位置发生变化 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等） 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代。 页面一开始渲染的时候（这肯定避免不了） 浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）   注意：回流一定会触发重绘，而重绘不一定会回流
  重绘 (重新构造渲染树) 我们通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。
 浏览器的优化机制 现代的浏览器都是很聪明的，由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才清空队列。
- 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  减少回流和重绘  合并多次对DOM和样式的修改 批量修改DOM  使元素脱离文档流 对其进行多次修改 将元素带回到文档中。
-有三种方式可以让DOM脱离文档流：
-隐藏元素，应用修改，重新显示 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。
-对于复杂动画效果,使用绝对定位让其脱离文档流
-比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。" />
+ 当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法： offsetTop、offsetLeft、offsetWidth、offsetHeight scrollTop、scrollLeft、scrollWidth、scrollHeight clientTop、clientLeft、clientWidth、clientHeight getComputedStyle() getBoundingClientRect  参考资料  渲染树构建、布局及绘制  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/css-interivew-repaint-and-refolw/" />
 <meta property="article:published_time" content="2020-09-03T10:48:27+08:00" />
-<meta property="article:modified_time" content="2020-09-03T10:48:27+08:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="article:modified_time" content="2020-09-03T10:48:27+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
@@ -127,9 +127,8 @@
 </svg>
 </span>
     <span class="logo__text"
-      >hello friend</span
+      >Strawbreey Notes</span
     >
-    <span class="logo__cursor"></span>
   
 </a>
 
@@ -203,7 +202,7 @@
     <div class="post-meta">
       
         <span class="post-date">
-          2020-09-03
+          3099-09-03
         </span>
 
         
@@ -223,35 +222,33 @@
 
     <div class="post-content">
       
-      <h2 id="repaint-and-refolw-重绘和回流">repaint-and-refolw (重绘和回流)</h2>
+      <h3 id="repaint-and-refolw-重绘和回流">repaint-and-refolw (重绘和回流)</h3>
 <p><img src="/images/1.png" alt="avatar"></p>
 <p>从上面这个图上，我们可以看到，浏览器渲染过程如下：</p>
 <ul>
 <li>
-<p>解析HTML，生成DOM树，解析CSS，生成CSSOM树</p>
+<p>解析HTML，生成DOM树</p>
+</li>
+<li>
+<p>解析CSS，生成CSSOM树</p>
 </li>
 <li>
 <p>将DOM树和CSSOM树结合，生成渲染树(Render Tree)</p>
 </li>
 <li>
-<p>Layout(回流):根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）</p>
+<p>Layout(回流): 根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）</p>
 </li>
 <li>
-<p>Painting(重绘):根据渲染树以及回流得到的几何信息，得到节点的绝对像素</p>
+<p>Painting(重绘): 根据渲染树以及回流得到的几何信息，得到节点的绝对像素</p>
 </li>
 <li>
-<p>Display:将像素发送给GPU，展示在页面上。（这一步其实还有很多内容，比如会在GPU将多个合成层合并为同一个层，并展示在页面中。而css3硬件加速的原理则是新建合成层，这里我们不展开，之后有机会会写一篇博客）</p>
+<p>Display:将像素发送给GPU，展示在页面上。</p>
 </li>
 </ul>
-<h2 id="回流-重新计算dom节点">回流 (重新计算DOM节点)</h2>
-<p>前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。</p>
-<h3 id="什么节点是不可见的不可见的节点包括">什么节点是不可见的。不可见的节点包括：</h3>
-<p>一些不会渲染输出的节点，比如script、meta、link等。
-一些通过css进行隐藏的节点。比如display:none。注意，利用visibility和opacity隐藏的节点，还是会显示在渲染树上的。只有display:none的节点才不会显示在渲染树上。</p>
 <blockquote>
-<p>注意：渲染树只包含可见的节点</p>
+<p>注意：回流一定会触发重绘，而重绘不一定会回流, 前端性能优化，一般是尽量避免回流</p>
 </blockquote>
-<h3 id="何时发生回流">何时发生回流</h3>
+<p>产生回流的场景如下:</p>
 <ul>
 <li>添加或删除可见的DOM元素</li>
 <li>元素的位置发生变化</li>
@@ -260,12 +257,31 @@
 <li>页面一开始渲染的时候（这肯定避免不了）</li>
 <li>浏览器的窗口尺寸变化（因为回流是根据视口的大小来计算元素的位置和大小的）</li>
 </ul>
+<p>针对回流和重绘的优化方案:</p>
+<ol>
+<li>合并多次对DOM和样式的修改</li>
+<li>批量修改DOM</li>
+<li>使元素脱离文档流,对其进行多次修改,将元素带回到文档中。</li>
+<li>对于复杂动画效果,使用绝对定位让其脱离文档流</li>
+<li>比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。</li>
+</ol>
+<p>有三种方式可以让DOM脱离文档流：</p>
+<ul>
+<li>隐藏元素，应用修改，重新显示</li>
+<li>使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。</li>
+<li>将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。</li>
+</ul>
+<h3 id="回流-重新计算dom节点">回流 (重新计算DOM节点)</h3>
+<p>前面我们通过构造渲染树，我们将可见DOM节点以及它对应的样式结合起来，可是我们还需要计算它们在设备视口(viewport)内的确切位置和大小，这个计算的阶段就是回流。</p>
+<h3 id="什么节点是不可见的不可见的节点包括">什么节点是不可见的。不可见的节点包括：</h3>
+<p>一些不会渲染输出的节点，比如script、meta、link等。
+一些通过css进行隐藏的节点。比如display:none。注意，利用visibility和opacity隐藏的节点，还是会显示在渲染树上的。只有display:none的节点才不会显示在渲染树上。</p>
 <blockquote>
-<p>注意：回流一定会触发重绘，而重绘不一定会回流</p>
+<p>注意：渲染树只包含可见的节点</p>
 </blockquote>
-<h2 id="重绘-重新构造渲染树">重绘 (重新构造渲染树)</h2>
+<h3 id="重绘-重新构造渲染树">重绘 (重新构造渲染树)</h3>
 <p>我们通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。</p>
-<h2 id="浏览器的优化机制">浏览器的优化机制</h2>
+<h3 id="浏览器的优化机制">浏览器的优化机制</h3>
 <p>现代的浏览器都是很聪明的，由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才清空队列。</p>
 <ul>
 <li>当你获取布局信息的操作的时候，会强制队列刷新，比如当你访问以下属性或者使用以下方法：
@@ -275,22 +291,10 @@ clientTop、clientLeft、clientWidth、clientHeight
 getComputedStyle()
 getBoundingClientRect</li>
 </ul>
-<h2 id="减少回流和重绘">减少回流和重绘</h2>
-<ol>
-<li>合并多次对DOM和样式的修改</li>
-<li>批量修改DOM</li>
-</ol>
-<p>使元素脱离文档流
-对其进行多次修改
-将元素带回到文档中。</p>
-<p>有三种方式可以让DOM脱离文档流：</p>
-<p>隐藏元素，应用修改，重新显示
-使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。
-将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。</p>
-<p>对于复杂动画效果,使用绝对定位让其脱离文档流</p>
-<p>比起考虑如何减少回流重绘，我们更期望的是，根本不要回流重绘。</p>
-<h2 id="quote">Quote</h2>
-<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=zh-cn">渲染树构建、布局及绘制</a></p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=zh-cn">渲染树构建、布局及绘制</a></li>
+</ul>
 
     </div>
     
@@ -338,34 +342,8 @@ getBoundingClientRect</li>
         <footer class="footer">
   <div class="footer__inner">
     
-      <a
-  href="/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >hello friend</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span
-          >© 2020 Powered by
-          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
-        >
-        <span
-          >Theme created by
-          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
-        >
-      </div>
-    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
   </div>
 </footer>
 

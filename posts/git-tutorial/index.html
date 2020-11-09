@@ -4,7 +4,7 @@
     
       <title>
         Git Tutorial ::
-        Hello Friend — A simple theme for Hugo
+        Strawbreey Notes
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -80,7 +80,7 @@ git config --list --show-origin用户信息 # 设置全局的用户信息$ git
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/git-tutorial/" />
 <meta property="article:published_time" content="2020-09-24T19:29:58+08:00" />
-<meta property="article:modified_time" content="2020-09-24T19:29:58+08:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="article:modified_time" content="2020-09-24T19:29:58+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
@@ -103,9 +103,8 @@ git config --list --show-origin用户信息 # 设置全局的用户信息$ git
 </svg>
 </span>
     <span class="logo__text"
-      >hello friend</span
+      >Strawbreey Notes</span
     >
-    <span class="logo__cursor"></span>
   
 </a>
 
@@ -179,7 +178,7 @@ git config --list --show-origin用户信息 # 设置全局的用户信息$ git
     <div class="post-meta">
       
         <span class="post-date">
-          2020-09-24
+          24099-09-24
         </span>
 
         
@@ -416,20 +415,20 @@ git checkout -b iss53
 git branch iss53
 git checkout iss53
 
-<span style="color:#f92672">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; HEAD
 <span style="color:#75715e"># 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。</span>
 git stash
 
-<span style="color:#f92672">=======</span>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 84a482716f1a162f2b4b989a7ece28cdb4ee5332
 git checkout master
 
 <span style="color:#75715e"># 切换一个紧急分支, 并修复bug</span>
 git checkout -b hotfix
+
 <span style="color:#75715e"># 切回master</span>
 git checkout master
+
 <span style="color:#75715e"># 合并hotfix分支</span>
 git merge hotfix
+
 <span style="color:#75715e"># 删除hotfix分支</span>
 git branch -d hotfix
 
@@ -438,6 +437,19 @@ git checkout iss53
 git checkout master
 git merge iss53
 git branch -d iss53
+
+<span style="color:#75715e"># 查看所有分支</span>
+git branch -a
+
+<span style="color:#75715e"># 切换远程分支</span>
+<span style="color:#75715e"># git checkout -b 本地分支名 origin/远程分支名</span>
+git checkout -b test origin/test
+
+
+<span style="color:#75715e"># 将本地分支推送到远程</span>
+<span style="color:#75715e"># git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span>
+git push -u origin dev:release/caigou_v1.0
+
 </code></pre></div><h4 id="分支管理">分支管理</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 查看分支</span>
 git branch
@@ -512,34 +524,8 @@ git branch --no-merged
         <footer class="footer">
   <div class="footer__inner">
     
-      <a
-  href="/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >hello friend</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span
-          >© 2020 Powered by
-          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
-        >
-        <span
-          >Theme created by
-          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
-        >
-      </div>
-    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
   </div>
 </footer>
 

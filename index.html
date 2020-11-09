@@ -4,15 +4,14 @@
 	<meta name="generator" content="Hugo 0.67.0-DEV" />
     
       <title>
-        Hello Friend —
-        A simple theme for Hugo
+        Strawbreey Notes
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="A simple theme for Hugo"
+  content=""
 />
 <meta
   name="keywords"
@@ -47,20 +46,20 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hello Friend"/>
+<meta name="twitter:title" content="Strawbreey Notes"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta property="og:title" content="Hello Friend" />
+<meta property="og:title" content="Strawbreey Notes" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Hello Friend" />
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Strawbreey Notes" />
 
 
 
@@ -80,9 +79,8 @@
 </svg>
 </span>
     <span class="logo__text"
-      >hello friend</span
+      >Strawbreey Notes</span
     >
-    <span class="logo__cursor"></span>
   
 </a>
 
@@ -162,11 +160,11 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/hot-module-replacement/">Hot Module Replacement</a></h1>
+      <h1 class="post-title"><a href="/posts/nginx-proxy-pass/">Nginx Proxy Pass</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-25
+            9119-11-09
           </span>
 
           
@@ -184,26 +182,19 @@
       <div class="post-content">
         
           
-            浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
-无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
-Location.replace // 语法object.replace(url);// demodocument.location.replace('https://developer.mozilla.org/en-US/docs/Web/API/Location/reload');Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
-因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
-Location.assign // 语法location.assign(url);// demodocument.location.assign('https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload');Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
-JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand('Refresh')window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &lt;!&ndash; 页面自动刷新 &ndash;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;20&quot;&gt;&lt;!
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/hot-module-replacement/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/nginx-proxy-pass/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git-tutorial/">Git Tutorial</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-transaction/">Mysql Transaction</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-24
+            9119-11-09
           </span>
 
           
@@ -221,29 +212,19 @@ JavaScript刷新页面的几种方法 history.go(0)location.reload()location=l
       <div class="post-content">
         
           
-            本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
-其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
-Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
-/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 –system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
-~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 –global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
-当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 –local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
-每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
-查看git所有配置以及他所在的文件
-git config &ndash;list &ndash;show-origin用户信息 # 设置全局的用户信息$ git config &ndash;global user.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/git-tutorial/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-transaction/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array-helper/">Php Array Helper</a></h1>
+      <h1 class="post-title"><a href="/posts/algorithm-banker/">Algorithm Banker</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-24
+            9119-11-09
           </span>
 
           
@@ -261,22 +242,19 @@ git config &ndash;list &ndash;show-origin用户信息 # 设置全局的用户�
       <div class="post-content">
         
           
-            获取值 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
-class User{public $name = 'Alex';}$array = ['foo' =&gt; ['bar' =&gt; new User(),]];$value = isset($array['foo']['bar']-&gt;name) ? $array['foo']['bar']-&gt;name : null;// or$value = ArrayHelper::getValue($array, 'foo.bar.name');// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&gt;firstName . ' ' . $user-&gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, 'user.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-array-helper/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/algorithm-banker/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-string/">Php String</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-lock/">Mysql Lock</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-24
+            9119-11-09
           </span>
 
           
@@ -294,25 +272,19 @@ class User{public $name = 'Alex';}$array = ['foo' =&gt; ['bar' =&gt; new U
       <div class="post-content">
         
           
-            一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
-语法 一个字符串可以用 4 种方式表达：
-单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 ‘）。
-要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
-echo 'this is a simple string';echo 'You can also have embedded newlines in strings this way as it isokay to do'; // 可以录入多行echo 'Arnold once said: &quot;I&amp;#39;ll be back&quot;'; // 输出： Arnold once said: &quot;I'll be back&quot; 单引号转义echo 'You deleted C:\*.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-string/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-lock/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array-practice/">Php Array Practice</a></h1>
+      <h1 class="post-title"><a href="/posts/leetcode-reverse-integer/">Leetcode Reverse Integer</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-24
+            6119-11-06
           </span>
 
           
@@ -333,16 +305,16 @@ echo 'this is a simple string';echo 'You can also have embedded newlines in str
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-array-practice/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/leetcode-reverse-integer/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array-code-analysis/">Php Array Code Analysis</a></h1>
+      <h1 class="post-title"><a href="/posts/reverse-integer/">Reverse Integer</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-24
+            6119-11-06
           </span>
 
           
@@ -363,16 +335,16 @@ echo 'this is a simple string';echo 'You can also have embedded newlines in str
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-array-code-analysis/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/reverse-integer/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-common-code/">Php Common Code</a></h1>
+      <h1 class="post-title"><a href="/posts/leetcode-two-sum/">Leetcode Two Sum</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            6119-11-06
           </span>
 
           
@@ -390,19 +362,28 @@ echo 'this is a simple string';echo 'You can also have embedded newlines in str
       <div class="post-content">
         
           
+            两数之和
+给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+Two Sum
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
+Example: Input: nums = [2,7,11,15], target = 9Output: [0,1] Because nums[0] + nums[1] == 9, we return [0, 1].
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-common-code/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/leetcode-two-sum/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/sql-optimization/">Sql Optimization</a></h1>
+      <h1 class="post-title"><a href="/posts/micro-front-ends/">Micro Front Ends</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            6119-11-06
           </span>
 
           
@@ -420,33 +401,19 @@ echo 'this is a simple string';echo 'You can also have embedded newlines in str
       <div class="post-content">
         
           
-            SQL语句执行步骤  语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt;选择数据的搜索路径 &gt;运行“执行计划”
-选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
-访问Table的方式  全表扫描
-全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
-通过ROWID访问表
-ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
-共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。 5. 选择最有效率的表名顺序
-ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。 当ORACLE处理多个表时，会运用排序及合并的方式连接它们。首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，然后扫描第二个表(FROM子句中最后第二个表)，最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。 只在基于规则的优化器中有效。 举例：
-表 TAB1 16,384 条记录
-表 TAB2 1 条记录
-/选择TAB2作为基础表 (最好的方法)/ select count(<em>) from tab1,tab2 执行时间0.96秒
-/选择TAB2作为基础表 (不佳的方法)/ select count(</em>) from tab2,tab1 执行时间26.09秒 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。
-SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/sql-optimization/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/micro-front-ends/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/sql-insert/">Sql Insert</a></h1>
+      <h1 class="post-title"><a href="/posts/front-end-interview/">Front End Interview</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            6119-11-06
           </span>
 
           
@@ -464,19 +431,36 @@ SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
       <div class="post-content">
         
           
+            javascript js 基础题   深浅拷贝 -&gt; 对象引用
+作用域 -&gt; {} -&gt; this
+原型 / 原型链 -&gt; js 继承
+es6 新特性
+闭包
+this
+事件循环 -&gt; 微宏任务
+es6 set 内部实现
+node 和 浏览器事件循环机制的区别
+柯里化实现 / 链式调用
+基本数据类型
+前端性能优化
+手写Promise实现
+symbol应用深拷贝
+防抖节流
+模块化发展历程
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/sql-insert/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/front-end-interview/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-quotation-marks/">Php Quotation Marks</a></h1>
+      <h1 class="post-title"><a href="/posts/scan-code-login/">Scan Code Login</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            5119-11-05
           </span>
 
           
@@ -497,16 +481,16 @@ SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-quotation-marks/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/scan-code-login/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-filter/">Php Filter</a></h1>
+      <h1 class="post-title"><a href="/posts/idempotent-operation/">Idempotent Operation</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            5119-11-05
           </span>
 
           
@@ -527,16 +511,16 @@ SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-filter/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/idempotent-operation/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-variable-handle/">Php Variable Handle</a></h1>
+      <h1 class="post-title"><a href="/posts/redis-design-and-implementation/">Redis Design and Implementation</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            5119-11-05
           </span>
 
           
@@ -554,21 +538,29 @@ SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
       <div class="post-content">
         
           
-            boolval — 获取变量的布尔值 echo '0: '.(boolval(0) ? 'true' : 'false').&quot;\n&quot;;echo '42: '.(boolval(42) ? 'true' : 'false').&quot;\n&quot;;echo '0.0: '.(boolval(0.0) ? 'true' : 'false').&quot;\n&quot;;echo '4.2: '.(boolval(4.2) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;&quot;: '.(boolval(&quot;&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;string&quot;: '.(boolval(&quot;string&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;0&quot;: '.(boolval(&quot;0&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;1&quot;: '.(boolval(&quot;1&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '[1, 2]: '.(boolval([1, 2]) ? 'true' : 'false').&quot;\n&quot;;echo '[]: '.
+            链表和链表节点的实现 redis 链表实现
+typedef struct listNode {struct listNode * prev;struct listNode * next;void * value;} listNode;多个listNode可以通过prev和next指针组成双端链表
+typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode *tail;// 节点复制函数 void *(*dup)(void *ptr);// 节点释放函数 void (*free)(void *ptr);// 节点值对比函数 int (*match)(void *ptr, void *key);// 链表所包含的节点数量 unsigned long len;} list;list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-variable-handle/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/redis-design-and-implementation/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array-function/">Php Array Function</a></h1>
+      <h1 class="post-title"><a href="/posts/cache/">Cache</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            5119-11-05
           </span>
 
           
@@ -586,24 +578,19 @@ SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
       <div class="post-content">
         
           
-            array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
-// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER（默认值）。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
-$input_array = array(&quot;FirSt&quot; =&gt; 1, &quot;SecOnd&quot; =&gt; 4);print_r(array_change_key_case($input_array, CASE_UPPER));// Array// (// [FIRST] =&gt; 1// [SECOND] =&gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
-将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-array-function/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/cache/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-object/">Php Object</a></h1>
+      <h1 class="post-title"><a href="/posts/content-delivery-network/">Content Delivery Network</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            5119-11-05
           </span>
 
           
@@ -624,16 +611,16 @@ $input_array = array(&quot;FirSt&quot; =&gt; 1, &quot;SecOnd&quot; =&gt; 4);pri
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-object/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/content-delivery-network/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array/">Php Array</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-manual-new-word/">Mysql Manual New Word</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-23
+            4119-11-04
           </span>
 
           
@@ -651,22 +638,19 @@ $input_array = array(&quot;FirSt&quot; =&gt; 1, &quot;SecOnd&quot; =&gt; 4);pri
       <div class="post-content">
         
           
-            An array in PHP is actually an ordered map. A map is a type that associates values to keys. This type is optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
-PHP 中的数组实际上是一个有序映射。映射是一种把 values 关联到 keys 的类型。此类型在很多方面做了优化，因此可以把它当成真正的数组，或列表（向量），散列表（是映射的一种实现），字典，集合，栈，队列以及更多可能性。由于数组元素的值也可以是另一个数组，树形结构和多维数组也是允许的。
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-array/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-manual-new-word/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/web-safe/">Web Safe</a></h1>
+      <h1 class="post-title"><a href="/posts/js-intro/">Js Intro</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-22
+            4119-11-04
           </span>
 
           
@@ -684,26 +668,19 @@ PHP 中的数组实际上是一个有序映射。映射是一种把 values 关�
       <div class="post-content">
         
           
-            web 安全领域中，常见的攻击方式，大概以下几种
-跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username='plhwin'&ndash; 把plhwin 改成 plhwin';SHOW TABLES&ndash; hack'SELECT uid,username FROM user WHERE username='plhwin';SHOW TABLES&ndash; hack'客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
-XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
-防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
-来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
-类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/web-safe/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/js-intro/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/vim-tutorial/">Vim Tutorial</a></h1>
+      <h1 class="post-title"><a href="/posts/mariadb/">Mariadb</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-22
+            3119-11-03
           </span>
 
           
@@ -721,31 +698,19 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
       <div class="post-content">
         
           
-            基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
-命令模式： 用户刚刚启动 vi/vim，便进入了命令模式。
-此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
-以下是常用的几个命令：
-i 切换到输入模式，以输入字符。 (i: 当前光标处编辑, o: 当前光标换行，a, 当前光标右移一位) x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令。  输入模式 在命令模式下按下i就进入了输入模式。
-在输入模式中，可以使用以下按键：
-字符按键以及Shift组合，输入字符 ENTER，回车键，换行 BACKSPACE，退格键，删除光标前一个字符 DEL，删除键，删除光标后一个字符 方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 Page Up/Page Down，上/下翻页 Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 ESC，退出输入模式，切换到命令模式  底线命令模式 在命令模式下按下:（英文冒号）就进入了底线命令模式。
-在底线命令模式中，基本的命令有（已经省略了冒号）:
-q 退出程序 w 保存文件
-按ESC键可随时退出底线命令模式。
-Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式(也称为编辑模式)，开始编辑文字# 按下 ESC 按钮回到一般模式# 在一般模式中按下 :wq 储存后离开 vivi/vim 按键说明 第一部分：一般模式可用的光标移动、复制粘贴、搜索替换等  h 或 向左箭头键(←)	光标向左移动一个字符 j 或 向下箭头键(↓)	光标向下移动一个字符 k 或 向上箭头键(↑)	光标向上移动一个字符 l 或 向右箭头键(→)	光标向右移动一个字符  如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。 如果想要进行多次移动的话，例如向下移动 30 行，可以使用 “30j” 或 “30↓” 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/vim-tutorial/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mariadb/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/shell-tutorial/">Shell Tutorial</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-optimization-subqueries/">Mysql Optimization Subqueries</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-22
+            3119-11-03
           </span>
 
           
@@ -763,28 +728,19 @@ Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式
       <div class="post-content">
         
           
-            Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。
-Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。
-Shell 脚本 Shell 脚本（shell script），是一种为 shell 编写的脚本程序。业界所说的 shell 通常都是指 shell 脚本，但读者朋友要知道，shell 和 shell script 是两个不同的概念。由于习惯的原因，简洁起见，本文出现的 “shell编程” 都是指 shell 脚本编程，不是指开发 shell 自身。
-#!/bin/bashecho &quot;Hello World!&quot;#! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。echo 命令用于向窗口输出文本。chmod +x ./test.sh #使脚本具有执行权限 ./test.sh #执行脚本
-shell 变量 变量名的命名须遵循如下规则：
-命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用bash里的关键字（可用help命令查看保留关键字）。  # 变量your_name = &quot;qinjx&quot;echo $your_nameecho ${your_name}Shell 字符串 字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号，也可以不用引号。
-单引号
-str = 'this is a string'单引号字符串的限制：
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/shell-tutorial/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-optimization-subqueries/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/sql-transaction-processing/">Sql Transaction Processing</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-innodb-memory/">Mysql Innodb Memory</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-21
+            3119-11-03
           </span>
 
           
@@ -805,16 +761,16 @@ str = 'this is a string'单引号字符串的限制：
         
       </div>
       
-        <div><a class="read-more button" href="/posts/sql-transaction-processing/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-innodb-memory/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-goroutine/">Golang Goroutine</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-order-by/">Mysql Order By</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-09-21
+            3119-11-03
           </span>
 
           
@@ -832,14 +788,10 @@ str = 'this is a string'单引号字符串的限制：
       <div class="post-content">
         
           
-            Go 语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
-goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。
-// go 函数名 (参数列表)// examplego f (x, y, z)f(x,y, z) //开启一个新的goroutine// 执行以下代码，你会看到输出的 hello 和 world 是没有固定先后顺序。因为它们是两个 goroutine 在执行：// world// hello// hello// world// world// hello// hello// world// world// hellopackage mainimport ( &quot;fmt&quot; &quot;time&quot; )func say(s string) {for i := 0; i &lt; 5; i++ {time.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/golang-goroutine/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-order-by/">Read more →</a></div>
       
     </div>
     
@@ -865,34 +817,8 @@ goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行�
         <footer class="footer">
   <div class="footer__inner">
     
-      <a
-  href="/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >hello friend</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span
-          >© 2020 Powered by
-          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
-        >
-        <span
-          >Theme created by
-          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
-        >
-      </div>
-    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
   </div>
 </footer>
 

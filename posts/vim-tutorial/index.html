@@ -4,14 +4,15 @@
     
       <title>
         Vim Tutorial ::
-        Hello Friend — A simple theme for Hugo
+        Strawbreey Notes
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
+  content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了
+为什么要学vim  所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在； 很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)； vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计； 因为程序简单，编辑速度相当快速  基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
 命令模式： 用户刚刚启动 vi/vim，便进入了命令模式。
 此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
 以下是常用的几个命令：
@@ -19,9 +20,7 @@
 在输入模式中，可以使用以下按键：
  字符按键以及Shift组合，输入字符 ENTER，回车键，换行 BACKSPACE，退格键，删除光标前一个字符 DEL，删除键，删除光标后一个字符 方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 Page Up/Page Down，上/下翻页 Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 ESC，退出输入模式，切换到命令模式  底线命令模式 在命令模式下按下:（英文冒号）就进入了底线命令模式。
 在底线命令模式中，基本的命令有（已经省略了冒号）:
-q 退出程序 w 保存文件
-按ESC键可随时退出底线命令模式。
-Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式(也称为编辑模式)，开始编辑文字# 按下 ESC 按钮回到一般模式# 在一般模式中按下 :wq 储存后离开 vivi/vim 按键说明 第一部分：一般模式可用的光标移动、复制粘贴、搜索替换等  h 或 向左箭头键(←)	光标向左移动一个字符 j 或 向下箭头键(↓)	光标向下移动一个字符 k 或 向上箭头键(↑)	光标向上移动一个字符 l 或 向右箭头键(→)	光标向右移动一个字符  如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。 如果想要进行多次移动的话，例如向下移动 30 行，可以使用 &amp;ldquo;30j&amp;rdquo; 或 &amp;ldquo;30↓&amp;rdquo; 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！"
+q 退出程序 w 保存文件"
 />
 <meta
   name="keywords"
@@ -57,7 +56,8 @@ Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim Tutorial"/>
-<meta name="twitter:description" content="基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
+<meta name="twitter:description" content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了
+为什么要学vim  所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在； 很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)； vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计； 因为程序简单，编辑速度相当快速  基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
 命令模式： 用户刚刚启动 vi/vim，便进入了命令模式。
 此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
 以下是常用的几个命令：
@@ -65,14 +65,13 @@ Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式
 在输入模式中，可以使用以下按键：
  字符按键以及Shift组合，输入字符 ENTER，回车键，换行 BACKSPACE，退格键，删除光标前一个字符 DEL，删除键，删除光标后一个字符 方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 Page Up/Page Down，上/下翻页 Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 ESC，退出输入模式，切换到命令模式  底线命令模式 在命令模式下按下:（英文冒号）就进入了底线命令模式。
 在底线命令模式中，基本的命令有（已经省略了冒号）:
-q 退出程序 w 保存文件
-按ESC键可随时退出底线命令模式。
-Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式(也称为编辑模式)，开始编辑文字# 按下 ESC 按钮回到一般模式# 在一般模式中按下 :wq 储存后离开 vivi/vim 按键说明 第一部分：一般模式可用的光标移动、复制粘贴、搜索替换等  h 或 向左箭头键(←)	光标向左移动一个字符 j 或 向下箭头键(↓)	光标向下移动一个字符 k 或 向上箭头键(↑)	光标向上移动一个字符 l 或 向右箭头键(→)	光标向右移动一个字符  如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。 如果想要进行多次移动的话，例如向下移动 30 行，可以使用 &ldquo;30j&rdquo; 或 &ldquo;30↓&rdquo; 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！"/>
+q 退出程序 w 保存文件"/>
 
 
 
 <meta property="og:title" content="Vim Tutorial" />
-<meta property="og:description" content="基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
+<meta property="og:description" content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了
+为什么要学vim  所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在； 很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)； vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计； 因为程序简单，编辑速度相当快速  基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
 命令模式： 用户刚刚启动 vi/vim，便进入了命令模式。
 此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
 以下是常用的几个命令：
@@ -80,13 +79,11 @@ Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式
 在输入模式中，可以使用以下按键：
  字符按键以及Shift组合，输入字符 ENTER，回车键，换行 BACKSPACE，退格键，删除光标前一个字符 DEL，删除键，删除光标后一个字符 方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 Page Up/Page Down，上/下翻页 Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 ESC，退出输入模式，切换到命令模式  底线命令模式 在命令模式下按下:（英文冒号）就进入了底线命令模式。
 在底线命令模式中，基本的命令有（已经省略了冒号）:
-q 退出程序 w 保存文件
-按ESC键可随时退出底线命令模式。
-Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式(也称为编辑模式)，开始编辑文字# 按下 ESC 按钮回到一般模式# 在一般模式中按下 :wq 储存后离开 vivi/vim 按键说明 第一部分：一般模式可用的光标移动、复制粘贴、搜索替换等  h 或 向左箭头键(←)	光标向左移动一个字符 j 或 向下箭头键(↓)	光标向下移动一个字符 k 或 向上箭头键(↑)	光标向上移动一个字符 l 或 向右箭头键(→)	光标向右移动一个字符  如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。 如果想要进行多次移动的话，例如向下移动 30 行，可以使用 &ldquo;30j&rdquo; 或 &ldquo;30↓&rdquo; 的组合按键， 亦即加上想要进行的次数(数字)后，按下动作即可！" />
+q 退出程序 w 保存文件" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/vim-tutorial/" />
 <meta property="article:published_time" content="2020-09-22T10:41:46+08:00" />
-<meta property="article:modified_time" content="2020-09-22T10:41:46+08:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="article:modified_time" content="2020-09-22T10:41:46+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
@@ -109,9 +106,8 @@ Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式
 </svg>
 </span>
     <span class="logo__text"
-      >hello friend</span
+      >Strawbreey Notes</span
     >
-    <span class="logo__cursor"></span>
   
 </a>
 
@@ -185,7 +181,7 @@ Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式
     <div class="post-meta">
       
         <span class="post-date">
-          2020-09-22
+          22099-09-22
         </span>
 
         
@@ -205,7 +201,15 @@ Example # 新建/打开test.txt文件vim test.txt# 按下 i 进入输入模式
 
     <div class="post-content">
       
-      <p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。</p>
+      <p>在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了</p>
+<h3 id="为什么要学vim">为什么要学vim</h3>
+<ul>
+<li>所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在；</li>
+<li>很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)；</li>
+<li>vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计；</li>
+<li>因为程序简单，编辑速度相当快速</li>
+</ul>
+<p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。</p>
 <p><img src="/images/vi-vim-cheat-sheet-sch.gif" alt="vi-vim-cheat-sheet-sch"></p>
 <h4 id="命令模式">命令模式：</h4>
 <p>用户刚刚启动 vi/vim，便进入了命令模式。</p>
@@ -377,34 +381,8 @@ ZQ	不保存，强制退出。效果等同于 :q!。</p>
         <footer class="footer">
   <div class="footer__inner">
     
-      <a
-  href="/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >hello friend</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span
-          >© 2020 Powered by
-          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
-        >
-        <span
-          >Theme created by
-          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
-        >
-      </div>
-    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
   </div>
 </footer>
 

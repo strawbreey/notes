@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Js Intro ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="前端新手指引 常见的新手引导效果场景
+  引导页
+  蒙层引导
+  气泡/弹窗提示
+  动画/视频引导
+  操作式引导
+  预设任务
+  主要包括三个部分: 蒙层、气泡、高亮。
+常见的开源软件   jquery-pagewalkthrough
+  intro.js
+  driver.js
+  参考资料  从王者荣耀里我学会的前端新手指引  "
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/js-intro/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Intro"/>
+<meta name="twitter:description" content="前端新手指引 常见的新手引导效果场景
+  引导页
+  蒙层引导
+  气泡/弹窗提示
+  动画/视频引导
+  操作式引导
+  预设任务
+  主要包括三个部分: 蒙层、气泡、高亮。
+常见的开源软件   jquery-pagewalkthrough
+  intro.js
+  driver.js
+  参考资料  从王者荣耀里我学会的前端新手指引  "/>
+
+
+
+<meta property="og:title" content="Js Intro" />
+<meta property="og:description" content="前端新手指引 常见的新手引导效果场景
+  引导页
+  蒙层引导
+  气泡/弹窗提示
+  动画/视频引导
+  操作式引导
+  预设任务
+  主要包括三个部分: 蒙层、气泡、高亮。
+常见的开源软件   jquery-pagewalkthrough
+  intro.js
+  driver.js
+  参考资料  从王者荣耀里我学会的前端新手指引  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/js-intro/" />
+<meta property="article:published_time" content="2020-11-04T15:38:15+08:00" />
+<meta property="article:modified_time" content="2020-11-04T15:38:15+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Strawbreey Notes</span
+    >
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Js Intro</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          4119-11-04
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h3 id="前端新手指引">前端新手指引</h3>
+<p>常见的新手引导效果场景</p>
+<ul>
+<li>
+<p>引导页</p>
+</li>
+<li>
+<p>蒙层引导</p>
+</li>
+<li>
+<p>气泡/弹窗提示</p>
+</li>
+<li>
+<p>动画/视频引导</p>
+</li>
+<li>
+<p>操作式引导</p>
+</li>
+<li>
+<p>预设任务</p>
+</li>
+</ul>
+<p>主要包括三个部分: 蒙层、气泡、高亮。</p>
+<h3 id="常见的开源软件">常见的开源软件</h3>
+<ul>
+<li>
+<p><a href="https://github.com/jwarby/jquery-pagewalkthrough">jquery-pagewalkthrough</a></p>
+</li>
+<li>
+<p><a href="https://github.com/usablica/intro.js">intro.js</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kamranahmedse/driver.js">driver.js</a></p>
+</li>
+</ul>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://juejin.im/post/6891053442530279432">从王者荣耀里我学会的前端新手指引</a></li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/mysql-manual-new-word/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Mysql Manual New Word</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/mariadb/">
+                  <span class="button__text">Mariadb</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

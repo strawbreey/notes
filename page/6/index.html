@@ -4,15 +4,14 @@
 	<meta name="generator" content="Hugo 0.67.0-DEV" />
     
       <title>
-        Hello Friend —
-        A simple theme for Hugo
+        Strawbreey Notes
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="A simple theme for Hugo"
+  content=""
 />
 <meta
   name="keywords"
@@ -47,20 +46,20 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hello Friend"/>
+<meta name="twitter:title" content="Strawbreey Notes"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta property="og:title" content="Hello Friend" />
+<meta property="og:title" content="Strawbreey Notes" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-31T10:20:39+08:00" /><meta property="og:site_name" content="Hello Friend" />
+<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Hello Friend" />
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Strawbreey Notes" />
 
 
 
@@ -80,9 +79,8 @@
 </svg>
 </span>
     <span class="logo__text"
-      >hello friend</span
+      >Strawbreey Notes</span
     >
-    <span class="logo__cursor"></span>
   
 </a>
 
@@ -162,11 +160,11 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/common-commands/">Common Commands</a></h1>
+      <h1 class="post-title"><a href="/posts/hugo-install/">Hugo Install</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-08-31
+            27099-09-27
           </span>
 
           
@@ -184,21 +182,23 @@
       <div class="post-content">
         
           
-            <h1 id="测试镜像是否有用nslookup-mirrorstencentcomrpm--uvh-httpsmirrorstencentcomtlinuxrpmtlinux-release-2-11tl2x86_64rpm-下载phpwget-php-7215tarbz2-httpcn2phpnetdistributionsphp-7215tarbz2yum-install-httprpmsremireponetenterpriseremi-release-7rpmrpm--uvh-httpsmirrorstencentcomtlinuxrpmepel-release-6-12tl1noarchrpm-linux-cp-复制sudo-cp-optsoftphpsbinphp-fpm-usrlocalbin-sudo-php-fpm-linux-杀死进程-kill--int-cat-usrlocalphpvarrunphp-fpmpid-linux-安装yum--y-install-gcc-openssl-openssl-devel-curl-curl-devel-libjpeg-libjpeg-devel-libpng-libpng-devel-freetype-freetype-devel-pcre-pcre-devel-libxslt-libxslt-devel-bzip2-bzip2-devel-linux-杀死全部进程killall-php-fpm-linux-查询进程-phpps--efgrep-php-linux-重载nginx--s-reload链接数据库异常">测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm">https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm</a># 下载phpwget php-7.2.15.tar.bz2 <a href="http://cn2.php.net/distributions/php-7.2.15.tar.bz2">http://cn2.php.net/distributions/php-7.2.15.tar.bz2</a>yum install <a href="http://rpms.remirepo.net/enterprise/remi-release-7.rpm">http://rpms.remirepo.net/enterprise/remi-release-7.rpm</a>rpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm">https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm</a># linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常</h1>
+            If you are on a Windows machine and use Chocolatey for package management, you can install Hugo with the following one-liner
+more # install-with-chocolatey.ps1choco install hugo -confirm# Or if you need the “extended” Sass/SCSS version:choco install hugo-extended -confirmIf you are on a Windows machine and use Scoop for package management, you can install Hugo with the following one-liner:
+scoop install hugo# Or install the extended version with:scoop install hugo-extendedSource
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/common-commands/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/hugo-install/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/host-on-github/">Host on Github</a></h1>
+      <h1 class="post-title"><a href="/posts/http-cache/">Http Cache</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-08-31
+            27099-09-27
           </span>
 
           
@@ -216,19 +216,34 @@
       <div class="post-content">
         
           
+            Http 缓存 通过复用以前获取的资源，可以显著提高网站和应用程序的性能。Web 缓存减少了等待时间和网络流量，因此减少了显示资源表示形式所需的时间。通过使用 HTTP缓存，变得更加响应性。
+不同种类的缓存 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。当 web 缓存发现请求的资源已经被存储，它会拦截请求，返回该资源的拷贝，而不会去源服务器重新下载。这样带来的好处有：缓解服务器端压力，提升性能(获取资源的耗时更短了)。对于网站来说，缓存是达到高性能的重要组成部分。缓存需要合理配置，因为并不是所有资源都是永久不变的：重要的是对一个资源的缓存应截止到其下一次发生改变（即不能缓存过期的资源）。
+缓存的种类有很多,其大致可归为两类：私有与共享缓存。共享缓存存储的响应能够被多个用户使用。私有缓存只能用于单独用户。本文将主要介绍浏览器与代理缓存，除此之外还有网关缓存、CDN、反向代理缓存和负载均衡器等部署在服务器上的缓存方式，为站点和 web 应用提供更好的稳定性、性能和扩展性。
+浏览器缓存 (私有) 私有缓存只能用于单独用户。你可能已经见过浏览器设置中的“缓存”选项。浏览器缓存拥有用户通过 HTTP 下载的所有文档。这些缓存为浏览过的文档提供向后/向前导航，保存网页，查看源码等功能，可以避免再次向服务器发起多余的请求。它同样可以提供缓存内容的离线浏览。
+代理缓存 (共享) 共享缓存可以被多个用户使用。例如，ISP 或你所在的公司可能会架设一个 web 代理来作为本地网络基础的一部分提供给用户。这样热门的资源就会被重复使用，减少网络拥堵与延迟。
+缓存操作 虽然 HTTP 缓存不是必须的，但重用缓存的资源通常是必要的。然而常见的 HTTP 缓存只能存储 GET 响应，对于其他类型的响应则无能为力。缓存的关键主要包括request method和目标URI（一般只有GET请求才会被缓存）。 普遍的缓存案例:
+一个检索请求的成功响应: 对于 GET请求，响应状态码为：200，则表示为成功。一个包含例如HTML文档，图片，或者文件的响应。
+永久重定向: 响应状态码：301。
+错误响应: 响应状态码：404 的一个页面。
+不完全的响应: 响应状态码 206，只返回局部的信息。
+除了 GET 请求外，如果匹配到作为一个已被定义的cache键名的响应。
+缓存控制  没有缓存  缓存中不得存储任何关于客户端请求和服务端响应的内容。每次由客户端发起的请求都会下载完整的响应内容。
+Cache-Control: no-store缓存但重新验证  如下头部定义，此方式下，每次有请求发出时，缓存会将此请求发到服务器（译者注：该请求应该会带有与本地缓存相关的验证字段），服务器端会验证请求中所描述的缓存是否过期，若未过期（注：实际就是返回304），则缓存才使用本地缓存副本。
+Cache-Control: no-cache私有和公共缓存  “public” 指令表示该响应可以被任何中间人（译者注：比如中间代理、CDN等）缓存。若指定了&quot;public”，则一些通常不被中间人缓存的页面（译者注：因为默认是private）（比如 带有HTTP验证信息（帐号密码）的页面 或 某些特定状态码的页面），将会被其缓存。
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/host-on-github/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/http-cache/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/hugo-start/">Hugo Start</a></h1>
+      <h1 class="post-title"><a href="/posts/memcached/">Memcached</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-08-31
+            27099-09-27
           </span>
 
           
@@ -249,16 +264,16 @@
         
       </div>
       
-        <div><a class="read-more button" href="/posts/hugo-start/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/memcached/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git/">Git</a></h1>
+      <h1 class="post-title"><a href="/posts/cors/">Cors</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-08-28
+            27099-09-27
           </span>
 
           
@@ -276,21 +291,31 @@
       <div class="post-content">
         
           
-            create a new repository on the command line git initgit add README.mdgit commit -m &quot;first commit&quot;git branch -M mastergit remote add origin <a href="https://github.com/strawbreey/notes.git">https://github.com/strawbreey/notes.git</a>git push -u origin masterpush an existing repository from the command line git remote add origin <a href="https://github.com/strawbreey/notes.git">https://github.com/strawbreey/notes.git</a>git branch -M mastergit push -u origin mastercreate gh-pages branch git checkout &ndash;orphan gh-pagesgit reset &ndash;hardgit commit &ndash;allow-empty -m &quot;Initializing gh-pages branch&quot;git push upstream gh-pagesgit checkout mastergit remote add origin https://github.
+            跨源资源共享 (CORS: Cross-origin resource sharing) （或通俗地译为跨域资源共享）是一种机制，该机制使用附加的 HTTP 头来告诉浏览器，准许运行在一个源上的Web应用访问位于另一不同源选定的资源。 当一个Web应用发起一个与自身所在源（域，协议和端口）不同的HTTP请求时，它发起的即跨源HTTP请求。
+出于安全性，浏览器限制脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非响应报文包含了正确CORS响应头。
+跨源域资源共享（ CORS ）机制允许 Web 应用服务器进行跨源访问控制，从而使跨源数据传输得以安全进行。现代浏览器支持在 API 容器中（例如 XMLHttpRequest 或 Fetch ）使用 CORS，以降低跨源 HTTP 请求所带来的风险。
+整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。
+因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。
+浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）
+简单请求 （1) 请求方法是以下三种方法之一：
+HEAD GET POST  （2）HTTP的头信息不超出以下几种字段：
+Accept Accept-Language Content-Language Last-Event-ID Content-Type：application/x-www-form-urlencoded、multipart/form-data、text/plain  这是为了兼容表单（form），因为历史上表单一直可以发出跨域请求。AJAX 的跨域设计就是，只要表单可以发，AJAX 就可以直接发。
+对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。
+GET /cors HTTP/1.1Origin: <a href="http://api.bob.com">http://api.bob.com</a>Host: api.alice.comAccept-Language: en-USConnection: keep-aliveUser-Agent: Mozilla/5.0&hellip;上面的头信息中，Origin字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/git/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/cors/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/interview/">Interview</a></h1>
+      <h1 class="post-title"><a href="/posts/es6-symbol/">Es6 Symbol</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-08-28
+            27099-09-27
           </span>
 
           
@@ -311,7 +336,519 @@
         
       </div>
       
-        <div><a class="read-more button" href="/posts/interview/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/es6-symbol/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/typescript-tutorial/">Typescript Tutorial</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            27099-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            TypeScript 是 JavaScript 的类型的超集，它可以编译成纯 JavaScript。编译出来的 JavaScript 可以运行在任何浏览器上。TypeScript 编译工具可以运行在任何服务器和任何系统上。TypeScript 是开源的。
+Install Typescript function sayHello(person: string) {return 'Hello, ' + person;}let user = 'Tom';console.log(sayHello(user));npm install -g typescripttsc hello.tsdata type JavaScript 的数据类型分为两种: 基本数据类型和复杂数据类型
+基本数据类型:
+Undefined
+Null
+Boolean
+Number
+String
+Symbol (ES6) symbol 是ES6中新增的一种特殊的、不可变的基本数据类型（primitive data type），可以作为对象属性的标识符使用
+Tuple (TS) 元组 (元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同)
+Enum (TS) 枚举
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/typescript-tutorial/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/webpack-tutoral/">Webpack Tutoral</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            27099-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/webpack-tutoral/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/hot-module-replacement/">Hot Module Replacement</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            25099-09-25
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
+无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
+Location.replace // 语法object.replace(url);// demodocument.location.replace('https://developer.mozilla.org/en-US/docs/Web/API/Location/reload');Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
+因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
+Location.assign // 语法location.assign(url);// demodocument.location.assign('https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload');Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
+JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand('Refresh')window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &lt;!&ndash; 页面自动刷新 &ndash;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;20&quot;&gt;&lt;!
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/hot-module-replacement/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-tutorial/">Git Tutorial</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            24099-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
+其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
+Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
+/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 –system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
+~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 –global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
+当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 –local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
+查看git所有配置以及他所在的文件
+git config &ndash;list &ndash;show-origin用户信息 # 设置全局的用户信息$ git config &ndash;global user.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-tutorial/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-array-helper/">Php Array Helper</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            24099-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
+class User{public $name = 'Alex';}$array = ['foo' =&gt; ['bar' =&gt; new User(),]];$value = isset($array['foo']['bar']-&gt;name) ? $array['foo']['bar']-&gt;name : null;// or$value = ArrayHelper::getValue($array, 'foo.bar.name');// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&gt;firstName . ' ' . $user-&gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, 'user.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-array-helper/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-string/">Php String</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            24099-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
+语法 一个字符串可以用 4 种方式表达：
+单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 ‘）。
+要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
+echo 'this is a simple string';echo 'You can also have embedded newlines in strings this way as it isokay to do'; // 可以录入多行echo 'Arnold once said: &quot;I&amp;#39;ll be back&quot;'; // 输出： Arnold once said: &quot;I'll be back&quot; 单引号转义echo 'You deleted C:\*.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-string/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-array-practice/">Php Array Practice</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            24099-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-array-practice/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-array-code-analysis/">Php Array Code Analysis</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            24099-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-array-code-analysis/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-common-code/">Php Common Code</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            23099-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-common-code/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql-optimization/">Sql Optimization</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            23099-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            SQL语句执行步骤  语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt;选择数据的搜索路径 &gt;运行“执行计划”
+选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
+访问Table的方式  全表扫描
+全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
+通过ROWID访问表
+ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
+共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
+选择最有效率的表名顺序  ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
+当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
+首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
+然后扫描第二个表(FROM子句中最后第二个表)，
+最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
+只在基于规则的优化器中有效。 举例：
+表 TAB1 16,384 条记录
+表 TAB2 1 条记录
+&ndash; 选择TAB2作为基础表 (最好的方法) select count(<em>) from tab1,tab2 执行时间0.96秒&ndash; 选择TAB2作为基础表 (不佳的方法) select count(</em>) from tab2,tab1 执行时间26.09秒&ndash; 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql-optimization/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql-insert/">Sql Insert</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            23099-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql-insert/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-quotation-marks/">Php Quotation Marks</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            23099-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-quotation-marks/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-filter/">Php Filter</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            23099-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-filter/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-variable-handle/">Php Variable Handle</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            23099-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            boolval — 获取变量的布尔值 echo '0: '.(boolval(0) ? 'true' : 'false').&quot;\n&quot;;echo '42: '.(boolval(42) ? 'true' : 'false').&quot;\n&quot;;echo '0.0: '.(boolval(0.0) ? 'true' : 'false').&quot;\n&quot;;echo '4.2: '.(boolval(4.2) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;&quot;: '.(boolval(&quot;&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;string&quot;: '.(boolval(&quot;string&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;0&quot;: '.(boolval(&quot;0&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;1&quot;: '.(boolval(&quot;1&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '[1, 2]: '.(boolval([1, 2]) ? 'true' : 'false').&quot;\n&quot;;echo '[]: '.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-variable-handle/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-array-function/">Php Array Function</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            23099-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
+// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
+$input_array = array(&quot;FirSt&quot; =&gt; 1, &quot;SecOnd&quot; =&gt; 4);array_change_key_case($input_array, CASE_LOWER);// Array// (// [first] =&gt; 1// [second] =&gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
+将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-array-function/">Read more →</a></div>
       
     </div>
     
@@ -326,6 +863,13 @@
       </span>
     
     
+      <span class="button next">
+        <a href="/page/7/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
   </div>
 </div>
 
@@ -337,34 +881,8 @@
         <footer class="footer">
   <div class="footer__inner">
     
-      <a
-  href="/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >hello friend</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span
-          >© 2020 Powered by
-          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
-        >
-        <span
-          >Theme created by
-          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
-        >
-      </div>
-    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
   </div>
 </footer>
 

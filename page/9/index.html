@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.67.0-DEV" />
+    
+      <title>
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=""
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Strawbreey Notes"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="Strawbreey Notes" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Strawbreey Notes" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Strawbreey Notes</span
+    >
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  
+  
+    
+  
+  
+
+  
+
+  <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/debounce-and-throttle/">Debounce and Throttle</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            7099-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
+实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6+import { of, timer } from 'rxjs';import { debounce } from 'rxjs/operators';// 发出四个字符串const example = of('WAIT', 'ONE', 'SECOND', 'Last will display');/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: 'Last will display'*/const subscribe = debouncedExample.subscribe(val =&gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])js 实现方式:
+截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
+实现方式：每次触发事件时，如果当前周期内有等待执行的函数，则取消当前事件  import { interval } from 'rxjs';import { throttle } from 'rxjs/operators';// 每1秒发出值const source = interval(1000);// 节流2秒后才发出最新值const example = source.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/debounce-and-throttle/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/go-interview/">Go Interview</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            3099-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            func main(){s := []int{5}fmt.Println(len(s), cap(s))s = append(s, 7)fmt.Println(len(s), cap(s))s = append(s, 9)fmt.Println(len(s), cap(s))x := append(s, 11)fmt.Println(len(s), cap(s))y := append(s, 12)fmt.Println(len(s), cap(s))fmt.Println(s, x, y)// 输出结果 [5 7 9] [5 7 9 12] [5 7 9 12]s := []int{5, 7, 9}x := append(s, 11)y := append(s, 12)fmt.Println(s,x,y)// 输出结果 [5 7 9] [5 7 9 11] [5 7 9 12]s := []int{5} // 初始化切片为[5], cap(s) = 1 len (s) = 1 fmt.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/go-interview/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/go-slice/">Go Slice</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            3099-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            go slice Go 语言切片是对数组的抽象。
+Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片(“动态数组”),与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。
+定义切片 var identifier []type切片不需要说明长度。
+或使用make()函数来创建切片:
+var slice1 []type = make([]type, len)// 也可以简写为slice1 := make([]type, len)也可以指定容量，其中capacity为可选参数。
+make([]T, length, capacity)slice init s := [] int {1,2,3 } // 直接初始化切片，[]表示是切片类型，{1,2,3}初始化值依次是1,2,3.其cap=len=3s := arr[:]// 初始化切片s,是数组arr的引用s := arr[startIndex:endIndex] // 将arr中从下标startIndex到endIndex-1 下的元素创建为一个新的切片s1 := s[startIndex:endIndex] // 通过切片s初始化切片s1s :=make([]int,len,cap) // 通过内置函数make()初始化切片s,[]int 标识为其元素类型为int的切片len() 和 cap() 切片是可索引的，并且可以由 len() 方法获取长度。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/go-slice/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/go-start/">Go Start</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            3099-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            go command ( go 常用命令) Usage:go &lt;command&gt; [arguments]The commands are:bug start a bug reportbuild compile packages and dependenciesclean remove object files and cached filesdoc show documentation for package or symbolenv print Go environment informationfix update packages to use new APIsfmt gofmt (reformat) package sourcesgenerate generate Go files by processing sourceget add dependencies to current module and install theminstall compile and install packages and dependencieslist list packages or modulesmod module maintenancerun compile and run Go programtest test packagestool run specified go toolversion print Go versionvet report likely mistakes in packagesUse &quot;go help &lt;command&gt;&quot; for more information about a command.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/go-start/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/webassembly/">WebAssembly</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            3099-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            WebAssembly WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.
+Efficient and fast Safe Open and debuggable Part of the open web platform Start $ git clone <a href="https://github.com/juj/emsdk.git">https://github.com/juj/emsdk.git</a>$ cd emsdk$ ./emsdk install sdk-incoming-64bit binaryen-master-64bit$ ./emsdk activate sdk-incoming-64bit binaryen-master-64bit$ source ./emsdk_env.sh如何使用 WebAssembly 整个代码库都用 WebAssembly。主要使用 WebAssembly 计算，UI 使用 JavaScript/HTML。在大型 JavaScript/HTML 应用中复用已经存在的 WebAssembly 代码。像使用助手库一样，分担一些计算任务。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/webassembly/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/angular-service/">Angular Service</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            3099-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          Angular Directive
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/angular-service/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/css-interivew-repaint-and-refolw/">Css Interivew Repaint and Refolw</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            3099-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/css-interivew-repaint-and-refolw/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/css-interview-bfc/">Css Interview BFC</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            3099-09-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Describe BFC (Block Formatting Context) and how it works.
+BFC(Block formatting context) 块级格式化上下文 A block formatting context is a part of a visual CSS rendering of a web page. It’s the region in which the layout of block boxes occurs and in which floats interact with other elements.
+BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域
+what A block formatting context is created by at least one of the following:
+The root element of the document ().
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/css-interview-bfc/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-command/">Mysql Command</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            1099-09-01
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-command/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/go-types/">Go Types</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            1099-09-01
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/go-types/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-install-php/">Linux Install Php</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            1099-09-01
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Install PHP install php5.6 wget -c <a href="http://cn2.php.net/distributions/php-5.6.21.tar.gz">http://cn2.php.net/distributions/php-5.6.21.tar.gz</a>tar -zxvf php-5.6.21.tar.gz格式：tar zcvf 压缩后的路径及包名 你要压缩的文件
+　z:gzip压缩
+　c:创建压缩包
+　v:显示打包压缩解压过程
+　f:接着压缩
+　t:查看压缩包内容
+　x:解压
+　X:指定文件列表形式排除不需要打包压缩的文件或目录
+　-exclude:指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等）
+　-C:解压到指定目录
+例如：将/root/cs/test/下文件压缩到/root/cs/test1文件下命名为1
+tar zcf /root/cs/test1/1.tar.gz /root/cs/test/
+zcvf : 打包压缩 xvf: 解压缩
+php 下载 解压 配置 编译 <a href="https://www.php.net/distributions/php-7.2.33.tar.gz">https://www.php.net/distributions/php-7.2.33.tar.gz</a>
+wget <a href="http://cn2.php.net/distributions/php-7.2.33.tar.gz">http://cn2.php.net/distributions/php-7.2.33.tar.gz</a> tar xf php-7.2.33.tar.xz
+tar -zxvf php-7.2.33.tar.xz
+./configure –prefix=/usr/local/php72 –with-config-file-path=/usr/local/php72/etc –with-mysql=mysqlnd –with-mysqli=mysqlnd –with-pdo-mysql=mysqlnd –with-gd –with-iconv –with-zlib –enable-xml –enable-bcmath –enable-shmop –enable-sysvsem –enable-inline-optimization –enable-mbregex –enable-fpm –enable-mbstring –enable-ftp –enable-gd-native-ttf –with-openssl –enable-pcntl –enable-sockets –with-xmlrpc –enable-zip –enable-soap –with-pear –with-gettext –enable-session –with-mcrypt –with-curl
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-install-php/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-common-commands/">Git Common Commands</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            31089-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-common-commands/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-undo/">Git Undo</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            31089-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            删除commit提交记录 # Checkoutgit checkout &ndash;orphan latest_branch;# Add all the filesgit add -A;# Commit the changesgit commit -am &quot;Reinitialize&quot;;# Delete the branchgit branch -D master;# Rename the current branch to mastergit branch -m master;# Finally, force update your repositorygit push -f origin master;撤销上一次的commit git reset &ndash;hard HEAD^ git reset &ndash;mixed HEAD^ git reset &ndash;soft HEAD^ git push &ndash;force# &ndash;mixed 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add 。 操作这个为默认参数,git reset &ndash;mixed HEAD^ 和 git reset HEAD^ 效果是一样的。# &ndash;soft 不删除工作空间改动代码，撤销commit，不撤销git add .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-undo/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-permissions/">Linux Permissions</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            31089-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Linux 文件属性 查看文件
+ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x&mdash; 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw&mdash;&mdash;- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw&mdash;&mdash;- 1 root root 199 Sep 8 17:14 .bash_history-rw-r&ndash;r&ndash; 1 root root 24 Jan 6 2007 .bash_logout-rw-r&ndash;r&ndash; 1 root root 191 Jan 6 2007 .bash_profile-rw-r&ndash;r&ndash; 1 root root 176 Jan 6 2007 .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-permissions/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/common-commands/">Common Commands</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            31089-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            linux common command # 测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm">https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm</a># 下载phpwget php-7.2.15.tar.bz2 <a href="http://cn2.php.net/distributions/php-7.2.15.tar.bz2">http://cn2.php.net/distributions/php-7.2.15.tar.bz2</a>yum install <a href="http://rpms.remirepo.net/enterprise/remi-release-7.rpm">http://rpms.remirepo.net/enterprise/remi-release-7.rpm</a>rpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm">https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm</a># linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/common-commands/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/host-on-github/">Host on Github</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            31089-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/host-on-github/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-submodule/">Git Submodule</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            31089-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-submodule/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/hugo-start/">Hugo Start</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            31089-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/hugo-start/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git/">Git</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            28089-08-28
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            create a new repository on the command line git initgit add README.mdgit commit -m &quot;first commit&quot;git branch -M mastergit remote add origin <a href="https://github.com/strawbreey/notes.git">https://github.com/strawbreey/notes.git</a>git push -u origin masterpush an existing repository from the command line git remote add origin <a href="https://github.com/strawbreey/notes.git">https://github.com/strawbreey/notes.git</a>git branch -M mastergit push -u origin mastercreate gh-pages branch git checkout &ndash;orphan gh-pagesgit reset &ndash;hardgit commit &ndash;allow-empty -m &quot;Initializing gh-pages branch&quot;git push upstream gh-pagesgit checkout mastergit remote add origin https://github.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/interview/">Interview</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            28089-08-28
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/interview/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/page/8/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/page/10/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

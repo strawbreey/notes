@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Js Deep Copy ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="JSON.parse/stringify if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。
+如果不使用复制的数据类型, JSON序列化是最快的复制方法
+JSON.parse(JSON.stringify(object))const a = {string: &amp;#39;string&amp;#39;,number: 123,bool: false,nul: null,date: new Date(), // stringified undef: undefined, // lost inf: Infinity, // forced to &amp;#39;null&amp;#39; re: /.*/, // lost}console.log(a);console.log(typeof a.date); // Date objectconst clone = JSON."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/js-deep-copy/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Deep Copy"/>
+<meta name="twitter:description" content="JSON.parse/stringify if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。
+如果不使用复制的数据类型, JSON序列化是最快的复制方法
+JSON.parse(JSON.stringify(object))const a = {string: &#39;string&#39;,number: 123,bool: false,nul: null,date: new Date(), // stringified undef: undefined, // lost inf: Infinity, // forced to &#39;null&#39; re: /.*/, // lost}console.log(a);console.log(typeof a.date); // Date objectconst clone = JSON."/>
+
+
+
+<meta property="og:title" content="Js Deep Copy" />
+<meta property="og:description" content="JSON.parse/stringify if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。
+如果不使用复制的数据类型, JSON序列化是最快的复制方法
+JSON.parse(JSON.stringify(object))const a = {string: &#39;string&#39;,number: 123,bool: false,nul: null,date: new Date(), // stringified undef: undefined, // lost inf: Infinity, // forced to &#39;null&#39; re: /.*/, // lost}console.log(a);console.log(typeof a.date); // Date objectconst clone = JSON." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/js-deep-copy/" />
+<meta property="article:published_time" content="2020-09-27T19:38:49+08:00" />
+<meta property="article:modified_time" content="2020-09-27T19:38:49+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Strawbreey Notes</span
+    >
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Js Deep Copy</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          27099-09-27
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h3 id="jsonparsestringify">JSON.parse/stringify</h3>
+<p>if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。</p>
+<p>如果不使用复制的数据类型, JSON序列化是最快的复制方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">object</span>))
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">string</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;string&#39;</span>,
+  <span style="color:#a6e22e">number</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">123</span>,
+  <span style="color:#a6e22e">bool</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+  <span style="color:#a6e22e">nul</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(),  <span style="color:#75715e">// stringified
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">undef</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>,  <span style="color:#75715e">// lost
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">inf</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">Infinity</span>,  <span style="color:#75715e">// forced to &#39;null&#39;
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">re</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/.*/</span>,  <span style="color:#75715e">// lost
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">date</span>);  <span style="color:#75715e">// Date object
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">clone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">a</span>));
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">clone</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">clone</span>.<span style="color:#a6e22e">date</span>);  <span style="color:#75715e">// result of .toISOString()
+</span></code></pre></div><h3 id="使用常见库中clone函数">使用常见库中clone函数</h3>
+<p>Since cloning objects is not trivial (complex types, circular references, function etc.), most major libraries provide function to clone objects. Don&rsquo;t reinvent the wheel - if you&rsquo;re already using a library, check if it has an object cloning function. For example,</p>
+<ul>
+<li>
+<p><a href="https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L11087">lodash deepclone</a> - cloneDeep; can be imported separately via the lodash.clonedeep module and is probably your best choice if you&rsquo;re not already using a library that provides a deep cloning function</p>
+</li>
+<li>
+<p>AngularJS - angular.copy</p>
+</li>
+<li>
+<p>vuejs <a href="https://github.com/vuejs/vue/blob/52719ccab8fccffbdf497b96d3731dc86f04c1ce/src/server/bundle-renderer/create-bundle-runner.js">deepClone</a></p>
+</li>
+<li>
+<p>Angular -</p>
+</li>
+<li>
+<p>jQuery - jQuery.extend(true, { }, oldObject); .clone() only clones DOM elements</p>
+</li>
+</ul>
+<h3 id="es6">ES6</h3>
+<p>For completeness, note that ES6 offers two shallow copy mechanisms: Object.assign() and the spread syntax. which copies values of all enumerable own properties from one object to another. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 浅复制
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A1</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2&#34;</span>};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A2</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">assign</span>({}, <span style="color:#a6e22e">A1</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A3</span> <span style="color:#f92672">=</span> {...<span style="color:#a6e22e">A1</span>};
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/js-array/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Js Array</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/swagger-php/">
+                  <span class="button__text">Swagger Php</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
