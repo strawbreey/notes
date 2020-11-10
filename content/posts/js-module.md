@@ -4,7 +4,7 @@ date: 2020-10-16T00:13:48+08:00
 draft: true
 ---
 
-，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
 
 但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
 
@@ -47,8 +47,7 @@ sayHi('John'); // Hello, John!
 浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。
 
 
-    模块只通过 HTTP(s) 工作，在本地文件则不行
-    如果你尝试通过 file:// 协议在本地打开一个网页，你会发现 import/export 指令不起作用。你可以使用本地 Web 服务器，例如 static-server，或者使用编辑器的“实时服务器”功能，例如 VS Code 的 Live Server Extension 来测试模块。
+模块只通过 HTTP(s) 工作，在本地文件则不行。如果你尝试通过 file:// 协议在本地打开一个网页，你会发现 import/export 指令不起作用。你可以使用本地 Web 服务器，例如 static-server，或者使用编辑器的“实时服务器”功能，例如 VS Code 的 Live Server Extension 来测试模块。
 
 模块核心功能
 
@@ -59,3 +58,10 @@ sayHi('John'); // Hello, John!
 - 模块级作用域
 
     每个模块都有自己的顶级作用域（top-level scope）。换句话说，一个模块中的顶级作用域变量和函数在其他脚本中是不可见的。
+
+
+### 参考资料
+
+- [CommonJS、requirejs、ES6的对比](https://www.jianshu.com/p/f65e84bfeb16)
+- [requirejs.org](https://requirejs.org/docs/start.html)
+- [Relation between CommonJS, AMD and RequireJS?](https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs)
