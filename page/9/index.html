@@ -34,15 +34,10 @@
   sizes="144x144"
   href="/img/apple-touch-icon-144-precomposed.png"
 />
-<link rel="shortcut icon" href="/img/favicon.png" />
+<link rel="shortcut icon" href="/favicon.png" />
 
 
-<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
 
 
 <meta name="twitter:card" content="summary"/>
@@ -74,13 +69,10 @@
   style="text-decoration: none;"
 >
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >Strawbreey Notes</span
-    >
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
   
 </a>
 
@@ -158,6 +150,140 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/dependency-injection/">Dependency Injection</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            依赖注入
+In software engineering, dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. In the typical “using” relationship the receiving object is called a client and the passed (that is, “injected”) object is called a service. The code that passes the service to the client can be many kinds of things and is called the injector. Instead of the client specifying which service it will use, the injector tells the client what service to use.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/dependency-injection/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-fpm/">Php Fpm</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            PHP-FPM是一个PHP的PHPFastCGI管理器。
+PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
+kill -INT <code>cat /var/run/php-fpm/php-fpm.pid</code># 杀死进程killall php-fpm# 开启进程/usr/local/php72/sbin/php-fpm# 查看端口号netstat -lnt | grep 9000# 查看php-fpmps aux | grep php-fpm# 重新启动并加载配置/usr/local/php/sbin-php-fpm -c php.ini1 修改php.ini或www.conf？ 修改php.ini文件：
+$ php –ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
+$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
+2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-fpm/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-closure/">Js Closure</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起构成闭包（closure）。也就是说，闭包可以让你从内部函数访问外部函数作用域。在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包。
+词法作用域 function init() {var name = &quot;Mozilla&quot;; // name 是一个被 init 创建的局部变量 function displayName() { // displayName() 是内部函数，一个闭包 alert(name); // 使用了父函数中声明的变量 }displayName();}init();init() 创建了一个局部变量 name 和一个名为 displayName() 的函数。displayName() 是定义在 init() 里的内部函数，并且仅在 init() 函数体内可用。请注意，displayName() 没有自己的局部变量。然而，因为它可以访问到外部函数的变量，所以 displayName() 可以使用父函数 init() 中声明的变量 name 。
+闭包 function makeFunc() {var name = &quot;Mozilla&quot;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();myFunc();// =&gt; function makeFunc() {var name = &quot;Mozilla&quot;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();var myFunc = displayName() {alert(name);}(displayName() {alert(name);})()function makeAdder(x) {return function(y) {return x + y;};}var add5 = makeAdder(5);var add10 = makeAdder(10);console.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-closure/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-workflow/">Git Workflow</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-workflow/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/debounce-and-throttle/">Debounce and Throttle</a></h1>
@@ -689,128 +815,6 @@ ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altota
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git-submodule/">Git Submodule</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-31
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/git-submodule/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/hugo-start/">Hugo Start</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-31
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/hugo-start/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git/">Git</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-28
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            create a new repository on the command line git initgit add README.mdgit commit -m &quot;first commit&quot;git branch -M mastergit remote add origin <a href="https://github.com/strawbreey/notes.git">https://github.com/strawbreey/notes.git</a>git push -u origin masterpush an existing repository from the command line git remote add origin <a href="https://github.com/strawbreey/notes.git">https://github.com/strawbreey/notes.git</a>git branch -M mastergit push -u origin mastercreate gh-pages branch git checkout &ndash;orphan gh-pagesgit reset &ndash;hardgit commit &ndash;allow-empty -m &quot;Initializing gh-pages branch&quot;git push upstream gh-pagesgit checkout mastergit remote add origin https://github.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/git/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/interview/">Interview</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-28
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/interview/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -846,7 +850,7 @@ ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altota
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
 
 
       

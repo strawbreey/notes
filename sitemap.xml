@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/nginx-proxy-pass/</loc>
-    <lastmod>2020-11-09T16:03:57+08:00</lastmod>
+    <loc>/posts/</loc>
+    <lastmod>2020-11-09T17:59:32+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/</loc>
+    <loc>/posts/webapi-fetch/</loc>
+    <lastmod>2020-11-09T17:59:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/angular-ngmodule/</loc>
+    <lastmod>2020-11-09T17:51:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/angular-architecture/</loc>
+    <lastmod>2020-11-09T17:44:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mysql-innodb/</loc>
+    <lastmod>2020-11-09T17:05:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/nginx-proxy-pass/</loc>
     <lastmod>2020-11-09T16:03:57+08:00</lastmod>
   </url>
   
@@ -353,7 +373,7 @@
   </url>
   
   <url>
-    <loc>/posts/stanford/</loc>
+    <loc>/posts/course-stanford/</loc>
     <lastmod>2020-10-16T12:16:44+08:00</lastmod>
   </url>
   

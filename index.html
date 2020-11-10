@@ -34,15 +34,10 @@
   sizes="144x144"
   href="/img/apple-touch-icon-144-precomposed.png"
 />
-<link rel="shortcut icon" href="/img/favicon.png" />
+<link rel="shortcut icon" href="/favicon.png" />
 
 
-<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
 
 
 <meta name="twitter:card" content="summary"/>
@@ -74,13 +69,10 @@
   style="text-decoration: none;"
 >
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >Strawbreey Notes</span
-    >
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
   
 </a>
 
@@ -158,6 +150,132 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/webapi-fetch/">Webapi Fetch</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Fetch 是一个现代的概念, 等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。
+Fetch API 提供了一个 JavaScript 接口，用于访问和操纵 HTTP 管道的一些具体部分，例如请求和响应。它还提供了一个全局 fetch() 方法，该方法提供了一种简单，合理的方式来跨网络异步获取资源。
+这种功能以前是使用 XMLHttpRequest 实现的。Fetch 提供了一个更理想的替代方案，可以很容易地被其他技术使用，例如 Service Workers。Fetch 还提供了专门的逻辑空间来定义其他与 HTTP 相关的概念，例如 CORS 和 HTTP 的扩展。
+fetch() 必须接受一个参数——资源的路径。无论请求成功与否，它都返回一个 Promise 对象，resolve 对应请求的 Response。你也可以传一个可选的第二个参数 init（参见 Request）。
+fetch('http://example.com/movies.json').then(function(response) {return response.json();}).then(function(myJson) {console.log(myJson);});// Example POST method implementation:postData('http://example.com/answer', {answer: 42}).then(data =&gt; console.log(data)) // JSON from <code>response.json()</code> call .catch(error =&gt; console.error(error))function postData(url, data) {// Default options are marked with * return fetch(url, {body: JSON.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/webapi-fetch/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/angular-ngmodule/">Angular Ngmodule</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/angular-ngmodule/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/angular-architecture/">Angular Architecture</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/angular-architecture/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-innodb/">Mysql Innodb</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-innodb/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/nginx-proxy-pass/">Nginx Proxy Pass</a></h1>
@@ -675,126 +793,6 @@ typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mariadb/">Mariadb</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mariadb/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-optimization-subqueries/">Mysql Optimization Subqueries</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mysql-optimization-subqueries/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-innodb-memory/">Mysql Innodb Memory</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mysql-innodb-memory/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-order-by/">Mysql Order By</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mysql-order-by/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -823,7 +821,7 @@ typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
 
 
       

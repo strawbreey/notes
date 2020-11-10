@@ -34,15 +34,10 @@
   sizes="144x144"
   href="/img/apple-touch-icon-144-precomposed.png"
 />
-<link rel="shortcut icon" href="/img/favicon.png" />
+<link rel="shortcut icon" href="/favicon.png" />
 
 
-<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
 
 
 <meta name="twitter:card" content="summary"/>
@@ -74,13 +69,10 @@
   style="text-decoration: none;"
 >
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >Strawbreey Notes</span
-    >
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
   
 </a>
 
@@ -158,6 +150,140 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/network-agent/">Network Agent</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/network-agent/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-timeout/">Php Timeout</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            设置PHP脚本执行超时的时间有下面这样一些方法：
+php.ini 中限定程序的最长执行时间是 30 秒，这是由 php.ini 配置文件中的 max_execution_time 变量指定，倘若你有一个需要颇多时间才能完成的程序代码，代码会由于超时而执行失败，例如要发送很多电子邮件给大量收件者，或者要进行繁重的数据分析工作，服务器会在 30 秒后强行中止正在执行的程序，如何解决这个问题呢。
+在php.ini里面设置 max_execution_time = 1800; 脚本被解析器中止之前允许的最大执行时间
+通过PHP的 ini_set 函数设置 ini_set(“max_execution_time”, “1800”);
+通过set_time_limit 函数设置 set_time_limit(1800) ;
+在php-fpm.conf中设置 request_terminate_timeout 请求开始n秒
+注意
+request_terminate_timeout 适用于，当max_execution_time由于某种原因无法终止脚本的时候，会把这个php-fpm请求干掉。
+web请求php执行时间受到2方面控制，一个是php.ini的max_execution_time（要注意的是sleep，http请求等待响应的时间是不算的，这里算的是真正的执行时间），另一个是php-fpm request_terminate_timeout 设置，这个算的是请求开始n秒。
+nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeout，fastcgi_read_timeout，fastcgi_send_timeout
+这几个 nginx 参数的主语都是 nginx，所以 fastcgi_connect_timeout 的意思是 nginx 连接到 fastcgi 的超时时间，fastcgi_read_timeout 是 nginx 读取 fastcgi 的内容的超时时间，fastcgi_send_timeout 是 nginx 发送内容到 fastcgi 的超时时间。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-timeout/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/vim-swap/">Vim Swap</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Found a swap file by the name E325: ATTENTIONFound a swap file by the name &quot;.git/.MERGE_MSG.swp&quot;owned by: xxxxxx dated: Mon Nov 12 23:17:40 2012file name: ~xxxxxx/Desktop/My-ios-App/.git/MERGE_MSGmodified: YESuser name: xxxxxx host name: unknown-b8-8d-12-22-27-72.lanprocess ID: 1639While opening file &quot;.git/MERGE_MSG&quot;dated: Tue Nov 13 14:06:48 2012NEWER than swap file!(1) Another program may be editing the same file.If this is the case, be careful not to end up with twodifferent instances of the same file when making changes.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/vim-swap/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-exit-and-die/">Php Exit and Die</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-exit-and-die/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/js-string-methods/">Js String Methods</a></h1>
@@ -482,7 +608,7 @@ let user1 = {admin() {alert(&quot;I am admin&quot;);}}let user2 = {};user1
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/stanford/">Stanford</a></h1>
+      <h1 class="post-title"><a href="/posts/course-stanford/">Course Stanford</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
@@ -520,7 +646,7 @@ CS 221 人工智能导论 http://web.
         
       </div>
       
-        <div><a class="read-more button" href="/posts/stanford/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/course-stanford/">Read more →</a></div>
       
     </div>
     
@@ -547,7 +673,7 @@ CS 221 人工智能导论 http://web.
       <div class="post-content">
         
           
-            ，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+            JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
 但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
 AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
 语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
@@ -766,165 +892,6 @@ let str = &quot;I love Javascript&quot;;let substr = 'love';alert(str.search(s
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-command/">Linux Command</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
-第二列Size，磁盘分区的大小
-第三列Used，已使用的空间
-第四列Avail，可用的空间
-第五列Use%，已使用的百分比
-第六列Mounted on，挂载点
-参数说明
--a或–all：包含全部的文件系统；
-–block-size=&lt;区块大小&gt;：以指定的区块大小来显示区块数目；
--h或–human-readable：以可读性较高的方式来显示信息;
--H或–si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
--i或–inodes：显示inode的信息；
--k或–kilobytes：指定区块大小为1024字节；
--l或–local：仅显示本地端的文件系统;
--m或–megabytes：指定区块大小为1048576字节；
-–no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
--P或–portability：使用POSIX的输出格式；
-–sync：在取得磁盘使用信息前，先执行sync指令；
--t&lt;文件系统类型&gt;或–type=&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；
--T或–print-type：显示文件系统的类型；
--x&lt;文件系统类型&gt;或–exclude-type=&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；
-–help：显示帮助；
-–version：显示版本信息。
-查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
--a或-all 显示目录中个别文件的大小。
--b或-bytes 显示目录或文件大小时，以byte为单位。
--c或–total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
--k或–kilobytes 以KB(1024bytes)为单位输出。
--m或–megabytes 以MB为单位输出。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-command/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-source-code/">Golang Source Code</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/golang-source-code/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-builtin/">Golang Builtin</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Package builtin provides documentation for Go’s predeclared identifiers (预声明的标识符). The items documented here are not actually in package builtin but their descriptions here allow godoc to present documentation for the language’s special identifiers (特殊标识符).
-Package files builtin.go
-Constants true and false are the two untyped boolean values.
-const (true = 0 == 0 // Untyped bool. false = 0 != 0 // Untyped bool.)iota is a predeclared identifier representing the untyped integer ordinal number of the current const specification in a (usually parenthesized) const declaration.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/golang-builtin/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-strings-api/">Golang Strings Api</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Package strings implements simple functions to manipulate UTF-8 encoded strings.
-func Compare
-func Compare (a, b string) int// Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and +1 if a &gt; b.package mainimport (&quot;fmt&quot;&quot;strings&quot;)func main() {strings.Compare(&quot;a&quot;, &quot;b&quot;) // -1 strings.Compare(&quot;a&quot;, &quot;a&quot;) // 0 strings.Compare(&quot;b&quot;, &quot;a&quot;) // 1}func Containes func Containes (s, substr string) bool
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/golang-strings-api/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -960,7 +927,7 @@ func Compare (a, b string) int// Compare returns an integer comparing two strin
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
 
 
       

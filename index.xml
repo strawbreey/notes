@@ -16,6 +16,90 @@
     
     
     <item>
+      <title>Webapi Fetch</title>
+      <link>/posts/webapi-fetch/</link>
+      <pubDate>Mon, 09 Nov 2020 17:59:32 +0800</pubDate>
+      
+      <guid>/posts/webapi-fetch/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Fetch 是一个现代的概念, 等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。
+Fetch API 提供了一个 JavaScript 接口，用于访问和操纵 HTTP 管道的一些具体部分，例如请求和响应。它还提供了一个全局 fetch() 方法，该方法提供了一种简单，合理的方式来跨网络异步获取资源。
+这种功能以前是使用 XMLHttpRequest 实现的。Fetch 提供了一个更理想的替代方案，可以很容易地被其他技术使用，例如 Service Workers。Fetch 还提供了专门的逻辑空间来定义其他与 HTTP 相关的概念，例如 CORS 和 HTTP 的扩展。
+fetch() 必须接受一个参数——资源的路径。无论请求成功与否，它都返回一个 Promise 对象，resolve 对应请求的 Response。你也可以传一个可选的第二个参数 init（参见 Request）。
+fetch(&amp;#39;http://example.com/movies.json&amp;#39;).then(function(response) {return response.json();}).then(function(myJson) {console.log(myJson);});// Example POST method implementation:postData(&amp;#39;http://example.com/answer&amp;#39;, {answer: 42}).then(data =&amp;gt; console.log(data)) // JSON from `response.json()` call .catch(error =&amp;gt; console.error(error))function postData(url, data) {// Default options are marked with * return fetch(url, {body: JSON.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Ngmodule</title>
+      <link>/posts/angular-ngmodule/</link>
+      <pubDate>Mon, 09 Nov 2020 17:51:46 +0800</pubDate>
+      
+      <guid>/posts/angular-ngmodule/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Angular Architecture</title>
+      <link>/posts/angular-architecture/</link>
+      <pubDate>Mon, 09 Nov 2020 17:44:06 +0800</pubDate>
+      
+      <guid>/posts/angular-architecture/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Innodb</title>
+      <link>/posts/mysql-innodb/</link>
+      <pubDate>Mon, 09 Nov 2020 17:05:31 +0800</pubDate>
+      
+      <guid>/posts/mysql-innodb/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          -[](https://weread.qq.com/web/reader/611329b059346e611427f1ck16732dc0161679091c5aeb1)
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Nginx Proxy Pass</title>
       <link>/posts/nginx-proxy-pass/</link>
       <pubDate>Mon, 09 Nov 2020 16:03:57 +0800</pubDate>
@@ -1757,11 +1841,11 @@ let user1 = {admin() {alert(&amp;#34;I am admin&amp;#34;);}}let user2 = {};
     </item>
     
     <item>
-      <title>Stanford</title>
-      <link>/posts/stanford/</link>
+      <title>Course Stanford</title>
+      <link>/posts/course-stanford/</link>
       <pubDate>Fri, 16 Oct 2020 12:16:44 +0800</pubDate>
       
-      <guid>/posts/stanford/</guid>
+      <guid>/posts/course-stanford/</guid>
       <description>
         
           
@@ -1801,7 +1885,7 @@ let user1 = {admin() {alert(&amp;#34;I am admin&amp;#34;);}}let user2 = {};
         
         
         
-          ，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+          JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
 但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
 AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
 语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。

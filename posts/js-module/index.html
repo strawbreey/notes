@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+  content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
 但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
 AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
 语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
@@ -39,20 +39,15 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
   sizes="144x144"
   href="/img/apple-touch-icon-144-precomposed.png"
 />
-<link rel="shortcut icon" href="/img/favicon.png" />
+<link rel="shortcut icon" href="/favicon.png" />
 
 
-<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js Module"/>
-<meta name="twitter:description" content="，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+<meta name="twitter:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
 但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
 AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
 语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
@@ -62,7 +57,7 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 
 
 <meta property="og:title" content="Js Module" />
-<meta property="og:description" content="，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+<meta property="og:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
 但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
 AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
 语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
@@ -89,13 +84,10 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
   style="text-decoration: none;"
 >
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >Strawbreey Notes</span
-    >
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
   
 </a>
 
@@ -189,7 +181,7 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 
     <div class="post-content">
       
-      <p>，JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。</p>
+      <p>JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。</p>
 <p>但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。</p>
 <p><a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD</a> —— 最古老的模块系统之一，最初由 require.js 库实现。
 <a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">CommonJS</a> —— 为 Node.js 服务器创建的模块系统。
@@ -218,9 +210,7 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
   document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sayHi</span>(<span style="color:#e6db74">&#39;John&#39;</span>);
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。</p>
-<pre><code>模块只通过 HTTP(s) 工作，在本地文件则不行
-如果你尝试通过 file:// 协议在本地打开一个网页，你会发现 import/export 指令不起作用。你可以使用本地 Web 服务器，例如 static-server，或者使用编辑器的“实时服务器”功能，例如 VS Code 的 Live Server Extension 来测试模块。
-</code></pre>
+<p>模块只通过 HTTP(s) 工作，在本地文件则不行。如果你尝试通过 file:// 协议在本地打开一个网页，你会发现 import/export 指令不起作用。你可以使用本地 Web 服务器，例如 static-server，或者使用编辑器的“实时服务器”功能，例如 VS Code 的 Live Server Extension 来测试模块。</p>
 <p>模块核心功能</p>
 <ul>
 <li>
@@ -231,6 +221,12 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 <p>模块级作用域</p>
 <p>每个模块都有自己的顶级作用域（top-level scope）。换句话说，一个模块中的顶级作用域变量和函数在其他脚本中是不可见的。</p>
 </li>
+</ul>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://www.jianshu.com/p/f65e84bfeb16">CommonJS、requirejs、ES6的对比</a></li>
+<li><a href="https://requirejs.org/docs/start.html">requirejs.org</a></li>
+<li><a href="https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs">Relation between CommonJS, AMD and RequireJS?</a></li>
 </ul>
 
     </div>
@@ -246,9 +242,9 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="/posts/stanford/">
+                <a href="/posts/course-stanford/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">Stanford</span>
+                  <span class="button__text">Course Stanford</span>
                 </a>
               </span>
             
@@ -285,7 +281,7 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
 
 
       
