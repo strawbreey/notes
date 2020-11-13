@@ -5,6 +5,7 @@ draft: false
 ---
 
 ### 本地版本控制系统
+
 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
 
 其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
@@ -14,11 +15,11 @@ draft: false
 
 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
 
-- /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 --system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
+- /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 --system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。
 
 - ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 --global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
 
-- 当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 --local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+- 当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 --local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。
 
 每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
 
@@ -56,13 +57,15 @@ git config --list --show-origin
 ### 获取Git仓库
 
 ```shell
+
 # 在已存在目录中初始化仓库
 # 该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干。
 git init
 
-$ git add *.c
-$ git add LICENSE
-$ git commit -m 'initial project version'
+# 添加提交记录
+git add *.c
+git add LICENSE
+git commit -m 'initial project version'
 
 # 克隆现有的仓库
 git clone https://github.com/libgit2/libgit2
@@ -71,12 +74,12 @@ git clone https://github.com/libgit2/libgit2
 git clone https://github.com/libgit2/libgit2 mylibgit
 ```
 
-
 ## git 状态变化周期
 
 ![lifecycle](/images/lifecycle.png)
 
 ```shell
+
 # 检查当前文件状态
 git status 
 
@@ -89,7 +92,6 @@ git status -short
 
 # 忽略文件
 .gitignone
-
 ```
 
 文件 .gitignore 的格式规范如下：
@@ -140,6 +142,7 @@ git log -p -2
 
 # 查看简略提示信息
 git log --stat
+
 # 
 git log --pretty=oneline
 ```
@@ -147,6 +150,7 @@ git log --pretty=oneline
 #### 撤销操作
 
 ```shell
+
 # 提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行带有 --amend 选项的提交命令来重新提交
 git commit --amend
 
@@ -334,6 +338,7 @@ git branch --no-merged
 远程引用是对远程仓库的引用（指针），包括分支、标签等等。 你可以通过 git ls-remote <remote> 来显式地获得远程引用的完整列表， 或者通过 git remote show <remote> 获得远程分支的更多信息。 然而，一个更常见的做法是利用远程跟踪分支。
 
 #### 变基 vs. 合并
+
 至此，你已在实战中学习了变基和合并的用法，你一定会想问，到底哪种方式更好。 在回答这个问题之前，让我们退后一步，想讨论一下提交历史到底意味着什么。
 
 有一种观点认为，仓库的提交历史即是 记录实际发生过什么。 它是针对历史的文档，本身就有价值，不能乱改。 从这个角度看来，改变提交历史是一种亵渎，你使用 谎言 掩盖了实际发生过的事情。 如果由合并产生的提交历史是一团糟怎么办？ 既然事实就是如此，那么这些痕迹就应该被保留下来，让后人能够查阅。
@@ -347,10 +352,13 @@ Git 可以使用四种不同的协议来传输资料：本地协议（Local）�
 ### 在服务器上搭建Git
 
 ### 生成ssh公钥
+
 许多 Git 服务器都使用 SSH 公钥进行认证。 为了向 Git 服务器提供 SSH 公钥，如果某系统用户尚未拥有密钥，必须事先为其生成一份。 这个过程在所有操作系统上都是相似的。 首先，你需要确认自己是否已经拥有密钥。 默认情况下，用户的 SSH 密钥存储在其 ~/.ssh 目录下。 进入该目录并列出其中内容，你便可以快速确认自己是否已拥有密钥：
 
+```bash
 cd ~/.shh
+```
 
+### 参考资料
 
-
-text sss xxx
+- [pro git book](https://git-scm.com/book/zh/v2)
