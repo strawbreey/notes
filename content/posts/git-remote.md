@@ -28,3 +28,32 @@ git remote [-v | --verbose] show [-n] <name>…​
 git remote prune [-n | --dry-run] <name>…​
 git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)…​]
 ```
+
+### 例子
+
+```bash
+# 列出已经存在的远程分支y
+git remote
+# => origin
+
+# 列出详细信息，在每一个名字后面列出其远程url，
+git remote -v
+# => origin
+
+git branch -r
+# => origin/HEAD -> origin/master
+# => origin/master
+
+# 添加一个远程仓库
+git remote add staging git://git.kernel.org/.../gregkh/staging.git
+
+# 列出已经存在的远程分支y
+git remote
+# => origin
+# => staging
+
+git fetch staging
+
+
+git switch -c staging staging/master
+```

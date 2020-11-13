@@ -5,25 +5,30 @@ draft: true
 ---
 
 ```bash
-gyp info it worked if it ends with ok
-gyp info using node-gyp@5.1.0
-gyp info using node@14.4.0 | win32 | x64
-gyp info find Python using Python version 2.7.16 found at "C:\python2\python.exe"
-gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gz
-gyp WARN install got an error, rolling back install
-gyp ERR! configure error
+  gyp info it worked if it ends with ok
+  gyp info using node-gyp@5.1.0
+  gyp info using node@14.4.0 | win32 | x64
+  gyp info find Python using Python version 2.7.16 found at "C:\python2\python.exe"
+  gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gz
+  gyp WARN install got an error, rolling back install
+  gyp ERR! configure error
 ```
 
 - ![npm-install-node-sass-error](/images/npm-install-node-sass-error.png)
 
 我们可以看到，安装node-sass有几个步骤：
 
-  - 校验本地node_modules中是否已安装node-sass，版本是否一致;
-  - 如未安装或版本不符，从npm源安装node-sass本体;
-  - 检测全局缓存和本地中是否有binding.node,如有即跳过安装;
-  - 没有binding.node则从github下载该二进制文件并将其缓存到全局;
-  - 假如binding.node下载失败，则尝试本地编译出该文件;
-  - 将版本信息写到package-lock.json;
+- 校验本地node_modules中是否已安装node-sass，版本是否一致;
+
+- 如未安装或版本不符，从npm源安装node-sass本体;
+
+- 检测全局缓存和本地中是否有binding.node,如有即跳过安装;
+
+- 没有binding.node则从github下载该二进制文件并将其缓存到全局;
+
+- 假如binding.node下载失败，则尝试本地编译出该文件;
+
+- 将版本信息写到package-lock.json;
 
 
 ### 检查 python 版本
@@ -54,6 +59,9 @@ yarn config set registry https://registry.yarnpkg.com
 ### 相关依赖
 
 - [node-sass](https://github.com/sass/node-sass)
+
 - [node-gyp](https://github.com/nodejs/node-gyp)
+
 - [What are node.js bindings?](https://stackoverflow.com/questions/20382396/what-are-node-js-bindings)
+
 - [C++ BINDING WITH NODE.JS](https://pravinchavan.wordpress.com/2013/11/08/c-binding-with-node-js/)

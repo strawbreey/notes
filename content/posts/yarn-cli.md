@@ -14,6 +14,7 @@ Yarn allows you to use other developers' solutions to different problems, making
 - Global install
 
 ```shell
+# 全局安装
 npm install -g yarn
 ```
 
@@ -22,19 +23,13 @@ npm install -g yarn
 ```shell
 cd ~/path/to/project
 
-yarn policies set-version berry
+# 设置yarn 的版本
 yarn set version berry
-```
 
-- Updating to the latest versions
-
-```
+# Updating to the latest versions
 yarn set version latest
-```
 
-- Installing the latest build fresh from master
-
-```shell
+# Installing the latest build fresh from master
 yarn set version from sources
 # or
 yarn set version from sources --branch 121
@@ -42,43 +37,32 @@ yarn set version from sources --branch 121
 
 ### Usage
 
-Accessing the list of commands 
 ```shell
+# Accessing the list of commands 
 yarn help
-```
 
-Starting a new project
-```shell
+# Starting a new project
 yarn init
-```
 
-Installing all the dependencies
-```shell
-yarn
-# or
+# Installing all the dependencies
+yarn # or
 yarn install
-```
 
-Upgrading a dependency
-```shell
+# upgrading a dependency
 yarn up [package]
 yarn up [package]@[version]
 yarn up [package]@[tag]
-```
 
-Removing a dependency
-```shell
+# Removing a dependency
 yarn remove [package]
-```
 
-Upgrading Yarn itself
-```shell
+# Upgrading Yarn itself
 yarn set version latest
 yarn set version from sources
+
 ```
 
 ### yarn CLI
-
 yarn add 
 
 ```shell
@@ -153,10 +137,14 @@ yarn config set unsafeHttpWhitelist --json '["*.example.com", "example.com"]'
 yarn config set packageExtensions --json '{ "@babel/parser@*": { "dependencies": { "@babel/types": "*" } } }'
 ```
 
-
-
 ### Words
 ```
 reliably  英 [rɪ'laɪəbli]   美 [rɪ'laɪəbli] 
 adv. 可靠地
 ```
+
+
+### 参考资料
+
+- [yarn cli](https://yarnpkg.com/cli/add)
+- [There appears to be trouble with your network connection. Retrying](https://stackoverflow.com/questions/51508364/yarn-there-appears-to-be-trouble-with-your-network-connection-retrying)
