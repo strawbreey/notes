@@ -1,7 +1,7 @@
 ---
 title: "Vim Tutorial"
 date: 2020-09-22T10:41:46+08:00
-draft: false
+draft: true
 ---
 
 在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了
@@ -15,7 +15,7 @@ draft: false
 
 基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 
 
-![vi-vim-cheat-sheet-sch](/images/vi-vim-cheat-sheet-sch.gif)
+![vi-vim-cheat-sheet-sch](../../static/images/vi-vim-cheat-sheet-sch.gif)
 
 
 #### 命令模式：
