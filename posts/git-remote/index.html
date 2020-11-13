@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Git Remote ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="# 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/git-remote/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Remote"/>
+<meta name="twitter:description" content="# 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;name&gt; &lt;url&gt;git remote rename &lt;old&gt; &lt;new&gt;git remote remove &lt;name&gt;git remote set-head &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)git remote set-branches [--add] &lt;name&gt; &lt;branch&gt;…​git remote get-url [--push] [--all] &lt;name&gt;git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;git remote [-v | --verbose] show [-n] &lt;name&gt;…​git remote prune [-n | --dry-run] &lt;name&gt;…​git remote [-v | --verbose] update [-p | --prune] [(&lt;group&gt; | &lt;remote&gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&gt; origingit branch -r# =&gt; origin/HEAD -&gt; origin/master# =&gt; origin/master# 添加一个远程仓库git remote add staging git://git."/>
+
+
+
+<meta property="og:title" content="Git Remote" />
+<meta property="og:description" content="# 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;name&gt; &lt;url&gt;git remote rename &lt;old&gt; &lt;new&gt;git remote remove &lt;name&gt;git remote set-head &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)git remote set-branches [--add] &lt;name&gt; &lt;branch&gt;…​git remote get-url [--push] [--all] &lt;name&gt;git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;git remote [-v | --verbose] show [-n] &lt;name&gt;…​git remote prune [-n | --dry-run] &lt;name&gt;…​git remote [-v | --verbose] update [-p | --prune] [(&lt;group&gt; | &lt;remote&gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&gt; origingit branch -r# =&gt; origin/HEAD -&gt; origin/master# =&gt; origin/master# 添加一个远程仓库git remote add staging git://git." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/git-remote/" />
+<meta property="article:published_time" content="2020-11-13T10:32:42+08:00" />
+<meta property="article:modified_time" content="2020-11-13T10:32:42+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Git Remote</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-11-13
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 更新远程分支</span>
+git remote update origin --prune
+git remote update origin -p
+</code></pre></div><h3 id="参考">参考</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># git-remote - Manage set of tracked repositories</span>
+git remote <span style="color:#f92672">[</span>-v | --verbose<span style="color:#f92672">]</span>
+git remote add <span style="color:#f92672">[</span>-t &lt;branch&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-m &lt;master&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-f<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--<span style="color:#f92672">[</span>no-<span style="color:#f92672">]</span>tags<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--mirror<span style="color:#f92672">=(</span>fetch|push<span style="color:#f92672">)]</span> &lt;name&gt; &lt;url&gt;
+git remote rename &lt;old&gt; &lt;new&gt;
+git remote remove &lt;name&gt;
+git remote set-head &lt;name&gt; <span style="color:#f92672">(</span>-a | --auto | -d | --delete | &lt;branch&gt;<span style="color:#f92672">)</span>
+git remote set-branches <span style="color:#f92672">[</span>--add<span style="color:#f92672">]</span> &lt;name&gt; &lt;branch&gt;…​
+git remote get-url <span style="color:#f92672">[</span>--push<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--all<span style="color:#f92672">]</span> &lt;name&gt;
+git remote set-url <span style="color:#f92672">[</span>--push<span style="color:#f92672">]</span> &lt;name&gt; &lt;newurl&gt; <span style="color:#f92672">[</span>&lt;oldurl&gt;<span style="color:#f92672">]</span>
+git remote set-url --add <span style="color:#f92672">[</span>--push<span style="color:#f92672">]</span> &lt;name&gt; &lt;newurl&gt;
+git remote set-url --delete <span style="color:#f92672">[</span>--push<span style="color:#f92672">]</span> &lt;name&gt; &lt;url&gt;
+git remote <span style="color:#f92672">[</span>-v | --verbose<span style="color:#f92672">]</span> show <span style="color:#f92672">[</span>-n<span style="color:#f92672">]</span> &lt;name&gt;…​
+git remote prune <span style="color:#f92672">[</span>-n | --dry-run<span style="color:#f92672">]</span> &lt;name&gt;…​
+git remote <span style="color:#f92672">[</span>-v | --verbose<span style="color:#f92672">]</span> update <span style="color:#f92672">[</span>-p | --prune<span style="color:#f92672">]</span> <span style="color:#f92672">[(</span>&lt;group&gt; | &lt;remote&gt;<span style="color:#f92672">)</span>…​<span style="color:#f92672">]</span>
+</code></pre></div><h3 id="例子">例子</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 列出已经存在的远程分支y</span>
+git remote
+<span style="color:#75715e"># =&gt; origin</span>
+
+<span style="color:#75715e"># 列出详细信息，在每一个名字后面列出其远程url，</span>
+git remote -v
+<span style="color:#75715e"># =&gt; origin</span>
+
+git branch -r
+<span style="color:#75715e"># =&gt; origin/HEAD -&gt; origin/master</span>
+<span style="color:#75715e"># =&gt; origin/master</span>
+
+<span style="color:#75715e"># 添加一个远程仓库</span>
+git remote add staging git://git.kernel.org/.../gregkh/staging.git
+
+<span style="color:#75715e"># 列出已经存在的远程分支y</span>
+git remote
+<span style="color:#75715e"># =&gt; origin</span>
+<span style="color:#75715e"># =&gt; staging</span>
+
+git fetch staging
+
+
+git switch -c staging staging/master
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/web-performance/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Web Performance</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/node-sass-install/">
+                  <span class="button__text">Node Sass Install</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

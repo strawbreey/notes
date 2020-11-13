@@ -14,9 +14,9 @@
   content="本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
 其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
 Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
-  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &amp;ndash;system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
+  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &amp;ndash;system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。
   ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 &amp;ndash;global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
-  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &amp;ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &amp;ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。
   每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
 查看git所有配置以及他所在的文件
 git config --list --show-origin用户信息 # 设置全局的用户信息$ git config --global user."
@@ -53,9 +53,9 @@ git config --list --show-origin用户信息 # 设置全局的用户信息$ git
 <meta name="twitter:description" content="本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
 其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
 Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
-  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &ndash;system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
+  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &ndash;system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。
   ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 &ndash;global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
-  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。
   每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
 查看git所有配置以及他所在的文件
 git config --list --show-origin用户信息 # 设置全局的用户信息$ git config --global user."/>
@@ -66,9 +66,9 @@ git config --list --show-origin用户信息 # 设置全局的用户信息$ git
 <meta property="og:description" content="本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
 其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
 Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
-  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &ndash;system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
+  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &ndash;system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。
   ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 &ndash;global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
-  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。
   每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
 查看git所有配置以及他所在的文件
 git config --list --show-origin用户信息 # 设置全局的用户信息$ git config --global user." />
@@ -197,13 +197,13 @@ git config --list --show-origin用户信息 # 设置全局的用户信息$ git
 <p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：</p>
 <ul>
 <li>
-<p>/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &ndash;system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）</p>
+<p>/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &ndash;system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。</p>
 </li>
 <li>
 <p>~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 &ndash;global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。</p>
 </li>
 <li>
-<p>当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）</p>
+<p>当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。</p>
 </li>
 </ul>
 <p>每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。</p>
@@ -228,13 +228,15 @@ git config user.name
 <span style="color:#75715e"># 检查git配置信息和其配置地址</span>
 git config --list --show-origin
 </code></pre></div><h3 id="获取git仓库">获取Git仓库</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 在已存在目录中初始化仓库</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#75715e"># 在已存在目录中初始化仓库</span>
 <span style="color:#75715e"># 该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干。</span>
 git init
 
-$ git add *.c
-$ git add LICENSE
-$ git commit -m <span style="color:#e6db74">&#39;initial project version&#39;</span>
+<span style="color:#75715e"># 添加提交记录</span>
+git add *.c
+git add LICENSE
+git commit -m <span style="color:#e6db74">&#39;initial project version&#39;</span>
 
 <span style="color:#75715e"># 克隆现有的仓库</span>
 git clone https://github.com/libgit2/libgit2
@@ -243,7 +245,8 @@ git clone https://github.com/libgit2/libgit2
 git clone https://github.com/libgit2/libgit2 mylibgit
 </code></pre></div><h2 id="git-状态变化周期">git 状态变化周期</h2>
 <p><img src="/images/lifecycle.png" alt="lifecycle"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 检查当前文件状态</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#75715e"># 检查当前文件状态</span>
 git status 
 
 <span style="color:#75715e"># 添加跟踪文件</span>
@@ -255,7 +258,6 @@ git status -short
 
 <span style="color:#75715e"># 忽略文件</span>
 .gitignone
-
 </code></pre></div><p>文件 .gitignore 的格式规范如下：</p>
 <ul>
 <li>
@@ -302,10 +304,12 @@ git log -p -2
 
 <span style="color:#75715e"># 查看简略提示信息</span>
 git log --stat
+
 # 
 git log --pretty<span style="color:#f92672">=</span>oneline
 </code></pre></div><h4 id="撤销操作">撤销操作</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行带有 --amend 选项的提交命令来重新提交</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#75715e"># 提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行带有 --amend 选项的提交命令来重新提交</span>
 git commit --amend
 
 git status
@@ -468,7 +472,11 @@ git branch --no-merged
 <h3 id="在服务器上搭建git">在服务器上搭建Git</h3>
 <h3 id="生成ssh公钥">生成ssh公钥</h3>
 <p>许多 Git 服务器都使用 SSH 公钥进行认证。 为了向 Git 服务器提供 SSH 公钥，如果某系统用户尚未拥有密钥，必须事先为其生成一份。 这个过程在所有操作系统上都是相似的。 首先，你需要确认自己是否已经拥有密钥。 默认情况下，用户的 SSH 密钥存储在其 ~/.ssh 目录下。 进入该目录并列出其中内容，你便可以快速确认自己是否已拥有密钥：</p>
-<p>cd ~/.shh</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.shh
+</code></pre></div><h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://git-scm.com/book/zh/v2">pro git book</a></li>
+</ul>
 
     </div>
     
@@ -522,7 +530,7 @@ git branch --no-merged
 </footer>
 
 <script src="/assets/main.js"></script>
-
+<script src="/assets/prism.js"></script>
 
 
       

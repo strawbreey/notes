@@ -10,10 +10,432 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 09 Nov 2020 17:59:32 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2020 17:46:30 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Angular Zooejs</title>
+      <link>/posts/angular-zooejs/</link>
+      <pubDate>Fri, 13 Nov 2020 17:46:30 +0800</pubDate>
+      
+      <guid>/posts/angular-zooejs/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          参考资料   Zone.js
+  Zone Primer
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Development Manual</title>
+      <link>/posts/mysql-development-manual/</link>
+      <pubDate>Fri, 13 Nov 2020 13:05:32 +0800</pubDate>
+      
+      <guid>/posts/mysql-development-manual/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          建表约束   【强制】表达是与否概念的字段，必须使用is_xxx的方式命名，数据类型是unsigned tinyint（1表示是，0表示否）
+正例：表达逻辑删除的字段名is_deleted，1表示删除，0表示未删除。
+  【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下画线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。
+  【强制】表名不使用复数名词。
+  【强制】禁用保留字，如desc、range、match、delayed等，请参考MySQL官方保留字。
+  【强制】主键索引名为pk_字段名，唯一索引名为uk_字段名，普通索引名则为idx_字段名。
+  【强制】小数类型为decimal，禁止使用float和double类型。
+说明：在存储时，float和double类型存在精度损失的问题，很可能在比较值的时候，得到不正确的结果。如果存储的数据范围超过decimal的范围，那么建议将数据拆成整数和小数并分开存储。
+  【强制】如果存储的字符串长度几乎相等，则使用char定长字符串类型。
+  【强制】varchar是可变长字符串，不预先分配存储空间，长度不要超过5000个字符，如果存储长度大于此值，则应定义字段类型为text，独立出来一张表，用主键来对应，避免影响其他字段的索引效率。
+  【强制】表必备三字段：id、create_time、update_time。
+说明：其中id必为主键，类型为bigint unsigned、单表时自增、步长为1。create_time和update_time的类型均为date_time
+  【推荐】表的命名最好遵循“业务名称_表的作用”原则。
+  【推荐】库名与应用名称尽量一致。
+  当修改字段含义或追加字段表示的状态时，需要及时更新字段注释
+  【推荐】字段允许适当冗余，以提高查询性能，但必须考虑数据一致性。冗余字段应遵循以下原则。
+ 1）不是频繁修改的字段。 2）不是唯一索引的字段。 3）不是varchar超长字段，更不能是text字段。    【推荐】当单表行数超过500万或者单表容量超过2GB时，才推荐分库分表。
+  【参考】设置合适的字符存储长度，不但可以节约数据库表空间和索引存储，更重要的是能够提升检索速度。
+  索引规约  【强制】业务上具有唯一特性的字段，即使是多个字段的组合，也必须建成唯一索引。  说明：不要以为唯一索引影响了insert速度，这个速度损耗可以忽略，但会明显提高查找速度；另外，即使在应用层做了非常完善的校验控制，只要没有唯一索引，根据墨菲定律，就必然有脏数据产生。
+【强制】超过三个表禁止join。需要join的字段，数据类型必须绝对一致；当多表关联查询时，保证被关联的字段需要有索引。  说明：即使双表join，也要注意表索引、SQL性能。
+ 【强制】在varchar字段上建立索引时，必须指定索引长度，没必要对全字段建立索引，根据实际文本区分度决定索引长度即可
+  【强制】页面搜索严禁左模糊或者全模糊，如果需要，那么请通过搜索引擎来解决。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Web Performance</title>
+      <link>/posts/web-performance/</link>
+      <pubDate>Fri, 13 Nov 2020 11:07:00 +0800</pubDate>
+      
+      <guid>/posts/web-performance/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Content
+  Meke Fewer Http Requests 减少http请求
+  Reduce DNS Lookups 减少dns查询
+  Avoid Redirects 避免重定向
+  Make ajax Cacheable ajax 缓存
+  PostLoad Components
+  Preload Components 租价预加载
+  Reduce the Number of DOM Elements
+  Split Components Across Domains
+  Minimize Number of iframes
+  Avoid 404s
+  Server
+  Use a Content Delivery Network (CDN)
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Remote</title>
+      <link>/posts/git-remote/</link>
+      <pubDate>Fri, 13 Nov 2020 10:32:42 +0800</pubDate>
+      
+      <guid>/posts/git-remote/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Node Sass Install</title>
+      <link>/posts/node-sass-install/</link>
+      <pubDate>Thu, 12 Nov 2020 17:43:31 +0800</pubDate>
+      
+      <guid>/posts/node-sass-install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &amp;#34;C:\python2\python.exe&amp;#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error   我们可以看到，安装node-sass有几个步骤：
+  校验本地node_modules中是否已安装node-sass，版本是否一致;
+  如未安装或版本不符，从npm源安装node-sass本体;
+  检测全局缓存和本地中是否有binding.node,如有即跳过安装;
+  没有binding.node则从github下载该二进制文件并将其缓存到全局;
+  假如binding.node下载失败，则尝试本地编译出该文件;
+  将版本信息写到package-lock.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Sdn</title>
+      <link>/posts/sdn/</link>
+      <pubDate>Thu, 12 Nov 2020 14:25:53 +0800</pubDate>
+      
+      <guid>/posts/sdn/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          软件定义网络（Software Defined Network，SDN）作为新一代网络架构。
+参考资料  Software Defined Networking  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Keepalive and Socket</title>
+      <link>/posts/http-keepalive-and-socket/</link>
+      <pubDate>Thu, 12 Nov 2020 11:43:16 +0800</pubDate>
+      
+      <guid>/posts/http-keepalive-and-socket/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Ajax</title>
+      <link>/posts/js-ajax/</link>
+      <pubDate>Thu, 12 Nov 2020 11:38:37 +0800</pubDate>
+      
+      <guid>/posts/js-ajax/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Asynchronous JavaScript + XML（异步JavaScript和XML）, 其本身不是一种新技术，而是一个在 2005年被Jesse James Garrett提出的新术语，用来描述一种使用现有技术集合的‘新’方法，包括: HTML 或 XHTML, CSS, JavaScript, DOM, XML, XSLT, 以及最重要的 XMLHttpRequest。当使用结合了这些技术的AJAX模型以后， 网页应用能够快速地将增量更新呈现在用户界面上，而不需要重载（刷新）整个页面。这使得程序能够更快地回应用户的操作。
+简单点说，就是使用 XMLHttpRequest 对象与服务器通信。 它可以使用JSON，XML，HTML和text文本等格式发送和接收数据。AJAX最吸引人的就是它的“异步”特性，也就是说它可以在不重新刷新页面的情况下与服务器通信，交换数据，或更新页面。
+XMLHTTP 的发展 历史   XMLHTTP最初是由微软公司发明的，在Internet Explorer 5.0 (1999年3月18日)中用作ActiveX对象，可通过JavaScript、VBScript或其它浏览器支持的脚本语言访问。
+  Mozilla的开发人员后来在Mozilla 1.0中实现了一个兼容的版本。
+  苹果电脑公司在Safari 1.2中开始支持XMLHTTP，
+  Opera从8.0版开始也宣布支持XMLHTTP。
+  Ajax 基础知识 // Step 1// 发送http请求// Old compatibility code, no longer needed.if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ... httpRequest = new XMLHttpRequest();} else if (window.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Message Queue Kafka</title>
+      <link>/posts/message-queue-kafka/</link>
+      <pubDate>Thu, 12 Nov 2020 11:29:25 +0800</pubDate>
+      
+      <guid>/posts/message-queue-kafka/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+           生产者 Producer 可能是网页活动产生的消息、服务日志等信息。生产者通过 push 模式将消息发布到 Cloud Kafka 的 Broker 集群。 集群通过 Zookeeper 管理集群配置，进行 leader 选举，故障容错等。 消费者 Consumer 被划分为若干个 Consumer Group。消费者通过 pull 模式从 Broker 中消费消息。  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Learn Database</title>
+      <link>/posts/learn-database/</link>
+      <pubDate>Thu, 12 Nov 2020 10:58:50 +0800</pubDate>
+      
+      <guid>/posts/learn-database/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          参考文献  Awesome Database Learning  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>/posts/devops/</link>
+      <pubDate>Wed, 11 Nov 2020 19:54:23 +0800</pubDate>
+      
+      <guid>/posts/devops/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Odbc</title>
+      <link>/posts/odbc/</link>
+      <pubDate>Wed, 11 Nov 2020 19:14:03 +0800</pubDate>
+      
+      <guid>/posts/odbc/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Yii Db</title>
+      <link>/posts/yii-db/</link>
+      <pubDate>Wed, 11 Nov 2020 19:09:39 +0800</pubDate>
+      
+      <guid>/posts/yii-db/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Yii 包含了一个建立在 PHP PDO 之上的数据访问层 (DAO： Database Access Objects)。DAO为不同的数据库提供了一套统一的API。 其中 ActiveRecord 提供了数据库与模型(MVC 中的 M,Model) 的交互，QueryBuilder 用于创建动态的查询语句。 DAO提供了简单高效的SQL查询，可以用在与数据库交互的各个地方.
+使用 Yii DAO 时，你主要需要处理纯 SQL 语句和 PHP 数组。因此，这是访问数据库最高效的方法。 然而，因为不同数据库之间的 SQL 语法往往是不同的， 使用 Yii DAO 也意味着你必须花些额外的工夫来创建一个”数据库无关“的应用。
+连接数据库 // 连接数据库$db = new yii\db\Connection([&amp;#39;dsn&amp;#39; =&amp;gt; &amp;#39;mysql:host=localhost;dbname=example&amp;#39;,&amp;#39;username&amp;#39; =&amp;gt; &amp;#39;root&amp;#39;,&amp;#39;password&amp;#39; =&amp;gt; &amp;#39;&amp;#39;,&amp;#39;charset&amp;#39; =&amp;gt; &amp;#39;utf8&amp;#39;,]);return [&amp;#39;components&amp;#39; =&amp;gt; [&amp;#39;db&amp;#39; =&amp;gt; [&amp;#39;class&amp;#39; =&amp;gt; &amp;#39;yii\db\Connection&amp;#39;,&amp;#39;dsn&amp;#39; =&amp;gt; &amp;#39;mysql:host=localhost;dbname=example&amp;#39;,&amp;#39;username&amp;#39; =&amp;gt; &amp;#39;root&amp;#39;,&amp;#39;password&amp;#39; =&amp;gt; &amp;#39;&amp;#39;,&amp;#39;charset&amp;#39; =&amp;gt; &amp;#39;utf8&amp;#39;,],],];SQL 查询 // 返回多行.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Yii Http Cache</title>
+      <link>/posts/yii-http-cache/</link>
+      <pubDate>Wed, 11 Nov 2020 18:25:40 +0800</pubDate>
+      
+      <guid>/posts/yii-http-cache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          通过配置 yii\filters\HttpCache 过滤器，控制器操作渲染的内容就能缓存在客户端。
+HttpCache 过滤器仅对 GET 和 HEAD 请求生效， 它能为这些请求设置三种与缓存有关的 HTTP 头。
+Last-Modified 头 Last-Modified 头使用时间戳标明页面自上次客户端缓存后是否被修改过。
+通过配置 yii\filters\HttpCache::$lastModified 属性向客户端发送 Last-Modified 头。 该属性的值应该为 PHP callable 类型，返回的是页面修改时的 Unix 时间戳。 该 callable 的参数和返回值应该如下：
+public function behaviors(){return [[&amp;#39;class&amp;#39; =&amp;gt; &amp;#39;yii\filters\HttpCache&amp;#39;,&amp;#39;only&amp;#39; =&amp;gt; [&amp;#39;index&amp;#39;],&amp;#39;lastModified&amp;#39; =&amp;gt; function ($action, $params) {$q = new \yii\db\Query();return $q-&amp;gt;from(&amp;#39;post&amp;#39;)-&amp;gt;max(&amp;#39;updated_at&amp;#39;);},],];}上述代码表明 HTTP 缓存只在 index 操作时启用。 它会基于页面最后修改时间生成一个 Last-Modified HTTP 头。 当浏览器第一次访问 index 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器在页面没被修改期间访问该页， 服务器将不会重新生成页面，浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Head First Go</title>
+      <link>/posts/head-first-go/</link>
+      <pubDate>Wed, 11 Nov 2020 11:27:51 +0800</pubDate>
+      
+      <guid>/posts/head-first-go/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          2007年，Google首席软件工程师Rob Pike与Robert Griesemer和Ken Thompson两位大师，决定创造一种新语言来取代C++，这就是Go语言
+·2009年11月10日，Go语言以开放源代码的方式向全球发布。
+·2012年3月28日，Go语言的第一个正式版本Go1发布。
+·2015年8月19日，Go语言Go 1.5版发布，本次更新中移除了“最后残余的C代码”。
+参考资料  head first go 微信读书head first go Effective Go The Go Programming Language  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Keep Alive</title>
+      <link>/posts/http-keep-alive/</link>
+      <pubDate>Tue, 10 Nov 2020 16:30:43 +0800</pubDate>
+      
+      <guid>/posts/http-keep-alive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          HTTP/1.1和一部分的HTTP/1.0想出了持久连接（HTTP PersistentConnections，也称为HTTP keep-alive或HTTP connection reuse）的方法。持久连接的特点是，只要任意一端没有明确提出断开连接，则保持TCP连接状态。
+参考资料  MDN Keep Alive  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>User Agent Stylesheet</title>
+      <link>/posts/user-agent-stylesheet/</link>
+      <pubDate>Tue, 10 Nov 2020 15:31:01 +0800</pubDate>
+      
+      <guid>/posts/user-agent-stylesheet/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          What are the target browsers? Different browsers set different default CSS rules. Try including a CSS reset, such as the meyerweb CSS reset or normalize.css, to remove those defaults. Google &amp;ldquo;CSS reset vs normalize&amp;rdquo; to see the differences.
+  reset
+  normalize
+  参考资料  What is a user agent stylesheet?  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js MouseEvent</title>
+      <link>/posts/js-mouseevent/</link>
+      <pubDate>Tue, 10 Nov 2020 15:13:34 +0800</pubDate>
+      
+      <guid>/posts/js-mouseevent/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          MouseEvent = {isTrusted: truescreenX: 567screenY: 442clientX: 264, // 鼠标指针在点击元素（DOM）中的X坐标。 clientY: 272, // 鼠标指针在点击元素（DOM）中的Y坐标。 ctrlKey: false, //当鼠标事件触发时，如果 control 键被按下，则返回 true； shiftKey: falsealtKey: falsemetaKey: false, //当鼠标事件触发时，如果 meta键被按下，则返回 true； button: 0buttons: 0relatedTarget: nullpageX: 264pageY: 297x: 264y: 272offsetX: 248, //鼠标指针相对于目标节点内边位置的X坐标 offsetY: 69, //鼠标指针相对于目标节点内边位置的Y坐标 movementX: 0, //鼠标指针相对于最后mousemove事件位置的X坐标。 movementY: 0, //鼠标指针相对于最后mousemove事件位置的Y坐标。 fromElement: nulltoElement: playerX: 248, //鼠标指针相对于整个文档的X坐标； layerY: 125, //鼠标指针相对于整个文档的Y坐标； view: Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}detail: 1sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: true}which: 1type: &amp;#34;click&amp;#34;target: pcurrentTarget: nulleventPhase: 0bubbles: truecancelable: truedefaultPrevented: falsecomposed: truetimeStamp: 68556.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Webapi Fetch</title>
@@ -453,6 +875,7 @@ typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode
 ● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
 ● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
 ● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。
+参考资料  缓存那些事  
           
         
         </description>
@@ -473,6 +896,11 @@ typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode
         
         
           CDN的全称是Content Delivery Network，即内容分发网络 CDN的通俗理解就是网站加速，CPU均衡负载，可以解决跨运营商，跨地区，服务器负载能力过低，带宽过少等带来的网站打开速度慢等问题。
+内容分发网络（Content Delivery Network，CDN），是在现有 Internet 中增加的一层新的网络架构，由遍布全球的高性能加速节点构成。这些高性能的服务节点都会按照一定的缓存策略存储您的业务内容，当您的用户向您的某一业务内容发起请求时，请求会被调度至最接近用户的服务节点，直接由服务节点快速响应，有效降低用户访问延迟，提升可用性。
+CDN 有效地解决了以下问题：
+ 用户与业务服务器地域间物理距离较远，需要进行多次网络转发，传输延时较高且不稳定。 用户使用运营商与业务服务器所在运营商不同，请求需要运营商之间进行互联转发。 业务服务器网络带宽、处理能力有限，当接收到海量用户请求时，会导致响应速度降低、可用性降低。  加速原理 假设您的业务源站域名为 www.test.com，域名接入 CDN 开始使用加速服务后，当您的用户发起 HTTP 请求时，实际的处理流程如下图所示：
+详细说明如下：
+ 用户向 www.test.com 下的某图片资源（如：1.jpg）发起请求，会先向 Local DNS 发起域名解析请求。 当 Local DNS 解析 www.test.com 时，会发现已经配置了 CNAME www.test.com.cdn.dnsv1.com，解析请求会发送至 Tencent DNS（GSLB），GSLB 为腾讯云自主研发的调度体系，会为请求分配最佳节点 IP。 Local DNS 获取 Tencent DNS 返回的解析 IP。 用户获取解析 IP。 用户向获取的 IP 发起对资源 1.jpg 的访问请求。 若该 IP 对应的节点缓存有 1.jpg，则会将数据直接返回给用户（10），此时请求结束。若该节点未缓存 1.jpg，则节点会向业务源站发起对 1.jpg 的请求（6、7、8），获取资源后，结合用户自定义配置的缓存策略（可参考产品文档中的 缓存过期配置），将资源缓存至节点（9），并返回给用户（10），此时请求结束。  参考资料  内容分发网络  
           
         
         </description>
@@ -2885,9 +3313,9 @@ JavaScript刷新页面的几种方法 history.go(0)location.reload()location=l
           本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
 其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
 Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
-  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &amp;ndash;system 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）
+  /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 &amp;ndash;system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。
   ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 &amp;ndash;global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
-  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &amp;ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+  当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 &amp;ndash;local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。
   每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
 查看git所有配置以及他所在的文件
 git config --list --show-origin用户信息 # 设置全局的用户信息$ git config --global user.

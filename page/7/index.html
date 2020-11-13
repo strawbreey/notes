@@ -152,6 +152,656 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/chrome-devtools/">Chrome Devtools</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/chrome-devtools/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/http-status-code/">Http Status Code</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            HTTP 响应状态代码指示特定 HTTP 请求是否已成功完成。响应分为五类：信息响应(100–199)，成功响应(200–299)，重定向(300–399)，客户端错误(400–499)和服务器错误 (500–599)。状态代码由 section 10 of RFC 2616定义
+信息响应 100 Continue
+这个临时响应表明，迄今为止的所有内容都是可行的，客户端应该继续请求，如果已经完成，则忽略它。
+101 Switching Protocol
+该代码是响应客户端的 Upgrade 标头发送的，并且指示服务器也正在切换的协议。
+102 Processing (WebDAV)
+此代码表示服务器已收到并正在处理该请求，但没有响应可用。
+103 Early Hints
+此状态代码主要用于与Link 链接头一起使用，以允许用户代理在服务器仍在准备响应时开始预加载资源。
+成功响应 200 OK
+请求成功。成功的含义取决于HTTP方法：
+GET：资源已被提取并在消息正文中传输。 HEAD：实体标头位于消息正文中。 POST：描述动作结果的资源在消息体中传输。 TRACE：消息正文包含服务器收到的请求消息  201 Created
+该请求已成功，并因此创建了一个新的资源。这通常是在POST请求，或是某些PUT请求之后返回的响应。
+202 Accepted
+请求已经接收到，但还未响应，没有结果。意味着不会有一个异步的响应去表明当前请求的结果，预期另外的进程和服务去处理请求，或者批处理。
+203 Non-Authoritative Information
+服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。当前的信息可能是原始版本的子集或者超集。例如，包含资源的元数据可能导致原始服务器知道元信息的超集。使用此状态码不是必须的，而且只有在响应不使用此状态码便会返回200 OK的情况下才是合适的。
+204 No Content
+服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。响应可能通过实体头部的形式，返回新的或更新后的元信息。如果存在这些头部信息，则应当与所请求的变量相呼应。如果客户端是浏览器的话，那么用户浏览器应保留发送了该请求的页面，而不产生任何文档视图上的变化，即使按照规范新的或更新后的元信息应当被应用到用户浏览器活动视图中的文档。由于204响应被禁止包含任何消息体，因此它始终以消息头后的第一个空行结尾。
+205 Reset Content
+服务器成功处理了请求，且没有返回任何内容。但是与204响应不同，返回此状态码的响应要求请求者重置文档视图。该响应主要是被用于接受用户输入后，立即重置表单，以便用户能够轻松地开始另一次输入。与204响应一样，该响应也被禁止包含任何消息体，且以消息头后的第一个空行结束。
+206 Partial Content
+服务器已经成功处理了部分 GET 请求。类似于 FlashGet 或者迅雷这类的 HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。该请求必须包含 Range 头信息来指示客户端希望得到的内容范围，并且可能包含 If-Range 来作为请求条件。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/http-status-code/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/hugo-install/">Hugo Install</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            If you are on a Windows machine and use Chocolatey for package management, you can install Hugo with the following one-liner
+more # install-with-chocolatey.ps1choco install hugo -confirm# Or if you need the “extended” Sass/SCSS version:choco install hugo-extended -confirmIf you are on a Windows machine and use Scoop for package management, you can install Hugo with the following one-liner:
+scoop install hugo# Or install the extended version with:scoop install hugo-extendedSource
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/hugo-install/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/http-cache/">Http Cache</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Http 缓存 通过复用以前获取的资源，可以显著提高网站和应用程序的性能。Web 缓存减少了等待时间和网络流量，因此减少了显示资源表示形式所需的时间。通过使用 HTTP缓存，变得更加响应性。
+不同种类的缓存 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。当 web 缓存发现请求的资源已经被存储，它会拦截请求，返回该资源的拷贝，而不会去源服务器重新下载。这样带来的好处有：缓解服务器端压力，提升性能(获取资源的耗时更短了)。对于网站来说，缓存是达到高性能的重要组成部分。缓存需要合理配置，因为并不是所有资源都是永久不变的：重要的是对一个资源的缓存应截止到其下一次发生改变（即不能缓存过期的资源）。
+缓存的种类有很多,其大致可归为两类：私有与共享缓存。共享缓存存储的响应能够被多个用户使用。私有缓存只能用于单独用户。本文将主要介绍浏览器与代理缓存，除此之外还有网关缓存、CDN、反向代理缓存和负载均衡器等部署在服务器上的缓存方式，为站点和 web 应用提供更好的稳定性、性能和扩展性。
+浏览器缓存 (私有) 私有缓存只能用于单独用户。你可能已经见过浏览器设置中的“缓存”选项。浏览器缓存拥有用户通过 HTTP 下载的所有文档。这些缓存为浏览过的文档提供向后/向前导航，保存网页，查看源码等功能，可以避免再次向服务器发起多余的请求。它同样可以提供缓存内容的离线浏览。
+代理缓存 (共享) 共享缓存可以被多个用户使用。例如，ISP 或你所在的公司可能会架设一个 web 代理来作为本地网络基础的一部分提供给用户。这样热门的资源就会被重复使用，减少网络拥堵与延迟。
+缓存操作 虽然 HTTP 缓存不是必须的，但重用缓存的资源通常是必要的。然而常见的 HTTP 缓存只能存储 GET 响应，对于其他类型的响应则无能为力。缓存的关键主要包括request method和目标URI（一般只有GET请求才会被缓存）。 普遍的缓存案例:
+一个检索请求的成功响应: 对于 GET请求，响应状态码为：200，则表示为成功。一个包含例如HTML文档，图片，或者文件的响应。
+永久重定向: 响应状态码：301。
+错误响应: 响应状态码：404 的一个页面。
+不完全的响应: 响应状态码 206，只返回局部的信息。
+除了 GET 请求外，如果匹配到作为一个已被定义的cache键名的响应。
+缓存控制  没有缓存  缓存中不得存储任何关于客户端请求和服务端响应的内容。每次由客户端发起的请求都会下载完整的响应内容。
+Cache-Control: no-store缓存但重新验证  如下头部定义，此方式下，每次有请求发出时，缓存会将此请求发到服务器（译者注：该请求应该会带有与本地缓存相关的验证字段），服务器端会验证请求中所描述的缓存是否过期，若未过期（注：实际就是返回304），则缓存才使用本地缓存副本。
+Cache-Control: no-cache私有和公共缓存  “public” 指令表示该响应可以被任何中间人（译者注：比如中间代理、CDN等）缓存。若指定了&quot;public”，则一些通常不被中间人缓存的页面（译者注：因为默认是private）（比如 带有HTTP验证信息（帐号密码）的页面 或 某些特定状态码的页面），将会被其缓存。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/http-cache/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/memcached/">Memcached</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/memcached/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/cors/">Cors</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            跨源资源共享 (CORS: Cross-origin resource sharing) （或通俗地译为跨域资源共享）是一种机制，该机制使用附加的 HTTP 头来告诉浏览器，准许运行在一个源上的Web应用访问位于另一不同源选定的资源。 当一个Web应用发起一个与自身所在源（域，协议和端口）不同的HTTP请求时，它发起的即跨源HTTP请求。
+出于安全性，浏览器限制脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非响应报文包含了正确CORS响应头。
+跨源域资源共享（ CORS ）机制允许 Web 应用服务器进行跨源访问控制，从而使跨源数据传输得以安全进行。现代浏览器支持在 API 容器中（例如 XMLHttpRequest 或 Fetch ）使用 CORS，以降低跨源 HTTP 请求所带来的风险。
+整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。
+因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。
+浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）
+简单请求 （1) 请求方法是以下三种方法之一：
+HEAD GET POST  （2）HTTP的头信息不超出以下几种字段：
+Accept Accept-Language Content-Language Last-Event-ID Content-Type：application/x-www-form-urlencoded、multipart/form-data、text/plain  这是为了兼容表单（form），因为历史上表单一直可以发出跨域请求。AJAX 的跨域设计就是，只要表单可以发，AJAX 就可以直接发。
+对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。
+GET /cors HTTP/1.1Origin: <a href="http://api.bob.com">http://api.bob.com</a>Host: api.alice.comAccept-Language: en-USConnection: keep-aliveUser-Agent: Mozilla/5.0&hellip;上面的头信息中，Origin字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/cors/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/es6-symbol/">Es6 Symbol</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/es6-symbol/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/typescript-tutorial/">Typescript Tutorial</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            TypeScript 是 JavaScript 的类型的超集，它可以编译成纯 JavaScript。编译出来的 JavaScript 可以运行在任何浏览器上。TypeScript 编译工具可以运行在任何服务器和任何系统上。TypeScript 是开源的。
+Install Typescript function sayHello(person: string) {return 'Hello, ' + person;}let user = 'Tom';console.log(sayHello(user));npm install -g typescripttsc hello.tsdata type JavaScript 的数据类型分为两种: 基本数据类型和复杂数据类型
+基本数据类型:
+Undefined
+Null
+Boolean
+Number
+String
+Symbol (ES6) symbol 是ES6中新增的一种特殊的、不可变的基本数据类型（primitive data type），可以作为对象属性的标识符使用
+Tuple (TS) 元组 (元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同)
+Enum (TS) 枚举
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/typescript-tutorial/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/webpack-tutoral/">Webpack Tutoral</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/webpack-tutoral/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/hot-module-replacement/">Hot Module Replacement</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-25
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
+无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
+Location.replace // 语法object.replace(url);// demodocument.location.replace('https://developer.mozilla.org/en-US/docs/Web/API/Location/reload');Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
+因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
+Location.assign // 语法location.assign(url);// demodocument.location.assign('https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload');Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
+JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand('Refresh')window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &lt;!&ndash; 页面自动刷新 &ndash;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;20&quot;&gt;&lt;!
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/hot-module-replacement/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-tutorial/">Git Tutorial</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
+其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
+Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
+/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 –system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。
+~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 –global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
+当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 –local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。
+每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
+查看git所有配置以及他所在的文件
+git config &ndash;list &ndash;show-origin用户信息 # 设置全局的用户信息$ git config &ndash;global user.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-tutorial/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-array-helper/">Php Array Helper</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
+class User{public $name = 'Alex';}$array = ['foo' =&gt; ['bar' =&gt; new User(),]];$value = isset($array['foo']['bar']-&gt;name) ? $array['foo']['bar']-&gt;name : null;// or$value = ArrayHelper::getValue($array, 'foo.bar.name');// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&gt;firstName . ' ' . $user-&gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, 'user.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-array-helper/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-string/">Php String</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
+语法 一个字符串可以用 4 种方式表达：
+单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 ‘）。
+要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
+echo 'this is a simple string';echo 'You can also have embedded newlines in strings this way as it isokay to do'; // 可以录入多行echo 'Arnold once said: &quot;I&amp;#39;ll be back&quot;'; // 输出： Arnold once said: &quot;I'll be back&quot; 单引号转义echo 'You deleted C:\*.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-string/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-array-practice/">Php Array Practice</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-array-practice/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-array-code-analysis/">Php Array Code Analysis</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-24
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-array-code-analysis/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-common-code/">Php Common Code</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-common-code/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql-optimization/">Sql Optimization</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            SQL语句执行步骤  语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt;选择数据的搜索路径 &gt;运行“执行计划”
+选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
+访问Table的方式  全表扫描
+全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
+通过ROWID访问表
+ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
+共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
+选择最有效率的表名顺序  ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
+当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
+首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
+然后扫描第二个表(FROM子句中最后第二个表)，
+最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
+只在基于规则的优化器中有效。 举例：
+表 TAB1 16,384 条记录
+表 TAB2 1 条记录
+&ndash; 选择TAB2作为基础表 (最好的方法) select count(<em>) from tab1,tab2 执行时间0.96秒&ndash; 选择TAB2作为基础表 (不佳的方法) select count(</em>) from tab2,tab1 执行时间26.09秒&ndash; 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql-optimization/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql-insert/">Sql Insert</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql-insert/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/php-quotation-marks/">Php Quotation Marks</a></h1>
       <div class="post-meta">
         
@@ -211,616 +861,6 @@
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-variable-handle/">Php Variable Handle</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-23
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            boolval — 获取变量的布尔值 echo '0: '.(boolval(0) ? 'true' : 'false').&quot;\n&quot;;echo '42: '.(boolval(42) ? 'true' : 'false').&quot;\n&quot;;echo '0.0: '.(boolval(0.0) ? 'true' : 'false').&quot;\n&quot;;echo '4.2: '.(boolval(4.2) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;&quot;: '.(boolval(&quot;&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;string&quot;: '.(boolval(&quot;string&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;0&quot;: '.(boolval(&quot;0&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '&quot;1&quot;: '.(boolval(&quot;1&quot;) ? 'true' : 'false').&quot;\n&quot;;echo '[1, 2]: '.(boolval([1, 2]) ? 'true' : 'false').&quot;\n&quot;;echo '[]: '.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-variable-handle/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array-function/">Php Array Function</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-23
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
-// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
-$input_array = array(&quot;FirSt&quot; =&gt; 1, &quot;SecOnd&quot; =&gt; 4);array_change_key_case($input_array, CASE_LOWER);// Array// (// [first] =&gt; 1// [second] =&gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
-将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-array-function/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-object/">Php Object</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-23
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-object/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array/">Php Array</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-23
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            An array in PHP is actually an ordered map. A map is a type that associates values to keys. This type is optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
-PHP 中的数组实际上是一个有序映射。映射是一种把 values 关联到 keys 的类型。此类型在很多方面做了优化，因此可以把它当成真正的数组，或列表（向量），散列表（是映射的一种实现），字典，集合，栈，队列以及更多可能性。由于数组元素的值也可以是另一个数组，树形结构和多维数组也是允许的。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-array/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/web-safe/">Web Safe</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-22
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            web 安全领域中，常见的攻击方式，大概以下几种
-跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username='plhwin'&ndash; 把plhwin 改成 plhwin';SHOW TABLES&ndash; hack'SELECT uid,username FROM user WHERE username='plhwin';SHOW TABLES&ndash; hack'客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
-XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
-防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
-来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
-类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/web-safe/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/vim-tutorial/">Vim Tutorial</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-22
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了
-为什么要学vim  所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在； 很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)； vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计； 因为程序简单，编辑速度相当快速  基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。
-命令模式： 用户刚刚启动 vi/vim，便进入了命令模式。
-此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
-以下是常用的几个命令：
-i 切换到输入模式，以输入字符。 (i: 当前光标处编辑, o: 当前光标换行，a, 当前光标右移一位) x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令。  输入模式 在命令模式下按下i就进入了输入模式。
-在输入模式中，可以使用以下按键：
-字符按键以及Shift组合，输入字符 ENTER，回车键，换行 BACKSPACE，退格键，删除光标前一个字符 DEL，删除键，删除光标后一个字符 方向键，在文本中移动光标 HOME/END，移动光标到行首/行尾 Page Up/Page Down，上/下翻页 Insert，切换光标为输入/替换模式，光标将变成竖线/下划线 ESC，退出输入模式，切换到命令模式  底线命令模式 在命令模式下按下:（英文冒号）就进入了底线命令模式。
-在底线命令模式中，基本的命令有（已经省略了冒号）:
-q 退出程序 w 保存文件
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/vim-tutorial/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/shell-tutorial/">Shell Tutorial</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-22
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。
-Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。
-Shell 脚本 Shell 脚本（shell script），是一种为 shell 编写的脚本程序。业界所说的 shell 通常都是指 shell 脚本，但读者朋友要知道，shell 和 shell script 是两个不同的概念。由于习惯的原因，简洁起见，本文出现的 “shell编程” 都是指 shell 脚本编程，不是指开发 shell 自身。
-#!/bin/bashecho &quot;Hello World!&quot;#! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。echo 命令用于向窗口输出文本。chmod +x ./test.sh #使脚本具有执行权限 ./test.sh #执行脚本
-shell 变量 变量名的命名须遵循如下规则：
-命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。 中间不能有空格，可以使用下划线（_）。 不能使用标点符号。 不能使用bash里的关键字（可用help命令查看保留关键字）。  # 变量your_name = &quot;qinjx&quot;echo $your_nameecho ${your_name}Shell 字符串 字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号，也可以不用引号。
-单引号
-str = 'this is a string'单引号字符串的限制：
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/shell-tutorial/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/sql-transaction-processing/">Sql Transaction Processing</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/sql-transaction-processing/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-goroutine/">Golang Goroutine</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Go 语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。
-goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。
-// go 函数名 (参数列表)// examplego f (x, y, z)f(x,y, z) //开启一个新的goroutine// 执行以下代码，你会看到输出的 hello 和 world 是没有固定先后顺序。因为它们是两个 goroutine 在执行：// world// hello// hello// world// world// hello// hello// world// world// hellopackage mainimport ( &quot;fmt&quot; &quot;time&quot; )func say(s string) {for i := 0; i &lt; 5; i++ {time.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/golang-goroutine/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/redis-tutorial/">Redis Tutorial</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Install # download rediswget <a href="http://download.redis.io/releases/redis-2.8.17.tar.gz">http://download.redis.io/releases/redis-2.8.17.tar.gz</a># Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录tar xzf redis-2.8.17.tar.gz # or xvfzcd redis-2.8.17make# servercd src./redis-server# or./redis-server ../redis.confUbuntu 安装 apt-get updateapt-get install redis-server# start redisredis-server# test redisredis-cliRedis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
-String
-SET runoob &quot;菜鸟教程&quot;GET runoob #菜鸟教程 一个键最大能存储512MBHash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/redis-tutorial/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/angular-intervivew/">Angular Intervivew</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/angular-intervivew/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/angular-schematic/">Angular Schematic</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-18
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <p>原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
-原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
-Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。</p>
-<h1 id="生成原理图ng-generate-my-schematic-collectionmy-schematic-name-orng-generate-my-schematic-name---collection-collection-name配置-cli-的原理图-编写库的原理图-developing-schematics-for-libraries">生成原理图ng generate my-schematic-collection:my-schematic-name# orng generate my-schematic-name &ndash;collection collection-name配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)</h1>
-<p>为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
-添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
-生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
-更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
-生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
-ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 –all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。</p>
-
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/angular-schematic/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/yarn-cli/">Yarn Cli</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-18
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. Yarn does this quickly, securely, and reliably so you don’t ever have to worry.
-Yarn allows you to use other developers’ solutions to different problems, making it easier for you to develop your software. If you have problems, you can report issues or contribute back, and when the problem is fixed, you can use Yarn to keep it all up to date.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/yarn-cli/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/angular-performance-optimization/">Angular Performance Optimization</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Angualr 性能优化 angular编译的js基本都很大达到了mb级别，加载起来很占用带宽，不过angualr也提供了编译时压缩代码的功能，angular build指定为 –prod即可
-// 注释下面这一行可以激活延迟加载策略export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {// preloadingStrategy: PreloadAllModules, // useHash: true});ng build &ndash;prod &ndash;build&ndash;optimizer // 编译后进一步压缩文件的大小
-Angular脏检查（Change Detection）机制 当我们遇到了性能问题，首先我们需要明白是什么导致我们的Angular应用变慢了。众所周知，在Angular中使用了双向绑定连接了model和DOM，当我们在component中改变了model的值，DOM中对应的值也会改变。但是Angular是怎么知道它需要在什么时候去更新DOM呢？这就是Angular Change Detection机制需要完成的事。
-而通常情况下，Angular Change Detection会由下几类事件触发：
-所有的浏览器事件（click, mouseover, keyup等） Ajax异步请求 setTimeout()和setInterval()  一旦我们触发了这些事件，Change Detection机制就会开始运行。在这些事件所绑定的方法执行完成之后，Change Detection会根据当前模板中数据绑定的情况来更新DOM。
-Angular的性能好坏就和每一次Change Detection周期的执行时间长短有关。理想情况下如果每次Change Detection周期能控制在17ms以内，那么界面将会十分流畅。而在这个周期中，触发事件是周期的开始，这个时间可以忽略不计。浏览器渲染是浏览器的行为，不受Angular控制。所以我们可以优化的就是在Event Handler执行和Chanege Detection检测绑定这两个步骤。
-减少Event Handler的运行时间 CDN加速 nginx缓存 events {#的最大连接数（包含所有连接数）1024worker_connections 1024; ## Default: 1024}http{# 代理缓存配置 nginx根目录指定缓存文件夹 kawa_cachedata名字自己定义跟proxy_cache_path对应上proxy_cache_path &quot;.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/angular-performance-optimization/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/vscode-hotkeys/">Vscode Hotkeys</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/vscode-hotkeys/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/vim-command/">Vim Command</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/vim-command/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-cli/">Linux Cli</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            create a new file touch readme.txt# or &gt; 'readme.txt'create a new directory mkdir documentsmkdir -p docmentsCopy readme.txt to the documents/ directory cp readme.txt documentsduplicate a file cp readme.txt readme.bak.txtcp readme{,.bak}.txt# Note: learn how the {} works with touch foo{1,2,3}.txt and see what happens.copy a direcatory cp -a myMusic myMedia/# orcp -a myMusic myMedia/myMusicduplicate a directory cp -a myMusic/ myMedia/# orcp -a myMusic myMedia/move a file mv readme.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-cli/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-remote-procedure/">Php Remote Procedure</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-remote-procedure/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -856,7 +896,7 @@ Angular的性能好坏就和每一次Change Detection周期的执行时间长短
 </footer>
 
 <script src="/assets/main.js"></script>
-
+<script src="/assets/prism.js"></script>
 
 
       

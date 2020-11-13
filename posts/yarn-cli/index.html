@@ -175,42 +175,46 @@ Yarn allows you to use other developers&rsquo; solutions to different problems, 
 <ul>
 <li>Global install</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install -g yarn
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 全局安装</span>
+npm install -g yarn
 </code></pre></div><ul>
 <li>Per-project install</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/path/to/project
 
-yarn policies set-version berry
+<span style="color:#75715e"># 设置yarn 的版本</span>
 yarn set version berry
-</code></pre></div><ul>
-<li>Updating to the latest versions</li>
-</ul>
-<pre><code>yarn set version latest
-</code></pre><ul>
-<li>Installing the latest build fresh from master</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn set version from sources
+
+<span style="color:#75715e"># Updating to the latest versions</span>
+yarn set version latest
+
+<span style="color:#75715e"># Installing the latest build fresh from master</span>
+yarn set version from sources
 <span style="color:#75715e"># or</span>
 yarn set version from sources --branch 121
 </code></pre></div><h3 id="usage">Usage</h3>
-<p>Accessing the list of commands</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn help
-</code></pre></div><p>Starting a new project</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn init
-</code></pre></div><p>Installing all the dependencies</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn
-<span style="color:#75715e"># or</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Accessing the list of commands</span> 
+yarn help
+
+<span style="color:#75715e"># Starting a new project</span>
+yarn init
+
+<span style="color:#75715e"># Installing all the dependencies</span>
+yarn <span style="color:#75715e"># or</span>
 yarn install
-</code></pre></div><p>Upgrading a dependency</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn up <span style="color:#f92672">[</span>package<span style="color:#f92672">]</span>
+
+<span style="color:#75715e"># upgrading a dependency</span>
+yarn up <span style="color:#f92672">[</span>package<span style="color:#f92672">]</span>
 yarn up <span style="color:#f92672">[</span>package<span style="color:#f92672">]</span>@<span style="color:#f92672">[</span>version<span style="color:#f92672">]</span>
 yarn up <span style="color:#f92672">[</span>package<span style="color:#f92672">]</span>@<span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
-</code></pre></div><p>Removing a dependency</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn remove <span style="color:#f92672">[</span>package<span style="color:#f92672">]</span>
-</code></pre></div><p>Upgrading Yarn itself</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn set version latest
+
+<span style="color:#75715e"># Removing a dependency</span>
+yarn remove <span style="color:#f92672">[</span>package<span style="color:#f92672">]</span>
+
+<span style="color:#75715e"># Upgrading Yarn itself</span>
+yarn set version latest
 yarn set version from sources
+
 </code></pre></div><h3 id="yarn-cli">yarn CLI</h3>
 <p>yarn add</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
@@ -268,7 +272,12 @@ yarn config set packageExtensions --json <span style="color:#e6db74">&#39;{ &#34
 </code></pre></div><h3 id="words">Words</h3>
 <pre><code>reliably  英 [rɪ'laɪəbli]   美 [rɪ'laɪəbli] 
 adv. 可靠地
-</code></pre>
+</code></pre><h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://yarnpkg.com/cli/add">yarn cli</a></li>
+<li><a href="https://stackoverflow.com/questions/51508364/yarn-there-appears-to-be-trouble-with-your-network-connection-retrying">There appears to be trouble with your network connection. Retrying</a></li>
+</ul>
+
     </div>
     
       
@@ -321,7 +330,7 @@ adv. 可靠地
 </footer>
 
 <script src="/assets/main.js"></script>
-
+<script src="/assets/prism.js"></script>
 
 
       
