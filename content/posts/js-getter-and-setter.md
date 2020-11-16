@@ -1,7 +1,7 @@
 ---
 title: "Js Getter and Setter"
 date: 2020-10-23T11:58:24+08:00
-draft: true
+draft: false
 ---
 
 有两种类型的对象属性。

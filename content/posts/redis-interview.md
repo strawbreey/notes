@@ -1,7 +1,7 @@
 ---
 title: "Redis Interview"
 date: 2020-10-22T23:12:54+08:00
-draft: true
+draft: false
 ---
 
 #### 简单介绍一下 Redis

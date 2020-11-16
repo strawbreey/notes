@@ -1,7 +1,7 @@
 ---
 title: "Go Interview"
 date: 2020-09-03T16:18:11+08:00
-draft: true
+draft: false
 ---
 
 ```Go

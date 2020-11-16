@@ -1,7 +1,7 @@
 ---
 title: "Leetcode Reverse Integer"
 date: 2020-11-06T19:54:54+08:00
-draft: true
+draft: false
 ---
 
 Given a 32-bit signed integer, reverse digits of an integer.

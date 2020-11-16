@@ -1,7 +1,7 @@
 ---
 title: "Web Components"
 date: 2020-10-14T21:45:06+08:00
-draft: true
+draft: false
 ---
 
 众所周知，开发复杂软件的原则是：不要让软件复杂

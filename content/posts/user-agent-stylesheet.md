@@ -1,7 +1,7 @@
 ---
 title: "User Agent Stylesheet"
 date: 2020-11-10T15:31:01+08:00
-draft: true
+draft: false
 ---
 
 What are the target browsers? Different browsers set different default CSS rules. Try including a CSS reset, such as the meyerweb CSS reset or normalize.css, to remove those defaults. Google "CSS reset vs normalize" to see the differences.

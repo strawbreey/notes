@@ -1,7 +1,7 @@
 ---
 title: "Course Stanford"
 date: 2020-10-16T12:16:44+08:00
-draft: true
+draft: false
 ---
 - math 51 多维微积分 [http://web.stanford.edu/class/math51](http://web.stanford.edu/class/math51/cgibin/51.php)
 

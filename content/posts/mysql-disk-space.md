@@ -1,7 +1,7 @@
 ---
 title: "Mysql Disk Space"
 date: 2020-10-29T11:16:52+08:00
-draft: true
+draft: false
 ---
 
 计算1000万条数据占了多大内存

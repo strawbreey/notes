@@ -1,7 +1,7 @@
 ---
 title: "Go Types"
 date: 2020-09-01T11:20:46+08:00
-draft: true
+draft: false
 ---
 
 ## Go 数据类型

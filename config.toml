@@ -12,14 +12,14 @@ baseurl = "/"
 languageCode = "en-us"
 theme = "friend"
 paginate = 20
-
+defaultTheme = 'light'
 [params]
   # dir name of your blog content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
 
   # "light" or "dark"
-  defaultTheme = "dark"
+  defaultTheme = "light"
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 2

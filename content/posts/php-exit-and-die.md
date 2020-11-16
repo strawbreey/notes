@@ -1,7 +1,7 @@
 ---
 title: "Php Exit and Die"
 date: 2020-10-20T10:37:01+08:00
-draft: true
+draft: false
 ---
 
 ### PHP中exit()与die()的区别

@@ -1,7 +1,7 @@
 ---
 title: "Js This"
 date: 2020-10-29T11:15:16+08:00
-draft: true
+draft: false
 ---
 
 在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。

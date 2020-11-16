@@ -1,7 +1,7 @@
 ---
 title: "Nginx Proxy Pass"
 date: 2020-11-09T16:03:57+08:00
-draft: true
+draft: false
 ---
 
 ```conf

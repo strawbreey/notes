@@ -1,7 +1,7 @@
 ---
 title: "Linux Command"
 date: 2020-10-13T10:59:36+08:00
-draft: true
+draft: false
 ---
 
 ## Linux Command

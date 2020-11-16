@@ -1,7 +1,7 @@
 ---
 title: "Webapi Fetch"
 date: 2020-11-09T17:59:32+08:00
-draft: true
+draft: false
 ---
 
 Fetch 是一个现代的概念, 等同于 XMLHttpRequest。它提供了许多与XMLHttpRequest相同的功能，但被设计成更具可扩展性和高效性。本文介绍了 Fetch API的一些基本概念。

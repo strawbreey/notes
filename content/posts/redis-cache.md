@@ -1,7 +1,7 @@
 ---
 title: "Redis Cache"
 date: 2020-09-14T10:00:18+08:00
-draft: true
+draft: false
 ---
 
 # todo:

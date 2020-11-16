@@ -1,7 +1,7 @@
 ---
 title: "Content Delivery Network"
 date: 2020-11-05T10:06:23+08:00
-draft: true
+draft: false
 ---
 
 CDN的全称是Content Delivery Network，即内容分发网络

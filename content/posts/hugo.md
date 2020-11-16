@@ -1,7 +1,7 @@
 ---
 title: "Hugo"
 date: 2020-08-28T19:18:18+08:00
-draft: true
+draft: false
 ---
 
 ## 创建文章

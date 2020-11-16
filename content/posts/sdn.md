@@ -1,7 +1,7 @@
 ---
 title: "Sdn"
 date: 2020-11-12T14:25:53+08:00
-draft: true
+draft: false
 ---
 
 软件定义网络（Software Defined Network，SDN）作为新一代网络架构。

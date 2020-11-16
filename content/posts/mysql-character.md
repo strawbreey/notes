@@ -1,7 +1,7 @@
 ---
 title: "Mysql Character"
 date: 2020-09-08T16:08:54+08:00
-draft: true
+draft: false
 ---
 
 mysql 字符集选择

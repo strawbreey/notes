@@ -1,7 +1,7 @@
 ---
 title: "Linux Bash"
 date: 2020-10-19T23:08:26+08:00
-draft: true
+draft: false
 ---
 
 

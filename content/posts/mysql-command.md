@@ -1,7 +1,7 @@
 ---
 title: "Mysql Command"
 date: 2020-09-01T16:19:22+08:00
-draft: true
+draft: false
 ---
 
 ```shell

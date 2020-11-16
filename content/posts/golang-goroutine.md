@@ -1,7 +1,7 @@
 ---
 title: "Golang Goroutine"
 date: 2020-09-21T16:28:10+08:00
-draft: true
+draft: false
 ---
 
 Go 语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。

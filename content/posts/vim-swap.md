@@ -1,7 +1,7 @@
 ---
 title: "Vim Swap"
 date: 2020-10-20T11:26:29+08:00
-draft: true
+draft: false
 ---
 
 ### Found a swap file by the name

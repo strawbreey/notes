@@ -1,7 +1,7 @@
 ---
 title: "Cache"
 date: 2020-11-05T11:33:43+08:00
-draft: true
+draft: false
 ---
 
 10.6.2 缓存的分类

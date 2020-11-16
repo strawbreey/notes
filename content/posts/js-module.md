@@ -1,7 +1,7 @@
 ---
 title: "Js Module"
 date: 2020-10-16T00:13:48+08:00
-draft: true
+draft: false
 ---
 
 JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。

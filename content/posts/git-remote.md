@@ -1,11 +1,13 @@
 ---
 title: "Git Remote"
 date: 2020-11-13T10:32:42+08:00
-draft: true
+draft: false
 ---
 
-```bash
-# 更新远程分支
+### 更新远程分支
+
+```shell
+
 git remote update origin --prune
 git remote update origin -p
 ```

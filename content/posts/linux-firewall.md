@@ -1,7 +1,7 @@
 ---
 title: "Linux Firewall"
 date: 2020-10-09T19:45:59+08:00
-draft: true
+draft: false
 ---
 
 ###  curl: (7) Failed connect to 10.0.0.210:9200; 拒绝连接

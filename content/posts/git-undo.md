@@ -1,7 +1,7 @@
 ---
 title: "Git Undo"
 date: 2020-08-31T15:11:27+08:00
-draft: true
+draft: false
 ---
 
 ### 删除commit提交记录

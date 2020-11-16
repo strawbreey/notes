@@ -1,7 +1,7 @@
 ---
 title: "Linux What"
 date: 2020-10-14T22:50:51+08:00
-draft: true
+draft: false
 ---
 
 Linux是什么

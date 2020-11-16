@@ -1,7 +1,7 @@
 ---
 title: "Mysql Transaction"
 date: 2020-11-09T15:49:56+08:00
-draft: true
+draft: false
 ---
 
 事务(Transaction) 是数据区别于文件系统重要的特性之一

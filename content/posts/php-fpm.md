@@ -1,7 +1,7 @@
 ---
 title: "Php Fpm"
 date: 2020-09-07T17:25:15+08:00
-draft: true
+draft: false
 ---
 
 PHP-FPM是一个PHP的PHPFastCGI管理器。

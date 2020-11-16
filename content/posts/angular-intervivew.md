@@ -1,7 +1,7 @@
 ---
 title: "Angular Intervivew"
 date: 2020-09-21T09:57:06+08:00
-draft: true
+draft: false
 ---
 
 - 数据变更的监测方式有哪些，Angular采用了什么，有什么好处，有什么坏处，如何处理数据变更中产生的异常？

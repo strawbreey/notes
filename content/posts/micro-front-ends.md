@@ -1,7 +1,7 @@
 ---
 title: "Micro Front Ends"
 date: 2020-11-06T11:26:18+08:00
-draft: true
+draft: false
 ---
 
 ### 聊聊微前端

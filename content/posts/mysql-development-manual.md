@@ -1,7 +1,7 @@
 ---
 title: "Mysql Development Manual"
 date: 2020-11-13T13:05:32+08:00
-draft: true
+draft: false
 ---
 
 ### 建表约束

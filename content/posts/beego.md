@@ -1,7 +1,7 @@
 ---
 title: "Beego"
 date: 2020-10-08T02:09:21+08:00
-draft: true
+draft: false
 ---
 
 ### deploy

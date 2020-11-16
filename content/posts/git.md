@@ -1,7 +1,7 @@
 ---
 title: "Git"
 date: 2020-08-28T19:29:52+08:00
-draft: true
+draft: false
 ---
 
 ## create a new repository on the command line

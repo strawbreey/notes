@@ -1,7 +1,7 @@
 ---
 title: "Gitignore"
 date: 2020-10-26T09:57:02+08:00
-draft: true
+draft: false
 ---
 
 ## gitignore说明

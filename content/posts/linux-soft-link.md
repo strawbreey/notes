@@ -1,7 +1,7 @@
 ---
 title: "Linux Soft Link"
 date: 2020-10-09T19:49:01+08:00
-draft: true
+draft: false
 ---
 
 #### 创建软链接

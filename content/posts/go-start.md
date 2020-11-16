@@ -1,7 +1,7 @@
 ---
 title: "Go Start"
 date: 2020-09-03T15:17:10+08:00
-draft: true
+draft: false
 ---
 
 ## go command ( go 常用命令)

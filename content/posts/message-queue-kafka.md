@@ -1,7 +1,7 @@
 ---
 title: "Message Queue Kafka"
 date: 2020-11-12T11:29:25+08:00
-draft: true
+draft: false
 ---
 
 ![ckafka](/images/ckafka.png)

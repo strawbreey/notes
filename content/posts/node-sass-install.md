@@ -1,7 +1,7 @@
 ---
 title: "Node Sass Install"
 date: 2020-11-12T17:43:31+08:00
-draft: true
+draft: false
 ---
 
 ```bash

@@ -1,7 +1,7 @@
 ---
 title: "Common Commands"
 date: 2020-08-31T10:36:43+08:00
-draft: true
+draft: false
 ---
 
 ### linux common command

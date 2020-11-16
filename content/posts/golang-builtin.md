@@ -1,7 +1,7 @@
 ---
 title: "Golang Builtin"
 date: 2020-10-12T15:32:11+08:00
-draft: true
+draft: false
 ---
 
 Package builtin provides documentation for Go's predeclared identifiers (预声明的标识符). The items documented here are not actually in package builtin but their descriptions here allow godoc to present documentation for the language's special identifiers (特殊标识符).

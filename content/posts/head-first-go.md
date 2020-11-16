@@ -1,7 +1,7 @@
 ---
 title: "Head First Go"
 date: 2020-11-11T11:27:51+08:00
-draft: true
+draft: false
 ---
 
 2007年，Google首席软件工程师Rob Pike与Robert Griesemer和Ken Thompson两位大师，决定创造一种新语言来取代C++，这就是Go语言
