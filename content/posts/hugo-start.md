@@ -8,38 +8,37 @@ draft: false
 
 ### Install Hugo
 
-```shell
+```bash
 # macOS install 
-
 brew intall hugo
 hugo version
 ```
 
 ### Create a New Site
 
-```shell
+```bash
 hugo new site quickStart
 ```
 
 ### Add a Theme
-```shell
+```bash
 cd quickstart
 git init
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 ``` 
 
 ### Add Some Content
-```shell
+```bash
 hugo new posts/new-content.md
 ```
 
 ### Start the Hugo server
-```shell
+```bash
 hugo serve -D
 
 ```
 
 ### Build Static pages
-```shell
+```bash
 hugo -D
 ```
