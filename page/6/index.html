@@ -154,6 +154,44 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/web-data-storage/">Web Data Storage</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
+Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
+最常见的用处之一就是身份验证：
+登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
+alert(document.cookie)写入 document.cookie
+document.cookie = &quot;user=John&quot;; // 只会更新名称为 user 的 cookiealert(document.cookie); // 展示所有 cookie从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
+// 特殊字符（空格），需要编码let name = &quot;my name&quot;;let value = &quot;John Smith&quot;// 将 cookie 编码为 my%20name=John%20Smithdocument.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);alert(document.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/web-data-storage/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/web-components/">Web Components</a></h1>
       <div class="post-meta">
         
@@ -844,36 +882,6 @@ JD业务背景淘宝内部最大创新项目之一，大团队已有百人规模
       </div>
       
         <div><a class="read-more button" href="/posts/nestjs-tutorial/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nestjs-deploy/">Nestjs Deploy</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/nestjs-deploy/">Read more →</a></div>
       
     </div>
     

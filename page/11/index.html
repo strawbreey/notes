@@ -154,6 +154,38 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-undo/">Git Undo</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            删除commit提交记录 # Checkoutgit checkout &ndash;orphan latest_branch;# Add all the filesgit add -A;# Commit the changesgit commit -am &quot;Reinitialize&quot;;# Delete the branchgit branch -D master;# Rename the current branch to mastergit branch -m master;# Finally, force update your repositorygit push -f origin master;撤销上一次的commit git reset &ndash;hard HEAD^ git reset &ndash;mixed HEAD^ git reset &ndash;soft HEAD^ git push &ndash;force# &ndash;mixed 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add 。 操作这个为默认参数,git reset &ndash;mixed HEAD^ 和 git reset HEAD^ 效果是一样的。# &ndash;soft 不删除工作空间改动代码，撤销commit，不撤销git add .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-undo/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/linux-permissions/">Linux Permissions</a></h1>
       <div class="post-meta">
         

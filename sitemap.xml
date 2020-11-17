@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/leetcode-1030-matrix-cells-in-distance-order/</loc>
-    <lastmod>2020-11-17T09:56:46+08:00</lastmod>
+    <loc>/posts/hugo-host-on-github/</loc>
+    <lastmod>2020-11-17T14:39:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
+    <lastmod>2020-11-17T14:39:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/leetcode-1030-matrix-cells-in-distance-order/</loc>
     <lastmod>2020-11-17T09:56:46+08:00</lastmod>
   </url>
   
@@ -203,7 +208,7 @@
   </url>
   
   <url>
-    <loc>/posts/leetcode-two-sum/</loc>
+    <loc>/posts/leetcode-0001-two-sum/</loc>
     <lastmod>2020-11-06T17:03:36+08:00</lastmod>
   </url>
   
