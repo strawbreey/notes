@@ -34,6 +34,12 @@ git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)…​]
 ### 例子
 
 ```bash
+# 查看本地分支 
+git branch
+
+# 查看全部分支
+git branch -a
+
 # 列出已经存在的远程分支y
 git remote
 # => origin
@@ -56,6 +62,24 @@ git remote
 
 git fetch staging
 
-
 git switch -c staging staging/master
+
+# 删除本地已合并的分支： 
+git branch -d [branchname]
+
+# 删除远程分支: 
+git push origin --delete [branchname]
+git push origin --delete origin/xxxxx-fixbug
+
+# 创建分支
+git branch [branchname]
+
+# 根据指定版本号创建分支: 
+git checkout -b branchName commitId
+
+# 清理本地无效分支(远程已删除本地没删除的分支): 
+git fetch -p
+
+# 分支模糊查找: 
+git branch | grep 'branchName'
 ```

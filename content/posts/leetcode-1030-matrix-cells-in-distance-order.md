@@ -2,6 +2,7 @@
 title: "Leetcode 1030 Matrix Cells in Distance Order"
 date: 2020-11-17T09:56:46+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where 0 <= r < R and 0 <= c < C.

@@ -81,3 +81,7 @@ cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)
 echo "Pushing to github"
 git push --all
 ```
+
+### 参考资料
+
+- [Host on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
