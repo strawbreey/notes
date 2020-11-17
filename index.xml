@@ -16,6 +16,138 @@
     
     
     <item>
+      <title>Leetcode 1030 Matrix Cells in Distance Order</title>
+      <link>/posts/leetcode-1030-matrix-cells-in-distance-order/</link>
+      <pubDate>Tue, 17 Nov 2020 09:56:46 +0800</pubDate>
+      
+      <guid>/posts/leetcode-1030-matrix-cells-in-distance-order/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where 0 &amp;lt;= r &amp;lt; R and 0 &amp;lt;= c &amp;lt; C.
+Additionally, we are given a cell in that matrix with coordinates (r0, c0).
+Return the coordinates of all cells in the matrix, sorted by their distance from (r0, c0) from smallest distance to largest distance. Here, the distance between two cells (r1, c1) and (r2, c2) is the Manhattan distance, |r1 - r2| + |c1 - c2|.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Delete</title>
+      <link>/posts/js-delete/</link>
+      <pubDate>Mon, 16 Nov 2020 19:42:00 +0800</pubDate>
+      
+      <guid>/posts/js-delete/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          delete 操作符用于删除对象的某个属性；如果没有指向这个属性的引用，那它最终会被释放。
+语法
+delete expressiondelete object.property delete object[&amp;#39;property&amp;#39;]参数
+ object 对象的名称，或计算结果为对象的表达式。 property 要删除的属性。  返回值
+对于所有情况都是true，除非属性是一个自身的 不可配置的属性，在这种情况下，非严格模式返回 false。
+const Employee = {firstname: &amp;#39;John&amp;#39;,lastname: &amp;#39;Doe&amp;#39;};console.log(Employee.firstname);// expected output: &amp;#34;John&amp;#34;delete Employee.firstname;console.log(Employee.firstname);// expected output: undefined但是，以下情况需要重点考虑：
+  如果你试图删除的属性不存在，那么delete将不会起任何作用，但仍会返回true
+  如果对象的原型链上有一个与待删除属性同名的属性，那么删除属性之后，对象会使用原型链上的那个属性（也就是说，delete操作只会在自身的属性上起作用）
+  任何使用 var 声明的属性不能从全局作用域或函数的作用域中删除。
+ 这样的话，delete操作不能删除任何在全局作用域中的函数（无论这个函数是来自于函数声明或函数表达式） 除了在全局作用域中的函数不能被删除，在对象(object)中的函数是能够用delete操作删除的。    任何用let或const声明的属性不能够从它被声明的作用域中删除。
+  不可设置的(Non-configurable)属性不能被移除。这意味着像Math, Array, Object内置对象的属性以及使用Object.defineProperty()方法设置为不可设置的属性不能被删除。
+  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js String Equal</title>
+      <link>/posts/js-string-equal/</link>
+      <pubDate>Mon, 16 Nov 2020 19:36:59 +0800</pubDate>
+      
+      <guid>/posts/js-string-equal/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          判断是不是字符串：
+1 基本方法：
+typeof(str)==&#39;string&amp;rsquo;
+2 利用js原生函数：
+Object.prototype.toString // ƒ toString() { [native code] }
+Object.prototype.toString.call(str)==&amp;rdquo;[object String]&amp;rdquo;
+（1）在Object.prototype这个this（上下文环境）中执行toString原生函数，会把里边的环境变量类型打印出来。
+Object.prototype.toString() &amp;ndash;&amp;gt;执行结果&amp;ndash;&amp;gt;&amp;rdquo;[object Object]&amp;rdquo;
+（2）如果我们改变this（上下文环境），就能打印出当前环境变量类型，根据这个类型来判断。
+Object.prototype.toString.call(str) &amp;ndash;&amp;gt;执行结果&amp;ndash;&amp;gt;&amp;rdquo;[object String]&amp;rdquo;
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Web Api Domtokenlist</title>
+      <link>/posts/web-api-domtokenlist/</link>
+      <pubDate>Mon, 16 Nov 2020 19:24:00 +0800</pubDate>
+      
+      <guid>/posts/web-api-domtokenlist/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          DOMTokenList 接口表示一组空格分隔的标记（tokens）。如由 Element.classList、HTMLLinkElement.relList、HTMLAnchorElement.relList 或 HTMLAreaElement.relList 返回的一组值。它和 JavaScript Array 对象一样，索引从 0 开始。DOMTokenList 总是区分大小写（case-sensitive）。
+方法  DOMTokenList.item(index)  根据传入的索引值返回一个值，如果索引值大于等于符号列表的长度（length），则返回 undefined 或 null，在 Gecko 7.0 之前的版本中返回 null。
+ DOMTokenList.contains(token)  如果 DOMTokenList 列表中包括相应的字符串 token，则返回 true，否则返回 false。
+ DOMTokenList.add(token1[, token2[, &amp;hellip;tokenN]])  添加一个或多个标记（token）到 DOMTokenList 列表中。
+ DOMTokenList.remove(token1[, token2[, &amp;hellip;tokenN]])  从 DOMTokenList 列表中移除一个或多个标记（token）。
+ DOMTokenList.replace(oldToken, newToken)  使用 newToken 替换 token 。
+ DOMTokenList.supports(token)  如果传入的 token 是相关属性（attribute）支持的标记，则返回 true 。
+ DOMTokenList.toggle(token [, force])  从 DOMTokenList 字符串中移除标记字串（token），并返回 false。如果传入的字串（token）不存在，则将其添加进去，并返回 true 。force 是一个可选的布尔值，如果传入 true ，且传入的 token 不存在，则将其添加进去并返回 true ，若传入的 token 存在，则直接返回 true ；反之，如果传入 false ，则移除存在的 token ，并返回 false ，如 token 不存在则直接返回 false 。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Web Api Toggle</title>
+      <link>/posts/web-api-toggle/</link>
+      <pubDate>Mon, 16 Nov 2020 19:20:23 +0800</pubDate>
+      
+      <guid>/posts/web-api-toggle/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。
+tokenList.toggle(token, force);参数列表
+ token 标记列表中你想探查并切换的 DOMString . force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。  example：
+// &amp;lt;span class=&amp;#34;a b&amp;#34;&amp;gt;classList is &amp;#39;a b&amp;#39;&amp;lt;/span&amp;gt;var span = document.querySelector(&amp;#34;span&amp;#34;);var classes = span.classList;span.onclick = function() {// 如果有就添加, 没有删除 var result = classes.toggle(&amp;#34;c&amp;#34;);if(result) {span.textContent = &amp;#34;&amp;#39;c&amp;#39; added; classList is now &amp;#39;&amp;#34; + classes + &amp;#34;&amp;#39;.
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Angular Zooejs</title>
       <link>/posts/angular-zooejs/</link>
       <pubDate>Fri, 13 Nov 2020 17:46:30 +0800</pubDate>
@@ -124,7 +256,7 @@
         
         
         
-          # 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git.
+          更新远程分支 git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git.
           
         
         </description>
@@ -1239,7 +1371,7 @@ const target = { a: 1, b: 2 };const source = { b: 4, c: 5 };const returnedTarg
         
         
         
-          
+          移除对象中的空值 let objfor ( var key in obj ){if ( data[key] === &amp;#39;&amp;#39; ){delete data[key]}}
           
         
         </description>

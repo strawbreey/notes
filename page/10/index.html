@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="/style.css" />
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="144x144"
@@ -59,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body class="">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -150,6 +152,169 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/scope-and-closures/">Scope and Closures</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/scope-and-closures/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/nginx-install/">Nginx Install</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. For a long time, it has been running on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler. According to Netcraft, nginx served or proxied 25.75% busiest sites in August 2020. Here are some of the success stories: Dropbox, Netflix, Wordpress.com, FastMail.FM.
+安装Nginx cd /usr/local/src/# 下载nginxwget http://nginx.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/nginx-install/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-character/">Mysql Character</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-character/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/dependency-injection/">Dependency Injection</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-08
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            依赖注入
+In software engineering, dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. In the typical “using” relationship the receiving object is called a client and the passed (that is, “injected”) object is called a service. The code that passes the service to the client can be many kinds of things and is called the injector. Instead of the client specifying which service it will use, the injector tells the client what service to use.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/dependency-injection/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-fpm/">Php Fpm</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-07
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            PHP-FPM是一个PHP的PHPFastCGI管理器。
+PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
+kill -INT <code>cat /var/run/php-fpm/php-fpm.pid</code># 杀死进程killall php-fpm# 开启进程/usr/local/php72/sbin/php-fpm# 查看端口号netstat -lnt | grep 9000# 查看php-fpmps aux | grep php-fpm# 重新启动并加载配置/usr/local/php/sbin-php-fpm -c php.ini1 修改php.ini或www.conf？ 修改php.ini文件：
+$ php –ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
+$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
+2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-fpm/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/js-closure/">Js Closure</a></h1>
@@ -650,161 +815,6 @@ tar -zxvf php-7.2.33.tar.xz
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-permissions/">Linux Permissions</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-31
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Linux 文件属性 查看文件
-ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x&mdash; 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw&mdash;&mdash;- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw&mdash;&mdash;- 1 root root 199 Sep 8 17:14 .bash_history-rw-r&ndash;r&ndash; 1 root root 24 Jan 6 2007 .bash_logout-rw-r&ndash;r&ndash; 1 root root 191 Jan 6 2007 .bash_profile-rw-r&ndash;r&ndash; 1 root root 176 Jan 6 2007 .
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-permissions/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/common-commands/">Common Commands</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-31
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            linux common command # 测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm">https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm</a># 下载phpwget php-7.2.15.tar.bz2 <a href="http://cn2.php.net/distributions/php-7.2.15.tar.bz2">http://cn2.php.net/distributions/php-7.2.15.tar.bz2</a>yum install <a href="http://rpms.remirepo.net/enterprise/remi-release-7.rpm">http://rpms.remirepo.net/enterprise/remi-release-7.rpm</a>rpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm">https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm</a># linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/common-commands/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/host-on-github/">Host on Github</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-31
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/host-on-github/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git-submodule/">Git Submodule</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-31
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/git-submodule/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/hugo-start/">Hugo Start</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-31
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/hugo-start/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -840,7 +850,9 @@ ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altota
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 
       

@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="/style.css" />
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="144x144"
@@ -59,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body class="">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -150,6 +152,233 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/web-components/">Web Components</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            众所周知，开发复杂软件的原则是：不要让软件复杂
+如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
+只有让复杂的事情简单化的架构才是好架构。
+一个组件有：
+自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
+Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
+Custom elements (自定义标签) class MyElement extends HTMLElement {constructor() {super();// 元素在这里创建 }connectedCallback() {// 在元素被添加到文档之后，浏览器会调用这个方法 //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }disconnectedCallback() {// 在元素从文档移除到时候，浏览器会调用这个方法 // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }static get observedAttributes() {return [/* 属性数组，这些属性的变化会被被监视 */];}attributeChangedCallback(name, oldValue, newValue) {// 当上面数组里面的属性变化的时候，这个方法会被调用 }adoptedCallback() {// 在元素被移动到新的文档的时候，这个方法会被调用 // （document.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/web-components/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/good-doctor-1-3/">Good Doctor 1 3</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            良医 第一季 第三集 01:35
+so I’m in the middle of (正忙于) “Uncharted”, and I’m dead
+我正在玩无人之地，但是没电了
+Can I borrow some triples A’s
+能借几节7号电池吗
+I’m your neighbor
+我是你的邻居
+hello
+你好
+34 ?
+34号
+I moved in last week. 33.
+我上周搬来，33号
+yeah， I know
+是 我知道
+I work at a hospital
+我在医院工作
+That’s cool
+很酷
+yes
+是
+Triple A’s pro favor ?
+7号电池 拜托
+Batteries
+电池
+Right
+没错
+Do you hava any ?
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/good-doctor-1-3/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-regexp/">Js Regexp</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。
+创建正则表达式有两个方式
+// new RegExpregexp = new RegExp(&quot;pattern&quot;, &quot;flags&quot;);// 表达式regexp = /pattern/; // 没有修饰符regexp = /pattern/gmi; // 伴随修饰符 g、m 和 i（后面会讲到）用法
+字符串搜索
+let str = &quot;I love Javascript&quot;;let substr = 'love';alert(str.search(substr));所以搜索 /love/ 与搜索 “love” 是等价的。
+通常我们使用的都是简短语法 /…/。但是它不接受任何变量插入，所以我们必须在写代码的时候就知道确切的 regexp。
+另一方面，new RegExp 允许从字符串中动态地构造模式。
+所以我们可以找出需要搜索的字段，然后根据搜索字段创建 new RegExp：
+// 弹窗提示框, 默认输入值lovelet search = prompt(&quot;What you want to search?&quot;, &quot;love&quot;); // love// let regexp = new RegExp(search);// 找到用户想要的任何东西alert( &quot;I love JavaScript&quot;.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-regexp/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-command/">Linux Command</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
+第二列Size，磁盘分区的大小
+第三列Used，已使用的空间
+第四列Avail，可用的空间
+第五列Use%，已使用的百分比
+第六列Mounted on，挂载点
+参数说明
+-a或–all：包含全部的文件系统；
+–block-size=&lt;区块大小&gt;：以指定的区块大小来显示区块数目；
+-h或–human-readable：以可读性较高的方式来显示信息;
+-H或–si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
+-i或–inodes：显示inode的信息；
+-k或–kilobytes：指定区块大小为1024字节；
+-l或–local：仅显示本地端的文件系统;
+-m或–megabytes：指定区块大小为1048576字节；
+–no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
+-P或–portability：使用POSIX的输出格式；
+–sync：在取得磁盘使用信息前，先执行sync指令；
+-t&lt;文件系统类型&gt;或–type=&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；
+-T或–print-type：显示文件系统的类型；
+-x&lt;文件系统类型&gt;或–exclude-type=&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；
+–help：显示帮助；
+–version：显示版本信息。
+查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
+-a或-all 显示目录中个别文件的大小。
+-b或-bytes 显示目录或文件大小时，以byte为单位。
+-c或–total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
+-k或–kilobytes 以KB(1024bytes)为单位输出。
+-m或–megabytes 以MB为单位输出。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-command/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/golang-source-code/">Golang Source Code</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/golang-source-code/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/golang-builtin/">Golang Builtin</a></h1>
@@ -648,175 +877,6 @@ JD业务背景淘宝内部最大创新项目之一，大团队已有百人规模
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/beego/">Beego</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            deploy 通过 bee 创建的项目，beego 默认情况下是开发模式。
-我们可以通过如下的方式改变我们的模式：
-beego.RunMode = &quot;prod&quot;或者我们在 conf/app.conf 下面设置如下：
-runmode = prod发行部署
-Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：
-独立部署
-独立部署即为在后端运行程序，让程序跑在后台。
-在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：
-nohup ./beepkg &amp;Windows 在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：
-制作 bat 文件，放在“启动”里面 制作成服务
-nginx 部署
-server {listen 80;server_name .a.com;charset utf-8;access_log /home/a.com.access.log;location /(css|js|fonts|img)/ {access_log off;expires 1d;root &quot;/path/to/app_a/static&quot;;try_files $uri @backend;}location / {try_files /<em>not_exists</em> @backend;}location @backend {proxy_set_header X-Forwarded-For $remote_addr;proxy_set_header Host $http_host;proxy_pass http://127.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/beego/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-array-helper/">Js Array Helper</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-28
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-array-helper/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-array/">Js Array</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-28
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Array.from() // Syntax// arrayLike: An array-like or iterable object to convert to an array.// mapFn Optional: Map function to call on every element of the array.// thisArg Optional: Value to use as this when executing mapFn.// return value: A new Array instance.Array.from(arrayLike [, mapFn [, thisArg]])console.log(Array.from('foo'));// expected output: Array [&quot;f&quot;, &quot;o&quot;, &quot;o&quot;]console.log(Array.from([1, 2, 3], x =&gt; x + x));// expected output: Array [2, 4, 6]Array.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-array/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-deep-copy/">Js Deep Copy</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            JSON.parse/stringify if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。
-如果不使用复制的数据类型, JSON序列化是最快的复制方法
-JSON.parse(JSON.stringify(object))const a = {string: 'string',number: 123,bool: false,nul: null,date: new Date(), // stringified undef: undefined, // lost inf: Infinity, // forced to 'null' re: /.*/, // lost}console.log(a);console.log(typeof a.date); // Date objectconst clone = JSON.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-deep-copy/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/swagger-php/">Swagger Php</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/swagger-php/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -852,7 +912,9 @@ JSON.parse(JSON.stringify(object))const a = {string: 'string',number: 123,bo
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 
       

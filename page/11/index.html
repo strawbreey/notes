@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="/style.css" />
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="144x144"
@@ -59,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body class="">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -150,6 +152,161 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-permissions/">Linux Permissions</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Linux 文件属性 查看文件
+ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x&mdash; 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw&mdash;&mdash;- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw&mdash;&mdash;- 1 root root 199 Sep 8 17:14 .bash_history-rw-r&ndash;r&ndash; 1 root root 24 Jan 6 2007 .bash_logout-rw-r&ndash;r&ndash; 1 root root 191 Jan 6 2007 .bash_profile-rw-r&ndash;r&ndash; 1 root root 176 Jan 6 2007 .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-permissions/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/common-commands/">Common Commands</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            linux common command # 测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm">https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm</a># 下载phpwget php-7.2.15.tar.bz2 <a href="http://cn2.php.net/distributions/php-7.2.15.tar.bz2">http://cn2.php.net/distributions/php-7.2.15.tar.bz2</a>yum install <a href="http://rpms.remirepo.net/enterprise/remi-release-7.rpm">http://rpms.remirepo.net/enterprise/remi-release-7.rpm</a>rpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm">https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm</a># linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/common-commands/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/host-on-github/">Host on Github</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/host-on-github/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-submodule/">Git Submodule</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-submodule/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/hugo-start/">Hugo Start</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/hugo-start/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/git/">Git</a></h1>
@@ -271,7 +428,9 @@
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 
       

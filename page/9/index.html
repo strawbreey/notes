@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="/style.css" />
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="144x144"
@@ -59,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body class="">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -150,6 +152,163 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/vim-command/">Vim Command</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-16
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/vim-command/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-cli/">Linux Cli</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-16
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            create a new file touch readme.txt# or &gt; 'readme.txt'create a new directory mkdir documentsmkdir -p docmentsCopy readme.txt to the documents/ directory cp readme.txt documentsduplicate a file cp readme.txt readme.bak.txtcp readme{,.bak}.txt# Note: learn how the {} works with touch foo{1,2,3}.txt and see what happens.copy a direcatory cp -a myMusic myMedia/# orcp -a myMusic myMedia/myMusicduplicate a directory cp -a myMusic/ myMedia/# orcp -a myMusic myMedia/move a file mv readme.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-cli/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-remote-procedure/">Php Remote Procedure</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-16
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-remote-procedure/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/rpc-and-http/">Rpc and Http</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-16
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/rpc-and-http/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/yii-run-applications/">Yii Run Applications</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
+一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/yii-run-applications/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/javascript-prototype-apply/">Javascript Prototype Apply</a></h1>
@@ -644,169 +803,6 @@ Quick Links Array
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/scope-and-closures/">Scope and Closures</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/scope-and-closures/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nginx-install/">Nginx Install</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. For a long time, it has been running on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler. According to Netcraft, nginx served or proxied 25.75% busiest sites in August 2020. Here are some of the success stories: Dropbox, Netflix, Wordpress.com, FastMail.FM.
-安装Nginx cd /usr/local/src/# 下载nginxwget http://nginx.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/nginx-install/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-character/">Mysql Character</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mysql-character/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/dependency-injection/">Dependency Injection</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            依赖注入
-In software engineering, dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. In the typical “using” relationship the receiving object is called a client and the passed (that is, “injected”) object is called a service. The code that passes the service to the client can be many kinds of things and is called the injector. Instead of the client specifying which service it will use, the injector tells the client what service to use.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/dependency-injection/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-fpm/">Php Fpm</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-07
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            PHP-FPM是一个PHP的PHPFastCGI管理器。
-PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
-kill -INT <code>cat /var/run/php-fpm/php-fpm.pid</code># 杀死进程killall php-fpm# 开启进程/usr/local/php72/sbin/php-fpm# 查看端口号netstat -lnt | grep 9000# 查看php-fpmps aux | grep php-fpm# 重新启动并加载配置/usr/local/php/sbin-php-fpm -c php.ini1 修改php.ini或www.conf？ 修改php.ini文件：
-$ php –ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
-$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
-2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-fpm/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -842,7 +838,9 @@ $ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 
       

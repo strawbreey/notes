@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="/style.css" />
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="144x144"
@@ -59,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body class="">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -150,6 +152,173 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-common-code/">Php Common Code</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-common-code/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql-optimization/">Sql Optimization</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            SQL语句执行步骤  语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt;选择数据的搜索路径 &gt;运行“执行计划”
+选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
+访问Table的方式  全表扫描
+全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
+通过ROWID访问表
+ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
+共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
+选择最有效率的表名顺序  ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
+当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
+首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
+然后扫描第二个表(FROM子句中最后第二个表)，
+最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
+只在基于规则的优化器中有效。 举例：
+表 TAB1 16,384 条记录
+表 TAB2 1 条记录
+&ndash; 选择TAB2作为基础表 (最好的方法) select count(<em>) from tab1,tab2 执行时间0.96秒&ndash; 选择TAB2作为基础表 (不佳的方法) select count(</em>) from tab2,tab1 执行时间26.09秒&ndash; 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql-optimization/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql-insert/">Sql Insert</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql-insert/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-quotation-marks/">Php Quotation Marks</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-quotation-marks/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-filter/">Php Filter</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-23
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-filter/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/php-variable-handle/">Php Variable Handle</a></h1>
@@ -669,163 +838,6 @@ Angular的性能好坏就和每一次Change Detection周期的执行时间长短
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/vim-command/">Vim Command</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/vim-command/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-cli/">Linux Cli</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            create a new file touch readme.txt# or &gt; 'readme.txt'create a new directory mkdir documentsmkdir -p docmentsCopy readme.txt to the documents/ directory cp readme.txt documentsduplicate a file cp readme.txt readme.bak.txtcp readme{,.bak}.txt# Note: learn how the {} works with touch foo{1,2,3}.txt and see what happens.copy a direcatory cp -a myMusic myMedia/# orcp -a myMusic myMedia/myMusicduplicate a directory cp -a myMusic/ myMedia/# orcp -a myMusic myMedia/move a file mv readme.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-cli/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-remote-procedure/">Php Remote Procedure</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-remote-procedure/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/rpc-and-http/">Rpc and Http</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/rpc-and-http/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/yii-run-applications/">Yii Run Applications</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-15
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
-一个应用的静态结构
-每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
-请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/yii-run-applications/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -861,7 +873,9 @@ Angular的性能好坏就和每一次Change Detection周期的执行时间长短
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 
       

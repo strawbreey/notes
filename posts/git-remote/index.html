@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="# 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git."
+  content="更新远程分支 git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git."
 />
 <meta
   name="keywords"
@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="/style.css" />
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="144x144"
@@ -42,12 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Remote"/>
-<meta name="twitter:description" content="# 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;name&gt; &lt;url&gt;git remote rename &lt;old&gt; &lt;new&gt;git remote remove &lt;name&gt;git remote set-head &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)git remote set-branches [--add] &lt;name&gt; &lt;branch&gt;…​git remote get-url [--push] [--all] &lt;name&gt;git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;git remote [-v | --verbose] show [-n] &lt;name&gt;…​git remote prune [-n | --dry-run] &lt;name&gt;…​git remote [-v | --verbose] update [-p | --prune] [(&lt;group&gt; | &lt;remote&gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&gt; origingit branch -r# =&gt; origin/HEAD -&gt; origin/master# =&gt; origin/master# 添加一个远程仓库git remote add staging git://git."/>
+<meta name="twitter:description" content="更新远程分支 git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;name&gt; &lt;url&gt;git remote rename &lt;old&gt; &lt;new&gt;git remote remove &lt;name&gt;git remote set-head &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)git remote set-branches [--add] &lt;name&gt; &lt;branch&gt;…​git remote get-url [--push] [--all] &lt;name&gt;git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;git remote [-v | --verbose] show [-n] &lt;name&gt;…​git remote prune [-n | --dry-run] &lt;name&gt;…​git remote [-v | --verbose] update [-p | --prune] [(&lt;group&gt; | &lt;remote&gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&gt; origingit branch -r# =&gt; origin/HEAD -&gt; origin/master# =&gt; origin/master# 添加一个远程仓库git remote add staging git://git."/>
 
 
 
 <meta property="og:title" content="Git Remote" />
-<meta property="og:description" content="# 更新远程分支git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;name&gt; &lt;url&gt;git remote rename &lt;old&gt; &lt;new&gt;git remote remove &lt;name&gt;git remote set-head &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)git remote set-branches [--add] &lt;name&gt; &lt;branch&gt;…​git remote get-url [--push] [--all] &lt;name&gt;git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;git remote [-v | --verbose] show [-n] &lt;name&gt;…​git remote prune [-n | --dry-run] &lt;name&gt;…​git remote [-v | --verbose] update [-p | --prune] [(&lt;group&gt; | &lt;remote&gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&gt; origingit branch -r# =&gt; origin/HEAD -&gt; origin/master# =&gt; origin/master# 添加一个远程仓库git remote add staging git://git." />
+<meta property="og:description" content="更新远程分支 git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;name&gt; &lt;url&gt;git remote rename &lt;old&gt; &lt;new&gt;git remote remove &lt;name&gt;git remote set-head &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)git remote set-branches [--add] &lt;name&gt; &lt;branch&gt;…​git remote get-url [--push] [--all] &lt;name&gt;git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;git remote [-v | --verbose] show [-n] &lt;name&gt;…​git remote prune [-n | --dry-run] &lt;name&gt;…​git remote [-v | --verbose] update [-p | --prune] [(&lt;group&gt; | &lt;remote&gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&gt; origingit branch -r# =&gt; origin/HEAD -&gt; origin/master# =&gt; origin/master# 添加一个远程仓库git remote add staging git://git." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/git-remote/" />
 <meta property="article:published_time" content="2020-11-13T10:32:42+08:00" />
@@ -59,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body class="">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -166,7 +168,8 @@
 
     <div class="post-content">
       
-      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 更新远程分支</span>
+      <h3 id="更新远程分支">更新远程分支</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 git remote update origin --prune
 git remote update origin -p
 </code></pre></div><h3 id="参考">参考</h3>
@@ -262,7 +265,9 @@ git switch -c staging staging/master
 </footer>
 
 <script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 
       
