@@ -1,5 +1,5 @@
 ---
-title: "Leetcode Two Sum"
+title: "Leetcode 0001 Two Sum"
 date: 2020-11-06T17:03:36+08:00
 draft: false
 ---
@@ -35,12 +35,7 @@ Output: [0,1]
 ```
 ### solution
 
-```c
-
-```
-
 ```js
-
 // 暴力解决方案
 var twoSum = function(nums, target) {
     let arr = []
@@ -69,6 +64,8 @@ for(let i = 0; i < nums.length; i++) {
 ```go
 
 ```
+
+
 ```php
 
 ```

@@ -23,7 +23,6 @@ Input: R = 1, C = 2, r0 = 0, c0 = 0
 Output: [[0,0],[0,1]]
 Explanation: The distances from (r0, c0) to other cells are: [0,1]
 
-
 Input: R = 2, C = 2, r0 = 0, c0 = 1
 Output: [[0,1],[0,0],[1,1],[1,0]]
 Explanation: The distances from (r0, c0) to other cells are: [0,1,1,2]
@@ -57,22 +56,6 @@ Solution:
 
 - 空间复杂度：O(\log(RC))O(log(RC))，即为排序需要使用的栈空间，不考虑返回值的空间占用。
 
-方法二：桶排序
-
-注意到方法一中排序的时间复杂度太高。实际在枚举所有点时，我们可以直接按照哈曼顿距离分桶。这样我们就可以实现线性的桶排序。
-
-时间复杂度：O(RC)O(RC)，存储所有点时间复杂度 O(RC)O(RC)，桶排序时间复杂度 O(RC)O(RC)。
-
-空间复杂度：O(RC)O(RC)，需要存储矩阵内所有点。
-
-方法三：几何法
-
-我们也可以直接变换枚举矩阵的顺序，直接按照曼哈顿距离遍历该矩形即可。
-
-注意到曼哈顿距离相同的位置恰好构成一个斜着的正方形边框，因此我们可以从小到大枚举曼哈顿距离，并使用循环来直接枚举该距离对应的边框。我们每次从该正方形边框的上顶点出发，依次经过右顶点、下顶点和左顶点，最后回到上顶点。这样即可完成当前层的遍历。
-
-![matrix-cells-in-distance-order](/images/matrix-cells-in-distance-order.png)
-
 ```js
 var allCellsDistOrder = function(R, C, r0, c0) {
     let arr = []
@@ -85,6 +68,32 @@ var allCellsDistOrder = function(R, C, r0, c0) {
 };
 ```
 
+方法二：桶排序
+
+注意到方法一中排序的时间复杂度太高。实际在枚举所有点时，我们可以直接按照哈曼顿距离分桶。这样我们就可以实现线性的桶排序。
+
+时间复杂度：O(RC)O(RC)，存储所有点时间复杂度 O(RC)O(RC)，桶排序时间复杂度 O(RC)O(RC)。
+
+空间复杂度：O(RC)O(RC)，需要存储矩阵内所有点。
+
 
 ```go
 ```
+
+方法三：几何法
+
+我们也可以直接变换枚举矩阵的顺序，直接按照曼哈顿距离遍历该矩形即可。
+
+注意到曼哈顿距离相同的位置恰好构成一个斜着的正方形边框，因此我们可以从小到大枚举曼哈顿距离，并使用循环来直接枚举该距离对应的边框。我们每次从该正方形边框的上顶点出发，依次经过右顶点、下顶点和左顶点，最后回到上顶点。这样即可完成当前层的遍历。
+
+```php
+```
+
+![matrix-cells-in-distance-order](/images/matrix-cells-in-distance-order.png)
+
+
+### 参考资料
+
+- [距离顺序排列矩阵单元格](https://leetcode-cn.com/problems/matrix-cells-in-distance-order/)
+- [Matrix Cells in Distance Order](https://leetcode.com/problems/matrix-cells-in-distance-order//)
+
