@@ -15,12 +15,12 @@ draft: false
 
 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
 
+
+#### 生成原理图
+
 ```shell
-# 生成原理图
 ng generate my-schematic-collection:my-schematic-name
-
 # or
-
 ng generate my-schematic-name --collection collection-name
 ```
 
