@@ -52,7 +52,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+<meta property="og:updated_time" content="2020-08-28T19:17:20+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
@@ -152,6 +152,46 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/redis-design-and-implementation/">Redis Design and Implementation</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-05
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            链表和链表节点的实现 redis 链表实现
+typedef struct listNode {struct listNode * prev;struct listNode * next;void * value;} listNode;多个listNode可以通过prev和next指针组成双端链表
+typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode *tail;// 节点复制函数 void *(*dup)(void *ptr);// 节点释放函数 void (*free)(void *ptr);// 节点值对比函数 int (*match)(void *ptr, void *key);// 链表所包含的节点数量 unsigned long len;} list;list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/redis-design-and-implementation/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/cache/">Cache</a></h1>
@@ -740,40 +780,6 @@ CREATE TABLE <code>table_name</code> (id bigint(20) not null auto_increment, &n
       </div>
       
         <div><a class="read-more button" href="/posts/mysql-disk-space/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-this/">Js This</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-29
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
-this 的值是在代码运行时计算出来的，它取决于代码上下文。
-let user = { name: &quot;John&quot; };let admin = { name: &quot;Admin&quot; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &quot;this&quot; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin<a href="">'f'</a>; // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-this/">Read more →</a></div>
       
     </div>
     

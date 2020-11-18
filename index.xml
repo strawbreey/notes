@@ -10,10 +10,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 14 Sep 2020 16:46:08 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2020 19:17:20 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 0134 Gas Station</title>
+      <link>/posts/leetcode-0134-gas-station/</link>
+      <pubDate>Wed, 18 Nov 2020 10:05:57 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0134-gas-station/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
+You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.
+Return the starting gas station&amp;rsquo;s index if you can travel around the circuit once in the clockwise direction, otherwise return -1.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Hugo Host on Github</title>
@@ -277,7 +299,7 @@ tokenList.toggle(token, force);参数列表
         
         
         
-          更新远程分支 git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git.
+          更新远程分支 git remote update origin --prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | --verbose]git remote add [-t &amp;lt;branch&amp;gt;] [-m &amp;lt;master&amp;gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote rename &amp;lt;old&amp;gt; &amp;lt;new&amp;gt;git remote remove &amp;lt;name&amp;gt;git remote set-head &amp;lt;name&amp;gt; (-a | --auto | -d | --delete | &amp;lt;branch&amp;gt;)git remote set-branches [--add] &amp;lt;name&amp;gt; &amp;lt;branch&amp;gt;…​git remote get-url [--push] [--all] &amp;lt;name&amp;gt;git remote set-url [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt; [&amp;lt;oldurl&amp;gt;]git remote set-url --add [--push] &amp;lt;name&amp;gt; &amp;lt;newurl&amp;gt;git remote set-url --delete [--push] &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;git remote [-v | --verbose] show [-n] &amp;lt;name&amp;gt;…​git remote prune [-n | --dry-run] &amp;lt;name&amp;gt;…​git remote [-v | --verbose] update [-p | --prune] [(&amp;lt;group&amp;gt; | &amp;lt;remote&amp;gt;)…​]例子 # 查看本地分支 git branch# 查看全部分支git branch -a# 列出已经存在的远程分支ygit remote# =&amp;gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&amp;gt; origingit branch -r# =&amp;gt; origin/HEAD -&amp;gt; origin/master# =&amp;gt; origin/master# 添加一个远程仓库git remote add staging git://git.
           
         
         </description>
@@ -839,13 +861,11 @@ Input: x = 123Output: 321Input: x = -123Output: -321Input: x = 120Output: 2
         
         
         
-          两数之和
-给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
-Two Sum
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+          Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
+给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
 Example: Input: nums = [2,7,11,15], target = 9Output: [0,1] Because nums[0] + nums[1] == 9, we return [0, 1].
           
         
@@ -2292,7 +2312,7 @@ echo $SHELLshell命令 shell命令可以分为以下三类：
           cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl。
 cURL是一个开源项目，主要的产品是curl（命令行工具）和libcurl（C语言的API库），两者功能均是：基于网络协议，对指定URL进行网络传输。[2][3]
 cURL涉及是任何网络协议传输，不涉及对具体数据的具体处理。（如：html的渲染等）
-# 简单模式curl http://example.com# 详细（verbose）模式：curl --verbose http://example.comcurl -v http://example.com# 下载（output）curl --output output.html http://example.com/curl -o output.html http://example.com/# 重定向：（curl默认不会重定向）curl --location output.html http://example.com/curl -L output.html http://example.com/curl http://httpbin.org/user-agentcurl https://httpbin.org/get?show_env=1curl 和 wget 区别 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。
+Example # 简单模式curl http://example.com# 详细（verbose）模式：curl --verbose http://example.comcurl -v http://example.com# 下载（output）curl --output output.html http://example.com/curl -o output.html http://example.com/# 重定向：（curl默认不会重定向）curl --location output.html http://example.com/curl -L output.html http://example.com/curl http://httpbin.org/user-agentcurl https://httpbin.org/get?show_env=1curl 和 wget 区别 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。
 在下载上，也各有所长，wget可以递归，支持断点；而curl支持URL中加入变量，因此可以批量下载。
 libcurl libcurl主要功能就是用不同的协议连接和沟通不同的服务器~也就是相当封装了的sockPHP 支持libcurl（允许你用不同的协议连接和沟通不同的服务器）。 libcurl当前支持http, https, ftp, gopher, telnet, dict, file, 和ldap 协议。libcurl同样支持HTTPS证书授权，HTTP POST, HTTP PUT, FTP 上传（当然你也可以使用PHP的ftp扩展）, HTTP基本表单上传，代理，cookies,和用户认证。
 php cURL PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯各种服务器、使用各种协议。libcurl 目前支持的协议有 http、https、ftp、gopher、telnet、dict、file、ldap。 libcurl 同时支持 HTTPS 证书、HTTP POST、HTTP PUT、 FTP 上传(也能通过 PHP 的 FTP 扩展完成)、HTTP 基于表单的上传、代理、cookies、用户名+密码的认证。
@@ -3965,7 +3985,7 @@ SET runoob &amp;#34;菜鸟教程&amp;#34;GET runoob #菜鸟教程 一个键最�
           原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
 原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
 Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
-# 生成原理图ng generate my-schematic-collection:my-schematic-name# orng generate my-schematic-name --collection collection-name配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
+生成原理图 ng generate my-schematic-collection:my-schematic-name# orng generate my-schematic-name --collection collection-name配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
 为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
 添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
 生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
@@ -4294,26 +4314,6 @@ todo: References  netty/netty netty developer guide netty.io  Wrods rapidperfor
 如果涉及的软件采用面向对象编程，那么远程过程调用亦可称作遠端呼叫或遠端方法呼叫，例：Java RMI。
 RPC是一种进程间通信的模式，程序分布在不同的地址空间里。如果在同一主机里，RPC可以通过不同的虚拟地址空间（即便使用相同的物理地址）进行通讯，而在不同的主机间，则通过不同的物理地址进行交互。许多技术（常常是不兼容）都是基于这种概念而实现的。
 References Words distributed Procedureexecute 执行
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Showcase</title>
-      <link>/showcase/</link>
-      <pubDate>Mon, 14 Sep 2020 16:46:08 +0800</pubDate>
-      
-      <guid>/showcase/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
           
         
         </description>
@@ -5059,7 +5059,7 @@ ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altota
         
         
         
-          
+          echo &amp;#34;Deleting old publication&amp;#34;rm -rf publicmkdir publicgit worktree prunerm -rf .git/worktrees/public/echo &amp;#34;Checking out gh-pages branch into public&amp;#34;git worktree add -B gh-pages public upstream/gh-pagesecho &amp;#34;Removing existing files&amp;#34;rm -rf public/*echo &amp;#34;Generating site&amp;#34;hugoecho &amp;#34;Updating gh-pages branch&amp;#34;cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;#34;Publishing to gh-pages (publish.sh)&amp;#34;
           
         
         </description>

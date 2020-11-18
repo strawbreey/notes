@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content=""
+  content="echo &amp;#34;Deleting old publication&amp;#34;rm -rf publicmkdir publicgit worktree prunerm -rf .git/worktrees/public/echo &amp;#34;Checking out gh-pages branch into public&amp;#34;git worktree add -B gh-pages public upstream/gh-pagesecho &amp;#34;Removing existing files&amp;#34;rm -rf public/*echo &amp;#34;Generating site&amp;#34;hugoecho &amp;#34;Updating gh-pages branch&amp;#34;cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;#34;Publishing to gh-pages (publish.sh)&amp;#34;"
 />
 <meta
   name="keywords"
@@ -44,12 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Submodule"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="echo &#34;Deleting old publication&#34;rm -rf publicmkdir publicgit worktree prunerm -rf .git/worktrees/public/echo &#34;Checking out gh-pages branch into public&#34;git worktree add -B gh-pages public upstream/gh-pagesecho &#34;Removing existing files&#34;rm -rf public/*echo &#34;Generating site&#34;hugoecho &#34;Updating gh-pages branch&#34;cd public &amp;&amp; git add --all &amp;&amp; git commit -m &#34;Publishing to gh-pages (publish.sh)&#34;"/>
 
 
 
 <meta property="og:title" content="Git Submodule" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="echo &#34;Deleting old publication&#34;rm -rf publicmkdir publicgit worktree prunerm -rf .git/worktrees/public/echo &#34;Checking out gh-pages branch into public&#34;git worktree add -B gh-pages public upstream/gh-pagesecho &#34;Removing existing files&#34;rm -rf public/*echo &#34;Generating site&#34;hugoecho &#34;Updating gh-pages branch&#34;cd public &amp;&amp; git add --all &amp;&amp; git commit -m &#34;Publishing to gh-pages (publish.sh)&#34;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/git-submodule/" />
 <meta property="article:published_time" content="2020-08-31T10:20:39+08:00" />
@@ -168,7 +168,24 @@
 
     <div class="post-content">
       
-      
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;Deleting old publication&#34;</span>
+rm -rf public
+mkdir public
+git worktree prune
+rm -rf .git/worktrees/public/
+
+echo <span style="color:#e6db74">&#34;Checking out gh-pages branch into public&#34;</span>
+git worktree add -B gh-pages public upstream/gh-pages
+
+echo <span style="color:#e6db74">&#34;Removing existing files&#34;</span>
+rm -rf public/*
+
+echo <span style="color:#e6db74">&#34;Generating site&#34;</span>
+hugo
+
+echo <span style="color:#e6db74">&#34;Updating gh-pages branch&#34;</span>
+cd public <span style="color:#f92672">&amp;&amp;</span> git add --all <span style="color:#f92672">&amp;&amp;</span> git commit -m <span style="color:#e6db74">&#34;Publishing to gh-pages (publish.sh)&#34;</span>
+</code></pre></div>
     </div>
     
       

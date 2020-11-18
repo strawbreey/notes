@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>leetcode on Strawbreey Notes</title>
+    
+    
+    
+    <link>/tags/leetcode/</link>
+    <description>Recent content in leetcode on Strawbreey Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 17 Nov 2020 09:56:46 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode 1030 Matrix Cells in Distance Order</title>
+      <link>/posts/leetcode-1030-matrix-cells-in-distance-order/</link>
+      <pubDate>Tue, 17 Nov 2020 09:56:46 +0800</pubDate>
+      
+      <guid>/posts/leetcode-1030-matrix-cells-in-distance-order/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where 0 &amp;lt;= r &amp;lt; R and 0 &amp;lt;= c &amp;lt; C.
+Additionally, we are given a cell in that matrix with coordinates (r0, c0).
+Return the coordinates of all cells in the matrix, sorted by their distance from (r0, c0) from smallest distance to largest distance. Here, the distance between two cells (r1, c1) and (r2, c2) is the Manhattan distance, |r1 - r2| + |c1 - c2|.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0001 Two Sum</title>
+      <link>/posts/leetcode-0001-two-sum/</link>
+      <pubDate>Fri, 06 Nov 2020 17:03:36 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0001-two-sum/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
+给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+Example: Input: nums = [2,7,11,15], target = 9Output: [0,1] Because nums[0] + nums[1] == 9, we return [0, 1].
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

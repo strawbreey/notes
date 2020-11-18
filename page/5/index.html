@@ -52,7 +52,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+<meta property="og:updated_time" content="2020-08-28T19:17:20+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
@@ -152,6 +152,43 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-promise/">Js Promise</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-21
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Promise 对象的构造器（constructor）语法如下：
+let promise = new Promise(function(resolve, reject) {// executor（生产者代码，“歌手”）});当 executor 获得了结果，无论是早还是晚都没关系，它应该调用以下回调之一：
+resolve(value) — 如果任务成功完成并带有结果 value。 reject(error) — 如果出现了 error，error 即为 error 对象。
+Promise 是一个对象，它代表了一个异步操作的最终完成或者失败。
+// 成功的回调函数function successCallback(result) {console.log(&quot;音频文件创建成功: &quot; + result);}// 失败的回调函数function failureCallback(error) {console.log(&quot;音频文件创建失败: &quot; + error);}createAudioFileAsync(audioSettings, successCallback, failureCallback)const promise = createAudioFileAsync(audioSettings); promise.then(successCallback, failureCallback);// 简写createAudioFileAsync(audioSettings).then(successCallback, failureCallback);约定 不同于“老式”的传入回调，在使用 Promise 时，会有以下约定：
+在本轮 事件循环 运行完成之前，回调函数是不会被调用的。 即使异步操作已经完成（成功或失败），在这之后通过 then() 添加的回调函数也会被调用。 通过多次调用 then() 可以添加多个回调函数，它们会按照插入顺序进行执行。  Promise 很棒的一点就是链式调用（chaining）。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-promise/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/php-header/">Php Header</a></h1>
@@ -592,14 +629,13 @@ How Much Can You Change Yourself?
       <div class="post-content">
         
           
-            <p>cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl。
+            cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl。
 cURL是一个开源项目，主要的产品是curl（命令行工具）和libcurl（C语言的API库），两者功能均是：基于网络协议，对指定URL进行网络传输。[2][3]
-cURL涉及是任何网络协议传输，不涉及对具体数据的具体处理。（如：html的渲染等）</p>
-<h1 id="简单模式curl-httpexamplecom-详细verbose模式curl---verbose-httpexamplecomcurl--v-httpexamplecom-下载outputcurl---output-outputhtml-httpexamplecomcurl--o-outputhtml-httpexamplecom-重定向curl默认不会重定向curl---location-outputhtml-httpexamplecomcurl--l-outputhtml-httpexamplecomcurl-httphttpbinorguser-agentcurl-httpshttpbinorggetshow_env1curl-和-wget-区别-wget是个专职的下载利器简单专一极致而curl可以下载但是长项不在于下载而在于模拟提交web数据postget请求调试网页等等">简单模式curl <a href="http://example.com">http://example.com</a># 详细（verbose）模式：curl &ndash;verbose <a href="http://example.com">http://example.com</a>curl -v <a href="http://example.com">http://example.com</a># 下载（output）curl &ndash;output output.html <a href="http://example.com/">http://example.com/</a>curl -o output.html <a href="http://example.com/">http://example.com/</a># 重定向：（curl默认不会重定向）curl &ndash;location output.html <a href="http://example.com/">http://example.com/</a>curl -L output.html <a href="http://example.com/">http://example.com/</a>curl <a href="http://httpbin.org/user-agent">http://httpbin.org/user-agent</a>curl <a href="https://httpbin.org/get?show_env=1">https://httpbin.org/get?show_env=1</a>curl 和 wget 区别 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。</h1>
-<p>在下载上，也各有所长，wget可以递归，支持断点；而curl支持URL中加入变量，因此可以批量下载。
+cURL涉及是任何网络协议传输，不涉及对具体数据的具体处理。（如：html的渲染等）
+Example # 简单模式curl <a href="http://example.com">http://example.com</a># 详细（verbose）模式：curl &ndash;verbose <a href="http://example.com">http://example.com</a>curl -v <a href="http://example.com">http://example.com</a># 下载（output）curl &ndash;output output.html <a href="http://example.com/">http://example.com/</a>curl -o output.html <a href="http://example.com/">http://example.com/</a># 重定向：（curl默认不会重定向）curl &ndash;location output.html <a href="http://example.com/">http://example.com/</a>curl -L output.html <a href="http://example.com/">http://example.com/</a>curl <a href="http://httpbin.org/user-agent">http://httpbin.org/user-agent</a>curl <a href="https://httpbin.org/get?show_env=1">https://httpbin.org/get?show_env=1</a>curl 和 wget 区别 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。
+在下载上，也各有所长，wget可以递归，支持断点；而curl支持URL中加入变量，因此可以批量下载。
 libcurl libcurl主要功能就是用不同的协议连接和沟通不同的服务器~也就是相当封装了的sockPHP 支持libcurl（允许你用不同的协议连接和沟通不同的服务器）。 libcurl当前支持http, https, ftp, gopher, telnet, dict, file, 和ldap 协议。libcurl同样支持HTTPS证书授权，HTTP POST, HTTP PUT, FTP 上传（当然你也可以使用PHP的ftp扩展）, HTTP基本表单上传，代理，cookies,和用户认证。
-php cURL PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯各种服务器、使用各种协议。libcurl 目前支持的协议有 http、https、ftp、gopher、telnet、dict、file、ldap。 libcurl 同时支持 HTTPS 证书、HTTP POST、HTTP PUT、 FTP 上传(也能通过 PHP 的 FTP 扩展完成)、HTTP 基于表单的上传、代理、cookies、用户名+密码的认证。</p>
-
+php cURL PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯各种服务器、使用各种协议。libcurl 目前支持的协议有 http、https、ftp、gopher、telnet、dict、file、ldap。 libcurl 同时支持 HTTPS 证书、HTTP POST、HTTP PUT、 FTP 上传(也能通过 PHP 的 FTP 扩展完成)、HTTP 基于表单的上传、代理、cookies、用户名+密码的认证。
           
         
       </div>
@@ -832,36 +868,6 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
       </div>
       
         <div><a class="read-more button" href="/posts/js-module/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-what/">Linux What</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-14
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-what/">Read more →</a></div>
       
     </div>
     

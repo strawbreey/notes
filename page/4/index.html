@@ -52,7 +52,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-09-14T16:46:08+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+<meta property="og:updated_time" content="2020-08-28T19:17:20+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
 
 
 
@@ -152,6 +152,40 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-this/">Js This</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-29
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
+this 的值是在代码运行时计算出来的，它取决于代码上下文。
+let user = { name: &quot;John&quot; };let admin = { name: &quot;Admin&quot; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &quot;this&quot; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin<a href="">'f'</a>; // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-this/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/posts/good-doctor-1-4/">Good Doctor 1 4</a></h1>
@@ -814,43 +848,6 @@ one(): returns a single record populated with the first row of data. all(): retu
       </div>
       
         <div><a class="read-more button" href="/posts/yii-active-query/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-promise/">Js Promise</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Promise 对象的构造器（constructor）语法如下：
-let promise = new Promise(function(resolve, reject) {// executor（生产者代码，“歌手”）});当 executor 获得了结果，无论是早还是晚都没关系，它应该调用以下回调之一：
-resolve(value) — 如果任务成功完成并带有结果 value。 reject(error) — 如果出现了 error，error 即为 error 对象。
-Promise 是一个对象，它代表了一个异步操作的最终完成或者失败。
-// 成功的回调函数function successCallback(result) {console.log(&quot;音频文件创建成功: &quot; + result);}// 失败的回调函数function failureCallback(error) {console.log(&quot;音频文件创建失败: &quot; + error);}createAudioFileAsync(audioSettings, successCallback, failureCallback)const promise = createAudioFileAsync(audioSettings); promise.then(successCallback, failureCallback);// 简写createAudioFileAsync(audioSettings).then(successCallback, failureCallback);约定 不同于“老式”的传入回调，在使用 Promise 时，会有以下约定：
-在本轮 事件循环 运行完成之前，回调函数是不会被调用的。 即使异步操作已经完成（成功或失败），在这之后通过 then() 添加的回调函数也会被调用。 通过多次调用 then() 可以添加多个回调函数，它们会按照插入顺序进行执行。  Promise 很棒的一点就是链式调用（chaining）。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-promise/">Read more →</a></div>
       
     </div>
     
