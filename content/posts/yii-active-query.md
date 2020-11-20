@@ -4,10 +4,6 @@ date: 2020-10-22T11:41:38+08:00
 draft: false
 ---
 
-
-
-
-
 ActiveQuery mainly provides the following methods to retrieve the query results:
 
 - one(): returns a single record populated with the first row of data.
