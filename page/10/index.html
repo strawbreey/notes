@@ -154,6 +154,441 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/yii-run-applications/">Yii Run Applications</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
+一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/yii-run-applications/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/javascript-prototype-apply/">Javascript Prototype Apply</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。
+const numbers = [5, 6, 2, 3, 7];const max = Math.max.apply(null, numbers); // expected output: 7const min = Math.min.apply(null, numbers); // expected output: 2Syntax func.apply(thisArg, [argsArray])
+thisArg
+The value of this provided for the call to func.
+Note that this may not be the actual value seen by the method: if the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/javascript-prototype-apply/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/what-happens-when-you-open-website/">What Happens When You Open Website</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/what-happens-when-you-open-website/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/nginx-try-files/">Nginx Try Files</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/nginx-try-files/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/auth/">Auth</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            前后端中常用的鉴权方式有四种
+HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权)  HTTP Basic Authentication  客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步请求，此时，假设客户端尚未被验证，则客户端提供如下请求至服务器:   Get /index.html HTTP/1.0 Host:www.google.com 服务器向客户端发送验证请求代码401,（WWW-Authenticate: Basic realm=”google.com”这句话是关键，如果没有客户端不会弹出用户名和密码输入界面）服务器返回的数据大抵如下：  HTTP/1.0 401 Unauthorised Server: SokEvo/1.0 WWW-Authenticate: Basic realm=”google.com” Content-Type: text/html Content-Length: xxx  当符合http1.0或1.1规范的客户端（如IE，FIREFOX）收到401返回值时，将自动弹出一个登录窗口，要求用户输入用户名和密码。
+用户输入用户名和密码后，将用户名及密码以BASE64加密方式加密，并将密文放入前一条请求信息中，则客户端发送的第一条请求信息则变成如下内容：
+Get /index.html HTTP/1.0 Host:www.google.com Authorization: Basic d2FuZzp3YW5n 服务器收到上述请求信息后，将 Authorization 字段后的用户信息取出、解密，将解密后的用户名及密码与用户数据库进行比较验证，如用户名及密码正确，服务器则根据请求，将所请求资源发送给客户端  优点：
+基本认证的一个优点是基本上所有流行的网页浏览器都支持基本认证。基本认证很少在可公开访问的互联网网站上使用，有时候会在小的私有系统中使用（如路由器网页管理接口）。后来的机制HTTP摘要认证是为替代基本认证而开发的，允许密钥以相对安全的方式在不安全的通道上传输。
+程序员和系统管理员有时会在可信网络环境中使用基本认证，使用Telnet或其他明文网络协议工具手动地测试Web服务器。这是一个麻烦的过程，但是网络上传输的内容是人可读的，以便进行诊断。
+缺点：
+虽然基本认证非常容易实现，但该方案创建在以下的假设的基础上，即：客户端和服务器主机之间的连接是安全可信的。特别是，如果没有使用SSL/TLS这样的传输层安全的协议，那么以明文传输的密钥和口令很容易被拦截。该方案也同样没有对服务器返回的信息提供保护。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/auth/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/netty/">Netty</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/netty/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/remote-procedure-call/">Remote Procedure Call</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-15
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/remote-procedure-call/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/angular-directive/">Angular Directive</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          Angular Directive
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/angular-directive/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/reactive-forms/">Reactive Forms</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            响应式表单提供了一种模型驱动的方式来处理表单输入，其中的值会随时间而变化。
+响应式表单和模板驱动表单的区别 响应式表单和模板驱动表单以不同的方式处理和管理表单数据。每种方法都有各自的优点。
+响应式表单提供对底层表单对象模型直接、显式的访问。它们与模板驱动表单相比，更加健壮：它们的可扩展性、可复用性和可测试性都更高。如果表单是你的应用程序的关键部分，或者你已经在使用响应式表单来构建应用，那就使用响应式表单。
+模板驱动表单依赖模板中的指令来创建和操作底层的对象模型。它们对于向应用添加一个简单的表单非常有用，比如电子邮件列表注册表单。它们很容易添加到应用中，但在扩展性方面不如响应式表单。如果你有可以只在模板中管理的非常基本的表单需求和逻辑，那么模板驱动表单就很合适。
+Tables 响应式 模板驱动     建立表单模型 显式的，在组件类中创建 隐式的，由指令创建   数据模型 结构化和不可变的 非结构化和可变的   可预测性 同步 异步   表单验证 函数 指令    响应式表单比模板驱动表单更有可伸缩性。它们提供对底层表单 API 的直接访问，以及对表单数据模型的同步访问，从而可以更轻松地创建大型表单。响应式表单需要较少的测试设置，测试时不需要深入理解变更检测，就能正确测试表单更新和验证。
+模板驱动表单专注于简单的场景，可复用性没那么高。它们抽象出了底层表单 API，并且只提供对表单数据模型的异步访问。对模板驱动表单的这种抽象也会影响测试。测试程序非常依赖于手动触发变更检测才能正常运行，并且需要进行更多设置工作。
+常用表单基础类 响应式表单和模板驱动表单都建立在下列基础类之上。
+FormControl 实例用于追踪单个表单控件的值和验证状态 FormGroup 用于追踪一个表单控件组的值和状态 FormArray 用于追踪表单控件数组的值和状态 ControlValueAccessor 用于在 Angular 的 FormControl 实例和原生 DOM 元素之间创建一个桥梁。  interface ControlValueAccessor {writeValue(obj: any): void // Writes a new value to the element.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/reactive-forms/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/elasticsearch/">Elasticsearch</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            全文搜索属于最常见的需求，开源的 Elasticsearch （以下简称 Elastic）是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它
+Elastic 的底层是开源库 Lucene。但是，你没法直接用 Lucene，必须自己写代码去调用它的接口。Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。
+全文搜索引擎(elasticsearch) install # 下载,解压wget <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip</a>unzip elasticsearch-5.5.1.zipcd elasticsearch-5.5.1/ # 启动./bin/elasticsearch注: Elastic 需要 Java 8 环境。默认情况下，Elastic 只允许本机访问，如果需要远程访问，可以修改 Elastic 安装目录的config/elasticsearch.yml文件，去掉network.host的注释，将它的值改成0.0.0.0，然后重新启动Elastic。
+introduction Node 与 Cluster Elastic 本质上是一个分布式数据库，允许多台服务器协同工作，每台服务器可以运行多个Elastic 实例。 单个 Elastic 实例称为一个节点（node）。一组节点构成一个集群（cluster）。
+Index Elastic 会索引所有字段，经过处理后写入一个反向索引（Inverted Index）。查找数据的时候，直接查找该索引。
+所以，Elastic 数据管理的顶层单位就叫做 Index（索引）。它是单个数据库的同义词。每个 Index （即数据库）的名字必须是小写。
+curl -X GET 'http://localhost:9200/_cat/indices?v'Document Index 里面单条的记录称为 Document（文档）。许多条 Document 构成了一个 Index。
+// document demo{&quot;user&quot;: &quot;张三&quot;,&quot;title&quot;: &quot;工程师&quot;,&quot;desc&quot;: &quot;数据库管理&quot;}同一个 Index 里面的 Document，不要求有相同的结构（scheme），但是最好保持相同，这样有利于提高搜索效率。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/elasticsearch/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/redis-cache/">Redis Cache</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/redis-cache/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-array-index/">Js Array Index</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-11
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-array-index/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql/">Sql</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-09-10
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            数据库 数据库是一以某种方式存储的数据集合
+选择数据库 crashcourse
+use crashcourse;查看数据库信息
+show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息显示数据库内表的列表
+show TABLES; // 显示当前数据库内的表show status // 显示服务器状态信息show create database / show create table #显示创建特定数据库/表show GRANTS // 显示4. 查询数据(SELECT) SELECT prod_name FROM products; &ndash; 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; &ndash; 检索多列数据SELECT * FROM products; &ndash; 检索所有数据SELECT vend_id FROM products; &ndash; 检索vend—id 列SELECT DISTINCT vend_id FROM products; &ndash; 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; &ndash; 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; &ndash; 检索prod_name, 并只返回5条数据SELECT product.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/linux-install-mysql/">Linux Install Mysql</a></h1>
       <div class="post-meta">
         
@@ -376,443 +811,6 @@ $ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
       </div>
       
         <div><a class="read-more button" href="/posts/php-fpm/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-closure/">Js Closure</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-07
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起构成闭包（closure）。也就是说，闭包可以让你从内部函数访问外部函数作用域。在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包。
-词法作用域 function init() {var name = &quot;Mozilla&quot;; // name 是一个被 init 创建的局部变量 function displayName() { // displayName() 是内部函数，一个闭包 alert(name); // 使用了父函数中声明的变量 }displayName();}init();init() 创建了一个局部变量 name 和一个名为 displayName() 的函数。displayName() 是定义在 init() 里的内部函数，并且仅在 init() 函数体内可用。请注意，displayName() 没有自己的局部变量。然而，因为它可以访问到外部函数的变量，所以 displayName() 可以使用父函数 init() 中声明的变量 name 。
-闭包 function makeFunc() {var name = &quot;Mozilla&quot;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();myFunc();// =&gt; function makeFunc() {var name = &quot;Mozilla&quot;;function displayName() {alert(name);}return displayName;}var myFunc = makeFunc();var myFunc = displayName() {alert(name);}(displayName() {alert(name);})()function makeAdder(x) {return function(y) {return x + y;};}var add5 = makeAdder(5);var add10 = makeAdder(10);console.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-closure/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git-workflow/">Git Workflow</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-07
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/git-workflow/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/debounce-and-throttle/">Debounce and Throttle</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-07
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
-实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6+import { of, timer } from 'rxjs';import { debounce } from 'rxjs/operators';// 发出四个字符串const example = of('WAIT', 'ONE', 'SECOND', 'Last will display');/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: 'Last will display'*/const subscribe = debouncedExample.subscribe(val =&gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])js 实现方式:
-截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
-实现方式：每次触发事件时，如果当前周期内有等待执行的函数，则取消当前事件  import { interval } from 'rxjs';import { throttle } from 'rxjs/operators';// 每1秒发出值const source = interval(1000);// 节流2秒后才发出最新值const example = source.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/debounce-and-throttle/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/go-interview/">Go Interview</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            func main(){s := []int{5}fmt.Println(len(s), cap(s))s = append(s, 7)fmt.Println(len(s), cap(s))s = append(s, 9)fmt.Println(len(s), cap(s))x := append(s, 11)fmt.Println(len(s), cap(s))y := append(s, 12)fmt.Println(len(s), cap(s))fmt.Println(s, x, y)// 输出结果 [5 7 9] [5 7 9 12] [5 7 9 12]s := []int{5, 7, 9}x := append(s, 11)y := append(s, 12)fmt.Println(s,x,y)// 输出结果 [5 7 9] [5 7 9 11] [5 7 9 12]s := []int{5} // 初始化切片为[5], cap(s) = 1 len (s) = 1 fmt.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/go-interview/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/go-slice/">Go Slice</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            go slice Go 语言切片是对数组的抽象。
-Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片(“动态数组”),与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。
-定义切片 var identifier []type切片不需要说明长度。
-或使用make()函数来创建切片:
-var slice1 []type = make([]type, len)// 也可以简写为slice1 := make([]type, len)也可以指定容量，其中capacity为可选参数。
-make([]T, length, capacity)slice init s := [] int {1,2,3 } // 直接初始化切片，[]表示是切片类型，{1,2,3}初始化值依次是1,2,3.其cap=len=3s := arr[:]// 初始化切片s,是数组arr的引用s := arr[startIndex:endIndex] // 将arr中从下标startIndex到endIndex-1 下的元素创建为一个新的切片s1 := s[startIndex:endIndex] // 通过切片s初始化切片s1s :=make([]int,len,cap) // 通过内置函数make()初始化切片s,[]int 标识为其元素类型为int的切片len() 和 cap() 切片是可索引的，并且可以由 len() 方法获取长度。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/go-slice/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/go-start/">Go Start</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            go command ( go 常用命令) Usage:go &lt;command&gt; [arguments]The commands are:bug start a bug reportbuild compile packages and dependenciesclean remove object files and cached filesdoc show documentation for package or symbolenv print Go environment informationfix update packages to use new APIsfmt gofmt (reformat) package sourcesgenerate generate Go files by processing sourceget add dependencies to current module and install theminstall compile and install packages and dependencieslist list packages or modulesmod module maintenancerun compile and run Go programtest test packagestool run specified go toolversion print Go versionvet report likely mistakes in packagesUse &quot;go help &lt;command&gt;&quot; for more information about a command.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/go-start/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/webassembly/">WebAssembly</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            WebAssembly WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.
-Efficient and fast Safe Open and debuggable Part of the open web platform Start $ git clone <a href="https://github.com/juj/emsdk.git">https://github.com/juj/emsdk.git</a>$ cd emsdk$ ./emsdk install sdk-incoming-64bit binaryen-master-64bit$ ./emsdk activate sdk-incoming-64bit binaryen-master-64bit$ source ./emsdk_env.sh如何使用 WebAssembly 整个代码库都用 WebAssembly。主要使用 WebAssembly 计算，UI 使用 JavaScript/HTML。在大型 JavaScript/HTML 应用中复用已经存在的 WebAssembly 代码。像使用助手库一样，分担一些计算任务。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/webassembly/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/angular-service/">Angular Service</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          Angular Directive
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/angular-service/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/css-interivew-repaint-and-refolw/">Css Interivew Repaint and Refolw</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/css-interivew-repaint-and-refolw/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/css-interview-bfc/">Css Interview BFC</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-03
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Describe BFC (Block Formatting Context) and how it works.
-BFC(Block formatting context) 块级格式化上下文 A block formatting context is a part of a visual CSS rendering of a web page. It’s the region in which the layout of block boxes occurs and in which floats interact with other elements.
-BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域
-what A block formatting context is created by at least one of the following:
-The root element of the document ().
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/css-interview-bfc/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-command/">Mysql Command</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-01
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mysql-command/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/go-types/">Go Types</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-01
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/go-types/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-install-php/">Linux Install Php</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-01
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Install PHP install php5.6 wget -c <a href="http://cn2.php.net/distributions/php-5.6.21.tar.gz">http://cn2.php.net/distributions/php-5.6.21.tar.gz</a>tar -zxvf php-5.6.21.tar.gz格式：tar zcvf 压缩后的路径及包名 你要压缩的文件
-　z:gzip压缩
-　c:创建压缩包
-　v:显示打包压缩解压过程
-　f:接着压缩
-　t:查看压缩包内容
-　x:解压
-　X:指定文件列表形式排除不需要打包压缩的文件或目录
-　-exclude:指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等）
-　-C:解压到指定目录
-例如：将/root/cs/test/下文件压缩到/root/cs/test1文件下命名为1
-tar zcf /root/cs/test1/1.tar.gz /root/cs/test/
-zcvf : 打包压缩 xvf: 解压缩
-php 下载 解压 配置 编译 <a href="https://www.php.net/distributions/php-7.2.33.tar.gz">https://www.php.net/distributions/php-7.2.33.tar.gz</a>
-wget <a href="http://cn2.php.net/distributions/php-7.2.33.tar.gz">http://cn2.php.net/distributions/php-7.2.33.tar.gz</a> tar xf php-7.2.33.tar.xz
-tar -zxvf php-7.2.33.tar.xz
-./configure –prefix=/usr/local/php72 –with-config-file-path=/usr/local/php72/etc –with-mysql=mysqlnd –with-mysqli=mysqlnd –with-pdo-mysql=mysqlnd –with-gd –with-iconv –with-zlib –enable-xml –enable-bcmath –enable-shmop –enable-sysvsem –enable-inline-optimization –enable-mbregex –enable-fpm –enable-mbstring –enable-ftp –enable-gd-native-ttf –with-openssl –enable-pcntl –enable-sockets –with-xmlrpc –enable-zip –enable-soap –with-pear –with-gettext –enable-session –with-mcrypt –with-curl
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-install-php/">Read more →</a></div>
       
     </div>
     

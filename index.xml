@@ -16,6 +16,323 @@
     
     
     <item>
+      <title>Git Checkout</title>
+      <link>/posts/git-checkout/</link>
+      <pubDate>Fri, 20 Nov 2020 15:52:25 +0800</pubDate>
+      
+      <guid>/posts/git-checkout/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          checkout是Git最常用的命令之一
+checkout在CVS和SVN中都是检出的意思，从版本库检出一个版本，在Git中就不是这么简单了。手册上是这样介绍的： git-checkout - Switch branches or restore working tree files
+语法
+git checkout [-q] [-f] [-m] [&amp;lt;branch&amp;gt;]git checkout [-q] [-f] [-m] --detach [&amp;lt;branch&amp;gt;]git checkout [-q] [-f] [-m] [--detach] &amp;lt;commit&amp;gt;git checkout [-q] [-f] [-m] [[-b|-B|--orphan] &amp;lt;new_branch&amp;gt;] [&amp;lt;start_point&amp;gt;]git checkout [-f|--ours|--theirs|-m|--conflict=&amp;lt;style&amp;gt;] [&amp;lt;tree-ish&amp;gt;] [--] &amp;lt;pathspec&amp;gt;…​git checkout [-f|--ours|--theirs|-m|--conflict=&amp;lt;style&amp;gt;] [&amp;lt;tree-ish&amp;gt;] --pathspec-from-file=&amp;lt;file&amp;gt; [--pathspec-file-nul]git checkout (-p|--patch) [&amp;lt;tree-ish&amp;gt;] [--] [&amp;lt;pathspec&amp;gt;…​]描述
+在Git里面，checkout用于切换分支或者恢复工作树的文件。
+ 新建一个hotfix分支  git checkout -b | -B &amp;lt;new _branch&amp;gt; [&amp;lt;start point&amp;gt;]git checkout -b hotfix-1.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Ascii</title>
+      <link>/posts/ascii/</link>
+      <pubDate>Fri, 20 Nov 2020 15:49:11 +0800</pubDate>
+      
+      <guid>/posts/ascii/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Design</title>
+      <link>/posts/mysql-design/</link>
+      <pubDate>Fri, 20 Nov 2020 15:24:10 +0800</pubDate>
+      
+      <guid>/posts/mysql-design/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          字符集 统一使用 utf8mb4 MySQL在 5.5.3 之后增加了 utf8mb4 字符编码，简单的说utf8mb4才是真正的utf-8，因为它可以支持4个字节每个字符，ps：当我们要存储emoji表情就必须使用utf8mb4，性能上不会有损失
+建表规范   字段名必须小写
+  小数类型为decimal
+  如果存储的字符串长度几乎相等，使用 char 定长字符串类型（与varchar的区别，例如，存储字符串“abc&amp;rdquo;，对于char (10)，表示你存储的字符将占10个字节(包括7个空字符)，而同样的varchar (10)则只占用3个字节的长度，10只是最大值，当你存储的字符小于10时，按实际长度存储）
+  varchar 是可变长字符串，不会预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索 引效率
+  表必备三字段:id, date_create, date_update
+  为避免关连查询，字段允许适当冗余，以高查询性能，但必须考虑数据一致。冗余字段应遵循 1.不是频繁修改的字段 2.不是 varchar 超长字段，更不能是 text 字段
+  合适的字符存储长度，无负数的情况需要使用无符号位存储，扩大表示范围
+ unsigned tinyint	无符号位 0-255 // 一个字节 8 bit unsigned smallint	无符号位 0-65535 // 八个字节unsigned int	无符号位 约 0-42.9亿 // 64个字节unsigned bigint	无符号位 约 0-10的19次方  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Study Deploy</title>
+      <link>/posts/php-study-deploy/</link>
+      <pubDate>Fri, 20 Nov 2020 14:18:29 +0800</pubDate>
+      
+      <guid>/posts/php-study-deploy/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装phpstudy 的时候会选一个www的路径，
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vscode Format</title>
+      <link>/posts/vscode-format/</link>
+      <pubDate>Fri, 20 Nov 2020 11:39:17 +0800</pubDate>
+      
+      <guid>/posts/vscode-format/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          vs code格式化代码的快捷键如下：（来源于这里）
+On Windows Shift + Alt + F On Mac Shift + Option + F On Ubuntu Ctrl + Shift + I
+但是自带的格式化并不能满足我的需求，这个时候，不得不说插件大法好。
+代码格式化为eslint风格
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Linked List</title>
+      <link>/posts/js-linked-list/</link>
+      <pubDate>Fri, 20 Nov 2020 09:50:38 +0800</pubDate>
+      
+      <guid>/posts/js-linked-list/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到的，每种语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问其元素。然而，这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入或移除项的成本很高，因为需要移动元素。（尽管我们已经学过，JavaScript有来自Array类的方法可以帮我们做这些事，但背后的情况同样如此。）链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。下图展示了一个链表的结构。[插图]相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所需的元素
+链表的设计 设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作
+Node 类
+//节点function Node(element) {this.element = element; //当前节点的元素 this.next = null; //下一个节点链接}LinkedList类
+//链表类function LList () {this.head = new Node( &amp;#39;head&amp;#39; ); //头节点 this.find = find; //查找节点 this.insert = insert; //插入节点 this.remove = remove; //删除节点 this.findPrev = findPrev; //查找前一个节点 this.display = display; //显示链表}insert：向链表插入一个节点
+find：查找给定节点
+function find ( item ) {var currNode = this.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0147 Insertion Sort List</title>
+      <link>/posts/leetcode-0147-insertion-sort-list/</link>
+      <pubDate>Fri, 20 Nov 2020 09:45:27 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0147-insertion-sort-list/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          对链表进行插入排序。
+插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。 每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。
+插入排序算法：
+ 插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。 每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。 重复直到所有输入数据插入完为止。  输入: 4-&amp;gt;2-&amp;gt;1-&amp;gt;3输出: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4输入: -1-&amp;gt;5-&amp;gt;3-&amp;gt;4-&amp;gt;0输出: -1-&amp;gt;0-&amp;gt;3-&amp;gt;4-&amp;gt;5/*** Definition for singly-linked list.* function ListNode(val) {* this.val = val;* this.next = null;* }*//*** @param {ListNode} head* @return {ListNode}*/var insertionSortList = function(head) {};
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Specification</title>
+      <link>/posts/go-specification/</link>
+      <pubDate>Thu, 19 Nov 2020 17:26:47 +0800</pubDate>
+      
+      <guid>/posts/go-specification/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          word general-purpose 一般用途explicit 显示的concurrent programming 并发编程efficient 有效率的
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Effective</title>
+      <link>/posts/go-effective/</link>
+      <pubDate>Thu, 19 Nov 2020 14:55:01 +0800</pubDate>
+      
+      <guid>/posts/go-effective/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Introduction 介绍 Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0283 Move Zeros</title>
+      <link>/posts/leetcode-0283-move-zeros/</link>
+      <pubDate>Thu, 19 Nov 2020 10:00:00 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0283-move-zeros/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Given an array nums, write a function to move all 0&amp;rsquo;s to the end of it while maintaining the relative order of the non-zero elements.
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+Example:
+Input: [0,1,0,3,12]Output: [1,3,12,0,0]Note:
+You must do this in-place without making a copy of the array. Minimize the total number of operations.
+说明:
+必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。
+Solution
+非零元素右移， 然后补零
+/*** @param {number[]} nums* @return {void} Do not return anything, modify nums in-place instead.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Algorithms Sort</title>
+      <link>/posts/algorithms-sort/</link>
+      <pubDate>Wed, 18 Nov 2020 19:23:53 +0800</pubDate>
+      
+      <guid>/posts/algorithms-sort/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          There are three practical reasons for you to study sorting algorithms, even though you might just use a system sort:
+ Analyzing sorting algorithms is a thorough introduction to the approach that we use to compare algorithm performance throughout the book. Similar techniques are effective in addressing other problems. We often use sorting algorithms as a starting point to solve other problems. More important than these practical reasons is that the algorithms are elegant, classic, and effective.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Tslint</title>
+      <link>/posts/tslint/</link>
+      <pubDate>Wed, 18 Nov 2020 17:29:24 +0800</pubDate>
+      
+      <guid>/posts/tslint/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          2019 年 1 月，TypeScirpt 官方决定全面采用 ESLint 作为代码检查的工具，并创建了一个新项目 typescript-eslint，提供了 TypeScript 文件的解析器 @typescript-eslint/parser 和相关的配置选项 @typescript-eslint/eslint-plugin 等。而之前的两个 lint 解决方案都将弃用：
+ typescript-eslint-parser 已停止维护 TSLint 将提供迁移工具，并在 typescript-eslint 的功能足够完整后停止维护 TSLint（Once we consider ESLint feature-complete w.r.t. TSLint, we will - - - deprecate TSLint and help users migrate to ESLint1）  综上所述，目前以及将来的 TypeScript 的代码检查方案就是 typescript-eslint。
+在 TypeScript 中使用 ESLint # 安装 ESLintnpm install --save-dev eslint# 由于 ESLint 默认使用 Espree 进行语法解析，无法识别 TypeScript 的一些语法，故我们需要安装 @typescript-eslint/parser，替代掉默认的解析器，别忘了同时安装 typescriptnpm install --save-dev typescript @typescript-eslint/parser# 接下来需要安装对应的插件 @typescript-eslint/eslint-plugin 它作为 eslint 默认规则的补充，提供了一些额外的适用于 ts 语法的规则。npm install --save-dev @typescript-eslint/eslint-plugin创建配置文件 ESLint 需要一个配置文件来决定对哪些规则进行检查，配置文件的名称一般是 .
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vscode Tslint</title>
+      <link>/posts/vscode-tslint/</link>
+      <pubDate>Wed, 18 Nov 2020 14:37:33 +0800</pubDate>
+      
+      <guid>/posts/vscode-tslint/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Json and Xml</title>
+      <link>/posts/json-and-xml/</link>
+      <pubDate>Wed, 18 Nov 2020 11:47:17 +0800</pubDate>
+      
+      <guid>/posts/json-and-xml/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Leetcode 0134 Gas Station</title>
       <link>/posts/leetcode-0134-gas-station/</link>
       <pubDate>Wed, 18 Nov 2020 10:05:57 +0800</pubDate>
@@ -4438,26 +4755,6 @@ curl -X GET &amp;#39;http://localhost:9200/_cat/indices?v&amp;#39;Document Inde
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/posts/test/</link>
-      <pubDate>Fri, 11 Sep 2020 15:51:38 +0800</pubDate>
-      
-      <guid>/posts/test/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          ssss
-          
-        
-        </description>
-    </item>
-    
-    <item>
       <title>Sql</title>
       <link>/posts/sql/</link>
       <pubDate>Thu, 10 Sep 2020 16:47:25 +0800</pubDate>
@@ -4579,7 +4876,24 @@ Quick Links Array
         
           mysql 字符集选择
 对数据库来说，字符集更加重要，因为数据库存储的数据大部分都是各种文字，字符集对数据库的存储，处理性能，以及日后系统的移植，推广都会有影响。 MySQL5.6目前支持几十种字符集，包括UCS-2，UTF-16，UTF-16LE,UTF-32，UTF-8和utf8mb4等Unicode字符集。 根据应用的需求，考虑以下几方面的因素。
- 满足应用支持语言的需求，如果应用要处理各种各样的文字，或者将发布到使用不同语言的国家或地区，就应该选择Unicode字符集。对MySQL来说，目前就是UTF-8 如果应用中涉及已有数据的导入，就要充分考虑数据库字符集对已有数据的兼容性。假如已有数据是GBK文字，如果选择GB2312-80为数据库字符集，就很有可能出现某些文字无法正确导入的问题 如果数据库只支持一般中文，数据量很大，性能要求也很高，那就应该选择双字节长编码的中文字符集，比如GBK。因为，相对于UTF-8而言，GBK比较“小”，每个汉字只占2个字节，而UTF-8汉字编码需要3个字节，这样可以减少磁盘I/O，数据库Cache以及网络传输的时间，从而提高性能。相反，如果应用主要处理英文字符，仅有少量汉字数据，那么选择UTF-8更好，因为GBK,UCS-2，UTF-16的西文字符编码都是2个字节，会造成很多不必要的开销。 如果数据库需要做大量的字符运算，如比较，排序等，那么选择定长字符集可能更好，因为定长字符集的处理速度要比变长字符集的处理速度快。 如果所有客户端程序都支持相同的字符集，则应该优先选择该字符集作为数据库字符集，这样可以避免因字符集转换带来的性能开销和数据损失  DB字符集建议都使用utf8mb4/utf8 表字符集建议都使用utf8mb4/utf8 库表字符集需统一,单个实例的所有库/表/字段的字符集唯一，同一个实例中不允许出现多个字符集
+  满足应用支持语言的需求，如果应用要处理各种各样的文字，或者将发布到使用不同语言的国家或地区，就应该选择Unicode字符集。对MySQL来说，目前就是UTF-8 如果应用中涉及已有数据的导入，就要充分考虑数据库字符集对已有数据的兼容性。假如已有数据是GBK文字，如果选择GB2312-80为数据库字符集，就很有可能出现某些文字无法正确导入的问题
+  如果数据库只支持一般中文，数据量很大，性能要求也很高，那就应该选择双字节长编码的中文字符集，比如GBK。因为，相对于UTF-8而言，GBK比较“小”，每个汉字只占2个字节，而UTF-8汉字编码需要3个字节，这样可以减少磁盘I/O，数据库Cache以及网络传输的时间，从而提高性能。相反，如果应用主要处理英文字符，仅有少量汉字数据，那么选择UTF-8更好，因为GBK,UCS-2，UTF-16的西文字符编码都是2个字节，会造成很多不必要的开销。
+  如果数据库需要做大量的字符运算，如比较，排序等，那么选择定长字符集可能更好，因为定长字符集的处理速度要比变长字符集的处理速度快。
+  如果所有客户端程序都支持相同的字符集，则应该优先选择该字符集作为数据库字符集，这样可以避免因字符集转换带来的性能开销和数据损失
+  DB字符集建议都使用utf8mb4/utf8, 表字符集建议都使用utf8mb4/utf8
+库表字符集需统一,单个实例的所有库/表/字段的字符集唯一，同一个实例中不允许出现多个字符集
+字节长度 在MySQL中，char和varchar都是用来存储字符串的，区别在于char有固定的长度，而varchar属于可变长的字符类型。 char有固定的的长度，所以在处理速度上要比varchar快很多，但是也相对更耗费存储空间，在速度上有要求的可以使用char类型。
+  char类型是规定多少字长则必须存储多少字长，超过的字段则只能截取出对应的长度进行存储，相对于要去字长长度不够的字段则用空格补齐。
+  varchar类型则是只要在规定字长之内，有多少就存多少，无需补齐；超出部分和char一样，舍去即可。（由prefix实现）
+  容量区别 对于char类型来说，最多只能存放的字符个数为255，和编码无关。每个字符占用两个字节，部分中文无法显示
+varchar最多能存放65532个字符，varchar的最大有效长度由最大行大小和使用的字符集来确定，整体最大长度是65532个字符。 varchar是动态长度，所以每个字符占按UTF-8占用
+在version4之前，MySQL中varchar长度是按字节；而version5之后，按字符。如varchar(6), 在version4，表示占用6个字节，而在version5中，表示占用6个字符。
+而字符和字节的换算，则与编码方式有关，不同的字符所占的字节是不同的。：
+ASCII码： 一个英文字母（不分大小写）占一个字节的空间，一个中文汉字占两个字节的空间。一个二进制数字序列，在计算机中作为一个数字单元，一般为8位二进制数，换算为十进制。最小值0，最大值255。如一个ASCII码就是一个字节。 (一个英文字母1个字节，tinyint 一个字节)
+UTF-8编码： 一个英文字符等于一个字节，一个中文占三个字节， 扩展B区以后的汉字占四个字节。
+Unicode编码： 一个英文等于两个字节，一个中文（含繁体）等于两个字节。
+GBK编码，一个汉字占两个字节。
+UTF-16编码，通常汉字占两个字节，CJKV扩展B区、扩展C区、扩展D区中的汉字占四个字节（一般字符的Unicode范围是U+0000至U+FFFF，而这些扩展部分的范围大于U+20000，因而要用两个UTF-16）。
           
         
         </description>

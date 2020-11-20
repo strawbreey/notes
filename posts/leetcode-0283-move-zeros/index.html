@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Leetcode 0283 Move Zeros ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Given an array nums, write a function to move all 0&amp;rsquo;s to the end of it while maintaining the relative order of the non-zero elements.
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+Example:
+Input: [0,1,0,3,12]Output: [1,3,12,0,0]Note:
+You must do this in-place without making a copy of the array. Minimize the total number of operations.
+说明:
+必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。
+Solution
+非零元素右移， 然后补零
+/*** @param {number[]} nums* @return {void} Do not return anything, modify nums in-place instead."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/leetcode-0283-move-zeros/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 0283 Move Zeros"/>
+<meta name="twitter:description" content="Given an array nums, write a function to move all 0&rsquo;s to the end of it while maintaining the relative order of the non-zero elements.
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+Example:
+Input: [0,1,0,3,12]Output: [1,3,12,0,0]Note:
+You must do this in-place without making a copy of the array. Minimize the total number of operations.
+说明:
+必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。
+Solution
+非零元素右移， 然后补零
+/*** @param {number[]} nums* @return {void} Do not return anything, modify nums in-place instead."/>
+
+
+
+<meta property="og:title" content="Leetcode 0283 Move Zeros" />
+<meta property="og:description" content="Given an array nums, write a function to move all 0&rsquo;s to the end of it while maintaining the relative order of the non-zero elements.
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+Example:
+Input: [0,1,0,3,12]Output: [1,3,12,0,0]Note:
+You must do this in-place without making a copy of the array. Minimize the total number of operations.
+说明:
+必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。
+Solution
+非零元素右移， 然后补零
+/*** @param {number[]} nums* @return {void} Do not return anything, modify nums in-place instead." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/leetcode-0283-move-zeros/" />
+<meta property="article:published_time" content="2020-11-19T10:00:00+08:00" />
+<meta property="article:modified_time" content="2020-11-19T10:00:00+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Leetcode 0283 Move Zeros</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-11-19
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/leetcode/">#leetcode</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>Given an array nums, write a function to move all 0&rsquo;s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<p>给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+<p>Example:</p>
+<pre><code>Input: [0,1,0,3,12]
+Output: [1,3,12,0,0]
+</code></pre><p>Note:</p>
+<p>You must do this in-place without making a copy of the array.
+Minimize the total number of operations.</p>
+<p>说明:</p>
+<p>必须在原数组上操作，不能拷贝额外的数组。
+尽量减少操作次数。</p>
+<p>Solution</p>
+<p>非零元素右移， 然后补零</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @param {number[]} nums
+</span><span style="color:#75715e"> * @return {void} Do not return anything, modify nums in-place instead.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">moveZeroes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">nums</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) {
+            <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">count</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] 
+            <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>  
+        }
+    }
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> (<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">count</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>
+};
+</code></pre></div><p>双重循环交换非零元素</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @param {number[]} nums
+</span><span style="color:#75715e"> * @return {void} Do not return anything, modify nums in-place instead.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">moveZeroes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">nums</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]) {
+                    <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
+                    <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+                    <span style="color:#66d9ef">break</span>
+                }
+
+            }
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>
+};
+</code></pre></div><p>双指针解法</p>
+<p>使用双指针，左指针指向当前已经处理好的序列的尾部，右指针指向待处理序列的头部。</p>
+<p>右指针不断向右移动，每次右指针指向非零数，则将左右指针对应的数交换，同时左指针右移。</p>
+<p>注意到以下性质：</p>
+<ul>
+<li>
+<p>左指针左边均为非零数；</p>
+</li>
+<li>
+<p>右指针左边直到左指针处均为零</p>
+</li>
+</ul>
+<p><img src="/images/36d1ac5d689101cbf9947465e94753c626eab7fcb736ae2175f5d87ebc85fdf0-283_2.gif" alt="Double pointer">{:height=&quot;50%&rdquo; width=&quot;50%&quot;}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @param {number[]} nums
+</span><span style="color:#75715e"> * @return {void} Do not return anything, modify nums in-place instead.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">moveZeroes</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) {
+    <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>)
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">right</span> &lt; <span style="color:#a6e22e">n</span> {
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">right</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+            <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">right</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">right</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>]
+            <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>
+        }
+        <span style="color:#a6e22e">right</span><span style="color:#f92672">++</span>
+    }
+}
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/go-effective/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Go Effective</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/algorithms-sort/">
+                  <span class="button__text">Algorithms Sort</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

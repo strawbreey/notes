@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Leetcode 0147 Insertion Sort List ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="对链表进行插入排序。
+插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。 每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。
+插入排序算法：
+ 插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。 每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。 重复直到所有输入数据插入完为止。  输入: 4-&amp;gt;2-&amp;gt;1-&amp;gt;3输出: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4输入: -1-&amp;gt;5-&amp;gt;3-&amp;gt;4-&amp;gt;0输出: -1-&amp;gt;0-&amp;gt;3-&amp;gt;4-&amp;gt;5/*** Definition for singly-linked list.* function ListNode(val) {* this.val = val;* this.next = null;* }*//*** @param {ListNode} head* @return {ListNode}*/var insertionSortList = function(head) {};"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/leetcode-0147-insertion-sort-list/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 0147 Insertion Sort List"/>
+<meta name="twitter:description" content="对链表进行插入排序。
+插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。 每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。
+插入排序算法：
+ 插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。 每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。 重复直到所有输入数据插入完为止。  输入: 4-&gt;2-&gt;1-&gt;3输出: 1-&gt;2-&gt;3-&gt;4输入: -1-&gt;5-&gt;3-&gt;4-&gt;0输出: -1-&gt;0-&gt;3-&gt;4-&gt;5/*** Definition for singly-linked list.* function ListNode(val) {* this.val = val;* this.next = null;* }*//*** @param {ListNode} head* @return {ListNode}*/var insertionSortList = function(head) {};"/>
+
+
+
+<meta property="og:title" content="Leetcode 0147 Insertion Sort List" />
+<meta property="og:description" content="对链表进行插入排序。
+插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。 每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。
+插入排序算法：
+ 插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。 每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。 重复直到所有输入数据插入完为止。  输入: 4-&gt;2-&gt;1-&gt;3输出: 1-&gt;2-&gt;3-&gt;4输入: -1-&gt;5-&gt;3-&gt;4-&gt;0输出: -1-&gt;0-&gt;3-&gt;4-&gt;5/*** Definition for singly-linked list.* function ListNode(val) {* this.val = val;* this.next = null;* }*//*** @param {ListNode} head* @return {ListNode}*/var insertionSortList = function(head) {};" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/leetcode-0147-insertion-sort-list/" />
+<meta property="article:published_time" content="2020-11-20T09:45:27+08:00" />
+<meta property="article:modified_time" content="2020-11-20T09:45:27+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Leetcode 0147 Insertion Sort List</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-11-20
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>对链表进行插入排序。</p>
+<p>插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。
+每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。</p>
+<p><img src="/images/Insertion-sort-example-300px.gif" alt="Insertion-sort-example"> </p>
+<p>插入排序算法：</p>
+<ul>
+<li>插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。</li>
+<li>每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。</li>
+<li>重复直到所有输入数据插入完为止。</li>
+</ul>
+<pre><code>输入: 4-&gt;2-&gt;1-&gt;3
+输出: 1-&gt;2-&gt;3-&gt;4
+
+输入: -1-&gt;5-&gt;3-&gt;4-&gt;0
+输出: -1-&gt;0-&gt;3-&gt;4-&gt;5
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for singly-linked list.
+</span><span style="color:#75715e"> * function ListNode(val) {
+</span><span style="color:#75715e"> *     this.val = val;
+</span><span style="color:#75715e"> *     this.next = null;
+</span><span style="color:#75715e"> * }
+</span><span style="color:#75715e"> */</span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @param {ListNode} head
+</span><span style="color:#75715e"> * @return {ListNode}
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">insertionSortList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">head</span>) {
+  
+};
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/js-linked-list/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Js Linked List</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/go-specification/">
+                  <span class="button__text">Go Specification</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

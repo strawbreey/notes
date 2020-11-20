@@ -222,7 +222,8 @@ Return the starting gas station&rsquo;s index if you can travel around the circu
   You cannot travel back to station 2, as it requires 4 unit of gas but you only have 3.
   Therefore, you can't travel around the circuit once no matter where you start.
 </code></pre><p>Solution:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">canCompleteCircuit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">gas</span>, <span style="color:#a6e22e">cost</span>) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// javascript
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">canCompleteCircuit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">gas</span>, <span style="color:#a6e22e">cost</span>) {
     <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 
@@ -241,7 +242,8 @@ Return the starting gas station&rsquo;s index if you can travel around the circu
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">index</span>
 };
 </code></pre></div><p>最容易想到的解法是：从头到尾遍历每个加油站，并检查以该加油站为起点，最终能否行驶一周。我们可以通过减小被检查的加油站数目，来降低总的时间复杂度。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">canCompleteCircuit</span>(<span style="color:#a6e22e">gas</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">cost</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#75715e">// golang
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">canCompleteCircuit</span>(<span style="color:#a6e22e">gas</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">cost</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
     <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">gas</span>); <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; {
         <span style="color:#a6e22e">sumOfGas</span>, <span style="color:#a6e22e">sumOfCost</span>, <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
         <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cnt</span> &lt; <span style="color:#a6e22e">n</span> {
@@ -273,6 +275,13 @@ Return the starting gas station&rsquo;s index if you can travel around the circu
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/json-and-xml/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Json and Xml</span>
+                </a>
+              </span>
             
             
               <span class="button next">

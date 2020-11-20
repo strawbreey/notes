@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Strawbreey Notes</title>
+    
+    
+    
+    <link>/tags/git/</link>
+    <description>Recent content in git on Strawbreey Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 20 Nov 2020 15:52:25 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Checkout</title>
+      <link>/posts/git-checkout/</link>
+      <pubDate>Fri, 20 Nov 2020 15:52:25 +0800</pubDate>
+      
+      <guid>/posts/git-checkout/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          checkout是Git最常用的命令之一
+checkout在CVS和SVN中都是检出的意思，从版本库检出一个版本，在Git中就不是这么简单了。手册上是这样介绍的： git-checkout - Switch branches or restore working tree files
+语法
+git checkout [-q] [-f] [-m] [&amp;lt;branch&amp;gt;]git checkout [-q] [-f] [-m] --detach [&amp;lt;branch&amp;gt;]git checkout [-q] [-f] [-m] [--detach] &amp;lt;commit&amp;gt;git checkout [-q] [-f] [-m] [[-b|-B|--orphan] &amp;lt;new_branch&amp;gt;] [&amp;lt;start_point&amp;gt;]git checkout [-f|--ours|--theirs|-m|--conflict=&amp;lt;style&amp;gt;] [&amp;lt;tree-ish&amp;gt;] [--] &amp;lt;pathspec&amp;gt;…​git checkout [-f|--ours|--theirs|-m|--conflict=&amp;lt;style&amp;gt;] [&amp;lt;tree-ish&amp;gt;] --pathspec-from-file=&amp;lt;file&amp;gt; [--pathspec-file-nul]git checkout (-p|--patch) [&amp;lt;tree-ish&amp;gt;] [--] [&amp;lt;pathspec&amp;gt;…​]描述
+在Git里面，checkout用于切换分支或者恢复工作树的文件。
+ 新建一个hotfix分支  git checkout -b | -B &amp;lt;new _branch&amp;gt; [&amp;lt;start point&amp;gt;]git checkout -b hotfix-1.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Common Commands</title>
+      <link>/posts/git-common-commands/</link>
+      <pubDate>Mon, 31 Aug 2020 15:39:29 +0800</pubDate>
+      
+      <guid>/posts/git-common-commands/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Git不需要输入用户名密码的两种方式   采用ssh连接方式: 将自己主机的id_ras.pub 加到git 的ssh Keys 中
+  采用https的连接方式:
+  git config --global credential.helper store
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
