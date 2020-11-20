@@ -2,6 +2,7 @@
 title: "Git Common Commands"
 date: 2020-08-31T15:39:29+08:00
 draft: false
+tags: ['git']
 ---
 
 
