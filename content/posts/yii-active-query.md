@@ -1,12 +1,8 @@
 ---
 title: "Yii Active Query"
 date: 2020-10-22T11:41:38+08:00
-draft: true
+draft: false
 ---
-
-
-
-
 
 ActiveQuery mainly provides the following methods to retrieve the query results:
 

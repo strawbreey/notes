@@ -1,7 +1,7 @@
 ---
 title: "Linux Install Php Imagick"
 date: 2020-10-09T14:54:01+08:00
-draft: true
+draft: false
 ---
 
 说明：

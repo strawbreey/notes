@@ -1,7 +1,7 @@
 ---
 title: "Good Doctor 1 3"
 date: 2020-10-13T23:28:53+08:00
-draft: true
+draft: false
 ---
 
 良医 第一季 第三集 01:35

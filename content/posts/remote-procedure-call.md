@@ -1,7 +1,7 @@
 ---
 title: "Remote Procedure Call"
 date: 2020-09-15T09:40:57+08:00
-draft: true
+draft: false
 ---
 
 在分布式计算(distributed computing)，远程请求（英語：Remote Procedure Call，縮寫為 RPC）是一个计算机通信协议。该协议允许运行于一台计算机的程序调用另一个地址空间（通常为一个开放网络的一台计算机）的子程序，就像调用本地程序一样，无需额外地为这个交互作用编程（无需关注细节）。RPC是一种服务器-客户端（Client/Server）模式，经典实现是一个通过发送请求-接受回应进行信息交互的系统。

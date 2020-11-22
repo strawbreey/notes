@@ -1,7 +1,7 @@
 ---
 title: "Nginx Try Files"
 date: 2020-09-15T11:29:43+08:00
-draft: true
+draft: false
 ---
 
 ### 基本配置

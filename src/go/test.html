@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>  
+  var allCellsDistOrder = function(R, C, r0, c0) {
+    // 先写坐标, 在排序
+    let arr = []
+    for (let r = 0; r < R; r++) {
+      for (c = 0; c < C; c++) {
+        arr.push([r,c])
+      }
+    }
+    return arr.sort((a, b) => Math.abs(a[0] - r0) +  Math.abs(a[1] - c0)  - Math.abs(b[0] - r0) -  Math.abs(b[1] - c0))
+  };
+
+let result = allCellsDistOrder(2,3,1,2)
+
+console.log(result)
+  </script>
+</body>
+</html>

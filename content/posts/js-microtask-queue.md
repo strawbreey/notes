@@ -1,7 +1,7 @@
 ---
 title: "Js Microtask Queue"
 date: 2020-10-18T23:38:54+08:00
-draft: true
+draft: false
 ---
 
 浏览器中 JavaScript 的执行流程和 Node.js 中的流程都是基于 事件循环 的。

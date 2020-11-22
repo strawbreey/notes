@@ -1,7 +1,7 @@
 ---
 title: "Mysql Utf8"
 date: 2020-10-17T20:53:10+08:00
-draft: true
+draft: false
 ---
 
 客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串" <…"也是合法的 UTF-8。

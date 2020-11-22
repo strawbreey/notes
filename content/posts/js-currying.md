@@ -1,7 +1,7 @@
 ---
 title: "Js Currying"
 date: 2020-10-26T19:21:37+08:00
-draft: true
+draft: false
 ---
 
 ## 函数柯里化

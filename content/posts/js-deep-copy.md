@@ -1,7 +1,7 @@
 ---
 title: "Js Deep Copy"
 date: 2020-09-27T19:38:49+08:00
-draft: true
+draft: false
 ---
 
 ### JSON.parse/stringify
@@ -34,10 +34,13 @@ console.log(typeof clone.date);  // result of .toISOString()
 Since cloning objects is not trivial (complex types, circular references, function etc.), most major libraries provide function to clone objects. Don't reinvent the wheel - if you're already using a library, check if it has an object cloning function. For example,
 
 - [lodash deepclone](https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L11087) - cloneDeep; can be imported separately via the lodash.clonedeep module and is probably your best choice if you're not already using a library that provides a deep cloning function
+
 - AngularJS - angular.copy
 
 - vuejs [deepClone](https://github.com/vuejs/vue/blob/52719ccab8fccffbdf497b96d3731dc86f04c1ce/src/server/bundle-renderer/create-bundle-runner.js)
+
 - Angular - 
+
 - jQuery - jQuery.extend(true, { }, oldObject); .clone() only clones DOM elements
 
 

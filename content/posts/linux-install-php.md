@@ -1,7 +1,7 @@
 ---
 title: "Linux Install Php"
 date: 2020-09-01T10:10:41+08:00
-draft: true
+draft: false
 ---
 
 ## Install PHP

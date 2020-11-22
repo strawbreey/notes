@@ -1,10 +1,12 @@
 ---
 title: "Common Commands"
 date: 2020-08-31T10:36:43+08:00
-draft: true
+draft: false
 ---
 
-```shell
+### linux common command
+
+```bash
 
 # 测试镜像是否有用
 nslookup mirrors.tencent.com

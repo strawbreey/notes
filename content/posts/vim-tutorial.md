@@ -15,7 +15,7 @@ draft: false
 
 基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 
 
-![vi-vim-cheat-sheet-sch](/images/vi-vim-cheat-sheet-sch.gif)
+![vi-vim-cheat-sheet-sch](../../static/images/vi-vim-cheat-sheet-sch.gif)
 
 
 #### 命令模式：

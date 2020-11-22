@@ -1,7 +1,7 @@
 ---
 title: "Js Promise"
 date: 2020-10-21T23:01:58+08:00
-draft: true
+draft: false
 ---
 
 Promise 对象的构造器（constructor）语法如下：

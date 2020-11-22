@@ -1,7 +1,7 @@
 ---
 title: "Nginx Location"
 date: 2020-10-10T10:32:43+08:00
-draft: true
+draft: false
 ---
 
 nginx 指定文件路径有两种方式

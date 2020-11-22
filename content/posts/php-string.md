@@ -1,7 +1,7 @@
 ---
 title: "Php String"
 date: 2020-09-24T15:09:55+08:00
-draft: true
+draft: false
 ---
 
 一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。

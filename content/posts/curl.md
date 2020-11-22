@@ -1,7 +1,7 @@
 ---
 title: "Curl"
 date: 2020-10-19T19:55:15+08:00
-draft: true
+draft: false
 ---
 
 cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl。
@@ -10,7 +10,11 @@ cURL是一个开源项目，主要的产品是curl（命令行工具）和libcur
 
 cURL涉及是任何网络协议传输，不涉及对具体数据的具体处理。（如：html的渲染等）
 
-```shell
+
+
+### Example
+
+```bash
 # 简单模式
 curl http://example.com
 
@@ -32,7 +36,6 @@ curl https://httpbin.org/get?show_env=1
 
 ```
 
-
 ### curl 和 wget 区别
 
 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。
@@ -48,6 +51,9 @@ libcurl主要功能就是用不同的协议连接和沟通不同的服务器~也
 PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯各种服务器、使用各种协议。libcurl 目前支持的协议有 http、https、ftp、gopher、telnet、dict、file、ldap。 libcurl 同时支持 HTTPS 证书、HTTP POST、HTTP PUT、 FTP 上传(也能通过 PHP 的 FTP 扩展完成)、HTTP 基于表单的上传、代理、cookies、用户名+密码的认证。
 
 ### 参考资料
+
 - [https://curl.trillworks.com/](https://curl.trillworks.com/)
+
 - [Client URL Library ¶](https://www.php.net/manual/en/book.curl.php)
+
 - [curl/curl](https://github.com/curl/curl)

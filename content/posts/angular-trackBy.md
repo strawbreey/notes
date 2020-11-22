@@ -1,7 +1,7 @@
 ---
 title: "Angular TrackBy"
 date: 2020-10-27T17:40:15+08:00
-draft: true
+draft: false
 ---
 
 trackBy: trackByFn

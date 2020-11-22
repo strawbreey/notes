@@ -1,7 +1,7 @@
 ---
 title: "Scope and Closures"
 date: 2020-09-08T19:52:11+08:00
-draft: true
+draft: false
 ---
 
 ```

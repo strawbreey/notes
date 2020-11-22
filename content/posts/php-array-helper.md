@@ -152,6 +152,8 @@ $result = ArrayHelper::index($array, function ($element) {
 });
 ```
 
+guo
+
 ### 建立哈希表 map()
 
 为了从一个多维数组或者一个对象数组中建立一个映射表（键值对），你可以使用 map 方法。$from 和 $to 参数分别指定了欲构建的映射表的键名和属性名。 根据需要，你可以按照一个分组字段 $group 将映射表进行分组，例如

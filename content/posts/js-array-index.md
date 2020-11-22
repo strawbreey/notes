@@ -1,7 +1,7 @@
 ---
 title: "Js Array Index"
 date: 2020-09-11T19:54:40+08:00
-draft: true
+draft: false
 ---
 
 ## JS 中数组字符串索引和数值索引研究

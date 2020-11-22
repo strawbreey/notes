@@ -1,7 +1,7 @@
 ---
 title: "Js Garbage Colloction"
 date: 2020-10-17T17:59:08+08:00
-draft: true
+draft: false
 ---
 
 ## 垃圾回收

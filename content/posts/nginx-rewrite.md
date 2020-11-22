@@ -1,7 +1,7 @@
 ---
 title: "Nginx Rewrite"
 date: 2020-10-10T10:54:06+08:00
-draft: true
+draft: false
 ---
 
 Rewrite 是nginx 服务器提供的一个重要的基本功能，用于URL的重写

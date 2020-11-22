@@ -1,20 +1,15 @@
 ---
 title: "Sql Insert"
 date: 2020-09-23T16:24:30+08:00
-draft: true
+draft: false
 ---
-
-
 
 ### SQL INSERT INTO
 
 ```sql
 INSERT INTO table_name VALUES (value1, value2, value3, ...);
-
 INSERT INTO table_name (column1, column2， column3) VALUES (value1, value2, value3, ...);
-
 ```
-
 
 数据库大批量SQL插入性能优化
 

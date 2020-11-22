@@ -1,7 +1,7 @@
 ---
 title: "Front End Interview Standard"
 date: 2020-10-09T14:35:59+08:00
-draft: true
+draft: false
 ---
 
 

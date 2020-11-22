@@ -1,7 +1,7 @@
 ---
 title: "Sql Interview"
 date: 2020-10-22T23:04:28+08:00
-draft: true
+draft: false
 ---
 
 ### 数据库的命令规划

@@ -45,11 +45,12 @@ IoC(控制反转: Inversion of Control)能做什么
 
 
 #### angular 中的依赖注入
+
 [!Dependency injection](https://angular.cn/guide/dependency-injection)
 
 
 
 
 
-#### 相关书籍
+#### 参考资料
 [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)

@@ -1,7 +1,7 @@
 ---
 title: "Angular Optimize"
 date: 2020-10-26T16:53:01+08:00
-draft: true
+draft: false
 ---
 
 1. ChangeDetectionStrategy.OnPush

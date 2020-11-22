@@ -1,7 +1,7 @@
 ---
 title: "Good Doctor 1 4"
 date: 2020-10-29T00:21:20+08:00
-draft: true
+draft: false
 ---
 
 good doctor 第一季 第四集

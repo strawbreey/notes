@@ -1,7 +1,7 @@
 ---
 title: "Go Slice"
 date: 2020-09-03T15:42:47+08:00
-draft: true
+draft: false
 ---
 
 ## go slice

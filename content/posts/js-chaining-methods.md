@@ -1,7 +1,7 @@
 ---
 title: "Js Chaining Methods"
 date: 2020-10-26T17:55:46+08:00
-draft: true
+draft: false
 ---
 
 Chaining Methods, also known as Cascading, means repeatedly calling one method after another on an object, in one continuous line of code. Let us look at an example where method chaining can help us avoid repetition.

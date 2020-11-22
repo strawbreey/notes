@@ -1,7 +1,7 @@
 ---
 title: "Javascript Prototype Apply"
 date: 2020-09-15T14:39:37+08:00
-draft: true
+draft: false
 ---
 
 The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
