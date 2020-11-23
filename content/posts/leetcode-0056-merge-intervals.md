@@ -25,6 +25,37 @@ draft: false
 intervals[i][0] <= intervals[i][1]
 
 
+```js
+/**
+ * @param {number[][]} intervals
+ * @return {number[][]}
+ */
+var merge = function(intervals) {
+    points = intervals.sort((a,b) => (a[0] - b[0]) || (a[1] - b[1]))
+    let mergeArr = [], count = 0;
+
+    for (let i = 0; i< points.length; i++) {
+        if (mergeArr.length == 0) {
+            mergeArr.push(points[i])
+            count++
+        } else {
+            
+            if (points[i][0] <= mergeArr[count - 1][1]) {
+                if (points[i][1] > mergeArr[count - 1][1]) {
+                    mergeArr[count-1][1] = points[i][1]
+                }
+            } else  {
+                mergeArr.push(points[i])
+                count++
+            }
+        }
+
+    }
+
+    return mergeArr
+};
+```
+
 ### 参考资料
 
 - [合并区间](https://leetcode-cn.com/problems/merge-intervals/)

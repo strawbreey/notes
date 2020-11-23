@@ -50,6 +50,34 @@ Solution
  * @return {number}
  */
 var findMinArrowShots = function(points) {
+    points = points.sort((a,b) => (a[0] - b[0]) || (a[1] - b[1]))
+    let mergeArr = [], count = 0;
 
+    for (let i = 0; i< points.length; i++) {
+        if (mergeArr.length == 0) {
+            mergeArr.push(points[i])
+            count++
+        } else {
+            
+            if (points[i][0] <= mergeArr[count - 1][1]) {
+                mergeArr[count-1][0] = points[i][0]
+            } 
+
+            if (points[i][1] < mergeArr[count - 1][1]) {
+                mergeArr[count-1][1] = points[i][1]
+            }
+
+            if (points[i][0] > mergeArr[count - 1][1]) {
+                mergeArr.push(points[i])
+                count++
+            }
+        }
+
+    }
+    return mergeArr.length
 };
 ```
+
+### 参考资料
+
+- [用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/)

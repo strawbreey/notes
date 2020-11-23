@@ -1,5 +1,5 @@
 ---
-title: "Leetcode Reverse Integer"
+title: "Leetcode 0007 Reverse Integer"
 date: 2020-11-06T19:54:54+08:00
 draft: false
 ---
@@ -29,15 +29,24 @@ Input: x = 0
 Output: 0
 ```
 
-```c++
-```
-
 ```js
+/**
+ * @param {number} x
+ * @return {number}
+ */
 var reverse = function(x) {
-    if (x > 0) {
-      // 数字转字符串 
-      // 字符串拆分成数字
+    let num = 0
+    let flag = x > 0 ? 1 : -1
+    x = x > 0 ? x : -x
+    while(x > 0) {
+        num = num * 10 + x % 10
+        x = Math.floor(x / 10)
     }
+    
+    if (num > 2147483648) {
+        num = 0
+    }
+    return num * flag
 };
 ```
 
