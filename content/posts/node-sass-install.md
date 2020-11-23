@@ -14,21 +14,22 @@ draft: false
   gyp ERR! configure error
 ```
 
-- ![npm-install-node-sass-error](/images/npm-install-node-sass-error.png)
+![npm-install-node-sass-error](/images/npm-install-node-sass-error.png)
+
 
 我们可以看到，安装node-sass有几个步骤：
 
-- 校验本地node_modules中是否已安装node-sass，版本是否一致;
+  - 校验本地node_modules中是否已安装node-sass，版本是否一致;
 
-- 如未安装或版本不符，从npm源安装node-sass本体;
+  - 如未安装或版本不符，从npm源安装node-sass本体;
 
-- 检测全局缓存和本地中是否有binding.node,如有即跳过安装;
+  - 检测全局缓存和本地中是否有binding.node,如有即跳过安装;
 
-- 没有binding.node则从github下载该二进制文件并将其缓存到全局;
+  - 没有binding.node则从github下载该二进制文件并将其缓存到全局;
 
-- 假如binding.node下载失败，则尝试本地编译出该文件;
+  - 假如binding.node下载失败，则尝试本地编译出该文件;
 
-- 将版本信息写到package-lock.json;
+  - 将版本信息写到package-lock.json;
 
 
 ### 检查 python 版本
@@ -45,23 +46,23 @@ draft: false
 
 ### 检查 yarn 的镜像源
 
-```bash
-# 1、查看一下当前源
-yarn config get registry
+  ```bash
+  # 1、查看一下当前源
+  yarn config get registry
 
-# 2、切换为淘宝源
-yarn config set registry https://registry.npm.taobao.org
+  # 2、切换为淘宝源
+  yarn config set registry https://registry.npm.taobao.org
 
-# 3、或者切换为自带的
-yarn config set registry https://registry.yarnpkg.com
-```
+  # 3、或者切换为自带的
+  yarn config set registry https://registry.yarnpkg.com
+  ```
 
 ### 相关依赖
 
-- [node-sass](https://github.com/sass/node-sass)
+  - [node-sass](https://github.com/sass/node-sass)
 
-- [node-gyp](https://github.com/nodejs/node-gyp)
+  - [node-gyp](https://github.com/nodejs/node-gyp)
 
-- [What are node.js bindings?](https://stackoverflow.com/questions/20382396/what-are-node-js-bindings)
+  - [What are node.js bindings?](https://stackoverflow.com/questions/20382396/what-are-node-js-bindings)
 
-- [C++ BINDING WITH NODE.JS](https://pravinchavan.wordpress.com/2013/11/08/c-binding-with-node-js/)
+  - [C++ BINDING WITH NODE.JS](https://pravinchavan.wordpress.com/2013/11/08/c-binding-with-node-js/)
