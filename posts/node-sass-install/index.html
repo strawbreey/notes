@@ -11,13 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &amp;#34;C:\python2\python.exe&amp;#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error   我们可以看到，安装node-sass有几个步骤：
+  content="gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &amp;#34;C:\python2\python.exe&amp;#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error我们可以看到，安装node-sass有几个步骤：
   校验本地node_modules中是否已安装node-sass，版本是否一致;
   如未安装或版本不符，从npm源安装node-sass本体;
   检测全局缓存和本地中是否有binding.node,如有即跳过安装;
   没有binding.node则从github下载该二进制文件并将其缓存到全局;
   假如binding.node下载失败，则尝试本地编译出该文件;
-  将版本信息写到package-lock."
+  将版本信息写到package-lock.json;
+  检查 python 版本 同时安装python2 和 python3 的时候，python3 回默认配置环境遍历。但python2不会"
 />
 <meta
   name="keywords"
@@ -50,24 +51,26 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Node Sass Install"/>
-<meta name="twitter:description" content="gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &#34;C:\python2\python.exe&#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error   我们可以看到，安装node-sass有几个步骤：
+<meta name="twitter:description" content="gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &#34;C:\python2\python.exe&#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error我们可以看到，安装node-sass有几个步骤：
   校验本地node_modules中是否已安装node-sass，版本是否一致;
   如未安装或版本不符，从npm源安装node-sass本体;
   检测全局缓存和本地中是否有binding.node,如有即跳过安装;
   没有binding.node则从github下载该二进制文件并将其缓存到全局;
   假如binding.node下载失败，则尝试本地编译出该文件;
-  将版本信息写到package-lock."/>
+  将版本信息写到package-lock.json;
+  检查 python 版本 同时安装python2 和 python3 的时候，python3 回默认配置环境遍历。但python2不会"/>
 
 
 
 <meta property="og:title" content="Node Sass Install" />
-<meta property="og:description" content="gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &#34;C:\python2\python.exe&#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error   我们可以看到，安装node-sass有几个步骤：
+<meta property="og:description" content="gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &#34;C:\python2\python.exe&#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error我们可以看到，安装node-sass有几个步骤：
   校验本地node_modules中是否已安装node-sass，版本是否一致;
   如未安装或版本不符，从npm源安装node-sass本体;
   检测全局缓存和本地中是否有binding.node,如有即跳过安装;
   没有binding.node则从github下载该二进制文件并将其缓存到全局;
   假如binding.node下载失败，则尝试本地编译出该文件;
-  将版本信息写到package-lock." />
+  将版本信息写到package-lock.json;
+  检查 python 版本 同时安装python2 和 python3 的时候，python3 回默认配置环境遍历。但python2不会" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/node-sass-install/" />
 <meta property="article:published_time" content="2020-11-12T17:43:31+08:00" />
@@ -193,9 +196,7 @@
   gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gz
   gyp WARN install got an error, rolling back install
   gyp ERR! configure error
-</code></pre></div><ul>
-<li><img src="/images/npm-install-node-sass-error.png" alt="npm-install-node-sass-error"></li>
-</ul>
+</code></pre></div><p><img src="/images/npm-install-node-sass-error.png" alt="npm-install-node-sass-error"></p>
 <p>我们可以看到，安装node-sass有几个步骤：</p>
 <ul>
 <li>

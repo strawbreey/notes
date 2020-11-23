@@ -154,6 +154,229 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-common-commands/">Git Common Commands</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/git/">#git</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-common-commands/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-undo/">Git Undo</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            删除commit提交记录 # Checkoutgit checkout &ndash;orphan latest_branch;# Add all the filesgit add -A;# Commit the changesgit commit -am &quot;Reinitialize&quot;;# Delete the branchgit branch -D master;# Rename the current branch to mastergit branch -m master;# Finally, force update your repositorygit push -f origin master;撤销上一次的commit git reset &ndash;hard HEAD^ git reset &ndash;mixed HEAD^ git reset &ndash;soft HEAD^ git push &ndash;force# &ndash;mixed 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add 。 操作这个为默认参数,git reset &ndash;mixed HEAD^ 和 git reset HEAD^ 效果是一样的。# &ndash;soft 不删除工作空间改动代码，撤销commit，不撤销git add .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-undo/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-permissions/">Linux Permissions</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Linux 文件属性 查看文件
+ls -al # 查看当前文件夹中文件的所有信息[root@www ~]# ls -altotal 156drwxr-x&mdash; 4 root root 4096 Sep 8 14:06 .drwxr-xr-x 23 root root 4096 Sep 8 14:21 ..-rw&mdash;&mdash;- 1 root root 1474 Sep 4 18:27 anaconda-ks.cfg-rw&mdash;&mdash;- 1 root root 199 Sep 8 17:14 .bash_history-rw-r&ndash;r&ndash; 1 root root 24 Jan 6 2007 .bash_logout-rw-r&ndash;r&ndash; 1 root root 191 Jan 6 2007 .bash_profile-rw-r&ndash;r&ndash; 1 root root 176 Jan 6 2007 .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-permissions/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/common-commands/">Common Commands</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            linux common command # 测试镜像是否有用nslookup mirrors.tencent.comrpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm">https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm</a># 下载phpwget php-7.2.15.tar.bz2 <a href="http://cn2.php.net/distributions/php-7.2.15.tar.bz2">http://cn2.php.net/distributions/php-7.2.15.tar.bz2</a>yum install <a href="http://rpms.remirepo.net/enterprise/remi-release-7.rpm">http://rpms.remirepo.net/enterprise/remi-release-7.rpm</a>rpm -Uvh <a href="https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm">https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm</a># linux cp 复制sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm# linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid# linux 安装yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel pcre pcre-devel libxslt libxslt-devel bzip2 bzip2-devel# linux 杀死全部进程killall php-fpm# linux 查询进程 phpps -ef|grep php# linux 重载nginx -s reload链接数据库异常
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/common-commands/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/host-on-github/">Host on Github</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/host-on-github/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-submodule/">Git Submodule</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-submodule/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/hugo-start/">Hugo Start</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-31
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/hugo-start/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/git/">Git</a></h1>
       <div class="post-meta">
         

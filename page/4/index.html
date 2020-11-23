@@ -154,6 +154,232 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/redis-design-and-implementation/">Redis Design and Implementation</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-05
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            链表和链表节点的实现 redis 链表实现
+typedef struct listNode {struct listNode * prev;struct listNode * next;void * value;} listNode;多个listNode可以通过prev和next指针组成双端链表
+typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode *tail;// 节点复制函数 void *(*dup)(void *ptr);// 节点释放函数 void (*free)(void *ptr);// 节点值对比函数 int (*match)(void *ptr, void *key);// 链表所包含的节点数量 unsigned long len;} list;list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/redis-design-and-implementation/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/cache/">Cache</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-05
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/cache/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/content-delivery-network/">Content Delivery Network</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-05
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/content-delivery-network/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-swoole/">Php Swoole</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-05
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-swoole/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-manual-new-word/">Mysql Manual New Word</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-04
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/mysql/">#mysql</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-manual-new-word/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-intro/">Js Intro</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-04
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-intro/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mariadb/">Mariadb</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-03
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mariadb/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/mysql-optimization-subqueries/">Mysql Optimization Subqueries</a></h1>
       <div class="post-meta">
         
@@ -549,246 +775,6 @@ const target = { a: 1, b: 2 };const source = { b: 4, c: 5 };const returnedTarg
       </div>
       
         <div><a class="read-more button" href="/posts/chrome-waterfall/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-disk-space/">Mysql Disk Space</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-29
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            计算1000万条数据占了多大内存
-CREATE TABLE <code>table_name</code> (id bigint(20) not null auto_increment, &ndash; 8字节 detail varchar(2000), &ndash;  createtime datetime, &ndash; 8 字节 validity int default '0', &ndash; 4字节 primary key (id) &ndash; 8字节);每个字段设计完成后占用的字节数
-(8+8+8+4) * 1000 0000 = 2 8000 0000 字节 == 18G
-电脑中存储常用的单位全称读法： 1Byte(Byte 字节) = 8Bit 1KB (Kilobyte 千字节) = 1024Byte， 1MB (Megabyte，兆字节，简称“兆”) = 1024KB， 1GB (Gigabyte，吉字节，又称“千兆”) = 1024MB， 1TB (Terabyte，太字节，或百万兆字节) = 1024GB，其中1024=2^10 ( 2 的10次方)。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mysql-disk-space/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-this/">Js This</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-29
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
-this 的值是在代码运行时计算出来的，它取决于代码上下文。
-let user = { name: &quot;John&quot; };let admin = { name: &quot;Admin&quot; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &quot;this&quot; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin<a href="">'f'</a>; // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-this/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/good-doctor-1-4/">Good Doctor 1 4</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-29
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            good doctor 第一季 第四集
-hello, I’ve looked everywhere
-我哪儿都找遍了
-All right, I’m here now, We’ll..
-好了,没事，我在这儿，我们要…
-we’ll just keep looking until you find it
-我们一直找，找到为止
-why is furniture in the middle of the room
-为什么家具在房间中央
-I konw I packed it
-我记得我把他包起来了
-I make a list, “star tip screwdriver”
-我还列了个清单, 梅花螺丝刀
-Look, it&quot;s checked
-你看, 已经打勾确定拿着了
-It’s checked
-真的打勾了
-Myabe, you…you threw it out with the newspapers
-也许你是用包盘子的报纸包起来的
-you used to pack the dishes
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/good-doctor-1-4/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/message-queue/">Message Queue</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-28
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/message-queue/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/angular-trackby/">Angular TrackBy</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/angular-trackby/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-fastcgi/">Php Fastcgi</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-fastcgi/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/http-load-balancer/">Http Load Balancer</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/http-load-balancer/">Read more →</a></div>
       
     </div>
     

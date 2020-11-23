@@ -16,6 +16,151 @@
     
     
     <item>
+      <title>Markdown</title>
+      <link>/posts/markdown/</link>
+      <pubDate>Mon, 23 Nov 2020 10:05:42 +0800</pubDate>
+      
+      <guid>/posts/markdown/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，粗体 或者 斜体 某些文字，更棒的是，它还可以
+目录 [TOC]
+autoauto- 目录auto
+ 1. 斜体和粗体auto 2. 分级标题auto 3. 外链接auto 4. 无序列表auto 5. 有序列表auto 6. 文字引用auto 7. 行内代码块auto 8. 代码块auto 9. 插入图像auto 10. 内容目录auto 11. 标签分类auto 12. 删除线auto 13. 注脚auto 14. LaTeX 公式auto 15. 加强的代码块auto 16. 流程图auto - 示例auto [更多语法参考：流程图语法参考](#更多语法参考流程图语法参考httpadraigithubioflowchartjs)auto 17. 序列图auto - 示例 1auto - 示例 2auto - [更多语法参考：序列图语法参考](#更多语法参考序列图语法参考httpbrampgithubiojs-sequence-diagrams)auto - 18. 甘特图auto - [更多语法参考：甘特图语法参考](#更多语法参考甘特图语法参考httpsknsvgithubiomermaidgant-diagrams)auto - 19. Mermaid 流程图auto - [更多语法参考：Mermaid 流程图语法参考](#更多语法参考mermaid-流程图语法参考httpsknsvgithubiomermaidflowcharts-basic-syntax)auto - 20. Mermaid 序列图auto - [更多语法参考：Mermaid 序列图语法参考](#更多语法参考mermaid-序列图语法参考httpsknsvgithubiomermaidsequence-diagrams)auto - 21.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0056 Merge Intervals</title>
+      <link>/posts/leetcode-0056-merge-intervals/</link>
+      <pubDate>Mon, 23 Nov 2020 00:26:57 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0056-merge-intervals/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          给出一个区间的集合，请合并所有重叠的区间。
+示例 1:
+输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2:
+输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
+注意：输入类型已于2019年4月15日更改。 请重置默认代码定义以获取新方法签名。
+ 提示：
+intervals[i][0] &amp;lt;= intervals[i][1]
+参考资料  合并区间  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js CodePointAt</title>
+      <link>/posts/js-codepointat/</link>
+      <pubDate>Sun, 22 Nov 2020 23:29:51 +0800</pubDate>
+      
+      <guid>/posts/js-codepointat/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          codePointAt() 方法返回 一个 Unicode 编码点值的非负整数。
+如果在指定的位置没有元素则返回 undefined 。如果在索引处开始没有UTF-16 代理对，将直接返回在那个索引处的编码单元。
+Surrogate Pair是UTF-16中用于扩展字符而使用的编码方式，是一种采用四个字节(两个UTF-16编码)来表示一个字符，称作代理对。
+str.codePointAt(pos)&amp;#39;ABC&amp;#39;.codePointAt(1); // 66&amp;#39;\uD800\uDC00&amp;#39;.codePointAt(0); // 65536&amp;#39;XYZ&amp;#39;.codePointAt(42); // undefined
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js GetOwnPropertyNames</title>
+      <link>/posts/js-getownpropertynames/</link>
+      <pubDate>Sun, 22 Nov 2020 23:19:28 +0800</pubDate>
+      
+      <guid>/posts/js-getownpropertynames/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
+Object.getOwnPropertyNames() 返回一个数组，该数组对元素是 obj自身拥有的枚举或不可枚举属性名称字符串。 数组中枚举属性的顺序与通过 for&amp;hellip;in 循环（或 Object.keys）迭代该对象属性时一致。数组中不可枚举属性的顺序未定义。
+Object.getOwnPropertyNames(obj)Example:
+var arr = [&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;];console.log(Object.getOwnPropertyNames(arr).sort()); // [&amp;#34;0&amp;#34;, &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;length&amp;#34;]// 类数组对象var obj = { 0: &amp;#34;a&amp;#34;, 1: &amp;#34;b&amp;#34;, 2: &amp;#34;c&amp;#34;};console.log(Object.getOwnPropertyNames(obj).sort()); // [&amp;#34;0&amp;#34;, &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;]// 使用Array.forEach输出属性名和属性值Object.getOwnPropertyNames(obj).forEach(function(val, idx, array) {console.log(val + &amp;#34; -&amp;gt; &amp;#34; + obj[val]);});// 输出// 0 -&amp;gt; a// 1 -&amp;gt; b// 2 -&amp;gt; c//不可枚举属性var my_obj = Object.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0242 Valid Anagram</title>
+      <link>/posts/leetcode-0242-valid-anagram/</link>
+      <pubDate>Sun, 22 Nov 2020 22:38:27 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0242-valid-anagram/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Given two strings s and t , write a function to determine if t is an anagram of s.
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+Example:
+Input: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot;Output: trueInput: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot;Output: falseNote:
+You may assume the string contains only lowercase alphabets. 你可以假设字符串只包含小写字母。
+Follow up:
+What if the inputs contain unicode characters? How would you adapt your solution to such case?
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Pull Slow</title>
+      <link>/posts/git-pull-slow/</link>
+      <pubDate>Sun, 22 Nov 2020 20:53:33 +0800</pubDate>
+      
+      <guid>/posts/git-pull-slow/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
+由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
+ 解决方法一：删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
+ 解决方法二：本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Git Checkout</title>
       <link>/posts/git-checkout/</link>
       <pubDate>Fri, 20 Nov 2020 15:52:25 +0800</pubDate>
@@ -171,10 +316,10 @@ function find ( item ) {var currNode = this.
         
         
         
-          对链表进行插入排序。
-插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。 每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。
-插入排序算法：
- 插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。 每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。 重复直到所有输入数据插入完为止。  输入: 4-&amp;gt;2-&amp;gt;1-&amp;gt;3输出: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4输入: -1-&amp;gt;5-&amp;gt;3-&amp;gt;4-&amp;gt;0输出: -1-&amp;gt;0-&amp;gt;3-&amp;gt;4-&amp;gt;5/*** Definition for singly-linked list.* function ListNode(val) {* this.val = val;* this.next = null;* }*//*** @param {ListNode} head* @return {ListNode}*/var insertionSortList = function(head) {};
+          Sort a linked list using insertion sort.
+A graphical example of insertion sort. The partial sorted list (black) initially contains only the first element in the list. With each iteration one element (red) is removed from the input data and inserted in-place into the sorted list
+Algorithm of Insertion Sort:
+ Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.
           
         
         </description>
@@ -636,13 +781,14 @@ tokenList.toggle(token, force);参数列表
         
         
         
-          gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &amp;#34;C:\python2\python.exe&amp;#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error   我们可以看到，安装node-sass有几个步骤：
+          gyp info it worked if it ends with okgyp info using node-gyp@5.1.0gyp info using node@14.4.0 | win32 | x64gyp info find Python using Python version 2.7.16 found at &amp;#34;C:\python2\python.exe&amp;#34;gyp http GET https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gzgyp WARN install got an error, rolling back installgyp ERR! configure error我们可以看到，安装node-sass有几个步骤：
   校验本地node_modules中是否已安装node-sass，版本是否一致;
   如未安装或版本不符，从npm源安装node-sass本体;
   检测全局缓存和本地中是否有binding.node,如有即跳过安装;
   没有binding.node则从github下载该二进制文件并将其缓存到全局;
   假如binding.node下载失败，则尝试本地编译出该文件;
-  将版本信息写到package-lock.
+  将版本信息写到package-lock.json;
+  检查 python 版本 同时安装python2 和 python3 的时候，python3 回默认配置环境遍历。但python2不会
           
         
         </description>
@@ -1391,6 +1537,27 @@ CDN 有效地解决了以下问题：
  用户与业务服务器地域间物理距离较远，需要进行多次网络转发，传输延时较高且不稳定。 用户使用运营商与业务服务器所在运营商不同，请求需要运营商之间进行互联转发。 业务服务器网络带宽、处理能力有限，当接收到海量用户请求时，会导致响应速度降低、可用性降低。  加速原理 假设您的业务源站域名为 www.test.com，域名接入 CDN 开始使用加速服务后，当您的用户发起 HTTP 请求时，实际的处理流程如下图所示：
 详细说明如下：
  用户向 www.test.com 下的某图片资源（如：1.jpg）发起请求，会先向 Local DNS 发起域名解析请求。 当 Local DNS 解析 www.test.com 时，会发现已经配置了 CNAME www.test.com.cdn.dnsv1.com，解析请求会发送至 Tencent DNS（GSLB），GSLB 为腾讯云自主研发的调度体系，会为请求分配最佳节点 IP。 Local DNS 获取 Tencent DNS 返回的解析 IP。 用户获取解析 IP。 用户向获取的 IP 发起对资源 1.jpg 的访问请求。 若该 IP 对应的节点缓存有 1.jpg，则会将数据直接返回给用户（10），此时请求结束。若该节点未缓存 1.jpg，则节点会向业务源站发起对 1.jpg 的请求（6、7、8），获取资源后，结合用户自定义配置的缓存策略（可参考产品文档中的 缓存过期配置），将资源缓存至节点（9），并返回给用户（10），此时请求结束。  参考资料  内容分发网络  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Swoole</title>
+      <link>/posts/php-swoole/</link>
+      <pubDate>Thu, 05 Nov 2020 08:17:58 +0800</pubDate>
+      
+      <guid>/posts/php-swoole/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Swoole 使 PHP 开发人员可以编写高性能高并发的 TCP、UDP、Unix Socket、HTTP、 WebSocket 等服务，让 PHP 不再局限于 Web 领域。Swoole4 协程的成熟将 PHP 带入了前所未有的时期， 为性能的提升提供了独一无二的可能性。Swoole 可以广泛应用于互联网、移动通信、云计算、 网络游戏、物联网（IOT）、车联网、智能家居等领域。使用 PHP + Swoole 可以使企业 IT 研发团队的效率大大提升，更加专注于开发创新产品
+Swoole 是一个 PHP 的 协程 高性能 网络通信引擎，使用 C/C++ 语言编写，提供了多种通信协议的网络服务器和客户端模块。可以方便快速的实现 TCP/UDP服务、高性能Web、WebSocket服务、物联网、实时通讯、游戏、微服务等，使 PHP 不再局限于传统的 Web 领域。
           
         
         </description>

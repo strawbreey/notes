@@ -154,6 +154,246 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-disk-space/">Mysql Disk Space</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-29
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            计算1000万条数据占了多大内存
+CREATE TABLE <code>table_name</code> (id bigint(20) not null auto_increment, &ndash; 8字节 detail varchar(2000), &ndash;  createtime datetime, &ndash; 8 字节 validity int default '0', &ndash; 4字节 primary key (id) &ndash; 8字节);每个字段设计完成后占用的字节数
+(8+8+8+4) * 1000 0000 = 2 8000 0000 字节 == 18G
+电脑中存储常用的单位全称读法： 1Byte(Byte 字节) = 8Bit 1KB (Kilobyte 千字节) = 1024Byte， 1MB (Megabyte，兆字节，简称“兆”) = 1024KB， 1GB (Gigabyte，吉字节，又称“千兆”) = 1024MB， 1TB (Terabyte，太字节，或百万兆字节) = 1024GB，其中1024=2^10 ( 2 的10次方)。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-disk-space/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-this/">Js This</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-29
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
+this 的值是在代码运行时计算出来的，它取决于代码上下文。
+let user = { name: &quot;John&quot; };let admin = { name: &quot;Admin&quot; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &quot;this&quot; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin<a href="">'f'</a>; // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-this/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/good-doctor-1-4/">Good Doctor 1 4</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-29
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            good doctor 第一季 第四集
+hello, I’ve looked everywhere
+我哪儿都找遍了
+All right, I’m here now, We’ll..
+好了,没事，我在这儿，我们要…
+we’ll just keep looking until you find it
+我们一直找，找到为止
+why is furniture in the middle of the room
+为什么家具在房间中央
+I konw I packed it
+我记得我把他包起来了
+I make a list, “star tip screwdriver”
+我还列了个清单, 梅花螺丝刀
+Look, it&quot;s checked
+你看, 已经打勾确定拿着了
+It’s checked
+真的打勾了
+Myabe, you…you threw it out with the newspapers
+也许你是用包盘子的报纸包起来的
+you used to pack the dishes
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/good-doctor-1-4/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/message-queue/">Message Queue</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-28
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/message-queue/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/angular-trackby/">Angular TrackBy</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/angular-trackby/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-fastcgi/">Php Fastcgi</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-fastcgi/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/http-load-balancer/">Http Load Balancer</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-27
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/http-load-balancer/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/js-apply-bind-and-call/">Js Apply Bind and Call</a></h1>
       <div class="post-meta">
         
@@ -610,252 +850,6 @@ MySQL 限制每个表最多存储 4096 列，并且每一行数据的大小不�
       </div>
       
         <div><a class="read-more button" href="/posts/sql-interview/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/yii-active-query/">Yii Active Query</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-22
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            ActiveQuery mainly provides the following methods to retrieve the query results:
-one(): returns a single record populated with the first row of data. all(): returns all records based on the query results. count(): returns the number of records. sum(): returns the sum over the specified column. average(): returns the average over the specified column. min(): returns the min over the specified column. max(): returns the max over the specified column.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/yii-active-query/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-promise/">Js Promise</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Promise 对象的构造器（constructor）语法如下：
-let promise = new Promise(function(resolve, reject) {// executor（生产者代码，“歌手”）});当 executor 获得了结果，无论是早还是晚都没关系，它应该调用以下回调之一：
-resolve(value) — 如果任务成功完成并带有结果 value。 reject(error) — 如果出现了 error，error 即为 error 对象。
-Promise 是一个对象，它代表了一个异步操作的最终完成或者失败。
-// 成功的回调函数function successCallback(result) {console.log(&quot;音频文件创建成功: &quot; + result);}// 失败的回调函数function failureCallback(error) {console.log(&quot;音频文件创建失败: &quot; + error);}createAudioFileAsync(audioSettings, successCallback, failureCallback)const promise = createAudioFileAsync(audioSettings); promise.then(successCallback, failureCallback);// 简写createAudioFileAsync(audioSettings).then(successCallback, failureCallback);约定 不同于“老式”的传入回调，在使用 Promise 时，会有以下约定：
-在本轮 事件循环 运行完成之前，回调函数是不会被调用的。 即使异步操作已经完成（成功或失败），在这之后通过 then() 添加的回调函数也会被调用。 通过多次调用 then() 可以添加多个回调函数，它们会按照插入顺序进行执行。  Promise 很棒的一点就是链式调用（chaining）。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-promise/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-header/">Php Header</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            fread
-fread — 读取文件（可安全用于二进制文件）
-fread ( resource $handle , int $length ) : string// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。// length 最多读取 length 个字节。fread() 从文件指针 handle 读取最多 length 个字节。 该函数在遇上以下几种情况时停止读取文件：
-读取了 length 个字节 到达了文件末尾（EOF） a packet becomes available or the socket timeout occurs (for network streams) if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-header/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nignx-x-sendfile/">Nignx X Sendfile</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            很多时候用户需要从网站下载文件，如果文件是可以通过一个固定链接公开获取的，那么我们只需将文件存放到 webroot下的目录里就好。但大多数情况下，我们需要做权限控制，例如下载 PDF 账单，又例如下载网盘里的档案。这时，我们通常借助于脚本代码来实现，而这无疑会增加服务器的负担。
-// 用户身份认证，若验证失败跳转authenticate();// 获取需要下载的文件，若文件不存在跳转$file = determine_file();// 读取文件内容$content=file_get_contents($file);// 发送合适的 HTTP 头header(&quot;Content-type: application/octet-stream&quot;);header('Content-Disposition: attachment; filename=&quot;' . basename($file) . '&quot;');header(&quot;Content-Length: &quot;. filesize($file));echo $content; // 或者 readfile($file);这样做意味着我们的程序需要将文件内容从磁盘经过一个固定的 buffer 去循环读取到内存，再发送给前端 web 服务器，最后才到达用户。当需要下载的文件很大的时候，这种方式将消耗大量内存，甚至引发 php 进程超时或崩溃。Cache 也很头疼，更不用说中断重连的情况了。 一个理想的解决方式应该是，由 php 程序进行权限检查等逻辑判断，一切通过后，让前台的 web 服务器直接将文件发送给用户——像 Nginx 这样的前台更善于处理静态文件。这样一来 php 脚本就不会被 I/O 阻塞了。
-X-Sendfile X-Sendfile 是一种将文件下载请求由后端应用转交给前端 web 服务器处理的机制，它可以消除后端程序既要读文件又要处理发送的压力，从而显著提高服务器效率，特别是处理大文件下载的情形下。
-X-Sendfile 通过一个特定的 HTTP header 来实现：在 X-Sendfile 头中指定一个文件的地址来通告前端 web 服务器。当 web 服务器检测到后端发送的这个 header 后，它将忽略后端的其他输出，而使用自身的组件（包括 缓存头 和 断点重连 等优化）机制将文件发送给用户。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/nignx-x-sendfile/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-flush-and-ob_flush/">Php Flush and Ob_flush</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            flush flush — 刷新输出缓冲
-flush ( void ) : void刷新PHP程序的缓冲，而不论PHP执行在何种情况下（CGI ，web服务器等等）。该函数将当前为止程序的所有输出发送到用户的浏览器。
-flush() 函数不会对服务器或客户端浏览器的缓存模式产生影响。因此，必须同时使用 ob_flush() 和flush() 函数来刷新输出缓冲。
-个别web服务器程序，特别是Win32下的web服务器程序，在发送结果到浏览器之前，仍然会缓存脚本的输出，直到程序结束为止。
-有些Apache的模块，比如mod_gzip，可能自己进行输出缓存，这将导致flush()函数产生的结果不会立即被发送到客户端浏览器。
-甚至浏览器也会在显示之前，缓存接收到的内容。例如 Netscape 浏览器会在接受到换行或 html 标记的开头之前缓存内容，并且在接受到 标记之前，不会显示出整个表格。
-ob_flush ob_flush — 冲刷出（送出）输出缓冲区中的内容
-ob_flush ( void ) : void这个函数将送出缓冲区的内容（如果里边有内容的话）。如果想进一步处理缓冲区中的内容，必须在ob_flush()之前调用ob_get_contents() ，因为在调用ob_flush()之后缓冲区内容将被丢弃。
-此函数不会销毁输出缓冲区，而像ob_end_flush() 函数会销毁缓冲区。
-ob_clean ob_clean — 清空（擦掉）输出缓冲区
-ob_clean ( void ) : void此函数用来丢弃输出缓冲区中的内容。
-此函数不会像 ob_end_clean() 函数那样销毁输出缓冲区。
-输出缓冲必须已被 ob_start() 以 PHP_OUTPUT_HANDLER_CLEANABLE 标记启动。否则 ob_clean() 不会有效果。
-ob_end_clean ob_end_clean — 清空（擦除）缓冲区并关闭输出缓冲
-ob_end_clean ( void ) : bool此函数丢弃最顶层输出缓冲区的内容并关闭这个缓冲区。如果想要进一步处理缓冲区的内容，必须在ob_end_clean()之前调用ob_get_contents()，因为当调用ob_end_clean()时缓冲区内容将被丢弃。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-flush-and-ob_flush/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-download/">Php Download</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-21
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-download/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/network-agent/">Network Agent</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-20
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/network-agent/">Read more →</a></div>
       
     </div>
     
