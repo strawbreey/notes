@@ -1,8 +1,17 @@
+# notes
+http://note.strawbreey.com
+
+---
+title: "Markdown"
+date: 2020-11-23T10:05:42+08:00
+draft: false
+---
+
 Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，**粗体** 或者 *斜体* 某些文字，更棒的是，它还可以
 
 ## 目录
 
-[TOC]
+<!-- TOC -->autoauto- [notes](#notes)auto  - [目录](#目录)auto    - [1. 斜体和粗体](#1-斜体和粗体)auto    - [2. 分级标题](#2-分级标题)auto    - [3. 外链接](#3-外链接)auto    - [4. 无序列表](#4-无序列表)auto    - [5. 有序列表](#5-有序列表)auto    - [6. 文字引用](#6-文字引用)auto    - [7. 行内代码块](#7-行内代码块)auto    - [8.  代码块](#8--代码块)auto    - [9.  插入图像](#9--插入图像)auto    - [10. 内容目录](#10-内容目录)auto    - [11. 标签分类](#11-标签分类)auto    - [12. 删除线](#12-删除线)auto    - [13. 注脚](#13-注脚)auto    - [14. LaTeX 公式](#14-latex-公式)auto    - [15. 加强的代码块](#15-加强的代码块)auto    - [16. 流程图](#16-流程图)auto      - [示例](#示例)auto      - [更多语法参考：[流程图语法参考](http://adrai.github.io/flowchart.js/)](#更多语法参考流程图语法参考httpadraigithubioflowchartjs)auto    - [17. 序列图](#17-序列图)auto      - [示例 1](#示例-1)auto      - [示例 2](#示例-2)auto      - [更多语法参考：[序列图语法参考](http://bramp.github.io/js-sequence-diagrams/)](#更多语法参考序列图语法参考httpbrampgithubiojs-sequence-diagrams)auto    - [18. 甘特图](#18-甘特图)auto      - [更多语法参考：[甘特图语法参考](https://knsv.github.io/mermaid/#gant-diagrams)](#更多语法参考甘特图语法参考httpsknsvgithubiomermaidgant-diagrams)auto    - [19. Mermaid 流程图](#19-mermaid-流程图)auto      - [更多语法参考：[Mermaid 流程图语法参考](https://knsv.github.io/mermaid/#flowcharts-basic-syntax)](#更多语法参考mermaid-流程图语法参考httpsknsvgithubiomermaidflowcharts-basic-syntax)auto    - [20. Mermaid 序列图](#20-mermaid-序列图)auto      - [更多语法参考：[Mermaid 序列图语法参考](https://knsv.github.io/mermaid/#sequence-diagrams)](#更多语法参考mermaid-序列图语法参考httpsknsvgithubiomermaidsequence-diagrams)auto    - [21. 表格支持](#21-表格支持)auto    - [22. 定义型列表](#22-定义型列表)auto    - [23. Html 标签](#23-html-标签)auto    - [24. 内嵌图标](#24-内嵌图标)auto    - [25. 待办事宜 Todo 列表](#25-待办事宜-todo-列表)auto    - [注脚](#注脚)autoauto<!-- /TOC -->
 
 ### 1. 斜体和粗体
 
