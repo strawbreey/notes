@@ -1,0 +1,10 @@
+public
+
+themes/
+themes/ananke
+
+/static/images/*.exe
+/static/images/*.zip
+/static/images/*.rar
+
+
