@@ -2,7 +2,7 @@ public
 
 themes/
 themes/ananke
-themes/friend
+# themes/friend
 
 /static/images/*.exe
 /static/images/*.zip
