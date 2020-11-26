@@ -88,7 +88,7 @@ var insertionSortList = function(head) {
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
 - [Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)

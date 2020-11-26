@@ -60,7 +60,7 @@ sayHi('John'); // Hello, John!
     每个模块都有自己的顶级作用域（top-level scope）。换句话说，一个模块中的顶级作用域变量和函数在其他脚本中是不可见的。
 
 
-### 参考资料
+### 参考链接 
 
 - [CommonJS、requirejs、ES6的对比](https://www.jianshu.com/p/f65e84bfeb16)
 - [requirejs.org](https://requirejs.org/docs/start.html)

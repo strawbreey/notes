@@ -8,7 +8,7 @@ draft: false
 
 
 
-### 参考资料
+### 参考链接 
 
 - [Optimizing Subqueries and Derived Tables](https://dev.mysql.com/doc/refman/5.6/en/subquery-optimization.html)
 

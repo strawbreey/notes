@@ -116,6 +116,6 @@ var isAnagram = function(s, t) {
 };
 ```
 
-### 参考资料
+### 参考链接 
 - [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 - [有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/)

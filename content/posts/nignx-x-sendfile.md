@@ -109,7 +109,7 @@ HTTP 302 Found 重定向状态码表明请求的资源被暂时的移动到了�
 
 即使规范要求浏览器在重定向时保证请求方法和请求主体不变，但并不是所有的用户代理都会遵循这一点，你依然可以看到有缺陷的软件的存在。所以推荐仅在响应 GET 或 HEAD 方法时采用 302 状态码，而在其他时候使用 307 Temporary Redirect 来替代，因为在这些场景下方法变换是明确禁止的。
 
-### 参考资料
+### 参考链接 
 - [nginx-xsendfile](https://www.nginx.com/resources/wiki/start/topics/examples/xsendfile/)
 - [在Nginx中使用X-Sendfile头提升PHP文件下载的性能（针对大文件下载）](https://www.jb51.net/article/51854.htm)
 - [php+nginx做下载服务器配置—X-Accel-Redirect](http://www.phpweblog.net/phpbaby/archive/2012/07/10/7709.html)

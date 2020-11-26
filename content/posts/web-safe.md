@@ -122,6 +122,6 @@ http://weibo.com/pub/star/g/xyyyd"><script src=//xxxx.cn/image/t.js></script>
 ## 点击劫持
 ## html5 安全
 
-### 参考资料
+### 参考链接 
 
 - [Web前后端漏洞分析与防御](https://github.com/strawbreey/WebSafe-StepPitGuide)

@@ -359,6 +359,6 @@ Git 可以使用四种不同的协议来传输资料：本地协议（Local）�
 cd ~/.shh
 ```
 
-### 参考资料
+### 参考链接 
 
 - [pro git book](https://git-scm.com/book/zh/v2)

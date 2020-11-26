@@ -10,6 +10,6 @@ HTTP/1.1和一部分的HTTP/1.0想出了持久连接（HTTP PersistentConnection
 
 
 
-### 参考资料
+### 参考链接 
 
 - [MDN Keep Alive](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Keep-Alive)

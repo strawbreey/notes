@@ -15,6 +15,6 @@ trackBy: trackByFn
 ```
 
 
-### 参考文献
+### 参考链接 
 
 - [Using Pure Pipes To Generate NgFor TrackBy Identity Functions In Angular 7.2.7](https://www.bennadel.com/blog/3579-using-pure-pipes-to-generate-ngfor-trackby-identity-functions-in-angular-7-2-7.htm)

@@ -78,6 +78,6 @@ mysql> show binary logs;
 ### binlog格式
 
 
-### 参考资料
+### 参考链接 
 - [Binary Log Versions](https://dev.mysql.com/doc/internals/en/binary-log-versions.html)
 - [What is binlog in mysql?](https://stackoverflow.com/questions/1366184/what-is-binlog-in-mysql)

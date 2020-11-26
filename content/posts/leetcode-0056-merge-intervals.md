@@ -57,6 +57,6 @@ var merge = function(intervals) {
 };
 ```
 
-### 参考资料
+### 参考链接 
 
 - [合并区间](https://leetcode-cn.com/problems/merge-intervals/)

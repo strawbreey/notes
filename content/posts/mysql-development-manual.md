@@ -166,7 +166,7 @@ draft: false
 
 10. OOM（Out Of Memory）：源于java.lang.OutOfMemory Error，当JVM没有足够的内存为对象分配空间并且垃圾回收器也无
 
-### 参考资料
+### 参考链接 
 
 - [阿里巴巴java开发手册](https://weread.qq.com/web/reader/f5a3215072096af9f5ac0eck4e73277021a4e732ced3b55)
 

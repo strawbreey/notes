@@ -52,5 +52,5 @@ IoC(控制反转: Inversion of Control)能做什么
 
 
 
-#### 参考资料
+#### 参考链接 
 [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)

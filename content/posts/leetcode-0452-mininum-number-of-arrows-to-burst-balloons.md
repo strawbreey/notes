@@ -101,7 +101,7 @@ var findMinArrowShots = function(points) {
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/)
 

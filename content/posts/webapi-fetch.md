@@ -56,6 +56,6 @@ fetch('https://example.com', {
 ```
 
 
-### 参考资料
+### 参考链接 
 - [Fetch API](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API)
 - [Using_Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)

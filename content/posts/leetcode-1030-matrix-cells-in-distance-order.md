@@ -93,7 +93,7 @@ var allCellsDistOrder = function(R, C, r0, c0) {
 ![matrix-cells-in-distance-order](/images/matrix-cells-in-distance-order.png)
 
 
-### 参考资料
+### 参考链接 
 
 - [距离顺序排列矩阵单元格](https://leetcode-cn.com/problems/matrix-cells-in-distance-order/)
 - [Matrix Cells in Distance Order](https://leetcode.com/problems/matrix-cells-in-distance-order//)

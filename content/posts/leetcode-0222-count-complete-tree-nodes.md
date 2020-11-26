@@ -43,7 +43,7 @@ var countNodes = function(root) {
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
 - [深度优先搜索](/posts/depth-firtst-search.md)

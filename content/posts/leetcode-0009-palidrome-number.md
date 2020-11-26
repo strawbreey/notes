@@ -74,6 +74,6 @@ var isPalindrome = function(x: number): boolean {
 
 ```
 
-### 参考资料
+### 参考链接 
 
 - [回文数](https://leetcode-cn.com/problems/palindrome-number/)

@@ -60,6 +60,6 @@ var isValid = function(s) {
 };
 ```
 
-### 参考资料
+### 参考链接 
 
 - [有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)

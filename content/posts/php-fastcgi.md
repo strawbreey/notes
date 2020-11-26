@@ -50,7 +50,7 @@ web server（如nginx）只是内容的分发者。比如，如果请求/index.h
 
 ![cgi](/images/cgi.png)
 
-### 参考资料
+### 参考链接 
 
 - [FastCGI 进程管理器 ¶](https://www.php.net/manual/zh/book.fpm.php)
 - [CGI、FastCGI和PHP-FPM关系图解](https://www.awaimai.com/371.html)
