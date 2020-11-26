@@ -10,6 +10,6 @@ What are the target browsers? Different browsers set different default CSS rules
 
 - [normalize](https://github.com/necolas/normalize.css/blob/master/normalize.css)
 
-### 参考资料
+### 参考链接 
 
 - [What is a user agent stylesheet?](https://stackoverflow.com/questions/12582624/what-is-a-user-agent-stylesheet)

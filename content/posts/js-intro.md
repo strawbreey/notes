@@ -30,6 +30,6 @@ draft: false
 
 - [driver.js](https://github.com/kamranahmedse/driver.js)
 
-### 参考资料
+### 参考链接 
 
 - [从王者荣耀里我学会的前端新手指引](https://juejin.im/post/6891053442530279432)

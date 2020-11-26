@@ -2,6 +2,7 @@
 title: "Leetcode 0452 Mininum Number of Arrows to Burst Balloons"
 date: 2020-11-23T19:36:30+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。
@@ -100,7 +101,7 @@ var findMinArrowShots = function(points) {
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/)
 

@@ -2,6 +2,7 @@
 title: "Leetcode 0020 Valid Parentheses"
 date: 2020-11-24T23:28:48+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
@@ -59,6 +60,6 @@ var isValid = function(s) {
 };
 ```
 
-### 参考资料
+### 参考链接 
 
 - [有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)

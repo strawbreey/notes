@@ -46,6 +46,6 @@ console.log(Object.getOwnPropertyNames(my_obj).sort()); // ["foo", "getFoo"]
 
 
 
-### 参考资料
+### 参考链接 
 
 - [Object.getOwnPropertyNames()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)

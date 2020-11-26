@@ -2,6 +2,7 @@
 title: "Leetcode 0147 Insertion Sort List"
 date: 2020-11-20T09:45:27+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 Sort a linked list using insertion sort.
@@ -87,7 +88,7 @@ var insertionSortList = function(head) {
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
 - [Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)

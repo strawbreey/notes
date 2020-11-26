@@ -144,7 +144,7 @@ try {
 
 ### Promise 拒绝事件
 
-### 参考资料
+### 参考链接 
 
 - [使用 Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises)
 - [Promise then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)

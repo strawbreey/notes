@@ -144,7 +144,7 @@ adv. 可靠地
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [yarn cli](https://yarnpkg.com/cli/add)
 - [There appears to be trouble with your network connection. Retrying](https://stackoverflow.com/questions/51508364/yarn-there-appears-to-be-trouble-with-your-network-connection-retrying)

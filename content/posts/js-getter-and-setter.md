@@ -76,6 +76,6 @@ user.name = ""; // Name 太短了……
 
 ### 兼容性
 
-### 参考资料
+### 参考链接 
 
 - [属性的 getter 和 setter](https://zh.javascript.info/property-accessors)

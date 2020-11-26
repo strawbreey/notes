@@ -2,6 +2,7 @@
 title: "Leetcode 0242 Valid Anagram"
 date: 2020-11-22T22:38:27+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 Given two strings s and t , write a function to determine if t is an anagram of s.
@@ -115,6 +116,6 @@ var isAnagram = function(s, t) {
 };
 ```
 
-### 参考资料
+### 参考链接 
 - [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 - [有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/)

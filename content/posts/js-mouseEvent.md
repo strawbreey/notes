@@ -53,7 +53,7 @@ MouseEvent = {
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [MouseEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent)
 

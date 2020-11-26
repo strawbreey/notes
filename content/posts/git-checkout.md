@@ -25,11 +25,6 @@ git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>…​]
 
 
 
-
-
-
-
-
 在Git里面，checkout用于切换分支或者恢复工作树的文件。
 
 1. 新建一个hotfix分支
@@ -60,7 +55,7 @@ Git checkout . # 从index区域恢复所有文件
 这个命令很灵活，既可以带一个commit号，又可以带着一个路径，tree-ish 可以理解成一个commit号，就是恢复到某一个commit号，index就是暂存区，这里要理解Git的三个区域，如果这个还不明白，那需要单开一篇文章去讲了。
 
 
-### 参考文献
+### 参考链接 
 
 - [git-checkout](https://git-scm.com/docs/git-checkout)
 - [Git checkout with dot](https://stackoverflow.com/questions/14460595/git-checkout-with-dot)

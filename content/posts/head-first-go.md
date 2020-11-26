@@ -13,7 +13,7 @@ draft: false
 ·2015年8月19日，Go语言Go 1.5版发布，本次更新中移除了“最后残余的C代码”。
 
 
-### 参考资料
+### 参考链接 
 
 - [head first go](https://headfirstgo.com/)
 - [微信读书head first go](https://weread.qq.com/web/reader/cc0329f0720867eecc0f00ak1a53250031be1a5b1e4d74c)

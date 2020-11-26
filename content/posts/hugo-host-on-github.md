@@ -82,6 +82,6 @@ echo "Pushing to github"
 git push --all
 ```
 
-### 参考资料
+### 参考链接 
 
 - [Host on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/)

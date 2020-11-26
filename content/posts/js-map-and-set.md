@@ -259,7 +259,7 @@ Map —— 是一个带键的数据项的集合。
   在 Map 和 Set 中迭代总是按照值插入的顺序进行的，所以我们不能说这些集合是无序的，但是我们不能对元素进行重新排序，也不能直接按其编号来获取元素。
 
 
-### 参考资料
+### 参考链接 
 
 - [Map and Set（映射和集合）](https://zh.javascript.info/map-set)
 - [MDN Map](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)

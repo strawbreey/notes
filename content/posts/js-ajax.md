@@ -114,7 +114,7 @@ Fetch API 提供一个获取资源的接口
 s
 在过去，一个网页必须发送请求到服务器来获取新的数据，也就是说，网页必须主动向服务器请求数据。有了server-sent events之后，服务器可以向网页推送消息，使得服务器可以随时向网页传送数据。这些发送过来的消息可以看作是带有数据的事件
 
-### 参考资料
+### 参考链接 
 
 - [Ajax](https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX)
 

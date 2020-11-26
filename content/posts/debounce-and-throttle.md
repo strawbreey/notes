@@ -70,7 +70,7 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ```
 
-#### 参考资料
+#### 参考链接 
 
 节流:
 

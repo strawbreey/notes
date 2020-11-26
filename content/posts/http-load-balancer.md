@@ -20,7 +20,7 @@ draft: false
 
 而在客户端负载均衡中，客户端可以知道所有服务端的详细信息，当需要调用 Server上的接口时，客户端从自身已知的Server列表中，根据提前配置的负载均衡策略，自己挑选一个服务端来调用，此时客户端知道自己调用的是哪一个 Server
 
-### 参考资料
+### 参考链接 
 
 - [nginx http load balancer](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/)
 - [一道滴滴的负载均衡前端面试题](https://zhuanlan.zhihu.com/p/25600864)

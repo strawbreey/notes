@@ -2,6 +2,7 @@
 title: "Leetcode 0222 Count Complete Tree Nodes"
 date: 2020-11-24T23:35:16+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 给出一个完全二叉树，求出该树的节点个数。
@@ -42,7 +43,7 @@ var countNodes = function(root) {
 ```
 
 
-### 参考资料
+### 参考链接 
 
 - [完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
 - [深度优先搜索](/posts/depth-firtst-search.md)

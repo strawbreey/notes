@@ -68,7 +68,7 @@ for(let i = 0; i < nums.length; i++) {
 
 ```
 
-### 参考资料
+### 参考链接 
 
 - [两数之和](https://leetcode-cn.com/problems/two-sum/)
 - [two sum](https://leetcode.com/problems/two-sum/)

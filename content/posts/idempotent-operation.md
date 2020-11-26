@@ -59,7 +59,7 @@ select + insert 并发不高的后台系统，或者一些任务JOB，为了支�
 总之幂等性应该是合格程序员的一个基因，在设计系统时，是首要考虑的问题，尤其是在像支付宝，银行，互联网金融公司等涉及的都是钱的系统，既要高效，数据也要准确，所以不能出现多扣款，多打款等问题，这样会很难处理，用户体验也不好。
 
 
-### 参考资料
+### 参考链接 
 
 - [What is an idempotent operation?](https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation#:~:text=Idempotence%20means%20that%20applying%20an,the%20result%20is%20still%20zero.)
 

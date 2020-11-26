@@ -150,6 +150,6 @@ curriedSum(1)(2)(3); // 6，全柯里化
 
 柯里化让我们能够更容易地获取偏函数。就像我们在日志记录示例中看到的那样，普通函数 log(date, importance, message) 在被柯里化之后，当我们调用它的时候传入一个参数（如 log(date)）或两个参数（log(date, importance)）时，它会返回偏函数。
 
-### 参考资料
+### 参考链接 
 - [柯里化（Currying）](https://zh.javascript.info/currying-partials)
 - [实现 add(1)(2)(3)](https://github.com/lgwebdream/FE-Interview/issues/21)

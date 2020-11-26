@@ -41,7 +41,7 @@ Hit "D" when the prompt comes up and it will remove it.
 
 In my case, after I hit D it left the latest saved version intact and deleted the .swp which got created because I exited VIM incorrectly
 
-### 参考资料
+### 参考链接 
 
 - [Found a swap file by the name](https://stackoverflow.com/questions/13361729/found-a-swap-file-by-the-name)
 

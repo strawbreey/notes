@@ -2,6 +2,7 @@
 title: "Leetcode 0056 Merge Intervals"
 date: 2020-11-23T00:26:57+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 给出一个区间的集合，请合并所有重叠的区间。
@@ -56,6 +57,6 @@ var merge = function(intervals) {
 };
 ```
 
-### 参考资料
+### 参考链接 
 
 - [合并区间](https://leetcode-cn.com/problems/merge-intervals/)

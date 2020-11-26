@@ -103,7 +103,7 @@ react -> angular-cli -> webpack -> webpack-dev-server
 
 [angular webpack-dev-server](https://github.com/angular/angular/blob/3e57ca1d98ab6d263762a6e9a57512e50a1fb27e/aio/content/guide/deployment.md)
 
-### 参考文献
+### 参考链接 
 - [Location.reload()](https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload)
 - [Location.replace()](https://developer.mozilla.org/zh-CN/docs/Web/API/Location/replace)
 - [轻松理解webpack热更新原理](https://juejin.im/post/6844904008432222215)
