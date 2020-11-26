@@ -14,3 +14,11 @@ tags: ['git']
 ```
 git config --global credential.helper store
 ```
+
+
+### 从某一个commit开始创建本地分支 
+
+1、git log 查看提交
+2、通过checkout 跟上commitId 即可创建制定commit之前的本地分支 
+git checkout commitId -b branchName 
+

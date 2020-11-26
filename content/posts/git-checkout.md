@@ -25,11 +25,6 @@ git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>…​]
 
 
 
-
-
-
-
-
 在Git里面，checkout用于切换分支或者恢复工作树的文件。
 
 1. 新建一个hotfix分支
