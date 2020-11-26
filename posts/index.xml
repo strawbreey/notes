@@ -10,10 +10,424 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 23 Nov 2020 10:05:42 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2020 10:59:04 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 1370 Increasing Decreasing String</title>
+      <link>/posts/leetcode-1370-increasing-decreasing-string/</link>
+      <pubDate>Thu, 26 Nov 2020 10:59:04 +0800</pubDate>
+      
+      <guid>/posts/leetcode-1370-increasing-decreasing-string/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          给你一个字符串 s ，请你根据下面的算法重新构造字符串：
+  从 s 中选出 最小 的字符，将它 接在 结果字符串的后面。
+  从 s 剩余字符中选出 最小 的字符，且该字符比上一个添加的字符大，将它 接在 结果字符串后面。
+  重复步骤 2 ，直到你没法从 s 中选择字符。
+  从 s 中选出 最大 的字符，将它 接在 结果字符串的后面。
+  从 s 剩余字符中选出 最大 的字符，且该字符比上一个添加的字符小，将它 接在 结果字符串后面。
+  重复步骤 5 ，直到你没法从 s 中选择字符。
+  重复步骤 1 到 6 ，直到 s 中所有字符都已经被选过。
+  在任何一步中，如果最小或者最大字符不止一个 ，你可以选择其中任意一个，并将其添加到结果字符串。
+  请你返回将 s 中字符重新排序后的 结果字符串 。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode Array and String</title>
+      <link>/posts/leetcode-array-and-string/</link>
+      <pubDate>Thu, 26 Nov 2020 10:57:06 +0800</pubDate>
+      
+      <guid>/posts/leetcode-array-and-string/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1662 Check if Two String Arrays Are Equivalent</title>
+      <link>/posts/leetcode-1662-check-if-two-string-arrays-are-equivalent/</link>
+      <pubDate>Thu, 26 Nov 2020 10:45:53 +0800</pubDate>
+      
+      <guid>/posts/leetcode-1662-check-if-two-string-arrays-are-equivalent/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&amp;quot;ab&amp;quot;, &amp;quot;c&amp;quot;], word2 = [&amp;quot;a&amp;quot;, &amp;quot;bc&amp;quot;]输出：true解释：word1 表示的字符串为 &amp;quot;ab&amp;quot; + &amp;quot;c&amp;quot; -&amp;gt; &amp;quot;abc&amp;quot;word2 表示的字符串为 &amp;quot;a&amp;quot; + &amp;quot;bc&amp;quot; -&amp;gt; &amp;quot;abc&amp;quot;两个字符串相同，返回 true输入：word1 = [&amp;quot;a&amp;quot;, &amp;quot;cb&amp;quot;], word2 = [&amp;quot;ab&amp;quot;, &amp;quot;c&amp;quot;]输出：false输入：word1 = [&amp;quot;abc&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;defg&amp;quot;], word2 = [&amp;quot;abcddefg&amp;quot;]输出：true提示：
+ 1 &amp;lt;= word1.length, word2.length &amp;lt;= 103 1 &amp;lt;= word1[i].length, word2[i].length &amp;lt;= 103 1 &amp;lt;= sum(word1[i].
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js String</title>
+      <link>/posts/js-string/</link>
+      <pubDate>Wed, 25 Nov 2020 19:56:15 +0800</pubDate>
+      
+      <guid>/posts/js-string/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Array Prototype</title>
+      <link>/posts/js-array-prototype/</link>
+      <pubDate>Wed, 25 Nov 2020 19:54:01 +0800</pubDate>
+      
+      <guid>/posts/js-array-prototype/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          参考资料  []()  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Merge</title>
+      <link>/posts/git-merge/</link>
+      <pubDate>Wed, 25 Nov 2020 17:20:21 +0800</pubDate>
+      
+      <guid>/posts/git-merge/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在git merge命令中，有以下三种使用参数：
+git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &amp;lt;strategy&amp;gt;] [-X &amp;lt;strategy-option&amp;gt;] [-S[&amp;lt;keyid&amp;gt;]] [--[no-]rerere-autoupdate] [-m &amp;lt;msg&amp;gt;] [&amp;lt;commit&amp;gt;...]git merge &amp;lt;msg&amp;gt; HEAD &amp;lt;commit&amp;gt;...git merge --abortgit-merge简介 git-merge命令是用于从指定的commit(s)合并到当前分支的操作。
+ 注：这里的指定commit(s)是指从这些历史commit节点开始，一直到当前分开的时候。
+ git-merge命令有以下两种用途：
+  用于git-pull中，来整合另一代码仓库中的变化（即：git pull = git fetch + git merge）
+  用于从一个分支到另一个分支的合并
+   git merge HEAD &amp;hellip;命令  该命令的存在是由于历史原因，在新版本中不应该使用它，应该使用git merge -m &amp;hellip;.进行替代
+git merge &amp;ndash;abort命令 该命令仅仅在合并后导致冲突时才使用。git merge &amp;ndash;abort将会抛弃合并过程并且尝试重建合并前的状态。但是，当合并开始时如果存在未commit的文件，git merge &amp;ndash;abort在某些情况下将无法重现合并前的状态。（特别是这些未commit的文件在合并的过程中将会被修改时）  警告：运行git-merge时含有大量的未commit文件很容易让你陷入困境，这将使你在冲突中难以回退。因此非常不鼓励在使用git-merge时存在未commit的文件，建议使用git-stash命令将这些未commit文件暂存起来，并在解决冲突以后使用git stash pop把这些未commit文件还原出来。
+git 参数 git merge 命令中使用的参数
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Depth First Search</title>
+      <link>/posts/depth-first-search/</link>
+      <pubDate>Tue, 24 Nov 2020 23:38:21 +0800</pubDate>
+      
+      <guid>/posts/depth-first-search/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0222 Count Complete Tree Nodes</title>
+      <link>/posts/leetcode-0222-count-complete-tree-nodes/</link>
+      <pubDate>Tue, 24 Nov 2020 23:35:16 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0222-count-complete-tree-nodes/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          给出一个完全二叉树，求出该树的节点个数。
+说明：
+完全二叉树的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2h 个节点。
+示例:
+输入: 1 /
+2 3 / \ / 4 5 6
+输出: 6
+/*** Definition for a binary tree node.* function TreeNode(val) {* this.val = val;* this.left = this.right = null;* }*//*** @param {TreeNode} root* @return {number}*/var countNodes = function(root) {if (root == null) {return 0}return countNodes(root.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0020 Valid Parentheses</title>
+      <link>/posts/leetcode-0020-valid-parentheses/</link>
+      <pubDate>Tue, 24 Nov 2020 23:28:48 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0020-valid-parentheses/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          给定一个只包括 &amp;lsquo;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&amp;rsquo; 的字符串，判断字符串是否有效。
+有效字符串需满足：
+左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。 注意空字符串可被认为是有效字符串。
+输入: &amp;quot;()&amp;quot;输出: true输入: &amp;quot;()[]{}&amp;quot;输出: true输入: &amp;quot;(]&amp;quot;输出: false输入: &amp;quot;([)]&amp;quot;输出: falsesolution:
+/*** @param {string} s* @return {boolean}*/var isValid = function(s) {let arr = []let count = 0let obj = {&amp;#39;(&amp;#39;: &amp;#39;)&amp;#39;,&amp;#39;{&amp;#39;: &amp;#39;}&amp;#39;,&amp;#39;[&amp;#39;: &amp;#39;]&amp;#39;}while (s) {if (s[0] == &amp;#39;(&amp;#39; || s[0] == &amp;#39;{&amp;#39; || s[0] == &amp;#39;[&amp;#39;) {arr.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0009 Palidrome Number</title>
+      <link>/posts/leetcode-0009-palidrome-number/</link>
+      <pubDate>Tue, 24 Nov 2020 22:29:15 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0009-palidrome-number/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。输入: 121输出: true输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数。// 方案一/*** @param {number} x* @return {boolean}*/var isPalindrome = function(x) {if (x &amp;lt; 0) {return false}let num = xlet t = 0while (num) {t = t * 10 + num % 10 num = Math.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Swagger OpenApi Specification</title>
+      <link>/posts/swagger-openapi-specification/</link>
+      <pubDate>Tue, 24 Nov 2020 19:52:04 +0800</pubDate>
+      
+      <guid>/posts/swagger-openapi-specification/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          参考文献  OpenAPI Specification specification about  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Swagger Open Api</title>
+      <link>/posts/swagger-open-api/</link>
+      <pubDate>Tue, 24 Nov 2020 18:08:15 +0800</pubDate>
+      
+      <guid>/posts/swagger-open-api/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Api Doc</title>
+      <link>/posts/api-doc/</link>
+      <pubDate>Tue, 24 Nov 2020 17:00:56 +0800</pubDate>
+      
+      <guid>/posts/api-doc/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Swagger Api</title>
+      <link>/posts/swagger-api/</link>
+      <pubDate>Tue, 24 Nov 2020 15:57:21 +0800</pubDate>
+      
+      <guid>/posts/swagger-api/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Swagger 是一套围绕 OpenAPI 规范构建的开源工具，可以帮助您设计，构建，记录和使用 REST API。
+Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。Swagger 的目标是对 REST API 定义一个标准的和语言无关的接口，可让人和计算机无需访问源码、文档或网络流量监测就可以发现和理解服务的能力。当通过 Swagger 进行正确定义，用户可以理解远程服务并使用最少实现逻辑与远程服务进行交互。
+Swagger 工具集包含：
+ Swagger Editor – 一个在线编写 OpenAPI 规范的编辑器 Swagger UI – 使用 OpenAPI 规范生成的交互式文档 Swagger Codegen – 使用 OpenAPI 规范分别生成客户端/服务器代码（Server-stub）的工具  为什么要用 OpenAPI 规范？ 强大的描述 API 结构能力是使用 OpenAPI 规范的根本原因，一旦编写完成，配合 Swagger 工具集会帮助你加速 API 开发进度。
+ 使用 Swagger Codegen 生成 Server stub API，而无需等候逻辑的实现。 使用 Swagger Codegen 生成 客户端 API。 使用 Swagger UI 生成的交互式文档。 大部分 API 相关的工具都兼容 OpenAPI 规范。例如：可以在 SoapUI 里测试这份规范文档。   
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Binlog</title>
+      <link>/posts/mysql-binlog/</link>
+      <pubDate>Tue, 24 Nov 2020 10:43:56 +0800</pubDate>
+      
+      <guid>/posts/mysql-binlog/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          binlog是Mysql sever层维护的一种二进制日志，与innodb引擎中的redo/undo log是完全不同的日志；其主要是用来记录对mysql数据更新或潜在发生更新的SQL语句，并以&amp;quot;事务&amp;quot;的形式保存在磁盘中；
+作用主要有：
+ 复制：MySQL Replication在Master端开启binlog，Master把它的二进制日志传- 递给slaves并回放来达到master-slave数据一致的目的 数据恢复：通过mysqlbinlog工具恢复数据 增量备份  binlog管理   开启binlogmy.cnf配置中设置：log_bin=&amp;quot;存放binlog路径目录&amp;rdquo;
+  reset master 清空binlog日志文件
+  # binlog信息查询binlog开启后，可以在配置文件中查看其位置信息，也可以在myslq命令行中查看：show variables like &amp;#39;%log_bin%&amp;#39;;+---------------------------------+-------------------------------------+| Variable_name | Value |+---------------------------------+-------------------------------------+| log_bin | ON || log_bin_basename | /var/lib/mysql/3306/mysql-bin || log_bin_index | /var/lib/mysql/3306/mysql-bin.index || log_bin_trust_function_creators | OFF || log_bin_use_v1_row_events | OFF || sql_log_bin | ON |+---------------------------------+-------------------------------------+# binlog文件开启binlog后，会在数据目录（默认）生产host-bin.n（具体binlog信息）文件及host-bin.index索引文件（记录binlog文件列表）。当binlog日志写满(binlog大小max_binlog_size，默认1G),或者数据库重启才会生产新文件，但是也可通过手工进行切换让其重新生成新的文件（flush logs）；另外，如果正使用大的事务，由于一个事务不能横跨两个文件，因此也可能在binlog文件未满的情况下刷新文件# 查看binlog文件列表,mysql&amp;gt; show binary logs; +------------------+-----------+| Log_name | File_size |+------------------+-----------+| mysql-bin.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cap and Base</title>
+      <link>/posts/cap-and-base/</link>
+      <pubDate>Tue, 24 Nov 2020 10:22:21 +0800</pubDate>
+      
+      <guid>/posts/cap-and-base/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          CAP 理论/定理起源于 2000年，由加州大学伯克利分校的Eric Brewer教授在分布式计算原理研讨会（PODC）上提出，因此 CAP定理又被称作 布鲁尔定理（Brewer’s theorem） 2年后，麻省理工学院的Seth Gilbert和Nancy Lynch 发表了布鲁尔猜想的证明，CAP理论正式成为分布式领域的定理。
+简介 CAP 也就是 Consistency（一致性）、Availability（可用性）、Partition Tolerance（分区容错性） 这三个单词首字母组合。
+在理论计算机科学中，CAP 定理（CAP theorem）指出对于一个分布式系统来说，当设计读写操作时，只能能同时满足以下三点中的两个：
+一致性（Consistence） : 所有节点访问同一份最新的数据副本 可用性（Availability）: 非故障的节点在合理的时间内返回合理的响应（不是错误或者超时的响应）。 分区容错性（Partition tolerance） : 分布式系统出现网络分区的时候，仍然能够对外提供服务。
+BASE 理论 BASE 理论起源于 2008 年， 由eBay的架构师Dan Pritchett在ACM上发表。
+BASE 是 Basically Available（基本可用） 、Soft-state（软状态） 和 Eventually Consistent（最终一致性） 三个短语的缩写。BASE 理论是对 CAP 中一致性 C 和可用性 A 权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于 CAP 定理逐步演化而来的，它大大降低了我们对系统的要求。
+BASE 理论的核心思想 即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性。
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1014 Best Sightseeing Pair</title>
+      <link>/posts/leetcode-1014-best-sightseeing-pair/</link>
+      <pubDate>Mon, 23 Nov 2020 22:54:56 +0800</pubDate>
+      
+      <guid>/posts/leetcode-1014-best-sightseeing-pair/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          给定正整数数组 A，A[i] 表示第 i 个观光景点的评分，并且两个景点 i 和 j 之间的距离为 j - i。
+一对景点（i &amp;lt; j）组成的观光组合的得分为（A[i] + A[j] + i - j）：景点的评分之和减去它们两者之间的距离。
+返回一对观光景点能取得的最高分。
+输入：[8,1,5,2,6]输出：11解释：i = 0, j = 2, A[i] + A[j] + i - j = 8 + 5 + 0 - 2 = 11提示:
+2 &amp;lt;= A.length &amp;lt;= 500001 &amp;lt;= A[i] &amp;lt;= 1000/*** @param {number[]} A* @return {number}*/var maxScoreSightseeingPair = function(A) {let count = A[0] + A[1] - 1 for (let i = 0; i&amp;lt;A.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 0452 Mininum Number of Arrows to Burst Balloons</title>
+      <link>/posts/leetcode-0452-mininum-number-of-arrows-to-burst-balloons/</link>
+      <pubDate>Mon, 23 Nov 2020 19:36:30 +0800</pubDate>
+      
+      <guid>/posts/leetcode-0452-mininum-number-of-arrows-to-burst-balloons/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。
+一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 xstart，xend， 且满足 xstart ≤ x ≤ xend，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。
+给你一个数组 points ，其中 points [i] = [xstart,xend] ，返回引爆所有气球所必须射出的最小弓箭数。
+输入：points = [[10,16],[2,8],[1,6],[7,12]]输出：2解释：对于该样例，x = 6 可以射爆 [2,8],[1,6] 两个气球，以及 x = 11 射爆另外两个气球输入：points = [[1,2],[3,4],[5,6],[7,8]]输出：4输入：points = [[1,2],[2,3],[3,4],[4,5]]输出：2输入：points = [[1,2]]输出：1输入：points = [[2,3],[2,3]]输出：1提示：
+ 0 &amp;lt;= points.length &amp;lt;= 104points[i].length == 2-231 &amp;lt;= xstart &amp;lt; xend &amp;lt;= 231 - 1Solution
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Markdown</title>
@@ -59,7 +473,7 @@ autoauto- 目录auto
 注意：输入类型已于2019年4月15日更改。 请重置默认代码定义以获取新方法签名。
  提示：
 intervals[i][0] &amp;lt;= intervals[i][1]
-参考资料  合并区间  
+/*** @param {number[][]} intervals* @return {number[][]}*/var merge = function(intervals) {points = intervals.sort((a,b) =&amp;gt; (a[0] - b[0]) || (a[1] - b[1]))let mergeArr = [], count = 0;for (let i = 0; i&amp;lt; points.
           
         
         </description>
@@ -1266,11 +1680,11 @@ lock 的对象是事务，用来锁定数据库中的对象，如，表，页，
     </item>
     
     <item>
-      <title>Leetcode Reverse Integer</title>
-      <link>/posts/leetcode-reverse-integer/</link>
+      <title>Leetcode 0007 Reverse Integer</title>
+      <link>/posts/leetcode-0007-reverse-integer/</link>
       <pubDate>Fri, 06 Nov 2020 19:54:54 +0800</pubDate>
       
-      <guid>/posts/leetcode-reverse-integer/</guid>
+      <guid>/posts/leetcode-0007-reverse-integer/</guid>
       <description>
         
           
@@ -1284,7 +1698,7 @@ lock 的对象是事务，用来锁定数据库中的对象，如，表，页，
 Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231, 231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
 Example:
-Input: x = 123Output: 321Input: x = -123Output: -321Input: x = 120Output: 21Input: x = 0Output: 0var reverse = function(x) {if (x &amp;gt; 0) {// 数字转字符串  // 字符串拆分成数字 }};
+Input: x = 123Output: 321Input: x = -123Output: -321Input: x = 120Output: 21Input: x = 0Output: 0/*** @param {number} x* @return {number}*/var reverse = function(x) {let num = 0let flag = x &amp;gt; 0 ?
           
         
         </description>
@@ -3683,7 +4097,8 @@ JSON.parse(JSON.stringify(object))const a = {string: &amp;#39;string&amp;#39;,
         
         
         
-          
+          Generate interactive (交互式) OpenAPI documentation for your RESTful API using doctrine annotations (注释).
+参考资料  如何编写基于 Swagger-PHP 的 API 文档   
           
         
         </description>
@@ -4916,6 +5331,13 @@ curl -X GET &amp;#39;http://localhost:9200/_cat/indices?v&amp;#39;Document Inde
         
         
           JS 中数组字符串索引和数值索引研究 Javascript的数组其实不像PHP或者其他一些语言一样拥有真正的字符串下标，当我们试图为一个js数组添加字符串下标的时候，其实就相当于为该数组对象添加了一个属性，属性名称就是我们所谓的“字符串下标”。由于为数组对象添加属性不会影响到同为该对象属性的length的值，因此该值将始终为零。同样地，.pop()和.shift()等作用于数组元素的方法也不能够作用于这些对象属性。因此，如果要使用的是一个完全由“字符串下标”组成的数组，那还是将其声明为一个Object类型的对象要更好一些。
+总结：
+1、push()：在数组末端添加项；
+2、shift()：把数组中的第一个元素删除；
+3、pop()：把数组中的最后一个元素删除；
+4、unshift()：在数组前端添加项；
+5、push(),unshift()在推入多个项时，各个项之间的顺序不变
+6、push(),unshift()将数组的长度+1并返回的是数组的长度，pop(),shift()将数组length-1并返回的是移除的项
           
         
         </description>
@@ -5439,7 +5861,7 @@ tar -zxvf php-7.2.33.tar.xz
         
           Git不需要输入用户名密码的两种方式   采用ssh连接方式: 将自己主机的id_ras.pub 加到git 的ssh Keys 中
   采用https的连接方式:
-  git config --global credential.helper store
+  git config --global credential.helper store从某一个commit开始创建本地分支 1、git log 查看提交 2、通过checkout 跟上commitId 即可创建制定commit之前的本地分支 git checkout commitId -b branchName
           
         
         </description>

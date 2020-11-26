@@ -154,6 +154,650 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-header/">Php Header</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-21
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            fread
+fread — 读取文件（可安全用于二进制文件）
+fread ( resource $handle , int $length ) : string// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。// length 最多读取 length 个字节。fread() 从文件指针 handle 读取最多 length 个字节。 该函数在遇上以下几种情况时停止读取文件：
+读取了 length 个字节 到达了文件末尾（EOF） a packet becomes available or the socket timeout occurs (for network streams) if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-header/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/nignx-x-sendfile/">Nignx X Sendfile</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-21
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            很多时候用户需要从网站下载文件，如果文件是可以通过一个固定链接公开获取的，那么我们只需将文件存放到 webroot下的目录里就好。但大多数情况下，我们需要做权限控制，例如下载 PDF 账单，又例如下载网盘里的档案。这时，我们通常借助于脚本代码来实现，而这无疑会增加服务器的负担。
+// 用户身份认证，若验证失败跳转authenticate();// 获取需要下载的文件，若文件不存在跳转$file = determine_file();// 读取文件内容$content=file_get_contents($file);// 发送合适的 HTTP 头header(&quot;Content-type: application/octet-stream&quot;);header('Content-Disposition: attachment; filename=&quot;' . basename($file) . '&quot;');header(&quot;Content-Length: &quot;. filesize($file));echo $content; // 或者 readfile($file);这样做意味着我们的程序需要将文件内容从磁盘经过一个固定的 buffer 去循环读取到内存，再发送给前端 web 服务器，最后才到达用户。当需要下载的文件很大的时候，这种方式将消耗大量内存，甚至引发 php 进程超时或崩溃。Cache 也很头疼，更不用说中断重连的情况了。 一个理想的解决方式应该是，由 php 程序进行权限检查等逻辑判断，一切通过后，让前台的 web 服务器直接将文件发送给用户——像 Nginx 这样的前台更善于处理静态文件。这样一来 php 脚本就不会被 I/O 阻塞了。
+X-Sendfile X-Sendfile 是一种将文件下载请求由后端应用转交给前端 web 服务器处理的机制，它可以消除后端程序既要读文件又要处理发送的压力，从而显著提高服务器效率，特别是处理大文件下载的情形下。
+X-Sendfile 通过一个特定的 HTTP header 来实现：在 X-Sendfile 头中指定一个文件的地址来通告前端 web 服务器。当 web 服务器检测到后端发送的这个 header 后，它将忽略后端的其他输出，而使用自身的组件（包括 缓存头 和 断点重连 等优化）机制将文件发送给用户。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/nignx-x-sendfile/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-flush-and-ob_flush/">Php Flush and Ob_flush</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-21
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            flush flush — 刷新输出缓冲
+flush ( void ) : void刷新PHP程序的缓冲，而不论PHP执行在何种情况下（CGI ，web服务器等等）。该函数将当前为止程序的所有输出发送到用户的浏览器。
+flush() 函数不会对服务器或客户端浏览器的缓存模式产生影响。因此，必须同时使用 ob_flush() 和flush() 函数来刷新输出缓冲。
+个别web服务器程序，特别是Win32下的web服务器程序，在发送结果到浏览器之前，仍然会缓存脚本的输出，直到程序结束为止。
+有些Apache的模块，比如mod_gzip，可能自己进行输出缓存，这将导致flush()函数产生的结果不会立即被发送到客户端浏览器。
+甚至浏览器也会在显示之前，缓存接收到的内容。例如 Netscape 浏览器会在接受到换行或 html 标记的开头之前缓存内容，并且在接受到 标记之前，不会显示出整个表格。
+ob_flush ob_flush — 冲刷出（送出）输出缓冲区中的内容
+ob_flush ( void ) : void这个函数将送出缓冲区的内容（如果里边有内容的话）。如果想进一步处理缓冲区中的内容，必须在ob_flush()之前调用ob_get_contents() ，因为在调用ob_flush()之后缓冲区内容将被丢弃。
+此函数不会销毁输出缓冲区，而像ob_end_flush() 函数会销毁缓冲区。
+ob_clean ob_clean — 清空（擦掉）输出缓冲区
+ob_clean ( void ) : void此函数用来丢弃输出缓冲区中的内容。
+此函数不会像 ob_end_clean() 函数那样销毁输出缓冲区。
+输出缓冲必须已被 ob_start() 以 PHP_OUTPUT_HANDLER_CLEANABLE 标记启动。否则 ob_clean() 不会有效果。
+ob_end_clean ob_end_clean — 清空（擦除）缓冲区并关闭输出缓冲
+ob_end_clean ( void ) : bool此函数丢弃最顶层输出缓冲区的内容并关闭这个缓冲区。如果想要进一步处理缓冲区的内容，必须在ob_end_clean()之前调用ob_get_contents()，因为当调用ob_end_clean()时缓冲区内容将被丢弃。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-flush-and-ob_flush/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-download/">Php Download</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-21
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-download/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/network-agent/">Network Agent</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/network-agent/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-timeout/">Php Timeout</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            设置PHP脚本执行超时的时间有下面这样一些方法：
+php.ini 中限定程序的最长执行时间是 30 秒，这是由 php.ini 配置文件中的 max_execution_time 变量指定，倘若你有一个需要颇多时间才能完成的程序代码，代码会由于超时而执行失败，例如要发送很多电子邮件给大量收件者，或者要进行繁重的数据分析工作，服务器会在 30 秒后强行中止正在执行的程序，如何解决这个问题呢。
+在php.ini里面设置 max_execution_time = 1800; 脚本被解析器中止之前允许的最大执行时间
+通过PHP的 ini_set 函数设置 ini_set(“max_execution_time”, “1800”);
+通过set_time_limit 函数设置 set_time_limit(1800) ;
+在php-fpm.conf中设置 request_terminate_timeout 请求开始n秒
+注意
+request_terminate_timeout 适用于，当max_execution_time由于某种原因无法终止脚本的时候，会把这个php-fpm请求干掉。
+web请求php执行时间受到2方面控制，一个是php.ini的max_execution_time（要注意的是sleep，http请求等待响应的时间是不算的，这里算的是真正的执行时间），另一个是php-fpm request_terminate_timeout 设置，这个算的是请求开始n秒。
+nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeout，fastcgi_read_timeout，fastcgi_send_timeout
+这几个 nginx 参数的主语都是 nginx，所以 fastcgi_connect_timeout 的意思是 nginx 连接到 fastcgi 的超时时间，fastcgi_read_timeout 是 nginx 读取 fastcgi 的内容的超时时间，fastcgi_send_timeout 是 nginx 发送内容到 fastcgi 的超时时间。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-timeout/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/vim-swap/">Vim Swap</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Found a swap file by the name E325: ATTENTIONFound a swap file by the name &quot;.git/.MERGE_MSG.swp&quot;owned by: xxxxxx dated: Mon Nov 12 23:17:40 2012file name: ~xxxxxx/Desktop/My-ios-App/.git/MERGE_MSGmodified: YESuser name: xxxxxx host name: unknown-b8-8d-12-22-27-72.lanprocess ID: 1639While opening file &quot;.git/MERGE_MSG&quot;dated: Tue Nov 13 14:06:48 2012NEWER than swap file!(1) Another program may be editing the same file.If this is the case, be careful not to end up with twodifferent instances of the same file when making changes.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/vim-swap/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-exit-and-die/">Php Exit and Die</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-exit-and-die/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-string-methods/">Js String Methods</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-string-methods/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/recommended-books/">Recommended Books</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            javascript angular vue react nest.js mysql redis php golang linux nginx git   计算机程序设计艺术
+C Primer Plus
+C程序设计语言
+鸟哥的Linux私房菜
+TCP/IP详解卷1：协议
+Java编程语言
+Python核心编程
+计算机导论   MIT 6.0001
+Harvard的CS50
+Berkeley的CS61A
+每天一本编程书，每天进步一点点
+19CS小硕校招面试心得、自学CS经验及找工作分享
+MIT的课表
+如何评价 Scott H.Young 一年内自学完 MIT 计算机专业的全部 33 门课程？
+How Much Can You Change Yourself?
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/recommended-books/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-shell/">Linux Shell</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-19
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-shell/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-bash/">Linux Bash</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-19
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-bash/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/curl/">Curl</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-19
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl。
+cURL是一个开源项目，主要的产品是curl（命令行工具）和libcurl（C语言的API库），两者功能均是：基于网络协议，对指定URL进行网络传输。[2][3]
+cURL涉及是任何网络协议传输，不涉及对具体数据的具体处理。（如：html的渲染等）
+Example # 简单模式curl <a href="http://example.com">http://example.com</a># 详细（verbose）模式：curl &ndash;verbose <a href="http://example.com">http://example.com</a>curl -v <a href="http://example.com">http://example.com</a># 下载（output）curl &ndash;output output.html <a href="http://example.com/">http://example.com/</a>curl -o output.html <a href="http://example.com/">http://example.com/</a># 重定向：（curl默认不会重定向）curl &ndash;location output.html <a href="http://example.com/">http://example.com/</a>curl -L output.html <a href="http://example.com/">http://example.com/</a>curl <a href="http://httpbin.org/user-agent">http://httpbin.org/user-agent</a>curl <a href="https://httpbin.org/get?show_env=1">https://httpbin.org/get?show_env=1</a>curl 和 wget 区别 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。
+在下载上，也各有所长，wget可以递归，支持断点；而curl支持URL中加入变量，因此可以批量下载。
+libcurl libcurl主要功能就是用不同的协议连接和沟通不同的服务器~也就是相当封装了的sockPHP 支持libcurl（允许你用不同的协议连接和沟通不同的服务器）。 libcurl当前支持http, https, ftp, gopher, telnet, dict, file, 和ldap 协议。libcurl同样支持HTTPS证书授权，HTTP POST, HTTP PUT, FTP 上传（当然你也可以使用PHP的ftp扩展）, HTTP基本表单上传，代理，cookies,和用户认证。
+php cURL PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯各种服务器、使用各种协议。libcurl 目前支持的协议有 http、https、ftp、gopher、telnet、dict、file、ldap。 libcurl 同时支持 HTTPS 证书、HTTP POST、HTTP PUT、 FTP 上传(也能通过 PHP 的 FTP 扩展完成)、HTTP 基于表单的上传、代理、cookies、用户名+密码的认证。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/curl/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-microtask-queue/">Js Microtask Queue</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-18
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            浏览器中 JavaScript 的执行流程和 Node.js 中的流程都是基于 事件循环 的。
+理解事件循环的工作方式对于代码优化很重要，有时对于正确的架构也很重要。
+事件循环 事件循环 的概念非常简单。它是一个在 JavaScript 引擎等待任务，执行任务和进入休眠状态等待更多任务这几个状态之间转换的无限循环。
+引擎的一般算法：
+当有任务时：  从最先进入的任务开始执行。   休眠直到出现任务，然后转到第 1 步。  两个细节：
+引擎执行任务时永远不会进行渲染（render）。如果任务执行需要很长一段时间也没关系。仅在任务完成后才会绘制对 DOM 的更改。
+如果一项任务执行花费的时间过长，浏览器将无法执行其他任务，无法处理用户事件，因此，在一定时间后浏览器会在整个页面抛出一个如“页面未响应”之类的警报，建议你终止这个任务。这种情况常发生在有大量复杂的计算或导致死循环的程序错误时。
+拆分CPU过载任务 例如，语法高亮（用来给本页面中的示例代码着色）是相当耗费 CPU 资源的任务。为了高亮显示代码，它执行分析，创建很多着了色的元素，然后将它们添加到文档中 —— 对于文本量大的文档来说，需要耗费很长时间。
+当引擎忙于语法高亮时，它就无法处理其他 DOM 相关的工作，例如处理用户事件等。它甚至可能会导致浏览器“中断（hiccup）”甚至“挂起（hang）”一段时间，这是不可接受的。
+我们可以通过将大任务拆分成多个小任务来避免这个问题。高亮显示前 100 行，然后使用 setTimeout（延时参数为 0）来安排（schedule）后 100 行的高亮显示，依此类推
+进度指示 宏任务和微任务 除了本章中所讲的 宏任务（macrotask） 外，还有在 微任务（Microtask） 一章中提到的 微任务（microtask）。
+微任务仅来自于我们的代码。它们通常是由 promise 创建的：对 .then/catch/finally 处理程序的执行会成为微任务。微任务也被用于 await 的“幕后”，因为它是 promise 处理的另一种形式。
+每个宏任务之后，引擎会立即执行微任务队列中的所有任务，然后再执行其他的宏任务，或渲染，或进行其他任何操作。
+setTimeout(() =&gt; alert(&quot;timeout&quot;));// 微任务Promise.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-microtask-queue/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-utf8/">Mysql Utf8</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-17
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-utf8/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-garbage-colloction/">Js Garbage Colloction</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-17
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-garbage-colloction/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-optional-chaining/">Js Optional Chaining</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-17
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            可选链 “?.” 可选链 ?. 是一种访问嵌套对象属性的防错误方法。即使中间的属性不存在，也不会出现错误。
+let user = {}; // 这个 user 恰巧没有 addressalert(user?.address); // undefined!alert(user?.address.street); // undefined! 不要过度使用可选链 我们应该只将 ?. 使用在一些东西可以不存在的地方。  例如，如果根据我们的代码逻辑，user 对象必须存在，但 address 是可选的，那么 user.address?.street 会更好。
+所以，如果 user 恰巧因为失误变为 undefined，我们会知道并修复这个失误。否则，代码中的 error 在不恰当的地方被消除了，这会导致调试更加困难。
+?. 前的变量必须已声明 如果未声明变量 user，那么 user?.anything 会触发一个错误：
+// ReferenceError: user is not defined user?.address;
+短路效应 正如前面所说的，如果 ?. 左边部分不存在，就会立即停止运算（“短路效应”）。
+所以，如果后面有任何函数调用或者副作用，它们均不会执行：
+其它情况：?.()，?.[] 可选链 ?. 不是一个运算符，而是一个特殊的语法结构。它还可以与函数和方括号一起使用。
+例如，将 ?.() 用于调用一个可能不存在的函数。
+在下面这段代码中，有些用户具有 admin 方法，而有些没有：
+let user1 = {admin() {alert(&quot;I am admin&quot;);}}let user2 = {};user1.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-optional-chaining/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/course-stanford/">Course Stanford</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-16
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            math 51 多维微积分 <a href="http://web.stanford.edu/class/math51">http://web.stanford.edu/class/math51</a>
+EE 103 线性代数 <a href="http://web.stanford.edu/class/ee103">http://web.stanford.edu/class/ee103</a>
+CS 109 概率论 <a href="http://web.stanford.edu/class/cs109">http://web.stanford.edu/class/cs109</a>
+CS 106 A 程序设计基础 <a href="http://web.stanford.edu/class/cs106a">http://web.stanford.edu/class/cs106a</a>
+CS 106 B 程序设计基础 <a href="http://web.stanford.edu/class/cs106b">http://web.stanford.edu/class/cs106b</a>
+CS 107 计算机系统导论 <a href="http://web.stanford.edu/class/cs107">http://web.stanford.edu/class/cs107</a>
+CS 140 操作系统 <a href="http://web.stanford.edu/class/cs145">http://web.stanford.edu/class/cs145</a>
+CS 143 编译器 <a href="http://web.stanford.edu/class/cs143">http://web.stanford.edu/class/cs143</a>
+CS 145 数据库导论 <a href="http://web.stanford.edu/class/cs145">http://web.stanford.edu/class/cs145</a>
+CS 149 并行计算 <a href="http://web.stanford.edu/class/cs149">http://web.stanford.edu/class/cs149</a>
+CS 161 算法设计与分析 <a href="http://web.stanford.edu/class/cs161">http://web.stanford.edu/class/cs161</a>
+CS 221 人工智能导论 http://web.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/course-stanford/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/js-module/">Js Module</a></h1>
       <div class="post-meta">
         
@@ -217,661 +861,6 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
       </div>
       
         <div><a class="read-more button" href="/posts/linux-what/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/web-data-storage/">Web Data Storage</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-14
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
-Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
-最常见的用处之一就是身份验证：
-登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
-alert(document.cookie)写入 document.cookie
-document.cookie = &quot;user=John&quot;; // 只会更新名称为 user 的 cookiealert(document.cookie); // 展示所有 cookie从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
-// 特殊字符（空格），需要编码let name = &quot;my name&quot;;let value = &quot;John Smith&quot;// 将 cookie 编码为 my%20name=John%20Smithdocument.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);alert(document.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/web-data-storage/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/web-components/">Web Components</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-14
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            众所周知，开发复杂软件的原则是：不要让软件复杂
-如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
-只有让复杂的事情简单化的架构才是好架构。
-一个组件有：
-自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
-Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
-Custom elements (自定义标签) class MyElement extends HTMLElement {constructor() {super();// 元素在这里创建 }connectedCallback() {// 在元素被添加到文档之后，浏览器会调用这个方法 //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }disconnectedCallback() {// 在元素从文档移除到时候，浏览器会调用这个方法 // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }static get observedAttributes() {return [/* 属性数组，这些属性的变化会被被监视 */];}attributeChangedCallback(name, oldValue, newValue) {// 当上面数组里面的属性变化的时候，这个方法会被调用 }adoptedCallback() {// 在元素被移动到新的文档的时候，这个方法会被调用 // （document.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/web-components/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/good-doctor-1-3/">Good Doctor 1 3</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            良医 第一季 第三集 01:35
-so I’m in the middle of (正忙于) “Uncharted”, and I’m dead
-我正在玩无人之地，但是没电了
-Can I borrow some triples A’s
-能借几节7号电池吗
-I’m your neighbor
-我是你的邻居
-hello
-你好
-34 ?
-34号
-I moved in last week. 33.
-我上周搬来，33号
-yeah， I know
-是 我知道
-I work at a hospital
-我在医院工作
-That’s cool
-很酷
-yes
-是
-Triple A’s pro favor ?
-7号电池 拜托
-Batteries
-电池
-Right
-没错
-Do you hava any ?
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/good-doctor-1-3/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-regexp/">Js Regexp</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。
-创建正则表达式有两个方式
-// new RegExpregexp = new RegExp(&quot;pattern&quot;, &quot;flags&quot;);// 表达式regexp = /pattern/; // 没有修饰符regexp = /pattern/gmi; // 伴随修饰符 g、m 和 i（后面会讲到）用法
-字符串搜索
-let str = &quot;I love Javascript&quot;;let substr = 'love';alert(str.search(substr));所以搜索 /love/ 与搜索 “love” 是等价的。
-通常我们使用的都是简短语法 /…/。但是它不接受任何变量插入，所以我们必须在写代码的时候就知道确切的 regexp。
-另一方面，new RegExp 允许从字符串中动态地构造模式。
-所以我们可以找出需要搜索的字段，然后根据搜索字段创建 new RegExp：
-// 弹窗提示框, 默认输入值lovelet search = prompt(&quot;What you want to search?&quot;, &quot;love&quot;); // love// let regexp = new RegExp(search);// 找到用户想要的任何东西alert( &quot;I love JavaScript&quot;.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-regexp/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-command/">Linux Command</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
-第二列Size，磁盘分区的大小
-第三列Used，已使用的空间
-第四列Avail，可用的空间
-第五列Use%，已使用的百分比
-第六列Mounted on，挂载点
-参数说明
--a或–all：包含全部的文件系统；
-–block-size=&lt;区块大小&gt;：以指定的区块大小来显示区块数目；
--h或–human-readable：以可读性较高的方式来显示信息;
--H或–si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
--i或–inodes：显示inode的信息；
--k或–kilobytes：指定区块大小为1024字节；
--l或–local：仅显示本地端的文件系统;
--m或–megabytes：指定区块大小为1048576字节；
-–no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
--P或–portability：使用POSIX的输出格式；
-–sync：在取得磁盘使用信息前，先执行sync指令；
--t&lt;文件系统类型&gt;或–type=&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；
--T或–print-type：显示文件系统的类型；
--x&lt;文件系统类型&gt;或–exclude-type=&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；
-–help：显示帮助；
-–version：显示版本信息。
-查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
--a或-all 显示目录中个别文件的大小。
--b或-bytes 显示目录或文件大小时，以byte为单位。
--c或–total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
--k或–kilobytes 以KB(1024bytes)为单位输出。
--m或–megabytes 以MB为单位输出。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-command/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-source-code/">Golang Source Code</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/golang-source-code/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-builtin/">Golang Builtin</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Package builtin provides documentation for Go’s predeclared identifiers (预声明的标识符). The items documented here are not actually in package builtin but their descriptions here allow godoc to present documentation for the language’s special identifiers (特殊标识符).
-Package files builtin.go
-Constants true and false are the two untyped boolean values.
-const (true = 0 == 0 // Untyped bool. false = 0 != 0 // Untyped bool.)iota is a predeclared identifier representing the untyped integer ordinal number of the current const specification in a (usually parenthesized) const declaration.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/golang-builtin/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/golang-strings-api/">Golang Strings Api</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Package strings implements simple functions to manipulate UTF-8 encoded strings.
-func Compare
-func Compare (a, b string) int// Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and +1 if a &gt; b.package mainimport (&quot;fmt&quot;&quot;strings&quot;)func main() {strings.Compare(&quot;a&quot;, &quot;b&quot;) // -1 strings.Compare(&quot;a&quot;, &quot;a&quot;) // 0 strings.Compare(&quot;b&quot;, &quot;a&quot;) // 1}func Containes func Containes (s, substr string) bool
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/golang-strings-api/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-session/">Php Session</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            会话机制(Session）在PHP 中用于保持用户连续访问Web应用时的相关数据，有助于创建高度定制化的程序、增加站点的吸引力。
-会话支持在 PHP 中是在并发访问时由一个方法来保存某些数据.从而使你能够构建更多的定制程序 从而提高你的 web 网站的吸引力.
-一个访问者访问你的 web 网站将被分配一个唯一的 id, 就是所谓的会话 id. 这个 id 可以存储在用户端的一个 cookie 中，也可以通过 URL 进行传递
-会话支持允许你将请求中的数据保存在超全局数组$_SESSION中. 当一个访问者访问你的网站，PHP 将自动检查(如果 session.auto_start 被设置为 1）或者在你要求下检查(明确通过 session_start() 或者隐式通过 session_register()) 当前会话 id 是否是先前发送的请求创建. 如果是这种情况， 那么先前保存的环境将被重建.
-&lt;?php// Get the private context session_name('Private');session_start();$private_id = session_id();$b = $_SESSION['pr_key'];session_write_close();// Get the global context session_name('Global');session_id('TEST');session_start();$a = $_SESSION['key'];session_write_close();// Work &amp; modify the global &amp; private context (be ware of changing the global context!
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-session/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-core/">Php Core</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-core/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/sql-cross-join/">Sql Cross Join</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-10
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/sql-cross-join/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nginx-rewrite/">Nginx Rewrite</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-10
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/nginx-rewrite/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nginx-location/">Nginx Location</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-10
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            nginx 指定文件路径有两种方式
-listen参数决定Nginx服务如何监听端口。在listen后可以只加IP地址、端口或主机名，非常灵活，例如：[插图]
-listen 127.0.0.1:8000listen 127.0.0.1; # 不加端口时, 默认监听80端口listen 8000 listen *:8000listen localhost: 8000 以root方式设置资源路径  # 例如，定义资源文件相对于HTTP请求的根目录。location /download/ {root /opt/web/html;}在上面的配置中，如果有一个请求的URI是/download/index/test.html，那么Web服务器将会返回服务器上/opt/web/html/download/index/test.html文件的内容。
-以alias方式设置资源路径  alias也是用来设置文件资源路径的，它与root的不同点主要在于如何解读紧跟location后面的uri参数，这将会致使alias与root以不同的方式将用户请求映射到真正的磁盘文件上。例如，如果有一个请求的URI是/conf/nginx.conf，而用户实际想访问的文件在/usr/local/nginx/conf/nginx.conf，那么想要使用alias来进行设置的话，可以采用如下方式：
-location /conf {alias /usr/local/nginx/conf;}# 等同于location /conf {root /usr/local/nginx}使用alias时，在URI向实际文件路径的映射过程中，已经把location后配置的/conf这部分字符串丢弃掉，因此，/conf/nginx.conf请求将根据alias path映射为path/nginx.conf。root则不然，它会根据完整的URI请求来映射，因此，/conf/nginx.conf请求会根据root path映射为path/conf/nginx.conf。这也是root可以放置到http、server、location或if块中，而alias只能放置到location块中的原因。
-alias后面还可以添加正则表达式，例如：
-location ~^/test/(\w+).(\w+)$ {alias /usr/local/nginx/$2/$1.$2;}访问首页
-有时，访问站点时的URI是/，这时一般是返回网站的首页，而这与root和alias都不同。这里用ngx_http_index_module模块提供的index配置实现。index后可以跟多个文件参数，Nginx将会按照顺序来访问这些文件，例如：
-location / {root path;index /index.html /html/index.php /index.php}根据HTTP返回码重定向页面
-当对于某个请求返回错误码时，如果匹配上了error_page中设置的code，则重定向到新的URI中。例如：
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/nginx-location/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-find-phpini/">Php Find Php</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-10
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-find-phpini/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-fdisk/">Linux Fdisk</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-09
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-fdisk/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-soft-link/">Linux Soft Link</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-09
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-soft-link/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-firewall/">Linux Firewall</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-09
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-firewall/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-install-php-imagick/">Linux Install Php Imagick</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-09
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            说明：
-php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Nginx安装目录：/usr/local/nginx Nginx网站根目录：/usr/local/nginx/html
-安装编译工具  yum install wget make gcc gcc-c++ gtk+-devel zlib-devel openssl openssl-devel pcre-devel kernel keyutils patch perl安装ImageMagick  cd /usr/local/src #进入软件包存放目录wget <a href="http://www.imagemagick.org/download/ImageMagick.tar.gz">http://www.imagemagick.org/download/ImageMagick.tar.gz</a> #下载ImageMagicktar zxvf ImageMagick.tar.gz #解压cd ImageMagick-6.7.9-3 #进入安装目录./configure &ndash;prefix=/usr/local/imagemagick #配置make #编译make install #安装export PKG_CONFIG_PATH=/usr/local/imagemagick/lib/pkgconfig/ #设置环境变量安装imagick  cd /usr/local/srcwget <a href="http://pecl.php.net/get/imagick-3.0.1.tgz">http://pecl.php.net/get/imagick-3.0.1.tgz</a> #下载imagicktar zxvf imagick-3.0.1.tgzcd imagick-3.0.1/usr/local/php5/bin/phpize #用phpize生成configure配置文件./configure &ndash;with-php-config=/usr/local/php5/bin/php-config &ndash;with-imagick=/usr/local/imagemagick #配置make #编译make install #安装备注：在安装过程中出现错误，一般是由于缺少编译工具包导致，可根据提示参照第一步安装相应的工具包即可 安装完成之后，出现下面的界面，记住以下路径，后面会用到 Installing shared extensions: /usr/local/php5/lib/php/extensions/no-debug-non-zts-20090626/ #imagick模块路径
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/linux-install-php-imagick/">Read more →</a></div>
       
     </div>
     

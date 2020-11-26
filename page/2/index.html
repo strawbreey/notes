@@ -154,6 +154,635 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-codepointat/">Js CodePointAt</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-22
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-codepointat/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-getownpropertynames/">Js GetOwnPropertyNames</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-22
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
+Object.getOwnPropertyNames() 返回一个数组，该数组对元素是 obj自身拥有的枚举或不可枚举属性名称字符串。 数组中枚举属性的顺序与通过 for…in 循环（或 Object.keys）迭代该对象属性时一致。数组中不可枚举属性的顺序未定义。
+Object.getOwnPropertyNames(obj)Example:
+var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];console.log(Object.getOwnPropertyNames(arr).sort()); // [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;length&quot;]// 类数组对象var obj = { 0: &quot;a&quot;, 1: &quot;b&quot;, 2: &quot;c&quot;};console.log(Object.getOwnPropertyNames(obj).sort()); // [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;]// 使用Array.forEach输出属性名和属性值Object.getOwnPropertyNames(obj).forEach(function(val, idx, array) {console.log(val + &quot; -&gt; &quot; + obj[val]);});// 输出// 0 -&gt; a// 1 -&gt; b// 2 -&gt; c//不可枚举属性var my_obj = Object.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-getownpropertynames/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/leetcode-0242-valid-anagram/">Leetcode 0242 Valid Anagram</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-22
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/leetcode/">#leetcode</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Given two strings s and t , write a function to determine if t is an anagram of s.
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+Example:
+Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot;Output: trueInput: s = &quot;rat&quot;, t = &quot;car&quot;Output: falseNote:
+You may assume the string contains only lowercase alphabets. 你可以假设字符串只包含小写字母。
+Follow up:
+What if the inputs contain unicode characters? How would you adapt your solution to such case?
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/leetcode-0242-valid-anagram/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-pull-slow/">Git Pull Slow</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-22
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-pull-slow/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/git-checkout/">Git Checkout</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/git/">#git</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            checkout是Git最常用的命令之一
+checkout在CVS和SVN中都是检出的意思，从版本库检出一个版本，在Git中就不是这么简单了。手册上是这样介绍的： git-checkout - Switch branches or restore working tree files
+语法
+git checkout [-q] [-f] [-m] [&lt;branch&gt;]git checkout [-q] [-f] [-m] &ndash;detach [&lt;branch&gt;]git checkout [-q] [-f] [-m] [&ndash;detach] &lt;commit&gt;git checkout [-q] [-f] [-m] [[-b|-B|&ndash;orphan] &lt;new_branch&gt;] [&lt;start_point&gt;]git checkout [-f|&ndash;ours|&ndash;theirs|-m|&ndash;conflict=&lt;style&gt;] [&lt;tree-ish&gt;] [&ndash;] &lt;pathspec&gt;…​git checkout [-f|&ndash;ours|&ndash;theirs|-m|&ndash;conflict=&lt;style&gt;] [&lt;tree-ish&gt;] &ndash;pathspec-from-file=&lt;file&gt; [&ndash;pathspec-file-nul]git checkout (-p|&ndash;patch) [&lt;tree-ish&gt;] [&ndash;] [&lt;pathspec&gt;…​]描述
+在Git里面，checkout用于切换分支或者恢复工作树的文件。
+新建一个hotfix分支  git checkout -b | -B &lt;new _branch&gt; [&lt;start point&gt;]git checkout -b hotfix-1.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/git-checkout/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/ascii/">Ascii</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/ascii/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/mysql-design/">Mysql Design</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/mysql-design/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-study-deploy/">Php Study Deploy</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-study-deploy/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/vscode-format/">Vscode Format</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/vscode/">#vscode</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/vscode-format/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-linked-list/">Js Linked List</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到的，每种语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问其元素。然而，这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入或移除项的成本很高，因为需要移动元素。（尽管我们已经学过，JavaScript有来自Array类的方法可以帮我们做这些事，但背后的情况同样如此。）链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。下图展示了一个链表的结构。[插图]相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所需的元素
+链表的设计 设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作
+Node 类
+//节点function Node(element) {this.element = element; //当前节点的元素 this.next = null; //下一个节点链接}LinkedList类
+//链表类function LList () {this.head = new Node( 'head' ); //头节点 this.find = find; //查找节点 this.insert = insert; //插入节点 this.remove = remove; //删除节点 this.findPrev = findPrev; //查找前一个节点 this.display = display; //显示链表}insert：向链表插入一个节点
+find：查找给定节点
+function find ( item ) {var currNode = this.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-linked-list/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/leetcode-0147-insertion-sort-list/">Leetcode 0147 Insertion Sort List</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-20
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/leetcode/">#leetcode</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Sort a linked list using insertion sort.
+A graphical example of insertion sort. The partial sorted list (black) initially contains only the first element in the list. With each iteration one element (red) is removed from the input data and inserted in-place into the sorted list
+Algorithm of Insertion Sort:
+Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/leetcode-0147-insertion-sort-list/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/go-specification/">Go Specification</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-19
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/go-specification/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/go-effective/">Go Effective</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-19
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Introduction 介绍 Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/go-effective/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/leetcode-0283-move-zeros/">Leetcode 0283 Move Zeros</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-19
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/leetcode/">#leetcode</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+Example:
+Input: [0,1,0,3,12]Output: [1,3,12,0,0]Note:
+You must do this in-place without making a copy of the array. Minimize the total number of operations.
+说明:
+必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。
+Solution
+非零元素右移， 然后补零
+/*** @param {number[]} nums* @return {void} Do not return anything, modify nums in-place instead.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/leetcode-0283-move-zeros/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/algorithms-sort/">Algorithms Sort</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-18
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            There are three practical reasons for you to study sorting algorithms, even though you might just use a system sort:
+Analyzing sorting algorithms is a thorough introduction to the approach that we use to compare algorithm performance throughout the book. Similar techniques are effective in addressing other problems. We often use sorting algorithms as a starting point to solve other problems. More important than these practical reasons is that the algorithms are elegant, classic, and effective.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/algorithms-sort/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/tslint/">Tslint</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-18
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            2019 年 1 月，TypeScirpt 官方决定全面采用 ESLint 作为代码检查的工具，并创建了一个新项目 typescript-eslint，提供了 TypeScript 文件的解析器 @typescript-eslint/parser 和相关的配置选项 @typescript-eslint/eslint-plugin 等。而之前的两个 lint 解决方案都将弃用：
+typescript-eslint-parser 已停止维护 TSLint 将提供迁移工具，并在 typescript-eslint 的功能足够完整后停止维护 TSLint（Once we consider ESLint feature-complete w.r.t. TSLint, we will - - - deprecate TSLint and help users migrate to ESLint1）  综上所述，目前以及将来的 TypeScript 的代码检查方案就是 typescript-eslint。
+在 TypeScript 中使用 ESLint # 安装 ESLintnpm install &ndash;save-dev eslint# 由于 ESLint 默认使用 Espree 进行语法解析，无法识别 TypeScript 的一些语法，故我们需要安装 @typescript-eslint/parser，替代掉默认的解析器，别忘了同时安装 typescriptnpm install &ndash;save-dev typescript @typescript-eslint/parser# 接下来需要安装对应的插件 @typescript-eslint/eslint-plugin 它作为 eslint 默认规则的补充，提供了一些额外的适用于 ts 语法的规则。npm install &ndash;save-dev @typescript-eslint/eslint-plugin创建配置文件 ESLint 需要一个配置文件来决定对哪些规则进行检查，配置文件的名称一般是 .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/tslint/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/vscode-tslint/">Vscode Tslint</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-18
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="/tags/vscode/">#vscode</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/vscode-tslint/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/json-and-xml/">Json and Xml</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-11-18
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/json-and-xml/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/leetcode-0134-gas-station/">Leetcode 0134 Gas Station</a></h1>
       <div class="post-meta">
         
@@ -169,6 +798,12 @@
         
       </div>
 
+      
+        <span class="post-tags">
+          
+            <a href="/tags/leetcode/">#leetcode</a>&nbsp;
+          
+        </span>
       
 
       
@@ -217,650 +852,6 @@ Return the starting gas station’s index if you can travel around the circuit o
       </div>
       
         <div><a class="read-more button" href="/posts/hugo-host-on-github/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/leetcode-1030-matrix-cells-in-distance-order/">Leetcode 1030 Matrix Cells in Distance Order</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-17
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            <a href="/tags/leetcode/">#leetcode</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where 0 &lt;= r &lt; R and 0 &lt;= c &lt; C.
-Additionally, we are given a cell in that matrix with coordinates (r0, c0).
-Return the coordinates of all cells in the matrix, sorted by their distance from (r0, c0) from smallest distance to largest distance. Here, the distance between two cells (r1, c1) and (r2, c2) is the Manhattan distance, |r1 - r2| + |c1 - c2|.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/leetcode-1030-matrix-cells-in-distance-order/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-delete/">Js Delete</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-delete/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-string-equal/">Js String Equal</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-string-equal/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/web-api-domtokenlist/">Web Api Domtokenlist</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            <a href="/tags/webapi/">#webApi</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            DOMTokenList 接口表示一组空格分隔的标记（tokens）。如由 Element.classList、HTMLLinkElement.relList、HTMLAnchorElement.relList 或 HTMLAreaElement.relList 返回的一组值。它和 JavaScript Array 对象一样，索引从 0 开始。DOMTokenList 总是区分大小写（case-sensitive）。
-方法  DOMTokenList.item(index)  根据传入的索引值返回一个值，如果索引值大于等于符号列表的长度（length），则返回 undefined 或 null，在 Gecko 7.0 之前的版本中返回 null。
-DOMTokenList.contains(token)  如果 DOMTokenList 列表中包括相应的字符串 token，则返回 true，否则返回 false。
-DOMTokenList.add(token1[, token2[, …tokenN]])  添加一个或多个标记（token）到 DOMTokenList 列表中。
-DOMTokenList.remove(token1[, token2[, …tokenN]])  从 DOMTokenList 列表中移除一个或多个标记（token）。
-DOMTokenList.replace(oldToken, newToken)  使用 newToken 替换 token 。
-DOMTokenList.supports(token)  如果传入的 token 是相关属性（attribute）支持的标记，则返回 true 。
-DOMTokenList.toggle(token [, force])  从 DOMTokenList 字符串中移除标记字串（token），并返回 false。如果传入的字串（token）不存在，则将其添加进去，并返回 true 。force 是一个可选的布尔值，如果传入 true ，且传入的 token 不存在，则将其添加进去并返回 true ，若传入的 token 存在，则直接返回 true ；反之，如果传入 false ，则移除存在的 token ，并返回 false ，如 token 不存在则直接返回 false 。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/web-api-domtokenlist/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/web-api-toggle/">Web Api Toggle</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-16
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            <a href="/tags/webapi/">#webApi</a>&nbsp;
-          
-            <a href="/tags/toggle/">#toggle</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。
-tokenList.toggle(token, force);参数列表
-token 标记列表中你想探查并切换的 DOMString . force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。  example：
-// &lt;span class=&quot;a b&quot;&gt;classList is 'a b'&lt;/span&gt;var span = document.querySelector(&quot;span&quot;);var classes = span.classList;span.onclick = function() {// 如果有就添加, 没有删除 var result = classes.toggle(&quot;c&quot;);if(result) {span.textContent = &quot;'c' added; classList is now '&quot; + classes + &quot;'.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/web-api-toggle/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/angular-zooejs/">Angular Zooejs</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/angular-zooejs/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-development-manual/">Mysql Development Manual</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            建表约束   【强制】表达是与否概念的字段，必须使用is_xxx的方式命名，数据类型是unsigned tinyint（1表示是，0表示否）
-正例：表达逻辑删除的字段名is_deleted，1表示删除，0表示未删除。
-【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下画线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。
-【强制】表名不使用复数名词。
-【强制】禁用保留字，如desc、range、match、delayed等，请参考MySQL官方保留字。
-【强制】主键索引名为pk_字段名，唯一索引名为uk_字段名，普通索引名则为idx_字段名。
-【强制】小数类型为decimal，禁止使用float和double类型。
-说明：在存储时，float和double类型存在精度损失的问题，很可能在比较值的时候，得到不正确的结果。如果存储的数据范围超过decimal的范围，那么建议将数据拆成整数和小数并分开存储。
-【强制】如果存储的字符串长度几乎相等，则使用char定长字符串类型。
-【强制】varchar是可变长字符串，不预先分配存储空间，长度不要超过5000个字符，如果存储长度大于此值，则应定义字段类型为text，独立出来一张表，用主键来对应，避免影响其他字段的索引效率。
-【强制】表必备三字段：id、create_time、update_time。
-说明：其中id必为主键，类型为bigint unsigned、单表时自增、步长为1。create_time和update_time的类型均为date_time
-【推荐】表的命名最好遵循“业务名称_表的作用”原则。
-【推荐】库名与应用名称尽量一致。
-当修改字段含义或追加字段表示的状态时，需要及时更新字段注释
-【推荐】字段允许适当冗余，以提高查询性能，但必须考虑数据一致性。冗余字段应遵循以下原则。
-1）不是频繁修改的字段。 2）不是唯一索引的字段。 3）不是varchar超长字段，更不能是text字段。    【推荐】当单表行数超过500万或者单表容量超过2GB时，才推荐分库分表。
-【参考】设置合适的字符存储长度，不但可以节约数据库表空间和索引存储，更重要的是能够提升检索速度。
-索引规约  【强制】业务上具有唯一特性的字段，即使是多个字段的组合，也必须建成唯一索引。  说明：不要以为唯一索引影响了insert速度，这个速度损耗可以忽略，但会明显提高查找速度；另外，即使在应用层做了非常完善的校验控制，只要没有唯一索引，根据墨菲定律，就必然有脏数据产生。
-【强制】超过三个表禁止join。需要join的字段，数据类型必须绝对一致；当多表关联查询时，保证被关联的字段需要有索引。  说明：即使双表join，也要注意表索引、SQL性能。
-【强制】在varchar字段上建立索引时，必须指定索引长度，没必要对全字段建立索引，根据实际文本区分度决定索引长度即可
-【强制】页面搜索严禁左模糊或者全模糊，如果需要，那么请通过搜索引擎来解决。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/mysql-development-manual/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/web-performance/">Web Performance</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Content
-Meke Fewer Http Requests 减少http请求
-Reduce DNS Lookups 减少dns查询
-Avoid Redirects 避免重定向
-Make ajax Cacheable ajax 缓存
-PostLoad Components
-Preload Components 租价预加载
-Reduce the Number of DOM Elements
-Split Components Across Domains
-Minimize Number of iframes
-Avoid 404s
-Server
-Use a Content Delivery Network (CDN)
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/web-performance/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git-remote/">Git Remote</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-13
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            更新远程分支 git remote update origin &ndash;prunegit remote update origin -p参考 # git-remote - Manage set of tracked repositoriesgit remote [-v | &ndash;verbose]git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [&ndash;[no-]tags] [&ndash;mirror=(fetch|push)] &lt;name&gt; &lt;url&gt;git remote rename &lt;old&gt; &lt;new&gt;git remote remove &lt;name&gt;git remote set-head &lt;name&gt; (-a | &ndash;auto | -d | &ndash;delete | &lt;branch&gt;)git remote set-branches [&ndash;add] &lt;name&gt; &lt;branch&gt;…​git remote get-url [&ndash;push] [&ndash;all] &lt;name&gt;git remote set-url [&ndash;push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]git remote set-url &ndash;add [&ndash;push] &lt;name&gt; &lt;newurl&gt;git remote set-url &ndash;delete [&ndash;push] &lt;name&gt; &lt;url&gt;git remote [-v | &ndash;verbose] show [-n] &lt;name&gt;…​git remote prune [-n | &ndash;dry-run] &lt;name&gt;…​git remote [-v | &ndash;verbose] update [-p | &ndash;prune] [(&lt;group&gt; | &lt;remote&gt;)…​]例子 # 查看本地分支 git branch# 查看全部分支git branch -a# 列出已经存在的远程分支ygit remote# =&gt; origin# 列出详细信息，在每一个名字后面列出其远程url，git remote -v# =&gt; origingit branch -r# =&gt; origin/HEAD -&gt; origin/master# =&gt; origin/master# 添加一个远程仓库git remote add staging git://git.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/git-remote/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/node-sass-install/">Node Sass Install</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            gyp info it worked if it ends with okgyp info using <a href="mailto:node-gyp@5.1.0">node-gyp@5.1.0</a>gyp info using <a href="mailto:node@14.4.0">node@14.4.0</a> | win32 | x64gyp info find Python using Python version 2.7.16 found at &quot;C:\python2\python.exe&quot;gyp http GET <a href="https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gz">https://nodejs.org/download/release/v14.4.0/node-v14.4.0-headers.tar.gz</a>gyp WARN install got an error, rolling back installgyp ERR! configure error我们可以看到，安装node-sass有几个步骤：
-校验本地node_modules中是否已安装node-sass，版本是否一致;
-如未安装或版本不符，从npm源安装node-sass本体;
-检测全局缓存和本地中是否有binding.node,如有即跳过安装;
-没有binding.node则从github下载该二进制文件并将其缓存到全局;
-假如binding.node下载失败，则尝试本地编译出该文件;
-将版本信息写到package-lock.json;
-检查 python 版本 同时安装python2 和 python3 的时候，python3 回默认配置环境遍历。但python2不会
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/node-sass-install/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/sdn/">Sdn</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/sdn/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/http-keepalive-and-socket/">Http Keepalive and Socket</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/http-keepalive-and-socket/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-ajax/">Js Ajax</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Asynchronous JavaScript + XML（异步JavaScript和XML）, 其本身不是一种新技术，而是一个在 2005年被Jesse James Garrett提出的新术语，用来描述一种使用现有技术集合的‘新’方法，包括: HTML 或 XHTML, CSS, JavaScript, DOM, XML, XSLT, 以及最重要的 XMLHttpRequest。当使用结合了这些技术的AJAX模型以后， 网页应用能够快速地将增量更新呈现在用户界面上，而不需要重载（刷新）整个页面。这使得程序能够更快地回应用户的操作。
-简单点说，就是使用 XMLHttpRequest 对象与服务器通信。 它可以使用JSON，XML，HTML和text文本等格式发送和接收数据。AJAX最吸引人的就是它的“异步”特性，也就是说它可以在不重新刷新页面的情况下与服务器通信，交换数据，或更新页面。
-XMLHTTP 的发展 历史   XMLHTTP最初是由微软公司发明的，在Internet Explorer 5.0 (1999年3月18日)中用作ActiveX对象，可通过JavaScript、VBScript或其它浏览器支持的脚本语言访问。
-Mozilla的开发人员后来在Mozilla 1.0中实现了一个兼容的版本。
-苹果电脑公司在Safari 1.2中开始支持XMLHTTP，
-Opera从8.0版开始也宣布支持XMLHTTP。
-Ajax 基础知识 // Step 1// 发送http请求// Old compatibility code, no longer needed.if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ &hellip; httpRequest = new XMLHttpRequest();} else if (window.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-ajax/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/message-queue-kafka/">Message Queue Kafka</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/message-queue-kafka/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/learn-database/">Learn Database</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-12
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/learn-database/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/devops/">Devops</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-11
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            <a href="/tags/devops/">#devops</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/devops/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/odbc/">Odbc</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-11
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/odbc/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/yii-db/">Yii Db</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-11-11
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Yii 包含了一个建立在 PHP PDO 之上的数据访问层 (DAO： Database Access Objects)。DAO为不同的数据库提供了一套统一的API。 其中 ActiveRecord 提供了数据库与模型(MVC 中的 M,Model) 的交互，QueryBuilder 用于创建动态的查询语句。 DAO提供了简单高效的SQL查询，可以用在与数据库交互的各个地方.
-使用 Yii DAO 时，你主要需要处理纯 SQL 语句和 PHP 数组。因此，这是访问数据库最高效的方法。 然而，因为不同数据库之间的 SQL 语法往往是不同的， 使用 Yii DAO 也意味着你必须花些额外的工夫来创建一个”数据库无关“的应用。
-连接数据库 // 连接数据库$db = new yii\db\Connection(['dsn' =&gt; 'mysql:host=localhost;dbname=example','username' =&gt; 'root','password' =&gt; '','charset' =&gt; 'utf8',]);return ['components' =&gt; ['db' =&gt; ['class' =&gt; 'yii\db\Connection','dsn' =&gt; 'mysql:host=localhost;dbname=example','username' =&gt; 'root','password' =&gt; '','charset' =&gt; 'utf8',],],];SQL 查询 // 返回多行.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/yii-db/">Read more →</a></div>
       
     </div>
     

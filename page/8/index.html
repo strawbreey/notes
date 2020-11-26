@@ -154,6 +154,661 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/web-data-storage/">Web Data Storage</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
+Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
+最常见的用处之一就是身份验证：
+登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
+alert(document.cookie)写入 document.cookie
+document.cookie = &quot;user=John&quot;; // 只会更新名称为 user 的 cookiealert(document.cookie); // 展示所有 cookie从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
+// 特殊字符（空格），需要编码let name = &quot;my name&quot;;let value = &quot;John Smith&quot;// 将 cookie 编码为 my%20name=John%20Smithdocument.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);alert(document.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/web-data-storage/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/web-components/">Web Components</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-14
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            众所周知，开发复杂软件的原则是：不要让软件复杂
+如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
+只有让复杂的事情简单化的架构才是好架构。
+一个组件有：
+自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
+Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
+Custom elements (自定义标签) class MyElement extends HTMLElement {constructor() {super();// 元素在这里创建 }connectedCallback() {// 在元素被添加到文档之后，浏览器会调用这个方法 //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }disconnectedCallback() {// 在元素从文档移除到时候，浏览器会调用这个方法 // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }static get observedAttributes() {return [/* 属性数组，这些属性的变化会被被监视 */];}attributeChangedCallback(name, oldValue, newValue) {// 当上面数组里面的属性变化的时候，这个方法会被调用 }adoptedCallback() {// 在元素被移动到新的文档的时候，这个方法会被调用 // （document.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/web-components/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/good-doctor-1-3/">Good Doctor 1 3</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            良医 第一季 第三集 01:35
+so I’m in the middle of (正忙于) “Uncharted”, and I’m dead
+我正在玩无人之地，但是没电了
+Can I borrow some triples A’s
+能借几节7号电池吗
+I’m your neighbor
+我是你的邻居
+hello
+你好
+34 ?
+34号
+I moved in last week. 33.
+我上周搬来，33号
+yeah， I know
+是 我知道
+I work at a hospital
+我在医院工作
+That’s cool
+很酷
+yes
+是
+Triple A’s pro favor ?
+7号电池 拜托
+Batteries
+电池
+Right
+没错
+Do you hava any ?
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/good-doctor-1-3/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/js-regexp/">Js Regexp</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。
+创建正则表达式有两个方式
+// new RegExpregexp = new RegExp(&quot;pattern&quot;, &quot;flags&quot;);// 表达式regexp = /pattern/; // 没有修饰符regexp = /pattern/gmi; // 伴随修饰符 g、m 和 i（后面会讲到）用法
+字符串搜索
+let str = &quot;I love Javascript&quot;;let substr = 'love';alert(str.search(substr));所以搜索 /love/ 与搜索 “love” 是等价的。
+通常我们使用的都是简短语法 /…/。但是它不接受任何变量插入，所以我们必须在写代码的时候就知道确切的 regexp。
+另一方面，new RegExp 允许从字符串中动态地构造模式。
+所以我们可以找出需要搜索的字段，然后根据搜索字段创建 new RegExp：
+// 弹窗提示框, 默认输入值lovelet search = prompt(&quot;What you want to search?&quot;, &quot;love&quot;); // love// let regexp = new RegExp(search);// 找到用户想要的任何东西alert( &quot;I love JavaScript&quot;.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/js-regexp/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-command/">Linux Command</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
+第二列Size，磁盘分区的大小
+第三列Used，已使用的空间
+第四列Avail，可用的空间
+第五列Use%，已使用的百分比
+第六列Mounted on，挂载点
+参数说明
+-a或–all：包含全部的文件系统；
+–block-size=&lt;区块大小&gt;：以指定的区块大小来显示区块数目；
+-h或–human-readable：以可读性较高的方式来显示信息;
+-H或–si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
+-i或–inodes：显示inode的信息；
+-k或–kilobytes：指定区块大小为1024字节；
+-l或–local：仅显示本地端的文件系统;
+-m或–megabytes：指定区块大小为1048576字节；
+–no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
+-P或–portability：使用POSIX的输出格式；
+–sync：在取得磁盘使用信息前，先执行sync指令；
+-t&lt;文件系统类型&gt;或–type=&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；
+-T或–print-type：显示文件系统的类型；
+-x&lt;文件系统类型&gt;或–exclude-type=&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；
+–help：显示帮助；
+–version：显示版本信息。
+查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
+-a或-all 显示目录中个别文件的大小。
+-b或-bytes 显示目录或文件大小时，以byte为单位。
+-c或–total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
+-k或–kilobytes 以KB(1024bytes)为单位输出。
+-m或–megabytes 以MB为单位输出。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-command/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/golang-source-code/">Golang Source Code</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-13
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/golang-source-code/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/golang-builtin/">Golang Builtin</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-12
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Package builtin provides documentation for Go’s predeclared identifiers (预声明的标识符). The items documented here are not actually in package builtin but their descriptions here allow godoc to present documentation for the language’s special identifiers (特殊标识符).
+Package files builtin.go
+Constants true and false are the two untyped boolean values.
+const (true = 0 == 0 // Untyped bool. false = 0 != 0 // Untyped bool.)iota is a predeclared identifier representing the untyped integer ordinal number of the current const specification in a (usually parenthesized) const declaration.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/golang-builtin/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/golang-strings-api/">Golang Strings Api</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-12
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Package strings implements simple functions to manipulate UTF-8 encoded strings.
+func Compare
+func Compare (a, b string) int// Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and +1 if a &gt; b.package mainimport (&quot;fmt&quot;&quot;strings&quot;)func main() {strings.Compare(&quot;a&quot;, &quot;b&quot;) // -1 strings.Compare(&quot;a&quot;, &quot;a&quot;) // 0 strings.Compare(&quot;b&quot;, &quot;a&quot;) // 1}func Containes func Containes (s, substr string) bool
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/golang-strings-api/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-session/">Php Session</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-12
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            会话机制(Session）在PHP 中用于保持用户连续访问Web应用时的相关数据，有助于创建高度定制化的程序、增加站点的吸引力。
+会话支持在 PHP 中是在并发访问时由一个方法来保存某些数据.从而使你能够构建更多的定制程序 从而提高你的 web 网站的吸引力.
+一个访问者访问你的 web 网站将被分配一个唯一的 id, 就是所谓的会话 id. 这个 id 可以存储在用户端的一个 cookie 中，也可以通过 URL 进行传递
+会话支持允许你将请求中的数据保存在超全局数组$_SESSION中. 当一个访问者访问你的网站，PHP 将自动检查(如果 session.auto_start 被设置为 1）或者在你要求下检查(明确通过 session_start() 或者隐式通过 session_register()) 当前会话 id 是否是先前发送的请求创建. 如果是这种情况， 那么先前保存的环境将被重建.
+&lt;?php// Get the private context session_name('Private');session_start();$private_id = session_id();$b = $_SESSION['pr_key'];session_write_close();// Get the global context session_name('Global');session_id('TEST');session_start();$a = $_SESSION['key'];session_write_close();// Work &amp; modify the global &amp; private context (be ware of changing the global context!
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-session/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-core/">Php Core</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-12
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-core/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/sql-cross-join/">Sql Cross Join</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-10
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/sql-cross-join/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/nginx-rewrite/">Nginx Rewrite</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-10
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/nginx-rewrite/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/nginx-location/">Nginx Location</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-10
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            nginx 指定文件路径有两种方式
+listen参数决定Nginx服务如何监听端口。在listen后可以只加IP地址、端口或主机名，非常灵活，例如：[插图]
+listen 127.0.0.1:8000listen 127.0.0.1; # 不加端口时, 默认监听80端口listen 8000 listen *:8000listen localhost: 8000 以root方式设置资源路径  # 例如，定义资源文件相对于HTTP请求的根目录。location /download/ {root /opt/web/html;}在上面的配置中，如果有一个请求的URI是/download/index/test.html，那么Web服务器将会返回服务器上/opt/web/html/download/index/test.html文件的内容。
+以alias方式设置资源路径  alias也是用来设置文件资源路径的，它与root的不同点主要在于如何解读紧跟location后面的uri参数，这将会致使alias与root以不同的方式将用户请求映射到真正的磁盘文件上。例如，如果有一个请求的URI是/conf/nginx.conf，而用户实际想访问的文件在/usr/local/nginx/conf/nginx.conf，那么想要使用alias来进行设置的话，可以采用如下方式：
+location /conf {alias /usr/local/nginx/conf;}# 等同于location /conf {root /usr/local/nginx}使用alias时，在URI向实际文件路径的映射过程中，已经把location后配置的/conf这部分字符串丢弃掉，因此，/conf/nginx.conf请求将根据alias path映射为path/nginx.conf。root则不然，它会根据完整的URI请求来映射，因此，/conf/nginx.conf请求会根据root path映射为path/conf/nginx.conf。这也是root可以放置到http、server、location或if块中，而alias只能放置到location块中的原因。
+alias后面还可以添加正则表达式，例如：
+location ~^/test/(\w+).(\w+)$ {alias /usr/local/nginx/$2/$1.$2;}访问首页
+有时，访问站点时的URI是/，这时一般是返回网站的首页，而这与root和alias都不同。这里用ngx_http_index_module模块提供的index配置实现。index后可以跟多个文件参数，Nginx将会按照顺序来访问这些文件，例如：
+location / {root path;index /index.html /html/index.php /index.php}根据HTTP返回码重定向页面
+当对于某个请求返回错误码时，如果匹配上了error_page中设置的code，则重定向到新的URI中。例如：
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/nginx-location/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/php-find-phpini/">Php Find Php</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-10
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/php-find-phpini/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-fdisk/">Linux Fdisk</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-fdisk/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-soft-link/">Linux Soft Link</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-soft-link/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-firewall/">Linux Firewall</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-firewall/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/posts/linux-install-php-imagick/">Linux Install Php Imagick</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-09
+          </span>
+
+          
+        
+
+        
+
+        
+      </div>
+
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            说明：
+php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Nginx安装目录：/usr/local/nginx Nginx网站根目录：/usr/local/nginx/html
+安装编译工具  yum install wget make gcc gcc-c++ gtk+-devel zlib-devel openssl openssl-devel pcre-devel kernel keyutils patch perl安装ImageMagick  cd /usr/local/src #进入软件包存放目录wget <a href="http://www.imagemagick.org/download/ImageMagick.tar.gz">http://www.imagemagick.org/download/ImageMagick.tar.gz</a> #下载ImageMagicktar zxvf ImageMagick.tar.gz #解压cd ImageMagick-6.7.9-3 #进入安装目录./configure &ndash;prefix=/usr/local/imagemagick #配置make #编译make install #安装export PKG_CONFIG_PATH=/usr/local/imagemagick/lib/pkgconfig/ #设置环境变量安装imagick  cd /usr/local/srcwget <a href="http://pecl.php.net/get/imagick-3.0.1.tgz">http://pecl.php.net/get/imagick-3.0.1.tgz</a> #下载imagicktar zxvf imagick-3.0.1.tgzcd imagick-3.0.1/usr/local/php5/bin/phpize #用phpize生成configure配置文件./configure &ndash;with-php-config=/usr/local/php5/bin/php-config &ndash;with-imagick=/usr/local/imagemagick #配置make #编译make install #安装备注：在安装过程中出现错误，一般是由于缺少编译工具包导致，可根据提示参照第一步安装相应的工具包即可 安装完成之后，出现下面的界面，记住以下路径，后面会用到 Installing shared extensions: /usr/local/php5/lib/php/extensions/no-debug-non-zts-20090626/ #imagick模块路径
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/linux-install-php-imagick/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/posts/front-end-interview-standard/">Front End Interview Standard</a></h1>
       <div class="post-meta">
         
@@ -227,652 +882,6 @@ JD业务背景淘宝内部最大创新项目之一，大团队已有百人规模
       </div>
       
         <div><a class="read-more button" href="/posts/nestjs-tutorial/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nestjs-deploy/">Nestjs Deploy</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/nestjs-deploy/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/beego/">Beego</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-10-08
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            deploy 通过 bee 创建的项目，beego 默认情况下是开发模式。
-我们可以通过如下的方式改变我们的模式：
-beego.RunMode = &quot;prod&quot;或者我们在 conf/app.conf 下面设置如下：
-runmode = prod发行部署
-Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：
-独立部署
-独立部署即为在后端运行程序，让程序跑在后台。
-在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：
-nohup ./beepkg &amp;Windows 在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：
-制作 bat 文件，放在“启动”里面 制作成服务
-nginx 部署
-server {listen 80;server_name .a.com;charset utf-8;access_log /home/a.com.access.log;location /(css|js|fonts|img)/ {access_log off;expires 1d;root &quot;/path/to/app_a/static&quot;;try_files $uri @backend;}location / {try_files /<em>not_exists</em> @backend;}location @backend {proxy_set_header X-Forwarded-For $remote_addr;proxy_set_header Host $http_host;proxy_pass http://127.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/beego/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-array-helper/">Js Array Helper</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-28
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-array-helper/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-array/">Js Array</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-28
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Array.from() // Syntax// arrayLike: An array-like or iterable object to convert to an array.// mapFn Optional: Map function to call on every element of the array.// thisArg Optional: Value to use as this when executing mapFn.// return value: A new Array instance.Array.from(arrayLike [, mapFn [, thisArg]])console.log(Array.from('foo'));// expected output: Array [&quot;f&quot;, &quot;o&quot;, &quot;o&quot;]console.log(Array.from([1, 2, 3], x =&gt; x + x));// expected output: Array [2, 4, 6]Array.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-array/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-deep-copy/">Js Deep Copy</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            JSON.parse/stringify if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。
-如果不使用复制的数据类型, JSON序列化是最快的复制方法
-JSON.parse(JSON.stringify(object))const a = {string: 'string',number: 123,bool: false,nul: null,date: new Date(), // stringified undef: undefined, // lost inf: Infinity, // forced to 'null' re: /.*/, // lost}console.log(a);console.log(typeof a.date); // Date objectconst clone = JSON.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/js-deep-copy/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/swagger-php/">Swagger Php</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/swagger-php/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/chrome-devtools/">Chrome Devtools</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/chrome-devtools/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/http-status-code/">Http Status Code</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            HTTP 响应状态代码指示特定 HTTP 请求是否已成功完成。响应分为五类：信息响应(100–199)，成功响应(200–299)，重定向(300–399)，客户端错误(400–499)和服务器错误 (500–599)。状态代码由 section 10 of RFC 2616定义
-信息响应 100 Continue
-这个临时响应表明，迄今为止的所有内容都是可行的，客户端应该继续请求，如果已经完成，则忽略它。
-101 Switching Protocol
-该代码是响应客户端的 Upgrade 标头发送的，并且指示服务器也正在切换的协议。
-102 Processing (WebDAV)
-此代码表示服务器已收到并正在处理该请求，但没有响应可用。
-103 Early Hints
-此状态代码主要用于与Link 链接头一起使用，以允许用户代理在服务器仍在准备响应时开始预加载资源。
-成功响应 200 OK
-请求成功。成功的含义取决于HTTP方法：
-GET：资源已被提取并在消息正文中传输。 HEAD：实体标头位于消息正文中。 POST：描述动作结果的资源在消息体中传输。 TRACE：消息正文包含服务器收到的请求消息  201 Created
-该请求已成功，并因此创建了一个新的资源。这通常是在POST请求，或是某些PUT请求之后返回的响应。
-202 Accepted
-请求已经接收到，但还未响应，没有结果。意味着不会有一个异步的响应去表明当前请求的结果，预期另外的进程和服务去处理请求，或者批处理。
-203 Non-Authoritative Information
-服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。当前的信息可能是原始版本的子集或者超集。例如，包含资源的元数据可能导致原始服务器知道元信息的超集。使用此状态码不是必须的，而且只有在响应不使用此状态码便会返回200 OK的情况下才是合适的。
-204 No Content
-服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。响应可能通过实体头部的形式，返回新的或更新后的元信息。如果存在这些头部信息，则应当与所请求的变量相呼应。如果客户端是浏览器的话，那么用户浏览器应保留发送了该请求的页面，而不产生任何文档视图上的变化，即使按照规范新的或更新后的元信息应当被应用到用户浏览器活动视图中的文档。由于204响应被禁止包含任何消息体，因此它始终以消息头后的第一个空行结尾。
-205 Reset Content
-服务器成功处理了请求，且没有返回任何内容。但是与204响应不同，返回此状态码的响应要求请求者重置文档视图。该响应主要是被用于接受用户输入后，立即重置表单，以便用户能够轻松地开始另一次输入。与204响应一样，该响应也被禁止包含任何消息体，且以消息头后的第一个空行结束。
-206 Partial Content
-服务器已经成功处理了部分 GET 请求。类似于 FlashGet 或者迅雷这类的 HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。该请求必须包含 Range 头信息来指示客户端希望得到的内容范围，并且可能包含 If-Range 来作为请求条件。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/http-status-code/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/hugo-install/">Hugo Install</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            If you are on a Windows machine and use Chocolatey for package management, you can install Hugo with the following one-liner
-more # install-with-chocolatey.ps1choco install hugo -confirm# Or if you need the “extended” Sass/SCSS version:choco install hugo-extended -confirmIf you are on a Windows machine and use Scoop for package management, you can install Hugo with the following one-liner:
-scoop install hugo# Or install the extended version with:scoop install hugo-extendedSource
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/hugo-install/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/http-cache/">Http Cache</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Http 缓存 通过复用以前获取的资源，可以显著提高网站和应用程序的性能。Web 缓存减少了等待时间和网络流量，因此减少了显示资源表示形式所需的时间。通过使用 HTTP缓存，变得更加响应性。
-不同种类的缓存 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。当 web 缓存发现请求的资源已经被存储，它会拦截请求，返回该资源的拷贝，而不会去源服务器重新下载。这样带来的好处有：缓解服务器端压力，提升性能(获取资源的耗时更短了)。对于网站来说，缓存是达到高性能的重要组成部分。缓存需要合理配置，因为并不是所有资源都是永久不变的：重要的是对一个资源的缓存应截止到其下一次发生改变（即不能缓存过期的资源）。
-缓存的种类有很多,其大致可归为两类：私有与共享缓存。共享缓存存储的响应能够被多个用户使用。私有缓存只能用于单独用户。本文将主要介绍浏览器与代理缓存，除此之外还有网关缓存、CDN、反向代理缓存和负载均衡器等部署在服务器上的缓存方式，为站点和 web 应用提供更好的稳定性、性能和扩展性。
-浏览器缓存 (私有) 私有缓存只能用于单独用户。你可能已经见过浏览器设置中的“缓存”选项。浏览器缓存拥有用户通过 HTTP 下载的所有文档。这些缓存为浏览过的文档提供向后/向前导航，保存网页，查看源码等功能，可以避免再次向服务器发起多余的请求。它同样可以提供缓存内容的离线浏览。
-代理缓存 (共享) 共享缓存可以被多个用户使用。例如，ISP 或你所在的公司可能会架设一个 web 代理来作为本地网络基础的一部分提供给用户。这样热门的资源就会被重复使用，减少网络拥堵与延迟。
-缓存操作 虽然 HTTP 缓存不是必须的，但重用缓存的资源通常是必要的。然而常见的 HTTP 缓存只能存储 GET 响应，对于其他类型的响应则无能为力。缓存的关键主要包括request method和目标URI（一般只有GET请求才会被缓存）。 普遍的缓存案例:
-一个检索请求的成功响应: 对于 GET请求，响应状态码为：200，则表示为成功。一个包含例如HTML文档，图片，或者文件的响应。
-永久重定向: 响应状态码：301。
-错误响应: 响应状态码：404 的一个页面。
-不完全的响应: 响应状态码 206，只返回局部的信息。
-除了 GET 请求外，如果匹配到作为一个已被定义的cache键名的响应。
-缓存控制  没有缓存  缓存中不得存储任何关于客户端请求和服务端响应的内容。每次由客户端发起的请求都会下载完整的响应内容。
-Cache-Control: no-store缓存但重新验证  如下头部定义，此方式下，每次有请求发出时，缓存会将此请求发到服务器（译者注：该请求应该会带有与本地缓存相关的验证字段），服务器端会验证请求中所描述的缓存是否过期，若未过期（注：实际就是返回304），则缓存才使用本地缓存副本。
-Cache-Control: no-cache私有和公共缓存  “public” 指令表示该响应可以被任何中间人（译者注：比如中间代理、CDN等）缓存。若指定了&quot;public”，则一些通常不被中间人缓存的页面（译者注：因为默认是private）（比如 带有HTTP验证信息（帐号密码）的页面 或 某些特定状态码的页面），将会被其缓存。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/http-cache/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/memcached/">Memcached</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/memcached/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/cors/">Cors</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            跨源资源共享 (CORS: Cross-origin resource sharing) （或通俗地译为跨域资源共享）是一种机制，该机制使用附加的 HTTP 头来告诉浏览器，准许运行在一个源上的Web应用访问位于另一不同源选定的资源。 当一个Web应用发起一个与自身所在源（域，协议和端口）不同的HTTP请求时，它发起的即跨源HTTP请求。
-出于安全性，浏览器限制脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非响应报文包含了正确CORS响应头。
-跨源域资源共享（ CORS ）机制允许 Web 应用服务器进行跨源访问控制，从而使跨源数据传输得以安全进行。现代浏览器支持在 API 容器中（例如 XMLHttpRequest 或 Fetch ）使用 CORS，以降低跨源 HTTP 请求所带来的风险。
-整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。
-因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。
-浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）
-简单请求 （1) 请求方法是以下三种方法之一：
-HEAD GET POST  （2）HTTP的头信息不超出以下几种字段：
-Accept Accept-Language Content-Language Last-Event-ID Content-Type：application/x-www-form-urlencoded、multipart/form-data、text/plain  这是为了兼容表单（form），因为历史上表单一直可以发出跨域请求。AJAX 的跨域设计就是，只要表单可以发，AJAX 就可以直接发。
-对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。
-GET /cors HTTP/1.1Origin: <a href="http://api.bob.com">http://api.bob.com</a>Host: api.alice.comAccept-Language: en-USConnection: keep-aliveUser-Agent: Mozilla/5.0&hellip;上面的头信息中，Origin字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/cors/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/es6-symbol/">Es6 Symbol</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/es6-symbol/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/typescript-tutorial/">Typescript Tutorial</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            TypeScript 是 JavaScript 的类型的超集，它可以编译成纯 JavaScript。编译出来的 JavaScript 可以运行在任何浏览器上。TypeScript 编译工具可以运行在任何服务器和任何系统上。TypeScript 是开源的。
-Install Typescript function sayHello(person: string) {return 'Hello, ' + person;}let user = 'Tom';console.log(sayHello(user));npm install -g typescripttsc hello.tsdata type JavaScript 的数据类型分为两种: 基本数据类型和复杂数据类型
-基本数据类型:
-Undefined
-Null
-Boolean
-Number
-String
-Symbol (ES6) symbol 是ES6中新增的一种特殊的、不可变的基本数据类型（primitive data type），可以作为对象属性的标识符使用
-Tuple (TS) 元组 (元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同)
-Enum (TS) 枚举
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/typescript-tutorial/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/webpack-tutoral/">Webpack Tutoral</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-27
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/webpack-tutoral/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/hot-module-replacement/">Hot Module Replacement</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-25
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            浏览器刷新页面的方法 Location.reload // 语法location.reload([forcedReload])// demowindow.location.reload(true);forcedReload 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。
-无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）
-Location.replace // 语法object.replace(url);// demodocument.location.replace('https://developer.mozilla.org/en-US/docs/Web/API/Location/reload');Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。
-因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。
-Location.assign // 语法location.assign(url);// demodocument.location.assign('https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload');Location.assign 方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误
-JavaScript刷新页面的几种方法 history.go(0)location.reload()location=locationlocation.assign(location)document.execCommand('Refresh')window.navigate(location)location.replace(location)document.URL=location.href自动刷新页面的方法 &lt;!&ndash; 页面自动刷新 &ndash;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;20&quot;&gt;&lt;!
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/hot-module-replacement/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/git-tutorial/">Git Tutorial</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-24
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            本地版本控制系统 许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。
-其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 RCS 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。
-Git 配置 Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
-/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 git config 时带上 –system 选项，那么它就会读写该文件中的配置变量（由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它）。
-~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 –global 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。
-当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 –local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它（当然，你需要进入某个 Git 仓库中才能让该选项生效）。
-每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。
-查看git所有配置以及他所在的文件
-git config &ndash;list &ndash;show-origin用户信息 # 设置全局的用户信息$ git config &ndash;global user.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/git-tutorial/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-array-helper/">Php Array Helper</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-24
-          </span>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
-class User{public $name = 'Alex';}$array = ['foo' =&gt; ['bar' =&gt; new User(),]];$value = isset($array['foo']['bar']-&gt;name) ? $array['foo']['bar']-&gt;name : null;// or$value = ArrayHelper::getValue($array, 'foo.bar.name');// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&gt;firstName . ' ' . $user-&gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, 'user.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/php-array-helper/">Read more →</a></div>
       
     </div>
     

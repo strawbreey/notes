@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Leetcode 1662 Check if Two String Arrays Are Equivalent ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&amp;quot;ab&amp;quot;, &amp;quot;c&amp;quot;], word2 = [&amp;quot;a&amp;quot;, &amp;quot;bc&amp;quot;]输出：true解释：word1 表示的字符串为 &amp;quot;ab&amp;quot; &#43; &amp;quot;c&amp;quot; -&amp;gt; &amp;quot;abc&amp;quot;word2 表示的字符串为 &amp;quot;a&amp;quot; &#43; &amp;quot;bc&amp;quot; -&amp;gt; &amp;quot;abc&amp;quot;两个字符串相同，返回 true输入：word1 = [&amp;quot;a&amp;quot;, &amp;quot;cb&amp;quot;], word2 = [&amp;quot;ab&amp;quot;, &amp;quot;c&amp;quot;]输出：false输入：word1 = [&amp;quot;abc&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;defg&amp;quot;], word2 = [&amp;quot;abcddefg&amp;quot;]输出：true提示：
+ 1 &amp;lt;= word1.length, word2.length &amp;lt;= 103 1 &amp;lt;= word1[i].length, word2[i].length &amp;lt;= 103 1 &amp;lt;= sum(word1[i]."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/leetcode-1662-check-if-two-string-arrays-are-equivalent/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 1662 Check if Two String Arrays Are Equivalent"/>
+<meta name="twitter:description" content="给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&quot;ab&quot;, &quot;c&quot;], word2 = [&quot;a&quot;, &quot;bc&quot;]输出：true解释：word1 表示的字符串为 &quot;ab&quot; &#43; &quot;c&quot; -&gt; &quot;abc&quot;word2 表示的字符串为 &quot;a&quot; &#43; &quot;bc&quot; -&gt; &quot;abc&quot;两个字符串相同，返回 true输入：word1 = [&quot;a&quot;, &quot;cb&quot;], word2 = [&quot;ab&quot;, &quot;c&quot;]输出：false输入：word1 = [&quot;abc&quot;, &quot;d&quot;, &quot;defg&quot;], word2 = [&quot;abcddefg&quot;]输出：true提示：
+ 1 &lt;= word1.length, word2.length &lt;= 103 1 &lt;= word1[i].length, word2[i].length &lt;= 103 1 &lt;= sum(word1[i]."/>
+
+
+
+<meta property="og:title" content="Leetcode 1662 Check if Two String Arrays Are Equivalent" />
+<meta property="og:description" content="给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&quot;ab&quot;, &quot;c&quot;], word2 = [&quot;a&quot;, &quot;bc&quot;]输出：true解释：word1 表示的字符串为 &quot;ab&quot; &#43; &quot;c&quot; -&gt; &quot;abc&quot;word2 表示的字符串为 &quot;a&quot; &#43; &quot;bc&quot; -&gt; &quot;abc&quot;两个字符串相同，返回 true输入：word1 = [&quot;a&quot;, &quot;cb&quot;], word2 = [&quot;ab&quot;, &quot;c&quot;]输出：false输入：word1 = [&quot;abc&quot;, &quot;d&quot;, &quot;defg&quot;], word2 = [&quot;abcddefg&quot;]输出：true提示：
+ 1 &lt;= word1.length, word2.length &lt;= 103 1 &lt;= word1[i].length, word2[i].length &lt;= 103 1 &lt;= sum(word1[i]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/leetcode-1662-check-if-two-string-arrays-are-equivalent/" />
+<meta property="article:published_time" content="2020-11-26T10:45:53+08:00" />
+<meta property="article:modified_time" content="2020-11-26T10:45:53+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Leetcode 1662 Check if Two String Arrays Are Equivalent</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-11-26
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。</p>
+<p>数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。</p>
+<pre><code>输入：word1 = [&quot;ab&quot;, &quot;c&quot;], word2 = [&quot;a&quot;, &quot;bc&quot;]
+输出：true
+解释：
+word1 表示的字符串为 &quot;ab&quot; + &quot;c&quot; -&gt; &quot;abc&quot;
+word2 表示的字符串为 &quot;a&quot; + &quot;bc&quot; -&gt; &quot;abc&quot;
+两个字符串相同，返回 true
+
+输入：word1 = [&quot;a&quot;, &quot;cb&quot;], word2 = [&quot;ab&quot;, &quot;c&quot;]
+输出：false
+
+
+输入：word1  = [&quot;abc&quot;, &quot;d&quot;, &quot;defg&quot;], word2 = [&quot;abcddefg&quot;]
+输出：true
+
+</code></pre><p>提示：</p>
+<ul>
+<li>1 &lt;= word1.length, word2.length &lt;= 103</li>
+<li>1 &lt;= word1[i].length, word2[i].length &lt;= 103</li>
+<li>1 &lt;= sum(word1[i].length), sum(word2[i].length) &lt;= 103</li>
+<li>word1[i] 和 word2[i] 由小写字母组成</li>
+</ul>
+<p>Solution</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @param {string[]} word1
+</span><span style="color:#75715e"> * @param {string[]} word2
+</span><span style="color:#75715e"> * @return {boolean}
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arrayStringsAreEqual</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">word1</span>, <span style="color:#a6e22e">word2</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">word1</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#a6e22e">word2</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+};
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/leetcode-array-and-string/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Leetcode Array and String</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/js-string/">
+                  <span class="button__text">Js String</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
