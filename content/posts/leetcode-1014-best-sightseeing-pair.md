@@ -2,6 +2,7 @@
 title: "Leetcode 1014 Best Sightseeing Pair"
 date: 2020-11-23T22:54:56+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 给定正整数数组 A，A[i] 表示第 i 个观光景点的评分，并且两个景点 i 和 j 之间的距离为 j - i。

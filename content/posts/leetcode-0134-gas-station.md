@@ -2,6 +2,7 @@
 title: "Leetcode 0134 Gas Station"
 date: 2020-11-18T10:05:57+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 There are N gas stations along a circular route, where the amount of gas at station i is gas[i].

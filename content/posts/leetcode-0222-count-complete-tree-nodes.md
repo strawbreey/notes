@@ -2,6 +2,7 @@
 title: "Leetcode 0222 Count Complete Tree Nodes"
 date: 2020-11-24T23:35:16+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 给出一个完全二叉树，求出该树的节点个数。

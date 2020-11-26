@@ -20,7 +20,6 @@ word2 表示的字符串为 "a" + "bc" -> "abc"
 输出：false
 
 
-
 输入：word1  = ["abc", "d", "defg"], word2 = ["abcddefg"]
 输出：true
 

@@ -2,6 +2,7 @@
 title: "Leetcode 0147 Insertion Sort List"
 date: 2020-11-20T09:45:27+08:00
 draft: false
+tags: ['leetcode']
 ---
 
 Sort a linked list using insertion sort.
