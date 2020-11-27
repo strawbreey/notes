@@ -26,3 +26,9 @@ extension=mcrypt.so
 
 ```
 
+
+
+### 参考资料
+
+- [mcrypt](http://pecl.php.net/package/mcrypt)
+- [php 7.2 安装 mcrypt 扩展](https://www.jianshu.com/p/3427bc16127e)

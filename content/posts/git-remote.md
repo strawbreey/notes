@@ -10,7 +10,14 @@ draft: false
 
 git remote update origin --prune
 git remote update origin -p
+
+# 设置远程分支的源
+git push --set-upstream origin master
+
+# 删除远程分支
+git push origin --delete test
 ```
+
 
 ### 参考
 
