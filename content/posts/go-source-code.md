@@ -1,5 +1,5 @@
 ---
-title: "Golang Source Code"
+title: "Go Source Code"
 date: 2020-10-13T10:05:50+08:00
 draft: false
 ---

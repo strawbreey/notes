@@ -1,5 +1,5 @@
 ---
-title: "Golang Goroutine"
+title: "Go Goroutine"
 date: 2020-09-21T16:28:10+08:00
 draft: false
 ---
