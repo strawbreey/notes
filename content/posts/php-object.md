@@ -2,6 +2,8 @@
 title: "Php Object"
 date: 2020-09-23T11:36:50+08:00
 draft: false
+tags: ['php']
+
 ---
 
 #### 对象初始化

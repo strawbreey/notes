@@ -2,6 +2,8 @@
 title: "Php Find Php"
 date: 2020-10-10T10:05:08+08:00
 draft: false
+tags: ['php']
+
 ---
 
 Linux下查找及修改PHP配置文件ini的路径

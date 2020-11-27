@@ -2,6 +2,8 @@
 title: "Php Timeout"
 date: 2020-10-20T18:16:26+08:00
 draft: false
+tags: ['php']
+
 ---
 
 设置PHP脚本执行超时的时间有下面这样一些方法：
