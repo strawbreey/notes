@@ -11,4 +11,5 @@
     - [x] leetcode
     - [x] devops
     - [x] 添加
+    - [x] Go Function
 
