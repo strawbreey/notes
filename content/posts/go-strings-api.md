@@ -1,5 +1,5 @@
 ---
-title: "Golang Strings Api"
+title: "Go Strings Api"
 date: 2020-10-12T11:50:11+08:00
 draft: false
 ---

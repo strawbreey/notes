@@ -2,6 +2,8 @@
 title: "Php Session"
 date: 2020-10-12T10:56:18+08:00
 draft: false
+tags: ['php']
+
 ---
 
 会话机制(Session）在PHP 中用于保持用户连续访问Web应用时的相关数据，有助于创建高度定制化的程序、增加站点的吸引力。

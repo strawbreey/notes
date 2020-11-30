@@ -2,6 +2,8 @@
 title: "Php Download"
 date: 2020-10-21T15:53:03+08:00
 draft: false
+tags: ['php']
+
 ---
 
                 header('Access-Control-Allow-Origin: *');

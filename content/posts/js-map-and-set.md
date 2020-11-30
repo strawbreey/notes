@@ -4,6 +4,46 @@ date: 2020-10-23T14:41:10+08:00
 draft: false
 ---
 
+<!-- TOC -->
+
+- [Map](#map)
+- [Map 迭代](#map-%E8%BF%AD%E4%BB%A3)
+- [Object.entries：从对象创建 Map](#objectentries%E4%BB%8E%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA-map)
+- [Object.fromEntries：从 Map 创建对象](#objectfromentries%E4%BB%8E-map-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1)
+  - [与其他数据结构互相转化](#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%92%E7%9B%B8%E8%BD%AC%E5%8C%96)
+- [Set](#set)
+- [Set 迭代（iteration）](#set-%E8%BF%AD%E4%BB%A3iteration)
+- [测试题](#%E6%B5%8B%E8%AF%95%E9%A2%98)
+- [总结](#%E6%80%BB%E7%BB%93)
+- [参考链接](#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5)
+
+<!-- /TOC -->
+
+JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
+
+为了解决这个问题，ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
+
+```js
+
+const data = {};
+const element = document.getElementById('myDiv');
+
+data[element] = 'metadata';
+data['[object HTMLDivElement]'] // "metadata"
+
+// or
+
+const m = new Map();
+const o = {p: 'Hello World'};
+
+m.set(o, 'content')
+m.get(o) // "content"
+
+m.has(o) // true
+m.delete(o) // true
+m.has(o) // false
+```
+
 
 ### Map
 
@@ -11,12 +51,20 @@ Map 是一个带键的数据项的集合，就像一个 Object 一样。 但是�
 
 它的方法和属性如下：
 
-- new Map() —— 创建 map。
-- map.set(key, value) —— 根据键存储值。
+- map.clear() —— 清空 map
+- map.delete(key) —— 删除指定键的值
+- map.entries() —— 返回一个新的 Iterator 对象，它按插入顺序包含了Map对象中每个元素的 [key, value] 数组。
+- map.forEach() —— 按插入顺序，为 Map对象里的每一键值对调用一次callbackFn函数。如果为forEach提供了thisArg，它将在每次回调中作为this值。
 - map.get(key) —— 根据键来返回值，如果 map 中不存在对应的 key，则返回 undefined。
 - map.has(key) —— 如果 key 存在则返回 true，否则返回 false。
-- map.delete(key) —— 删除指定键的值。
-- map.clear() —— 清空 map。
+- map.keys()  —— 返回一个新的 Iterator对象， 它按插入顺序包含了Map对象中每个元素的键 。
+- map.set(key, value) —— 根据键存储值。
+- map.values() —— 返回一个新的Iterator对象，它按插入顺序包含了Map对象中每个元素的值 。
+- new Map() —— 创建 map。
+
+
+
+
 - map.size —— 返回当前元素个数。
 
 ```js
@@ -36,12 +84,11 @@ alert( map.size ); // 3
 
 ```
 
-  map[key] 不是使用 Map 的正确方式
-  虽然 map[key] 也有效，例如我们可以设置 map[key] = 2，这样会将 map 视为 JavaScript 的 plain object，因此它暗含了所有相应的限制（没有对象键等）。
+  map[key] 不是使用 Map 的正确方式, 虽然 map[key] 也有效，例如我们可以设置 map[key] = 2，这样会将 map 视为 JavaScript 的 plain object，因此它暗含了所有相应的限制（没有对象键等）。
 
   所以我们应该使用 map 方法：set 和 get 等。
 
-#### Map 还可以使用对象作为键
+Map 还可以使用对象作为键
 
 ```js
 let john = { name: "John" };
@@ -158,7 +205,97 @@ let prices = Object.fromEntries([
 alert(prices.orange); // 2
 ```
 
-## Set
+#### 与其他数据结构互相转化
+
+Map 转为数组
+
+```js
+const myMap = new Map().set(true, 7).set({foo: 3}, ['abc']);
+[...myMap]
+```
+
+数组转map
+
+```js
+new Map([
+  [true, 7],
+  [{foo: 3}, ['abc']]
+])
+```
+
+Map 转为对象
+
+```js
+function strMapToObj(strMap) {
+  let obj = Object.create(null);
+  for (let [k,v] of strMap) {
+    obj[k] = v;
+  }
+  return obj;
+}
+
+const myMap = new Map().set('yes', true).set('no', false);
+strMapToObj(myMap)
+```
+
+对象转Map
+```js
+let obj = {"a":1, "b":2};
+let map = new Map(Object.entries(obj));
+
+// or 
+function objToStrMap(obj) {
+  let strMap = new Map();
+  for (let k of Object.keys(obj)) {
+    strMap.set(k, obj[k]);
+  }
+  return strMap;
+}
+
+objToStrMap({yes: true, no: false})
+```
+
+Map 转为 JSON
+
+```js
+// 一种情况是，Map 的键名都是字符串
+function strMapToJson(strMap) {
+  return JSON.stringify(strMapToObj(strMap));
+}
+
+let myMap = new Map().set('yes', true).set('no', false);
+strMapToJson(myMap)
+
+// 另一种情况是，Map 的键名有非字符串，这时可以选择转为数组 JSON。
+function mapToArrayJson(map) {
+  return JSON.stringify([...map]);
+}
+
+let myMap = new Map().set(true, 7).set({foo: 3}, ['abc']);
+mapToArrayJson(myMap)
+```
+
+JSON 转为 Map
+```js
+// JSON 转为 Map，正常情况下，所有键名都是字符串。
+
+function jsonToStrMap(jsonStr) {
+  return objToStrMap(JSON.parse(jsonStr));
+}
+
+jsonToStrMap('{"yes": true, "no": false}')
+// Map {'yes' => true, 'no' => false}
+
+// 但是，有一种特殊情况，整个 JSON 就是一个数组，且每个数组成员本身，又是一个有两个成员的数组。这时，它可以一一对应地转为 Map。这往往是 Map 转为数组 JSON 的逆操作。
+
+function jsonToMap(jsonStr) {
+  return new Map(JSON.parse(jsonStr));
+}
+
+jsonToMap('[[true,7],[{"foo":3},["abc"]]]')
+// Map {true => 7, Object {foo: 3} => ['abc']}
+```
+### Set
 
 Set 是一个特殊的类型集合 —— “值的集合”（没有键），它的每一个值只能出现一次。
 

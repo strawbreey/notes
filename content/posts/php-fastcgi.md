@@ -2,6 +2,8 @@
 title: "Php Fastcgi"
 date: 2020-10-27T10:39:26+08:00
 draft: false
+tags: ['php']
+
 ---
 
 ### CGI

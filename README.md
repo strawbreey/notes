@@ -1,17 +1,54 @@
 # notes
 http://note.strawbreey.com
 
----
-title: "Markdown"
-date: 2020-11-23T10:05:42+08:00
-draft: false
----
 
 Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，**粗体** 或者 *斜体* 某些文字，更棒的是，它还可以
 
 ## 目录
 
-<!-- TOC -->autoauto- [notes](#notes)auto  - [目录](#目录)auto    - [1. 斜体和粗体](#1-斜体和粗体)auto    - [2. 分级标题](#2-分级标题)auto    - [3. 外链接](#3-外链接)auto    - [4. 无序列表](#4-无序列表)auto    - [5. 有序列表](#5-有序列表)auto    - [6. 文字引用](#6-文字引用)auto    - [7. 行内代码块](#7-行内代码块)auto    - [8.  代码块](#8--代码块)auto    - [9.  插入图像](#9--插入图像)auto    - [10. 内容目录](#10-内容目录)auto    - [11. 标签分类](#11-标签分类)auto    - [12. 删除线](#12-删除线)auto    - [13. 注脚](#13-注脚)auto    - [14. LaTeX 公式](#14-latex-公式)auto    - [15. 加强的代码块](#15-加强的代码块)auto    - [16. 流程图](#16-流程图)auto      - [示例](#示例)auto      - [更多语法参考：[流程图语法参考](http://adrai.github.io/flowchart.js/)](#更多语法参考流程图语法参考httpadraigithubioflowchartjs)auto    - [17. 序列图](#17-序列图)auto      - [示例 1](#示例-1)auto      - [示例 2](#示例-2)auto      - [更多语法参考：[序列图语法参考](http://bramp.github.io/js-sequence-diagrams/)](#更多语法参考序列图语法参考httpbrampgithubiojs-sequence-diagrams)auto    - [18. 甘特图](#18-甘特图)auto      - [更多语法参考：[甘特图语法参考](https://knsv.github.io/mermaid/#gant-diagrams)](#更多语法参考甘特图语法参考httpsknsvgithubiomermaidgant-diagrams)auto    - [19. Mermaid 流程图](#19-mermaid-流程图)auto      - [更多语法参考：[Mermaid 流程图语法参考](https://knsv.github.io/mermaid/#flowcharts-basic-syntax)](#更多语法参考mermaid-流程图语法参考httpsknsvgithubiomermaidflowcharts-basic-syntax)auto    - [20. Mermaid 序列图](#20-mermaid-序列图)auto      - [更多语法参考：[Mermaid 序列图语法参考](https://knsv.github.io/mermaid/#sequence-diagrams)](#更多语法参考mermaid-序列图语法参考httpsknsvgithubiomermaidsequence-diagrams)auto    - [21. 表格支持](#21-表格支持)auto    - [22. 定义型列表](#22-定义型列表)auto    - [23. Html 标签](#23-html-标签)auto    - [24. 内嵌图标](#24-内嵌图标)auto    - [25. 待办事宜 Todo 列表](#25-待办事宜-todo-列表)auto    - [注脚](#注脚)autoauto<!-- /TOC -->
+<!-- TOC -->
+
+- [notes](#notes)
+  - [title: "Markdown"](#title-markdown)
+  - [目录](#%E7%9B%AE%E5%BD%95)
+    - [斜体和粗体](#%E6%96%9C%E4%BD%93%E5%92%8C%E7%B2%97%E4%BD%93)
+    - [分级标题](#%E5%88%86%E7%BA%A7%E6%A0%87%E9%A2%98)
+    - [外链接](#%E5%A4%96%E9%93%BE%E6%8E%A5)
+    - [无序列表](#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8)
+    - [有序列表](#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8)
+    - [文字引用](#%E6%96%87%E5%AD%97%E5%BC%95%E7%94%A8)
+    - [行内代码块](#%E8%A1%8C%E5%86%85%E4%BB%A3%E7%A0%81%E5%9D%97)
+    - [代码块](#%E4%BB%A3%E7%A0%81%E5%9D%97)
+    - [插入图像](#%E6%8F%92%E5%85%A5%E5%9B%BE%E5%83%8F)
+    - [内容目录](#%E5%86%85%E5%AE%B9%E7%9B%AE%E5%BD%95)
+    - [标签分类](#%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB)
+    - [删除线](#%E5%88%A0%E9%99%A4%E7%BA%BF)
+    - [注脚](#%E6%B3%A8%E8%84%9A)
+    - [LaTeX 公式](#latex-%E5%85%AC%E5%BC%8F)
+    - [加强的代码块](#%E5%8A%A0%E5%BC%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97)
+    - [流程图](#%E6%B5%81%E7%A8%8B%E5%9B%BE)
+      - [示例](#%E7%A4%BA%E4%BE%8B)
+      - [更多语法参考：流程图语法参考](#%E6%9B%B4%E5%A4%9A%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83%E6%B5%81%E7%A8%8B%E5%9B%BE%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83)
+    - [序列图](#%E5%BA%8F%E5%88%97%E5%9B%BE)
+      - [示例 1](#%E7%A4%BA%E4%BE%8B-1)
+      - [示例 2](#%E7%A4%BA%E4%BE%8B-2)
+      - [更多语法参考：序列图语法参考](#%E6%9B%B4%E5%A4%9A%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83%E5%BA%8F%E5%88%97%E5%9B%BE%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83)
+    - [甘特图](#%E7%94%98%E7%89%B9%E5%9B%BE)
+      - [更多语法参考：甘特图语法参考](#%E6%9B%B4%E5%A4%9A%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83%E7%94%98%E7%89%B9%E5%9B%BE%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83)
+    - [Mermaid 流程图](#mermaid-%E6%B5%81%E7%A8%8B%E5%9B%BE)
+      - [更多语法参考：Mermaid 流程图语法参考](#%E6%9B%B4%E5%A4%9A%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83mermaid-%E6%B5%81%E7%A8%8B%E5%9B%BE%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83)
+    - [Mermaid 序列图](#mermaid-%E5%BA%8F%E5%88%97%E5%9B%BE)
+      - [更多语法参考：Mermaid 序列图语法参考](#%E6%9B%B4%E5%A4%9A%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83mermaid-%E5%BA%8F%E5%88%97%E5%9B%BE%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83)
+    - [表格支持](#%E8%A1%A8%E6%A0%BC%E6%94%AF%E6%8C%81)
+    - [定义型列表](#%E5%AE%9A%E4%B9%89%E5%9E%8B%E5%88%97%E8%A1%A8)
+    - [Html 标签](#html-%E6%A0%87%E7%AD%BE)
+    - [内嵌图标](#%E5%86%85%E5%B5%8C%E5%9B%BE%E6%A0%87)
+    - [待办事宜 Todo 列表](#%E5%BE%85%E5%8A%9E%E4%BA%8B%E5%AE%9C-todo-%E5%88%97%E8%A1%A8)
+    - [注脚](#%E6%B3%A8%E8%84%9A)
+    - [参考链接](#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5)
+    - [相关文章](#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0)
+
+
 
 ### 1. 斜体和粗体
 

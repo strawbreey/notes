@@ -2,6 +2,8 @@
 title: "Php Variable Handle"
 date: 2020-09-23T15:36:50+08:00
 draft: false
+tags: ['php']
+
 ---
 
 #### boolval — 获取变量的布尔值
