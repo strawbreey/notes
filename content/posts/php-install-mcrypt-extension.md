@@ -26,8 +26,6 @@ extension=mcrypt.so
 
 ```
 
-
-
 ### 参考资料
 
 - [mcrypt](http://pecl.php.net/package/mcrypt)
