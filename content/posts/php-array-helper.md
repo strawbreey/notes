@@ -304,8 +304,9 @@ $data = ArrayHelper::toArray($posts, [
 ### 测试阵列
 
 ```php
-/ true
+// true
 ArrayHelper::isIn('a', ['a']);
+
 // true
 ArrayHelper::isIn('a', new(ArrayObject['a']));
 
