@@ -12,6 +12,8 @@ binlog是Mysql sever层维护的一种二进制日志，与innodb引擎中的red
 - 数据恢复：通过mysqlbinlog工具恢复数据
 - 增量备份
 
+
+
 ### binlog管理
 
 - 开启binlogmy.cnf配置中设置：log_bin="存放binlog路径目录"
