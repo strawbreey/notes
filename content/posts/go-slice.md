@@ -4,12 +4,9 @@ date: 2020-09-03T15:42:47+08:00
 draft: false
 ---
 
-
 Go 语言切片是对数组的抽象。
 
 Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片("动态数组"),与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。
-
-
 
 ### 定义切片
 
@@ -24,10 +21,9 @@ var slice1 []type = make([]type, len)
 slice1 := make([]type, len)
 ```
 
-
 也可以指定容量，其中capacity为可选参数。
-```go
 
+```go
 make([]T, length, capacity)
 ```
 
@@ -45,7 +41,7 @@ s := arr[startIndex:endIndex]
 s1 := s[startIndex:endIndex] 
 // 通过切片s初始化切片s1
 
-s :=make([]int,len,cap) 
+s :=make([]int, len, cap) 
 // 通过内置函数make()初始化切片s,[]int 标识为其元素类型为int的切片
 ```
 
