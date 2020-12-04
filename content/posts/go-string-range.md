@@ -25,3 +25,5 @@ for pos, char := range "日本語" {
 
 - [The Go Blog Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
 - [How can I iterate over a string by runes in Go?](https://stackoverflow.com/questions/18130859/how-can-i-iterate-over-a-string-by-runes-in-go)
+
+- [全面认识golang string](https://www.cnblogs.com/fanbi/p/11956208.html)
