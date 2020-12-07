@@ -14,7 +14,6 @@ sequenceDiagram
 
 {{< gist spf13 7896402 "img.html" >}}
 
-{{< $_hugo_config := `{ "version": 1 }` >}}
 
 <div class="mermaid">
      graph LR
@@ -23,9 +22,4 @@ sequenceDiagram
       B-->D(fa:fa-spinner);
 </div>
 
-### css
-
-#### 222 
-
-###  啊啊啊
 
