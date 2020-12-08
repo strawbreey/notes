@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="gitignore说明 在使用git的过程中，一般我们总会有些文件无需纳入git的管理，也不希望它们总出现在未跟踪文件列表，这些文件通常是日志文件、临时文件、编译产生的中间文件、工具自动生成的文件等等。 此时我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式，Git会根据这些模式规则来判断是否将文件添加到版本控制中。 注意：在windows下可以创建文件名为.gitignore.，保存之后系统会自动重命名为 .gitignore"
+  content="gitignore说明 在使用git的过程中，一般我们总会有些文件无需纳入git的管理，也不希望它们总出现在未跟踪文件列表，这些文件通常是日志"
 />
 <meta
   name="keywords"
@@ -44,12 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gitignore"/>
-<meta name="twitter:description" content="gitignore说明 在使用git的过程中，一般我们总会有些文件无需纳入git的管理，也不希望它们总出现在未跟踪文件列表，这些文件通常是日志文件、临时文件、编译产生的中间文件、工具自动生成的文件等等。 此时我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式，Git会根据这些模式规则来判断是否将文件添加到版本控制中。 注意：在windows下可以创建文件名为.gitignore.，保存之后系统会自动重命名为 .gitignore"/>
+<meta name="twitter:description" content="gitignore说明 在使用git的过程中，一般我们总会有些文件无需纳入git的管理，也不希望它们总出现在未跟踪文件列表，这些文件通常是日志"/>
 
 
 
 <meta property="og:title" content="Gitignore" />
-<meta property="og:description" content="gitignore说明 在使用git的过程中，一般我们总会有些文件无需纳入git的管理，也不希望它们总出现在未跟踪文件列表，这些文件通常是日志文件、临时文件、编译产生的中间文件、工具自动生成的文件等等。 此时我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式，Git会根据这些模式规则来判断是否将文件添加到版本控制中。 注意：在windows下可以创建文件名为.gitignore.，保存之后系统会自动重命名为 .gitignore" />
+<meta property="og:description" content="gitignore说明 在使用git的过程中，一般我们总会有些文件无需纳入git的管理，也不希望它们总出现在未跟踪文件列表，这些文件通常是日志" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/gitignore/" />
 <meta property="article:published_time" content="2020-10-26T09:57:02+08:00" />
@@ -226,8 +226,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

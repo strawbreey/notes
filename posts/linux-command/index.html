@@ -11,35 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
-第二列Size，磁盘分区的大小
-第三列Used，已使用的空间
-第四列Avail，可用的空间
-第五列Use%，已使用的百分比
-第六列Mounted on，挂载点
-参数说明
--a或&amp;ndash;all：包含全部的文件系统；
-&amp;ndash;block-size=&amp;lt;区块大小&amp;gt;：以指定的区块大小来显示区块数目；
--h或&amp;ndash;human-readable：以可读性较高的方式来显示信息;
--H或&amp;ndash;si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
--i或&amp;ndash;inodes：显示inode的信息；
--k或&amp;ndash;kilobytes：指定区块大小为1024字节；
--l或&amp;ndash;local：仅显示本地端的文件系统;
--m或&amp;ndash;megabytes：指定区块大小为1048576字节；
-&amp;ndash;no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
--P或&amp;ndash;portability：使用POSIX的输出格式；
-&amp;ndash;sync：在取得磁盘使用信息前，先执行sync指令；
--t&amp;lt;文件系统类型&amp;gt;或&amp;ndash;type=&amp;lt;文件系统类型&amp;gt;：仅显示指定文件系统类型的磁盘信息；
--T或&amp;ndash;print-type：显示文件系统的类型；
--x&amp;lt;文件系统类型&amp;gt;或&amp;ndash;exclude-type=&amp;lt;文件系统类型&amp;gt;：不要显示指定文件系统类型的磁盘信息；
-&amp;ndash;help：显示帮助；
-&amp;ndash;version：显示版本信息。
-查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
--a或-all 显示目录中个别文件的大小。
--b或-bytes 显示目录或文件大小时，以byte为单位。
--c或&amp;ndash;total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
--k或&amp;ndash;kilobytes 以KB(1024bytes)为单位输出。
--m或&amp;ndash;megabytes 以MB为单位输出。"
+  content="Linux Command 查看磁盘空间大小 df -hl # G 第一列Filesystem，磁盘分区 第二列Size，磁盘分区的大小 第三列Used，已使用的空间 第四列Avail，"
 />
 <meta
   name="keywords"
@@ -72,68 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux Command"/>
-<meta name="twitter:description" content="Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
-第二列Size，磁盘分区的大小
-第三列Used，已使用的空间
-第四列Avail，可用的空间
-第五列Use%，已使用的百分比
-第六列Mounted on，挂载点
-参数说明
--a或&ndash;all：包含全部的文件系统；
-&ndash;block-size=&lt;区块大小&gt;：以指定的区块大小来显示区块数目；
--h或&ndash;human-readable：以可读性较高的方式来显示信息;
--H或&ndash;si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
--i或&ndash;inodes：显示inode的信息；
--k或&ndash;kilobytes：指定区块大小为1024字节；
--l或&ndash;local：仅显示本地端的文件系统;
--m或&ndash;megabytes：指定区块大小为1048576字节；
-&ndash;no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
--P或&ndash;portability：使用POSIX的输出格式；
-&ndash;sync：在取得磁盘使用信息前，先执行sync指令；
--t&lt;文件系统类型&gt;或&ndash;type=&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；
--T或&ndash;print-type：显示文件系统的类型；
--x&lt;文件系统类型&gt;或&ndash;exclude-type=&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；
-&ndash;help：显示帮助；
-&ndash;version：显示版本信息。
-查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
--a或-all 显示目录中个别文件的大小。
--b或-bytes 显示目录或文件大小时，以byte为单位。
--c或&ndash;total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
--k或&ndash;kilobytes 以KB(1024bytes)为单位输出。
--m或&ndash;megabytes 以MB为单位输出。"/>
+<meta name="twitter:description" content="Linux Command 查看磁盘空间大小 df -hl # G 第一列Filesystem，磁盘分区 第二列Size，磁盘分区的大小 第三列Used，已使用的空间 第四列Avail，"/>
 
 
 
 <meta property="og:title" content="Linux Command" />
-<meta property="og:description" content="Linux Command  查看磁盘空间大小  df -hl # G第一列Filesystem，磁盘分区
-第二列Size，磁盘分区的大小
-第三列Used，已使用的空间
-第四列Avail，可用的空间
-第五列Use%，已使用的百分比
-第六列Mounted on，挂载点
-参数说明
--a或&ndash;all：包含全部的文件系统；
-&ndash;block-size=&lt;区块大小&gt;：以指定的区块大小来显示区块数目；
--h或&ndash;human-readable：以可读性较高的方式来显示信息;
--H或&ndash;si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
--i或&ndash;inodes：显示inode的信息；
--k或&ndash;kilobytes：指定区块大小为1024字节；
--l或&ndash;local：仅显示本地端的文件系统;
--m或&ndash;megabytes：指定区块大小为1048576字节；
-&ndash;no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
--P或&ndash;portability：使用POSIX的输出格式；
-&ndash;sync：在取得磁盘使用信息前，先执行sync指令；
--t&lt;文件系统类型&gt;或&ndash;type=&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；
--T或&ndash;print-type：显示文件系统的类型；
--x&lt;文件系统类型&gt;或&ndash;exclude-type=&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；
-&ndash;help：显示帮助；
-&ndash;version：显示版本信息。
-查看文件和目录大小  # 查看目录的总大小du -sh /data# 或者进到/data目录后直接执行：du -sh# 如果要看/data目录下各个子目录的大小，不包括子目录du -h# 如果要看/data目录下各个子目录的大小，包括子目录的子目录du -h *# 如果要看/data目录下各个子目录和文件的大小，需要使用-a参数：du -ah参数说明
--a或-all 显示目录中个别文件的大小。
--b或-bytes 显示目录或文件大小时，以byte为单位。
--c或&ndash;total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
--k或&ndash;kilobytes 以KB(1024bytes)为单位输出。
--m或&ndash;megabytes 以MB为单位输出。" />
+<meta property="og:description" content="Linux Command 查看磁盘空间大小 df -hl # G 第一列Filesystem，磁盘分区 第二列Size，磁盘分区的大小 第三列Used，已使用的空间 第四列Avail，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/linux-command/" />
 <meta property="article:published_time" content="2020-10-13T10:59:36+08:00" />
@@ -517,7 +433,7 @@ top
 yum install dstat
 
 dstat
-</code></pre></div><h3 id="参考文献">参考文献</h3>
+</code></pre></div><h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://www.runoob.com/w3cnote/linux-common-command-2.html">Linux 常用命令学习</a></li>
 </ul>
@@ -543,8 +459,8 @@ dstat
             
             
               <span class="button next">
-                <a href="/posts/golang-source-code/">
-                  <span class="button__text">Golang Source Code</span>
+                <a href="/posts/go-source-code/">
+                  <span class="button__text">Go Source Code</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>
@@ -575,8 +491,12 @@ dstat
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

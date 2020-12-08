@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Webpack Remove Console ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="去除 console 是交由 UglifyJS 处理的.webpack 内置了 webpack.optimize.UglifyJsPlugin, 也提供了 UglifyjsWebpackPlugin 插件形式调用, 二者的区别是: webpack.optimize.UglifyJSPlugin 基于的是 UglifyjsWebpackPlugin v0.4.6 版本, 而单独使用插件的版本可以获得更高的版本"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/webpack-remove-console.log/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Webpack Remove Console"/>
+<meta name="twitter:description" content="去除 console 是交由 UglifyJS 处理的.webpack 内置了 webpack.optimize.UglifyJsPlugin, 也提供了 UglifyjsWebpackPlugin 插件形式调用, 二者的区别是: webpack.optimize.UglifyJSPlugin 基于的是 UglifyjsWebpackPlugin v0.4.6 版本, 而单独使用插件的版本可以获得更高的版本"/>
+
+
+
+<meta property="og:title" content="Webpack Remove Console" />
+<meta property="og:description" content="去除 console 是交由 UglifyJS 处理的.webpack 内置了 webpack.optimize.UglifyJsPlugin, 也提供了 UglifyjsWebpackPlugin 插件形式调用, 二者的区别是: webpack.optimize.UglifyJSPlugin 基于的是 UglifyjsWebpackPlugin v0.4.6 版本, 而单独使用插件的版本可以获得更高的版本" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/webpack-remove-console.log/" />
+<meta property="article:published_time" content="2020-11-30T17:36:09+08:00" />
+<meta property="article:modified_time" content="2020-11-30T17:36:09+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Webpack Remove Console</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-11-30
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>去除 console 是交由 UglifyJS 处理的.webpack 内置了 webpack.optimize.UglifyJsPlugin, 也提供了 UglifyjsWebpackPlugin 插件形式调用, 二者的区别是: webpack.optimize.UglifyJSPlugin 基于的是 UglifyjsWebpackPlugin v0.4.6 版本, 而单独使用插件的版本可以获得更高的版本.  个人比较追新, 所以说一下 UglifyjsWebpackPlugin 的使用方式, 配置项比内置的丰富了些:在你的 webpack.config.js 中 (只列出关键点):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UglifyJsPlugin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;uglifyjs-webpack-plugin&#39;</span>);
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UglifyJsPlugin</span>({
+      <span style="color:#a6e22e">uglifyOptions</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">compress</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">drop_console</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+        }
+      }
+    })
+  ]
+}
+
+</code></pre></div><h3 id="安装webpack-插件">安装webpack 插件</h3>
+<p>babel-plugin-transform-remove-console</p>
+<h3 id="去掉console">去掉console</h3>
+<p>window.console.log = function () { };
+window.console.info = function () { };
+window.console.warn = function () { };
+window.console.error = function () { };</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://github.com/webpack-contrib/uglifyjs-webpack-plugin#uglifyoptions">uglifyjs-webpack-plugin</a></li>
+<li><a href="https://github.com/Riokai/babel-plugin-transform-remove-console">babel-plugin-transform-remove-console</a></li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/leetcode-0767-reorganize-string/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Leetcode 0767 Reorganize String</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/go-function/">
+                  <span class="button__text">Go Function</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+<script src="/assets/mermaid.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

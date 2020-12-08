@@ -11,14 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="给出一个区间的集合，请合并所有重叠的区间。
-示例 1:
-输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2:
-输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
-注意：输入类型已于2019年4月15日更改。 请重置默认代码定义以获取新方法签名。
- 提示：
-intervals[i][0] &amp;lt;= intervals[i][1]
-/*** @param {number[][]} intervals* @return {number[][]}*/var merge = function(intervals) {points = intervals.sort((a,b) =&amp;gt; (a[0] - b[0]) || (a[1] - b[1]))let mergeArr = [], count = 0;for (let i = 0; i&amp;lt; points."
+  content="给出一个区间的集合，请合并所有重叠的区间。 示例 1: 输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2: 输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间"
 />
 <meta
   name="keywords"
@@ -51,26 +44,12 @@ intervals[i][0] &amp;lt;= intervals[i][1]
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leetcode 0056 Merge Intervals"/>
-<meta name="twitter:description" content="给出一个区间的集合，请合并所有重叠的区间。
-示例 1:
-输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2:
-输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
-注意：输入类型已于2019年4月15日更改。 请重置默认代码定义以获取新方法签名。
- 提示：
-intervals[i][0] &lt;= intervals[i][1]
-/*** @param {number[][]} intervals* @return {number[][]}*/var merge = function(intervals) {points = intervals.sort((a,b) =&gt; (a[0] - b[0]) || (a[1] - b[1]))let mergeArr = [], count = 0;for (let i = 0; i&lt; points."/>
+<meta name="twitter:description" content="给出一个区间的集合，请合并所有重叠的区间。 示例 1: 输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2: 输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间"/>
 
 
 
 <meta property="og:title" content="Leetcode 0056 Merge Intervals" />
-<meta property="og:description" content="给出一个区间的集合，请合并所有重叠的区间。
-示例 1:
-输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2:
-输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
-注意：输入类型已于2019年4月15日更改。 请重置默认代码定义以获取新方法签名。
- 提示：
-intervals[i][0] &lt;= intervals[i][1]
-/*** @param {number[][]} intervals* @return {number[][]}*/var merge = function(intervals) {points = intervals.sort((a,b) =&gt; (a[0] - b[0]) || (a[1] - b[1]))let mergeArr = [], count = 0;for (let i = 0; i&lt; points." />
+<meta property="og:description" content="给出一个区间的集合，请合并所有重叠的区间。 示例 1: 输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2: 输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/leetcode-0056-merge-intervals/" />
 <meta property="article:published_time" content="2020-11-23T00:26:57+08:00" />
@@ -236,7 +215,7 @@ intervals[i][0] &lt;= intervals[i][1]
 
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mergeArr</span>
 };
-</code></pre></div><h3 id="参考资料">参考资料</h3>
+</code></pre></div><h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://leetcode-cn.com/problems/merge-intervals/">合并区间</a></li>
 </ul>
@@ -294,8 +273,12 @@ intervals[i][0] &lt;= intervals[i][1]
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

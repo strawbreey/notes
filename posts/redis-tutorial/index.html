@@ -11,9 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Install # download rediswget http://download.redis.io/releases/redis-2.8.17.tar.gz# Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录tar xzf redis-2.8.17.tar.gz # or xvfzcd redis-2.8.17make# servercd src./redis-server# or./redis-server ../redis.confUbuntu 安装 apt-get updateapt-get install redis-server# start redisredis-server# test redisredis-cliRedis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
-String
-SET runoob &amp;#34;菜鸟教程&amp;#34;GET runoob #菜鸟教程 一个键最大能存储512MBHash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象"
+  content="Install # download redis wget http://download.redis.io/releases/redis-2.8.17.tar.gz # Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打"
 />
 <meta
   name="keywords"
@@ -46,16 +44,12 @@ SET runoob &amp;#34;菜鸟教程&amp;#34;GET runoob #菜鸟教程 一个键最�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Redis Tutorial"/>
-<meta name="twitter:description" content="Install # download rediswget http://download.redis.io/releases/redis-2.8.17.tar.gz# Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录tar xzf redis-2.8.17.tar.gz # or xvfzcd redis-2.8.17make# servercd src./redis-server# or./redis-server ../redis.confUbuntu 安装 apt-get updateapt-get install redis-server# start redisredis-server# test redisredis-cliRedis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
-String
-SET runoob &#34;菜鸟教程&#34;GET runoob #菜鸟教程 一个键最大能存储512MBHash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象"/>
+<meta name="twitter:description" content="Install # download redis wget http://download.redis.io/releases/redis-2.8.17.tar.gz # Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打"/>
 
 
 
 <meta property="og:title" content="Redis Tutorial" />
-<meta property="og:description" content="Install # download rediswget http://download.redis.io/releases/redis-2.8.17.tar.gz# Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录tar xzf redis-2.8.17.tar.gz # or xvfzcd redis-2.8.17make# servercd src./redis-server# or./redis-server ../redis.confUbuntu 安装 apt-get updateapt-get install redis-server# start redisredis-server# test redisredis-cliRedis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
-String
-SET runoob &#34;菜鸟教程&#34;GET runoob #菜鸟教程 一个键最大能存储512MBHash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象" />
+<meta property="og:description" content="Install # download redis wget http://download.redis.io/releases/redis-2.8.17.tar.gz # Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/redis-tutorial/" />
 <meta property="article:published_time" content="2020-09-21T10:29:08+08:00" />
@@ -328,9 +322,9 @@ EXEC
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="/posts/golang-goroutine/">
+                <a href="/posts/go-goroutine/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">Golang Goroutine</span>
+                  <span class="button__text">Go Goroutine</span>
                 </a>
               </span>
             
@@ -368,8 +362,12 @@ EXEC
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

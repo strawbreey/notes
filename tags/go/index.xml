@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GO on Strawbreey Notes</title>
+    
+    
+    
+    <link>/tags/go/</link>
+    <description>Recent content in GO on Strawbreey Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 26 Nov 2020 19:34:25 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Uber Guide</title>
+      <link>/posts/go-uber-guide/</link>
+      <pubDate>Thu, 26 Nov 2020 19:34:25 +0800</pubDate>
+      
+      <guid>/posts/go-uber-guide/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Uber Go Style Guide Table of Contents Introduction 介绍 Guidelines 指导 Pointers to Interfaces Verify Interface Compliance Receivers and Interfaces Zero-value Mutexes are Valid Copy Slices and Maps at Boundaries Defer to Clean Up Channel Size is One or None Start Enums at One Use &amp;quot;time&amp;quot; to handle time Error Types Error Wrapping Handle Type Assertion Failures Don&amp;rsquo;t Panic Use go.uber.org/atomic Avoid Mutable Globals Avoid Embedding Types in
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

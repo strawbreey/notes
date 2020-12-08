@@ -11,8 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
-class User{public $name = &amp;#39;Alex&amp;#39;;}$array = [&amp;#39;foo&amp;#39; =&amp;gt; [&amp;#39;bar&amp;#39; =&amp;gt; new User(),]];$value = isset($array[&amp;#39;foo&amp;#39;][&amp;#39;bar&amp;#39;]-&amp;gt;name) ? $array[&amp;#39;foo&amp;#39;][&amp;#39;bar&amp;#39;]-&amp;gt;name : null;// or$value = ArrayHelper::getValue($array, &amp;#39;foo.bar.name&amp;#39;);// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&amp;gt;firstName . &amp;#39; &amp;#39; . $user-&amp;gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, &amp;#39;user."
+  content="获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就"
 />
 <meta
   name="keywords"
@@ -45,14 +44,12 @@ class User{public $name = &amp;#39;Alex&amp;#39;;}$array = [&amp;#39;foo&am
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Php Array Helper"/>
-<meta name="twitter:description" content="获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
-class User{public $name = &#39;Alex&#39;;}$array = [&#39;foo&#39; =&gt; [&#39;bar&#39; =&gt; new User(),]];$value = isset($array[&#39;foo&#39;][&#39;bar&#39;]-&gt;name) ? $array[&#39;foo&#39;][&#39;bar&#39;]-&gt;name : null;// or$value = ArrayHelper::getValue($array, &#39;foo.bar.name&#39;);// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&gt;firstName . &#39; &#39; . $user-&gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, &#39;user."/>
+<meta name="twitter:description" content="获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就"/>
 
 
 
 <meta property="og:title" content="Php Array Helper" />
-<meta property="og:description" content="获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：
-class User{public $name = &#39;Alex&#39;;}$array = [&#39;foo&#39; =&gt; [&#39;bar&#39; =&gt; new User(),]];$value = isset($array[&#39;foo&#39;][&#39;bar&#39;]-&gt;name) ? $array[&#39;foo&#39;][&#39;bar&#39;]-&gt;name : null;// or$value = ArrayHelper::getValue($array, &#39;foo.bar.name&#39;);// 方法的第一个参数是我们从哪里获取值。第二个参数指定了如何获取数据， 它可以是下述几种类型中的一个：// 数组键名或者欲从中取值的对象的属性名称；// 以点号分割的数组键名或者对象属性名称组成的字符串，上例中使用的参数类型就是该类型；// 返回一个值的回调函数。$fullName = ArrayHelper::getValue($user, function ($user, $defaultValue) {return $user-&gt;firstName . &#39; &#39; . $user-&gt;lastName;});// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：$username = ArrayHelper::getValue($comment, &#39;user." />
+<meta property="og:description" content="获取值 getValue() 用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/php-array-helper/" />
 <meta property="article:published_time" content="2020-09-24T15:45:24+08:00" />
@@ -165,6 +162,12 @@ class User{public $name = &#39;Alex&#39;;}$array = [&#39;foo&#39; =&gt; [&
       
     </div>
 
+    
+      <span class="post-tags">
+        
+          <a href="/tags/php/">#php</a>&nbsp;
+        
+      </span>
     
 
     
@@ -410,8 +413,9 @@ $data = ArrayHelper::toArray($posts, [
     ],
 ]);
 </code></pre></div><h3 id="测试阵列">测试阵列</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/ true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// true
 ArrayHelper::isIn(&#39;a&#39;, [&#39;a&#39;]);
+
 // true
 ArrayHelper::isIn(&#39;a&#39;, new(ArrayObject[&#39;a&#39;]));
 
@@ -508,8 +512,12 @@ array_values(array_diff_key(ArrayHelper::index($b, key), ArrayHelper::index($a, 
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

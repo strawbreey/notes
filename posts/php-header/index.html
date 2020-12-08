@@ -11,10 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="fread
-fread — 读取文件（可安全用于二进制文件）
-fread ( resource $handle , int $length ) : string// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。// length 最多读取 length 个字节。fread() 从文件指针 handle 读取最多 length 个字节。 该函数在遇上以下几种情况时停止读取文件：
- 读取了 length 个字节 到达了文件末尾（EOF） a packet becomes available or the socket timeout occurs (for network streams) if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size."
+  content="fread fread — 读取文件（可安全用于二进制文件） fread ( resource $handle , int $length ) : string // handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。 // length 最多读取 length 个字节"
 />
 <meta
   name="keywords"
@@ -47,18 +44,12 @@ fread ( resource $handle , int $length ) : string// handle 文件系统指针�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Php Header"/>
-<meta name="twitter:description" content="fread
-fread — 读取文件（可安全用于二进制文件）
-fread ( resource $handle , int $length ) : string// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。// length 最多读取 length 个字节。fread() 从文件指针 handle 读取最多 length 个字节。 该函数在遇上以下几种情况时停止读取文件：
- 读取了 length 个字节 到达了文件末尾（EOF） a packet becomes available or the socket timeout occurs (for network streams) if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size."/>
+<meta name="twitter:description" content="fread fread — 读取文件（可安全用于二进制文件） fread ( resource $handle , int $length ) : string // handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。 // length 最多读取 length 个字节"/>
 
 
 
 <meta property="og:title" content="Php Header" />
-<meta property="og:description" content="fread
-fread — 读取文件（可安全用于二进制文件）
-fread ( resource $handle , int $length ) : string// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。// length 最多读取 length 个字节。fread() 从文件指针 handle 读取最多 length 个字节。 该函数在遇上以下几种情况时停止读取文件：
- 读取了 length 个字节 到达了文件末尾（EOF） a packet becomes available or the socket timeout occurs (for network streams) if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size." />
+<meta property="og:description" content="fread fread — 读取文件（可安全用于二进制文件） fread ( resource $handle , int $length ) : string // handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。 // length 最多读取 length 个字节" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/php-header/" />
 <meta property="article:published_time" content="2020-10-21T19:58:34+08:00" />
@@ -284,8 +275,12 @@ while (false !== ($char = fgetc($fp))) {
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

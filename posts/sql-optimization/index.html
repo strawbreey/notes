@@ -11,22 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="SQL语句执行步骤  语法分析&amp;gt; 语义分析&amp;gt; 视图转换 &amp;gt;表达式转换&amp;gt; 选择优化器 &amp;gt;选择连接方式 &amp;gt;选择连接顺序 &amp;gt;选择数据的搜索路径 &amp;gt;运行“执行计划”
-选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
-访问Table的方式  全表扫描
-全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
-通过ROWID访问表
-ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
-共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
-选择最有效率的表名顺序  ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
-当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
-首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
-然后扫描第二个表(FROM子句中最后第二个表)，
-最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
-只在基于规则的优化器中有效。 举例：
-表 TAB1 16,384 条记录
-表 TAB2 1 条记录
--- 选择TAB2作为基础表 (最好的方法) select count(*) from tab1,tab2 执行时间0.96秒-- 选择TAB2作为基础表 (不佳的方法) select count(*) from tab2,tab1 执行时间26.09秒-- 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E."
+  content="SQL语句执行步骤 语法分析&amp;gt; 语义分析&amp;gt; 视图转换 &amp;gt;表达式转换&amp;gt; 选择优化器 &amp;gt;选择连接方式 &amp;gt;选择连接顺序 &amp;gt"
 />
 <meta
   name="keywords"
@@ -59,42 +44,12 @@ ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sql Optimization"/>
-<meta name="twitter:description" content="SQL语句执行步骤  语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt;选择数据的搜索路径 &gt;运行“执行计划”
-选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
-访问Table的方式  全表扫描
-全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
-通过ROWID访问表
-ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
-共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
-选择最有效率的表名顺序  ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
-当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
-首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
-然后扫描第二个表(FROM子句中最后第二个表)，
-最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
-只在基于规则的优化器中有效。 举例：
-表 TAB1 16,384 条记录
-表 TAB2 1 条记录
--- 选择TAB2作为基础表 (最好的方法) select count(*) from tab1,tab2 执行时间0.96秒-- 选择TAB2作为基础表 (不佳的方法) select count(*) from tab2,tab1 执行时间26.09秒-- 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E."/>
+<meta name="twitter:description" content="SQL语句执行步骤 语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt"/>
 
 
 
 <meta property="og:title" content="Sql Optimization" />
-<meta property="og:description" content="SQL语句执行步骤  语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt;选择数据的搜索路径 &gt;运行“执行计划”
-选用适合的Oracle优化器  RULE（基于规则） COST（基于成本） CHOOSE（选择性）
-访问Table的方式  全表扫描
-全表扫描就是顺序地访问表中每条记录，ORACLE采用一次读入多个数据块(database block)的方式优化全表扫描。
-通过ROWID访问表
-ROWID包含了表中记录的物理位置信息，ORACLE采用索引实现了数据和存放数据的物理位置(ROWID)之间的联系，通常索引提供了快速访问ROWID的方法，因此那些基于索引列的查询就可以得到性能上的提高。
-共享 SQL 语句  Oracle提供对执行过的SQL语句进行高速缓冲的机制。被解析过并且确定了执行路径的SQL语句存放在SGA的共享池中。 Oracle执行一个SQL语句之前每次先从SGA共享池中查找是否有缓冲的SQL语句，如果有则直接执行该SQL语句。 可以通过适当调整SGA共享池大小来达到提高Oracle执行性能的目的。
-选择最有效率的表名顺序  ORACLE的解析器按照从右到左的顺序处理FROM子句中的表名，因此FROM子句中写在最后的表(基础表 driving table)将被最先处理。
-当ORACLE处理多个表时，会运用排序及合并的方式连接它们。
-首先，扫描第一个表(FROM子句中最后的那个表)并对记录进行派序，
-然后扫描第二个表(FROM子句中最后第二个表)，
-最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。
-只在基于规则的优化器中有效。 举例：
-表 TAB1 16,384 条记录
-表 TAB2 1 条记录
--- 选择TAB2作为基础表 (最好的方法) select count(*) from tab1,tab2 执行时间0.96秒-- 选择TAB2作为基础表 (不佳的方法) select count(*) from tab2,tab1 执行时间26.09秒-- 如果有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表。SELECT * FROM LOCATION L, CATEGORY C, EMP E WHERE E." />
+<meta property="og:description" content="SQL语句执行步骤 语法分析&gt; 语义分析&gt; 视图转换 &gt;表达式转换&gt; 选择优化器 &gt;选择连接方式 &gt;选择连接顺序 &gt" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/sql-optimization/" />
 <meta property="article:published_time" content="2020-09-23T16:36:26+08:00" />
@@ -791,8 +746,12 @@ WHERE MANAGER = ‘BILL GATES’
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

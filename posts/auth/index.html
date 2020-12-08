@@ -11,14 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="前后端中常用的鉴权方式有四种
- HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权)  HTTP Basic Authentication  客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步请求，此时，假设客户端尚未被验证，则客户端提供如下请求至服务器:   Get /index.html HTTP/1.0 Host:www.google.com 服务器向客户端发送验证请求代码401,（WWW-Authenticate: Basic realm=”google.com”这句话是关键，如果没有客户端不会弹出用户名和密码输入界面）服务器返回的数据大抵如下：  HTTP/1.0 401 Unauthorised Server: SokEvo/1.0 WWW-Authenticate: Basic realm=”google.com” Content-Type: text/html Content-Length: xxx  当符合http1.0或1.1规范的客户端（如IE，FIREFOX）收到401返回值时，将自动弹出一个登录窗口，要求用户输入用户名和密码。
-  用户输入用户名和密码后，将用户名及密码以BASE64加密方式加密，并将密文放入前一条请求信息中，则客户端发送的第一条请求信息则变成如下内容：
-  Get /index.html HTTP/1.0 Host:www.google.com Authorization: Basic d2FuZzp3YW5n 服务器收到上述请求信息后，将 Authorization 字段后的用户信息取出、解密，将解密后的用户名及密码与用户数据库进行比较验证，如用户名及密码正确，服务器则根据请求，将所请求资源发送给客户端  优点：
-  基本认证的一个优点是基本上所有流行的网页浏览器都支持基本认证。基本认证很少在可公开访问的互联网网站上使用，有时候会在小的私有系统中使用（如路由器网页管理接口）。后来的机制HTTP摘要认证是为替代基本认证而开发的，允许密钥以相对安全的方式在不安全的通道上传输。
-  程序员和系统管理员有时会在可信网络环境中使用基本认证，使用Telnet或其他明文网络协议工具手动地测试Web服务器。这是一个麻烦的过程，但是网络上传输的内容是人可读的，以便进行诊断。
-  缺点：
-  虽然基本认证非常容易实现，但该方案创建在以下的假设的基础上，即：客户端和服务器主机之间的连接是安全可信的。特别是，如果没有使用SSL/TLS这样的传输层安全的协议，那么以明文传输的密钥和口令很容易被拦截。该方案也同样没有对服务器返回的信息提供保护。"
+  content="前后端中常用的鉴权方式有四种 HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权) HTTP Basic Authentication 客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步"
 />
 <meta
   name="keywords"
@@ -51,26 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Auth"/>
-<meta name="twitter:description" content="前后端中常用的鉴权方式有四种
- HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权)  HTTP Basic Authentication  客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步请求，此时，假设客户端尚未被验证，则客户端提供如下请求至服务器:   Get /index.html HTTP/1.0 Host:www.google.com 服务器向客户端发送验证请求代码401,（WWW-Authenticate: Basic realm=”google.com”这句话是关键，如果没有客户端不会弹出用户名和密码输入界面）服务器返回的数据大抵如下：  HTTP/1.0 401 Unauthorised Server: SokEvo/1.0 WWW-Authenticate: Basic realm=”google.com” Content-Type: text/html Content-Length: xxx  当符合http1.0或1.1规范的客户端（如IE，FIREFOX）收到401返回值时，将自动弹出一个登录窗口，要求用户输入用户名和密码。
-  用户输入用户名和密码后，将用户名及密码以BASE64加密方式加密，并将密文放入前一条请求信息中，则客户端发送的第一条请求信息则变成如下内容：
-  Get /index.html HTTP/1.0 Host:www.google.com Authorization: Basic d2FuZzp3YW5n 服务器收到上述请求信息后，将 Authorization 字段后的用户信息取出、解密，将解密后的用户名及密码与用户数据库进行比较验证，如用户名及密码正确，服务器则根据请求，将所请求资源发送给客户端  优点：
-  基本认证的一个优点是基本上所有流行的网页浏览器都支持基本认证。基本认证很少在可公开访问的互联网网站上使用，有时候会在小的私有系统中使用（如路由器网页管理接口）。后来的机制HTTP摘要认证是为替代基本认证而开发的，允许密钥以相对安全的方式在不安全的通道上传输。
-  程序员和系统管理员有时会在可信网络环境中使用基本认证，使用Telnet或其他明文网络协议工具手动地测试Web服务器。这是一个麻烦的过程，但是网络上传输的内容是人可读的，以便进行诊断。
-  缺点：
-  虽然基本认证非常容易实现，但该方案创建在以下的假设的基础上，即：客户端和服务器主机之间的连接是安全可信的。特别是，如果没有使用SSL/TLS这样的传输层安全的协议，那么以明文传输的密钥和口令很容易被拦截。该方案也同样没有对服务器返回的信息提供保护。"/>
+<meta name="twitter:description" content="前后端中常用的鉴权方式有四种 HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权) HTTP Basic Authentication 客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步"/>
 
 
 
 <meta property="og:title" content="Auth" />
-<meta property="og:description" content="前后端中常用的鉴权方式有四种
- HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权)  HTTP Basic Authentication  客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步请求，此时，假设客户端尚未被验证，则客户端提供如下请求至服务器:   Get /index.html HTTP/1.0 Host:www.google.com 服务器向客户端发送验证请求代码401,（WWW-Authenticate: Basic realm=”google.com”这句话是关键，如果没有客户端不会弹出用户名和密码输入界面）服务器返回的数据大抵如下：  HTTP/1.0 401 Unauthorised Server: SokEvo/1.0 WWW-Authenticate: Basic realm=”google.com” Content-Type: text/html Content-Length: xxx  当符合http1.0或1.1规范的客户端（如IE，FIREFOX）收到401返回值时，将自动弹出一个登录窗口，要求用户输入用户名和密码。
-  用户输入用户名和密码后，将用户名及密码以BASE64加密方式加密，并将密文放入前一条请求信息中，则客户端发送的第一条请求信息则变成如下内容：
-  Get /index.html HTTP/1.0 Host:www.google.com Authorization: Basic d2FuZzp3YW5n 服务器收到上述请求信息后，将 Authorization 字段后的用户信息取出、解密，将解密后的用户名及密码与用户数据库进行比较验证，如用户名及密码正确，服务器则根据请求，将所请求资源发送给客户端  优点：
-  基本认证的一个优点是基本上所有流行的网页浏览器都支持基本认证。基本认证很少在可公开访问的互联网网站上使用，有时候会在小的私有系统中使用（如路由器网页管理接口）。后来的机制HTTP摘要认证是为替代基本认证而开发的，允许密钥以相对安全的方式在不安全的通道上传输。
-  程序员和系统管理员有时会在可信网络环境中使用基本认证，使用Telnet或其他明文网络协议工具手动地测试Web服务器。这是一个麻烦的过程，但是网络上传输的内容是人可读的，以便进行诊断。
-  缺点：
-  虽然基本认证非常容易实现，但该方案创建在以下的假设的基础上，即：客户端和服务器主机之间的连接是安全可信的。特别是，如果没有使用SSL/TLS这样的传输层安全的协议，那么以明文传输的密钥和口令很容易被拦截。该方案也同样没有对服务器返回的信息提供保护。" />
+<meta property="og:description" content="前后端中常用的鉴权方式有四种 HTTP Basic Authentication session-cookie Token 验证 OAuth(开发授权) HTTP Basic Authentication 客户端向服务器请求数据，请求的内容可能是一个网页或者是一个ajax异步" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/auth/" />
 <meta property="article:published_time" content="2020-09-15T10:45:56+08:00" />
@@ -345,8 +324,12 @@ OAuth有四种获取令牌的方式，不管哪一种授权方式，第三方应
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

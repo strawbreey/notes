@@ -11,8 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Deploy Hugo as a GitHub Pages project or personal/organizational site and automate the whole process with a simple shell script.
-#!/bin/sh# If a command fails then the deploy stopsset -eprintf &amp;#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&amp;#34;# Build the project.hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`# Go To Public foldercd public# Add changes to git.git add .# Commit changes."
+  content="Deploy Hugo as a GitHub Pages project or personal/organizational site and automate the whole process with a simple shell script. #!/bin/sh # If a command fails then the deploy stops set -e printf &amp;#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&amp;#34; # Build the project. hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;` # Go To Public folder cd public # Add changes to git. git add . # Commit changes."
 />
 <meta
   name="keywords"
@@ -45,14 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo Host on Github"/>
-<meta name="twitter:description" content="Deploy Hugo as a GitHub Pages project or personal/organizational site and automate the whole process with a simple shell script.
-#!/bin/sh# If a command fails then the deploy stopsset -eprintf &#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34;# Build the project.hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`# Go To Public foldercd public# Add changes to git.git add .# Commit changes."/>
+<meta name="twitter:description" content="Deploy Hugo as a GitHub Pages project or personal/organizational site and automate the whole process with a simple shell script. #!/bin/sh # If a command fails then the deploy stops set -e printf &#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34; # Build the project. hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;` # Go To Public folder cd public # Add changes to git. git add . # Commit changes."/>
 
 
 
 <meta property="og:title" content="Hugo Host on Github" />
-<meta property="og:description" content="Deploy Hugo as a GitHub Pages project or personal/organizational site and automate the whole process with a simple shell script.
-#!/bin/sh# If a command fails then the deploy stopsset -eprintf &#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34;# Build the project.hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`# Go To Public foldercd public# Add changes to git.git add .# Commit changes." />
+<meta property="og:description" content="Deploy Hugo as a GitHub Pages project or personal/organizational site and automate the whole process with a simple shell script. #!/bin/sh # If a command fails then the deploy stops set -e printf &#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34; # Build the project. hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;` # Go To Public folder cd public # Add changes to git. git add . # Commit changes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/hugo-host-on-github/" />
 <meta property="article:published_time" content="2020-11-17T14:39:12+08:00" />
@@ -236,7 +233,7 @@ cd public <span style="color:#f92672">&amp;&amp;</span> git add --all <span styl
 
 echo <span style="color:#e6db74">&#34;Pushing to github&#34;</span>
 git push --all
-</code></pre></div><h3 id="参考资料">参考资料</h3>
+</code></pre></div><h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on GitHub</a></li>
 </ul>
@@ -294,8 +291,12 @@ git push --all
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

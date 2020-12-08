@@ -11,15 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="链表和链表节点的实现 redis 链表实现
-typedef struct listNode {struct listNode * prev;struct listNode * next;void * value;} listNode;多个listNode可以通过prev和next指针组成双端链表
-typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode *tail;// 节点复制函数 void *(*dup)(void *ptr);// 节点释放函数 void (*free)(void *ptr);// 节点值对比函数 int (*match)(void *ptr, void *key);// 链表所包含的节点数量 unsigned long len;} list;list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
-链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
-❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
-❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
-❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
-❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
-字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。"
+  content="链表和链表节点的实现 redis 链表实现 typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表 typedef struct list { // 表头"
 />
 <meta
   name="keywords"
@@ -52,28 +44,12 @@ typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Redis Design and Implementation"/>
-<meta name="twitter:description" content="链表和链表节点的实现 redis 链表实现
-typedef struct listNode {struct listNode * prev;struct listNode * next;void * value;} listNode;多个listNode可以通过prev和next指针组成双端链表
-typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode *tail;// 节点复制函数 void *(*dup)(void *ptr);// 节点释放函数 void (*free)(void *ptr);// 节点值对比函数 int (*match)(void *ptr, void *key);// 链表所包含的节点数量 unsigned long len;} list;list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
-链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
-❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
-❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
-❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
-❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
-字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。"/>
+<meta name="twitter:description" content="链表和链表节点的实现 redis 链表实现 typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表 typedef struct list { // 表头"/>
 
 
 
 <meta property="og:title" content="Redis Design and Implementation" />
-<meta property="og:description" content="链表和链表节点的实现 redis 链表实现
-typedef struct listNode {struct listNode * prev;struct listNode * next;void * value;} listNode;多个listNode可以通过prev和next指针组成双端链表
-typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode *tail;// 节点复制函数 void *(*dup)(void *ptr);// 节点释放函数 void (*free)(void *ptr);// 节点值对比函数 int (*match)(void *ptr, void *key);// 链表所包含的节点数量 unsigned long len;} list;list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
-链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
-❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
-❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
-❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
-❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
-字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。" />
+<meta property="og:description" content="链表和链表节点的实现 redis 链表实现 typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表 typedef struct list { // 表头" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/redis-design-and-implementation/" />
 <meta property="article:published_time" content="2020-11-05T15:35:26+08:00" />
@@ -288,8 +264,12 @@ typedef struct list {// 表头节点 listNode *head; // 表尾节点 listNode
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

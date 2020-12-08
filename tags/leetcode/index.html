@@ -171,16 +171,7 @@
         <div class="post-content">
           
             
-              给你一个字符串 s ，请你根据下面的算法重新构造字符串：
-从 s 中选出 最小 的字符，将它 接在 结果字符串的后面。
-从 s 剩余字符中选出 最小 的字符，且该字符比上一个添加的字符大，将它 接在 结果字符串后面。
-重复步骤 2 ，直到你没法从 s 中选择字符。
-从 s 中选出 最大 的字符，将它 接在 结果字符串的后面。
-从 s 剩余字符中选出 最大 的字符，且该字符比上一个添加的字符小，将它 接在 结果字符串后面。
-重复步骤 5 ，直到你没法从 s 中选择字符。
-重复步骤 1 到 6 ，直到 s 中所有字符都已经被选过。
-在任何一步中，如果最小或者最大字符不止一个 ，你可以选择其中任意一个，并将其添加到结果字符串。
-请你返回将 s 中字符重新排序后的 结果字符串 。
+              给你一个字符串 s ，请你根据下面的算法重新构造字符串： 从 s 中选出 最小 的字符，将它 接在 结果字符串的后面。 从 s 剩余字符中选出 最小 的字符，且该字符比
             
           
         </div>
@@ -222,14 +213,7 @@
         <div class="post-content">
           
             
-              给出一个完全二叉树，求出该树的节点个数。
-说明：
-完全二叉树的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2h 个节点。
-示例:
-输入: 1 /
-2 3 / \ / 4 5 6
-输出: 6
-/*** Definition for a binary tree node.* function TreeNode(val) {* this.val = val;* this.left = this.right = null;* }*//*** @param {TreeNode} root* @return {number}*/var countNodes = function(root) {if (root == null) {return 0}return countNodes(root.
+              给出一个完全二叉树，求出该树的节点个数。 说明： 完全二叉树的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，
             
           
         </div>
@@ -271,11 +255,7 @@
         <div class="post-content">
           
             
-              给定一个只包括 ‘('，')'，'{'，'}'，'['，']’ 的字符串，判断字符串是否有效。
-有效字符串需满足：
-左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。 注意空字符串可被认为是有效字符串。
-输入: &quot;()&quot;输出: true输入: &quot;()[]{}&quot;输出: true输入: &quot;(]&quot;输出: false输入: &quot;([)]&quot;输出: falsesolution:
-/*** @param {string} s* @return {boolean}*/var isValid = function(s) {let arr = []let count = 0let obj = {'(': ')','{': '}','[': ']'}while (s) {if (s[0] == '(' || s[0] == '{' || s[0] == '[') {arr.
+              给定一个只包括 ‘('，')'，'{'，'}'，'['，']’ 的字符串，判断字符串是否有效。 有效字符串需满足： 左括号必
             
           
         </div>
@@ -317,8 +297,7 @@
         <div class="post-content">
           
             
-              判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
-判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。输入: 121输出: true输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数。// 方案一/*** @param {number} x* @return {boolean}*/var isPalindrome = function(x) {if (x &lt; 0) {return false}let num = xlet t = 0while (num) {t = t * 10 + num % 10 num = Math.
+              判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 判断一个整数是否是回文数。回文数是指正序（从左向右）
             
           
         </div>
@@ -360,11 +339,7 @@
         <div class="post-content">
           
             
-              给定正整数数组 A，A[i] 表示第 i 个观光景点的评分，并且两个景点 i 和 j 之间的距离为 j - i。
-一对景点（i &lt; j）组成的观光组合的得分为（A[i] + A[j] + i - j）：景点的评分之和减去它们两者之间的距离。
-返回一对观光景点能取得的最高分。
-输入：[8,1,5,2,6]输出：11解释：i = 0, j = 2, A[i] + A[j] + i - j = 8 + 5 + 0 - 2 = 11提示:
-2 &lt;= A.length &lt;= 500001 &lt;= A[i] &lt;= 1000/*** @param {number[]} A* @return {number}*/var maxScoreSightseeingPair = function(A) {let count = A[0] + A[1] - 1 for (let i = 0; i&lt;A.
+              给定正整数数组 A，A[i] 表示第 i 个观光景点的评分，并且两个景点 i 和 j 之间的距离为 j - i。 一对景点（i &lt; j）组成的观光组合的得分为（A[i]
             
           
         </div>
@@ -406,11 +381,7 @@
         <div class="post-content">
           
             
-              在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。
-一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 xstart，xend， 且满足 xstart ≤ x ≤ xend，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。
-给你一个数组 points ，其中 points [i] = [xstart,xend] ，返回引爆所有气球所必须射出的最小弓箭数。
-输入：points = [[10,16],[2,8],[1,6],[7,12]]输出：2解释：对于该样例，x = 6 可以射爆 [2,8],[1,6] 两个气球，以及 x = 11 射爆另外两个气球输入：points = [[1,2],[3,4],[5,6],[7,8]]输出：4输入：points = [[1,2],[2,3],[3,4],[4,5]]输出：2输入：points = [[1,2]]输出：1输入：points = [[2,3],[2,3]]输出：1提示：
-0 &lt;= points.length &lt;= 104points[i].length == 2-231 &lt;= xstart &lt; xend &lt;= 231 - 1Solution
+              在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知
             
           
         </div>
@@ -452,14 +423,7 @@
         <div class="post-content">
           
             
-              给出一个区间的集合，请合并所有重叠的区间。
-示例 1:
-输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2:
-输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
-注意：输入类型已于2019年4月15日更改。 请重置默认代码定义以获取新方法签名。
- 提示：
-intervals[i][0] &lt;= intervals[i][1]
-/*** @param {number[][]} intervals* @return {number[][]}*/var merge = function(intervals) {points = intervals.sort((a,b) =&gt; (a[0] - b[0]) || (a[1] - b[1]))let mergeArr = [], count = 0;for (let i = 0; i&lt; points.
+              给出一个区间的集合，请合并所有重叠的区间。 示例 1: 输入: intervals = [[1,3],[2,6],[8,10],[15,18]] 输出: [[1,6],[8,10],[15,18]] 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]. 示例 2: 输入: intervals = [[1,4],[4,5]] 输出: [[1,5]] 解释: 区间
             
           
         </div>
@@ -501,13 +465,7 @@ intervals[i][0] &lt;= intervals[i][1]
         <div class="post-content">
           
             
-              Given two strings s and t , write a function to determine if t is an anagram of s.
-给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
-Example:
-Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot;Output: trueInput: s = &quot;rat&quot;, t = &quot;car&quot;Output: falseNote:
-You may assume the string contains only lowercase alphabets. 你可以假设字符串只包含小写字母。
-Follow up:
-What if the inputs contain unicode characters? How would you adapt your solution to such case?
+              Given two strings s and t , write a function to determine if t is an anagram of s. 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。 Example: Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot; Output: true Input: s = &quot;rat&quot;, t = &quot;car&quot; Output: false
             
           
         </div>
@@ -549,10 +507,7 @@ What if the inputs contain unicode characters? How would you adapt your solution
         <div class="post-content">
           
             
-              Sort a linked list using insertion sort.
-A graphical example of insertion sort. The partial sorted list (black) initially contains only the first element in the list. With each iteration one element (red) is removed from the input data and inserted in-place into the sorted list
-Algorithm of Insertion Sort:
-Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.
+              Sort a linked list using insertion sort. A graphical example of insertion sort. The partial sorted list (black) initially contains only the first element in the list. With each iteration one element (red) is removed from the input data and inserted in-place into the sorted list Algorithm of Insertion Sort: Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. At each iteration, insertion sort
             
           
         </div>
@@ -594,16 +549,7 @@ Insertion sort iterates, consuming one input element each repetition, and growin
         <div class="post-content">
           
             
-              Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
-给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
-Example:
-Input: [0,1,0,3,12]Output: [1,3,12,0,0]Note:
-You must do this in-place without making a copy of the array. Minimize the total number of operations.
-说明:
-必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。
-Solution
-非零元素右移， 然后补零
-/*** @param {number[]} nums* @return {void} Do not return anything, modify nums in-place instead.
+              Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements. 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 Example:
             
           
         </div>
@@ -645,9 +591,7 @@ Solution
         <div class="post-content">
           
             
-              There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
-You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.
-Return the starting gas station’s index if you can travel around the circuit once in the clockwise direction, otherwise return -1.
+              There are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations. Return the starting gas station’s index if you can travel around the
             
           
         </div>
@@ -689,9 +633,7 @@ Return the starting gas station’s index if you can travel around the circuit o
         <div class="post-content">
           
             
-              We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where 0 &lt;= r &lt; R and 0 &lt;= c &lt; C.
-Additionally, we are given a cell in that matrix with coordinates (r0, c0).
-Return the coordinates of all cells in the matrix, sorted by their distance from (r0, c0) from smallest distance to largest distance. Here, the distance between two cells (r1, c1) and (r2, c2) is the Manhattan distance, |r1 - r2| + |c1 - c2|.
+              We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where 0 &lt;= r &lt; R and 0 &lt;= c &lt; C. Additionally, we are given a cell in that matrix with coordinates (r0, c0). Return the coordinates of all cells in the matrix, sorted by their distance from (r0, c0) from smallest distance to largest distance. Here, the distance between two
             
           
         </div>
@@ -733,12 +675,7 @@ Return the coordinates of all cells in the matrix, sorted by their distance from
         <div class="post-content">
           
             
-              Given a 32-bit signed integer, reverse digits of an integer.
-给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
-Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
-假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231, 231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
-Example:
-Input: x = 123Output: 321Input: x = -123Output: -321Input: x = 120Output: 21Input: x = 0Output: 0/*** @param {number} x* @return {number}*/var reverse = function(x) {let num = 0let flag = x &gt; 0 ?
+              Given a 32-bit signed integer, reverse digits of an integer. 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 −
             
           
         </div>
@@ -780,12 +717,7 @@ Input: x = 123Output: 321Input: x = -123Output: -321Input: x = 120Output: 2
         <div class="post-content">
           
             
-              Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-You can return the answer in any order.
-给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
-Example: Input: nums = [2,7,11,15], target = 9Output: [0,1] Because nums[0] + nums[1] == 9, we return [0, 1].
+              Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order. 给定一个整数数组 nums 和一个目标值 targ
             
           
         </div>
@@ -820,8 +752,12 @@ Example: Input: nums = [2,7,11,15], target = 9Output: [0,1] Because nums[0] + n
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

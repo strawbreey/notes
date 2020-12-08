@@ -11,12 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串&amp;rdquo; &amp;lt;…&amp;ldquo;也是合法的 UTF-8。
-但, MySQL 的&amp;quot;utf8&amp;quot;实际上不是真正的 UTF-8。数据库的&amp;quot;utf8&amp;quot;只支持每个字符最多三个字节，而真正的 UTF-8 是每个字符最多四个字节。
-MySQL 的&amp;quot;utf8mb4&amp;quot;是真正的&amp;quot;UTF-8&amp;rdquo;。MySQL 的&amp;quot;utf8&amp;quot;是一种&amp;quot;专属的编码&amp;rdquo;，它能够编码的 Unicode 字符并不多。
-简史 MySQL 从 4.1 版本开始支持 UTF-8，也就是 2003 年，而今天使用的 UTF-8 标准（RFC 3629）是随后才出现的。
-旧版的 UTF-8 标准（RFC 2279）最多支持每个字符 6 个字节。2002 年 3 月 28 日，MySQL 开发者在第一个 MySQL 4.1 预览版中使用了 RFC 2279。
-同年 9 月，他们对 MySQL 源代码进行了一次调整：“UTF8 现在最多只支持 3 个字节的序列”。"
+  content="客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串&amp;rdquo; &amp;lt;…&amp;ldquo;也是合法的 UTF-8。 但"
 />
 <meta
   name="keywords"
@@ -49,22 +44,12 @@ MySQL 的&amp;quot;utf8mb4&amp;quot;是真正的&amp;quot;UTF-8&amp;rdquo;。MyS
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mysql Utf8"/>
-<meta name="twitter:description" content="客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串&rdquo; &lt;…&ldquo;也是合法的 UTF-8。
-但, MySQL 的&quot;utf8&quot;实际上不是真正的 UTF-8。数据库的&quot;utf8&quot;只支持每个字符最多三个字节，而真正的 UTF-8 是每个字符最多四个字节。
-MySQL 的&quot;utf8mb4&quot;是真正的&quot;UTF-8&rdquo;。MySQL 的&quot;utf8&quot;是一种&quot;专属的编码&rdquo;，它能够编码的 Unicode 字符并不多。
-简史 MySQL 从 4.1 版本开始支持 UTF-8，也就是 2003 年，而今天使用的 UTF-8 标准（RFC 3629）是随后才出现的。
-旧版的 UTF-8 标准（RFC 2279）最多支持每个字符 6 个字节。2002 年 3 月 28 日，MySQL 开发者在第一个 MySQL 4.1 预览版中使用了 RFC 2279。
-同年 9 月，他们对 MySQL 源代码进行了一次调整：“UTF8 现在最多只支持 3 个字节的序列”。"/>
+<meta name="twitter:description" content="客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串&rdquo; &lt;…&ldquo;也是合法的 UTF-8。 但"/>
 
 
 
 <meta property="og:title" content="Mysql Utf8" />
-<meta property="og:description" content="客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串&rdquo; &lt;…&ldquo;也是合法的 UTF-8。
-但, MySQL 的&quot;utf8&quot;实际上不是真正的 UTF-8。数据库的&quot;utf8&quot;只支持每个字符最多三个字节，而真正的 UTF-8 是每个字符最多四个字节。
-MySQL 的&quot;utf8mb4&quot;是真正的&quot;UTF-8&rdquo;。MySQL 的&quot;utf8&quot;是一种&quot;专属的编码&rdquo;，它能够编码的 Unicode 字符并不多。
-简史 MySQL 从 4.1 版本开始支持 UTF-8，也就是 2003 年，而今天使用的 UTF-8 标准（RFC 3629）是随后才出现的。
-旧版的 UTF-8 标准（RFC 2279）最多支持每个字符 6 个字节。2002 年 3 月 28 日，MySQL 开发者在第一个 MySQL 4.1 预览版中使用了 RFC 2279。
-同年 9 月，他们对 MySQL 源代码进行了一次调整：“UTF8 现在最多只支持 3 个字节的序列”。" />
+<meta property="og:description" content="客户端是UTF-8 编码, 服务器也是 UTF-8 编码的，数据库也是，就连要保存的这个字符串&rdquo; &lt;…&ldquo;也是合法的 UTF-8。 但" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/mysql-utf8/" />
 <meta property="article:published_time" content="2020-10-17T20:53:10+08:00" />
@@ -244,8 +229,12 @@ MySQL 的&quot;utf8mb4&quot;是真正的&quot;UTF-8&rdquo;。MySQL 的&quot;utf8
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

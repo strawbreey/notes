@@ -11,10 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
-// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
-$input_array = array(&amp;#34;FirSt&amp;#34; =&amp;gt; 1, &amp;#34;SecOnd&amp;#34; =&amp;gt; 4);array_change_key_case($input_array, CASE_LOWER);// Array// (// [first] =&amp;gt; 1// [second] =&amp;gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
-将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。"
+  content="array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array // 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LO"
 />
 <meta
   name="keywords"
@@ -47,18 +44,12 @@ $input_array = array(&amp;#34;FirSt&amp;#34; =&amp;gt; 1, &amp;#34;SecOnd&amp;#3
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Php Array Function"/>
-<meta name="twitter:description" content="array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
-// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
-$input_array = array(&#34;FirSt&#34; =&gt; 1, &#34;SecOnd&#34; =&gt; 4);array_change_key_case($input_array, CASE_LOWER);// Array// (// [first] =&gt; 1// [second] =&gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
-将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。"/>
+<meta name="twitter:description" content="array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array // 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LO"/>
 
 
 
 <meta property="og:title" content="Php Array Function" />
-<meta property="og:description" content="array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array
-// 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE
-$input_array = array(&#34;FirSt&#34; =&gt; 1, &#34;SecOnd&#34; =&gt; 4);array_change_key_case($input_array, CASE_LOWER);// Array// (// [first] =&gt; 1// [second] =&gt; 4// )array_chunk 将一个数组分割成多个 array_chunk ( array $array , int $size [, bool $preserve_keys = false ] ) : array
-将一个数组分割成多个数组，其中每个数组的单元数目由 size 决定。最后一个数组的单元数目可能会少于 size 个。" />
+<meta property="og:description" content="array_change_key_case: 将数组所有键名全大写或者小写 array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array // 参数 array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LO" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/php-array-function/" />
 <meta property="article:published_time" content="2020-09-23T11:41:22+08:00" />
@@ -171,6 +162,12 @@ $input_array = array(&#34;FirSt&#34; =&gt; 1, &#34;SecOnd&#34; =&gt; 4);array_c
       
     </div>
 
+    
+      <span class="post-tags">
+        
+          <a href="/tags/php/">#php</a>&nbsp;
+        
+      </span>
     
 
     
@@ -548,8 +545,12 @@ usort — 使用用户自定义的比较函数对数组中的值进行排序</p>
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

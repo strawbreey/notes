@@ -11,15 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="在git merge命令中，有以下三种使用参数：
-git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &amp;lt;strategy&amp;gt;] [-X &amp;lt;strategy-option&amp;gt;] [-S[&amp;lt;keyid&amp;gt;]] [--[no-]rerere-autoupdate] [-m &amp;lt;msg&amp;gt;] [&amp;lt;commit&amp;gt;...]git merge &amp;lt;msg&amp;gt; HEAD &amp;lt;commit&amp;gt;...git merge --abortgit-merge简介 git-merge命令是用于从指定的commit(s)合并到当前分支的操作。
- 注：这里的指定commit(s)是指从这些历史commit节点开始，一直到当前分开的时候。
- git-merge命令有以下两种用途：
-  用于git-pull中，来整合另一代码仓库中的变化（即：git pull = git fetch &#43; git merge）
-  用于从一个分支到另一个分支的合并
-   git merge HEAD &amp;hellip;命令  该命令的存在是由于历史原因，在新版本中不应该使用它，应该使用git merge -m &amp;hellip;.进行替代
-git merge &amp;ndash;abort命令 该命令仅仅在合并后导致冲突时才使用。git merge &amp;ndash;abort将会抛弃合并过程并且尝试重建合并前的状态。但是，当合并开始时如果存在未commit的文件，git merge &amp;ndash;abort在某些情况下将无法重现合并前的状态。（特别是这些未commit的文件在合并的过程中将会被修改时）  警告：运行git-merge时含有大量的未commit文件很容易让你陷入困境，这将使你在冲突中难以回退。因此非常不鼓励在使用git-merge时存在未commit的文件，建议使用git-stash命令将这些未commit文件暂存起来，并在解决冲突以后使用git stash pop把这些未commit文件还原出来。
-git 参数 git merge 命令中使用的参数"
+  content="在git merge命令中，有以下三种使用参数： git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &amp;lt;strategy&amp;gt;] [-X &amp;lt;strategy-option&amp;gt;] [-S[&amp;lt;keyid&amp;gt;]] [--[no-]rerere-autoupdate] [-m &amp;lt;msg&amp;gt;] [&amp;lt;commit&amp;gt;...] git merge &amp;lt;msg&amp;gt; HEAD &amp;lt;commit&amp;gt;... git merge --abort git-merge简介 git-merge命令是"
 />
 <meta
   name="keywords"
@@ -52,28 +44,12 @@ git 参数 git merge 命令中使用的参数"
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Merge"/>
-<meta name="twitter:description" content="在git merge命令中，有以下三种使用参数：
-git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &lt;strategy&gt;] [-X &lt;strategy-option&gt;] [-S[&lt;keyid&gt;]] [--[no-]rerere-autoupdate] [-m &lt;msg&gt;] [&lt;commit&gt;...]git merge &lt;msg&gt; HEAD &lt;commit&gt;...git merge --abortgit-merge简介 git-merge命令是用于从指定的commit(s)合并到当前分支的操作。
- 注：这里的指定commit(s)是指从这些历史commit节点开始，一直到当前分开的时候。
- git-merge命令有以下两种用途：
-  用于git-pull中，来整合另一代码仓库中的变化（即：git pull = git fetch &#43; git merge）
-  用于从一个分支到另一个分支的合并
-   git merge HEAD &hellip;命令  该命令的存在是由于历史原因，在新版本中不应该使用它，应该使用git merge -m &hellip;.进行替代
-git merge &ndash;abort命令 该命令仅仅在合并后导致冲突时才使用。git merge &ndash;abort将会抛弃合并过程并且尝试重建合并前的状态。但是，当合并开始时如果存在未commit的文件，git merge &ndash;abort在某些情况下将无法重现合并前的状态。（特别是这些未commit的文件在合并的过程中将会被修改时）  警告：运行git-merge时含有大量的未commit文件很容易让你陷入困境，这将使你在冲突中难以回退。因此非常不鼓励在使用git-merge时存在未commit的文件，建议使用git-stash命令将这些未commit文件暂存起来，并在解决冲突以后使用git stash pop把这些未commit文件还原出来。
-git 参数 git merge 命令中使用的参数"/>
+<meta name="twitter:description" content="在git merge命令中，有以下三种使用参数： git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &lt;strategy&gt;] [-X &lt;strategy-option&gt;] [-S[&lt;keyid&gt;]] [--[no-]rerere-autoupdate] [-m &lt;msg&gt;] [&lt;commit&gt;...] git merge &lt;msg&gt; HEAD &lt;commit&gt;... git merge --abort git-merge简介 git-merge命令是"/>
 
 
 
 <meta property="og:title" content="Git Merge" />
-<meta property="og:description" content="在git merge命令中，有以下三种使用参数：
-git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &lt;strategy&gt;] [-X &lt;strategy-option&gt;] [-S[&lt;keyid&gt;]] [--[no-]rerere-autoupdate] [-m &lt;msg&gt;] [&lt;commit&gt;...]git merge &lt;msg&gt; HEAD &lt;commit&gt;...git merge --abortgit-merge简介 git-merge命令是用于从指定的commit(s)合并到当前分支的操作。
- 注：这里的指定commit(s)是指从这些历史commit节点开始，一直到当前分开的时候。
- git-merge命令有以下两种用途：
-  用于git-pull中，来整合另一代码仓库中的变化（即：git pull = git fetch &#43; git merge）
-  用于从一个分支到另一个分支的合并
-   git merge HEAD &hellip;命令  该命令的存在是由于历史原因，在新版本中不应该使用它，应该使用git merge -m &hellip;.进行替代
-git merge &ndash;abort命令 该命令仅仅在合并后导致冲突时才使用。git merge &ndash;abort将会抛弃合并过程并且尝试重建合并前的状态。但是，当合并开始时如果存在未commit的文件，git merge &ndash;abort在某些情况下将无法重现合并前的状态。（特别是这些未commit的文件在合并的过程中将会被修改时）  警告：运行git-merge时含有大量的未commit文件很容易让你陷入困境，这将使你在冲突中难以回退。因此非常不鼓励在使用git-merge时存在未commit的文件，建议使用git-stash命令将这些未commit文件暂存起来，并在解决冲突以后使用git stash pop把这些未commit文件还原出来。
-git 参数 git merge 命令中使用的参数" />
+<meta property="og:description" content="在git merge命令中，有以下三种使用参数： git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &lt;strategy&gt;] [-X &lt;strategy-option&gt;] [-S[&lt;keyid&gt;]] [--[no-]rerere-autoupdate] [-m &lt;msg&gt;] [&lt;commit&gt;...] git merge &lt;msg&gt; HEAD &lt;commit&gt;... git merge --abort git-merge简介 git-merge命令是" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/git-merge/" />
 <meta property="article:published_time" content="2020-11-25T17:20:21+08:00" />
@@ -461,8 +437,12 @@ subtree是修改版的recursive策略。当合并树A和树B时，如果B是A的
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

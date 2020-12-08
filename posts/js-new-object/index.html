@@ -11,11 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="常规的 {} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。
-这可以使用构造函数和 &amp;ldquo;new&amp;rdquo; 操作符来实现。
-构造函数 构造函数在技术上是常规函数。不过有两个约定：
- 它们的命名以大写字母开头。 它们只能由 &amp;ldquo;new&amp;rdquo; 操作符来执行。  function User(name) {this.name = name;this.isAdmin = false;}let user = new User(&amp;#34;Jack&amp;#34;);alert(user.name); // Jackalert(user.isAdmin); // false当一个函数被使用 new 操作符执行时，它按照以下步骤：
- 一个新的空对象被创建并分配给 this。 函数体执行。通常它会修改 this，为其添加新的属性。 返回 this 的值。  function User(name) {// this = {};（隐式创建）// 添加属性到 this this.name = name;this.isAdmin = false;// return this;（隐式返回）}所以 new User(&amp;ldquo;Jack&amp;rdquo;) 的结果是相同的对象："
+  content="常规的 {} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。 这可以使用构造函数和 &amp;ldquo;new&amp;rdquo; 操作符来实现。 构造函数 构造函"
 />
 <meta
   name="keywords"
@@ -48,20 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js New Object"/>
-<meta name="twitter:description" content="常规的 {} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。
-这可以使用构造函数和 &ldquo;new&rdquo; 操作符来实现。
-构造函数 构造函数在技术上是常规函数。不过有两个约定：
- 它们的命名以大写字母开头。 它们只能由 &ldquo;new&rdquo; 操作符来执行。  function User(name) {this.name = name;this.isAdmin = false;}let user = new User(&#34;Jack&#34;);alert(user.name); // Jackalert(user.isAdmin); // false当一个函数被使用 new 操作符执行时，它按照以下步骤：
- 一个新的空对象被创建并分配给 this。 函数体执行。通常它会修改 this，为其添加新的属性。 返回 this 的值。  function User(name) {// this = {};（隐式创建）// 添加属性到 this this.name = name;this.isAdmin = false;// return this;（隐式返回）}所以 new User(&ldquo;Jack&rdquo;) 的结果是相同的对象："/>
+<meta name="twitter:description" content="常规的 {} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。 这可以使用构造函数和 &ldquo;new&rdquo; 操作符来实现。 构造函数 构造函"/>
 
 
 
 <meta property="og:title" content="Js New Object" />
-<meta property="og:description" content="常规的 {} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。
-这可以使用构造函数和 &ldquo;new&rdquo; 操作符来实现。
-构造函数 构造函数在技术上是常规函数。不过有两个约定：
- 它们的命名以大写字母开头。 它们只能由 &ldquo;new&rdquo; 操作符来执行。  function User(name) {this.name = name;this.isAdmin = false;}let user = new User(&#34;Jack&#34;);alert(user.name); // Jackalert(user.isAdmin); // false当一个函数被使用 new 操作符执行时，它按照以下步骤：
- 一个新的空对象被创建并分配给 this。 函数体执行。通常它会修改 this，为其添加新的属性。 返回 this 的值。  function User(name) {// this = {};（隐式创建）// 添加属性到 this this.name = name;this.isAdmin = false;// return this;（隐式返回）}所以 new User(&ldquo;Jack&rdquo;) 的结果是相同的对象：" />
+<meta property="og:description" content="常规的 {} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。 这可以使用构造函数和 &ldquo;new&rdquo; 操作符来实现。 构造函数 构造函" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-new-object/" />
 <meta property="article:published_time" content="2020-11-02T16:44:19+08:00" />
@@ -305,8 +293,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

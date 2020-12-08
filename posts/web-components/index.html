@@ -11,13 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="众所周知，开发复杂软件的原则是：不要让软件复杂
-如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
-只有让复杂的事情简单化的架构才是好架构。
-一个组件有：
-自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
-Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
-Custom elements (自定义标签) class MyElement extends HTMLElement {constructor() {super();// 元素在这里创建 }connectedCallback() {// 在元素被添加到文档之后，浏览器会调用这个方法 //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }disconnectedCallback() {// 在元素从文档移除到时候，浏览器会调用这个方法 // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }static get observedAttributes() {return [/* 属性数组，这些属性的变化会被被监视 */];}attributeChangedCallback(name, oldValue, newValue) {// 当上面数组里面的属性变化的时候，这个方法会被调用 }adoptedCallback() {// 在元素被移动到新的文档的时候，这个方法会被调用 // （document."
+  content="众所周知，开发复杂软件的原则是：不要让软件复杂 如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。 只有让复杂的事情简"
 />
 <meta
   name="keywords"
@@ -50,24 +44,12 @@ Custom elements (自定义标签) class MyElement extends HTMLElement {construc
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Web Components"/>
-<meta name="twitter:description" content="众所周知，开发复杂软件的原则是：不要让软件复杂
-如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
-只有让复杂的事情简单化的架构才是好架构。
-一个组件有：
-自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
-Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
-Custom elements (自定义标签) class MyElement extends HTMLElement {constructor() {super();// 元素在这里创建 }connectedCallback() {// 在元素被添加到文档之后，浏览器会调用这个方法 //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }disconnectedCallback() {// 在元素从文档移除到时候，浏览器会调用这个方法 // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }static get observedAttributes() {return [/* 属性数组，这些属性的变化会被被监视 */];}attributeChangedCallback(name, oldValue, newValue) {// 当上面数组里面的属性变化的时候，这个方法会被调用 }adoptedCallback() {// 在元素被移动到新的文档的时候，这个方法会被调用 // （document."/>
+<meta name="twitter:description" content="众所周知，开发复杂软件的原则是：不要让软件复杂 如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。 只有让复杂的事情简"/>
 
 
 
 <meta property="og:title" content="Web Components" />
-<meta property="og:description" content="众所周知，开发复杂软件的原则是：不要让软件复杂
-如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
-只有让复杂的事情简单化的架构才是好架构。
-一个组件有：
-自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
-Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
-Custom elements (自定义标签) class MyElement extends HTMLElement {constructor() {super();// 元素在这里创建 }connectedCallback() {// 在元素被添加到文档之后，浏览器会调用这个方法 //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }disconnectedCallback() {// 在元素从文档移除到时候，浏览器会调用这个方法 // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用） }static get observedAttributes() {return [/* 属性数组，这些属性的变化会被被监视 */];}attributeChangedCallback(name, oldValue, newValue) {// 当上面数组里面的属性变化的时候，这个方法会被调用 }adoptedCallback() {// 在元素被移动到新的文档的时候，这个方法会被调用 // （document." />
+<meta property="og:description" content="众所周知，开发复杂软件的原则是：不要让软件复杂 如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。 只有让复杂的事情简" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/web-components/" />
 <meta property="article:published_time" content="2020-10-14T21:45:06+08:00" />
@@ -523,8 +505,12 @@ Shadow DOM，如果存在的话，会被浏览器渲染而不是所谓的 「lig
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

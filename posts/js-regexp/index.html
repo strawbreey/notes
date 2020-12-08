@@ -11,15 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。
-创建正则表达式有两个方式
-// new RegExpregexp = new RegExp(&amp;#34;pattern&amp;#34;, &amp;#34;flags&amp;#34;);// 表达式regexp = /pattern/; // 没有修饰符regexp = /pattern/gmi; // 伴随修饰符 g、m 和 i（后面会讲到）用法
-字符串搜索
-let str = &amp;#34;I love Javascript&amp;#34;;let substr = &amp;#39;love&amp;#39;;alert(str.search(substr));所以搜索 /love/ 与搜索 &amp;ldquo;love&amp;rdquo; 是等价的。
-通常我们使用的都是简短语法 /&amp;hellip;/。但是它不接受任何变量插入，所以我们必须在写代码的时候就知道确切的 regexp。
-另一方面，new RegExp 允许从字符串中动态地构造模式。
-所以我们可以找出需要搜索的字段，然后根据搜索字段创建 new RegExp：
-// 弹窗提示框, 默认输入值lovelet search = prompt(&amp;#34;What you want to search?&amp;#34;, &amp;#34;love&amp;#34;); // love// let regexp = new RegExp(search);// 找到用户想要的任何东西alert( &amp;#34;I love JavaScript&amp;#34;."
+  content="正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。 创建正则表达式有两个方式 // new RegExp regexp = new RegExp(&amp;#34;pattern&amp;#34;, &amp;#34;flags&amp;#34;); // 表达式 regexp = /pattern/;"
 />
 <meta
   name="keywords"
@@ -52,28 +44,12 @@ let str = &amp;#34;I love Javascript&amp;#34;;let substr = &amp;#39;love&amp;#3
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js Regexp"/>
-<meta name="twitter:description" content="正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。
-创建正则表达式有两个方式
-// new RegExpregexp = new RegExp(&#34;pattern&#34;, &#34;flags&#34;);// 表达式regexp = /pattern/; // 没有修饰符regexp = /pattern/gmi; // 伴随修饰符 g、m 和 i（后面会讲到）用法
-字符串搜索
-let str = &#34;I love Javascript&#34;;let substr = &#39;love&#39;;alert(str.search(substr));所以搜索 /love/ 与搜索 &ldquo;love&rdquo; 是等价的。
-通常我们使用的都是简短语法 /&hellip;/。但是它不接受任何变量插入，所以我们必须在写代码的时候就知道确切的 regexp。
-另一方面，new RegExp 允许从字符串中动态地构造模式。
-所以我们可以找出需要搜索的字段，然后根据搜索字段创建 new RegExp：
-// 弹窗提示框, 默认输入值lovelet search = prompt(&#34;What you want to search?&#34;, &#34;love&#34;); // love// let regexp = new RegExp(search);// 找到用户想要的任何东西alert( &#34;I love JavaScript&#34;."/>
+<meta name="twitter:description" content="正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。 创建正则表达式有两个方式 // new RegExp regexp = new RegExp(&#34;pattern&#34;, &#34;flags&#34;); // 表达式 regexp = /pattern/;"/>
 
 
 
 <meta property="og:title" content="Js Regexp" />
-<meta property="og:description" content="正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。
-创建正则表达式有两个方式
-// new RegExpregexp = new RegExp(&#34;pattern&#34;, &#34;flags&#34;);// 表达式regexp = /pattern/; // 没有修饰符regexp = /pattern/gmi; // 伴随修饰符 g、m 和 i（后面会讲到）用法
-字符串搜索
-let str = &#34;I love Javascript&#34;;let substr = &#39;love&#39;;alert(str.search(substr));所以搜索 /love/ 与搜索 &ldquo;love&rdquo; 是等价的。
-通常我们使用的都是简短语法 /&hellip;/。但是它不接受任何变量插入，所以我们必须在写代码的时候就知道确切的 regexp。
-另一方面，new RegExp 允许从字符串中动态地构造模式。
-所以我们可以找出需要搜索的字段，然后根据搜索字段创建 new RegExp：
-// 弹窗提示框, 默认输入值lovelet search = prompt(&#34;What you want to search?&#34;, &#34;love&#34;); // love// let regexp = new RegExp(search);// 找到用户想要的任何东西alert( &#34;I love JavaScript&#34;." />
+<meta property="og:description" content="正则表达式 在 JavaScript 中，正则表达式通过内置的“RegExp”类的对象来实现，并与字符串集成。 创建正则表达式有两个方式 // new RegExp regexp = new RegExp(&#34;pattern&#34;, &#34;flags&#34;); // 表达式 regexp = /pattern/;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-regexp/" />
 <meta property="article:published_time" content="2020-10-13T17:41:49+08:00" />
@@ -331,8 +307,12 @@ Unicode：修饰符 “u” 和 class \p{&hellip;}。</p>
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

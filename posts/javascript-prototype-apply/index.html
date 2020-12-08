@@ -11,12 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
-apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。
-const numbers = [5, 6, 2, 3, 7];const max = Math.max.apply(null, numbers); // expected output: 7const min = Math.min.apply(null, numbers); // expected output: 2Syntax func.apply(thisArg, [argsArray])
-thisArg
-  The value of this provided for the call to func.
-  Note that this may not be the actual value seen by the method: if the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed."
+  content="The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object). apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。 const numbers = [5, 6,"
 />
 <meta
   name="keywords"
@@ -49,22 +44,12 @@ thisArg
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Javascript Prototype Apply"/>
-<meta name="twitter:description" content="The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
-apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。
-const numbers = [5, 6, 2, 3, 7];const max = Math.max.apply(null, numbers); // expected output: 7const min = Math.min.apply(null, numbers); // expected output: 2Syntax func.apply(thisArg, [argsArray])
-thisArg
-  The value of this provided for the call to func.
-  Note that this may not be the actual value seen by the method: if the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed."/>
+<meta name="twitter:description" content="The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object). apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。 const numbers = [5, 6,"/>
 
 
 
 <meta property="og:title" content="Javascript Prototype Apply" />
-<meta property="og:description" content="The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
-apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。
-const numbers = [5, 6, 2, 3, 7];const max = Math.max.apply(null, numbers); // expected output: 7const min = Math.min.apply(null, numbers); // expected output: 2Syntax func.apply(thisArg, [argsArray])
-thisArg
-  The value of this provided for the call to func.
-  Note that this may not be the actual value seen by the method: if the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed." />
+<meta property="og:description" content="The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object). apply() 方法调用一个具有给定this值的函数，以及以一个数组（或类数组对象）的形式提供的参数。 const numbers = [5, 6," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/javascript-prototype-apply/" />
 <meta property="article:published_time" content="2020-09-15T14:39:37+08:00" />
@@ -332,8 +317,12 @@ thisArg
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

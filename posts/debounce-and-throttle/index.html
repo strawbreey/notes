@@ -11,10 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
-  实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6&#43;import { of, timer } from &amp;#39;rxjs&amp;#39;;import { debounce } from &amp;#39;rxjs/operators&amp;#39;;// 发出四个字符串const example = of(&amp;#39;WAIT&amp;#39;, &amp;#39;ONE&amp;#39;, &amp;#39;SECOND&amp;#39;, &amp;#39;Last will display&amp;#39;);/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&amp;gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: &amp;#39;Last will display&amp;#39;*/const subscribe = debouncedExample.subscribe(val =&amp;gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])js 实现方式:
-截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
- 实现方式：每次触发事件时，如果当前周期内有等待执行的函数，则取消当前事件  import { interval } from &amp;#39;rxjs&amp;#39;;import { throttle } from &amp;#39;rxjs/operators&amp;#39;;// 每1秒发出值const source = interval(1000);// 节流2秒后才发出最新值const example = source."
+  content="防抖 根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。 实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺"
 />
 <meta
   name="keywords"
@@ -47,18 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Debounce and Throttle"/>
-<meta name="twitter:description" content="防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
-  实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6&#43;import { of, timer } from &#39;rxjs&#39;;import { debounce } from &#39;rxjs/operators&#39;;// 发出四个字符串const example = of(&#39;WAIT&#39;, &#39;ONE&#39;, &#39;SECOND&#39;, &#39;Last will display&#39;);/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: &#39;Last will display&#39;*/const subscribe = debouncedExample.subscribe(val =&gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])js 实现方式:
-截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
- 实现方式：每次触发事件时，如果当前周期内有等待执行的函数，则取消当前事件  import { interval } from &#39;rxjs&#39;;import { throttle } from &#39;rxjs/operators&#39;;// 每1秒发出值const source = interval(1000);// 节流2秒后才发出最新值const example = source."/>
+<meta name="twitter:description" content="防抖 根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。 实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺"/>
 
 
 
 <meta property="og:title" content="Debounce and Throttle" />
-<meta property="og:description" content="防抖  根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。
-  实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺点：如果事件在规定的时间间隔内被不断的触发，则调用方法会被不断的延迟  // RxJS v6&#43;import { of, timer } from &#39;rxjs&#39;;import { debounce } from &#39;rxjs/operators&#39;;// 发出四个字符串const example = of(&#39;WAIT&#39;, &#39;ONE&#39;, &#39;SECOND&#39;, &#39;Last will display&#39;);/*只有在最后一次发送后再经过一秒钟，才会发出值，并抛弃在此之前的所有其他值*/const debouncedExample = example.pipe(debounce(() =&gt; timer(1000)));/*在这个示例中，所有的值都将被忽略，除了最后一个输出: &#39;Last will display&#39;*/const subscribe = debouncedExample.subscribe(val =&gt; console.log(val));// lodash 4.17_.debounce(func, [wait=0], [options={}])js 实现方式:
-截流 以某个时间间隔为阈值，在 durationSelector 完成前将抑制新值的发出
- 实现方式：每次触发事件时，如果当前周期内有等待执行的函数，则取消当前事件  import { interval } from &#39;rxjs&#39;;import { throttle } from &#39;rxjs/operators&#39;;// 每1秒发出值const source = interval(1000);// 节流2秒后才发出最新值const example = source." />
+<meta property="og:description" content="防抖 根据一个选择器函数，舍弃掉在两次输出之间小于指定时间的发出值。 实现方式：每次触发事件时设置一个延迟调用方法，并且取消之前的延时调用方法 缺" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/debounce-and-throttle/" />
 <meta property="article:published_time" content="2020-09-07T14:51:32+08:00" />
@@ -226,7 +217,7 @@
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">subscribe</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">subscribe</span>(<span style="color:#a6e22e">val</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">val</span>));
 </code></pre></div><h4 id="实现方式">实现方式:</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
-</code></pre></div><h4 id="参考资料">参考资料</h4>
+</code></pre></div><h4 id="参考链接">参考链接</h4>
 <p>节流:</p>
 <ul>
 <li><a href="https://rxjs-cn.github.io/learn-rxjs-operators/operators/filtering/debounce.html">rxjs debounce</a></li>
@@ -293,8 +284,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

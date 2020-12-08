@@ -11,12 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="php 请求远程 php请求远程url有两个方法fopen/file_get_contents 和 curl
-1，fopen/file_get_contents与curl的差异
-（1）fopen /file_get_contents 每次请求都会重新做DNS查询，并不对DNS信息进行缓存。但是CURL会自动对DNS信息进行缓存。对同一域名下的网页或者图片的请求只需要一次DNS查询。这大大减少了DNS查询的次数。所以CURL的性能比fopen /file_get_contents 好很多。 （2）fopen /file_get_contents在请求HTTP时，使用的是http_fopen_wrapper，不会keeplive。而curl却可以。这样在多次请求多个链接时，curl效率会好一些。 （3）curl可以模拟多种请求，例如：POST数据，表单提交等，用户可以按照自己的需求来定制请求。而fopen / file_get_contents只能使用get方式获取数据。
-php中流行的rpc框架 php中流行的rpc框架 phprpc，yar, thrift, gRPC, swoole, hprose 等
-phprpc 简介 是一个轻型的、安全的、跨网际的、跨语言的、跨平台的、跨环境的、跨域的、支持复杂对象传输的、支持引用参数传递的、支持内容输出重定向的、支持分级错误处理的、支持会话的、面向服务的高性能远程过程调用协议。
-// 服务端include(&amp;#39;../phprpc_server.php&amp;#39;);class Hello{static function helloWorld(){return &amp;#34;hello world&amp;#34;;}}$server = new PHPRPC_Server();$server-&amp;gt;add(&amp;#39;helloWorld&amp;#39;,&amp;#39;hello&amp;#39;);$server-&amp;gt;start()// 客户端include(&amp;#34;../phprpc_client.php&amp;#34;);$client = new PHPRPC_Client(&amp;#39;http://www.test.com/phprpc/test/server.php&amp;#39;);echo $client-&amp;gt;helloWorld();[](https://www.php.net/manual/en/ref.xmlrpc.php)"
+  content="php 请求远程 php请求远程url有两个方法fopen/file_get_contents 和 curl 1，fopen/file_get_contents"
 />
 <meta
   name="keywords"
@@ -49,22 +44,12 @@ phprpc 简介 是一个轻型的、安全的、跨网际的、跨语言的、跨
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Php Remote Procedure"/>
-<meta name="twitter:description" content="php 请求远程 php请求远程url有两个方法fopen/file_get_contents 和 curl
-1，fopen/file_get_contents与curl的差异
-（1）fopen /file_get_contents 每次请求都会重新做DNS查询，并不对DNS信息进行缓存。但是CURL会自动对DNS信息进行缓存。对同一域名下的网页或者图片的请求只需要一次DNS查询。这大大减少了DNS查询的次数。所以CURL的性能比fopen /file_get_contents 好很多。 （2）fopen /file_get_contents在请求HTTP时，使用的是http_fopen_wrapper，不会keeplive。而curl却可以。这样在多次请求多个链接时，curl效率会好一些。 （3）curl可以模拟多种请求，例如：POST数据，表单提交等，用户可以按照自己的需求来定制请求。而fopen / file_get_contents只能使用get方式获取数据。
-php中流行的rpc框架 php中流行的rpc框架 phprpc，yar, thrift, gRPC, swoole, hprose 等
-phprpc 简介 是一个轻型的、安全的、跨网际的、跨语言的、跨平台的、跨环境的、跨域的、支持复杂对象传输的、支持引用参数传递的、支持内容输出重定向的、支持分级错误处理的、支持会话的、面向服务的高性能远程过程调用协议。
-// 服务端include(&#39;../phprpc_server.php&#39;);class Hello{static function helloWorld(){return &#34;hello world&#34;;}}$server = new PHPRPC_Server();$server-&gt;add(&#39;helloWorld&#39;,&#39;hello&#39;);$server-&gt;start()// 客户端include(&#34;../phprpc_client.php&#34;);$client = new PHPRPC_Client(&#39;http://www.test.com/phprpc/test/server.php&#39;);echo $client-&gt;helloWorld();[](https://www.php.net/manual/en/ref.xmlrpc.php)"/>
+<meta name="twitter:description" content="php 请求远程 php请求远程url有两个方法fopen/file_get_contents 和 curl 1，fopen/file_get_contents"/>
 
 
 
 <meta property="og:title" content="Php Remote Procedure" />
-<meta property="og:description" content="php 请求远程 php请求远程url有两个方法fopen/file_get_contents 和 curl
-1，fopen/file_get_contents与curl的差异
-（1）fopen /file_get_contents 每次请求都会重新做DNS查询，并不对DNS信息进行缓存。但是CURL会自动对DNS信息进行缓存。对同一域名下的网页或者图片的请求只需要一次DNS查询。这大大减少了DNS查询的次数。所以CURL的性能比fopen /file_get_contents 好很多。 （2）fopen /file_get_contents在请求HTTP时，使用的是http_fopen_wrapper，不会keeplive。而curl却可以。这样在多次请求多个链接时，curl效率会好一些。 （3）curl可以模拟多种请求，例如：POST数据，表单提交等，用户可以按照自己的需求来定制请求。而fopen / file_get_contents只能使用get方式获取数据。
-php中流行的rpc框架 php中流行的rpc框架 phprpc，yar, thrift, gRPC, swoole, hprose 等
-phprpc 简介 是一个轻型的、安全的、跨网际的、跨语言的、跨平台的、跨环境的、跨域的、支持复杂对象传输的、支持引用参数传递的、支持内容输出重定向的、支持分级错误处理的、支持会话的、面向服务的高性能远程过程调用协议。
-// 服务端include(&#39;../phprpc_server.php&#39;);class Hello{static function helloWorld(){return &#34;hello world&#34;;}}$server = new PHPRPC_Server();$server-&gt;add(&#39;helloWorld&#39;,&#39;hello&#39;);$server-&gt;start()// 客户端include(&#34;../phprpc_client.php&#34;);$client = new PHPRPC_Client(&#39;http://www.test.com/phprpc/test/server.php&#39;);echo $client-&gt;helloWorld();[](https://www.php.net/manual/en/ref.xmlrpc.php)" />
+<meta property="og:description" content="php 请求远程 php请求远程url有两个方法fopen/file_get_contents 和 curl 1，fopen/file_get_contents" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/php-remote-procedure/" />
 <meta property="article:published_time" content="2020-09-16T11:11:43+08:00" />
@@ -178,6 +163,12 @@ phprpc 简介 是一个轻型的、安全的、跨网际的、跨语言的、跨
     </div>
 
     
+      <span class="post-tags">
+        
+          <a href="/tags/php/">#php</a>&nbsp;
+        
+      </span>
+    
 
     
 
@@ -265,8 +256,12 @@ echo $client-&gt;helloWorld();
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

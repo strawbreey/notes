@@ -11,9 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Map Map 是一个带键的数据项的集合，就像一个 Object 一样。 但是它们最大的差别是 Map 允许任何类型的键（key）
-它的方法和属性如下：
- new Map() —— 创建 map。 map.set(key, value) —— 根据键存储值。 map.get(key) —— 根据键来返回值，如果 map 中不存在对应的 key，则返回 undefined。 map.has(key) —— 如果 key 存在则返回 true，否则返回 false。 map.delete(key) —— 删除指定键的值。 map.clear() —— 清空 map。 map.size —— 返回当前元素个数。  let map = new Map();map.set(&amp;#39;1&amp;#39;, &amp;#39;str1&amp;#39;); // 字符串键map.set(1, &amp;#39;num1&amp;#39;); // 数字键map.set(true, &amp;#39;bool1&amp;#39;); // 布尔值键// 还记得普通的 Object 吗? 它会将键转化为字符串// Map 则会保留键的类型，所以下面这两个结果不同：alert( map."
+  content="Map Map 迭代 Object.entries：从对象创建 Map Object.fromEntries：从 Map 创建对象 与其他数据结构互相转化 Set Set 迭代（iter"
 />
 <meta
   name="keywords"
@@ -46,16 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js Map and Set"/>
-<meta name="twitter:description" content="Map Map 是一个带键的数据项的集合，就像一个 Object 一样。 但是它们最大的差别是 Map 允许任何类型的键（key）
-它的方法和属性如下：
- new Map() —— 创建 map。 map.set(key, value) —— 根据键存储值。 map.get(key) —— 根据键来返回值，如果 map 中不存在对应的 key，则返回 undefined。 map.has(key) —— 如果 key 存在则返回 true，否则返回 false。 map.delete(key) —— 删除指定键的值。 map.clear() —— 清空 map。 map.size —— 返回当前元素个数。  let map = new Map();map.set(&#39;1&#39;, &#39;str1&#39;); // 字符串键map.set(1, &#39;num1&#39;); // 数字键map.set(true, &#39;bool1&#39;); // 布尔值键// 还记得普通的 Object 吗? 它会将键转化为字符串// Map 则会保留键的类型，所以下面这两个结果不同：alert( map."/>
+<meta name="twitter:description" content="Map Map 迭代 Object.entries：从对象创建 Map Object.fromEntries：从 Map 创建对象 与其他数据结构互相转化 Set Set 迭代（iter"/>
 
 
 
 <meta property="og:title" content="Js Map and Set" />
-<meta property="og:description" content="Map Map 是一个带键的数据项的集合，就像一个 Object 一样。 但是它们最大的差别是 Map 允许任何类型的键（key）
-它的方法和属性如下：
- new Map() —— 创建 map。 map.set(key, value) —— 根据键存储值。 map.get(key) —— 根据键来返回值，如果 map 中不存在对应的 key，则返回 undefined。 map.has(key) —— 如果 key 存在则返回 true，否则返回 false。 map.delete(key) —— 删除指定键的值。 map.clear() —— 清空 map。 map.size —— 返回当前元素个数。  let map = new Map();map.set(&#39;1&#39;, &#39;str1&#39;); // 字符串键map.set(1, &#39;num1&#39;); // 数字键map.set(true, &#39;bool1&#39;); // 布尔值键// 还记得普通的 Object 吗? 它会将键转化为字符串// Map 则会保留键的类型，所以下面这两个结果不同：alert( map." />
+<meta property="og:description" content="Map Map 迭代 Object.entries：从对象创建 Map Object.fromEntries：从 Map 创建对象 与其他数据结构互相转化 Set Set 迭代（iter" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-map-and-set/" />
 <meta property="article:published_time" content="2020-10-23T14:41:10+08:00" />
@@ -174,17 +168,80 @@
 
     <div class="post-content">
       
-      <h3 id="map">Map</h3>
+      <!-- raw HTML omitted -->
+<ul>
+<li><a href="#map">Map</a></li>
+<li><a href="#map-%E8%BF%AD%E4%BB%A3">Map 迭代</a></li>
+<li><a href="#objectentries%E4%BB%8E%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA-map">Object.entries：从对象创建 Map</a></li>
+<li><a href="#objectfromentries%E4%BB%8E-map-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1">Object.fromEntries：从 Map 创建对象</a>
+<ul>
+<li><a href="#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%92%E7%9B%B8%E8%BD%AC%E5%8C%96">与其他数据结构互相转化</a></li>
+</ul>
+</li>
+<li><a href="#set">Set</a></li>
+<li><a href="#set-%E8%BF%AD%E4%BB%A3iteration">Set 迭代（iteration）</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E9%A2%98">测试题</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<p>JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。</p>
+<p>为了解决这个问题，ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {};
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>);
+
+<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">element</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;metadata&#39;</span>;
+<span style="color:#a6e22e">data</span>[<span style="color:#e6db74">&#39;[object HTMLDivElement]&#39;</span>] <span style="color:#75715e">// &#34;metadata&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// or
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">p</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hello World&#39;</span>};
+
+<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">o</span>, <span style="color:#e6db74">&#39;content&#39;</span>)
+<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">o</span>) <span style="color:#75715e">// &#34;content&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">has</span>(<span style="color:#a6e22e">o</span>) <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">m</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#a6e22e">o</span>) <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">has</span>(<span style="color:#a6e22e">o</span>) <span style="color:#75715e">// false
+</span></code></pre></div><h3 id="map">Map</h3>
 <p>Map 是一个带键的数据项的集合，就像一个 Object 一样。 但是它们最大的差别是 Map 允许任何类型的键（key）</p>
 <p>它的方法和属性如下：</p>
 <ul>
-<li>new Map() —— 创建 map。</li>
-<li>map.set(key, value) —— 根据键存储值。</li>
-<li>map.get(key) —— 根据键来返回值，如果 map 中不存在对应的 key，则返回 undefined。</li>
-<li>map.has(key) —— 如果 key 存在则返回 true，否则返回 false。</li>
-<li>map.delete(key) —— 删除指定键的值。</li>
-<li>map.clear() —— 清空 map。</li>
-<li>map.size —— 返回当前元素个数。</li>
+<li>
+<p>map.clear() —— 清空 map</p>
+</li>
+<li>
+<p>map.delete(key) —— 删除指定键的值</p>
+</li>
+<li>
+<p>map.entries() —— 返回一个新的 Iterator 对象，它按插入顺序包含了Map对象中每个元素的 [key, value] 数组。</p>
+</li>
+<li>
+<p>map.forEach() —— 按插入顺序，为 Map对象里的每一键值对调用一次callbackFn函数。如果为forEach提供了thisArg，它将在每次回调中作为this值。</p>
+</li>
+<li>
+<p>map.get(key) —— 根据键来返回值，如果 map 中不存在对应的 key，则返回 undefined。</p>
+</li>
+<li>
+<p>map.has(key) —— 如果 key 存在则返回 true，否则返回 false。</p>
+</li>
+<li>
+<p>map.keys()  —— 返回一个新的 Iterator对象， 它按插入顺序包含了Map对象中每个元素的键 。</p>
+</li>
+<li>
+<p>map.set(key, value) —— 根据键存储值。</p>
+</li>
+<li>
+<p>map.values() —— 返回一个新的Iterator对象，它按插入顺序包含了Map对象中每个元素的值 。</p>
+</li>
+<li>
+<p>new Map() —— 创建 map。</p>
+</li>
+<li>
+<p>map.size —— 返回当前元素个数。</p>
+</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
@@ -200,10 +257,9 @@
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">size</span> ); <span style="color:#75715e">// 3
 </span><span style="color:#75715e"></span>
-</code></pre></div><p>map[key] 不是使用 Map 的正确方式
-虽然 map[key] 也有效，例如我们可以设置 map[key] = 2，这样会将 map 视为 JavaScript 的 plain object，因此它暗含了所有相应的限制（没有对象键等）。</p>
+</code></pre></div><p>map[key] 不是使用 Map 的正确方式, 虽然 map[key] 也有效，例如我们可以设置 map[key] = 2，这样会将 map 视为 JavaScript 的 plain object，因此它暗含了所有相应的限制（没有对象键等）。</p>
 <p>所以我们应该使用 map 方法：set 和 get 等。</p>
-<h4 id="map-还可以使用对象作为键">Map 还可以使用对象作为键</h4>
+<p>Map 还可以使用对象作为键</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">john</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span> };
 
 <span style="color:#75715e">// 存储每个用户的来访次数
@@ -286,7 +342,75 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <span style="color:#75715e">// 现在 prices = { banana: 1, orange: 2, meat: 4 }
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">prices</span>.<span style="color:#a6e22e">orange</span>); <span style="color:#75715e">// 2
-</span></code></pre></div><h2 id="set">Set</h2>
+</span></code></pre></div><h4 id="与其他数据结构互相转化">与其他数据结构互相转化</h4>
+<p>Map 转为数组</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">7</span>).<span style="color:#a6e22e">set</span>({<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}, [<span style="color:#e6db74">&#39;abc&#39;</span>]);
+[...<span style="color:#a6e22e">myMap</span>]
+</code></pre></div><p>数组转map</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
+  [<span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">7</span>],
+  [{<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}, [<span style="color:#e6db74">&#39;abc&#39;</span>]]
+])
+</code></pre></div><p>Map 转为对象</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strMapToObj</span>(<span style="color:#a6e22e">strMap</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#66d9ef">null</span>);
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">k</span>,<span style="color:#a6e22e">v</span>] <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">strMap</span>) {
+    <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">v</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;yes&#39;</span>, <span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;no&#39;</span>, <span style="color:#66d9ef">false</span>);
+<span style="color:#a6e22e">strMapToObj</span>(<span style="color:#a6e22e">myMap</span>)
+</code></pre></div><p>对象转Map</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>};
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>(Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">obj</span>));
+
+<span style="color:#75715e">// or 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">objToStrMap</span>(<span style="color:#a6e22e">obj</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">of</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">obj</span>)) {
+    <span style="color:#a6e22e">strMap</span>.<span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">k</span>]);
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strMap</span>;
+}
+
+<span style="color:#a6e22e">objToStrMap</span>({<span style="color:#a6e22e">yes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">no</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>})
+</code></pre></div><p>Map 转为 JSON</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 一种情况是，Map 的键名都是字符串
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strMapToJson</span>(<span style="color:#a6e22e">strMap</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">strMapToObj</span>(<span style="color:#a6e22e">strMap</span>));
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;yes&#39;</span>, <span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;no&#39;</span>, <span style="color:#66d9ef">false</span>);
+<span style="color:#a6e22e">strMapToJson</span>(<span style="color:#a6e22e">myMap</span>)
+
+<span style="color:#75715e">// 另一种情况是，Map 的键名有非字符串，这时可以选择转为数组 JSON。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">mapToArrayJson</span>(<span style="color:#a6e22e">map</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>([...<span style="color:#a6e22e">map</span>]);
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">7</span>).<span style="color:#a6e22e">set</span>({<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}, [<span style="color:#e6db74">&#39;abc&#39;</span>]);
+<span style="color:#a6e22e">mapToArrayJson</span>(<span style="color:#a6e22e">myMap</span>)
+</code></pre></div><p>JSON 转为 Map</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// JSON 转为 Map，正常情况下，所有键名都是字符串。
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">jsonToStrMap</span>(<span style="color:#a6e22e">jsonStr</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">objToStrMap</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">jsonStr</span>));
+}
+
+<span style="color:#a6e22e">jsonToStrMap</span>(<span style="color:#e6db74">&#39;{&#34;yes&#34;: true, &#34;no&#34;: false}&#39;</span>)
+<span style="color:#75715e">// Map {&#39;yes&#39; =&gt; true, &#39;no&#39; =&gt; false}
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 但是，有一种特殊情况，整个 JSON 就是一个数组，且每个数组成员本身，又是一个有两个成员的数组。这时，它可以一一对应地转为 Map。这往往是 Map 转为数组 JSON 的逆操作。
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">jsonToMap</span>(<span style="color:#a6e22e">jsonStr</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">jsonStr</span>));
+}
+
+<span style="color:#a6e22e">jsonToMap</span>(<span style="color:#e6db74">&#39;[[true,7],[{&#34;foo&#34;:3},[&#34;abc&#34;]]]&#39;</span>)
+<span style="color:#75715e">// Map {true =&gt; 7, Object {foo: 3} =&gt; [&#39;abc&#39;]}
+</span></code></pre></div><h3 id="set">Set</h3>
 <p>Set 是一个特殊的类型集合 —— “值的集合”（没有键），它的每一个值只能出现一次。</p>
 <p>它的主要方法如下：</p>
 <ul>
@@ -369,7 +493,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <li>set.size —— 元素的个数。</li>
 </ul>
 <p>在 Map 和 Set 中迭代总是按照值插入的顺序进行的，所以我们不能说这些集合是无序的，但是我们不能对元素进行重新排序，也不能直接按其编号来获取元素。</p>
-<h3 id="参考资料">参考资料</h3>
+<h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://zh.javascript.info/map-set">Map and Set（映射和集合）</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map">MDN Map</a></li>
@@ -428,8 +552,12 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

@@ -11,12 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
-但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
-AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
-语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
-什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.jsexport function sayHi(user) {alert(`Hello, ${user}!`);}// 📁 main.jsimport {sayHi} from &amp;#39;./sayHi.js&amp;#39;;alert(sayHi); // function...sayHi(&amp;#39;John&amp;#39;); // Hello, John!由于模块支持特殊的关键字和功能，因此我们必须通过使用 &amp;lt;script type=&amp;quot;module&amp;quot;&amp;gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
-&amp;lt;!doctype html&amp;gt;&amp;lt;script type=&amp;#34;module&amp;#34;&amp;gt;import {sayHi} from &amp;#39;./say.js&amp;#39;;document.body.innerHTML = sayHi(&amp;#39;John&amp;#39;);&amp;lt;/script&amp;gt;浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。"
+  content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。 但是"
 />
 <meta
   name="keywords"
@@ -49,22 +44,12 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js Module"/>
-<meta name="twitter:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
-但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
-AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
-语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
-什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.jsexport function sayHi(user) {alert(`Hello, ${user}!`);}// 📁 main.jsimport {sayHi} from &#39;./sayHi.js&#39;;alert(sayHi); // function...sayHi(&#39;John&#39;); // Hello, John!由于模块支持特殊的关键字和功能，因此我们必须通过使用 &lt;script type=&quot;module&quot;&gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
-&lt;!doctype html&gt;&lt;script type=&#34;module&#34;&gt;import {sayHi} from &#39;./say.js&#39;;document.body.innerHTML = sayHi(&#39;John&#39;);&lt;/script&gt;浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。"/>
+<meta name="twitter:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。 但是"/>
 
 
 
 <meta property="og:title" content="Js Module" />
-<meta property="og:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
-但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
-AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
-语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
-什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.jsexport function sayHi(user) {alert(`Hello, ${user}!`);}// 📁 main.jsimport {sayHi} from &#39;./sayHi.js&#39;;alert(sayHi); // function...sayHi(&#39;John&#39;); // Hello, John!由于模块支持特殊的关键字和功能，因此我们必须通过使用 &lt;script type=&quot;module&quot;&gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
-&lt;!doctype html&gt;&lt;script type=&#34;module&#34;&gt;import {sayHi} from &#39;./say.js&#39;;document.body.innerHTML = sayHi(&#39;John&#39;);&lt;/script&gt;浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。" />
+<meta property="og:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。 但是" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-module/" />
 <meta property="article:published_time" content="2020-10-16T00:13:48+08:00" />
@@ -224,7 +209,7 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 <p>每个模块都有自己的顶级作用域（top-level scope）。换句话说，一个模块中的顶级作用域变量和函数在其他脚本中是不可见的。</p>
 </li>
 </ul>
-<h3 id="参考资料">参考资料</h3>
+<h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://www.jianshu.com/p/f65e84bfeb16">CommonJS、requirejs、ES6的对比</a></li>
 <li><a href="https://requirejs.org/docs/start.html">requirejs.org</a></li>
@@ -284,8 +269,12 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

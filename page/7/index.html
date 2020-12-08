@@ -154,11 +154,11 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-header/">Php Header</a></h1>
+      <h1 class="post-title"><a href="/posts/leetcode-0007-reverse-integer/">Leetcode 0007 Reverse Integer</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-21
+            2020-11-06
           </span>
 
           
@@ -170,30 +170,33 @@
       </div>
 
       
+        <span class="post-tags">
+          
+            <a href="/tags/leetcode/">#leetcode</a>&nbsp;
+          
+        </span>
+      
 
       
 
       <div class="post-content">
         
           
-            fread
-fread — 读取文件（可安全用于二进制文件）
-fread ( resource $handle , int $length ) : string// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。// length 最多读取 length 个字节。fread() 从文件指针 handle 读取最多 length 个字节。 该函数在遇上以下几种情况时停止读取文件：
-读取了 length 个字节 到达了文件末尾（EOF） a packet becomes available or the socket timeout occurs (for network streams) if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size.
+            Given a 32-bit signed integer, reverse digits of an integer. 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 −
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-header/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/leetcode-0007-reverse-integer/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/nignx-x-sendfile/">Nignx X Sendfile</a></h1>
+      <h1 class="post-title"><a href="/posts/reverse-integer/">Reverse Integer</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-21
+            2020-11-06
           </span>
 
           
@@ -211,24 +214,19 @@ fread ( resource $handle , int $length ) : string// handle 文件系统指针�
       <div class="post-content">
         
           
-            很多时候用户需要从网站下载文件，如果文件是可以通过一个固定链接公开获取的，那么我们只需将文件存放到 webroot下的目录里就好。但大多数情况下，我们需要做权限控制，例如下载 PDF 账单，又例如下载网盘里的档案。这时，我们通常借助于脚本代码来实现，而这无疑会增加服务器的负担。
-// 用户身份认证，若验证失败跳转authenticate();// 获取需要下载的文件，若文件不存在跳转$file = determine_file();// 读取文件内容$content=file_get_contents($file);// 发送合适的 HTTP 头header(&quot;Content-type: application/octet-stream&quot;);header('Content-Disposition: attachment; filename=&quot;' . basename($file) . '&quot;');header(&quot;Content-Length: &quot;. filesize($file));echo $content; // 或者 readfile($file);这样做意味着我们的程序需要将文件内容从磁盘经过一个固定的 buffer 去循环读取到内存，再发送给前端 web 服务器，最后才到达用户。当需要下载的文件很大的时候，这种方式将消耗大量内存，甚至引发 php 进程超时或崩溃。Cache 也很头疼，更不用说中断重连的情况了。 一个理想的解决方式应该是，由 php 程序进行权限检查等逻辑判断，一切通过后，让前台的 web 服务器直接将文件发送给用户——像 Nginx 这样的前台更善于处理静态文件。这样一来 php 脚本就不会被 I/O 阻塞了。
-X-Sendfile X-Sendfile 是一种将文件下载请求由后端应用转交给前端 web 服务器处理的机制，它可以消除后端程序既要读文件又要处理发送的压力，从而显著提高服务器效率，特别是处理大文件下载的情形下。
-X-Sendfile 通过一个特定的 HTTP header 来实现：在 X-Sendfile 头中指定一个文件的地址来通告前端 web 服务器。当 web 服务器检测到后端发送的这个 header 后，它将忽略后端的其他输出，而使用自身的组件（包括 缓存头 和 断点重连 等优化）机制将文件发送给用户。
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/nignx-x-sendfile/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/reverse-integer/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-flush-and-ob_flush/">Php Flush and Ob_flush</a></h1>
+      <h1 class="post-title"><a href="/posts/leetcode-0001-two-sum/">Leetcode 0001 Two Sum</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-21
+            2020-11-06
           </span>
 
           
@@ -240,41 +238,33 @@ X-Sendfile 通过一个特定的 HTTP header 来实现：在 X-Sendfile 头中�
       </div>
 
       
+        <span class="post-tags">
+          
+            <a href="/tags/leetcode/">#leetcode</a>&nbsp;
+          
+        </span>
+      
 
       
 
       <div class="post-content">
         
           
-            flush flush — 刷新输出缓冲
-flush ( void ) : void刷新PHP程序的缓冲，而不论PHP执行在何种情况下（CGI ，web服务器等等）。该函数将当前为止程序的所有输出发送到用户的浏览器。
-flush() 函数不会对服务器或客户端浏览器的缓存模式产生影响。因此，必须同时使用 ob_flush() 和flush() 函数来刷新输出缓冲。
-个别web服务器程序，特别是Win32下的web服务器程序，在发送结果到浏览器之前，仍然会缓存脚本的输出，直到程序结束为止。
-有些Apache的模块，比如mod_gzip，可能自己进行输出缓存，这将导致flush()函数产生的结果不会立即被发送到客户端浏览器。
-甚至浏览器也会在显示之前，缓存接收到的内容。例如 Netscape 浏览器会在接受到换行或 html 标记的开头之前缓存内容，并且在接受到 标记之前，不会显示出整个表格。
-ob_flush ob_flush — 冲刷出（送出）输出缓冲区中的内容
-ob_flush ( void ) : void这个函数将送出缓冲区的内容（如果里边有内容的话）。如果想进一步处理缓冲区中的内容，必须在ob_flush()之前调用ob_get_contents() ，因为在调用ob_flush()之后缓冲区内容将被丢弃。
-此函数不会销毁输出缓冲区，而像ob_end_flush() 函数会销毁缓冲区。
-ob_clean ob_clean — 清空（擦掉）输出缓冲区
-ob_clean ( void ) : void此函数用来丢弃输出缓冲区中的内容。
-此函数不会像 ob_end_clean() 函数那样销毁输出缓冲区。
-输出缓冲必须已被 ob_start() 以 PHP_OUTPUT_HANDLER_CLEANABLE 标记启动。否则 ob_clean() 不会有效果。
-ob_end_clean ob_end_clean — 清空（擦除）缓冲区并关闭输出缓冲
-ob_end_clean ( void ) : bool此函数丢弃最顶层输出缓冲区的内容并关闭这个缓冲区。如果想要进一步处理缓冲区的内容，必须在ob_end_clean()之前调用ob_get_contents()，因为当调用ob_end_clean()时缓冲区内容将被丢弃。
+            Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order. 给定一个整数数组 nums 和一个目标值 targ
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-flush-and-ob_flush/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/leetcode-0001-two-sum/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-download/">Php Download</a></h1>
+      <h1 class="post-title"><a href="/posts/micro-front-ends/">Micro Front Ends</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-21
+            2020-11-06
           </span>
 
           
@@ -292,19 +282,21 @@ ob_end_clean ( void ) : bool此函数丢弃最顶层输出缓冲区的内容并
       <div class="post-content">
         
           
+            聊聊微前端 如果把前端拆分，可以分为框架, 组件, 依赖库，配置 (业务) 和 数据 webpack打包的时候，可以把框架, 组件，依赖库打包成公共库 前端路
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-download/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/micro-front-ends/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/network-agent/">Network Agent</a></h1>
+      <h1 class="post-title"><a href="/posts/front-end-interview/">Front End Interview</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-20
+            2020-11-06
           </span>
 
           
@@ -322,19 +314,21 @@ ob_end_clean ( void ) : bool此函数丢弃最顶层输出缓冲区的内容并
       <div class="post-content">
         
           
+            javascript js 基础题 深浅拷贝 -&gt; 对象引用 作用域 -&gt; {} -&gt; this 原型 / 原型链 -&gt; js 继承 es6 新特性 闭包 this 事件循环 -&gt; 微宏任务 es6 set 内部实现 node 和 浏览器事件循环机制的区别 柯里化
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/network-agent/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/front-end-interview/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-timeout/">Php Timeout</a></h1>
+      <h1 class="post-title"><a href="/posts/scan-code-login/">Scan Code Login</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-20
+            2020-11-05
           </span>
 
           
@@ -352,31 +346,19 @@ ob_end_clean ( void ) : bool此函数丢弃最顶层输出缓冲区的内容并
       <div class="post-content">
         
           
-            设置PHP脚本执行超时的时间有下面这样一些方法：
-php.ini 中限定程序的最长执行时间是 30 秒，这是由 php.ini 配置文件中的 max_execution_time 变量指定，倘若你有一个需要颇多时间才能完成的程序代码，代码会由于超时而执行失败，例如要发送很多电子邮件给大量收件者，或者要进行繁重的数据分析工作，服务器会在 30 秒后强行中止正在执行的程序，如何解决这个问题呢。
-在php.ini里面设置 max_execution_time = 1800; 脚本被解析器中止之前允许的最大执行时间
-通过PHP的 ini_set 函数设置 ini_set(“max_execution_time”, “1800”);
-通过set_time_limit 函数设置 set_time_limit(1800) ;
-在php-fpm.conf中设置 request_terminate_timeout 请求开始n秒
-注意
-request_terminate_timeout 适用于，当max_execution_time由于某种原因无法终止脚本的时候，会把这个php-fpm请求干掉。
-web请求php执行时间受到2方面控制，一个是php.ini的max_execution_time（要注意的是sleep，http请求等待响应的时间是不算的，这里算的是真正的执行时间），另一个是php-fpm request_terminate_timeout 设置，这个算的是请求开始n秒。
-nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeout，fastcgi_read_timeout，fastcgi_send_timeout
-这几个 nginx 参数的主语都是 nginx，所以 fastcgi_connect_timeout 的意思是 nginx 连接到 fastcgi 的超时时间，fastcgi_read_timeout 是 nginx 读取 fastcgi 的内容的超时时间，fastcgi_send_timeout 是 nginx 发送内容到 fastcgi 的超时时间。
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-timeout/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/scan-code-login/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/vim-swap/">Vim Swap</a></h1>
+      <h1 class="post-title"><a href="/posts/idempotent-operation/">Idempotent Operation</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-20
+            2020-11-05
           </span>
 
           
@@ -394,21 +376,21 @@ nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeou
       <div class="post-content">
         
           
-            Found a swap file by the name E325: ATTENTIONFound a swap file by the name &quot;.git/.MERGE_MSG.swp&quot;owned by: xxxxxx dated: Mon Nov 12 23:17:40 2012file name: ~xxxxxx/Desktop/My-ios-App/.git/MERGE_MSGmodified: YESuser name: xxxxxx host name: unknown-b8-8d-12-22-27-72.lanprocess ID: 1639While opening file &quot;.git/MERGE_MSG&quot;dated: Tue Nov 13 14:06:48 2012NEWER than swap file!(1) Another program may be editing the same file.If this is the case, be careful not to end up with twodifferent instances of the same file when making changes.
+            幂等性 是指 多次执行所产生的影响均与一次执行的影响相同。幂等函数，或幂等方法，是指可以使用相同参数重复执行，并能获得相同结果的函数。这些函数不
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/vim-swap/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/idempotent-operation/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/php-exit-and-die/">Php Exit and Die</a></h1>
+      <h1 class="post-title"><a href="/posts/redis-design-and-implementation/">Redis Design and Implementation</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-20
+            2020-11-05
           </span>
 
           
@@ -426,19 +408,21 @@ nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeou
       <div class="post-content">
         
           
+            链表和链表节点的实现 redis 链表实现 typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表 typedef struct list { // 表头
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/php-exit-and-die/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/redis-design-and-implementation/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-string-methods/">Js String Methods</a></h1>
+      <h1 class="post-title"><a href="/posts/cache/">Cache</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-20
+            2020-11-05
           </span>
 
           
@@ -456,19 +440,21 @@ nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeou
       <div class="post-content">
         
           
+            10.6.2 缓存的分类 1.按照存储位置分类 ● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hiber
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/js-string-methods/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/cache/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/recommended-books/">Recommended Books</a></h1>
+      <h1 class="post-title"><a href="/posts/content-delivery-network/">Content Delivery Network</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-20
+            2020-11-05
           </span>
 
           
@@ -486,35 +472,21 @@ nginx的关键参数是 fastcgi 相关的 timeout，即：fastcgi_connect_timeou
       <div class="post-content">
         
           
-            javascript angular vue react nest.js mysql redis php golang linux nginx git   计算机程序设计艺术
-C Primer Plus
-C程序设计语言
-鸟哥的Linux私房菜
-TCP/IP详解卷1：协议
-Java编程语言
-Python核心编程
-计算机导论   MIT 6.0001
-Harvard的CS50
-Berkeley的CS61A
-每天一本编程书，每天进步一点点
-19CS小硕校招面试心得、自学CS经验及找工作分享
-MIT的课表
-如何评价 Scott H.Young 一年内自学完 MIT 计算机专业的全部 33 门课程？
-How Much Can You Change Yourself?
+            CDN的全称是Content Delivery Network，即内容分发网络 CDN的通俗理解就是网站加速，CPU均衡负载，可以解决跨运营商，跨地区，服务器负
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/recommended-books/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/content-delivery-network/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-shell/">Linux Shell</a></h1>
+      <h1 class="post-title"><a href="/posts/php-swoole/">Php Swoole</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-19
+            2020-11-05
           </span>
 
           
@@ -526,25 +498,33 @@ How Much Can You Change Yourself?
       </div>
 
       
+        <span class="post-tags">
+          
+            <a href="/tags/php/">#php</a>&nbsp;
+          
+        </span>
+      
 
       
 
       <div class="post-content">
         
           
+            Swoole 使 PHP 开发人员可以编写高性能高并发的 TCP、UDP、Unix Socket、HTTP、 WebSocket 等服务，让 PHP 不再局限于 Web 领域。Swoole4 协程的成熟
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/linux-shell/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/php-swoole/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-bash/">Linux Bash</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-manual-new-word/">Mysql Manual New Word</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-19
+            2020-11-04
           </span>
 
           
@@ -556,6 +536,12 @@ How Much Can You Change Yourself?
       </div>
 
       
+        <span class="post-tags">
+          
+            <a href="/tags/mysql/">#mysql</a>&nbsp;
+          
+        </span>
+      
 
       
 
@@ -565,16 +551,16 @@ How Much Can You Change Yourself?
         
       </div>
       
-        <div><a class="read-more button" href="/posts/linux-bash/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-manual-new-word/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/curl/">Curl</a></h1>
+      <h1 class="post-title"><a href="/posts/js-intro/">Js Intro</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-19
+            2020-11-04
           </span>
 
           
@@ -592,27 +578,21 @@ How Much Can You Change Yourself?
       <div class="post-content">
         
           
-            cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl。
-cURL是一个开源项目，主要的产品是curl（命令行工具）和libcurl（C语言的API库），两者功能均是：基于网络协议，对指定URL进行网络传输。[2][3]
-cURL涉及是任何网络协议传输，不涉及对具体数据的具体处理。（如：html的渲染等）
-Example # 简单模式curl <a href="http://example.com">http://example.com</a># 详细（verbose）模式：curl &ndash;verbose <a href="http://example.com">http://example.com</a>curl -v <a href="http://example.com">http://example.com</a># 下载（output）curl &ndash;output output.html <a href="http://example.com/">http://example.com/</a>curl -o output.html <a href="http://example.com/">http://example.com/</a># 重定向：（curl默认不会重定向）curl &ndash;location output.html <a href="http://example.com/">http://example.com/</a>curl -L output.html <a href="http://example.com/">http://example.com/</a>curl <a href="http://httpbin.org/user-agent">http://httpbin.org/user-agent</a>curl <a href="https://httpbin.org/get?show_env=1">https://httpbin.org/get?show_env=1</a>curl 和 wget 区别 wget是个专职的下载利器，简单，专一，极致；而curl可以下载，但是长项不在于下载，而在于模拟提交web数据，POST/GET请求，调试网页，等等。
-在下载上，也各有所长，wget可以递归，支持断点；而curl支持URL中加入变量，因此可以批量下载。
-libcurl libcurl主要功能就是用不同的协议连接和沟通不同的服务器~也就是相当封装了的sockPHP 支持libcurl（允许你用不同的协议连接和沟通不同的服务器）。 libcurl当前支持http, https, ftp, gopher, telnet, dict, file, 和ldap 协议。libcurl同样支持HTTPS证书授权，HTTP POST, HTTP PUT, FTP 上传（当然你也可以使用PHP的ftp扩展）, HTTP基本表单上传，代理，cookies,和用户认证。
-php cURL PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯各种服务器、使用各种协议。libcurl 目前支持的协议有 http、https、ftp、gopher、telnet、dict、file、ldap。 libcurl 同时支持 HTTPS 证书、HTTP POST、HTTP PUT、 FTP 上传(也能通过 PHP 的 FTP 扩展完成)、HTTP 基于表单的上传、代理、cookies、用户名+密码的认证。
+            前端新手指引 常见的新手引导效果场景 引导页 蒙层引导 气泡/弹窗提示 动画/视频引导 操作式引导 预设任务 主要包括三个部分: 蒙层、气泡、高亮。 常见的开源
           
         
       </div>
       
-        <div><a class="read-more button" href="/posts/curl/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/js-intro/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-microtask-queue/">Js Microtask Queue</a></h1>
+      <h1 class="post-title"><a href="/posts/mariadb/">Mariadb</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-18
+            2020-11-03
           </span>
 
           
@@ -630,34 +610,19 @@ php cURL PHP 支持 Daniel Stenberg 创建的 libcurl 库，能够连接通讯�
       <div class="post-content">
         
           
-            浏览器中 JavaScript 的执行流程和 Node.js 中的流程都是基于 事件循环 的。
-理解事件循环的工作方式对于代码优化很重要，有时对于正确的架构也很重要。
-事件循环 事件循环 的概念非常简单。它是一个在 JavaScript 引擎等待任务，执行任务和进入休眠状态等待更多任务这几个状态之间转换的无限循环。
-引擎的一般算法：
-当有任务时：  从最先进入的任务开始执行。   休眠直到出现任务，然后转到第 1 步。  两个细节：
-引擎执行任务时永远不会进行渲染（render）。如果任务执行需要很长一段时间也没关系。仅在任务完成后才会绘制对 DOM 的更改。
-如果一项任务执行花费的时间过长，浏览器将无法执行其他任务，无法处理用户事件，因此，在一定时间后浏览器会在整个页面抛出一个如“页面未响应”之类的警报，建议你终止这个任务。这种情况常发生在有大量复杂的计算或导致死循环的程序错误时。
-拆分CPU过载任务 例如，语法高亮（用来给本页面中的示例代码着色）是相当耗费 CPU 资源的任务。为了高亮显示代码，它执行分析，创建很多着了色的元素，然后将它们添加到文档中 —— 对于文本量大的文档来说，需要耗费很长时间。
-当引擎忙于语法高亮时，它就无法处理其他 DOM 相关的工作，例如处理用户事件等。它甚至可能会导致浏览器“中断（hiccup）”甚至“挂起（hang）”一段时间，这是不可接受的。
-我们可以通过将大任务拆分成多个小任务来避免这个问题。高亮显示前 100 行，然后使用 setTimeout（延时参数为 0）来安排（schedule）后 100 行的高亮显示，依此类推
-进度指示 宏任务和微任务 除了本章中所讲的 宏任务（macrotask） 外，还有在 微任务（Microtask） 一章中提到的 微任务（microtask）。
-微任务仅来自于我们的代码。它们通常是由 promise 创建的：对 .then/catch/finally 处理程序的执行会成为微任务。微任务也被用于 await 的“幕后”，因为它是 promise 处理的另一种形式。
-每个宏任务之后，引擎会立即执行微任务队列中的所有任务，然后再执行其他的宏任务，或渲染，或进行其他任何操作。
-setTimeout(() =&gt; alert(&quot;timeout&quot;));// 微任务Promise.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/js-microtask-queue/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mariadb/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/mysql-utf8/">Mysql Utf8</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-optimization-subqueries/">Mysql Optimization Subqueries</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-17
+            2020-11-03
           </span>
 
           
@@ -678,16 +643,16 @@ setTimeout(() =&gt; alert(&quot;timeout&quot;));// 微任务Promise.
         
       </div>
       
-        <div><a class="read-more button" href="/posts/mysql-utf8/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-optimization-subqueries/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-garbage-colloction/">Js Garbage Colloction</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-innodb-memory/">Mysql Innodb Memory</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-17
+            2020-11-03
           </span>
 
           
@@ -708,16 +673,16 @@ setTimeout(() =&gt; alert(&quot;timeout&quot;));// 微任务Promise.
         
       </div>
       
-        <div><a class="read-more button" href="/posts/js-garbage-colloction/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-innodb-memory/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-optional-chaining/">Js Optional Chaining</a></h1>
+      <h1 class="post-title"><a href="/posts/mysql-order-by/">Mysql Order By</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-17
+            2020-11-03
           </span>
 
           
@@ -735,31 +700,19 @@ setTimeout(() =&gt; alert(&quot;timeout&quot;));// 微任务Promise.
       <div class="post-content">
         
           
-            可选链 “?.” 可选链 ?. 是一种访问嵌套对象属性的防错误方法。即使中间的属性不存在，也不会出现错误。
-let user = {}; // 这个 user 恰巧没有 addressalert(user?.address); // undefined!alert(user?.address.street); // undefined! 不要过度使用可选链 我们应该只将 ?. 使用在一些东西可以不存在的地方。  例如，如果根据我们的代码逻辑，user 对象必须存在，但 address 是可选的，那么 user.address?.street 会更好。
-所以，如果 user 恰巧因为失误变为 undefined，我们会知道并修复这个失误。否则，代码中的 error 在不恰当的地方被消除了，这会导致调试更加困难。
-?. 前的变量必须已声明 如果未声明变量 user，那么 user?.anything 会触发一个错误：
-// ReferenceError: user is not defined user?.address;
-短路效应 正如前面所说的，如果 ?. 左边部分不存在，就会立即停止运算（“短路效应”）。
-所以，如果后面有任何函数调用或者副作用，它们均不会执行：
-其它情况：?.()，?.[] 可选链 ?. 不是一个运算符，而是一个特殊的语法结构。它还可以与函数和方括号一起使用。
-例如，将 ?.() 用于调用一个可能不存在的函数。
-在下面这段代码中，有些用户具有 admin 方法，而有些没有：
-let user1 = {admin() {alert(&quot;I am admin&quot;);}}let user2 = {};user1.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/js-optional-chaining/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/mysql-order-by/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/course-stanford/">Course Stanford</a></h1>
+      <h1 class="post-title"><a href="/posts/js-arrow-functions/">Js Arrow Functions</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-16
+            2020-11-02
           </span>
 
           
@@ -777,32 +730,19 @@ let user1 = {admin() {alert(&quot;I am admin&quot;);}}let user2 = {};user1
       <div class="post-content">
         
           
-            math 51 多维微积分 <a href="http://web.stanford.edu/class/math51">http://web.stanford.edu/class/math51</a>
-EE 103 线性代数 <a href="http://web.stanford.edu/class/ee103">http://web.stanford.edu/class/ee103</a>
-CS 109 概率论 <a href="http://web.stanford.edu/class/cs109">http://web.stanford.edu/class/cs109</a>
-CS 106 A 程序设计基础 <a href="http://web.stanford.edu/class/cs106a">http://web.stanford.edu/class/cs106a</a>
-CS 106 B 程序设计基础 <a href="http://web.stanford.edu/class/cs106b">http://web.stanford.edu/class/cs106b</a>
-CS 107 计算机系统导论 <a href="http://web.stanford.edu/class/cs107">http://web.stanford.edu/class/cs107</a>
-CS 140 操作系统 <a href="http://web.stanford.edu/class/cs145">http://web.stanford.edu/class/cs145</a>
-CS 143 编译器 <a href="http://web.stanford.edu/class/cs143">http://web.stanford.edu/class/cs143</a>
-CS 145 数据库导论 <a href="http://web.stanford.edu/class/cs145">http://web.stanford.edu/class/cs145</a>
-CS 149 并行计算 <a href="http://web.stanford.edu/class/cs149">http://web.stanford.edu/class/cs149</a>
-CS 161 算法设计与分析 <a href="http://web.stanford.edu/class/cs161">http://web.stanford.edu/class/cs161</a>
-CS 221 人工智能导论 http://web.
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/course-stanford/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/js-arrow-functions/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/js-module/">Js Module</a></h1>
+      <h1 class="post-title"><a href="/posts/ssl-tls/">Ssl Tls</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-16
+            2020-11-02
           </span>
 
           
@@ -820,26 +760,19 @@ CS 221 人工智能导论 http://web.
       <div class="post-content">
         
           
-            JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
-但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
-AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
-语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
-什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.jsexport function sayHi(user) {alert(<code>Hello, ${user}!</code>);}// 📁 main.jsimport {sayHi} from './sayHi.js';alert(sayHi); // function&hellip;sayHi('John'); // Hello, John!由于模块支持特殊的关键字和功能，因此我们必须通过使用 &lt;script type=&quot;module&quot;&gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
-&lt;!doctype html&gt;&lt;script type=&quot;module&quot;&gt;import {sayHi} from './say.js';document.body.innerHTML = sayHi('John');&lt;/script&gt;浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。
-          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/js-module/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/ssl-tls/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/posts/linux-what/">Linux What</a></h1>
+      <h1 class="post-title"><a href="/posts/https/">Https</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-10-14
+            2020-11-02
           </span>
 
           
@@ -857,10 +790,12 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
       <div class="post-content">
         
           
+            HTTPS实际上是HTTP穿上了SSL/TLS的外套，我们都知道HTTP属于应用层的协议，是离程序员比较近的，而SSL（安全套接字）与TLS
+          
         
       </div>
       
-        <div><a class="read-more button" href="/posts/linux-what/">Read more →</a></div>
+        <div><a class="read-more button" href="/posts/https/">Read more →</a></div>
       
     </div>
     
@@ -900,8 +835,12 @@ AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 Co
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

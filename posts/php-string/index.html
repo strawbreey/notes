@@ -11,11 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
-语法 一个字符串可以用 4 种方式表达：
- 单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &amp;lsquo;）。
-要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
-echo &amp;#39;this is a simple string&amp;#39;;echo &amp;#39;You can also have embedded newlines in strings this way as it isokay to do&amp;#39;; // 可以录入多行echo &amp;#39;Arnold once said: &amp;#34;I\&amp;#39;ll be back&amp;#34;&amp;#39;; // 输出： Arnold once said: &amp;#34;I&amp;#39;ll be back&amp;#34; 单引号转义echo &amp;#39;You deleted C:\\*."
+  content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。 语法 一个字符"
 />
 <meta
   name="keywords"
@@ -48,20 +44,12 @@ echo &amp;#39;this is a simple string&amp;#39;;echo &amp;#39;You can also have 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Php String"/>
-<meta name="twitter:description" content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
-语法 一个字符串可以用 4 种方式表达：
- 单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &lsquo;）。
-要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
-echo &#39;this is a simple string&#39;;echo &#39;You can also have embedded newlines in strings this way as it isokay to do&#39;; // 可以录入多行echo &#39;Arnold once said: &#34;I\&#39;ll be back&#34;&#39;; // 输出： Arnold once said: &#34;I&#39;ll be back&#34; 单引号转义echo &#39;You deleted C:\\*."/>
+<meta name="twitter:description" content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。 语法 一个字符"/>
 
 
 
 <meta property="og:title" content="Php String" />
-<meta property="og:description" content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。
-语法 一个字符串可以用 4 种方式表达：
- 单引号 双引号 heredoc 语法结构 nowdoc 语法结构（自 PHP 5.3.0 起  单引号 定义一个字符串的最简单的方法是用单引号把它包围起来（字符 &lsquo;）。
-要表达一个单引号自身，需在它的前面加个反斜线（\）来转义。要表达一个反斜线自身，则用两个反斜线（\）。其它任何方式的反斜线都会被当成反斜线本身：也就是说如果想使用其它转义序列例如 \r 或者 \n，并不代表任何特殊含义，就单纯是这两个字符本身。
-echo &#39;this is a simple string&#39;;echo &#39;You can also have embedded newlines in strings this way as it isokay to do&#39;; // 可以录入多行echo &#39;Arnold once said: &#34;I\&#39;ll be back&#34;&#39;; // 输出： Arnold once said: &#34;I&#39;ll be back&#34; 单引号转义echo &#39;You deleted C:\\*." />
+<meta property="og:description" content="一个字符串 string 就是由一系列的字符组成，其中每个字符等同于一个字节。这意味着 PHP 只能支持 256 的字符集，因此不支持 Unicode 。详见字符串类型详解。 语法 一个字符" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/php-string/" />
 <meta property="article:published_time" content="2020-09-24T15:09:55+08:00" />
@@ -175,6 +163,12 @@ echo &#39;this is a simple string&#39;;echo &#39;You can also have embedded new
     </div>
 
     
+      <span class="post-tags">
+        
+          <a href="/tags/php/">#php</a>&nbsp;
+        
+      </span>
+    
 
     
 
@@ -280,8 +274,12 @@ $	美元标记
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

@@ -11,12 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="web 安全领域中，常见的攻击方式，大概以下几种
- 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username=&amp;#39;plhwin&amp;#39;-- 把plhwin 改成 plhwin&amp;#39;;SHOW TABLES-- hack&amp;#39;SELECT uid,username FROM user WHERE username=&amp;#39;plhwin&amp;#39;;SHOW TABLES-- hack&amp;#39;客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
-XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
-防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
- 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
-   类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。"
+  content="web 安全领域中，常见的攻击方式，大概以下几种 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务 SELECT uid,username FROM user WHERE username=&amp;#39;plhwin&amp;#39; -- 把plhwin 改成 plhwin&amp;#39;;SHOW TABLES-- hack&amp;#39; SELECT uid,username"
 />
 <meta
   name="keywords"
@@ -49,22 +44,12 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Web Safe"/>
-<meta name="twitter:description" content="web 安全领域中，常见的攻击方式，大概以下几种
- 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;-- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39;SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;;SHOW TABLES-- hack&#39;客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
-XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
-防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
- 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
-   类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。"/>
+<meta name="twitter:description" content="web 安全领域中，常见的攻击方式，大概以下几种 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务 SELECT uid,username FROM user WHERE username=&#39;plhwin&#39; -- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39; SELECT uid,username"/>
 
 
 
 <meta property="og:title" content="Web Safe" />
-<meta property="og:description" content="web 安全领域中，常见的攻击方式，大概以下几种
- 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务  SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;-- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39;SELECT uid,username FROM user WHERE username=&#39;plhwin&#39;;SHOW TABLES-- hack&#39;客户端安全 跨站脚本攻击 (xss: Cross-Site Scripting) Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
-XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚本被执行。
-防范: 不仅仅是业务上的“用户的 UGC 内容”可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
- 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 分类: 存储型、反射型和 DOM 型三种。
-   类型 存储区 插入点     存储型 XSS 后端数据库 HTML   反射型 XSS URL HTML   DOM 型 XSS 后端数据库/前端存储/URL 前端 JavaScript    存储区：恶意代码存放的位置。 插入点：由谁取得恶意代码，并插入到网页上。" />
+<meta property="og:description" content="web 安全领域中，常见的攻击方式，大概以下几种 跨站脚本 跨站伪造请求 SQL 注入() 文件上传漏洞 分布式拒绝服务 SELECT uid,username FROM user WHERE username=&#39;plhwin&#39; -- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39; SELECT uid,username" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/web-safe/" />
 <meta property="article:published_time" content="2020-09-22T14:38:14+08:00" />
@@ -284,7 +269,7 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
 <h2 id="跨站点请求伪造csrf">跨站点请求伪造(csrf)</h2>
 <h2 id="点击劫持">点击劫持</h2>
 <h2 id="html5-安全">html5 安全</h2>
-<h3 id="参考资料">参考资料</h3>
+<h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://github.com/strawbreey/WebSafe-StepPitGuide">Web前后端漏洞分析与防御</a></li>
 </ul>
@@ -342,8 +327,12 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

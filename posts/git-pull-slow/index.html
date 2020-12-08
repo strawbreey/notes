@@ -11,10 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
-由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
- 解决方法一：删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
- 解决方法二：本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  "
+  content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因 由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fet"
 />
 <meta
   name="keywords"
@@ -47,18 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Pull Slow"/>
-<meta name="twitter:description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
-由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
- 解决方法一：删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
- 解决方法二：本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  "/>
+<meta name="twitter:description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因 由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fet"/>
 
 
 
 <meta property="og:title" content="Git Pull Slow" />
-<meta property="og:description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
-由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
- 解决方法一：删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
- 解决方法二：本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  " />
+<meta property="og:description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因 由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fet" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/git-pull-slow/" />
 <meta property="article:published_time" content="2020-11-22T20:53:33+08:00" />
@@ -181,11 +172,11 @@
 <p>出现节点清点耗时较长的原因</p>
 <p>由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。</p>
 <ul>
-<li>解决方法一：删除本地仓库重新clone</li>
+<li>删除本地仓库重新clone</li>
 </ul>
 <p>将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。</p>
 <ul>
-<li>解决方法二：本地仓库执行节点清理命令
+<li>本地仓库执行节点清理命令
 节点清理压缩（需较多内存）：在git所在目录执行命令：<code>git gc --aggressive --prune=now</code>。将本地节点清理压缩，减小差异节点清点耗时。</li>
 </ul>
 
@@ -242,8 +233,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

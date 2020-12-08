@@ -11,11 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="数据库 数据库是一以某种方式存储的数据集合
-选择数据库 crashcourse
-use crashcourse;查看数据库信息
-show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示服务器状态信息show create database / show create table #显示创建特定数据库/表show GRANTS // 显示4. 查询数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product."
+  content="数据库 数据库是一以某种方式存储的数据集合 选择数据库 crashcourse use crashcourse; 查看数据库信息 show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息 显示数据"
 />
 <meta
   name="keywords"
@@ -48,20 +44,12 @@ show TABLES; // 显示当前数据库内的表show status // 显示服务器状
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sql"/>
-<meta name="twitter:description" content="数据库 数据库是一以某种方式存储的数据集合
-选择数据库 crashcourse
-use crashcourse;查看数据库信息
-show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示服务器状态信息show create database / show create table #显示创建特定数据库/表show GRANTS // 显示4. 查询数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product."/>
+<meta name="twitter:description" content="数据库 数据库是一以某种方式存储的数据集合 选择数据库 crashcourse use crashcourse; 查看数据库信息 show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息 显示数据"/>
 
 
 
 <meta property="og:title" content="Sql" />
-<meta property="og:description" content="数据库 数据库是一以某种方式存储的数据集合
-选择数据库 crashcourse
-use crashcourse;查看数据库信息
-show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息显示数据库内表的列表
-show TABLES; // 显示当前数据库内的表show status // 显示服务器状态信息show create database / show create table #显示创建特定数据库/表show GRANTS // 显示4. 查询数据(SELECT) SELECT prod_name FROM products; -- 检索一列数据SELECT prod_id, prod_name, prod_price FROM products; -- 检索多列数据SELECT * FROM products; -- 检索所有数据SELECT vend_id FROM products; -- 检索vend—id 列SELECT DISTINCT vend_id FROM products; -- 检索vend_id列, 并只返回不同的值SELECT prod_name FROM products LIMIT 5; -- 检索prod_name, 并只返回5条数据SELECT prod_name FROM products LIMIT 5, 5; -- 检索prod_name, 并只返回5条数据SELECT product." />
+<meta property="og:description" content="数据库 数据库是一以某种方式存储的数据集合 选择数据库 crashcourse use crashcourse; 查看数据库信息 show DATABASES; // 返回可用数据库的列表， 数据库、表、列、用户、权限等的信息 显示数据" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/sql/" />
 <meta property="article:published_time" content="2020-09-10T16:47:25+08:00" />
@@ -593,8 +581,12 @@ show GRANTS // 显示
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

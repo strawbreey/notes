@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="server {listen 80;server_name cloudwave.cn;location /productlist {# 匹配所有以/productlist开头所有页面都被拦截# 将匹配到的页面请求转发到新的静态资源服务器proxy_pass http://new.cloudwave.cn;}}server {listen 443;server_name cloudwave.cn;location /productlist {proxy_pass https://new.cloudwave.cn;}}"
+  content="server { listen 80; server_name cloudwave.cn; location /productlist { # 匹配所有以/productlist开头所有页面都被拦截 # 将匹配到的页面请求转发到新的静态资源服务器 proxy_pass http://new.cloudwave.cn; } } server { listen 443; server_name cloudwave.cn; location"
 />
 <meta
   name="keywords"
@@ -44,12 +44,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx Proxy Pass"/>
-<meta name="twitter:description" content="server {listen 80;server_name cloudwave.cn;location /productlist {# 匹配所有以/productlist开头所有页面都被拦截# 将匹配到的页面请求转发到新的静态资源服务器proxy_pass http://new.cloudwave.cn;}}server {listen 443;server_name cloudwave.cn;location /productlist {proxy_pass https://new.cloudwave.cn;}}"/>
+<meta name="twitter:description" content="server { listen 80; server_name cloudwave.cn; location /productlist { # 匹配所有以/productlist开头所有页面都被拦截 # 将匹配到的页面请求转发到新的静态资源服务器 proxy_pass http://new.cloudwave.cn; } } server { listen 443; server_name cloudwave.cn; location"/>
 
 
 
 <meta property="og:title" content="Nginx Proxy Pass" />
-<meta property="og:description" content="server {listen 80;server_name cloudwave.cn;location /productlist {# 匹配所有以/productlist开头所有页面都被拦截# 将匹配到的页面请求转发到新的静态资源服务器proxy_pass http://new.cloudwave.cn;}}server {listen 443;server_name cloudwave.cn;location /productlist {proxy_pass https://new.cloudwave.cn;}}" />
+<meta property="og:description" content="server { listen 80; server_name cloudwave.cn; location /productlist { # 匹配所有以/productlist开头所有页面都被拦截 # 将匹配到的页面请求转发到新的静态资源服务器 proxy_pass http://new.cloudwave.cn; } } server { listen 443; server_name cloudwave.cn; location" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/nginx-proxy-pass/" />
 <meta property="article:published_time" content="2020-11-09T16:03:57+08:00" />
@@ -240,8 +240,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

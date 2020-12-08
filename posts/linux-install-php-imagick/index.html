@@ -11,9 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="说明：
-php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Nginx安装目录：/usr/local/nginx Nginx网站根目录：/usr/local/nginx/html
- 安装编译工具  yum install wget make gcc gcc-c&#43;&#43; gtk&#43;-devel zlib-devel openssl openssl-devel pcre-devel kernel keyutils patch perl安装ImageMagick  cd /usr/local/src #进入软件包存放目录wget http://www.imagemagick.org/download/ImageMagick.tar.gz #下载ImageMagicktar zxvf ImageMagick.tar.gz #解压cd ImageMagick-6.7.9-3 #进入安装目录./configure --prefix=/usr/local/imagemagick #配置make #编译make install #安装export PKG_CONFIG_PATH=/usr/local/imagemagick/lib/pkgconfig/ #设置环境变量安装imagick  cd /usr/local/srcwget http://pecl.php.net/get/imagick-3.0.1.tgz #下载imagicktar zxvf imagick-3.0.1.tgzcd imagick-3.0.1/usr/local/php5/bin/phpize #用phpize生成configure配置文件./configure --with-php-config=/usr/local/php5/bin/php-config --with-imagick=/usr/local/imagemagick #配置make #编译make install #安装备注：在安装过程中出现错误，一般是由于缺少编译工具包导致，可根据提示参照第一步安装相应的工具包即可 安装完成之后，出现下面的界面，记住以下路径，后面会用到 Installing shared extensions: /usr/local/php5/lib/php/extensions/no-debug-non-zts-20090626/ #imagick模块路径"
+  content="说明： php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Ngi"
 />
 <meta
   name="keywords"
@@ -46,16 +44,12 @@ php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/et
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux Install Php Imagick"/>
-<meta name="twitter:description" content="说明：
-php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Nginx安装目录：/usr/local/nginx Nginx网站根目录：/usr/local/nginx/html
- 安装编译工具  yum install wget make gcc gcc-c&#43;&#43; gtk&#43;-devel zlib-devel openssl openssl-devel pcre-devel kernel keyutils patch perl安装ImageMagick  cd /usr/local/src #进入软件包存放目录wget http://www.imagemagick.org/download/ImageMagick.tar.gz #下载ImageMagicktar zxvf ImageMagick.tar.gz #解压cd ImageMagick-6.7.9-3 #进入安装目录./configure --prefix=/usr/local/imagemagick #配置make #编译make install #安装export PKG_CONFIG_PATH=/usr/local/imagemagick/lib/pkgconfig/ #设置环境变量安装imagick  cd /usr/local/srcwget http://pecl.php.net/get/imagick-3.0.1.tgz #下载imagicktar zxvf imagick-3.0.1.tgzcd imagick-3.0.1/usr/local/php5/bin/phpize #用phpize生成configure配置文件./configure --with-php-config=/usr/local/php5/bin/php-config --with-imagick=/usr/local/imagemagick #配置make #编译make install #安装备注：在安装过程中出现错误，一般是由于缺少编译工具包导致，可根据提示参照第一步安装相应的工具包即可 安装完成之后，出现下面的界面，记住以下路径，后面会用到 Installing shared extensions: /usr/local/php5/lib/php/extensions/no-debug-non-zts-20090626/ #imagick模块路径"/>
+<meta name="twitter:description" content="说明： php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Ngi"/>
 
 
 
 <meta property="og:title" content="Linux Install Php Imagick" />
-<meta property="og:description" content="说明：
-php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Nginx安装目录：/usr/local/nginx Nginx网站根目录：/usr/local/nginx/html
- 安装编译工具  yum install wget make gcc gcc-c&#43;&#43; gtk&#43;-devel zlib-devel openssl openssl-devel pcre-devel kernel keyutils patch perl安装ImageMagick  cd /usr/local/src #进入软件包存放目录wget http://www.imagemagick.org/download/ImageMagick.tar.gz #下载ImageMagicktar zxvf ImageMagick.tar.gz #解压cd ImageMagick-6.7.9-3 #进入安装目录./configure --prefix=/usr/local/imagemagick #配置make #编译make install #安装export PKG_CONFIG_PATH=/usr/local/imagemagick/lib/pkgconfig/ #设置环境变量安装imagick  cd /usr/local/srcwget http://pecl.php.net/get/imagick-3.0.1.tgz #下载imagicktar zxvf imagick-3.0.1.tgzcd imagick-3.0.1/usr/local/php5/bin/phpize #用phpize生成configure配置文件./configure --with-php-config=/usr/local/php5/bin/php-config --with-imagick=/usr/local/imagemagick #配置make #编译make install #安装备注：在安装过程中出现错误，一般是由于缺少编译工具包导致，可根据提示参照第一步安装相应的工具包即可 安装完成之后，出现下面的界面，记住以下路径，后面会用到 Installing shared extensions: /usr/local/php5/lib/php/extensions/no-debug-non-zts-20090626/ #imagick模块路径" />
+<meta property="og:description" content="说明： php安装目录：/usr/local/php5 php.ini配置文件路径：/usr/local/php5/etc/php.ini Ngi" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/linux-install-php-imagick/" />
 <meta property="article:published_time" content="2020-10-09T14:54:01+08:00" />
@@ -289,8 +283,12 @@ service nginx restart  <span style="color:#75715e">#重启nginx</span>
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

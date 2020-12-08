@@ -11,8 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="对象初始化 class foo{function do_foo(){echo &amp;#34;Doing foo.&amp;#34;; }}$bar = new foo;$bar-&amp;gt;do_foo();转换为对象 如果将一个对象转换成对象，它将不会有任何变化。如果其它任何类型的值被转换成对象，将会创建一个内置类 stdClass 的实例。如果该值为 NULL，则新的实例为空。 array 转换成 object 将使键名成为属性名并具有相对应的值。注意：在这个例子里， 使用 PHP 7.2.0 之前的版本，数字键只能通过迭代访问。
-$obj = (object) array(&amp;#39;1&amp;#39; =&amp;gt; &amp;#39;foo&amp;#39;);var_dump(isset($obj-&amp;gt;{&amp;#39;1&amp;#39;})); // PHP 7.2.0 后输出 &amp;#39;bool(true)&amp;#39;，之前版本会输出 &amp;#39;bool(false)&amp;#39; var_dump(key($obj)); // PHP 7.2.0 后输出 &amp;#39;string(1) &amp;#34;1&amp;#34;&amp;#39;，之前版本输出 &amp;#39;int(1)&amp;#39; "
+  content="对象初始化 class foo { function do_foo() { echo &amp;#34;Doing foo.&amp;#34;; } } $bar = new foo; $bar-&amp;gt;do_foo(); 转换为对象 如果将一个对象转换成对象，它将不会有任何变化。如果其它任何类型的值被转换成对象，将会创建"
 />
 <meta
   name="keywords"
@@ -45,14 +44,12 @@ $obj = (object) array(&amp;#39;1&amp;#39; =&amp;gt; &amp;#39;foo&amp;#39;);var_
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Php Object"/>
-<meta name="twitter:description" content="对象初始化 class foo{function do_foo(){echo &#34;Doing foo.&#34;; }}$bar = new foo;$bar-&gt;do_foo();转换为对象 如果将一个对象转换成对象，它将不会有任何变化。如果其它任何类型的值被转换成对象，将会创建一个内置类 stdClass 的实例。如果该值为 NULL，则新的实例为空。 array 转换成 object 将使键名成为属性名并具有相对应的值。注意：在这个例子里， 使用 PHP 7.2.0 之前的版本，数字键只能通过迭代访问。
-$obj = (object) array(&#39;1&#39; =&gt; &#39;foo&#39;);var_dump(isset($obj-&gt;{&#39;1&#39;})); // PHP 7.2.0 后输出 &#39;bool(true)&#39;，之前版本会输出 &#39;bool(false)&#39; var_dump(key($obj)); // PHP 7.2.0 后输出 &#39;string(1) &#34;1&#34;&#39;，之前版本输出 &#39;int(1)&#39; "/>
+<meta name="twitter:description" content="对象初始化 class foo { function do_foo() { echo &#34;Doing foo.&#34;; } } $bar = new foo; $bar-&gt;do_foo(); 转换为对象 如果将一个对象转换成对象，它将不会有任何变化。如果其它任何类型的值被转换成对象，将会创建"/>
 
 
 
 <meta property="og:title" content="Php Object" />
-<meta property="og:description" content="对象初始化 class foo{function do_foo(){echo &#34;Doing foo.&#34;; }}$bar = new foo;$bar-&gt;do_foo();转换为对象 如果将一个对象转换成对象，它将不会有任何变化。如果其它任何类型的值被转换成对象，将会创建一个内置类 stdClass 的实例。如果该值为 NULL，则新的实例为空。 array 转换成 object 将使键名成为属性名并具有相对应的值。注意：在这个例子里， 使用 PHP 7.2.0 之前的版本，数字键只能通过迭代访问。
-$obj = (object) array(&#39;1&#39; =&gt; &#39;foo&#39;);var_dump(isset($obj-&gt;{&#39;1&#39;})); // PHP 7.2.0 后输出 &#39;bool(true)&#39;，之前版本会输出 &#39;bool(false)&#39; var_dump(key($obj)); // PHP 7.2.0 后输出 &#39;string(1) &#34;1&#34;&#39;，之前版本输出 &#39;int(1)&#39; " />
+<meta property="og:description" content="对象初始化 class foo { function do_foo() { echo &#34;Doing foo.&#34;; } } $bar = new foo; $bar-&gt;do_foo(); 转换为对象 如果将一个对象转换成对象，它将不会有任何变化。如果其它任何类型的值被转换成对象，将会创建" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/php-object/" />
 <meta property="article:published_time" content="2020-09-23T11:36:50+08:00" />
@@ -166,6 +163,12 @@ $obj = (object) array(&#39;1&#39; =&gt; &#39;foo&#39;);var_dump(isset($obj-&gt;
     </div>
 
     
+      <span class="post-tags">
+        
+          <a href="/tags/php/">#php</a>&nbsp;
+        
+      </span>
+    
 
     
 
@@ -243,8 +246,12 @@ var_dump(key($obj)); // PHP 7.2.0 后输出 &#39;string(1) &#34;1&#34;&#39;，�
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

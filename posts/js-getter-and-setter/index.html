@@ -11,15 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="有两种类型的对象属性。
-第一种是 数据属性。我们已经知道如何使用它们了。到目前为止，我们使用过的所有属性都是数据属性。
-第二种类型的属性是新东西。它是 访问器属性（accessor properties）。它们本质上是用于获取和设置值的函数，但从外部代码来看就像常规属性。
-Getter 和 setter 访问器属性由 “getter” 和 “setter” 方法表示。在对象字面量中，它们用 get 和 set 表示：
-let obj = {get propName() {// 当读取 obj.propName 时，getter 起作用 },set propName(value) {// 当执行 obj.propName = value 操作时，setter 起作用 }};从外表看，访问器属性看起来就像一个普通属性。这就是访问器属性的设计思想。我们不以函数的方式 调用 user.fullName，我们正常 读取 它：getter 在幕后运行。
-访问器描述符 访问器属性的描述符与数据属性的不同。
-对于访问器属性，没有 value 和 writable，但是有 get 和 set 函数。
-所以访问器描述符可能有：
- get —— 一个没有参数的函数，在读取属性时工作， set —— 带有一个参数的函数，当属性被设置时调用， enumerable —— 与数据属性的相同， configurable —— 与数据属性的相同。  更聪明的 getter/setter Getter/setter 可以用作“真实”属性值的包装器，以便对它们进行更多的控制。"
+  content="有两种类型的对象属性。 第一种是 数据属性。我们已经知道如何使用它们了。到目前为止，我们使用过的所有属性都是数据属性。 第二种类型的属性是新东西。"
 />
 <meta
   name="keywords"
@@ -52,28 +44,12 @@ let obj = {get propName() {// 当读取 obj.propName 时，getter 起作用 }
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js Getter and Setter"/>
-<meta name="twitter:description" content="有两种类型的对象属性。
-第一种是 数据属性。我们已经知道如何使用它们了。到目前为止，我们使用过的所有属性都是数据属性。
-第二种类型的属性是新东西。它是 访问器属性（accessor properties）。它们本质上是用于获取和设置值的函数，但从外部代码来看就像常规属性。
-Getter 和 setter 访问器属性由 “getter” 和 “setter” 方法表示。在对象字面量中，它们用 get 和 set 表示：
-let obj = {get propName() {// 当读取 obj.propName 时，getter 起作用 },set propName(value) {// 当执行 obj.propName = value 操作时，setter 起作用 }};从外表看，访问器属性看起来就像一个普通属性。这就是访问器属性的设计思想。我们不以函数的方式 调用 user.fullName，我们正常 读取 它：getter 在幕后运行。
-访问器描述符 访问器属性的描述符与数据属性的不同。
-对于访问器属性，没有 value 和 writable，但是有 get 和 set 函数。
-所以访问器描述符可能有：
- get —— 一个没有参数的函数，在读取属性时工作， set —— 带有一个参数的函数，当属性被设置时调用， enumerable —— 与数据属性的相同， configurable —— 与数据属性的相同。  更聪明的 getter/setter Getter/setter 可以用作“真实”属性值的包装器，以便对它们进行更多的控制。"/>
+<meta name="twitter:description" content="有两种类型的对象属性。 第一种是 数据属性。我们已经知道如何使用它们了。到目前为止，我们使用过的所有属性都是数据属性。 第二种类型的属性是新东西。"/>
 
 
 
 <meta property="og:title" content="Js Getter and Setter" />
-<meta property="og:description" content="有两种类型的对象属性。
-第一种是 数据属性。我们已经知道如何使用它们了。到目前为止，我们使用过的所有属性都是数据属性。
-第二种类型的属性是新东西。它是 访问器属性（accessor properties）。它们本质上是用于获取和设置值的函数，但从外部代码来看就像常规属性。
-Getter 和 setter 访问器属性由 “getter” 和 “setter” 方法表示。在对象字面量中，它们用 get 和 set 表示：
-let obj = {get propName() {// 当读取 obj.propName 时，getter 起作用 },set propName(value) {// 当执行 obj.propName = value 操作时，setter 起作用 }};从外表看，访问器属性看起来就像一个普通属性。这就是访问器属性的设计思想。我们不以函数的方式 调用 user.fullName，我们正常 读取 它：getter 在幕后运行。
-访问器描述符 访问器属性的描述符与数据属性的不同。
-对于访问器属性，没有 value 和 writable，但是有 get 和 set 函数。
-所以访问器描述符可能有：
- get —— 一个没有参数的函数，在读取属性时工作， set —— 带有一个参数的函数，当属性被设置时调用， enumerable —— 与数据属性的相同， configurable —— 与数据属性的相同。  更聪明的 getter/setter Getter/setter 可以用作“真实”属性值的包装器，以便对它们进行更多的控制。" />
+<meta property="og:description" content="有两种类型的对象属性。 第一种是 数据属性。我们已经知道如何使用它们了。到目前为止，我们使用过的所有属性都是数据属性。 第二种类型的属性是新东西。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-getter-and-setter/" />
 <meta property="article:published_time" content="2020-10-23T11:58:24+08:00" />
@@ -242,7 +218,7 @@ let obj = {get propName() {// 当读取 obj.propName 时，getter 起作用 }
 </span></code></pre></div><p>所以，name 被存储在 _name 属性中，并通过 getter 和 setter 进行访问。</p>
 <p>从技术上讲，外部代码可以使用 user.<em>name 直接访问 name。但是，这儿有一个众所周知的约定，即以下划线 &ldquo;</em>&rdquo; 开头的属性是内部属性，不应该从对象外部进行访问。</p>
 <h3 id="兼容性">兼容性</h3>
-<h3 id="参考资料">参考资料</h3>
+<h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://zh.javascript.info/property-accessors">属性的 getter 和 setter</a></li>
 </ul>
@@ -300,8 +276,12 @@ let obj = {get propName() {// 当读取 obj.propName 时，getter 起作用 }
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

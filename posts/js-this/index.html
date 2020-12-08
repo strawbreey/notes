@@ -11,9 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
-this 的值是在代码运行时计算出来的，它取决于代码上下文。
-let user = { name: &amp;#34;John&amp;#34; };let admin = { name: &amp;#34;Admin&amp;#34; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &amp;#34;this&amp;#34; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin[&amp;#39;f&amp;#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。"
+  content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。 this 的值是在代码运行时计算出来的，它取决于代码"
 />
 <meta
   name="keywords"
@@ -46,16 +44,12 @@ let user = { name: &amp;#34;John&amp;#34; };let admin = { name: &amp;#34;Admin&
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js This"/>
-<meta name="twitter:description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
-this 的值是在代码运行时计算出来的，它取决于代码上下文。
-let user = { name: &#34;John&#34; };let admin = { name: &#34;Admin&#34; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &#34;this&#34; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin[&#39;f&#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。"/>
+<meta name="twitter:description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。 this 的值是在代码运行时计算出来的，它取决于代码"/>
 
 
 
 <meta property="og:title" content="Js This" />
-<meta property="og:description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
-this 的值是在代码运行时计算出来的，它取决于代码上下文。
-let user = { name: &#34;John&#34; };let admin = { name: &#34;Admin&#34; };function sayHi() {alert( this.name );}// 在两个对象中使用相同的函数user.f = sayHi;admin.f = sayHi;// 这两个调用有不同的 this 值// 函数内部的 &#34;this&#34; 是“点符号前面”的那个对象user.f(); // John（this == user）admin.f(); // Admin（this == admin）admin[&#39;f&#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。" />
+<meta property="og:description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。 this 的值是在代码运行时计算出来的，它取决于代码" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-this/" />
 <meta property="article:published_time" content="2020-10-29T11:15:16+08:00" />
@@ -444,7 +438,7 @@ foo(); //undefined
 </span><span style="color:#75715e">// 所以它不可以被覆盖
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">call</span>( window ); <span style="color:#75715e">// 2
 </span></code></pre></div><p>创建了一个函数 bar()，在它的内部手动调用 foo.call(obj)，由此强制 this 绑定到 obj 并调用 foo。无论你过后怎样调用函数 bar，它总是手动使用 obj 调用 foo。这种绑定即明确又坚定，所以我们称之为 硬绑定（hard binding）</p>
-<h3 id="参考资料">参考资料</h3>
+<h3 id="参考链接">参考链接</h3>
 <ul>
 <li>[你不懂JS: this 与对象原型] (<a href="https://github.com/getify/You-Dont-Know-JS/blob/1ed-zh-CN/this%20%26%20object%20prototypes/ch2.md">https://github.com/getify/You-Dont-Know-JS/blob/1ed-zh-CN/this%20%26%20object%20prototypes/ch2.md</a>)</li>
 </ul>
@@ -502,8 +496,12 @@ foo(); //undefined
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

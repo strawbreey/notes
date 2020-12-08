@@ -29,10 +29,7 @@
         
         
         
-          DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。
-tokenList.toggle(token, force);参数列表
- token 标记列表中你想探查并切换的 DOMString . force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。  example：
-// &amp;lt;span class=&amp;#34;a b&amp;#34;&amp;gt;classList is &amp;#39;a b&amp;#39;&amp;lt;/span&amp;gt;var span = document.querySelector(&amp;#34;span&amp;#34;);var classes = span.classList;span.onclick = function() {// 如果有就添加, 没有删除 var result = classes.toggle(&amp;#34;c&amp;#34;);if(result) {span.textContent = &amp;#34;&amp;#39;c&amp;#39; added; classList is now &amp;#39;&amp;#34; + classes + &amp;#34;&amp;#39;.
+          DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。 tokenList.toggle(token, force); 参数列表 token 标记列表中你想探查并切换的 DOMString . force
           
         
         </description>

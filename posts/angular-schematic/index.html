@@ -11,16 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
-原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
-Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
-生成原理图 ng generate my-schematic-collection:my-schematic-name# orng generate my-schematic-name --collection collection-name配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
-为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
-添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
-生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
-更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
-生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
-ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &amp;ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。"
+  content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collec"
 />
 <meta
   name="keywords"
@@ -53,30 +44,12 @@ ng generate @angular/material:table 更新原理图 ng update如果你给这个
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Angular Schematic"/>
-<meta name="twitter:description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
-原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
-Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
-生成原理图 ng generate my-schematic-collection:my-schematic-name# orng generate my-schematic-name --collection collection-name配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
-为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
-添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
-生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
-更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
-生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
-ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。"/>
+<meta name="twitter:description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collec"/>
 
 
 
 <meta property="og:title" content="Angular Schematic" />
-<meta property="og:description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
-原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
-Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
-生成原理图 ng generate my-schematic-collection:my-schematic-name# orng generate my-schematic-name --collection collection-name配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
-为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
-添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
-生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
-更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
-生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
-ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。" />
+<meta property="og:description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collec" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/angular-schematic/" />
 <meta property="article:published_time" content="2020-09-18T19:40:57+08:00" />
@@ -314,8 +287,12 @@ ng generate my-schematic-name --collection collection-name
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       

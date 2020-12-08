@@ -11,16 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="判断是不是字符串：
-1 基本方法：
-typeof(str)==&#39;string&amp;rsquo;
-2 利用js原生函数：
-Object.prototype.toString // ƒ toString() { [native code] }
-Object.prototype.toString.call(str)==&amp;rdquo;[object String]&amp;rdquo;
-（1）在Object.prototype这个this（上下文环境）中执行toString原生函数，会把里边的环境变量类型打印出来。
-Object.prototype.toString() &amp;ndash;&amp;gt;执行结果&amp;ndash;&amp;gt;&amp;rdquo;[object Object]&amp;rdquo;
-（2）如果我们改变this（上下文环境），就能打印出当前环境变量类型，根据这个类型来判断。
-Object.prototype.toString.call(str) &amp;ndash;&amp;gt;执行结果&amp;ndash;&amp;gt;&amp;rdquo;[object String]&amp;rdquo;"
+  content="判断是不是字符串： 1 基本方法： typeof(str)==&#39;string&amp;rsquo; 2 利用js原生函数： Object.prototype.toString // ƒ toString() { [native code] } Object.prototype.toString.call(str)==&amp;rdquo;[object String]&amp;rdquo; （1）在Object.prototype这个this（上下文环境）中"
 />
 <meta
   name="keywords"
@@ -53,30 +44,12 @@ Object.prototype.toString.call(str) &amp;ndash;&amp;gt;执行结果&amp;ndash;&a
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js String Equal"/>
-<meta name="twitter:description" content="判断是不是字符串：
-1 基本方法：
-typeof(str)==&#39;string&rsquo;
-2 利用js原生函数：
-Object.prototype.toString // ƒ toString() { [native code] }
-Object.prototype.toString.call(str)==&rdquo;[object String]&rdquo;
-（1）在Object.prototype这个this（上下文环境）中执行toString原生函数，会把里边的环境变量类型打印出来。
-Object.prototype.toString() &ndash;&gt;执行结果&ndash;&gt;&rdquo;[object Object]&rdquo;
-（2）如果我们改变this（上下文环境），就能打印出当前环境变量类型，根据这个类型来判断。
-Object.prototype.toString.call(str) &ndash;&gt;执行结果&ndash;&gt;&rdquo;[object String]&rdquo;"/>
+<meta name="twitter:description" content="判断是不是字符串： 1 基本方法： typeof(str)==&#39;string&rsquo; 2 利用js原生函数： Object.prototype.toString // ƒ toString() { [native code] } Object.prototype.toString.call(str)==&rdquo;[object String]&rdquo; （1）在Object.prototype这个this（上下文环境）中"/>
 
 
 
 <meta property="og:title" content="Js String Equal" />
-<meta property="og:description" content="判断是不是字符串：
-1 基本方法：
-typeof(str)==&#39;string&rsquo;
-2 利用js原生函数：
-Object.prototype.toString // ƒ toString() { [native code] }
-Object.prototype.toString.call(str)==&rdquo;[object String]&rdquo;
-（1）在Object.prototype这个this（上下文环境）中执行toString原生函数，会把里边的环境变量类型打印出来。
-Object.prototype.toString() &ndash;&gt;执行结果&ndash;&gt;&rdquo;[object Object]&rdquo;
-（2）如果我们改变this（上下文环境），就能打印出当前环境变量类型，根据这个类型来判断。
-Object.prototype.toString.call(str) &ndash;&gt;执行结果&ndash;&gt;&rdquo;[object String]&rdquo;" />
+<meta property="og:description" content="判断是不是字符串： 1 基本方法： typeof(str)==&#39;string&rsquo; 2 利用js原生函数： Object.prototype.toString // ƒ toString() { [native code] } Object.prototype.toString.call(str)==&rdquo;[object String]&rdquo; （1）在Object.prototype这个this（上下文环境）中" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-string-equal/" />
 <meta property="article:published_time" content="2020-11-16T19:36:59+08:00" />
@@ -259,8 +232,12 @@ Object.prototype.toString.call(str) &ndash;&gt;执行结果&ndash;&gt;&rdquo;[ob
 
 <script src="/assets/main.js"></script>
 
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script src="/assets/mermaid.min.js"></script>
+
+
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
       
