@@ -36,6 +36,8 @@ hasCJKLanguage = true
   #(default is Description or Summary metadata in the front matter)
   # rssFullText = true
 
+  toc = true
+
 [languages]
   [languages.en]
     title = "Strawbreey Notes"

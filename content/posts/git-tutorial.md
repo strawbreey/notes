@@ -114,7 +114,6 @@ git status -short
 !lib.a
 
 # 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO
-/TODO
 
 # 忽略任何目录下名为 build 的文件夹
 build/
