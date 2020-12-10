@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 3 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>跨源资源共享 (CORS: Cross-origin resource sharing) （或通俗地译为跨域资源共享）是一种机制，该机制使用附加的 HTTP 头来告诉浏览器，准许运行在一个源上的Web应用访问位于另一不同源选定的资源。 当一个Web应用发起一个与自身所在源（域，协议和端口）不同的HTTP请求时，它发起的即跨源HTTP请求。</p>
 <p>出于安全性，浏览器限制脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非响应报文包含了正确CORS响应头。</p>
 <p>跨源域资源共享（ CORS ）机制允许 Web 应用服务器进行跨源访问控制，从而使跨源数据传输得以安全进行。现代浏览器支持在 API 容器中（例如 XMLHttpRequest 或 Fetch ）使用 CORS，以降低跨源 HTTP 请求所带来的风险。</p>
@@ -205,6 +208,7 @@
   Content-Type: text/html; charset=utf-8
 </code></pre>
     </div>
+    
     
       
         <div class="pagination">
@@ -244,6 +248,21 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -257,12 +276,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

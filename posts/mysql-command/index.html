@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 1 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Can<span style="color:#e6db74">&#39;t connect to local MySQL server through socket &#39;</span>/var/lib/mysql/mysql.sock<span style="color:#960050;background-color:#1e0010">&#39;</span> 
 </code></pre></div><h1 id="导出数据">导出数据</h1>
 <p>mysqldump -u root -p ieg_waibao_test &gt; test_db.sql;</p>
@@ -176,6 +179,7 @@
 <p>mysql -h 服务器ip地址 -P 3306 -u root -p</p>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -215,6 +219,17 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#登录mysql">登录mysql</a></li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -228,12 +243,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

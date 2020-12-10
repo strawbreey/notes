@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>fread</p>
 <p>fread — 读取文件（可安全用于二进制文件）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">fread ( resource $handle , int $length ) : string
@@ -224,6 +227,7 @@ while (false !== ($char = fgetc($fp))) {
 </code></pre></div>
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -262,6 +266,23 @@ while (false !== ($char = fgetc($fp))) {
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#返回值">返回值</a></li>
+        <li><a href="#注意">注意</a></li>
+        <li><a href="#file_get_contents">file_get_contents</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -275,12 +296,12 @@ while (false !== ($char = fgetc($fp))) {
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

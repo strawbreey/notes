@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Docker Tutorial ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/docker-tutorial/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker Tutorial"/>
+<meta name="twitter:description" content="Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流"/>
+
+
+
+<meta property="og:title" content="Docker Tutorial" />
+<meta property="og:description" content="Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/docker-tutorial/" />
+<meta property="article:published_time" content="2020-12-10T10:51:20+08:00" />
+<meta property="article:modified_time" content="2020-12-10T10:51:20+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Docker Tutorial</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-10
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 1 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。</p>
+<p>Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
+<h3 id="docker的应用场景">Docker的应用场景</h3>
+<ul>
+<li>
+<p>Web 应用的自动化打包和发布。</p>
+</li>
+<li>
+<p>自动化测试和持续集成、发布。</p>
+</li>
+<li>
+<p>在服务型环境中部署和调整数据库或其他的后台应用。</p>
+</li>
+<li>
+<p>从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境。</p>
+</li>
+</ul>
+<h3 id="docker-镜像加速">Docker 镜像加速</h3>
+<p>国内从 DockerHub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。Docker 官方和国内很多云服务商都提供了国内加速器服务，例如：</p>
+<ul>
+<li>网易：https://hub-mirror.c.163.com/</li>
+<li>阿里云：https://&lt;你的ID&gt;.mirror.aliyuncs.com</li>
+<li>七牛云加速器：https://reg-mirror.qiniu.com</li>
+</ul>
+<p>当配置某一个加速器地址之后，若发现拉取不到镜像，请切换到另一个加速器地址。国内各大云服务商均提供了 Docker 镜像加速服务，建议根据运行 Docker 的云平台选择对应的镜像加速服务。</p>
+
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/docker-install/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Docker Install</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/js-slice/">
+                  <span class="button__text">Js Slice</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#docker的应用场景">Docker的应用场景</a></li>
+        <li><a href="#docker-镜像加速">Docker 镜像加速</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

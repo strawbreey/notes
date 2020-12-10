@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 4 min read</span
+        >
+      
     </div>
 
     
@@ -173,7 +177,6 @@
     
 
     <div class="post-content">
-      
       <h3 id="获取值-getvalue">获取值 getValue()</h3>
 <p>用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class User
@@ -461,6 +464,7 @@ array_values(array_diff_key(ArrayHelper::index($b, key), ArrayHelper::index($a, 
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -499,6 +503,35 @@ array_values(array_diff_key(ArrayHelper::index($b, key), ArrayHelper::index($a, 
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#获取值-getvalue">获取值 getValue()</a></li>
+        <li><a href="#设置值-setvalue">设置值 setValue()</a></li>
+        <li><a href="#删除值-remove">删除值 remove()</a></li>
+        <li><a href="#检查键名是否存在-keyexists">检查键名是否存在 keyExists</a></li>
+        <li><a href="#检索列--getcolumn">检索列  getColumn()</a></li>
+        <li><a href="#重建数组索引-index">重建数组索引 index()</a></li>
+        <li><a href="#建立哈希表-map">建立哈希表 map()</a></li>
+        <li><a href="#多维排序">多维排序</a></li>
+        <li><a href="#检测数组类型">检测数组类型</a></li>
+        <li><a href="#html-编码和解码值">HTML 编码和解码值</a></li>
+        <li><a href="#合并数组merging-arrays">合并数组（Merging Arrays）</a></li>
+        <li><a href="#对象转换为数组">对象转换为数组</a></li>
+        <li><a href="#测试阵列">测试阵列</a></li>
+        <li><a href="#test">Test</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考文档">参考文档</a></li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -512,12 +545,12 @@ array_values(array_diff_key(ArrayHelper::index($b, key), ArrayHelper::index($a, 
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

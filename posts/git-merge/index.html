@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 12 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>在<code>git merge</code>命令中，有以下三种使用参数：</p>
 <pre><code>git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s &lt;strategy&gt;] [-X &lt;strategy-option&gt;] [-S[&lt;keyid&gt;]] [--[no-]rerere-autoupdate] [-m &lt;msg&gt;] [&lt;commit&gt;...]
 git merge &lt;msg&gt; HEAD &lt;commit&gt;...
@@ -386,6 +389,7 @@ subtree是修改版的recursive策略。当合并树A和树B时，如果B是A的
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -424,6 +428,24 @@ subtree是修改版的recursive策略。当合并树A和树B时，如果B是A的
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#git-merge简介">git-merge简介</a></li>
+        <li><a href="#git-参数">git 参数</a></li>
+        <li><a href="#关于合并的其他概念">关于合并的其他概念</a></li>
+        <li><a href="#合并策略">合并策略</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -437,12 +459,12 @@ subtree是修改版的recursive策略。当合并树A和树B时，如果B是A的
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

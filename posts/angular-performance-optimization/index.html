@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <h3 id="angualr-性能优化">Angualr 性能优化</h3>
 <p>angular编译的js基本都很大达到了mb级别，加载起来很占用带宽，不过angualr也提供了编译时压缩代码的功能，angular build指定为 &ndash;prod即可</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 注释下面这一行可以激活延迟加载策略
@@ -220,6 +223,7 @@ http<span style="color:#f92672">{</span>
 </code></pre></div>
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -258,6 +262,24 @@ http<span style="color:#f92672">{</span>
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#angualr-性能优化">Angualr 性能优化</a></li>
+        <li><a href="#angular脏检查change-detection机制">Angular脏检查（Change Detection）机制</a></li>
+        <li><a href="#cdn加速">CDN加速</a></li>
+        <li><a href="#nginx缓存">nginx缓存</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -271,12 +293,12 @@ http<span style="color:#f92672">{</span>
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

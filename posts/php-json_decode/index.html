@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 1 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>对 JSON 格式的字符串进行解码</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">json_decode ( string $json [, bool $assoc = FALSE [, int $depth = 512 [, int $options = 0 ]]] ) : mixed
 </code></pre></div><p>接受一个 JSON 编码的字符串并且把它转换为 PHP 变量</p>
@@ -190,6 +193,7 @@
 <p>通过恰当的 PHP 类型返回在 json 中编码的数据。值true, false 和 null 会相应地返回 TRUE, FALSE 和 NULL。 如果 json 无法被解码， 或者编码数据深度超过了递归限制的话，将会返回NULL 。</p>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -229,6 +233,22 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#参数">参数</a></li>
+        <li><a href="#返回值">返回值</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -242,12 +262,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

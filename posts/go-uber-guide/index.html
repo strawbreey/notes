@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 16 min read</span
+        >
+      
     </div>
 
     
@@ -173,7 +177,6 @@
     
 
     <div class="post-content">
-      
       <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h1 id="uber-go-style-guide">Uber Go Style Guide</h1>
@@ -2340,6 +2343,7 @@ that make sense for their projects.</p>
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -2378,6 +2382,85 @@ that make sense for their projects.</p>
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#guidelines">Guidelines</a>
+      <ul>
+        <li><a href="#pointers-to-interfaces">Pointers to Interfaces</a></li>
+        <li><a href="#verify-interface-compliance">Verify Interface Compliance</a></li>
+        <li><a href="#receivers-and-interfaces">Receivers and Interfaces</a></li>
+        <li><a href="#zero-value-mutexes-are-valid">Zero-value Mutexes are Valid</a></li>
+        <li><a href="#copy-slices-and-maps-at-boundaries">Copy Slices and Maps at Boundaries</a></li>
+        <li><a href="#defer-to-clean-up">Defer to Clean Up</a></li>
+        <li><a href="#channel-size-is-one-or-none">Channel Size is One or None</a></li>
+        <li><a href="#start-enums-at-one">Start Enums at One</a></li>
+        <li><a href="#use-time-to-handle-time">Use <code>&quot;time&quot;</code> to handle time</a></li>
+        <li><a href="#error-types">Error Types</a></li>
+        <li><a href="#error-wrapping">Error Wrapping</a></li>
+        <li><a href="#handle-type-assertion-failures">Handle Type Assertion Failures</a></li>
+        <li><a href="#dont-panic">Don&rsquo;t Panic</a></li>
+        <li><a href="#use-gouberorgatomic">Use go.uber.org/atomic</a></li>
+        <li><a href="#avoid-mutable-globals">Avoid Mutable Globals</a></li>
+        <li><a href="#avoid-embedding-types-in-public-structs">Avoid Embedding Types in Public Structs</a></li>
+        <li><a href="#avoid-using-built-in-names">Avoid Using Built-In Names</a></li>
+        <li><a href="#avoid-init">Avoid <code>init()</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#performance">Performance</a>
+      <ul>
+        <li><a href="#prefer-strconv-over-fmt">Prefer strconv over fmt</a></li>
+        <li><a href="#avoid-string-to-byte-conversion">Avoid string-to-byte conversion</a></li>
+        <li><a href="#prefer-specifying-container-capacity">Prefer Specifying Container Capacity</a></li>
+      </ul>
+    </li>
+    <li><a href="#style">Style</a>
+      <ul>
+        <li><a href="#be-consistent">Be Consistent</a></li>
+        <li><a href="#group-similar-declarations">Group Similar Declarations</a></li>
+        <li><a href="#import-group-ordering">Import Group Ordering</a></li>
+        <li><a href="#package-names">Package Names</a></li>
+        <li><a href="#function-names">Function Names</a></li>
+        <li><a href="#import-aliasing">Import Aliasing</a></li>
+        <li><a href="#function-grouping-and-ordering">Function Grouping and Ordering</a></li>
+        <li><a href="#reduce-nesting">Reduce Nesting</a></li>
+        <li><a href="#unnecessary-else">Unnecessary Else</a></li>
+        <li><a href="#top-level-variable-declarations">Top-level Variable Declarations</a></li>
+        <li><a href="#prefix-unexported-globals-with-_">Prefix Unexported Globals with _</a></li>
+        <li><a href="#embedding-in-structs">Embedding in Structs</a></li>
+        <li><a href="#use-field-names-to-initialize-structs">Use Field Names to Initialize Structs</a></li>
+        <li><a href="#local-variable-declarations">Local Variable Declarations</a></li>
+        <li><a href="#nil-is-a-valid-slice">nil is a valid slice</a></li>
+        <li><a href="#reduce-scope-of-variables">Reduce Scope of Variables</a></li>
+        <li><a href="#avoid-naked-parameters">Avoid Naked Parameters</a></li>
+        <li><a href="#use-raw-string-literals-to-avoid-escaping">Use Raw String Literals to Avoid Escaping</a></li>
+        <li><a href="#initializing-struct-references">Initializing Struct References</a></li>
+        <li><a href="#initializing-maps">Initializing Maps</a></li>
+        <li><a href="#format-strings-outside-printf">Format Strings outside Printf</a></li>
+        <li><a href="#naming-printf-style-functions">Naming Printf-style Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#patterns">Patterns</a>
+      <ul>
+        <li><a href="#test-tables">Test Tables</a></li>
+        <li><a href="#functional-options">Functional Options</a></li>
+      </ul>
+    </li>
+    <li><a href="#linting">Linting</a>
+      <ul>
+        <li><a href="#lint-runners">Lint Runners</a></li>
+        <li><a href="#参考连接">参考连接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -2391,12 +2474,12 @@ that make sense for their projects.</p>
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

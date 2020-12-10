@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <h3 id="字符集">字符集</h3>
 <p>统一使用 utf8mb4 MySQL在 5.5.3 之后增加了 utf8mb4 字符编码，简单的说utf8mb4才是真正的utf-8，因为它可以支持4个字节每个字符，ps：当我们要存储emoji表情就必须使用utf8mb4，性能上不会有损失</p>
 <h3 id="建表规范">建表规范</h3>
@@ -200,6 +203,7 @@
 </ul>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -239,6 +243,22 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#字符集">字符集</a></li>
+        <li><a href="#建表规范">建表规范</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -252,12 +272,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

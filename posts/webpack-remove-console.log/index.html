@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 1 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>去除 console 是交由 UglifyJS 处理的.webpack 内置了 webpack.optimize.UglifyJsPlugin, 也提供了 UglifyjsWebpackPlugin 插件形式调用, 二者的区别是: webpack.optimize.UglifyJSPlugin 基于的是 UglifyjsWebpackPlugin v0.4.6 版本, 而单独使用插件的版本可以获得更高的版本.  个人比较追新, 所以说一下 UglifyjsWebpackPlugin 的使用方式, 配置项比内置的丰富了些:在你的 webpack.config.js 中 (只列出关键点):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UglifyJsPlugin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;uglifyjs-webpack-plugin&#39;</span>);
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
@@ -196,6 +199,7 @@ window.console.error = function () { };</p>
 </ul>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -235,6 +239,23 @@ window.console.error = function () { };</p>
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装webpack-插件">安装webpack 插件</a></li>
+        <li><a href="#去掉console">去掉console</a></li>
+        <li><a href="#参考资料">参考资料</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -248,12 +269,12 @@ window.console.error = function () { };</p>
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

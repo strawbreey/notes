@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Bootstrap Helper ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Clearfix Quickly and easily clear floated content within a container by adding a clearfix utility.
+Easily clear floats by adding .clearfix to the parent element. Can also be used as a mixin.
+&amp;lt;div class=&amp;#34;clearfix&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt;The mixin source code:
+@mixin clearfix() {&amp;amp;::after {display: block;clear: both;content: &amp;#34;&amp;#34;;}}Use the mixin in SCSS:
+.element {@includeclearfix;}Colored links You can use the .link-* classes to colorize links."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/bootstrap-helper/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bootstrap Helper"/>
+<meta name="twitter:description" content="Clearfix Quickly and easily clear floated content within a container by adding a clearfix utility.
+Easily clear floats by adding .clearfix to the parent element. Can also be used as a mixin.
+&lt;div class=&#34;clearfix&#34;&gt;...&lt;/div&gt;The mixin source code:
+@mixin clearfix() {&amp;::after {display: block;clear: both;content: &#34;&#34;;}}Use the mixin in SCSS:
+.element {@includeclearfix;}Colored links You can use the .link-* classes to colorize links."/>
+
+
+
+<meta property="og:title" content="Bootstrap Helper" />
+<meta property="og:description" content="Clearfix Quickly and easily clear floated content within a container by adding a clearfix utility.
+Easily clear floats by adding .clearfix to the parent element. Can also be used as a mixin.
+&lt;div class=&#34;clearfix&#34;&gt;...&lt;/div&gt;The mixin source code:
+@mixin clearfix() {&amp;::after {display: block;clear: both;content: &#34;&#34;;}}Use the mixin in SCSS:
+.element {@includeclearfix;}Colored links You can use the .link-* classes to colorize links." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/bootstrap-helper/" />
+<meta property="article:published_time" content="2020-12-09T14:46:32+08:00" />
+<meta property="article:modified_time" content="2020-12-09T14:46:32+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Bootstrap Helper</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-09
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 5 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <h3 id="clearfix">Clearfix</h3>
+<p>Quickly and easily clear floated content within a container by adding a clearfix utility.</p>
+<p>Easily clear floats by adding .clearfix to the parent element. Can also be used as a mixin.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clearfix&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>The mixin source code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">mixin</span> <span style="color:#f92672">clearfix</span><span style="color:#f92672">()</span> {
+  <span style="color:#f92672">&amp;</span>::<span style="color:#a6e22e">after</span> {
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+    <span style="color:#66d9ef">clear</span>: <span style="color:#66d9ef">both</span>;
+    <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
+  }
+}
+</code></pre></div><p>Use the mixin in SCSS:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#a6e22e">.element</span> {
+  <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> clearfix</span>;
+}
+</code></pre></div><h3 id="colored-links">Colored links</h3>
+<p>You can use the .link-* classes to colorize links. Unlike the .text-* classes, these classes have a :hover and :focus state.</p>
+<pre><code>&lt;a href=&quot;#&quot; class=&quot;link-primary&quot;&gt;Primary link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-secondary&quot;&gt;Secondary link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-success&quot;&gt;Success link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-danger&quot;&gt;Danger link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-warning&quot;&gt;Warning link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-info&quot;&gt;Info link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-light&quot;&gt;Light link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-dark&quot;&gt;Dark link&lt;/a&gt;
+</code></pre><h3 id="ratios">Ratios</h3>
+<p>Use generated pseudo elements to make an element maintain the aspect ratio of your choosing. Perfect for responsively handling video or slideshow embeds based on the width of the parent.</p>
+<p>Use the ratio helper to manage the aspect ratios of external content like <!-- raw HTML omitted -->s, <!-- raw HTML omitted -->s, <!-- raw HTML omitted -->s, and <!-- raw HTML omitted -->s. These helpers also can be used on any standard HTML child element (e.g., a <!-- raw HTML omitted --> or <!-- raw HTML omitted -->). Styles are applied from the parent .ratio class directly to the child.</p>
+<p>Aspect ratios are declared in a Sass map and included in each class via CSS variable, which also allows custom aspect ratios.</p>
+<p>Example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-16x9&#34;</span>&gt;
+  &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.youtube.com/embed/zpOULjyy-n8?rel=0&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YouTube video&#34;</span> <span style="color:#a6e22e">allowfullscreen</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">ratio-16x9</span> {
+    --aspect-ratio: calc(<span style="color:#ae81ff">9</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-1x1&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;1x1&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-4x3&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;4x3&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-16x9&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;16x9&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-21x9&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;21x9&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--aspect-ratio: 50%;&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;2x1&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>Sass map
+Within _variables.scss, you can change the aspect ratios you want to use. Here’s our default $ratio-aspect-ratios map. Modify the map as you like and recompile your Sass to put them to use.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">$aspect-ratios<span style="color:#f92672">:</span> (<span style="color:#960050;background-color:#1e0010"></span>
+  <span style="color:#e6db74">&#34;1x1&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span><span style="color:#f92672">,</span><span style="color:#960050;background-color:#1e0010"></span>
+  <span style="color:#e6db74">&#34;4x3&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">calc</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>)<span style="color:#f92672">,</span><span style="color:#960050;background-color:#1e0010"></span>
+  <span style="color:#e6db74">&#34;16x9&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">calc</span>(<span style="color:#ae81ff">9</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>)<span style="color:#f92672">,</span><span style="color:#960050;background-color:#1e0010"></span>
+  <span style="color:#e6db74">&#34;21x9&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">calc</span>(<span style="color:#ae81ff">9</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">21</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>)<span style="color:#960050;background-color:#1e0010"></span>
+);
+</code></pre></div><h3 id="position">Position</h3>
+<p>Use these helpers for quickly configuring the position of an element.</p>
+<ul>
+<li>Fixed top</li>
+</ul>
+<p>Position an element at the top of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed-top&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><ul>
+<li>Fixed bottom</li>
+</ul>
+<p>Position an element at the bottom of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed-bottom&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><ul>
+<li>Sticky top</li>
+</ul>
+<p>Position an element at the top of the viewport, from edge to edge, but only after you scroll past it. The .sticky-top utility uses CSS’s position: sticky, which isn’t fully supported in all browsers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-top&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><ul>
+<li>Responsive sticky top</li>
+</ul>
+<p>Responsive variations also exist for .sticky-top utility.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-sm-top&#34;</span>&gt;Stick to the top on viewports sized SM (small) or wider&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-md-top&#34;</span>&gt;Stick to the top on viewports sized MD (medium) or wider&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-lg-top&#34;</span>&gt;Stick to the top on viewports sized LG (large) or wider&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-xl-top&#34;</span>&gt;Stick to the top on viewports sized XL (extra-large) or wider&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><h3 id="visually-hidden">Visually hidden</h3>
+<p>Use these helpers to visually hide elements but keep them accessible to assistive technologies.</p>
+<p>Visually hide an element while still allowing it to be exposed to assistive technologies (such as screen readers) with .visually-hidden. Use .visually-hidden-focusable to visually hide an element by default, but to display it when it’s focused (e.g. by a keyboard-only user). Can also be used as mixins.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;visually-hidden&#34;</span>&gt;Title for screen readers&lt;/<span style="color:#f92672">h2</span>&gt;
+&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;visually-hidden-focusable&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#content&#34;</span>&gt;Skip to main content&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#a6e22e">.visually-hidden-title</span> {
+  <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> visually-hidden</span>;
+}
+
+<span style="color:#a6e22e">.skip-navigation</span> {
+  <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> visually-hidden-focusable</span>;
+}
+</code></pre></div><h3 id="stretched-link">Stretched link</h3>
+<p>Make any HTML element or Bootstrap component clickable by “stretching” a nested link via CSS.</p>
+<p>Add .stretched-link to a link to make its containing block clickable via a ::after pseudo element. In most cases, this means that an element with position: relative; that contains a link with the .stretched-link class is clickable.</p>
+<p>Cards have position: relative by default in Bootstrap, so in this case you can safely add the .stretched-link class to a link in the card without any other HTML changes.</p>
+<p>Multiple links and tap targets are not recommended with stretched links. However, some position and z-index styles can help should this be required.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 18rem;&#34;</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-img-top&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span>&gt;
+    &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-title&#34;</span>&gt;Card with stretched link&lt;/<span style="color:#f92672">h5</span>&gt;
+    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-text&#34;</span>&gt;Some quick example text to build on the card title and make up the bulk of the card&#39;s content.&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary stretched-link&#34;</span>&gt;Go somewhere&lt;/<span style="color:#f92672">a</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>Most custom components do not have position: relative by default, so we need to add the .position-relative here to prevent the link from stretching outside the parent element.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-flex position-relative&#34;</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flex-shrink-0 me-3&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mt-0&#34;</span>&gt;Custom component with stretched link&lt;/<span style="color:#f92672">h5</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stretched-link&#34;</span>&gt;Go somewhere&lt;/<span style="color:#f92672">a</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>Identifying the containing block</p>
+<p>If the stretched link doesn’t seem to work, the containing block will probably be the cause. The following CSS properties will make an element the containing block:</p>
+<p>A position value other than static
+A transform or perspective value other than none
+A will-change value of transform or perspective
+A filter value other than none or a will-change value of filter (only works on Firefox)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 18rem;&#34;</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-img-top&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span>&gt;
+    &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-title&#34;</span>&gt;Card with stretched links&lt;/<span style="color:#f92672">h5</span>&gt;
+    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-text&#34;</span>&gt;Some quick example text to build on the card title and make up the bulk of the card&#39;s content.&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-text&#34;</span>&gt;
+      &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stretched-link text-danger&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;position: relative;&#34;</span>&gt;Stretched link will not work here, because &lt;<span style="color:#f92672">code</span>&gt;position: relative&lt;/<span style="color:#f92672">code</span>&gt; is added to the link&lt;/<span style="color:#f92672">a</span>&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-text bg-light&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;transform: rotate(0);&#34;</span>&gt;
+      This &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-warning stretched-link&#34;</span>&gt;stretched link&lt;/<span style="color:#f92672">a</span>&gt; will only be spread over the &lt;<span style="color:#f92672">code</span>&gt;p&lt;/<span style="color:#f92672">code</span>&gt;-tag, because a transform is applied to it.
+    &lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><h3 id="text-truncation">Text truncation</h3>
+<p>Truncate long strings of text with an ellipsis.</p>
+<p>For longer content, you can add a .text-truncate class to truncate the text with an ellipsis. Requires display: inline-block or display: block.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Block level --&gt;</span>
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-2 text-truncate&#34;</span>&gt;
+    Praeterea iter est quasdam res quas ex communi.
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+<span style="color:#75715e">&lt;!-- Inline level --&gt;</span>
+&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-inline-block text-truncate&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;max-width: 150px;&#34;</span>&gt;
+  Praeterea iter est quasdam res quas ex communi.
+&lt;/<span style="color:#f92672">span</span>&gt;
+</code></pre></div>
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/grpc/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Grpc</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/bootstrap-utilities/">
+                  <span class="button__text">Bootstrap Utilities</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#clearfix">Clearfix</a></li>
+        <li><a href="#colored-links">Colored links</a></li>
+        <li><a href="#ratios">Ratios</a></li>
+        <li><a href="#position">Position</a></li>
+        <li><a href="#visually-hidden">Visually hidden</a></li>
+        <li><a href="#stretched-link">Stretched link</a></li>
+        <li><a href="#text-truncation">Text truncation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

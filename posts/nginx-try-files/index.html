@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <h3 id="基本配置">基本配置</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  location / <span style="color:#f92672">{</span>
     root         /data/website/baidu;
@@ -187,6 +190,7 @@ try_files 会尝试寻找这个文件, 如果存在名为 /$root/example的文�
 <p>需要注意的是，只有最后一个参数可以引起一个内部重定向，之前的参数只设置内部URI的指向。最后一个参数是回退URI且必须存在，否则会出现内部500错误。命名的location也可以使用在最后一个参数中。与rewrite指令不同，如果回退URI不是命名的location那么$args不会自动保留，如果你想保留$args，则必须明确声明。</p>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -226,6 +230,22 @@ try_files 会尝试寻找这个文件, 如果存在名为 /$root/example的文�
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#基本配置">基本配置</a></li>
+        <li><a href="#try_files指令说明">try_files指令说明</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -239,12 +259,12 @@ try_files 会尝试寻找这个文件, 如果存在名为 /$root/example的文�
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

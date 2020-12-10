@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 4 min read</span
+        >
+      
     </div>
 
     
@@ -173,7 +177,6 @@
     
 
     <div class="post-content">
-      
       <h3 id="flush">flush</h3>
 <p>flush — 刷新输出缓冲</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">flush ( void ) : void
@@ -237,6 +240,7 @@
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -275,6 +279,29 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#flush">flush</a></li>
+        <li><a href="#ob_flush">ob_flush</a></li>
+        <li><a href="#ob_clean">ob_clean</a></li>
+        <li><a href="#ob_end_clean">ob_end_clean</a></li>
+        <li><a href="#ob_end_flush">ob_end_flush</a></li>
+        <li><a href="#flush和ob_flush的使用上有一些特别注意的地方造成无法刷新输出缓冲">flush和ob_flush的使用上有一些特别注意的地方，造成无法刷新输出缓冲</a></li>
+        <li><a href="#phpini中有两个关键参数会影响到php的缓存输出控制">php.ini中有两个关键参数会影响到php的缓存输出控制</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#参考链接">参考链接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -288,12 +315,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

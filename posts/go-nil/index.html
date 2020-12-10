@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 3 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>nil is a frequently (频繁的) used and important predeclared identifier (预定义标识符) in Go. It is the literal representation (代表) of zero values of many kinds of types. Many new Go programmers with experiences of some other popular languages may view nil as the counterpart (相对应) of null (or NULL) in other languages. This is partly right, but there are many differences between nil in Go and null (or NULL) in other languages.</p>
 <p>The remaining (剩下) of this article will list all kinds of facts and details related to nil (nil 相关的事实和细节).</p>
 <h3 id="nil-is-a-predeclared-identifier-in-go">nil Is a Predeclared Identifier in Go</h3>
@@ -393,6 +396,7 @@ Example:</p>
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -431,6 +435,33 @@ Example:</p>
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#nil-is-a-predeclared-identifier-in-go">nil Is a Predeclared Identifier in Go</a></li>
+        <li><a href="#nil-can-represent-zero-values-of-many-types">nil Can Represent Zero Values of Many Types</a></li>
+        <li><a href="#predeclared-nil-has-not-a-default-type">Predeclared nil Has Not a Default Type</a></li>
+        <li><a href="#predeclared-nil-is-not-a-keyword-in-go">Predeclared nil Is Not a Keyword in Go</a></li>
+        <li><a href="#the-sizes-of-nil-values-with-types-of-different-kinds-may-be-different">The Sizes of Nil Values With Types of Different Kinds May Be Different</a></li>
+        <li><a href="#two-nil-values-of-two-different-types-may-be-not-comparable">Two Nil Values of Two Different Types May Be Not Comparable</a></li>
+        <li><a href="#two-nil-values-of-the-same-type-may-be-not-comparable">Two Nil Values of the Same Type May Be Not Comparable</a></li>
+        <li><a href="#two-nil-values-may-be-not-equal">Two Nil Values May Be Not Equal</a></li>
+        <li><a href="#retrieving-elements-from-nil-maps-will-not-panic">Retrieving Elements From Nil Maps Will Not Panic</a></li>
+        <li><a href="#it-is-legal-to-range-over-nil-channels-maps-slices-and-array-pointers">It Is Legal to Range Over Nil Channels, Maps, Slices, and Array Pointers</a></li>
+        <li><a href="#invoking-methods-through-non-interface-nil-receiver-arguments-will-not-panic">Invoking Methods Through Non-Interface Nil Receiver Arguments Will Not Panic</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#参考资料">参考资料</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -444,12 +475,12 @@ Example:</p>
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

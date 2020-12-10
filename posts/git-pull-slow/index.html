@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <h3 id="解决git节点清点耗时较长的方法">解决git节点清点耗时较长的方法</h3>
 <p>出现节点清点耗时较长的原因</p>
 <p>由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。</p>
@@ -179,8 +182,30 @@
 <li>本地仓库执行节点清理命令
 节点清理压缩（需较多内存）：在git所在目录执行命令：<code>git gc --aggressive --prune=now</code>。将本地节点清理压缩，减小差异节点清点耗时。</li>
 </ul>
+<p>在网站https://www.ipaddress.com/分别搜索<code>github.global.ssl.fastly.net</code>和<code>github.com</code>，查到的IP与我之前在hosts存储的对应IP不同，使用新IP替换旧IP
+使用<code>sudo killall -HUP mDNSResponder</code>命令刷新mac的DNS
+由于看到github的两个IP属地为美国，因此将代理服务器切换至美国，并开启全局模式（实际验证PAC模式问题依旧），重新打开一个终端，git pull速度大幅提升</p>
+<p>git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。</p>
+<p>只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–&gt;域名的映射，刷新DNS缓存便可。</p>
+<p>在网站 <a href="https://www.ipaddress.com/">https://www.ipaddress.com/</a> 分别搜索：</p>
+<pre><code>github.global.ssl.fastly.net
+github.com
+</code></pre><p>打开hosts文件</p>
+<ul>
+<li>Windows上的hosts文件路径在C:\Windows\System32\drivers\etc\hosts</li>
+<li>Linux的hosts文件路径在：sudo vim /etc/hosts</li>
+</ul>
+<p>在hosts文件末尾添加两行(对应上面查到的ip)</p>
+<pre><code>199.232.69.194  github.global-ssl.fastly.net
+140.82.113.3 github.com
+</code></pre><p>保存更新DNS</p>
+<ul>
+<li>Winodws: CMD，输入ipconfig /flushdns</li>
+<li>Linux: 终端 输入sudo /etc/init.d/networking restart</li>
+</ul>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -220,6 +245,21 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#解决git节点清点耗时较长的方法">解决git节点清点耗时较长的方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -233,12 +273,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

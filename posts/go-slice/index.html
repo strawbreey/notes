@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>Go 语言切片是对数组的抽象。</p>
 <p>Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片(&ldquo;动态数组&rdquo;),与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。</p>
 <h3 id="定义切片">定义切片</h3>
@@ -270,6 +273,7 @@
 </code></pre></div>
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -308,6 +312,26 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义切片">定义切片</a></li>
+        <li><a href="#slice-init-切片初始化">slice init 切片初始化</a></li>
+        <li><a href="#len-和-cap">len() 和 cap()</a></li>
+        <li><a href="#空nil切片">空(nil)切片</a></li>
+        <li><a href="#切片截取">切片截取</a></li>
+      </ul>
+    </li>
+    <li><a href="#append-和-copy-函数">append() 和 copy() 函数</a></li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -321,12 +345,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

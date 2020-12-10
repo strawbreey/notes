@@ -16,6 +16,412 @@
     
     
     <item>
+      <title>Windows Subsystem for Linux</title>
+      <link>/posts/windows-subsystem-for-linux/</link>
+      <pubDate>Thu, 10 Dec 2020 11:12:36 +0800</pubDate>
+      
+      <guid>/posts/windows-subsystem-for-linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          参考资料 Frequently Asked Questions about Windows Subsystem for Linux
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Install</title>
+      <link>/posts/docker-install/</link>
+      <pubDate>Thu, 10 Dec 2020 10:56:24 +0800</pubDate>
+      
+      <guid>/posts/docker-install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          介绍 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。 Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows 安装 下载并安装do
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Tutorial</title>
+      <link>/posts/docker-tutorial/</link>
+      <pubDate>Thu, 10 Dec 2020 10:51:20 +0800</pubDate>
+      
+      <guid>/posts/docker-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Slice</title>
+      <link>/posts/js-slice/</link>
+      <pubDate>Wed, 09 Dec 2020 20:14:00 +0800</pubDate>
+      
+      <guid>/posts/js-slice/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Array slice() 方法可从已有的数组中返回选定的元素。 arrayObject.slice(start,end) start 必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Proposal</title>
+      <link>/posts/go-proposal/</link>
+      <pubDate>Wed, 09 Dec 2020 17:45:06 +0800</pubDate>
+      
+      <guid>/posts/go-proposal/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Pipelines</title>
+      <link>/posts/go-pipelines/</link>
+      <pubDate>Wed, 09 Dec 2020 17:29:19 +0800</pubDate>
+      
+      <guid>/posts/go-pipelines/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Rxgo</title>
+      <link>/posts/rxgo/</link>
+      <pubDate>Wed, 09 Dec 2020 17:26:53 +0800</pubDate>
+      
+      <guid>/posts/rxgo/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ReactiveX ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.
+ReactiveX is a new, alternative way of asynchronous programming to callbacks, promises and deferred. It is about processing streams of events or items, with events being any occurrences or changes within the system. A stream of events is called an Observable.
+An operator is a function that defines an Observable, how and when it should emit data.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Rxjs</title>
+      <link>/posts/rxjs/</link>
+      <pubDate>Wed, 09 Dec 2020 17:25:55 +0800</pubDate>
+      
+      <guid>/posts/rxjs/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Safe Standard</title>
+      <link>/posts/go-safe-standard/</link>
+      <pubDate>Wed, 09 Dec 2020 15:47:53 +0800</pubDate>
+      
+      <guid>/posts/go-safe-standard/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Standards</title>
+      <link>/posts/go-standards/</link>
+      <pubDate>Wed, 09 Dec 2020 15:47:16 +0800</pubDate>
+      
+      <guid>/posts/go-standards/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Study</title>
+      <link>/posts/go-study/</link>
+      <pubDate>Wed, 09 Dec 2020 15:32:17 +0800</pubDate>
+      
+      <guid>/posts/go-study/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          todo 参考资料 Go语言圣经 Go 语言设计与实现 RPC 概念 proto3知识
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Grpc Web</title>
+      <link>/posts/grpc-web/</link>
+      <pubDate>Wed, 09 Dec 2020 15:15:07 +0800</pubDate>
+      
+      <guid>/posts/grpc-web/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Grpc</title>
+      <link>/posts/grpc/</link>
+      <pubDate>Wed, 09 Dec 2020 15:01:11 +0800</pubDate>
+      
+      <guid>/posts/grpc/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Why gRPC? gRPC is a modern open source high performance RPC framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in last mile of distributed computing to connect devices, mobile applications and browsers to backend services. Simple service definition Define your service using Protocol Buffers, a powerful
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Bootstrap Helper</title>
+      <link>/posts/bootstrap-helper/</link>
+      <pubDate>Wed, 09 Dec 2020 14:46:32 +0800</pubDate>
+      
+      <guid>/posts/bootstrap-helper/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Clearfix Quickly and easily clear floated content within a container by adding a clearfix utility.
+Easily clear floats by adding .clearfix to the parent element. Can also be used as a mixin.
+&amp;lt;div class=&amp;#34;clearfix&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt;The mixin source code:
+@mixin clearfix() {&amp;amp;::after {display: block;clear: both;content: &amp;#34;&amp;#34;;}}Use the mixin in SCSS:
+.element {@includeclearfix;}Colored links You can use the .link-* classes to colorize links.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Bootstrap Utilities</title>
+      <link>/posts/bootstrap-utilities/</link>
+      <pubDate>Wed, 09 Dec 2020 13:13:47 +0800</pubDate>
+      
+      <guid>/posts/bootstrap-utilities/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cyclomatic Complexity</title>
+      <link>/posts/cyclomatic-complexity/</link>
+      <pubDate>Wed, 09 Dec 2020 00:20:13 +0800</pubDate>
+      
+      <guid>/posts/cyclomatic-complexity/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          圈复杂度(Cyclomatic complexity)是一种代码复杂度的衡量标准，在1976年由Thomas J. McCabe, Sr. 提出。 在软件测试的概念里，圈
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Char</title>
+      <link>/posts/mysql-char/</link>
+      <pubDate>Tue, 08 Dec 2020 19:41:54 +0800</pubDate>
+      
+      <guid>/posts/mysql-char/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Having</title>
+      <link>/posts/mysql-having/</link>
+      <pubDate>Tue, 08 Dec 2020 19:32:47 +0800</pubDate>
+      
+      <guid>/posts/mysql-having/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          SQL HAVING Clause The SQL HAVING Clause The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions. HAVING Syntax SELECT column_name(s) FROM table_name WHERE condition GROUP BY column_name(s) HAVING condition ORDER BY column_name(s); Demo Database Below is a selection from the &amp;ldquo;Customers&amp;rdquo; table in the Northwind sample database: CustomerID CustomerName ContactName Address City PostalCode Country 1 Alfreds Futterkiste Maria Anders Obere Str.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Mysql Leetcode</title>
+      <link>/posts/mysql-leetcode/</link>
+      <pubDate>Tue, 08 Dec 2020 19:30:48 +0800</pubDate>
+      
+      <guid>/posts/mysql-leetcode/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          编写一个 SQL 查询，查找 Person 表中所有重复的电子邮箱。 +----+---------+ | Id | Email | +----+---------+ | 1 | a@b.com | | 2 | c@d.com | | 3 | a@b.com | +----+---------+ select Email from Person group by Email having count(Email) &amp;gt; 1; -- 前面提到聚合函数（cou
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Tutorial</title>
+      <link>/posts/go-tutorial/</link>
+      <pubDate>Mon, 07 Dec 2020 23:51:46 +0800</pubDate>
+      
+      <guid>/posts/go-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          标识符 25 个关键字 break default func interface select case defer go map struct chan else goto package switch const fallthrough if range type continue for import return var 36个预定义标识符 append bool byte cap close complex complex64 complex128 uint16 copy false float32 float64 imag int int8 int16 uint32 int32 int64 iota len make new nil panic uint64 print
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Idea Todo Tags</title>
       <link>/posts/idea-todo-tags/</link>
       <pubDate>Mon, 07 Dec 2020 23:45:40 +0800</pubDate>
@@ -1849,7 +2255,7 @@
         
         
         
-          判断是不是字符串： 1 基本方法： typeof(str)==&#39;string&amp;rsquo; 2 利用js原生函数： Object.prototype.toString // ƒ toString() { [native code] } Object.prototype.toString.call(str)==&amp;rdquo;[object String]&amp;rdquo; （1）在Object.prototype这个this（上下文环境）中
+          判断是不是字符串： 1 基本方法： typeof(str)==&amp;#39;string&amp;#39; 2 利用js原生函数： Object.prototype.toString // ƒ toString() { [native code] } Object.prototype.toString.call(str)==&amp;#34;[object String]&amp;#34; （1）在Object.prototype这个this（上下文环境）中
           
         
         </description>

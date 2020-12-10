@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 15 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <ol>
 <li>SQL语句执行步骤</li>
 </ol>
@@ -695,6 +698,7 @@ WHERE MANAGER = ‘BILL GATES’
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -733,6 +737,27 @@ WHERE MANAGER = ‘BILL GATES’
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#execution-plan">复制代码
+SQL&gt; list
+1  SELECT *
+2  FROM dept, emp
+3* WHERE emp.deptno = dept.deptno
+SQL&gt; set autotrace traceonly /*traceonly 可以不显示执行结果*/
+SQL&gt; /
+14 rows selected.
+Execution Plan</a></li>
+    <li><a href="#execution-plan-1">SQL&gt; select * from  multiindexusage where indb = 1;
+Execution Plan</a></li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -746,12 +771,12 @@ WHERE MANAGER = ‘BILL GATES’
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

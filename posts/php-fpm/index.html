@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -173,7 +177,6 @@
     
 
     <div class="post-content">
-      
       <p>PHP-FPM是一个PHP的PHPFastCGI管理器。</p>
 <p>PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kill -INT <span style="color:#e6db74">`</span>cat /var/run/php-fpm/php-fpm.pid<span style="color:#e6db74">`</span>
@@ -246,6 +249,7 @@ $ sudo systemctl reload php7.0-fpm.service
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -284,6 +288,13 @@ $ sudo systemctl reload php7.0-fpm.service
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents"></nav>
+    </aside>
+  
+
       </div>
 
       
@@ -297,12 +308,12 @@ $ sudo systemctl reload php7.0-fpm.service
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

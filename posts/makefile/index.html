@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 4 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>本文对GNU的make进行讲述，环境是RedHat Linux 8.0，make的版本是3.80, 遵循于IEEE 1003.2-1992 标准的（POSIX.2)。</p>
 <h3 id="程序的编译和链接">程序的编译和链接</h3>
 <p>一般来说，无论是C、C++、还是pas，首先要把源文件编译成中间代码文件，在Windows下也就是 .obj 文件，UNIX下是 .o 文件，即 Object File，这个动作叫做编译（compile）。然后再把大量的Object File合成执行文件，这个动作叫作链接（link）。</p>
@@ -228,6 +231,7 @@
 </code></pre></div>
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -266,6 +270,22 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#程序的编译和链接">程序的编译和链接</a></li>
+        <li><a href="#makefile-介绍">Makefile 介绍</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -279,12 +299,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

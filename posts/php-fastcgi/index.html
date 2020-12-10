@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 3 min read</span
+        >
+      
     </div>
 
     
@@ -173,7 +177,6 @@
     
 
     <div class="post-content">
-      
       <h3 id="cgi">CGI</h3>
 <p>CGI全称&quot;通用网关接口&rdquo;（Common Gateway Interface），用于HTTP服务器与其它机器上的程序服务通信交流的一种工具，CGI程序须运行在网络服务器上。</p>
 <p>传统CGI接口方式的主要缺点是性能较差，因为每次HTTP服务器遇到动态程序时都需要重启解析器来执行解析，然后结果被返回给HTTP服务器。这在处理高并发访问几乎是不可用的，因此就诞生了FastCGI。另外传统的CGI接口方式安全性也很差。</p>
@@ -204,6 +207,7 @@
 </ul>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -243,6 +247,25 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cgi">CGI</a></li>
+        <li><a href="#fastcgi">FastCGI</a></li>
+        <li><a href="#fpm">FPM</a></li>
+        <li><a href="#cgifastcgiphp-fpm-之间的关系">CGI、FastCGI、php-fpm 之间的关系</a></li>
+        <li><a href="#参考链接">参考链接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -256,12 +279,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

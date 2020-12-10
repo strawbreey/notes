@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
     </div>
 
     
@@ -173,7 +177,6 @@
     
 
     <div class="post-content">
-      
       <p>一方面要最大化程度利用数据库的并发访问，另一方面要确保每个用户能以一致性读取和修改数据。</p>
 <p>为此就有了锁的机制，也是数据库系统区别于文件系统的关键特征</p>
 <h3 id="local-与-latch">local 与 latch</h3>
@@ -205,6 +208,7 @@
 <p><img src="/images/20201109154256.png" alt="解决死锁的方法"></p>
 
     </div>
+    
     
       
         <div class="pagination">
@@ -244,6 +248,23 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#local-与-latch">local 与 latch</a></li>
+        <li><a href="#锁的算法">锁的算法</a></li>
+        <li><a href="#死锁">死锁</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -257,12 +278,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

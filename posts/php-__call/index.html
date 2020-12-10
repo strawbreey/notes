@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 3 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>__construct()方法到实例化时自动加载function</p>
 <p>__call()方法用来获取没有定义的function</p>
 <p>__get()得到私有变量值</p>
@@ -255,6 +258,7 @@ echo $info-&gt;province;              //已经被删除了， 所以不会显示
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -293,6 +297,13 @@ echo $info-&gt;province;              //已经被删除了， 所以不会显示
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents"></nav>
+    </aside>
+  
+
       </div>
 
       
@@ -306,12 +317,12 @@ echo $info-&gt;province;              //已经被删除了， 所以不会显示
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       

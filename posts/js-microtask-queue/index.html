@@ -160,6 +160,10 @@
 
 
       
+        <span class="post-read-time"
+          >— 3 min read</span
+        >
+      
     </div>
 
     
@@ -167,7 +171,6 @@
     
 
     <div class="post-content">
-      
       <p>浏览器中 JavaScript 的执行流程和 Node.js 中的流程都是基于 事件循环 的。</p>
 <p>理解事件循环的工作方式对于代码优化很重要，有时对于正确的架构也很重要。</p>
 <h2 id="事件循环">事件循环</h2>
@@ -230,6 +233,7 @@
 
     </div>
     
+    
       
         <div class="pagination">
           <div class="pagination__title">
@@ -268,6 +272,24 @@
     
   </div>
 
+
+  
+    <aside class="aside table-of-contents">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#事件循环">事件循环</a>
+      <ul>
+        <li><a href="#拆分cpu过载任务">拆分CPU过载任务</a></li>
+        <li><a href="#进度指示">进度指示</a></li>
+      </ul>
+    </li>
+    <li><a href="#宏任务和微任务">宏任务和微任务</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </aside>
+  
+
       </div>
 
       
@@ -281,12 +303,12 @@
 
 <script src="/assets/main.js"></script>
 
-<script src="/assets/mermaid.min.js"></script>
 
 
-<script>hljs.initHighlightingOnLoad();</script>
+
+
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 
       
