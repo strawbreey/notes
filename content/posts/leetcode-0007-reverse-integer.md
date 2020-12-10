@@ -50,10 +50,3 @@ var reverse = function(x) {
     return num * flag
 };
 ```
-
-```go
-
-```
-
-```php
-```
