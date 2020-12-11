@@ -4,6 +4,8 @@ date: 2020-12-10T10:56:24+08:00
 draft: false
 ---
 
+## 介绍 
+
 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。
 
 Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows
@@ -28,13 +30,9 @@ settings -> Docker Engine
 ```json
 {
   "registry-mirrors": [
-    // 添加代理
-    "https://mirrors.tencent.com"
-    // 网易
-    "https://hub-mirror.c.163.com/"
-    //阿里云：
-    "https://<你的ID>.mirror.aliyuncs.com"
-    // 七牛云加速器
+    "https://mirrors.tencent.com",
+    "https://hub-mirror.c.163.com/",
+    "https://<你的ID>.mirror.aliyuncs.com",
     "https://reg-mirror.qiniu.com"
   ],
   "insecure-registries": [],
