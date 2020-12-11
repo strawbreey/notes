@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -243,14 +246,29 @@ echo $client-&gt;helloWorld();
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#php-请求远程">php 请求远程</a>
       <ul>
@@ -259,8 +277,29 @@ echo $client-&gt;helloWorld();
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/rpc-and-http/">Rpc and Http</a></li>
+    
+    <li><a href="/posts/yii-run-applications/">Yii Run Applications</a></li>
+    
+    <li><a href="/posts/javascript-prototype-apply/">Javascript Prototype Apply</a></li>
+    
+    <li><a href="/posts/what-happens-when-you-open-website/">What Happens When You Open Website</a></li>
+    
+    <li><a href="/posts/nginx-try-files/">Nginx Try Files</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -280,6 +319,7 @@ echo $client-&gt;helloWorld();
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

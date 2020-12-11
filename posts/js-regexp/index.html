@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -294,14 +297,29 @@ Unicode：修饰符 “u” 和 class \p{&hellip;}。</p>
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#正则表达式">正则表达式</a>
       <ul>
@@ -311,8 +329,29 @@ Unicode：修饰符 “u” 和 class \p{&hellip;}。</p>
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/linux-command/">Linux Command</a></li>
+    
+    <li><a href="/posts/go-source-code/">Go Source Code</a></li>
+    
+    <li><a href="/posts/go-builtin/">Go Builtin</a></li>
+    
+    <li><a href="/posts/go-strings-api/">Go Strings Api</a></li>
+    
+    <li><a href="/posts/php-session/">Php Session</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -332,6 +371,7 @@ Unicode：修饰符 “u” 和 class \p{&hellip;}。</p>
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

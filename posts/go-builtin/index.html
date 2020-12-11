@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -376,14 +379,29 @@ uintptr is an integer type that is large enough to hold the bit pattern of any p
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -409,8 +427,29 @@ uintptr is an integer type that is large enough to hold the bit pattern of any p
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/go-strings-api/">Go Strings Api</a></li>
+    
+    <li><a href="/posts/php-session/">Php Session</a></li>
+    
+    <li><a href="/posts/php-core/">Php Core</a></li>
+    
+    <li><a href="/posts/sql-cross-join/">Sql Cross Join</a></li>
+    
+    <li><a href="/posts/nginx-rewrite/">Nginx Rewrite</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -430,6 +469,7 @@ uintptr is an integer type that is large enough to hold the bit pattern of any p
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

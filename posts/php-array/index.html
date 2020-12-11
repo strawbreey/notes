@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -457,14 +460,29 @@ implementation 实现
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -476,8 +494,29 @@ implementation 实现
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/web-safe/">Web Safe</a></li>
+    
+    <li><a href="/posts/vim-tutorial/">Vim Tutorial</a></li>
+    
+    <li><a href="/posts/shell-tutorial/">Shell Tutorial</a></li>
+    
+    <li><a href="/posts/sql-transaction-processing/">Sql Transaction Processing</a></li>
+    
+    <li><a href="/posts/go-goroutine/">Go Goroutine</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -497,6 +536,7 @@ implementation 实现
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

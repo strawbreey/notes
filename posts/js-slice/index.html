@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -195,7 +198,7 @@
 <p>Array	包含被删除项目的新数组，如果有的话。</p>
 <p>splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。</p>
 <p>如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。</p>
-<h3 id="string">String</h3>
+<h2 id="string">String</h2>
 <ol>
 <li>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</li>
 </ol>
@@ -258,25 +261,61 @@
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
         <li><a href="#array">Array</a></li>
-        <li><a href="#string">String</a></li>
       </ul>
     </li>
+    <li><a href="#string">String</a></li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/go-proposal/">Go Proposal</a></li>
+    
+    <li><a href="/posts/go-pipelines/">Go Pipelines</a></li>
+    
+    <li><a href="/posts/rxgo/">Rxgo</a></li>
+    
+    <li><a href="/posts/rxjs/">Rxjs</a></li>
+    
+    <li><a href="/posts/go-safe-standard/">Go Safe Standard</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -296,6 +335,7 @@
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

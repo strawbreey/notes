@@ -41,6 +41,9 @@ Reserve the constructor for simple initialization such as wiring constructor par
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -410,22 +413,58 @@ Reserve the constructor for simple initialization such as wiring constructor par
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#why-services">Why services</a></li>
     <li><a href="#heading"></a></li>
     <li><a href="#exmplate">exmplate</a></li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/css-interivew-repaint-and-refolw/">Css Interivew Repaint and Refolw</a></li>
+    
+    <li><a href="/posts/css-interview-bfc/">Css Interview BFC</a></li>
+    
+    <li><a href="/posts/mysql-command/">Mysql Command</a></li>
+    
+    <li><a href="/posts/go-types/">Go Types</a></li>
+    
+    <li><a href="/posts/linux-install-php/">Linux Install Php</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -445,6 +484,7 @@ Reserve the constructor for simple initialization such as wiring constructor par
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

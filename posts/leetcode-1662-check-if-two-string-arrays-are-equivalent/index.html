@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -241,16 +244,52 @@ word2 表示的字符串为 &quot;a&quot; + &quot;bc&quot; -&gt; &quot;abc&quot;
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents"></nav>
+    </section>
 
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/leetcode-0002-add-two-numbers/">Leetcode 0002 Add Two Numbers</a></li>
+    
+    <li><a href="/posts/js-string/">Js String</a></li>
+    
+    <li><a href="/posts/js-array-prototype/">Js Array Prototype</a></li>
+    
+    <li><a href="/posts/git-merge/">Git Merge</a></li>
+    
+    <li><a href="/posts/depth-first-search/">Depth First Search</a></li>
+    
+  </ul>
   
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents"></nav>
-    </aside>
-  
+</section>
+  </aside>
 
       </div>
 
@@ -270,6 +309,7 @@ word2 表示的字符串为 &quot;a&quot; + &quot;bc&quot; -&gt; &quot;abc&quot;
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

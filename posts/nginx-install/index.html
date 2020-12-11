@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -241,14 +244,29 @@ nginx -s stop              <span style="color:#75715e"># 停止 Nginx</span>
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#安装nginx">安装Nginx</a>
       <ul>
@@ -257,8 +275,29 @@ nginx -s stop              <span style="color:#75715e"># 停止 Nginx</span>
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/mysql-character/">Mysql Character</a></li>
+    
+    <li><a href="/posts/dependency-injection/">Dependency Injection</a></li>
+    
+    <li><a href="/posts/php-fpm/">Php Fpm</a></li>
+    
+    <li><a href="/posts/js-closure/">Js Closure</a></li>
+    
+    <li><a href="/posts/git-workflow/">Git Workflow</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -278,6 +317,7 @@ nginx -s stop              <span style="color:#75715e"># 停止 Nginx</span>
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -239,16 +242,52 @@
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents"></nav>
+    </section>
 
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/leetcode-0452-mininum-number-of-arrows-to-burst-balloons/">Leetcode 0452 Mininum Number of Arrows to Burst Balloons</a></li>
+    
+    <li><a href="/posts/markdown/">Markdown</a></li>
+    
+    <li><a href="/posts/leetcode-0056-merge-intervals/">Leetcode 0056 Merge Intervals</a></li>
+    
+    <li><a href="/posts/js-codepointat/">Js CodePointAt</a></li>
+    
+    <li><a href="/posts/js-getownpropertynames/">Js GetOwnPropertyNames</a></li>
+    
+  </ul>
   
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents"></nav>
-    </aside>
-  
+</section>
+  </aside>
 
       </div>
 
@@ -268,6 +307,7 @@
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

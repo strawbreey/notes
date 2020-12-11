@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -414,14 +417,29 @@ allkeys-lfu（least frequently used）：当内存不足以容纳新写入数据
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -430,8 +448,29 @@ allkeys-lfu（least frequently used）：当内存不足以容纳新写入数据
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/sql-interview/">Sql Interview</a></li>
+    
+    <li><a href="/posts/yii-active-query/">Yii Active Query</a></li>
+    
+    <li><a href="/posts/js-promise/">Js Promise</a></li>
+    
+    <li><a href="/posts/php-header/">Php Header</a></li>
+    
+    <li><a href="/posts/nignx-x-sendfile/">Nignx X Sendfile</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -451,6 +490,7 @@ allkeys-lfu（least frequently used）：当内存不足以容纳新写入数据
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

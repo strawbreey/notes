@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -259,14 +262,29 @@ a:-webkit-any-link {</p>
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -275,8 +293,29 @@ a:-webkit-any-link {</p>
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/webapi-fetch/">Webapi Fetch</a></li>
+    
+    <li><a href="/posts/angular-ngmodule/">Angular Ngmodule</a></li>
+    
+    <li><a href="/posts/angular-architecture/">Angular Architecture</a></li>
+    
+    <li><a href="/posts/mysql-innodb/">Mysql Innodb</a></li>
+    
+    <li><a href="/posts/nginx-proxy-pass/">Nginx Proxy Pass</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -296,6 +335,7 @@ a:-webkit-any-link {</p>
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

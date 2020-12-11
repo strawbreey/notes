@@ -38,6 +38,9 @@
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
@@ -248,14 +251,29 @@
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
-
-  
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents">
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -264,8 +282,29 @@
     </li>
   </ul>
 </nav>
-    </aside>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/leetcode-0020-valid-parentheses/">Leetcode 0020 Valid Parentheses</a></li>
+    
+    <li><a href="/posts/leetcode-0009-palidrome-number/">Leetcode 0009 Palidrome Number</a></li>
+    
+    <li><a href="/posts/swagger-openapi-specification/">Swagger OpenApi Specification</a></li>
+    
+    <li><a href="/posts/swagger-open-api/">Swagger Open Api</a></li>
+    
+    <li><a href="/posts/api-doc/">Api Doc</a></li>
+    
+  </ul>
   
+</section>
+  </aside>
 
       </div>
 
@@ -285,6 +324,7 @@
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 

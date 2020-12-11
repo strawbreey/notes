@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="ReactiveX ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.
+  content="ReactiveX1 ReactiveX2 ReactiveX3 ReactiveX2 ReactiveX3 ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.
 ReactiveX is a new, alternative way of asynchronous programming to callbacks, promises and deferred. It is about processing streams of events or items, with events being any occurrences or changes within the system. A stream of events is called an Observable.
 An operator is a function that defines an Observable, how and when it should emit data."
 />
@@ -40,20 +40,23 @@ An operator is a function that defines an Observable, how and when it should emi
 />
 <link rel="shortcut icon" href="/favicon.png" />
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rxgo"/>
-<meta name="twitter:description" content="ReactiveX ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.
+<meta name="twitter:description" content="ReactiveX1 ReactiveX2 ReactiveX3 ReactiveX2 ReactiveX3 ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.
 ReactiveX is a new, alternative way of asynchronous programming to callbacks, promises and deferred. It is about processing streams of events or items, with events being any occurrences or changes within the system. A stream of events is called an Observable.
 An operator is a function that defines an Observable, how and when it should emit data."/>
 
 
 
 <meta property="og:title" content="Rxgo" />
-<meta property="og:description" content="ReactiveX ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.
+<meta property="og:description" content="ReactiveX1 ReactiveX2 ReactiveX3 ReactiveX2 ReactiveX3 ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.
 ReactiveX is a new, alternative way of asynchronous programming to callbacks, promises and deferred. It is about processing streams of events or items, with events being any occurrences or changes within the system. A stream of events is called an Observable.
 An operator is a function that defines an Observable, how and when it should emit data." />
 <meta property="og:type" content="article" />
@@ -177,8 +180,12 @@ An operator is a function that defines an Observable, how and when it should emi
     
 
     <div class="post-content">
-      <p>ReactiveX
-ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.</p>
+      <h1 id="reactivex1">ReactiveX1</h1>
+<h2 id="reactivex2">ReactiveX2</h2>
+<h3 id="reactivex3">ReactiveX3</h3>
+<h2 id="reactivex2-1">ReactiveX2</h2>
+<h3 id="reactivex3-1">ReactiveX3</h3>
+<p>ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language.</p>
 <p>ReactiveX is a new, alternative way of asynchronous programming to callbacks, promises and deferred. It is about processing streams of events or items, with events being any occurrences or changes within the system. A stream of events is called an Observable.</p>
 <p>An operator is a function that defines an Observable, how and when it should emit data. The list of operators covered is available here.</p>
 <p>The RxGo implementation is based on the concept of pipelines. A pipeline is a series of stages connected by channels, where each stage is a group of goroutines running the same function.</p>
@@ -227,16 +234,65 @@ In this example, the final items are sent in a channel, available to a consumer.
       
         
 
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
       
     
   </div>
 
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#reactivex2">ReactiveX2</a>
+      <ul>
+        <li><a href="#reactivex3">ReactiveX3</a></li>
+      </ul>
+    </li>
+    <li><a href="#reactivex2-1">ReactiveX2</a>
+      <ul>
+        <li><a href="#reactivex3-1">ReactiveX3</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
 
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/rxjs/">Rxjs</a></li>
+    
+    <li><a href="/posts/go-safe-standard/">Go Safe Standard</a></li>
+    
+    <li><a href="/posts/go-standards/">Go Standards</a></li>
+    
+    <li><a href="/posts/go-study/">Go Study</a></li>
+    
+    <li><a href="/posts/grpc-web/">Grpc Web</a></li>
+    
+  </ul>
   
-    <aside class="aside table-of-contents">
-      <nav id="TableOfContents"></nav>
-    </aside>
-  
+</section>
+  </aside>
 
       </div>
 
@@ -256,6 +312,7 @@ In this example, the final items are sent in a channel, available to a consumer.
 
 
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
 
 
 
