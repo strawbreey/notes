@@ -10,10 +10,110 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright©2019-2020 Strawbreey. All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 10 Dec 2020 19:37:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 19:58:00 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue Reactivity</title>
+      <link>/posts/vue-reactivity/</link>
+      <pubDate>Fri, 11 Dec 2020 19:58:00 +0800</pubDate>
+      
+      <guid>/posts/vue-reactivity/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          参考资料 深入响应式原理
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Scss Difference Sass</title>
+      <link>/posts/scss-difference-sass/</link>
+      <pubDate>Fri, 11 Dec 2020 17:50:40 +0800</pubDate>
+      
+      <guid>/posts/scss-difference-sass/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Sass is a CSS pre-processor with syntax advancements. Style sheets in the advanced syntax are processed by the program, and turned into regular CSS style sheets. However, they do not extend the CSS standard itself. CSS variables are supported and can be utilized but not as well as pre-processor variables. For the difference between SCSS and Sass, this text on the Sass documentation page should answer the question: There are
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Scss Tutorial</title>
+      <link>/posts/scss-tutorial/</link>
+      <pubDate>Fri, 11 Dec 2020 17:48:35 +0800</pubDate>
+      
+      <guid>/posts/scss-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Sass supports two different syntaxes. Each one can load the other, so it&amp;rsquo;s up to you and your team which one to choose. SCSS permalinkSCSS The SCSS syntax uses the file extension .scss. With a few small exceptions, it’s a superset of CSS, which means essentially all valid CSS is valid SCSS as well. Because of its similarity to CSS, it’s the easiest syntax
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Css Specificity</title>
+      <link>/posts/css-specificity/</link>
+      <pubDate>Fri, 11 Dec 2020 17:33:47 +0800</pubDate>
+      
+      <guid>/posts/css-specificity/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          css优先级 优先级就是分配给指定的 CSS 声明的一个权重，它由 匹配的选择器中的 每一种选择器类型的 数值 决定。 而当优先级与多个 CSS 声明中任意一个声明的优
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Primer Style</title>
+      <link>/posts/primer-style/</link>
+      <pubDate>Fri, 11 Dec 2020 13:11:53 +0800</pubDate>
+      
+      <guid>/posts/primer-style/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Graphql Tutorial</title>
