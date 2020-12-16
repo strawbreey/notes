@@ -37,7 +37,6 @@ git push origin main
 
 Deployment of Project Pages from /docs folder on main branch 
 
-
 ```bash
 # Preparations for gh-pages Branch
 git checkout --orphan gh-pages

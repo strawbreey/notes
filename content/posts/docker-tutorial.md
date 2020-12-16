@@ -91,9 +91,8 @@ docker exec -ti
 
 简要说明:
 
---rm: 告诉docker，一旦运行进程推出就删除容器
-
--ti 告诉docker分配一个伪终端并进入交互模式
+1. --rm: 告诉docker，一旦运行进程推出就删除容器
+2. -ti 告诉docker分配一个伪终端并进入交互模式
 
 
 ### 制作自己的Docker容器

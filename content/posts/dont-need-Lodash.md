@@ -418,10 +418,6 @@ _.isArrayBuffer(new ArrayBuffer(2)) // output: true
 new ArrayBuffer(2) instanceof ArrayBuffer // output: true
 ```
 
-
-
-
-
 ### 相关文章
  - [You-Dont-Need-Lodash-Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_chunk)
  - [https://www.lodashjs.com/](https://www.lodashjs.com/)

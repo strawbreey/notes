@@ -86,3 +86,4 @@ Cache-Control: must-revalidate
 参考资料
 - [Caching Tutorial](https://www.mnot.net/cache_docs/)
 - [MDN HTTP Cache](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ)
+- [浅谈http中的Cache-Control](https://blog.csdn.net/qq_36906532/article/details/101016131)
