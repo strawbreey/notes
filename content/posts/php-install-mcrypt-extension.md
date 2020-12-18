@@ -21,9 +21,7 @@ extension=mcrypt.so
 
 # 重启 php-fpm, 
 /etc/init.d/php-fpm restart  # php-fpm 默认位置
-
 /usr/local/php72/sbin/php-fpm # php 编译安装的位置
-
 ```
 
 ### 参考资料
