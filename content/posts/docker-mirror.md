@@ -32,31 +32,31 @@ Docker Hub将限制匿名和免费账户的docker pull频率，付费账户的pu
 配置方法
 
 配置registry-mirrors进行加速并绕过限制
-
+```json
 {
   "registry-mirrors": [
     "https://mirror.baidubce.com"
   ]
 }
+```
 各操作系统配置方法详见 [https://yeasy.gitbook.io/docker_practice/install/mirror](https://yeasy.gitbook.io/docker_practice/install/mirror)
 
 devcloud机器需要将dockerhub.woa.com域名加入系统和docker服务no_proxy列表中，可能需要修改如下文件的代理配置：
 
+```
 /etc/systemd/system/docker.service.d/http-proxy.conf
 /etc/profile
-
-验证
+```
+### 验证
 
 如果能成功拉取hello-world镜像，说明配置生效。
 
 ```bash
-docker  pull haifangwang/hello-world
+# 拉取镜像
+docker pull haifangwang/hello-world
 
-Using default tag: latest
-
-latest: Pulling from haifangwang/hello-world
-
-Digest: sha256:71c1e285dd1ad9a509fe005fdcddee80b5ba59bfae03cbf5f9f77af1723a4edd
-
-Status: Image is up to date for haifangwang/hello-world:latest
+# Using default tag: latest
+# latest: Pulling from haifangwang/hello-world
+# Digest: sha256:71c1e285dd1ad9a509fe005fdcddee80b5ba59bfae03cbf5f9f77af1723a4edd
+# Status: Image is up to date for haifangwang/hello-world:latest
 ```
