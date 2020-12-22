@@ -78,7 +78,7 @@ v. 是习惯于，使适应，养护(头)
 
 ### Change 改变，更改，转换，更换，替换，兑换，
 
-#### move 
+#### 1. move 
 v. 移动，改变，采取行动，搬家，影响，感动，动议，提议
 n. 移动，改变; 步骤; 行动，行为，举措
 
@@ -97,21 +97,21 @@ a. sane
 n. sanity
    insantity
 
-#### shift 
+#### 2.shift 
 
 v 转移， 移动，转移(注意力)；转变，改变，推卸
 n. 转变，轮班，轮班职工
 
 例句: The aim was to include enough features to draw interest away from iPhones and Android supported phone,but the new BlackBerry devices failed to catch on and the company shifted its enginnering resources back to its QNX division (部门) as car makers (汽车制造商) started develops software.
 
-#### switch 
+#### 3.switch 
 
 v. 打开，关闭; 改变，转变，转换，交换
 n. 开关，彻底改变
 
 to switch to the nursing school 转刀护理学院
 
-#### transition
+#### 4.transition
 
 v. 转变, 过渡,
 n. 转变，过渡，变革，变迁
@@ -126,7 +126,7 @@ hydrogen 氢气
 
 oxygen 氧气
 
-#### transform 
+#### 5.transform 
 
 v.  使彻底的改变;改造，是改观
 
@@ -137,4 +137,65 @@ v.  使彻底的改变;改造，是改观
 派生: transfromer 变压器，改革者
 
       transfromtion 彻底的改变，巨变
+
+拓展用法
+
+transform sb/sth from sth into sth
+
+The moves transformed her almost overnight from an unknown schoolgirl into a megastar
+
+拓展词汇
+
+
+#### 6. alter 
+
+v: (尤指以相对细微但却显著的方式)改变，修改(衣服使更合身)
+
+You can remind yourself to notice your thoughts in a nonjudgmental manner (不加评判), without trying to change or alter them right away (立即，马上)
+
+派生 alteration 改变 变更 alternate alternation 交替改变 alternative (二选一的)选择
+
+名人名言
+
+Remenber what should be remembered. and forget what should be forgotten. Alter what is changeable. and accept what is mutable .
+
+
+#### 7.modify 
+v. 修改, 更改，改进，改造，修饰，限定
+
+派生 modification modifier
+
+#### 8. convert 
+
+v (使事态，性质，功能)改变; 改变(观点，原则或做事的方式)； 改建，改造，换算，改变信仰
+
+n. 改变信仰者
+
+convert A into B
+
+考点 to convert out lives to data 把我们的生活转成了数据
+
+派生 conversion, convertible
+
+
+#### 9. transfer v. 转移, 调职，转移，传染，转让，转乘，换乘
+
+列句: Someone was trying to set up a new payee (收款账户) and transfer a serven figure sum (七位数), he said
+
+summary， summarize、
+
+派生 transference 传染，传播
+
+#### 10 transplant
+
+n. 移植
+v. 移植， 移栽； 移居
+
+#### 拓展词汇
+
+plant 
+
+n. 植物，工厂，发电厂
+v. 播种，种植，放置，使固定
+
 
