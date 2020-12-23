@@ -208,6 +208,11 @@ services:
         max-size: "200k" # 单个文件大小为200k
         max-file: "10" # 最多10个文件
     # 设置网络模式。
+    # network_mode: "bridge"
+    # network_mode: "host"
+    # network_mode: "none"
+    # network_mode: "service:[service name]"
+    # network_mode: "container:[container name/id]"
     network_mode: "bridge"
 
     # restart: o：是默认的重启策略，在任何情况下都不会重启容器。always：容器总是重新启动。on-failure：在容器非正常退出时（退出状态非0），才会重启容器。unless-stopped：在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器

@@ -198,4 +198,55 @@ plant
 n. 植物，工厂，发电厂
 v. 播种，种植，放置，使固定
 
+### Rule
 
+v. 统治，管理，控制，判决，裁定
+n. 规则，章程，规定，定律，习惯，常规，统治，管辖
+
+列句 When U.S. district judge Andrew Hanen ruled against President Barack Obama's sweeping immigration overhaul on Feb. 16, he did more than throw the future of 5 million immigrants （五百万移民）facing deportation into doubt 
+
+派生: ruling 裁决，判决 ruler 统治阶级
+
+#### administer 
+
+v. 管理， 治理，施行，执行
+
+例句: washington is familliar with the challenges of administering a dense metropolitan area  （大都市）with pockets of deep poverty and crime
+
+metropolis 大都会
+
+派生 administration
+
+补充词汇 minister 部长，大臣 prime minister 首相
+
+#### dominate  
+
+v. 控制， 支配，统治，主导，俯视，高耸于
+
+考点: trends (that are) dominaterd by potential buyers
+
+派生 dominant 统治， 管理
+
+#### govern  
+
+v. 统治，管理，治理，支配，影响
+
+考点  the state-level bodies （实体） that govern the profession 
+
+派生 governor 政府官员 government 政府
+
+
+#### reign 
+
+v. 统治，当政，占优势，盛行
+n. 君主统治时期，任期
+
+考点。 the Nazi reign of murder 纳粹的统治
+
+#### regulate 
+
+v. 控制，管理，调整，调节
+
+例句: In order for (为了) any of these solutions (任意解决方案) to succeed, worker have to be willing to regulate their own habits
+
+派生: regulation 制度 规章 regulator 管理者，监管者，调节器，校准器
