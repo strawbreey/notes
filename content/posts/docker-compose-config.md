@@ -66,7 +66,7 @@ services:
 
 把环境变量传递给容器
 先来看一下在 compose file 中如何为容器设置环境变量：
-```env
+```yml
 web:
   environment:
     DEBUG: 1
@@ -75,36 +75,39 @@ compose file 中的 environment 节点用来为容器设置环境变量，上面
 
 $ docker run -e DEBUG=1
 要把当前 shell 环境变量的值传递给容器的环境变量也很简单，去掉上面代码中的赋值部分就可以了：
-
+```
 web:
   environment:
     DEBUG:
+```
 这种情况下，如果没有在当前的 shell 中导出环境变量 DEBUG，compose file 中会把它解释为 null：
 
 
 
 在试试导出环境变量 DEBUG 的情况：
-
+```
 $ export DEBUG=1
-
-
+```
 这才是我们设计的正确的使用场景！
 
 使用文件为容器设置多个环境变量
 如果觉得通过 environment 为容器设置环境变量不够过瘾，我们还可以像 docker -run 的 --env-file 参数一样通过文件为容器设置环境变量：
-
+```
 web:
   env_file:
     - web-variables.env
+```
 注意，web-variables.env 文件的路径是相对于 docker-compose.yml 文件的相对路径。上面的代码效果与下面的代码相同：
-
+```
 $ docker run --env-file=web-variables.env
-web-variables.env 文件中可以定义一个或多个环境变量：
-
+```
+`web-variables.env` 文件中可以定义一个或多个环境变量：
+```
 # define web container env
 APPNAME=helloworld
 AUTHOR=Nick Li
 VERSION=1.0
+```
 检查下结果：
 
 
@@ -115,7 +118,8 @@ VERSION=1.0
 当我们在 docker-compose.yml 文件中引用了大量的环境变量时，对每个环境变量都设置默认值将是繁琐的，并且也会影响 docker-compose.yml 简洁程度。此时我们可以通过 .env 文件来为 docker-compose.yml 文件引用的所有环境变量设置默认值！
 修改 docker-compose.yml 文件的内容如下：
 
-复制代码
+
+```
 version: '3'
 services:
   web:
@@ -128,7 +132,8 @@ services:
      - "5000:5000"
   redis:
     image: "redis:alpine"
-复制代码
+```
+
 然后在相同的目录下创建 .env 文件，编辑其内容如下：
 
 # define env var default value.
@@ -155,14 +160,14 @@ Variable is not defined
 最后还没有找到相关的环境变量就认为该环境变量没有被定义。
 
 根据上面的优先级定义，我们可以把不同场景下的环境变量定义在不同的 shell 脚本中并导出，然后在执行 docker-compose 命令前先执行 source 命令把 shell 脚本中定义的环境变量导出到当前的 shell 中。通过这样的方式可以减少维护环境变量的地方，下面的例子中我们分别在 docker-compose.yml 文件所在的目录创建 test.sh 和 prod.sh，test.sh 的内容如下：
-
+```bash
 #!/bin/bash
 # define env var default value.
 export IMAGETAG=web:v1
 export APPNAME=HelloWorld
 export AUTHOR=Nick Li
 export VERSION=1.0
-prod.sh 的内容如下：
+# prod.sh 的内容如下：
 
 #!/bin/bash
 # define env var default value.
@@ -170,11 +175,11 @@ export IMAGETAG=webpord:v1
 export APPNAME=HelloWorldProd
 export AUTHOR=Nick Li
 export VERSION=1.0LTS
-在测试环境下，执行下面的命令：
+# 在测试环境下，执行下面的命令：
 
 $ source test.sh
 $ docker-compose config
-
+```
 
 此时 docker-compose.yml 中的环境变量应用的都是测试环境相关的设置。
 

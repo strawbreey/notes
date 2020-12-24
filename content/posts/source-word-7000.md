@@ -250,3 +250,73 @@ v. 控制，管理，调整，调节
 例句: In order for (为了) any of these solutions (任意解决方案) to succeed, worker have to be willing to regulate their own habits
 
 派生: regulation 制度 规章 regulator 管理者，监管者，调节器，校准器
+
+#### code
+
+n. 法规, 法典; 道德准则，行为规范，密码，代码，邮编，区号
+v. 把....编码(或编号)
+
+考点 to make itselft subject to the code of conduct (行为准则) 自觉服从行为准则
+
+#### law 
+n. 法律，规则，定律，规律
+
+派生 lawful lawyer tear 
+
+#### statute 
+
+n. 法令，法规，条例，章程
+
+#### bill
+
+n. 账单， 议案，法案，纸币，钞票，广告，海报
+
+v. 宣传，给。。。开账单
+
+propagete 宣传
+
+拓展 The Bill of Rights (权利) 权利法案
+
+#### effect
+
+n. 影响，结果，效果，作用，感受，印象
+v. 使发生，实现
+
+例句: The cost of (成本) some "price marked packs" of Coca-Coca sold in newsagents and convenlance stores (报亭和便利店) will increate by more than 10% in march (在三月份), just before the new tax comes into effect (生效) the following month (下个月)
+
+考点 to have a meaningful effect in showing climate (气候) change
+
+派生 effective
+
+拓展词汇 efficient 高校
+
+energy-efficient 
+
+#### result 
+
+n. 结果，后果，效果，考试成绩，业绩
+v. 因...发生，由...造成
+
+考点 biases (歧视) that result from congnitive constraints (认知限制) 由认知限制造成的偏见
+
+constraint constrain complaint 
+
+经典台词
+
+In your life. there will be at least one time that you forget yourself for someone, asking for no result, no company ,no ownership nor love,just ask for meeting you in my most beautiful years -- the NoteBook
+
+#### consequence 
+
+n. 结果，后果，影响，重要性
+
+to think about long-term consequences 
+
+派生 consequent consequently 因此 
+
+#### outcome 
+
+n. 结果，结局，后果
+
+income 收入
+
+expense 支出，开支
