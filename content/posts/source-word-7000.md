@@ -320,3 +320,54 @@ n. 结果，结局，后果
 income 收入
 
 expense 支出，开支
+
+
+### firm 
+
+adj.坚固, 结实，，强力的，坚决的，坚定的，确凿的，坚挺的，稳定的
+
+adv. 坚定的，坚决的，
+
+n. 公司，商行，事务所，
+
+v. 使坚固，坚挺，稳步上涨
+
+考点 to allow non-lawyers to own shares in law firms (职业经理人)
+
+There is no chance, no destiny, no fate, that can hinder (阻止) or control (控制) the firm resolve of a determined soul --Ella Wheeler Wilcox
+
+resolution 解决  决心
+
+resolute 决定
+
+LAUGH, and the world laughts with you; weep, and you weep alone -- solitude (sole)
+笑, 世界陪着你笑，哭，一个人哭
+
+### solid 
+
+adj. 固体的，坚硬的，实心的，结实的，坚固的，可靠的，确凿的，连续的，不间断的
+
+例句: At this point, theres is no solid research (没有可靠的研究) linking any of this fall's (秋天) prominent disasters to climate change, though such examinations (测试，研究) are under way (还在进行中).
+
+slow is fast 
+
+派生: solidity solidify (加固) solidarity (坚固)
+
+#### tight 
+
+adj: 牢固的，紧的，紧身的，严密的，严格的，拮据的，不宽裕的，显得紧张，亲密的，势均力敌的，小气的，吝啬的，
+
+adv: 紧紧的，牢固的
+
+考点： on a tight budget
+
+派生
+
+经典歌词: You've got that long hair slick back (后背挺直), white T-shirt And I got that 
+
+good girl faith and a tight little skirt And when we go crashing down， we come back every time 
+
+cause we never go out of style, we never go out of style
+
+breaking bad
+

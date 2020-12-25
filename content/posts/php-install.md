@@ -60,3 +60,5 @@ VC15 x64 Thread Safe (2020-Oct-01 13:06:05)
 ### 参考资料
 
 - [php 在 Windows 系统下的安装 ](https://www.php.net/manual/zh/install.windows.php)
+
+PDOException-could-not-find-driver
