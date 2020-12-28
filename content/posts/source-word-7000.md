@@ -363,11 +363,36 @@ adv: 紧紧的，牢固的
 
 派生
 
-经典歌词: You've got that long hair slick back (后背挺直), white T-shirt And I got that 
-
-good girl faith and a tight little skirt And when we go crashing down， we come back every time 
+经典歌词: You've got that long hair slick back (后背挺直), white T-shirt And I got that  good girl faith and a tight little skirt And when we go crashing down， we come back every time 
 
 cause we never go out of style, we never go out of style
 
 breaking bad
 
+company 
+
+n. 公司，商行，剧本，演出，陪伴，陪同，宾客，来宾，
+
+派生 companion
+
+拓展例句 A swords poor company for a long road 仗剑走天涯
+
+snooker 
+
+student loans 承担压力
+
+corporation 大公司, 企业，法人，法人团体
+
+venture
+n. 风险企业，投机或者
+v. 敢于冒险，敢做，冒昧的说，谨慎的做
+
+join venture 合伙企业
+
+enterprise 
+
+n. 公司, 企业事业，进取心，事业心，创业精神
+
+派生. enterprising entrepreneur entrepernenurial 企业家
+
+inc
