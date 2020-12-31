@@ -16,3 +16,5 @@ composer config -g -- disable-tls true
 ```shell
 extension=php_openssl.dll
 ```
+
+![image](/images/100.png)
