@@ -393,6 +393,20 @@ enterprise
 
 n. 公司, 企业事业，进取心，事业心，创业精神
 
-派生. enterprising entrepreneur entrepernenurial 企业家
+派生. enterprising entrepreneur 企业家 entrepernenurial 企业家
 
-inc
+include 包括, 包含, 列入
+
+派生 inclusive 
+
+拓展词汇 
+
+exclude 不包括，把... 排除在外，不准，参与，不准进入
+
+exclusive 独有的，专用的，高级的，昂贵的，排外的
+
+contain 装有， 容纳，包含，含有，遏制，防止。。。。蔓延，抑制
+
+列句: Cities desire to control and contain these new services threatends to stymie their growth and value, while also preventing consumes from 
+
+

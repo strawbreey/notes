@@ -108,8 +108,9 @@ docker image build -t koa-demo:0.0.1 .
 # 查看文件
 docker image ls
 
-# 生成容器
+# 生成并执行容器
 docker container run -p 8000:3000 -it koa-demo /bin/bash
+
 # 或者
 docker container run -p 8000:3000 -it koa-demo:0.0.1 /bin/bash
 ```
