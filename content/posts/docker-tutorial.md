@@ -21,6 +21,28 @@ Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级�
 
 - 从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境。
 
+### Docker架构
+
+- Docker daemon（ Docker守护进程）
+
+Docker daemon是一个运行在宿主机（ DOCKER-HOST）的后台进程。可通过 Docker客户端与之通信。
+
+- Client（ Docker客户端）
+
+Docker客户端是 Docker的用户界面，它可以接受用户命令和配置标识，并与 Docker daemon通信。图中， docker build等都是 Docker的相关命令。
+
+- Images（ Docker镜像）
+
+Docker镜像是一个只读模板，它包含创建 Docker容器的说明。它和系统安装光盘有点像，使用系统安装光盘可以安装系统，同理，使用Docker镜像可以运行 Docker镜像中的程序。
+
+- Container（容器）
+
+容器是镜像的可运行实例。镜像和容器的关系有点类似于面向对象中，类和对象的关系。可通过 Docker API或者 CLI命令来启停、移动、删除容器。
+
+- Registry
+
+Docker Registry是一个集中存储与分发镜像的服务。构建完 Docker镜像后，就可在当前宿主机上运行。但如果想要在其他机器上运行这个镜像，就需要手动复制。此时可借助 Docker Registry来避免镜像的手动复制。
+
 ### Docker 能做什么
 
 - 创建应用依赖
@@ -41,11 +63,34 @@ Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级�
 
 ### docker 常用命令
 
+#### 1. 安装docker
+
 ```bash
+
+# 查看内核版本
+uname -r
+
+# 更新yum包
+yum -y update
+
+# 卸载旧版本
+yum remove docker docker-common docker-selinux docker-engine
+
+# 安装需要的软件包
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+# 设置 yum 源
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+# 可以查看仓库中所有docker版本，并选择特定版本安装
+yum list docker-ce --showduplicates | sort -r 
+
 # 安装docker
+yum install -y docker-ce
 
 # 查看docker 信息
 docker version
+
 # 或者
 docker info
 
@@ -53,48 +98,102 @@ docker info
 docker --version
 
 # 开启docker 服务
-# service 命令的用法
-sudo service docker start
 
-# systemctl 命令的用法
-sudo systemctl start docker
+# 启动并加入开机启动 ， systemctl 命令的用法
+systemctl start docker
+systemctl enable docker
 
-# 拉取镜像
-docker pull ubuntu:latest
-# 等于
-docker pull ubuntu
+```
 
-# 查看镜像
-docker images
+#### 2. 镜像相关
+```bash
+# 1. 搜索镜像
+docker search java
 
-# 查看所有镜像
-docker images ls
+# NAME:镜像仓库名称。
+# DESCRIPTION:镜像仓库描述。
+# STARS：镜像仓库收藏数，表示该镜像仓库的受欢迎程度，类似于 GitHub的 stars0
+# OFFICAL:表示是否为官方仓库，该列标记为[0K]的镜像均由各软件的官方项目组创建和维护。
+# AUTOMATED：表示是否是自动构建的镜像仓库。
 
-# 查看所有镜像, 包括终止运行的容器
-docker container ls --all
 
-# 删除镜像
-docker image rm [imageName]
+# 2. 下载镜像
+docker pull java
 
-# 从镜像上创建容器
+docker pull ubuntu:latest # 等于
+docker pull ubuntu 
+
+
+# 3. 查看镜像
+docker image
+docker images ls # 查看所有镜像
+
+# REPOSITORY：镜像所属仓库名称。
+# TAG:镜像标签。默认是 latest,表示最新。
+# IMAGE ID：镜像 ID，表示镜像唯一标识。
+# CREATED：镜像创建时间。
+# SIZE: 镜像大小。
+
+# 4. 删除镜像
+docker rmi [imageName] # 旧
+docker image rm [imageName] # 新
+```
+
+
+#### 3. 容器相关
+```bash
+# 1. 新建并启动容器
+docker run -d -p 91:80 nginx
+
 docker run --rm -ti ubuntu /bin/bash
 docker run -d ubuntu ping 8.8.8.8
 
-# 运行hello-world容器
 docker container run hello-world
 
-# 检查容器是否运行
-docker ps
-docker exec -ti 
-```
+# -d 后台运行
+# -p 宿主机端口:容器端口 => 开放容器端口到宿主机端口
+# 使用 docker run命令创建容器时，会先检查本地是否存在指定镜像。如果本地不存在该名称的镜像， Docker就会自动从 Docker Hub下载镜像并启动一个 Docker容器。
 
+# 2. 查看容器
+docker ps # 旧
+docker container ls --all # 新
+
+# CONTAINER_ID：表示容器 ID。
+# IMAGE:表示镜像名称。
+# COMMAND：表示启动容器时运行的命令。
+# CREATED：表示容器的创建时间。
+# STATUS：表示容器运行的状态。UP表示运行中， Exited表示已停止。
+# PORTS:表示容器对外的端口号。
+# NAMES:表示容器名称。该名称默认由 Docker自动生成，也可使用 docker run命令的--name选项自行指定。
+
+# 3. 停止容器
+docker stop f0b1c8ab3633
+docker kill f0b1c8ab3633 #强制停止容器
+
+# 4. 重启容器
+docker start f0b1c8ab3633
+
+# 5. 查看容器所有信息
+docker inspect f0b1c8ab3633
+
+# 7. 查看容器日志
+docker container logs f0b1c8ab3633
+
+# 8. 查看容器进程
+docker top f0b1c8ab3633
+
+# 9. 进入容器
+docker container exec -it f0b1c8ab3633 /bin/bash
+
+# 10. 删除容器
+docker rm f0b1c8ab3633
+```
 简要说明:
 
 1. --rm: 告诉docker，一旦运行进程推出就删除容器
 2. -ti 告诉docker分配一个伪终端并进入交互模式
 
-
-### 制作自己的Docker容器
+#### 4.  制作自己的Docker容器
 
 ```bash
 
