@@ -32,7 +32,7 @@ const subscribe = debouncedExample.subscribe(val => console.log(val));
 
 
 // lodash 4.17
-_.debounce(func, [wait=0], [options={}])
+_.debounce(func, [wait=0], [options={}]) 
 
 ```
 
