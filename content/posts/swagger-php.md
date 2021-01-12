@@ -21,6 +21,20 @@ OpenAPI 规范是 Linux 基金会的一个项目，试图通过定义一种用�
 
 目前 V2.0 版本的 OpenAPI 规范（也就是 SwaggerV2.0 规范）已经发布并开源在 github 上。该文档写的非常好，结构清晰，方便随时查阅。关于规范的学习和理解，本文最后还有个彩蛋。
 
+### 安装
+
+```php
+composer require zircote/swagger-php
+```
+
+```php
+<?php
+require("vendor/autoload.php");
+$openapi = \OpenApi\scan('/path/to/project');
+header('Content-Type: application/x-yaml');
+echo $openapi->toYaml();
+```
+
 
 ### 参考链接 
 
