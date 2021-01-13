@@ -23,9 +23,13 @@ OpenAPI 规范是 Linux 基金会的一个项目，试图通过定义一种用�
 
 ### 安装
 
+在项目中使用 composer 安装 swagger-php 
+
 ```php
 composer require zircote/swagger-php
 ```
+
+使用php脚本动态生成文档
 
 ```php
 <?php
@@ -35,8 +39,39 @@ header('Content-Type: application/x-yaml');
 echo $openapi->toYaml();
 ```
 
+使用命令行动态生成脚本
+
+```bash
+./vendor/bin/openapi --help
+
+# 为了从任何地方使用cli，请在全局安装swagger-php并将~/.composer/vendor/bin目录添加到您环境中的PATH中。
+composer global require zircote/swagger-php
+```
+
+使用变量
+
+使用CLI时，您需要使用以下--bootstrap选项将php文件包含在常量中：
+
+constants.php
+```php
+define("API_HOST", ($env === "production") ? "example.com" : "localhost");
+```
+
+```bash
+openapi --bootstrap constants.php
+```
+
+注解位置
+
+您不应将所有注释都放在一个大的@OA \ OpenApi（）注释块中，而应将它们分散在整个代码库中。swagger-php将扫描您的项目并将所有注释合并为一个@OA \ OpenApi注释。
+
+swagger-php提供的最大好处是文档与实现API的代码非常接近
+
+
 
 ### 参考链接 
 
 - [如何编写基于 Swagger-PHP 的 API 文档
 ](https://learnku.com/laravel/t/7430/how-to-write-api-documents-based-on-swagger-php)
+
+- [Swagger-PHP v3.x](https://zircote.github.io/swagger-php/#links)
