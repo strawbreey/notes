@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Linux Command Tar ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/linux-command-tar/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Command Tar"/>
+<meta name="twitter:description" content="Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、"/>
+
+
+
+<meta property="og:title" content="Linux Command Tar" />
+<meta property="og:description" content="Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/linux-command-tar/" />
+<meta property="article:published_time" content="2021-01-13T11:21:48+08:00" />
+<meta property="article:modified_time" content="2021-01-13T11:21:48+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Linux Command Tar</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2021-01-13
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 6 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、.Z、.tar等众多的压缩文件名，此外windows下的.zip和.rar也可以在Linux下使 用，不过在Linux使用.zip和.rar的人就太少了。（因为 7z 和 zip 压缩格式都不能保留 unix 风格的文件权限，比如解压出个可执行文件要重新 chmod chown 才能恢复正常。而 tar 格式可以。而 tar 本身不提供压缩，无非就是把包括所有文件的內容和权限拼成一个文件而己，所以用另外如 gzip 格式压缩。为什么是 gzip，因为几乎所有 linux 都支持而已。)</p>
+<p>两个概念：打包和压缩。</p>
+<ul>
+<li>打包是指将一大堆文件或目录什么的变成一个总的文件</li>
+<li>压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</li>
+</ul>
+<p>为什么要区分这 两个概念呢？其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就得先借助另外的工具将这一大堆文件先打 成一个包，然后再就原来的压缩程序进行压缩。</p>
+<p>Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的</p>
+<h3 id="基本用法">基本用法：</h3>
+<p>tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cf all.tar *.jpg
+<span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</span>
+
+tar -rf all.tar *.gif
+<span style="color:#75715e"># 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</span>
+
+tar -uf all.tar logo.gif
+<span style="color:#75715e"># 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</span>
+
+tar -tf all.tar
+<span style="color:#75715e"># 这条命令是列出all.tar包中所有文件，-t是列出文件的意思</span>
+tar -xf all.tar
+<span style="color:#75715e"># 这条命令是解出all.tar包中所有文件，-x是解包的意思</span>
+
+</code></pre></div><p>以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。</p>
+<ol>
+<li>tar调用gzip</li>
+</ol>
+<p>gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：</p>
+<pre><code class="language-bash　　" data-lang="bash　　">tar -czf all.tar.gz *.jpg
+# 这条命令是将所有.jpg的文件打成一个tar包，并且将其用gzip压缩，生成一个gzip压缩过的包，包名为all.tar.gz
+
+tar -xzf all.tar.gz
+# 这条命令是将上面产生的包解开。
+</code></pre><ol start="2">
+<li>tar调用bzip2</li>
+</ol>
+<p>bzip2是一个压缩能力更强的压缩程序，.bz2结尾的文件就是bzip2压缩的结果。与bzip2相对的解压程序是bunzip2。tar中使用-j这个参数来调用bzip2。下面来举例说明一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cjf all.tar.bz2 *.jpg
+<span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个tar包，并且调用bzip2压缩，生成一个bzip2压缩过的包，包名为all.tar.bz2</span>
+tar -xjf all.tar.bz2
+<span style="color:#75715e"># 这条命令是将上面产生的包解开。</span>
+</code></pre></div><ol start="3">
+<li>tar调用compress</li>
+</ol>
+<p>compress也是一个压缩程序，但是好象使用compress的人不如gzip和bzip2的人多。.Z结尾的文件就是bzip2压缩的结果。与compress相对的解压程序是uncompress。tar中使用-Z这个参数来调用gzip。下面来举例说明一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cZf all.tar.Z *.jpg
+<span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个tar包，并且调用compress压缩，生成一个uncompress压缩过的包，包名为all.tar.Z</span>
+
+tar -xZf all.tar.Z
+<span style="color:#75715e"># 这条命令是将上面产生的包解开</span>
+</code></pre></div><h3 id="linux下最常用的压缩工具">Linux下最常用的压缩工具</h3>
+<p>1、tar</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+tar -zcvf too.tar.gz too
+
+<span style="color:#75715e"># 解压</span>
+.tar.gz tar -zxvf  too.tar.gz
+.tar.gz2 tar -jxvf   too.tar.gz2
+
+<span style="color:#75715e"># 把too目录打包成too.tar.gz，除logs目录；注这里的too/logs后面不能加/，如果加的话还是会打包进去。</span>
+tar -czvf too.tar.gz --exclude<span style="color:#f92672">=</span>too/logs too
+
+<span style="color:#75715e"># 加-C参数， 这样的话可以只打包api3.0 ，而不会从/usr开始一个一个目录都打包进去</span>
+tar -zcf api3.0_<span style="color:#e6db74">`</span>date +%Y%m%d%H%M%S<span style="color:#e6db74">`</span>.tar.gz -C /usr/local/tomcat/webapps api3.0
+</code></pre></div><p>2、gzip</p>
+<p>gzip工具是Linux中最流行、最快的文件压缩工具，Gzip工具保留原始文件名称压缩文件的扩展名.gz和时间戳。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打包</span>
+gzip filename
+
+<span style="color:#75715e"># 解压</span>
+gzip -d filename <span style="color:#75715e"># 打包的文件会被删除</span>
+</code></pre></div><p>3、bzip2</p>
+<p>Bzip2实用程序执行更快的gzip，它压缩文件和文件夹更紧凑。压缩文件时需要更多的内存，为了减少内存消耗，在选项中通过-s标志。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+bzip2 examplefile or bzip2 -s examplefile
+
+<span style="color:#75715e"># 解压</span>
+bzip2 -d examplefile.bz2 or bunzip2 examplefile.bz2
+
+<span style="color:#75715e"># 详细说明</span>
+bzip2 -v examplefile
+</code></pre></div><p>4、lzma</p>
+<p>Lzma是一种压缩工具，与zip或tar类似，但与bzip相比，它的执行速度更快，虽然lzma是一个强大的工具，但它在Linux用户中并不流行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+lzma -c --stdout examplefile&gt; examplefile.lzma
+
+<span style="color:#75715e"># 解压</span>
+lzma -d --stdout examplefile.lzma &gt;examplefile
+</code></pre></div><p>5、xz</p>
+<p>XZ是lzma实用程序的继承者，它只能压缩单个文件，但不能在一个命令中压缩多个文件，它将自动为压缩文件添加.xz扩展名。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+xz examplefile
+
+<span style="color:#75715e"># 解压</span>
+xz -d examplefile
+
+</code></pre></div><p>6、pax</p>
+<p>Pax它的执行速度很快，而且它不仅仅是一个压缩器，它可以真正的归档它可以远程复制文件，在Ubuntu/Mint Linux中，默认情况下Pax没有安装。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+pax -wf examplefile.tar examplefile
+pax -wf examplefile.tar.gz examplefile 
+
+<span style="color:#75715e"># 解压</span>
+pax -r &lt;examplefile.tar
+
+<span style="color:#75715e"># 查看压缩包文件清单</span>
+pax -f examplefile.tar
+</code></pre></div><p>7、7zip</p>
+<p>7Zip文件压缩器是一个开源工具，它最初是为微软Windows开发的，它支持多种文件压缩格式和高文件压缩，它可以用一个命令压缩多个文件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装7zip</span>
+wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86<span style="color:#ae81ff">\_</span>64/Packages/p/p7zip-16.02-10.el7.x86<span style="color:#ae81ff">\_</span>64.rpm
+wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86<span style="color:#ae81ff">\_</span>64/Packages/p/p7zip-plugins-16.02-10.el7.x86<span style="color:#ae81ff">\_</span>64.rpm
+ 
+sudo rpm -U --quiet p7zip-16.02-10.el7.x86_64.rpm 
+sudo rpm -U --quiet p7zip-plugins-16.02-10.el7.x86_64.rpm 
+
+<span style="color:#75715e"># 压缩</span>
+7z  a examplefile.7z examplefile
+
+<span style="color:#75715e"># 解压</span>
+7z  a examplefile.7z examplefile
+</code></pre></div><p>8、shar</p>
+<p>Shar是一个命令行工具，可以用来压缩测试文件，Shar可以定义为“shell archive”。一个简单而快速的文件存档实用程序对于获取shell脚本的存档非常有用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装shar工具</span>
+yum -y install sharutils
+
+<span style="color:#75715e"># 压缩</span>
+shar examplefile &gt; examplefile.shar
+
+<span style="color:#75715e"># 解压</span>
+unshar examplefile.shar
+</code></pre></div><p>9、cpio</p>
+<p>可以定义为复制输入和输出，它在输入中逐行读取文件名列表，在输出中读取归档文件。这是一个内置的经典命令。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+ls | cpio -ov &gt;/home/username/backup.cpio
+
+<span style="color:#75715e"># 解压</span>
+cpio -idv &lt;backup.cpio
+</code></pre></div><p>10、ar</p>
+<p>rar的前身，仍然在Debian及其衍生物中使用，它是一个简单的归档工具，但并不是很流行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+ar cvsr examplefile.a examplefile
+
+<span style="color:#75715e"># 解压</span>
+ar -xv examplefile.a
+</code></pre></div><p>11、iso</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ISO制作iso镜像</span>
+dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/media/dvd of<span style="color:#f92672">=</span>/home/username/filename.iso
+</code></pre></div>
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="/posts/swagger-codegen/">
+                  <span class="button__text">Swagger Codegen</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+      
+    
+  </div>
+
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#基本用法">基本用法：</a></li>
+        <li><a href="#linux下最常用的压缩工具">Linux下最常用的压缩工具</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/swagger-codegen/">Swagger Codegen</a></li>
+    
+    <li><a href="/posts/php-web-server/">Php Web Server</a></li>
+    
+    <li><a href="/posts/go-build/">Go Build</a></li>
+    
+    <li><a href="/posts/document-style-guide/">Document Style Guide</a></li>
+    
+    <li><a href="/posts/php-composer/">Php Composer</a></li>
+    
+  </ul>
+  
+</section>
+  </aside>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content=""
+  content="定义和用法 sort() 方法用于对数组的元素进行排序。 语法 arrayObject.sort(sortby) 参数 描述 sortby 可选。规定排序顺序。必须是函数。 返回值 对数组的引用。请注意，数组在原数组上进行排序"
 />
 <meta
   name="keywords"
@@ -47,12 +47,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js Sort"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="定义和用法 sort() 方法用于对数组的元素进行排序。 语法 arrayObject.sort(sortby) 参数 描述 sortby 可选。规定排序顺序。必须是函数。 返回值 对数组的引用。请注意，数组在原数组上进行排序"/>
 
 
 
 <meta property="og:title" content="Js Sort" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="定义和用法 sort() 方法用于对数组的元素进行排序。 语法 arrayObject.sort(sortby) 参数 描述 sortby 可选。规定排序顺序。必须是函数。 返回值 对数组的引用。请注意，数组在原数组上进行排序" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/js-sort/" />
 <meta property="article:published_time" content="2020-11-29T00:50:24+08:00" />
@@ -164,7 +164,7 @@
 
       
         <span class="post-read-time"
-          >— 0 min read</span
+          >— 1 min read</span
         >
       
     </div>
@@ -174,7 +174,23 @@
     
 
     <div class="post-content">
-      
+      <h3 id="定义和用法">定义和用法</h3>
+<p>sort() 方法用于对数组的元素进行排序。</p>
+<h3 id="语法">语法</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">arrayObject</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">sortby</span>)
+</code></pre></div><p>参数	描述
+sortby	可选。规定排序顺序。必须是函数。</p>
+<p>返回值</p>
+<p>对数组的引用。请注意，数组在原数组上进行排序，不生成副本。</p>
+<p>说明</p>
+<p>如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。</p>
+<p>如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：</p>
+<ul>
+<li>若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。</li>
+<li>若 a 等于 b，则返回 0。</li>
+<li>若 a 大于 b，则返回一个大于 0 的值。</li>
+</ul>
+
     </div>
     
     
@@ -217,7 +233,7 @@
   const gitalk = new Gitalk({
     clientID: '4655ac5540fffb80a545',
     clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
-    repo: 'notes',      
+    repo: 'https://github.com/strawbreey/notes',      
     owner: 'strawbreey',
     admin: ['strawbreey'],
     id: location.pathname,      
@@ -234,7 +250,16 @@
     
     <section class="toc">
         <h3>title</h3>
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义和用法">定义和用法</a></li>
+        <li><a href="#语法">语法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </section>
 
     

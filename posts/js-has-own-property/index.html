@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Js Has Own Property ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。 1. 点( . )或者方括号( [ ] ) 通过点或者方括号可以获"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/js-has-own-property/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Has Own Property"/>
+<meta name="twitter:description" content="avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。 1. 点( . )或者方括号( [ ] ) 通过点或者方括号可以获"/>
+
+
+
+<meta property="og:title" content="Js Has Own Property" />
+<meta property="og:description" content="avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。 1. 点( . )或者方括号( [ ] ) 通过点或者方括号可以获" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/js-has-own-property/" />
+<meta property="article:published_time" content="2020-12-25T10:08:24+08:00" />
+<meta property="article:modified_time" content="2020-12-25T10:08:24+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Js Has Own Property</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-25
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 2 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <h2 id="avascript-判断对象中是否有某属性">avaScript 判断对象中是否有某属性</h2>
+<p>判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。</p>
+<h3 id="1-点--或者方括号---">1. 点( . )或者方括号( [ ] )</h3>
+<p>　　通过点或者方括号可以获取对象的属性值，如果对象上不存在该属性，则会返回undefined。当然，这里的“不存在”指的是对象自身和原型链上都不存在，如果原型链有该属性，则会返回原型链上的属性值。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 创建对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;lei&#39;</span>}
+<span style="color:#75715e">// 获取对象的自身的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">name</span>            <span style="color:#75715e">//&#34;lei&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>[<span style="color:#e6db74">&#34;name&#34;</span>]         <span style="color:#75715e">//&#34;lei&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 获取不存在的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">age</span>             <span style="color:#75715e">//undefined
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 获取原型上的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>[<span style="color:#e6db74">&#34;toString&#34;</span>]     <span style="color:#75715e">//toString() { [native code] }
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 新增一个值为undefined的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">un</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>
+
+<span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">un</span>              <span style="color:#75715e">//undefined    不能用在属性值存在，但可能为 undefined的场景
+</span></code></pre></div><p>　
+所以，我们可以根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性。</p>
+<p>这种方式很简单方便，局限性就是：不能用在x的属性值存在，但可能为 undefined的场景。 in运算符可以解决这个问题</p>
+<h3 id="2-in-运算符">2. in 运算符</h3>
+<p>　　
+MDN 上对in运算符的介绍：如果指定的属性在指定的对象或其原型链中，则in 运算符返回true。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>        <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;un&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>             <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;toString&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>    <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;age&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>           <span style="color:#75715e">//false
+</span></code></pre></div><p>示例中可以看出，值为undefined的属性也可正常判断。</p>
+<p>这种方式的局限性就是无法区分自身和原型链上的属性，在只需要判断自身属性是否存在时，这种方式就不适用了。这时需要hasOwnProperty()</p>
+<h3 id="3hasownproperty">3.hasOwnProperty()</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;name&#39;</span>)          <span style="color:#75715e">// true   自身属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;age&#39;</span>)           <span style="color:#75715e">// false  不存在
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;toString&#39;</span>)      <span style="color:#75715e">// false  原型链上属性
+</span></code></pre></div><p>可以看到，只有自身存在该属性时，才会返回true。适用于只判断自身属性的场景。</p>
+<h3 id="总结">总结</h3>
+<p>三种方式各有优缺点，不同的场景使用不同的方式，有时还需要结合使用，比如遍历自身属性的时候，就会把 for ··· in  ···和 hasOwnProperty()结合使用。</p>
+
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/apache-install/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Apache Install</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/js-dom-contentload/">
+                  <span class="button__text">Js Dom Contentload</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+      
+    
+  </div>
+
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#avascript-判断对象中是否有某属性">avaScript 判断对象中是否有某属性</a>
+      <ul>
+        <li><a href="#1-点--或者方括号---">1. 点( . )或者方括号( [ ] )</a></li>
+        <li><a href="#2-in-运算符">2. in 运算符</a></li>
+        <li><a href="#3hasownproperty">3.hasOwnProperty()</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/js-dom-contentload/">Js Dom Contentload</a></li>
+    
+    <li><a href="/posts/js-storage/">Js Storage</a></li>
+    
+    <li><a href="/posts/php-ini-path-config/">Php Ini Path Config</a></li>
+    
+    <li><a href="/posts/php-pdoexception-could-not-find-driver/">Php PDOException Could Not Find Driver</a></li>
+    
+    <li><a href="/posts/php-thread-safe/">Php Thread Safe</a></li>
+    
+  </ul>
+  
+</section>
+  </aside>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

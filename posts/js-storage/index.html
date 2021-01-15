@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Js Storage ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="LocalStorage，sessionStorage Web 存储对象 localStorage 和 sessionStorage 允许我们在浏览器上保存键/值对。 它们有趣的是，在页面刷新后（对于 ses"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/js-storage/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Storage"/>
+<meta name="twitter:description" content="LocalStorage，sessionStorage Web 存储对象 localStorage 和 sessionStorage 允许我们在浏览器上保存键/值对。 它们有趣的是，在页面刷新后（对于 ses"/>
+
+
+
+<meta property="og:title" content="Js Storage" />
+<meta property="og:description" content="LocalStorage，sessionStorage Web 存储对象 localStorage 和 sessionStorage 允许我们在浏览器上保存键/值对。 它们有趣的是，在页面刷新后（对于 ses" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/js-storage/" />
+<meta property="article:published_time" content="2020-12-24T17:06:47+08:00" />
+<meta property="article:modified_time" content="2020-12-24T17:06:47+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Js Storage</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-24
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 6 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <h2 id="localstoragesessionstorage">LocalStorage，sessionStorage</h2>
+<p>Web 存储对象 localStorage 和 sessionStorage 允许我们在浏览器上保存键/值对。</p>
+<p>它们有趣的是，在页面刷新后（对于 sessionStorage）甚至浏览器完全重启（对于 localStorage）后，数据仍然保留在浏览器中。我们很快就会看到。</p>
+<p>我们已经有了 cookie。为什么还要其他存储对象呢？</p>
+<p>与 cookie 不同，Web 存储对象不会随每个请求被发送到服务器。因此，我们可以保存更多数据。大多数浏览器都允许保存至少 2MB 的数据（或更多），并且具有用于配置数据的设置。
+还有一点和 cookie 不同，服务器无法通过 HTTP header 操纵存储对象。一切都是在 JavaScript 中完成的。
+存储绑定到源（域/协议/端口三者）。也就是说，不同协议或子域对应不同的存储对象，它们之间无法访问彼此数据。
+两个存储对象都提供相同的方法和属性：</p>
+<ul>
+<li>setItem(key, value) —— 存储键/值对。</li>
+<li>getItem(key) —— 按照键获取值。</li>
+<li>removeItem(key) —— 删除键及其对应的值。</li>
+<li>clear() —— 删除所有数据。</li>
+<li>key(index) —— 获取该索引下的键名。</li>
+<li>length —— 存储的内容的长度。</li>
+</ul>
+<p>正如你所看到的，它就像一个 Map 集合（setItem/getItem/removeItem），但也允许通过 key(index) 来按索引访问。</p>
+<h3 id="localstorage-示例">localStorage 示例</h3>
+<p>localStorage 最主要的特点是：</p>
+<ul>
+<li>在同源的所有标签页和窗口之间共享数据。</li>
+<li>数据不会过期。它在浏览器重启甚至系统重启后仍然存在。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;test&#39;</span>, <span style="color:#ae81ff">1</span>);
+<span style="color:#75715e">// 然后关闭/重新打开浏览器，或者只是在不同的窗口打开同一页面，然后你可以这样获取它：
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;test&#39;</span>) ); <span style="color:#75715e">// 1
+</span><span style="color:#75715e">// 我们只需要在同一个源（域/端口/协议），URL 路径可以不同。
+</span></code></pre></div><p>在所有同源的窗口之间，localStorage 数据可以共享。因此，如果我们在一个窗口中设置了数据，则在另一个窗口中也可以看到数据变化。</p>
+<p>类对象形式访问
+我们还可以像使用一个普通对象那样，读取/设置键，像这样：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 设置 key
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+<span style="color:#75715e">// 获取 key
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">test</span> ); <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 删除 key
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">test</span>;
+</code></pre></div><p>这是历史原因造成的，并且大多数情况下都可行，但通常不建议这样做，因为：</p>
+<p>如果键是由用户生成的，那么它可以是任何内容，例如 length 或 toString，也可以是 localStorage 的另一种内建方法。在这种情况下，getItem/setItem 可以正常工作，而类对象访问的方式则会失败：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;length&#39;</span>;
+<span style="color:#a6e22e">localStorage</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Error，无法对 length 进行赋值
+</span></code></pre></div><p>有一个 storage 事件，在我们更改数据时会触发。但以类对象方式访问时，不会触发该事件。我们将在本章的后面看到。</p>
+<h4 id="遍历键">遍历键</h4>
+<p>正如我们所看到的，这些方法提供了“按照键获取/设置/删除”的功能。但我们如何获取所有保存的值或键呢？</p>
+<p>不幸的是，存储对象是不可迭代的。</p>
+<p>一种方法是像遍历数组那样遍历它们：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">key</span>(<span style="color:#a6e22e">i</span>);
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">key</span><span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#a6e22e">key</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+</code></pre></div><p>另一个方式是使用 for key in localStorage 循环，就像处理常规对象一样。</p>
+<p>它会遍历所有的键，但也会输出一些我们不需要的内建字段。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 不好的尝试
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">localStorage</span>) {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">key</span>); <span style="color:#75715e">// 显示 getItem，setItem 和其他内建的东西
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>因此，我们需要使用 hasOwnProperty 检查来过滤掉原型中的字段：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">localStorage</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">key</span>)) {
+    <span style="color:#66d9ef">continue</span>; <span style="color:#75715e">// 跳过像 &#34;setItem&#34;，&#34;getItem&#34; 等这样的键
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">key</span><span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#a6e22e">key</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+</code></pre></div><p>或者，使用 Object.keys 获取只属于“自己”的键，然后如果需要，可以遍历它们：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">keys</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">localStorage</span>);
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">keys</span>) {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">key</span><span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#a6e22e">key</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+</code></pre></div><p>后者有效，因为 Object.keys 只返回属于对象的键，会忽略原型上的。</p>
+<h4 id="仅字符串">仅字符串</h4>
+<p>请注意，键和值都必须是字符串。</p>
+<p>如果是任何其他类型，例数字或对象，它会被自动转换为字符串。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">sessionStorage</span>.<span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>};
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">sessionStorage</span>.<span style="color:#a6e22e">user</span>); <span style="color:#75715e">// [object Object]
+</span></code></pre></div><p>我们可以使用 JSON 来存储对象：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">sessionStorage</span>.<span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>});
+
+<span style="color:#75715e">// sometime later
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>( <span style="color:#a6e22e">sessionStorage</span>.<span style="color:#a6e22e">user</span> );
+<span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">name</span> ); <span style="color:#75715e">// John
+</span><span style="color:#75715e"></span>
+</code></pre></div><p>也可以对整个存储对象进行字符串化处理，例如出于调试目的：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 为 JSON.stringify 增加了格式设置选项，以使对象看起来更美观
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">localStorage</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>) );
+</code></pre></div><h3 id="sessionstorage">sessionStorage</h3>
+<p>sessionStorage 对象的使用频率比 localStorage 对象低得多。</p>
+<p>属性和方法是相同的，但是它有更多的限制：</p>
+<p>sessionStorage 的数据只存在于当前浏览器标签页。</p>
+<p>具有相同页面的另一个标签页中将会有不同的存储。
+但是，它在同一标签页下的 iframe 之间是共享的（假如它们来自相同的源）。
+数据在页面刷新后仍然保留，但在关闭/重新打开浏览器标签页后不会被保留。
+让我们看看它的运行效果。</p>
+<p>运行此代码……</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">sessionStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;test&#39;</span>, <span style="color:#ae81ff">1</span>);
+<span style="color:#75715e">// ……然后刷新页面。这时你仍然可以获取到数据：
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">sessionStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;test&#39;</span>) ); <span style="color:#75715e">// after refresh: 1
+</span><span style="color:#75715e">// ……但是，如果你在另一个新的标签页中打开此页面，然后在新页面中再次运行上面这行代码，则会得到 null，表示“未找到数据”。
+</span></code></pre></div><p>这是因为 sessionStorage 不仅绑定到源，还绑定在同一浏览器标签页。因此，sessionStorage 很少被使用。</p>
+<h4 id="storage-事件">Storage 事件</h4>
+<p>当 localStorage 或 sessionStorage 中的数据更新后，storage 事件就会触发，它具有以下属性：</p>
+<ul>
+<li>key —— 发生更改的数据的 key（如果调用的是 .clear() 方法，则为 null）。</li>
+<li>oldValue —— 旧值（如果是新增数据，则为 null）。</li>
+<li>newValue —— 新值（如果是删除数据，则为 null）。</li>
+<li>url —— 发生数据更新的文档的 url。</li>
+<li>storageArea —— 发生数据更新的 localStorage 或 sessionStorage 对象。</li>
+</ul>
+<p>重要的是：该事件会在所有可访问到存储对象的 window 对象上触发，导致当前数据改变的 window 对象除外。</p>
+<p>我们来详细解释一下。</p>
+<p>想象一下，你有两个窗口，它们具有相同的页面。所以 localStorage 在它们之间是共享的。</p>
+<p>你可以想在浏览器的两个窗口中打开此页面来测试下面的代码。</p>
+<p>如果两个窗口都在监听 window.onstorage 事件，那么每个窗口都会对另一个窗口中发生的更新作出反应。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 在其他文档对同一存储进行更新时触发
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">onstorage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span> =&gt; { <span style="color:#75715e">// 等同于 window.addEventListener(&#39;storage&#39;, () =&gt; {
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;now&#39;</span>) <span style="color:#66d9ef">return</span>;
+  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">newValue</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; at &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">url</span>);
+};
+
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;now&#39;</span>, Date.<span style="color:#a6e22e">now</span>());
+</code></pre></div><p>请注意，该事件还包含：event.url —— 发生数据更新的文档的 url。</p>
+<p>并且，event.storageArea 包含存储对象 —— sessionStorage 和 localStorage 具有相同的事件，所以 event.storageArea 引用了被修改的对象。我们可能会想设置一些东西，以“响应”更改。</p>
+<p>这允许同源的不同窗口交换消息。</p>
+<p>现代浏览器还支持 Broadcast channel API，这是用于同源窗口之间通信的特殊 API，它的功能更全，但被支持的情况不好。有一些库基于 localStorage 来 polyfill 该 API，使其可以用在任何地方。</p>
+<h3 id="总结">总结</h3>
+<p>Web 存储对象 localStorage 和 sessionStorage 允许我们在浏览器中保存键/值对。</p>
+<ul>
+<li>key 和 value 都必须为字符串。</li>
+<li>存储大小限制为 5MB+，具体取决于浏览器。</li>
+<li>它们不会过期。</li>
+<li>数据绑定到源（域/端口/协议）。</li>
+</ul>
+<p>localStorage	sessionStorage
+在同源的所有标签页和窗口之间共享数据	在当前浏览器标签页中可见，包括同源的 iframe
+浏览器重启后数据仍然保留	页面刷新后数据仍然保留（但标签页关闭后数据则不再保留）</p>
+<h3 id="api">API：</h3>
+<ul>
+<li>setItem(key, value) —— 存储键/值对。</li>
+<li>getItem(key) —— 按照键获取值。</li>
+<li>removeItem(key) —— 删除键及其对应的值。</li>
+<li>clear() —— 删除所有数据。</li>
+<li>key(index) —— 获取该索引下的键名。</li>
+<li>length —— 存储的内容的长度。</li>
+<li>使用 Object.keys 来获取所有的键。</li>
+<li>我们将键作为对象属性来访问，在这种情况下，不会触发 storage 事件。</li>
+</ul>
+<p>Storage 事件：</p>
+<ul>
+<li>在调用 setItem，removeItem，clear 方法后触发。</li>
+<li>包含有关操作的所有数据（key/oldValue/newValue），文档 url 和存储对象 storageArea。</li>
+<li>在所有可访问到存储对象的 window 对象上触发，导致当前数据改变的 window 对象除外（对于 sessionStorage 是在当前标签页下，对于 localStorage 是在全局，即所有同源的窗口）。</li>
+</ul>
+
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/js-dom-contentload/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Js Dom Contentload</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/php-ini-path-config/">
+                  <span class="button__text">Php Ini Path Config</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+      
+    
+  </div>
+
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#localstoragesessionstorage">LocalStorage，sessionStorage</a>
+      <ul>
+        <li><a href="#localstorage-示例">localStorage 示例</a></li>
+        <li><a href="#sessionstorage">sessionStorage</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#api">API：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/php-ini-path-config/">Php Ini Path Config</a></li>
+    
+    <li><a href="/posts/php-pdoexception-could-not-find-driver/">Php PDOException Could Not Find Driver</a></li>
+    
+    <li><a href="/posts/php-thread-safe/">Php Thread Safe</a></li>
+    
+    <li><a href="/posts/php-install/">Php Install</a></li>
+    
+    <li><a href="/posts/go-map/">Go Map</a></li>
+    
+  </ul>
+  
+</section>
+  </aside>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

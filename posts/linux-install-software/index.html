@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Linux Install Software ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="在 Linux 系统上面，一个文件能不能被运行看的是有没有可运行的那个权限 (具有 x permission)，不过，Linux 系统上真正认识的可运行档其实是"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/linux-install-software/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Install Software"/>
+<meta name="twitter:description" content="在 Linux 系统上面，一个文件能不能被运行看的是有没有可运行的那个权限 (具有 x permission)，不过，Linux 系统上真正认识的可运行档其实是"/>
+
+
+
+<meta property="og:title" content="Linux Install Software" />
+<meta property="og:description" content="在 Linux 系统上面，一个文件能不能被运行看的是有没有可运行的那个权限 (具有 x permission)，不过，Linux 系统上真正认识的可运行档其实是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/linux-install-software/" />
+<meta property="article:published_time" content="2020-12-23T10:46:33+08:00" />
+<meta property="article:modified_time" content="2020-12-23T10:46:33+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Linux Install Software</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-23
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 5 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>在 Linux 系统上面，一个文件能不能被运行看的是有没有可运行的那个权限 (具有 x permission)，不过，Linux 系统上真正认识的可运行档其实是二进位文件 ( binary program)，例如 /usr/bin/passwd, /bin/touch 这些个文件即为二进位程序码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 先以系统的文件测试看看：</span>
+file /bin/bash
+<span style="color:#75715e"># /bin/bash: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for GNU/</span>
+<span style="color:#75715e"># Linux 2.6.9, dynamically linked (uses shared libs), for GNU/Linux 2.6.9, stripped</span>
+
+<span style="color:#75715e"># 如果是系统提供的 /etc/init.d/syslog 呢？</span>
+file /etc/init.d/syslog
+<span style="color:#75715e"># /etc/init.d/syslog: Bourne-Again shell script text executable</span>
+</code></pre></div><p>如果是 binary 而且是可以运行的时候，他就会显示运行档类别 (ELF 32-bit LSB executable)， 同时会说明是否使用动态函式库 (shared libs)，而如果是一般的 script ，那他就会显示出 text executables 之类的字样</p>
+<p>既然 Linux 操作系统真正认识的其实是 binary program，那么我们是如何做出这样的一支 binary 的程序呢？首先，我们必须要写程序，用什么东西写程序？就是一般的文书处理器啊！鸟哥都喜欢使用 vim 来进行程序的撰写，写完的程序就是所谓的原始程序码罗！ 这个程序码文件其实就是一般的纯文字档。 在完成这个原始码文件的编写之后，再来就是要将这个文件『编译』成为操作系统看的懂得 binary program 罗！而要编译自然就需要『编译器』来动作， 经过编译器的编译与连结之后，就会产生一支可以运行的 binary program 。</p>
+<p>举个例子来说，在 Linux 上面最标准的程序语言为 C ，所以我使用 C 的语法进行原始程序码的书写，写完之后，以 Linux 上标准的 C 语言编译器 gcc 这支程序来编译，就可以制作一支可以运行的 binary program 罗。</p>
+<p>总之，我们可以这么说：</p>
+<ul>
+<li>开放源码：就是程序码，写给人类看的程序语言，但机器并不认识，所以无法运行；</li>
+<li>编译器：将程序码转译成为机器看的懂得语言，就类似翻译者的角色；</li>
+<li>可运行档：经过编译器变成二进位程序后，机器看的懂所以可以运行的文件。</li>
+</ul>
+<h3 id="什么是函式库">什么是函式库</h3>
+<h3 id="什么是-make-与-configure">什么是 make 与 configure</h3>
+<p>事实上，使用类似 gcc 的编译器来进行编译的过程并不简单，因为一套软件并不会仅有一支程序， 而是有一堆程序码文件。所以除了每个主程序与副程序均需要写上一笔编译过程的命令外，还需要写上最终的连结程序。 程序码小的时候还好，如果是类似 WWW 服务器软件 (例如 Apache) ，或者是类似核心的原始码，动则数百 MBytes 的数据量，编译命令会写到疯掉～这个时候，我们就可以使用 make 这个命令的相关功能来进行编译过程的命令简化了！</p>
+<p>当运行 make 时，make 会在当时的目录下搜寻 Makefile (or makefile) 这个文字档，而 Makefile 里面则记录了原始码如何编译的详细资讯！ make 会自动的判别原始码是否经过变动了，而自动升级运行档，是软件工程师相当好用的一个辅助工具呢！</p>
+<p>咦！make 是一支程序，会去找 Makefile ，那 Makefile 怎么写？ 通常软件开发商都会写一支侦测程序来侦测使用者的作业环境， 以及该作业环境是否有软件开发商所需要的其他功能，该侦测程序侦测完毕后，就会主动的创建这个 Makefile 的守则文件啦！通常这支侦测程序的档名为 configure 或者是 config 。</p>
+<p>咦！那为什么要侦测作业环境呢？在第一章当中， 不是曾经提过其实每个 Linux distribution 都使用同样的核心吗？但你得要注意， 不同版本的核心所使用的系统呼叫可能不相同，而且每个软件所需要的相依的函式库也不相同， 同时，软件开发商不会仅针对 Linux 开发，而是会针对整个 Unix-Like 做开发啊！ 所以他也必须要侦测该操作系统平台有没有提供合适的编译器才行！所以当然要侦测环境啊！ 一般来说，侦测程序会侦测的数据大约有底下这些：</p>
+<ul>
+<li>是否有适合的编译器可以编译本软件的程序码；</li>
+<li>是否已经存在本软件所需要的函式库，或其他需要的相依软件；</li>
+<li>操作系统平台是否适合本软件，包括 Linux 的核心版本；</li>
+<li>核心的表头定义档 (header include) 是否存在 (驱动程序必须要的侦测)。</li>
+</ul>
+<p>至於 make 与 configure 运行流程的相关性，我们可以使用底下的图示来示意一下啊！ 下图中，你要进行的任务其实只有两个，一个是运行 configure 来创建 Makefile ， 这个步骤一定要成功！成功之后再以 make 来呼叫所需要的数据来编译即可！非常简单！</p>
+<p><img src="/images/make_configure.gif" alt="透过 configure 与 make 进行编译示意图"></p>
+<p>由於不同的 Linux distribution 的函式库文件所放置的路径，或者是函式库的档名订定， 或者是默认安装的编译器，以及核心的版本都不相同，因此理论上，你无法在 CentOS 5.x 上面编译出 binary program 后，还将他拿到 SuSE 上面运行，这个动作通常是不可能成功的！ 因为呼叫的目标函式库位置可能不同 (参考图1.2.1) ， 核心版本更不可能相同！所以能够运行的情况是微乎其微！所以同一套软件要在不同的平台上面运行时， 必须要重复编译！所以才需要原始码嘛！了解乎！</p>
+<p>详细的 make 用法与 Makefile 守则，在后续的小节里面再探讨罗！</p>
+<h3 id="什么是-tarball-原始码-的软件">什么是 Tarball (原始码) 的软件</h3>
+<p>从前面几个小节的说明来看，我们知道所谓的原始程序码，其实就是一些写满了程序码的纯文字文件。 那我们在第九章压缩命令的介绍当中， 也了解了纯文字档在网络上其实是很浪费频宽的一种文件格式！ 所以啦，如果能够将这些原始码透过文件的打包与压缩技术来将文件的数量与容量减小， 不但让使用者容易下载，软件开发商的网站频宽也能够节省很多很多啊！这就是 Tarball 文件的由来罗！</p>
+<p>Tips:
+想一想，一个核心的原始码文件大约要 300~500 MB 以上，如果每个人都去下载这样的一个核心文件， 呵呵！那么网络频宽不被吃的死翘翘才怪呢！	鸟哥的图示
+所谓的 Tarball 文件，其实就是将软件的所有原始码文件先以 tar 打包，然后再以压缩技术来压缩，通常最常见的就是以 gzip 来压缩了。因为利用了 tar 与 gzip 的功能，所以 tarball 文件一般的扩展名就会写成 *.tar.gz 或者是简写为 *.tgz 罗！不过，近来由於 bzip2 的压缩率较佳，所以 Tarball 渐渐的以 bzip2 的压缩技术来取代 gzip 罗！因此档名也会变成 *.tar.bz2 之类的哩。所以说， Tarball 是一个软件包， 你将他解压缩之后，里面的文件通常就会有：</p>
+<p>原始程序码文件；
+侦测程序文件 (可能是 configure 或 config 等档名)；
+本软件的简易说明与安装说明 (INSTALL 或 README)。
+其中最重要的是那个 INSTALL 或者是 README 这两个文件，通常你只要能够参考这两个文件， Tarball 软件的安装是很简单的啦！我们在后面的章节会再继续介绍 Tarball 这个玩意儿。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="http://cn.linux.vbird.org/linux_basic/0520source_code_and_tarball_1.php">鸟哥的linux私房菜 软件安装：原始码与 Tarball</a></li>
+</ul>
+
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/yii-data-cache/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Yii Data Cache</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/http-ip/">
+                  <span class="button__text">Http Ip</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+      
+    
+  </div>
+
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是函式库">什么是函式库</a></li>
+        <li><a href="#什么是-make-与-configure">什么是 make 与 configure</a></li>
+        <li><a href="#什么是-tarball-原始码-的软件">什么是 Tarball (原始码) 的软件</a></li>
+        <li><a href="#参考资料">参考资料</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/http-ip/">Http Ip</a></li>
+    
+    <li><a href="/posts/k8s-tutorial/">K8s Tutorial</a></li>
+    
+    <li><a href="/posts/apache-tomcat/">Apache Tomcat</a></li>
+    
+    <li><a href="/posts/apache-sites-available/">Apache Sites Available</a></li>
+    
+    <li><a href="/posts/secure-shell-sftp/">Secure Shell Sftp</a></li>
+    
+  </ul>
+  
+</section>
+  </aside>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

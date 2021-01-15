@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Php Composer ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="$ composer
+ / / ____ ___ ____ ____ ________ _____ / / / __ / __ `_ / __ / __ / ___/ _ / ___/ / /___/ /_/ / / / / / / /_/ / /_/ (__ ) __/ / ____/____/_/ /_/ /_/ .___/____/____/___/_/ /_/ Composer version 1.8.4 2019-02-11 10:52:10
+Usage: command [options] [arguments]
+Options: -h, &amp;ndash;help Display this help message -q, &amp;ndash;quiet Do not output any message -V, &amp;ndash;version Display this application version &amp;ndash;ansi Force ANSI output &amp;ndash;no-ansi Disable ANSI output -n, &amp;ndash;no-interaction Do not ask any interactive question &amp;ndash;profile Display timing and memory usage information &amp;ndash;no-plugins Whether to disable plugins."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/php-composer/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Composer"/>
+<meta name="twitter:description" content="$ composer
+ / / ____ ___ ____ ____ ________ _____ / / / __ / __ `_ / __ / __ / ___/ _ / ___/ / /___/ /_/ / / / / / / /_/ / /_/ (__ ) __/ / ____/____/_/ /_/ /_/ .___/____/____/___/_/ /_/ Composer version 1.8.4 2019-02-11 10:52:10
+Usage: command [options] [arguments]
+Options: -h, &ndash;help Display this help message -q, &ndash;quiet Do not output any message -V, &ndash;version Display this application version &ndash;ansi Force ANSI output &ndash;no-ansi Disable ANSI output -n, &ndash;no-interaction Do not ask any interactive question &ndash;profile Display timing and memory usage information &ndash;no-plugins Whether to disable plugins."/>
+
+
+
+<meta property="og:title" content="Php Composer" />
+<meta property="og:description" content="$ composer
+ / / ____ ___ ____ ____ ________ _____ / / / __ / __ `_ / __ / __ / ___/ _ / ___/ / /___/ /_/ / / / / / / /_/ / /_/ (__ ) __/ / ____/____/_/ /_/ /_/ .___/____/____/___/_/ /_/ Composer version 1.8.4 2019-02-11 10:52:10
+Usage: command [options] [arguments]
+Options: -h, &ndash;help Display this help message -q, &ndash;quiet Do not output any message -V, &ndash;version Display this application version &ndash;ansi Force ANSI output &ndash;no-ansi Disable ANSI output -n, &ndash;no-interaction Do not ask any interactive question &ndash;profile Display timing and memory usage information &ndash;no-plugins Whether to disable plugins." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/php-composer/" />
+<meta property="article:published_time" content="2021-01-07T17:37:14+08:00" />
+<meta property="article:modified_time" content="2021-01-07T17:37:14+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Php Composer</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2021-01-07
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 3 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>$ composer</p>
+<hr>
+<p>/ <em><em><strong>/</strong></em>  ____ ___  ____  ____  ________  _____
+/ /   / __ / __ `</em>_ / __ / __ / ___/ _ / ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ / <br>
+____/____/_/ /_/ /_/ .___/____/____/___/_/  <br>
+/_/
+Composer version 1.8.4 2019-02-11 10:52:10</p>
+<p>Usage:
+command [options] [arguments]</p>
+<p>Options:
+-h, &ndash;help                     Display this help message
+-q, &ndash;quiet                    Do not output any message
+-V, &ndash;version                  Display this application version
+&ndash;ansi                     Force ANSI output
+&ndash;no-ansi                  Disable ANSI output
+-n, &ndash;no-interaction           Do not ask any interactive question     <br>
+&ndash;profile                  Display timing and memory usage information
+&ndash;no-plugins               Whether to disable plugins.
+-d, &ndash;working-dir=WORKING-DIR  If specified, use the given directory as working directory.
+-v|vv|vvv, &ndash;verbose           Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</p>
+<p>Available commands:
+about                Shows the short information about Composer.
+archive              Creates an archive of this composer package.
+browse               Opens the package&rsquo;s repository URL or homepage in your browser.  <br>
+check-platform-reqs  Check that platform requirements are satisfied.
+clear-cache          Clears composer&rsquo;s internal package cache.
+clearcache           Clears composer&rsquo;s internal package cache.
+config               Sets config options.
+create-project       Creates new project from a package into given directory.
+depends              Shows which packages cause the given package to be installed.    <br>
+diagnose             Diagnoses the system to identify common errors.
+dump-autoload        Dumps the autoloader.
+dumpautoload         Dumps the autoloader.
+exec                 Executes a vendored binary/script.
+global               Allows running commands in the global composer dir ($COMPOSER_HOME).
+help                 Displays help for a command
+home                 Opens the package&rsquo;s repository URL or homepage in your browser.  <br>
+i                    Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+info                 Shows information about packages.
+init                 Creates a basic composer.json file in current directory.
+install              Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+licenses             Shows information about licenses of dependencies.
+list                 Lists commands
+outdated             Shows a list of installed packages that have updates available, including their latest version.
+prohibits            Shows which packages prevent the given package from being installed.
+remove               Removes a package from the require or require-dev.
+require              Adds required packages to your composer.json and installs them.
+run-script           Runs the scripts defined in composer.json.
+search               Searches for packages.
+self-update          Updates composer.phar to the latest version.
+selfupdate           Updates composer.phar to the latest version.
+show                 Shows information about packages.
+status               Shows a list of locally modified packages, for packages installed from source.
+suggests             Shows package suggestions.
+u                    Upgrades your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+update               Upgrades your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+upgrade              Upgrades your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+validate             Validates a composer.json and composer.lock.
+why                  Shows which packages cause the given package to be installed.
+why-not              Shows which packages prevent the given package from being installed.</p>
+
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/document-style-guide/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Document Style Guide</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/docker-command-line/">
+                  <span class="button__text">Docker Command Line</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+      
+    
+  </div>
+
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents"></nav>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/docker-command-line/">Docker Command Line</a></li>
+    
+    <li><a href="/posts/docker-doc/">Docker Doc</a></li>
+    
+    <li><a href="/posts/apache-forbidden/">Apache Forbidden</a></li>
+    
+    <li><a href="/posts/linux-shell-find/">Linux Shell Find</a></li>
+    
+    <li><a href="/posts/docker-image/">Docker Image</a></li>
+    
+  </ul>
+  
+</section>
+  </aside>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

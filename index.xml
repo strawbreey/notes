@@ -16,6 +16,1174 @@
     
     
     <item>
+      <title>Linux Command Tar</title>
+      <link>/posts/linux-command-tar/</link>
+      <pubDate>Wed, 13 Jan 2021 11:21:48 +0800</pubDate>
+      
+      <guid>/posts/linux-command-tar/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Swagger Codegen</title>
+      <link>/posts/swagger-codegen/</link>
+      <pubDate>Wed, 13 Jan 2021 10:57:41 +0800</pubDate>
+      
+      <guid>/posts/swagger-codegen/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          The Swagger Codegen is an open source code-generator (代码生成器) to build server stubs and client SDKs directly from a Swagger defined RESTful API. The source code for the Swagger Codegen can be found in GitHub. GitHub: https://github.com/swagger-api/swagger-codegen
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Web Server</title>
+      <link>/posts/php-web-server/</link>
+      <pubDate>Wed, 13 Jan 2021 10:48:08 +0800</pubDate>
+      
+      <guid>/posts/php-web-server/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          内置Web Server PHP 5.4.0起， CLI SAPI 提供了一个内置的Web服务器。 这个内置的Web服务器主要用于本地开发使用，不可用于线上产品环境。 URI请求会
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Build</title>
+      <link>/posts/go-build/</link>
+      <pubDate>Tue, 12 Jan 2021 16:57:26 +0800</pubDate>
+      
+      <guid>/posts/go-build/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Go 命令 Go is a tool for managing Go source code. Usage: go &amp;lt;command&amp;gt; [arguments] The commands are: bug start a bug report build compile packages and dependencies clean remove object files and cached files doc show documentation for package or symbol env print Go environment information fix update packages to use new APIs fmt gofmt (reformat) package sources generate generate Go files by processing source get add dependencies
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Document Style Guide</title>
+      <link>/posts/document-style-guide/</link>
+      <pubDate>Fri, 08 Jan 2021 19:38:42 +0800</pubDate>
+      
+      <guid>/posts/document-style-guide/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          中文技术文档的写作规范。 标题 层级 标题分为四级。 一级标题：文章的标题 二级标题：文章主要部分的大标题 三级标题：二级标题下面一级的小标题 四级标题：
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Composer</title>
+      <link>/posts/php-composer/</link>
+      <pubDate>Thu, 07 Jan 2021 17:37:14 +0800</pubDate>
+      
+      <guid>/posts/php-composer/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          $ composer
+ / / ____ ___ ____ ____ ________ _____ / / / __ / __ `_ / __ / __ / ___/ _ / ___/ / /___/ /_/ / / / / / / /_/ / /_/ (__ ) __/ / ____/____/_/ /_/ /_/ .___/____/____/___/_/ /_/ Composer version 1.8.4 2019-02-11 10:52:10
+Usage: command [options] [arguments]
+Options: -h, &amp;ndash;help Display this help message -q, &amp;ndash;quiet Do not output any message -V, &amp;ndash;version Display this application version &amp;ndash;ansi Force ANSI output &amp;ndash;no-ansi Disable ANSI output -n, &amp;ndash;no-interaction Do not ask any interactive question &amp;ndash;profile Display timing and memory usage information &amp;ndash;no-plugins Whether to disable plugins.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Command Line</title>
+      <link>/posts/docker-command-line/</link>
+      <pubDate>Thu, 07 Jan 2021 15:17:45 +0800</pubDate>
+      
+      <guid>/posts/docker-command-line/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          1. docker image COMMAND Usage: docker image COMMAND
+Manage images
+Commands: build Build an image from a Dockerfile history Show the history of an image import Import the contents from a tarball to create a filesystem image inspect Display detailed information on one or more images load Load an image from a tar archive or STDIN ls List images prune Remove unused images pull Pull an image or a repository from a registry push Push an image or a repository to a registry rm Remove one or more images save Save one or more images to a tar archive (streamed to STDOUT by default) tag Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Doc</title>
+      <link>/posts/docker-doc/</link>
+      <pubDate>Thu, 07 Jan 2021 11:40:25 +0800</pubDate>
+      
+      <guid>/posts/docker-doc/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Docker is an open platform for developing, shipping, and running applications
+The Docker daemon The Docker daemon (dockerd) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes. A daemon can also communicate with other daemons to manage Docker services.
+The Docker client The Docker client (docker) is the primary way that many Docker users interact with Docker. When you use commands such as docker run, the client sends these commands to dockerd, which carries them out.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Apache Forbidden</title>
+      <link>/posts/apache-forbidden/</link>
+      <pubDate>Wed, 06 Jan 2021 10:07:34 +0800</pubDate>
+      
+      <guid>/posts/apache-forbidden/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          apache服务出现问题的解决方法总结: 在配置Linux的 Apache服务时，经常会遇到 Forbidden 403（拒绝访问）错误，总结了一下有以下4种原因:
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Shell Find</title>
+      <link>/posts/linux-shell-find/</link>
+      <pubDate>Mon, 04 Jan 2021 15:45:29 +0800</pubDate>
+      
+      <guid>/posts/linux-shell-find/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # find ./ -exec rm {} \; # find ./ | xargs rm -rf 两者都可以把find命令查找到的结果删除，其区别简单的说是前者是把find发现的结果一次性传给exec选项，这样
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Image</title>
+      <link>/posts/docker-image/</link>
+      <pubDate>Mon, 04 Jan 2021 15:36:27 +0800</pubDate>
+      
+      <guid>/posts/docker-image/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          解决apache启动错误：Could not reliably determine the server&amp;rsquo;s fully qualified domain name 1）进入apache的安装目录：(视个人安装情况而不同) [root@server ~]# cd /usr/local/apache/conf 2）编辑httpd.c
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Auth</title>
+      <link>/posts/git-auth/</link>
+      <pubDate>Thu, 31 Dec 2020 15:16:37 +0800</pubDate>
+      
+      <guid>/posts/git-auth/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          如果我们git clone的下载代码的时候是连接的https://而不是git@git (ssh)的形式，当我们操作git pull/push到远
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Composer Install</title>
+      <link>/posts/composer-install/</link>
+      <pubDate>Wed, 30 Dec 2020 19:31:39 +0800</pubDate>
+      
+      <guid>/posts/composer-install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+           The openssl extension is required for SSL/TLS protection but is not available. If you can not enable the openssl extension, you can disable this error, at your own risk, by setting the &amp;lsquo;disable-tls&amp;rsquo; option to true.  composer config -g -- disable-tls trueYour configuration does not allow connections to http://repo.packagist.org/packages.json.  extension=php_openssl.dll
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Install Svn</title>
+      <link>/posts/linux-install-svn/</link>
+      <pubDate>Tue, 29 Dec 2020 17:03:17 +0800</pubDate>
+      
+      <guid>/posts/linux-install-svn/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          SVN（Subversion）是一个自由、开源的项目源代码版本控制工具。目前，绝大多数开源软件和企业代码管理，都使用SVN作为代码版本管理软
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Shell Sed</title>
+      <link>/posts/shell-sed/</link>
+      <pubDate>Tue, 29 Dec 2020 15:30:14 +0800</pubDate>
+      
+      <guid>/posts/shell-sed/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Apache Php</title>
+      <link>/posts/apache-php/</link>
+      <pubDate>Mon, 28 Dec 2020 19:47:59 +0800</pubDate>
+      
+      <guid>/posts/apache-php/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          网页解析不了php，可以查看到源码 思路： 因为 apache 解析不了 php，所以要先看 php 有没有加载解析 php 模版 httpd -M 查看是否存在 php5_module 如果存在的话， 添加AddTy
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Apache Php</title>
+      <link>/posts/linux-apache-php/</link>
+      <pubDate>Mon, 28 Dec 2020 17:55:51 +0800</pubDate>
+      
+      <guid>/posts/linux-apache-php/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Nginx Apache</title>
+      <link>/posts/linux-nginx-apache/</link>
+      <pubDate>Mon, 28 Dec 2020 15:41:53 +0800</pubDate>
+      
+      <guid>/posts/linux-nginx-apache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Linux服务器下Nginx与Apache共存 将nginx作为代理服务器和web服务器使用，nginx监听80端口，Apache监听除80以
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Apache Install</title>
+      <link>/posts/apache-install/</link>
+      <pubDate>Mon, 28 Dec 2020 12:12:45 +0800</pubDate>
+      
+      <guid>/posts/apache-install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          CentOS 7下Apache的安装 CentOS下使用yum安装Apache极为方便，只需要在终端键入以下命令即可 # 1.安装Apache sudo apachectl configtest # 2.设置
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Has Own Property</title>
+      <link>/posts/js-has-own-property/</link>
+      <pubDate>Fri, 25 Dec 2020 10:08:24 +0800</pubDate>
+      
+      <guid>/posts/js-has-own-property/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。 1. 点( . )或者方括号( [ ] ) 通过点或者方括号可以获
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Dom Contentload</title>
+      <link>/posts/js-dom-contentload/</link>
+      <pubDate>Thu, 24 Dec 2020 19:50:53 +0800</pubDate>
+      
+      <guid>/posts/js-dom-contentload/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          页面生命周期：DOMContentLoaded，load，beforeunload，unload HTML 页面的生命周期包含三个重要事件： DOMContentLoaded —— 浏览
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Storage</title>
+      <link>/posts/js-storage/</link>
+      <pubDate>Thu, 24 Dec 2020 17:06:47 +0800</pubDate>
+      
+      <guid>/posts/js-storage/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          LocalStorage，sessionStorage Web 存储对象 localStorage 和 sessionStorage 允许我们在浏览器上保存键/值对。 它们有趣的是，在页面刷新后（对于 ses
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Ini Path Config</title>
+      <link>/posts/php-ini-path-config/</link>
+      <pubDate>Thu, 24 Dec 2020 15:28:35 +0800</pubDate>
+      
+      <guid>/posts/php-ini-path-config/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          修改php.ini 中插件的默认路径 ; UNIX: &amp;quot;/path1:/path2&amp;quot; ;include_path = &amp;quot;.:/php/includes&amp;quot; ; ; Windows: &amp;quot;\path1;\path2&amp;quot; ;include_path = &amp;quot;.;c:\php\includes&amp;quot; ;
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php PDOException Could Not Find Driver</title>
+      <link>/posts/php-pdoexception-could-not-find-driver/</link>
+      <pubDate>Thu, 24 Dec 2020 15:24:42 +0800</pubDate>
+      
+      <guid>/posts/php-pdoexception-could-not-find-driver/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          新配了个环境，访问数据库发现抱着个错： PDOException “could not find driver” 经排查是pdo拓展没有开启。在php.ini里面解开注释即可。 解放注释
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Thread Safe</title>
+      <link>/posts/php-thread-safe/</link>
+      <pubDate>Thu, 24 Dec 2020 14:53:04 +0800</pubDate>
+      
+      <guid>/posts/php-thread-safe/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          非线程安全的 PHP 主要用于 IIS，因为 IIS 采用 FastCGI 方式调用 PHP，是自带多线程相关的冲突处理代码的，和 Apache、Nginx 上的运行方式不一样。但
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Install</title>
+      <link>/posts/php-install/</link>
+      <pubDate>Thu, 24 Dec 2020 14:45:35 +0800</pubDate>
+      
+      <guid>/posts/php-install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在微软 Windows 系统上安装 PHP，并推荐使用常见的 Web 服务器进行配置。 注意: 如果您正在寻找有关旧系统的信息，如 Windows XP、2003、98 或 Apache 1.x，请参阅
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Map</title>
+      <link>/posts/go-map/</link>
+      <pubDate>Thu, 24 Dec 2020 11:25:45 +0800</pubDate>
+      
+      <guid>/posts/go-map/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Go 语言Map(集合) Map 是一种无序的键值对的集合。Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。 Map 是一种集合，所以
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Eslint</title>
+      <link>/posts/eslint/</link>
+      <pubDate>Thu, 24 Dec 2020 10:26:32 +0800</pubDate>
+      
+      <guid>/posts/eslint/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          最佳实践 accessor-pairs 最佳实践 一般 有 setter 的地方必须有 getter，有 getter 的地方可以没有 setter array-callback-return 最佳实践 一般 数组的一些方法（map, reduce 等）的回调函数中，必须有返回
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Compose Config</title>
+      <link>/posts/docker-compose-config/</link>
+      <pubDate>Wed, 23 Dec 2020 17:57:39 +0800</pubDate>
+      
+      <guid>/posts/docker-compose-config/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在项目中，往往需要在 docker-compose.yml 文件中使用环境变量来控制不同的条件和使用场景。本文集中介绍 docker compose 引用环境变量的方式。 Compose CLI 与环境变量 Compose CLI(compose command-line 即 docker-compose 程序)能够识
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Compose Network Mode</title>
+      <link>/posts/docker-compose-network-mode/</link>
+      <pubDate>Wed, 23 Dec 2020 17:29:07 +0800</pubDate>
+      
+      <guid>/posts/docker-compose-network-mode/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          设置网络模式。 network_mode: &amp;ldquo;bridge&amp;rdquo; network_mode: &amp;ldquo;host&amp;rdquo; network_mode: &amp;ldquo;none&amp;rdquo; network_mode: &amp;ldquo;service:[service name]&amp;rdquo; network_mode: &amp;ldquo;container:[container name/id]&amp;rdquo; network_mode: &amp;ldquo;bridge&amp;rdquo;
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Yii Data Cache</title>
+      <link>/posts/yii-data-cache/</link>
+      <pubDate>Wed, 23 Dec 2020 15:41:39 +0800</pubDate>
+      
+      <guid>/posts/yii-data-cache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          数据缓存 数据缓存是指将一些 PHP 变量存储到缓存中，使用时再从缓存中取回。 它也是更高级缓存特性的基础，例如查询缓存 和内容缓存。 如下代码是一个典型的
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Install Software</title>
+      <link>/posts/linux-install-software/</link>
+      <pubDate>Wed, 23 Dec 2020 10:46:33 +0800</pubDate>
+      
+      <guid>/posts/linux-install-software/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在 Linux 系统上面，一个文件能不能被运行看的是有没有可运行的那个权限 (具有 x permission)，不过，Linux 系统上真正认识的可运行档其实是
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Ip</title>
+      <link>/posts/http-ip/</link>
+      <pubDate>Tue, 22 Dec 2020 19:53:55 +0800</pubDate>
+      
+      <guid>/posts/http-ip/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          公网IP无法访问，显示服务器拒绝了请求？ 你的网站能ping通，80端口也是开放的，那就是你服务器没提相应的HTTP服务，不知道你是Apach
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>K8s Tutorial</title>
+      <link>/posts/k8s-tutorial/</link>
+      <pubDate>Mon, 21 Dec 2020 15:05:15 +0800</pubDate>
+      
+      <guid>/posts/k8s-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          # 1. 查看某个名字空间下所有pod kubectl get pod -n barad -o wide # 2. 查看所有名字空间下pod kubectl get pod --all-namespaces # 3. 在某个pod内开启一个交互式shell（即“进入容器内
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Apache Tomcat</title>
+      <link>/posts/apache-tomcat/</link>
+      <pubDate>Mon, 21 Dec 2020 11:12:12 +0800</pubDate>
+      
+      <guid>/posts/apache-tomcat/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Apache 和 Tomcat 都是web网络服务器，两者既有联系又有区别，在进行HTML、PHP、JSP、Perl等开发过程中，需要准确掌握其各自特点，选择最佳的服
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Apache Sites Available</title>
+      <link>/posts/apache-sites-available/</link>
+      <pubDate>Fri, 18 Dec 2020 15:10:19 +0800</pubDate>
+      
+      <guid>/posts/apache-sites-available/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          由于php的url需要重写, 需要用到apache的mod_rewrite.so模块，用.htaccess文件去掉index.php优化SEO
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Secure Shell Sftp</title>
+      <link>/posts/secure-shell-sftp/</link>
+      <pubDate>Fri, 18 Dec 2020 10:32:30 +0800</pubDate>
+      
+      <guid>/posts/secure-shell-sftp/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Secure Shell Rsync</title>
+      <link>/posts/secure-shell-rsync/</link>
+      <pubDate>Fri, 18 Dec 2020 10:32:24 +0800</pubDate>
+      
+      <guid>/posts/secure-shell-rsync/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Secure Shell Scp</title>
+      <link>/posts/secure-shell-scp/</link>
+      <pubDate>Fri, 18 Dec 2020 10:32:09 +0800</pubDate>
+      
+      <guid>/posts/secure-shell-scp/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Secure Shell</title>
+      <link>/posts/secure-shell/</link>
+      <pubDate>Fri, 18 Dec 2020 10:11:57 +0800</pubDate>
+      
+      <guid>/posts/secure-shell/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          SSH or Secure Shell is a cryptographic network protocol for operating network services (网络运营服务) securely over an unsecured network.[1] Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH. SSH provides a secure channel over an unsecured network by using a client–server
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Yaml Tutorial</title>
+      <link>/posts/yaml-tutorial/</link>
+      <pubDate>Thu, 17 Dec 2020 17:57:22 +0800</pubDate>
+      
+      <guid>/posts/yaml-tutorial/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          YAML 是 &amp;ldquo;YAML Ain&amp;rsquo;t a Markup Language&amp;rdquo;（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是：&amp;ldquo;Y
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Dockerfile</title>
+      <link>/posts/docker-dockerfile/</link>
+      <pubDate>Thu, 17 Dec 2020 16:00:13 +0800</pubDate>
+      
+      <guid>/posts/docker-dockerfile/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession. FROM FROM [&amp;ndash;platform=] [AS ] FROM [&amp;ndash;platform=] [:] [AS ] FROM [&amp;ndash;platform=] [@] [AS ] RUN RUN RUN [&amp;ldquo;executable&amp;rdquo;,
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Compose</title>
+      <link>/posts/docker-compose/</link>
+      <pubDate>Thu, 17 Dec 2020 16:00:03 +0800</pubDate>
+      
+      <guid>/posts/docker-compose/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Docker Mirror</title>
+      <link>/posts/docker-mirror/</link>
+      <pubDate>Thu, 17 Dec 2020 14:49:12 +0800</pubDate>
+      
+      <guid>/posts/docker-mirror/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          问题背景 Docker hub自2020年11月开始，对匿名和免费账户增加了pull镜像频率限制 Docker Hub限频计划 https://www.docker.com/increase-rate-limits Docker Hub将限制匿名和免费账户的docke
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Source Word 7000</title>
+      <link>/posts/source-word-7000/</link>
+      <pubDate>Thu, 17 Dec 2020 13:07:00 +0800</pubDate>
+      
+      <guid>/posts/source-word-7000/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          List1 1. pronounce 发音, 读音，正式宣布/公布 派生: pronunciation 拓展词汇 enounce v. 声明 enunciate v. 发音 articulate v. 口齿清楚讲话， 清晰发音， 清楚的表达， adj 能说会道的 artisanship 工匠精神 2. announce 宣布, 宣告
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Fetch</title>
+      <link>/posts/js-fetch/</link>
+      <pubDate>Thu, 17 Dec 2020 10:32:33 +0800</pubDate>
+      
+      <guid>/posts/js-fetch/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git Contributing</title>
+      <link>/posts/git-contributing/</link>
+      <pubDate>Thu, 17 Dec 2020 10:07:54 +0800</pubDate>
+      
+      <guid>/posts/git-contributing/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Contributing to repository We&amp;rsquo;d love for you to contribute to our source code and to make the repository even better than it is today! Here are the guidelines we&amp;rsquo;d like you to follow:
+ Code of Conduct Questions and Problems Issues and Bugs Feature Requests Improving Documentation Issue Submission Guidelines Pull Request Submission Guidelines Signing the CLA  Code of Conduct Help us keep AngularJS open and inclusive. Please read and follow our Code of Conduct.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Php Download File</title>
+      <link>/posts/php-download-file/</link>
+      <pubDate>Wed, 16 Dec 2020 15:24:48 +0800</pubDate>
+      
+      <guid>/posts/php-download-file/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          // 1. 方案一 // file — 把整个文件读入一个数组中 $fp=file($url); foreach ($fp as $fileLine) { echo $fileLine; } // 2. 方案二 // file_get_contents — 将整个文件读入一个字符串 echo file_get_content($url) // 3. 方案三 // 注意fopen读取文件需要
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Accept Length</title>
+      <link>/posts/http-accept-length/</link>
+      <pubDate>Wed, 16 Dec 2020 15:21:03 +0800</pubDate>
+      
+      <guid>/posts/http-accept-length/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          $interval=120; //2分钟 if(isset($_SERVER[&amp;#39;HTTP_IF_MODIFIED_SINCE&amp;#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间. // 缓存时间+时长. $c_time = strtotime($_SERVER[&amp;#39;HTTP_IF_MODIFIED_SINCE&amp;#39;])+$interval; // 当
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http Content Type</title>
+      <link>/posts/http-content-type/</link>
+      <pubDate>Wed, 16 Dec 2020 15:20:15 +0800</pubDate>
+      
+      <guid>/posts/http-content-type/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Http 304</title>
+      <link>/posts/http-304/</link>
+      <pubDate>Tue, 15 Dec 2020 19:37:46 +0800</pubDate>
+      
+      <guid>/posts/http-304/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Vim No Write Since Last Change</title>
+      <link>/posts/vim-no-write-since-last-change/</link>
+      <pubDate>Tue, 15 Dec 2020 12:29:06 +0800</pubDate>
+      
+      <guid>/posts/vim-no-write-since-last-change/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          故障现象 使用vim修改文件, :q或者:wq退出失败 报错，系统提示如下： E37: No write since last change (add ! to override) 使用命令:w!强制存盘即可，在vim模式下，键入以
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Difference Between Nginx and Apache</title>
+      <link>/posts/difference-between-nginx-and-apache/</link>
+      <pubDate>Tue, 15 Dec 2020 11:06:35 +0800</pubDate>
+      
+      <guid>/posts/difference-between-nginx-and-apache/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js For</title>
+      <link>/posts/js-for/</link>
+      <pubDate>Mon, 14 Dec 2020 23:37:43 +0800</pubDate>
+      
+      <guid>/posts/js-for/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          1. for循环 for有三个表达式：①声明循环变量；②判断循环条件；③更新循环变量；三个表达式之间，用;分割，for循环三个表达式都可以省略，但
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Example</title>
+      <link>/posts/go-example/</link>
+      <pubDate>Mon, 14 Dec 2020 12:18:37 +0800</pubDate>
+      
+      <guid>/posts/go-example/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          1. 编译 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello world&amp;#34;) } 要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。 go run hello-world.go hello world 有时候我们想将我们的程序编译成二进制文件。我们可以通
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Go Import</title>
+      <link>/posts/go-import/</link>
+      <pubDate>Mon, 14 Dec 2020 11:29:30 +0800</pubDate>
+      
+      <guid>/posts/go-import/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          可以在一个 Go语言源文件包声明语句之后，其它非导入声明语句之前，包含零到多个导入包声明语句。 每个导入声明可以单独指定一个导入路径，也可以通过
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Arguments</title>
+      <link>/posts/js-arguments/</link>
+      <pubDate>Mon, 14 Dec 2020 11:16:26 +0800</pubDate>
+      
+      <guid>/posts/js-arguments/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Js Revisited</title>
+      <link>/posts/js-revisited/</link>
+      <pubDate>Mon, 14 Dec 2020 11:15:19 +0800</pubDate>
+      
+      <guid>/posts/js-revisited/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          让我们深入研究一下箭头函数。 箭头函数不仅仅是编写简洁代码的“捷径”。它还具有非常特殊且有用的特性。 JavaScript 充满了我们需要编写在其他地方执行的小函数
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Vue Reactivity</title>
       <link>/posts/vue-reactivity/</link>
       <pubDate>Fri, 11 Dec 2020 19:58:00 +0800</pubDate>
@@ -1395,7 +2563,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
         
         
         
-          
+          定义和用法 sort() 方法用于对数组的元素进行排序。 语法 arrayObject.sort(sortby) 参数 描述 sortby 可选。规定排序顺序。必须是函数。 返回值 对数组的引用。请注意，数组在原数组上进行排序
           
         
         </description>
@@ -4153,7 +5321,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
         
         
         
-          
+          Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。 Shell 是指一种应用程序，这个应用程序提供了一
           
         
         </description>
@@ -5375,7 +6543,7 @@ scoop install hugo# Or install the extended version with:scoop install hugo-ex
         
         
         
-          在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 Unix Like 系统都会内建 vi
+          在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 linux 系统都会内建 vi 文
           
         
         </description>
@@ -5435,7 +6603,7 @@ scoop install hugo# Or install the extended version with:scoop install hugo-ex
         
         
         
-          Go 语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。 goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。 // go 函数名 (参数列表) //
+          Go 语言支持并发，我们只需要通过 go 关键字来开启 goroutine 即可。 goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。 // go 函数名 (参数列表) go
           
         
         </description>
@@ -5555,7 +6723,7 @@ scoop install hugo# Or install the extended version with:scoop install hugo-ex
         
         
         
-          keyboard-shortcuts-windows
+          keyboard-shortcuts-windows 常用快捷键 ctrl + p 文件搜索
           
         
         </description>
@@ -5575,7 +6743,7 @@ scoop install hugo# Or install the extended version with:scoop install hugo-ex
         
         
         
-          
+          # 安装 sudo apt-get install vim # Ubuntu # vim 教程 新手指南 vimtutor # 移动光标 hjkl 2w # 向前移动两个单词 3e # 向前移动到第 3 个单词的末尾 0 # 移动到行首 $ # 当前行的末尾 gg # 文件第一
           
         
         </description>
@@ -6415,7 +7583,7 @@ scoop install hugo# Or install the extended version with:scoop install hugo-ex
         
         
         
-          echo &amp;#34;Deleting old publication&amp;#34;rm -rf publicmkdir publicgit worktree prunerm -rf .git/worktrees/public/echo &amp;#34;Checking out gh-pages branch into public&amp;#34;git worktree add -B gh-pages public upstream/gh-pagesecho &amp;#34;Removing existing files&amp;#34;rm -rf public/*echo &amp;#34;Generating site&amp;#34;hugoecho &amp;#34;Updating gh-pages branch&amp;#34;cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;#34;Publishing to gh-pages (publish.sh)&amp;#34;
+          echo &amp;#34;Deleting old publication&amp;#34; rm -rf public mkdir public git worktree prune rm -rf .git/worktrees/public/ echo &amp;#34;Checking out gh-pages branch into public&amp;#34; git worktree add -B gh-pages public upstream/gh-pages echo &amp;#34;Removing existing files&amp;#34; rm -rf public/* echo &amp;#34;Generating site&amp;#34; hugo echo &amp;#34;Updating gh-pages branch&amp;#34; cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;#34;Publishing to gh-pages (publish.sh)&amp;#34; Git 本身不支持对某一特定文
           
         
         </description>

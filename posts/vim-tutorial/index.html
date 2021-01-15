@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 Unix Like 系统都会内建 vi"
+  content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 linux 系统都会内建 vi 文"
 />
 <meta
   name="keywords"
@@ -47,12 +47,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim Tutorial"/>
-<meta name="twitter:description" content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 Unix Like 系统都会内建 vi"/>
+<meta name="twitter:description" content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 linux 系统都会内建 vi 文"/>
 
 
 
 <meta property="og:title" content="Vim Tutorial" />
-<meta property="og:description" content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 Unix Like 系统都会内建 vi" />
+<meta property="og:description" content="在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了 为什么要学vim 所有的 linux 系统都会内建 vi 文" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/vim-tutorial/" />
 <meta property="article:published_time" content="2020-09-22T10:41:46+08:00" />
@@ -175,16 +175,16 @@
 
     <div class="post-content">
       <p>在 Linux 的世界中，绝大部分的配置文件都是以 ASCII 的纯文本形态存在，因此利用简单的文字编辑软件就能够修改设定了</p>
-<h3 id="为什么要学vim">为什么要学vim</h3>
+<h2 id="为什么要学vim">为什么要学vim</h2>
 <ul>
-<li>所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在；</li>
+<li>所有的 linux 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在；</li>
 <li>很多个别软件的编辑接口都会主动呼叫 vi (例如未来会谈到的 crontab, visudo, edquota 等指令)；</li>
 <li>vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计；</li>
 <li>因为程序简单，编辑速度相当快速</li>
 </ul>
 <p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。</p>
 <p><img src="../../static/images/vi-vim-cheat-sheet-sch.gif" alt="vi-vim-cheat-sheet-sch"></p>
-<h4 id="命令模式">命令模式：</h4>
+<h3 id="命令模式">命令模式：</h3>
 <p>用户刚刚启动 vi/vim，便进入了命令模式。</p>
 <p>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
 <p>以下是常用的几个命令：</p>
@@ -193,7 +193,7 @@
 <li>x 删除当前光标所在处的字符。</li>
 <li>: 切换到底线命令模式，以在最底一行输入命令。</li>
 </ul>
-<h4 id="输入模式">输入模式</h4>
+<h3 id="输入模式">输入模式</h3>
 <p>在命令模式下按下i就进入了输入模式。</p>
 <p>在输入模式中，可以使用以下按键：</p>
 <ul>
@@ -207,7 +207,7 @@
 <li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
 <li>ESC，退出输入模式，切换到命令模式</li>
 </ul>
-<h4 id="底线命令模式">底线命令模式</h4>
+<h3 id="底线命令模式">底线命令模式</h3>
 <p>在命令模式下按下:（英文冒号）就进入了底线命令模式。</p>
 <p>在底线命令模式中，基本的命令有（已经省略了冒号）:</p>
 <p>q 退出程序
@@ -254,15 +254,21 @@ nG	n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到�
 gg	移动到这个档案的第一行，相当于 1G 啊！ (常用)
 n<!-- raw HTML omitted -->	n 为数字。光标向下移动 n 行(常用)</p>
 <h4 id="搜索替换">搜索替换</h4>
-<p>/word	向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird 这个字符串，就输入 /vbird 即可！ (常用)
-?word	向光标之上寻找一个字符串名称为 word 的字符串。
-n	这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为 vbird 的字符串！
-N	这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird 后，按下 N 则表示『向上』搜寻 vbird 。
-使用 /word 配合 n 及 N 是非常有帮助的！可以让你重复的找到一些你搜寻的关键词！
-:n1,n2s/word1/word2/g	n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则：
-『:100,200s/vbird/VBIRD/g』。(常用)
-:1,$s/word1/word2/g 或 :%s/word1/word2/g	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)
-:1,$s/word1/word2/gc 或 :%s/word1/word2/gc	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)</p>
+<ul>
+<li>
+<p>/word	向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird 这个字符串，就输入 /vbird 即可！ (常用)</p>
+</li>
+<li>
+<p>?word	向光标之上寻找一个字符串名称为 word 的字符串。</p>
+</li>
+</ul>
+<p>n	这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为 vbird 的字符串！</p>
+<p>N	这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird 后，按下 N 则表示『向上』搜寻 vbird 。
+使用 /word 配合 n 及 N 是非常有帮助的！可以让你重复的找到一些你搜寻的关键词！</p>
+<p>:n1,n2s/word1/word2/g	n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则：
+『:100,200s/vbird/VBIRD/g』。(常用)</p>
+<p>:1,$s/word1/word2/g 或 :%s/word1/word2/g	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)</p>
+<p>:1,$s/word1/word2/gc 或 :%s/word1/word2/gc	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)</p>
 <h4 id="删除复制与贴上">删除、复制与贴上</h4>
 <p>x, X	在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)， X 为向前删除一个字符(相当于 [backspace] 亦即是退格键) (常用)
 nx	n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。
@@ -350,7 +356,7 @@ ZQ	不保存，强制退出。效果等同于 :q!。</p>
   const gitalk = new Gitalk({
     clientID: '4655ac5540fffb80a545',
     clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
-    repo: 'notes',      
+    repo: 'https://github.com/strawbreey/notes',      
     owner: 'strawbreey',
     admin: ['strawbreey'],
     id: location.pathname,      
@@ -369,9 +375,11 @@ ZQ	不保存，强制退出。效果等同于 :q!。</p>
         <h3>title</h3>
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#为什么要学vim">为什么要学vim</a>
       <ul>
-        <li><a href="#为什么要学vim">为什么要学vim</a></li>
+        <li><a href="#命令模式">命令模式：</a></li>
+        <li><a href="#输入模式">输入模式</a></li>
+        <li><a href="#底线命令模式">底线命令模式</a></li>
         <li><a href="#example">Example</a></li>
         <li><a href="#vivim-按键说明">vi/vim 按键说明</a></li>
         <li><a href="#第二部分一般模式切换到编辑模式的可用的按钮说明">第二部分：一般模式切换到编辑模式的可用的按钮说明</a></li>

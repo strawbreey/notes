@@ -209,6 +209,14 @@
         ],
     ];
 }
+
+a {
+
+}
+
+b, a {
+    
+}
 </code></pre></div><p>上述代码表明 HTTP 缓存只在 view 操作时启用。 它会基于用户请求的标题和内容生成一个 ETag HTTP 头。 当浏览器第一次访问 view 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器标题和内容没被修改在期间访问该页，服务器将不会重新生成页面， 浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。</p>
 <h3 id="cache-control-头">Cache-Control 头</h3>
 <p>Cache-Control 头指定了页面的常规缓存策略。 可以通过配置 yii\filters\HttpCache::$cacheControlHeader 属性发送相应的头信息。默认发送以下头：</p>
@@ -256,7 +264,7 @@
   const gitalk = new Gitalk({
     clientID: '4655ac5540fffb80a545',
     clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
-    repo: 'notes',      
+    repo: 'https://github.com/strawbreey/notes',      
     owner: 'strawbreey',
     admin: ['strawbreey'],
     id: location.pathname,      

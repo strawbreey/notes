@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Http Accept Length ::
+        Strawbreey Notes
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="$interval=120; //2分钟 if(isset($_SERVER[&amp;#39;HTTP_IF_MODIFIED_SINCE&amp;#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间. // 缓存时间&#43;时长. $c_time = strtotime($_SERVER[&amp;#39;HTTP_IF_MODIFIED_SINCE&amp;#39;])&#43;$interval; // 当"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/http-accept-length/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css">
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/favicon.png" />
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Http Accept Length"/>
+<meta name="twitter:description" content="$interval=120; //2分钟 if(isset($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间. // 缓存时间&#43;时长. $c_time = strtotime($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])&#43;$interval; // 当"/>
+
+
+
+<meta property="og:title" content="Http Accept Length" />
+<meta property="og:description" content="$interval=120; //2分钟 if(isset($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间. // 缓存时间&#43;时长. $c_time = strtotime($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])&#43;$interval; // 当" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/http-accept-length/" />
+<meta property="article:published_time" content="2020-12-16T15:21:03+08:00" />
+<meta property="article:modified_time" content="2020-12-16T15:21:03+08:00" /><meta property="og:site_name" content="Strawbreey Notes" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    
+    <span class="logo__text">
+      Strawbreey Notes
+    </span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Http Accept Length</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-16
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+        <span class="post-read-time"
+          >— 3 min read</span
+        >
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$interval=120; //2分钟
+if(isset($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])){
+    // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间.
+    // 缓存时间+时长.
+    
+    $c_time = strtotime($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])+$interval;
+
+    // 当大于当前时间时, 表示还在缓存中... 释放304
+    if($c_time &gt; time()){
+        header(&#39;HTTP/1.1 304 Not Modified&#39;);
+        exit();
+    }
+}
+
+// Cache-Control头，告诉让浏览器自己缓存个120秒
+header(&#39;Cache-Control:max-age=120&#39;);
+
+// 在当前时间的120秒后缓存失效，浏览器会在120秒后把缓存失效，再次请求时会到服务器端请求而不是本地
+header(&#34;Expires: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;,time()+ 120).&#34; GMT&#34;);
+
+// Last-Modified则是说明这个文档最后修改时间
+header(&#34;Last-Modified: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;) . &#34; GMT&#34;);
+</code></pre></div><ol>
+<li>
+<p>当浏览器再次访问时（刷新页面），浏览器因为在第一次时接收到了Last-Modified，它便会根据这个时间去检查服务器的文档是否更新过，也就是会把这个时间用HTTP_IF_MODIFIED_SINCE这个东西带过去，于是也就有了第一个花括号内容的判断。而花括号内再次根据这个时间加上你设置的时间（120秒），看看是不是超出了当前的时间time()，如果超出了，那就是还在缓存期内，帮直接返回304，然后直接退出。这时候浏览器便会自动用缓存的内容。这样子做，服务器返回的内容就很短，只是一个304响应头而已，而内容不需要返回，这可大大节省网络流量，显然浏览器的响应速度也会感觉明显快了。</p>
+</li>
+<li>
+<p>按F5刷新或者按浏览器的刷新按钮时，你将发现2分钟内你的PHP请求将是304状态返回。
+强制刷新（CTRL+F5）时，浏览器不会带HTTP_IF_MODIFIED_SINCE这个东西去判断，所以同正常浏览一样，返回200状态。这个逻辑是正常的，因为强制刷新本就相当于完全请求一遍最新内容。</p>
+</li>
+</ol>
+<p><img src="/images/977033-20170410175310876-1823314432.png" alt="http 403缓存"></p>
+<p>php中在做文件下载的时候，其中要加上这么一些header信息：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">header(&#34;Content-type: application/octet-stream&#34;);
+header(&#34;Accept-Ranges: bytes&#34;);
+header(&#34;Accept-Length:&#34;.$fileSize);
+header(&#34;Content-Length:&#34;.$fileSize);
+header(&#34;Content-Disposition: attachment; filename=&#34;.$fileName);
+</code></pre></div><ul>
+<li>Content-Length: 获取下载文件的大小, 但下载大小和真实大小不一定时, 会导致下载不完整</li>
+</ul>
+<h3 id="http-header-常见配置">http header 常见配置</h3>
+<ol>
+<li>max-age：</li>
+</ol>
+<p>header(&lsquo;Cache-Control:max-age=120&rsquo;);</p>
+<p>这个的输出是表明让浏览器缓存120秒。这个指令很有用，但是局限性在于，刷新这个页面时还是会重新请求，所以你会感觉这个头好像没什么作用，但是对于一些输出的JS、CSS内容时是有用的，也就是说你刷新的页面不是它本身，而只是引用了设置有此头的PHP文件的话，它就会在你指定的时间内从本地缓存中读取内容而不会请求服务器。同时通过超链接过来的已经请求过的页面时，你也会看到浏览器从本地cache里读取而不用通过服务器。</p>
+<ol start="2">
+<li>Expires</li>
+</ol>
+<p>Expires是HTTP/1.0中的,它比max-age要麻烦点.Expires指定的时间分下面二种,这个主要考虑到apache中设置是A还是M.</p>
+<ul>
+<li>相对文件的最后访问时间(Atime)
+当Apache使用A时间来做Expires时.这样设置时.他就和max-age的值相等,因为max-age是相对文件的请求时间(Atime).</li>
+</ul>
+<p>例如:ExpiresByType text/html A600</p>
+<p>由上面我们得知,Apache设置Atime时,过期为600秒时.</p>
+<p>Expires=18:00+600=18:10
+max-age=18:00+600=18:10</p>
+<p>得出:Expires=max-age</p>
+<ul>
+<li>绝对修改时间(MTime)
+这又分二种情况,我们来拿A.htm来讲
+假设文件的建立时间为18:00.</li>
+</ul>
+<p>当用户Request请求为18:00时,过期为600秒</p>
+<p>Expires=18:00+600=18:10
+max-age=18:00+600=18:10</p>
+<p>得出:Expires等于max-age</p>
+<ol start="3">
+<li>Cache-Control</li>
+</ol>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://blog.csdn.net/u012375924/article/details/82806617">浅谈http中的Cache-Control</a></li>
+</ul>
+
+    </div>
+    
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/php-download-file/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Php Download File</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/http-content-type/">
+                  <span class="button__text">Http Content Type</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+<div id="gitalk-container"></div>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4655ac5540fffb80a545',
+    clientSecret: '714d4e40a23897dc8e329b9d1ec37a1ffe8fd5d3',
+    repo: 'https://github.com/strawbreey/notes',      
+    owner: 'strawbreey',
+    admin: ['strawbreey'],
+    id: location.pathname,      
+    distractionFreeMode: false  
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+      
+    
+  </div>
+
+  <aside class="aside table-of-contents">
+    
+    <section class="toc">
+        <h3>title</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#http-header-常见配置">http header 常见配置</a></li>
+        <li><a href="#参考资料">参考资料</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+
+    
+
+
+<section class="related">
+  <h3>See Also</h3>
+  <ul>
+    
+    <li><a href="/posts/http-content-type/">Http Content Type</a></li>
+    
+    <li><a href="/posts/http-304/">Http 304</a></li>
+    
+    <li><a href="/posts/vim-no-write-since-last-change/">Vim No Write Since Last Change</a></li>
+    
+    <li><a href="/posts/difference-between-nginx-and-apache/">Difference Between Nginx and Apache</a></li>
+    
+    <li><a href="/posts/js-for/">Js For</a></li>
+    
+  </ul>
+  
+</section>
+  </aside>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright©2019-2020 Strawbreey. All Rights Reserved</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+
+
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
