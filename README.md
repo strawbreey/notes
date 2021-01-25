@@ -21,3 +21,13 @@ http://note.strawbreey.com
 
 - [https://draveness.me/](https://draveness.me)
 
+
+### 
+
+新增angular 组件设计
+
+react
+
+golang
+
+leetcode
