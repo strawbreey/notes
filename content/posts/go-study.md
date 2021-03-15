@@ -4,7 +4,13 @@ date: 2020-12-09T15:32:17+08:00
 draft: false
 ---
 
-todo
+### golang 学习计划
+
+1. [Go 语言入门教程](http://c.biancheng.net/golang/)
+2. [Go 教程](https://www.w3cschool.cn/go/)
+3. [TopGoer 教程](http://www.topgoer.com/)
+4. [Go 入门指南](https://learnku.com/docs/the-way-to-go)
+5. [Go by Example](https://gobyexample-cn.github.io/)
 
 ### 参考资料
 
