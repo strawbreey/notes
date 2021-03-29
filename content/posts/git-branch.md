@@ -71,3 +71,17 @@ git branch
 git branch -a
 
 ```
+
+
+### 团队Git分支管理规范
+
+分支管理
+
+- develop 开发环境的稳定分支
+
+- pre-release: 测试环境稳定分支
+
+- master 生产环境稳定分支
+
+- release 
+

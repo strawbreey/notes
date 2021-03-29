@@ -56,9 +56,11 @@ yarn up [package]@[tag]
 # Removing a dependency
 yarn remove [package]
 
-# Upgrading Yarn itself
+# Upgrading Yarn itself 升级yarn
 yarn set version latest
 yarn set version from sources
+// or
+npm install yarn@latest -g
 
 ```
 
