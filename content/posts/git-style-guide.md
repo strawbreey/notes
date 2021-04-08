@@ -41,9 +41,9 @@ git branch --merged | grep -v "\*"
 
 - 命名规范
 
-请务必使用前缀，以下为常见前缀，例如：feat/update-user-info
+请务必使用前缀，以下为常见前缀，例如：feat/update-user-info feat/id fix/fixbug-id
 
-feat(feature):     添加特性的代码更改，比如新增某些功能的代码提交；这个是最常用的提交前缀；
+feat:     添加特性的代码更改，比如新增某些功能的代码提交；这个是最常用的提交前缀；
 fix:      bug修复
 docs:     只是改了文档信息，比如readme.md
 style:    不影响代码含义的更改，比如只是增加了空格，格式化了代码，增加了缺少的分号等
