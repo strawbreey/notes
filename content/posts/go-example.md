@@ -786,6 +786,172 @@ func main() {
 
 ```
 
+21. 错误处理
+
+符合 Go 语言习惯的做法是使用一个独立、明确的返回值来传递错误信息。 这与 Java、Ruby 使用的异常（exception） 以及在 C 语言中有时用到的重载 (overloaded) 的单返回/错误值有着明显的不同。 Go 语言的处理方式能清楚的知道哪个函数返回了错误，并使用跟其他（无异常处理的）语言类似的方式来处理错误。
+
+```go
+package main
+import ( "errors" "fmt" )
+
+
+// 按照惯例，错误通常是最后一个返回值并且是 error 类型，它是一个内建的接口。
+func f1(arg int) (int, error) {
+    if arg == 42 {
+        // errors.New 使用给定的错误信息构造一个基本的 error 值。 
+        return -1, errors.New("can't work with 42")
+    }
+
+    return arg + 3, nil
+}
+
+
+// 你还可以通过实现 Error() 方法来自定义 error 类型。 这里使用自定义错误类型来表示上面例子中的参数错误。
+type argError struct {
+    arg  int
+    prob string
+}
+
+// 你还可以通过实现 Error() 方法来自定义 error 类型。 这里使用自定义错误类型来表示上面例子中的参数错误
+func (e *argError) Error() string {
+    return fmt.Sprintf("%d - %s", e.arg, e.prob)
+}
+
+func f2(arg int) (int, error) {
+    if arg == 42 {
+
+        return -1, &argError{arg, "can't work with it"}
+    }
+    return arg + 3, nil
+}
+
+func main() {
+
+    for _, i := range []int{7, 42} {
+        if r, e := f1(i); e != nil {
+            fmt.Println("f1 failed:", e)
+        } else {
+            fmt.Println("f1 worked:", r)
+        }
+    }
+    for _, i := range []int{7, 42} {
+        if r, e := f2(i); e != nil {
+            fmt.Println("f2 failed:", e)
+        } else {
+            fmt.Println("f2 worked:", r)
+        }
+    }
+
+    _, e := f2(42)
+    if ae, ok := e.(*argError); ok {
+        fmt.Println(ae.arg)
+        fmt.Println(ae.prob)
+    }
+}
+```
+
+22. 协程
+
+协程(goroutine) 是轻量级的执行线程。
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+
+func f(from string) {
+    for i := 0; i < 3; i++ {
+        fmt.Println(from, ":", i)
+    }
+}
+
+func main() {
+    // 假设我们有一个函数叫做 f(s)。 我们一般会这样 同步地 调用它
+    f("direct")
+
+    // 使用 go f(s) 在一个协程中调用这个函数。 这个新的 Go 协程将会 并发地 执行这个函数。
+    go f("goroutine")
+
+    // 你也可以为匿名函数启动一个协程。
+    go func(msg string) {
+        fmt.Println(msg)
+    }("going")
+
+    // 现在两个协程在独立的协程中 异步地 运行， 然后等待两个协程完成（更好的方法是使用 WaitGroup）。
+    time.Sleep(time.Second)
+    fmt.Println("done")
+}
+
+```
+
+direct : 0
+direct : 1
+direct : 2
+goroutine : 0
+going
+goroutine : 1
+goroutine : 2
+done
+
+23. 协程
+
+
+通道(channels) 是连接多个协程的管道。 你可以从一个协程将值发送到通道，然后在另一个协程中接收。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+    // 使用 make(chan val-type) 创建一个新的通道。 通道类型就是他们需要传递值的类型。
+    messages := make(chan string)
+
+    // 使用 channel <- 语法 发送 一个新的值到通道中。 这里我们在一个新的协程中发送 "ping" 到上面创建的 messages 通道中。
+    go func() { messages <- "ping" }()
+
+    // 使用 <-channel 语法从通道中 接收 一个值。 这里我们会收到在上面发送的 "ping" 消息并将其打印出来。
+    msg := <-messages
+    fmt.Println(msg)
+
+    // 我们运行程序时，通过通道， 成功的将消息 "ping" 从一个协程传送到了另一个协程中。
+}
+```
+
+$ go run channels.go
+ping
+默认发送和接收操作是阻塞的，直到发送方和接收方都就绪。 这个特性允许我们，不使用任何其它的同步操作， 就可以在程序结尾处等待消息 "ping"。
+
+24. 通道缓冲
+
+
+默认情况下，通道是 无缓冲 的，这意味着只有对应的接收（<- chan） 通道准备好接收时，才允许进行发送（chan <-）。 有缓冲通道 允许在没有对应接收者的情况下，缓存一定数量的值。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+    messages := make(chan string, 2)
+
+    messages <- "buffered"
+    messages <- "channel"
+
+    fmt.Println(<-messages)
+    fmt.Println(<-messages)
+}
+```
+
+
+- [error-handling-and-go](https://blog.golang.org/error-handling-and-go)
+
 ### 参考资料
 
 - [Go by Example](https://gobyexample.com/)
