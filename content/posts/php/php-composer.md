@@ -4,6 +4,8 @@ date: 2021-01-07T17:37:14+08:00
 draft: false
 ---
 
+```shell
+
 $ composer
    ______
   / ____/___  ____ ___  ____  ____  ________  _____
@@ -68,3 +70,4 @@ Available commands:
   validate             Validates a composer.json and composer.lock.
   why                  Shows which packages cause the given package to be installed.
   why-not              Shows which packages prevent the given package from being installed.
+```
