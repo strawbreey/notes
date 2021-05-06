@@ -1,55 +1,23 @@
 ---
 title: "Quant"
-date: 2021-03-17T19:30:16+08:00
+date: 2021-04-29T19:56:38+08:00
 draft: false
 ---
 
-## Quant MAP ROAD
+## Quant 入门常用框架库
 
-可以提供的策略有：
+1. ccxt 
 
-1 海龟策略
+  A JavaScript / Python / PHP cryptocurrency trading API with support for more than 120 bitcoin/altcoin exchanges
 
-2 MACD指标策略
+2. https://github.com/quantopian/zipline
 
-3 ATR指标策略
+  Zipline, a Pythonic Algorithmic Trading Library
 
-4 AR指标策略
+3. quant-trading
 
-5 BOLL指标策略
+  Python quantitative trading strategies including VIX Calculator, Pattern Recognition, Commodity Trading Advisor, Monte Carlo, Options Straddle, London Breakout, Heikin-Ashi, Pair Trading, RSI, Bollinger Bands, Parabolic SAR, Dual Thrust, Awesome, MACD
 
-6 Dual Thrust策略
+4. Qlib 
 
-7 网格交易策略
-
-8 KDJ指标策略
-
-9 RSI指标策略
-
-10 简单双均线策略
-
-11 EMA指标策略
-
-12 R-Breaker策略
-
-13 W%R指标策略
-
-14 均值回归策略
-
-15 SVM策略
-
-16 动态平衡策略
-
-17 价值平均定投策略
-
-18 EMV指标策略
-
-19 价值平均定卖策略
-
-20 计划委托下单
-
-21 止盈止损委托下单
-
-22 跟踪委托下单
-
-23 简单均线突破策略
+  Qlib is an AI-oriented quantitative investment platform, which aims to realize the potential, empower the research, and create the value of AI technologies in quantitative investment. With Qlib, you can easily try your ideas to create better Quant investment strategies.
