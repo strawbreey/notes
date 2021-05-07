@@ -4,7 +4,7 @@ date: 2020-09-03T10:48:27+08:00
 draft: false
 ---
 
-### repaint-and-refolw (重绘和回流)
+## 重绘与回流(repaint-and-refolw)
 
 ![avatar](/images/1.png)
 
@@ -22,7 +22,9 @@ draft: false
 
 - Display:将像素发送给GPU，展示在页面上。
 
+
 > 注意：回流一定会触发重绘，而重绘不一定会回流, 前端性能优化，一般是尽量避免回流
+
 
 产生回流的场景如下: 
 
@@ -61,12 +63,12 @@ draft: false
 > 注意：渲染树只包含可见的节点
 
 
-### 重绘 (重新构造渲染树)
+## 重绘 (重新构造渲染树)
 
 我们通过构造渲染树和回流阶段，我们知道了哪些节点是可见的，以及可见节点的样式和具体的几何信息(位置、大小)，那么我们就可以将渲染树的每个节点都转换为屏幕上的实际像素，这个阶段就叫做重绘节点。
 
 
-### 浏览器的优化机制
+## 浏览器的优化机制
 
 现代的浏览器都是很聪明的，由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才清空队列。
 
@@ -78,6 +80,6 @@ getComputedStyle()
 getBoundingClientRect
 
 
-### 参考链接 
+## 参考链接 
 
 - [渲染树构建、布局及绘制](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=zh-cn)

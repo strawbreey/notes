@@ -16,7 +16,7 @@ URI请求会被发送到PHP所在的的工作目录（Working Directory）进行
 
 当你在命令行启动这个Web Server时，如果指定了一个PHP文件，则这个文件会作为一个“路由”脚本，意味着每次请求都会先执行这个脚本。如果这个脚本返回 false ，那么直接返回请求的文件（例如请求静态文件不作任何处理）。否则会把输出返回到浏览器。
 
-示例 #1 启动Web服务器
+1. 启动Web服务器
 
 ```bash
 cd ~/public_html
@@ -45,11 +45,14 @@ Press Ctrl-C to quit.
 [Thu Jul 21 10:48:52 2011] ::1:39148 GET /myscript.html - Request read
 [Thu Jul 21 10:48:52 2011] ::1:39149 GET /favicon.ico - Request read
 ```
-示例 #2 启动时指定根目录
+
+2. 启动时指定根目录
+
 ```bash
 cd ~/public_html
 php -S localhost:8000 -t foo/
 ```
+
 终端窗口显示：
 
 ```bash
@@ -59,7 +62,7 @@ Document root is /home/me/public_html/foo
 Press Ctrl-C to quit
 ```
 
-示例 #3 使用路由（Router）脚本
+3. 使用路由（Router）脚本
 
 请求图片直接显示图片，请求HTML则显示“Welcome to PHP”
 ```php
