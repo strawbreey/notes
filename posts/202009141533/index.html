@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -150,7 +150,7 @@
 <li>FormArray 用于追踪表单控件数组的值和状态</li>
 <li>ControlValueAccessor 用于在 Angular 的 FormControl 实例和原生 DOM 元素之间创建一个桥梁。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ControlValueAccessor</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ControlValueAccessor</span> {
   <span style="color:#a6e22e">writeValue</span>(<span style="color:#a6e22e">obj</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> <span style="color:#75715e">// Writes a new value to the element.
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">registerOnChange</span>(<span style="color:#a6e22e">fn</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> <span style="color:#75715e">// Registers a callback function that is called when the control&#39;s value changes in the UI.
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">registerOnTouched</span>(<span style="color:#a6e22e">fn</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> <span style="color:#75715e">// Registers a callback function that is called by the forms API on initialization to update the form model on blur.
@@ -196,7 +196,7 @@
 <p>DefaultValueAccessor</p>
 <h3 id="setup-in-reactive-forms">Setup in reactive forms</h3>
 <p>对于响应式表单，你可以直接在组件类中定义表单模型。<code>[formControl]</code> 指令会通过内部值访问器来把显式创建的 FormControl 实例与视图中的特定表单元素联系起来。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FormControl</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/forms&#39;</span>;
 
 <span style="color:#66d9ef">@Component</span>({
@@ -261,7 +261,7 @@
 <p>在模板中注册这个 FormControl。</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// src/app/app.module.ts (excerpt)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// src/app/app.module.ts (excerpt)
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ReactiveFormsModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/forms&#39;</span>;
 
 <span style="color:#66d9ef">@NgModule</span>({
@@ -286,7 +286,7 @@
   <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormControl</span>(<span style="color:#e6db74">&#39;&#39;</span>);
 }
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- src/app/name-editor/name-editor.component.html --&gt;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- src/app/name-editor/name-editor.component.html --&gt;</span>
 &lt;<span style="color:#f92672">label</span>&gt;
   Name:
   &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">formControl</span><span style="color:#960050;background-color:#1e0010">]=&#34;</span><span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -121,12 +121,12 @@
 <h3 id="formatting-格式化">Formatting 格式化</h3>
 <p>As an example, there&rsquo;s no need to spend time lining up the comments on the fields of a structure. Gofmt will do that for you. Given the declaration</p>
 <p>Go 语言不用担心格式化问题, Gofmt 会帮你统一格式化</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
     <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span> <span style="color:#75715e">// name of the object
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">int</span> <span style="color:#75715e">// its value
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>=&gt;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
     <span style="color:#a6e22e">name</span>    <span style="color:#66d9ef">string</span> <span style="color:#75715e">// name of the object
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">value</span>   <span style="color:#66d9ef">int</span>    <span style="color:#75715e">// its value
 </span><span style="color:#75715e"></span>}
@@ -137,7 +137,7 @@
 <pre><code>import &quot;bytes&quot;
 </code></pre><h3 id="getters">Getters</h3>
 <p>Go doesn&rsquo;t provide automatic support for getters and setters. There&rsquo;s nothing wrong with providing getters and setters yourself, and it&rsquo;s often appropriate to do so, but it&rsquo;s neither idiomatic nor necessary to put Get into the getter&rsquo;s name. If you have a field called owner (lower case, unexported), the getter method should be called Owner (upper case, exported), not GetOwner. The use of upper-case names for export provides the hook to discriminate the field from the method. A setter function, if needed, will likely be called SetOwner. Both names read well in practice:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">owner</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Owner</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">owner</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Owner</span>()
 <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">owner</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">user</span> {
     <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">SetOwner</span>(<span style="color:#a6e22e">user</span>)
 }

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -104,7 +104,7 @@
 
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
-            <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$interval<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>; <span style="color:#75715e">//2分钟
+            <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$interval<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>; <span style="color:#75715e">//2分钟
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_IF_MODIFIED_SINCE&#39;</span>])){
     <span style="color:#75715e">// HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间.
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// 缓存时间+时长.
@@ -139,7 +139,7 @@
   <p><img src="/images/977033-20170410175310876-1823314432.png" alt="http 403缓存" loading="lazy" /></p>
 </p>
 <p>php中在做文件下载的时候，其中要加上这么一些header信息：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Content-type: application/octet-stream&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Content-type: application/octet-stream&#34;</span>);
 <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Accept-Ranges: bytes&#34;</span>);
 <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Accept-Length:&#34;</span><span style="color:#f92672">.</span>$fileSize);
 <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Content-Length:&#34;</span><span style="color:#f92672">.</span>$fileSize);

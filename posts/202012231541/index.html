@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,7 +107,7 @@
             <h2 id="数据缓存">数据缓存</h2>
 <p>数据缓存是指将一些 PHP 变量存储到缓存中，使用时再从缓存中取回。 它也是更高级缓存特性的基础，例如查询缓存 和内容缓存。</p>
 <p>如下代码是一个典型的数据缓存使用模式。 其中 $cache 指向缓存组件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 尝试从缓存中取回 $data 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 尝试从缓存中取回 $data 
 </span><span style="color:#75715e"></span>$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>($key);
 <span style="color:#66d9ef">if</span> ($data <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>) {
     <span style="color:#75715e">// $data 在缓存中没有找到，则重新计算它的值
@@ -116,12 +116,12 @@
 }
 <span style="color:#75715e">// 这儿 $data 可以使用了。
 </span></code></pre></div><p>从 2.0.11 版本开始, 缓存组件 提供了 getOrSet() 方法来简化数据的取回、计算和存储。 下面的代码逻辑和上一个例子是完全一样的：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getOrSet</span>($key, <span style="color:#66d9ef">function</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getOrSet</span>($key, <span style="color:#66d9ef">function</span> () {
     <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">calculateSomething</span>();
 });
 </code></pre></div><p>当缓存中有关联 $key 的数据时，将返回这个缓存的值。 否则就执行匿名函数来计算出将要缓存的数据并返回它。</p>
 <p>如果匿名函数需要作用域外的数据时，可以使用 use 语句把这些数据传递到匿名函数中。 例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$user_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$user_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
 $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getOrSet</span>($key, <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">use</span> ($user_id) {
     <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">calculateSomething</span>($user_id);
 });
@@ -131,7 +131,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 <h2 id="缓存组件">缓存组件</h2>
 <p>数据缓存需要缓存组件提供支持，它代表各种缓存存储器， 例如内存，文件，数据库。</p>
 <p>缓存组件通常注册为应用程序组件，这样它们就可以 在全局进行配置与访问。如下代码演示了如何配置应用程序组件 cache 使用两个 memcached 服务器：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
     <span style="color:#e6db74">&#39;cache&#39;</span> <span style="color:#f92672">=&gt;</span> [
         <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\caching\MemCache&#39;</span>,
         <span style="color:#e6db74">&#39;servers&#39;</span> <span style="color:#f92672">=&gt;</span> [
@@ -150,7 +150,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 ],
 </code></pre></div><p>然后就可以通过 Yii::$app-&gt;cache 访问上面的缓存组件了。</p>
 <p>由于所有缓存组件都支持同样的一系列 API ，并不需要修改使用缓存的业务代码 就能直接替换为其他底层缓存组件，只需在应用配置中重新配置一下就可以。 例如，你可以将上述配置修改为使用 APC cache：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
     <span style="color:#e6db74">&#39;cache&#39;</span> <span style="color:#f92672">=&gt;</span> [
         <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\caching\ApcCache&#39;</span>,
     ],
@@ -170,7 +170,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 <li>yii\redis\Cache：实现了一个基于 Redis 键值对存储器的缓存组件 （需要 redis 2.6.12 及以上版本的支持 ）。</li>
 <li>yii\caching\WinCache：使用 PHP WinCache （另可参考）扩展.</li>
 <li>yii\caching\XCache：使用 PHP XCache扩展。</li>
-<li>yii\caching\ZendDataCache：使用 [Zend Data Cache](<a href="http://files.zend.com/help/Zend-Server-6/zend-">http://files.zend.com/help/Zend-Server-6/zend-</a> server.htm#data_cache_component.htm) 作为底层缓存媒介。</li>
+<li>yii\caching\ZendDataCache：使用 [Zend Data Cache](<a href="http://files.zend.com/help/Zend-Server-6/zend-" target="_blank" rel="noopener">http://files.zend.com/help/Zend-Server-6/zend-</a> server.htm#data_cache_component.htm) 作为底层缓存媒介。</li>
 <li>提示： 你可以在同一个应用程序中使用不同的缓存存储器。一个常见的策略是使用基于内存的缓存存储器 存储小而常用的数据（例如：统计数据），使用基于文件或数据库的缓存存储器 存储大而不太常用的数据（例如：网页内容）。</li>
 </ul>
 <h2 id="缓存-api">缓存 API</h2>
@@ -192,13 +192,13 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 </blockquote>
 <p>有些缓存存储器如 MemCache，APC 支持以批量模式取回缓存值，这样可以节省取回缓存数据的开支。 multiGet() 和 multiAdd() API提供对该特性的支持。 如果底层缓存存储器不支持该特性，Yii 也会模拟实现。</p>
 <p>由于 yii\caching\Cache 实现了 PHP ArrayAccess 接口， 缓存组件也可以像数组那样使用，下面是几个例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$cache[<span style="color:#e6db74">&#39;var1&#39;</span>] <span style="color:#f92672">=</span> $value1;  <span style="color:#75715e">// 等价于： $cache-&gt;set(&#39;var1&#39;, $value1);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$cache[<span style="color:#e6db74">&#39;var1&#39;</span>] <span style="color:#f92672">=</span> $value1;  <span style="color:#75715e">// 等价于： $cache-&gt;set(&#39;var1&#39;, $value1);
 </span><span style="color:#75715e"></span>$value2 <span style="color:#f92672">=</span> $cache[<span style="color:#e6db74">&#39;var2&#39;</span>];  <span style="color:#75715e">// 等价于： $value2 = $cache-&gt;get(&#39;var2&#39;);
 </span></code></pre></div><h3 id="缓存键">缓存键</h3>
 <p>存储在缓存中的每项数据都通过键作唯一识别。 当你在缓存中存储一项数据时，必须为它指定一个键， 稍后从缓存中取回数据时，也需要提供相应的键。</p>
 <p>你可以使用一个字符串或者任意值作为一个缓存键。当键不是一个字符串时， 它将会自动被序列化为一个字符串。</p>
 <p>定义一个缓存键常见的一个策略就是在一个数组中包含所有的决定性因素。 例如，yii\db\Schema 使用如下键存储一个数据表的结构信息。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">[
     <span style="color:#66d9ef">__CLASS__</span>,              <span style="color:#75715e">// 结构类名
 </span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">db</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">dsn</span>,         <span style="color:#75715e">// 数据源名称
 </span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">db</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">username</span>,    <span style="color:#75715e">// 数据库登录用户名
@@ -209,7 +209,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 <p>注意： 通过 multiSet() 或者 multiAdd() 方法缓存的数据项的键，它的类型只能是字符串或整型， 如果你想使用较为复杂的键，可以通过 set() 或者 add() 方法来存储。</p>
 </blockquote>
 <p>当同一个缓存存储器被用于多个不同的应用时，应该为每个应用指定一个唯一的缓存键前缀以避免缓存键冲突。 可以通过配置 yii\caching\Cache::$keyPrefix 属性实现。 例如，在应用配置中可以编写如下代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
     <span style="color:#e6db74">&#39;cache&#39;</span> <span style="color:#f92672">=&gt;</span> [
         <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\caching\ApcCache&#39;</span>,
         <span style="color:#e6db74">&#39;keyPrefix&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;myapp&#39;</span>,       <span style="color:#75715e">// 唯一键前缀
@@ -218,7 +218,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 </code></pre></div><p>为了确保互通性，此处只能使用字母和数字。</p>
 <h3 id="缓存过期">缓存过期</h3>
 <p>默认情况下，缓存中的数据会永久存留，除非它被某些缓存策略强制移除（例如：缓存空间已满，最老的数据会被移除）。 要改变此特性，你可以在调用 set() 存储一项数据时提供一个过期时间参数。 该参数代表这项数据在缓存中可保持有效多少秒。 当你调用 get() 取回数据时， 如果它已经过了超时时间，该方法将返回 false，表明在缓存中找不到这项数据。 例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 将数据在缓存中保留 45 秒
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 将数据在缓存中保留 45 秒
 </span><span style="color:#75715e"></span>$cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>($key, $data, <span style="color:#ae81ff">45</span>);
 
 <span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">50</span>);
@@ -231,7 +231,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 <h3 id="缓存依赖">缓存依赖</h3>
 <p>除了超时设置，缓存数据还可能受到缓存依赖的影响而失效。 例如，yii\caching\FileDependency 代表对一个文件修改时间的依赖。 这个依赖条件发生变化也就意味着相应的文件已经被修改。 因此，缓存中任何过期的文件内容都应该被置为失效状态， 对 get() 的调用都应该返回 false。</p>
 <p>缓存依赖用 yii\caching\Dependency 的派生类所表示。 当调用 set() 在缓存中存储一项数据时， 可以同时传递一个关联的缓存依赖对象。例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 创建一个对 example.txt 文件修改时间的缓存依赖
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 创建一个对 example.txt 文件修改时间的缓存依赖
 </span><span style="color:#75715e"></span>$dependency <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\yii\caching\FileDependency</span>([<span style="color:#e6db74">&#39;fileName&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;example.txt&#39;</span>]);
 
 <span style="color:#75715e">// 缓存数据将在30秒后超时
@@ -256,7 +256,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 <h2 id="查询缓存">查询缓存</h2>
 <p>查询缓存是一个建立在数据缓存之上的特殊缓存特性。 它用于缓存数据库查询的结果。</p>
 <p>查询缓存需要一个 数据库连接 和一个有效的 cache 应用组件。 查询缓存的基本用法如下，假设 $db 是一个 yii\db\Connection 实例：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
 
     <span style="color:#75715e">// SQL 查询的结果将从缓存中提供
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// 如果启用查询缓存并且在缓存中找到查询结果
@@ -264,14 +264,14 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 
 });
 </code></pre></div><p>查询缓存可以用在DAO和ActiveRecord上:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getDb</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getDb</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>([<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>])<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">one</span>();
 });
 </code></pre></div><blockquote>
 <p>信息： 有些 DBMS （例如：MySQL） 也支持数据库服务器端的查询缓存。 你可以选择使用任一查询缓存机制。 上文所述的查询缓存的好处在于你可以指定更灵活的缓存依赖因此可能更加高效。</p>
 </blockquote>
 <p>自 2.0.14 以后，您可以使用以下快捷方法：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Query</span>())<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#ae81ff">7200</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Query</span>())<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#ae81ff">7200</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
 <span style="color:#75715e">// and
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">User</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#ae81ff">7200</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
 </code></pre></div><h3 id="配置">配置</h3>
@@ -283,7 +283,7 @@ $data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&g
 </ul>
 <h3 id="使用">使用</h3>
 <p>如果您有多个需要利用查询缓存的 SQL 查询，则可以使用 yii\db\Connection::cache()。 用法如下，</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>;     <span style="color:#75715e">// 缓存查询结果 60 秒。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>;     <span style="color:#75715e">// 缓存查询结果 60 秒。
 </span><span style="color:#75715e"></span>$dependency <span style="color:#f92672">=</span> <span style="color:#f92672">...</span>;  <span style="color:#75715e">// 可选的依赖关系
 </span><span style="color:#75715e"></span>
 $result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
@@ -295,7 +295,7 @@ $result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt
 }, $duration, $dependency);
 </code></pre></div><p>在匿名函数里的任何一个 SQL 查询都将使用指定的依赖项缓存指定的持续时间 如果一个 SQL 查询的结果在缓存中有效，那么这个 SQl 语句将会被跳过而它的查询结果会直接从缓存中读取。 如果你没有指明 $duration 参数， 那么使用 queryCacheDuration 属性。</p>
 <p>有时在cache()里，你可能不想缓存某些特殊的查询， 这时你可以用yii\db\Connection::noCache()。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
 
     <span style="color:#75715e">// 使用查询缓存的 SQL 查询
 </span><span style="color:#75715e"></span>
@@ -310,7 +310,7 @@ $result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt
     <span style="color:#66d9ef">return</span> $result;
 });
 </code></pre></div><p>如果您只想为单个查询使用查询缓存，则可以在构建命令时调用 yii\db\Command::cache()。 例如，</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 使用查询缓存并将查询缓存持续时间设置为 60 秒
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 使用查询缓存并将查询缓存持续时间设置为 60 秒
 </span><span style="color:#75715e"></span>$customer <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createCommand</span>(<span style="color:#e6db74">&#39;SELECT * FROM customer WHERE id=1&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#ae81ff">60</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">queryOne</span>();
 <span style="color:#a6e22e">您还可以使用</span> <span style="color:#a6e22e">yii\db\Command</span><span style="color:#f92672">::</span><span style="color:#a6e22e">noCache</span>() <span style="color:#a6e22e">禁用单个命令的查询缓存。例如，</span>
 

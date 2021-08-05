@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -112,7 +112,7 @@
 <li>它们的命名以大写字母开头。</li>
 <li>它们只能由 &ldquo;new&rdquo; 操作符来执行。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">User</span>(<span style="color:#a6e22e">name</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">User</span>(<span style="color:#a6e22e">name</span>) {
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isAdmin</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 }
@@ -127,7 +127,7 @@
 <li>函数体执行。通常它会修改 this，为其添加新的属性。</li>
 <li>返回 this 的值。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">User</span>(<span style="color:#a6e22e">name</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">User</span>(<span style="color:#a6e22e">name</span>) {
   <span style="color:#75715e">// this = {};（隐式创建）
 </span><span style="color:#75715e"></span>
   <span style="color:#75715e">// 添加属性到 this
@@ -137,7 +137,7 @@
   <span style="color:#75715e">// return this;（隐式返回）
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>所以 new User(&ldquo;Jack&rdquo;) 的结果是相同的对象：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Jack&#34;</span>,
   <span style="color:#a6e22e">isAdmin</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
 };
@@ -153,7 +153,7 @@
 </ul>
 <p>换句话说，带有对象的 return 返回该对象，在所有其他情况下返回 this。</p>
 <p>例如，这里 return 通过返回一个对象覆盖 this：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">BigUser</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">BigUser</span>() {
 
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;John&#34;</span>;
 

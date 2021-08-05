@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -111,12 +111,12 @@
 <p>登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。
 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。
 所以服务器知道是谁发起了请求。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>)
 </code></pre></div><p>写入 document.cookie</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user=John&#34;</span>; <span style="color:#75715e">// 只会更新名称为 user 的 cookie
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user=John&#34;</span>; <span style="color:#75715e">// 只会更新名称为 user 的 cookie
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>); <span style="color:#75715e">// 展示所有 cookie
 </span></code></pre></div><p>从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 特殊字符（空格），需要编码
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 特殊字符（空格），需要编码
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my name&#34;</span>;
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;John Smith&#34;</span>
 
@@ -137,7 +137,7 @@
 <p>expires=Tue, 19 Jan 2038 03:14:07 GMT
 cookie 的到期日期，那时浏览器会自动删除它。</p>
 <p>日期必须完全采用 GMT 时区的这种格式。我们可以使用 date.toUTCString 来获取它。例如，我们可以将 cookie 设置为 1 天后过期。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 当前时间 +1 天
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 当前时间 +1 天
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(Date.<span style="color:#a6e22e">now</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">86400e3</span>);
 <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toUTCString</span>();
 document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user=John; expires=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>;

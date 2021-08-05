@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -115,9 +115,9 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
             <h3 id="clearfix">Clearfix</h3>
 <p>Quickly and easily clear floated content within a container by adding a clearfix utility.</p>
 <p>Easily clear floats by adding .clearfix to the parent element. Can also be used as a mixin.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clearfix&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clearfix&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>The mixin source code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">mixin</span> <span style="color:#f92672">clearfix</span><span style="color:#f92672">()</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">mixin</span> <span style="color:#f92672">clearfix</span><span style="color:#f92672">()</span> {
   <span style="color:#f92672">&amp;</span>::<span style="color:#a6e22e">after</span> {
     <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
     <span style="color:#66d9ef">clear</span>: <span style="color:#66d9ef">both</span>;
@@ -125,7 +125,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
   }
 }
 </code></pre></div><p>Use the mixin in SCSS:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#a6e22e">.element</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#a6e22e">.element</span> {
   <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> clearfix</span>;
 }
 </code></pre></div><h3 id="colored-links">Colored links</h3>
@@ -143,15 +143,15 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
 <p>Use the ratio helper to manage the aspect ratios of external content like <!-- raw HTML omitted -->s, <!-- raw HTML omitted -->s, <!-- raw HTML omitted -->s, and <!-- raw HTML omitted -->s. These helpers also can be used on any standard HTML child element (e.g., a <!-- raw HTML omitted --> or <!-- raw HTML omitted -->). Styles are applied from the parent .ratio class directly to the child.</p>
 <p>Aspect ratios are declared in a Sass map and included in each class via CSS variable, which also allows custom aspect ratios.</p>
 <p>Example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-16x9&#34;</span>&gt;
   &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.youtube.com/embed/zpOULjyy-n8?rel=0&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YouTube video&#34;</span> <span style="color:#a6e22e">allowfullscreen</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">ratio-16x9</span> {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">ratio-16x9</span> {
     --aspect-ratio: calc(<span style="color:#ae81ff">9</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-1x1&#34;</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-1x1&#34;</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;1x1&lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ratio ratio-4x3&#34;</span>&gt;
@@ -169,7 +169,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>Sass map
 Within _variables.scss, you can change the aspect ratios you want to use. Hereâ€™s our default $ratio-aspect-ratios map. Modify the map as you like and recompile your Sass to put them to use.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">$aspect-ratios<span style="color:#f92672">:</span> (
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">$aspect-ratios<span style="color:#f92672">:</span> (
   <span style="color:#e6db74">&#34;1x1&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span><span style="color:#f92672">,</span>
   <span style="color:#e6db74">&#34;4x3&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">calc</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>)<span style="color:#f92672">,</span>
   <span style="color:#e6db74">&#34;16x9&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">calc</span>(<span style="color:#ae81ff">9</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>)<span style="color:#f92672">,</span>
@@ -181,31 +181,31 @@ Within _variables.scss, you can change the aspect ratios you want to use. Hereâ€
 <li>Fixed top</li>
 </ul>
 <p>Position an element at the top of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed-top&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed-top&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><ul>
 <li>Fixed bottom</li>
 </ul>
 <p>Position an element at the bottom of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed-bottom&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed-bottom&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><ul>
 <li>Sticky top</li>
 </ul>
 <p>Position an element at the top of the viewport, from edge to edge, but only after you scroll past it. The .sticky-top utility uses CSSâ€™s position: sticky, which isnâ€™t fully supported in all browsers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-top&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-top&#34;</span>&gt;...&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><ul>
 <li>Responsive sticky top</li>
 </ul>
 <p>Responsive variations also exist for .sticky-top utility.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-sm-top&#34;</span>&gt;Stick to the top on viewports sized SM (small) or wider&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-sm-top&#34;</span>&gt;Stick to the top on viewports sized SM (small) or wider&lt;/<span style="color:#f92672">div</span>&gt;
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-md-top&#34;</span>&gt;Stick to the top on viewports sized MD (medium) or wider&lt;/<span style="color:#f92672">div</span>&gt;
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-lg-top&#34;</span>&gt;Stick to the top on viewports sized LG (large) or wider&lt;/<span style="color:#f92672">div</span>&gt;
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sticky-xl-top&#34;</span>&gt;Stick to the top on viewports sized XL (extra-large) or wider&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><h3 id="visually-hidden">Visually hidden</h3>
 <p>Use these helpers to visually hide elements but keep them accessible to assistive technologies.</p>
 <p>Visually hide an element while still allowing it to be exposed to assistive technologies (such as screen readers) with .visually-hidden. Use .visually-hidden-focusable to visually hide an element by default, but to display it when itâ€™s focused (e.g. by a keyboard-only user). Can also be used as mixins.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;visually-hidden&#34;</span>&gt;Title for screen readers&lt;/<span style="color:#f92672">h2</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;visually-hidden&#34;</span>&gt;Title for screen readers&lt;/<span style="color:#f92672">h2</span>&gt;
 &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;visually-hidden-focusable&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#content&#34;</span>&gt;Skip to main content&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#a6e22e">.visually-hidden-title</span> {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#a6e22e">.visually-hidden-title</span> {
   <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> visually-hidden</span>;
 }
 
@@ -217,7 +217,7 @@ Within _variables.scss, you can change the aspect ratios you want to use. Hereâ€
 <p>Add .stretched-link to a link to make its containing block clickable via a ::after pseudo element. In most cases, this means that an element with position: relative; that contains a link with the .stretched-link class is clickable.</p>
 <p>Cards have position: relative by default in Bootstrap, so in this case you can safely add the .stretched-link class to a link in the card without any other HTML changes.</p>
 <p>Multiple links and tap targets are not recommended with stretched links. However, some position and z-index styles can help should this be required.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 18rem;&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 18rem;&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-img-top&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span>&gt;
     &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-title&#34;</span>&gt;Card with stretched link&lt;/<span style="color:#f92672">h5</span>&gt;
@@ -226,7 +226,7 @@ Within _variables.scss, you can change the aspect ratios you want to use. Hereâ€
   &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>Most custom components do not have position: relative by default, so we need to add the .position-relative here to prevent the link from stretching outside the parent element.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-flex position-relative&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-flex position-relative&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flex-shrink-0 me-3&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>&gt;
   &lt;<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mt-0&#34;</span>&gt;Custom component with stretched link&lt;/<span style="color:#f92672">h5</span>&gt;
@@ -240,7 +240,7 @@ Within _variables.scss, you can change the aspect ratios you want to use. Hereâ€
 A transform or perspective value other than none
 A will-change value of transform or perspective
 A filter value other than none or a will-change value of filter (only works on Firefox)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 18rem;&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 18rem;&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-img-top&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span>&gt;
     &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-title&#34;</span>&gt;Card with stretched links&lt;/<span style="color:#f92672">h5</span>&gt;
@@ -256,7 +256,7 @@ A filter value other than none or a will-change value of filter (only works on F
 </code></pre></div><h3 id="text-truncation">Text truncation</h3>
 <p>Truncate long strings of text with an ellipsis.</p>
 <p>For longer content, you can add a .text-truncate class to truncate the text with an ellipsis. Requires display: inline-block or display: block.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Block level --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Block level --&gt;</span>
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-2 text-truncate&#34;</span>&gt;
     Praeterea iter est quasdam res quas ex communi.

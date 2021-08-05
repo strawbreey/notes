@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,7 +107,7 @@
             <p>1.什么是HttpOnly?</p>
 <p>如果cookie中设置了HttpOnly属性，那么通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击，窃取cookie内容，这样就增加了cookie的安全性，即便是这样，也不要将重要信息存入cookie。XSS全称Cross SiteScript，跨站脚本攻击，是Web程序中常见的漏洞，XSS属于被动式且用于客户端的攻击方式，所以容易被忽略其危害性。其原理是攻击者向有XSS漏洞的网站中输入(传入)恶意的HTML代码，当其它用户浏览该网站时，这段HTML代码会自动执行，从而达到攻击的目的。如，盗取用户Cookie、破坏页面结构、重定向到其它网站等。</p>
 <p>2.HttpOnly的设置样例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">setHeader</span>(<span style="color:#e6db74">&#34;Set-Cookie&#34;</span>, <span style="color:#e6db74">&#34;cookiename=httponlyTest;Path=/;Domain=domainvalue;Max-Age=seconds;HTTPOnly&#34;</span>);
 
  <span style="color:#a6e22e">例如</span><span style="color:#960050;background-color:#1e0010">：</span>
@@ -130,7 +130,7 @@
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">addHeader</span>(<span style="color:#e6db74">&#34;Set-Cookie&#34;</span>, <span style="color:#e6db74">&#34;uid=112; Path=/; Secure; HttpOnly&#34;</span>);
 </code></pre></div><p>具体参数的含义再次不做阐述，设置完毕后通过js脚本是读不到该cookie的，但使用如下方式可以读取。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">Cookie</span> <span style="color:#a6e22e">cookies</span>[]<span style="color:#f92672">=</span><span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">getCookies</span>();  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">Cookie</span> <span style="color:#a6e22e">cookies</span>[]<span style="color:#f92672">=</span><span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">getCookies</span>();  
 </code></pre></div>
           </div>
         </div>

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,7 +107,7 @@
             <h3 id="jsonparsestringify">JSON.parse/stringify</h3>
 <p>if you do not use Date, function, undefined, Infinity, RegFexps, Maps, Set Blobs, FileList，ImageData， sparseArray,Typed Array or other complex type within you object。</p>
 <p>如果不使用复制的数据类型, JSON序列化是最快的复制方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">object</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">object</span>))
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">string</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;string&#39;</span>,
@@ -145,7 +145,7 @@
 </ul>
 <h3 id="es6">ES6</h3>
 <p>For completeness, note that ES6 offers two shallow copy mechanisms: Object.assign() and the spread syntax. which copies values of all enumerable own properties from one object to another. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 浅复制
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 浅复制
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A1</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2&#34;</span>};
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A2</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">assign</span>({}, <span style="color:#a6e22e">A1</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A3</span> <span style="color:#f92672">=</span> {...<span style="color:#a6e22e">A1</span>};

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -117,7 +117,7 @@ Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。
 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。
 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。</p>
 <h3 id="custom-elements-自定义标签">Custom elements (自定义标签)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyElement</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyElement</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
   <span style="color:#a6e22e">constructor</span>() {
     <span style="color:#66d9ef">super</span>();
     <span style="color:#75715e">// 元素在这里创建
@@ -148,7 +148,7 @@ Event retargeting 以及更多的小东西，让自定义组件更适用于开�
 
   <span style="color:#75715e">// 还可以添加更多的元素方法和属性
 </span><span style="color:#75715e"></span>}
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 让浏览器知道我们新定义的类是为 &lt;my-element&gt; 服务的
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 让浏览器知道我们新定义的类是为 &lt;my-element&gt; 服务的
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#34;my-element&#34;</span>, <span style="color:#a6e22e">MyElement</span>);
 </code></pre></div><pre><code>Custom element 名称必须包括一个短横线 -
 Custom element 名称必须包括一个短横线 -, 比如 my-element 和 super-button 都是有效的元素名，但 myelement 并不是。
@@ -156,7 +156,7 @@ Custom element 名称必须包括一个短横线 -, 比如 my-element 和 super-
 这是为了确保 custom element 和内置 HTML 元素之间不会发生命名冲突。
 </code></pre>
 <p>创建一个自定义时间标签</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimeFormatted</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> { 
   <span style="color:#75715e">// 在元素被添加到文档之后，浏览器会调用这个方法 =&gt; 相当于生命周期的mount
 </span><span style="color:#75715e"></span>
@@ -201,7 +201,7 @@ Custom element 名称必须包括一个短横线 -, 比如 my-element 和 super-
 <p>我们目前的 <!-- raw HTML omitted --> 实现中，在元素渲染以后，后续的属性变化并不会带来任何影响。这对于 HTML 元素来说有点奇怪。通常当我们改变一个属性的时候，比如 a.href，我们会预期立即看到变化。我们将会在下面修正这一点。</p>
 <p>为了监视这些属性，我们可以在 observedAttributes() static getter 中提供属性列表。当这些属性发生变化的时候，attributeChangedCallback 会被调用。出于性能优化的考虑，其他属性变化的时候并不会触发这个回调方法。</p>
 <p>以下是 <!-- raw HTML omitted --> 的新版本，它会在属性变化的时候自动更新：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
 &lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimeFormatted</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
 
@@ -254,7 +254,7 @@ attributeChangedCallback 在 observedAttributes() 里的属性改变的时候被
 <p>在 HTML 解析器构建 DOM 的时候，会按照先后顺序处理元素，先处理父级元素再处理子元素。例如，如果我们有 <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->，那么 <!-- raw HTML omitted --> 元素会首先被创建并接入到 DOM，然后才是 <!-- raw HTML omitted -->。</p>
 <p>这对 custom elements 产生了重要影响。</p>
 <p>比如，如果一个 custom element 想要在 connectedCallback 内访问 innerHTML，它什么也拿不到:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;user-info&#39;</span>, <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
   <span style="color:#a6e22e">connectedCallback</span>() {
     <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span>); <span style="color:#75715e">// empty (*)
@@ -266,7 +266,7 @@ attributeChangedCallback 在 observedAttributes() 里的属性改变的时候被
 </code></pre></div><p>如果我们要给 custom element 传入信息，我们可以使用元素属性。它们是即时生效的。</p>
 <p>或者，如果我们需要子元素，我们可以使用延迟时间为零的 setTimeout 来推迟访问子元素。</p>
 <p>这样是可行的：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;user-info&#39;</span>, <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
 
   <span style="color:#a6e22e">connectedCallback</span>() {
@@ -278,7 +278,7 @@ attributeChangedCallback 在 observedAttributes() 里的属性改变的时候被
 
 &lt;<span style="color:#f92672">user-info</span>&gt;John&lt;/<span style="color:#f92672">user-info</span>&gt;
 </code></pre></div><p>让我们用一个例子来说明：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;user-info&#39;</span>, <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
   <span style="color:#a6e22e">connectedCallback</span>() {
     <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> 已连接。`</span>);
@@ -297,7 +297,7 @@ outer 初始化完成。
 inner 初始化完成。</p>
 <h3 id="seo">SEO</h3>
 <p>我们创建的 <!-- raw HTML omitted --> 这些新元素，并没有任何相关的语义。搜索引擎并不知晓它们的存在，同时无障碍设备也无法处理它们。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
 <span style="color:#75715e">// 这个按钮在被点击的时候说 &#34;hello&#34;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloButton</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLButtonElement</span> {
   <span style="color:#a6e22e">constructor</span>() {
@@ -316,7 +316,7 @@ inner 初始化完成。</p>
 <p>有两种 custom element</p>
 <p>“Autonomous” —— 全新的标签，继承 HTMLElement。</p>
 <p>定义方式：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyElement</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyElement</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
   <span style="color:#a6e22e">constructor</span>() { <span style="color:#66d9ef">super</span>(); <span style="color:#75715e">/* ... */</span> }
   <span style="color:#a6e22e">connectedCallback</span>() { <span style="color:#75715e">/* ... */</span> }
   <span style="color:#a6e22e">disconnectedCallback</span>() { <span style="color:#75715e">/* ... */</span>  }
@@ -329,7 +329,7 @@ inner 初始化完成。</p>
 
 </code></pre></div><p>“Customized built-in elements” —— 已有元素的扩展。</p>
 <p>需要多一个 .define 参数，同时 is=&quot;&hellip;&quot; 在 HTML 中：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyButton</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLButtonElement</span> { <span style="color:#75715e">/*...*/</span> }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyButton</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLButtonElement</span> { <span style="color:#75715e">/*...*/</span> }
 <span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;my-button&#39;</span>, <span style="color:#a6e22e">MyElement</span>, {<span style="color:#66d9ef">extends</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;button&#39;</span>});
 <span style="color:#75715e">/* &lt;button is=&#34;my-button&#34;&gt; */</span>
 </code></pre></div><p>请注意：</p>
@@ -343,7 +343,7 @@ inner 初始化完成。</p>
 <p>你在 #shadow-root 下看到的就是被称为「shadow DOM」的东西。</p>
 <p>我们不能使用一般的 JavaScript 调用或者选择器来获取内建 shadow DOM 元素。它们不是常规的子元素，而是一个强大的封装手段。</p>
 <p>在上面的例子中，我们可以看到一个有用的属性 pseudo。这是一个因为历史原因而存在的属性，并不在标准中。我们可以使用它来给子元素加上 CSS 样式，像这样：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
 <span style="color:#75715e">/* 让滑块轨道变红 */</span>
 <span style="color:#f92672">input</span>::<span style="color:#a6e22e">-webkit-slider-runnable-track</span> {
   <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
@@ -372,7 +372,7 @@ Shadow DOM，如果存在的话，会被浏览器渲染而不是所谓的 「lig
 <p>内建的 <!-- raw HTML omitted --> 元素用来存储 HTML 模板。浏览器将忽略它的内容，仅检查语法的有效性，但是我们可以在 JavaScript 中访问和使用它来创建其他元素。</p>
 <p>从理论上讲，我们可以在 HTML 中的任何位置创建不可见元素来储存 HTML 模板。那 <!-- raw HTML omitted --> 元素有什么优势？</p>
 <p>首先，其内容可以是任何有效的HTML，即使它通常需要特定的封闭标签。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">tr</span>&gt;
     &lt;<span style="color:#f92672">td</span>&gt;Contents&lt;/<span style="color:#f92672">td</span>&gt;
   &lt;/<span style="color:#f92672">tr</span>&gt;

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -137,7 +137,7 @@
 </ol>
 <h3 id="chunk">chunk</h3>
 <p>Creates an array of elements split into groups the length of size.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">chunk</span>([<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>], <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// =&gt; [[&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;, &#39;d&#39;]]
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">chunk</span>([<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>], <span style="color:#ae81ff">3</span>); <span style="color:#75715e">// =&gt; [[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], [&#39;d&#39;]]
 </span><span style="color:#75715e"></span>
@@ -156,7 +156,7 @@
 </span></code></pre></div><h3 id="compact">compact</h3>
 <p>Creates an array with all falsy values removed.</p>
 <p>创建一个新数组，包含原数组中所有的非假值元素。例如false, null, 0, &ldquo;&rdquo;, undefined, 和 NaN 都是被认为是“假值”。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">compact</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#ae81ff">3</span>]);
 
 <span style="color:#75715e">// Native
@@ -164,7 +164,7 @@
 </code></pre></div><h3 id="concat">concat</h3>
 <p>Creates a new array concatenating array with any additional arrays and/or values.</p>
 <p>创建一个新数组，将array与任何数组 或 值连接在一起。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>]
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">other</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">array</span>, <span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>], [[<span style="color:#ae81ff">4</span>]]) <span style="color:#75715e">// output: [1, 2, 3, [4]]
 </span><span style="color:#75715e"></span>
@@ -174,7 +174,7 @@
 </span></code></pre></div><h3 id="difference">difference</h3>
 <p>Similar to without, but returns the values from array that are not present in the other arrays.</p>
 <p>创建一个具有唯一array值的数组，每个值不包含在其他给定的数组中。（注：即创建一个新数组，这个数组中的值，为第一个数字（array 参数）排除了给定数组中的值。）该方法使用 SameValueZero做相等比较。结果值的顺序是由第一个数组中的顺序确定。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">difference</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>])   <span style="color:#75715e">// output: [1, 3, 4]
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arrays</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>]];
@@ -192,7 +192,7 @@
 </code></pre></div><h3 id="drop">drop</h3>
 <p>Creates a slice of array with n elements dropped from the beginning</p>
 <p>创建一个切片数组，去除array前面的n个元素 (n默认值为1)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">drop</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);     <span style="color:#75715e">// =&gt; [2, 3]
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">drop</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#ae81ff">2</span>);  <span style="color:#75715e">// =&gt; [3]
 </span><span style="color:#75715e"></span>
@@ -201,7 +201,7 @@
 </span><span style="color:#75715e"></span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>);    <span style="color:#75715e">// =&gt; [3]
 </span></code></pre></div><h3 id="dropright">dropRight</h3>
 <p>reates a slice of array with n elements dropped at the end.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">dropRight</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);    <span style="color:#75715e">// =&gt; [1, 2]
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">dropRight</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// =&gt; [1]
 </span><span style="color:#75715e"></span>
@@ -214,7 +214,7 @@
 </blockquote>
 <p>Fills elements of array with value from start up to, but not including, end. Note that fill is a mutable method in both native and Lodash/Underscore.</p>
 <p>使用 value 值来填充（替换） array，从start位置开始, 到end位置结束（但不包含end位置）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
 
 <span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#a6e22e">array</span>, <span style="color:#e6db74">&#39;a&#39;</span>)               <span style="color:#75715e">// output: [&#39;a&#39;, &#39;a&#39;, &#39;a&#39;]
@@ -232,7 +232,7 @@
 </blockquote>
 <p>Returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.</p>
 <p>该方法类似_.find，区别是该方法返回第一个通过 predicate 判断为真值的元素的索引值（index），而不是元素本身。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">users</span> <span style="color:#f92672">=</span> [
   { <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;barney&#39;</span>,  <span style="color:#e6db74">&#39;age&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">36</span>, <span style="color:#e6db74">&#39;active&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
   { <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;fred&#39;</span>,    <span style="color:#e6db74">&#39;age&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span>, <span style="color:#e6db74">&#39;active&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
@@ -253,7 +253,7 @@
 </span><span style="color:#75715e"></span>
 </code></pre></div><h3 id="findindex">findIndex</h3>
 <p>Returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">users</span> <span style="color:#f92672">=</span> [
   { <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;barney&#39;</span>,  <span style="color:#e6db74">&#39;age&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">36</span>, <span style="color:#e6db74">&#39;active&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
   { <span style="color:#e6db74">&#39;user&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;fred&#39;</span>,    <span style="color:#e6db74">&#39;age&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span>, <span style="color:#e6db74">&#39;active&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
@@ -272,7 +272,7 @@
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">findIndex</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">o</span>) { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">40</span>; }) <span style="color:#75715e">// output: 1
 </span></code></pre></div><h3 id="first">first</h3>
 <p>Returns the first element of an array. Passing n will return the first n elements of the array.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">first</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]);  <span style="color:#75715e">// =&gt; 1
 </span><span style="color:#75715e"></span>
 <span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">first</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// =&gt; [1, 2]
@@ -289,7 +289,7 @@
 [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// =&gt; [1, 2]
 </span></code></pre></div><h3 id="flatten">flatten</h3>
 <p>Flattens array a single level deep.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">flatten</span>([<span style="color:#ae81ff">1</span>, [<span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, [<span style="color:#ae81ff">4</span>]], <span style="color:#ae81ff">5</span>]]); <span style="color:#75715e">// =&gt; [1, 2, [3, [4]], 5]
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Native
@@ -301,7 +301,7 @@
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">flatten</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, [<span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, [<span style="color:#ae81ff">4</span>]], <span style="color:#ae81ff">5</span>]].<span style="color:#a6e22e">flatMap</span>(<span style="color:#a6e22e">number</span> =&gt; <span style="color:#a6e22e">number</span>) <span style="color:#75715e">// =&gt; [1, 2, [3, [4]], 5]
 </span></code></pre></div><h3 id="flattendeep">flattenDeep</h3>
 <p>Recursively flattens array.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">flattenDeep</span>([<span style="color:#ae81ff">1</span>, [<span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, [<span style="color:#ae81ff">4</span>]], <span style="color:#ae81ff">5</span>]]); <span style="color:#75715e">// =&gt; [1, 2, 3, 4, 5]
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Native
@@ -320,7 +320,7 @@
 </span><span style="color:#75715e"></span>
 </code></pre></div><h3 id="frompairs">fromPairs</h3>
 <p>Returns an object composed from key-value pairs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">fromPairs</span>([[<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#ae81ff">2</span>]]); <span style="color:#75715e">// =&gt; { &#39;a&#39;: 1, &#39;b&#39;: 2 }
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Native
@@ -342,7 +342,7 @@
 <p>Gets the first element or all but the first element.
 head: 获取数组 array 的第一个元素。
 tail: 获取除了array数组第一个元素以外的全部元素</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
 
 <span style="color:#75715e">// Lodash: _.first, _.head
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">head</span>(<span style="color:#a6e22e">array</span>) <span style="color:#75715e">// output: 1
@@ -357,7 +357,7 @@ tail: 获取除了array数组第一个元素以外的全部元素</p>
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">tail</span>) <span style="color:#75715e">// output [2, 3]
 </span></code></pre></div><h3 id="indexof">indexOf</h3>
 <p>Returns the first index at which a given element can be found in the array, or -1 if it is not present.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Underscore/Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Underscore/Lodash
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">9</span>]
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">array</span>, <span style="color:#ae81ff">2</span>)<span style="color:#75715e">// output: 0
 </span><span style="color:#75715e"></span>
@@ -367,7 +367,7 @@ tail: 获取除了array数组第一个元素以外的全部元素</p>
 </span></code></pre></div><h3 id="intersection">intersection</h3>
 <p>Returns an array that is the intersection of all the arrays. Each value in the result is present in each of the arrays.
 创建唯一值的数组，这个数组包含所有给定数组都包含的元素，使用 SameValueZero进行相等性比较。（注：可以理解为给定数组的交集）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">intersection</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]) <span style="color:#75715e">// output: [1, 2]
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Native
@@ -384,7 +384,7 @@ tail: 获取除了array数组第一个元素以外的全部元素</p>
 </span><span style="color:#75715e"></span>
 </code></pre></div><h3 id="takeright">takeRight</h3>
 <p>Creates a slice of array with n elements taken from the end. ❗ Native slice does not behave entirely the same as the Lodash method. See example below to understand why.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">takeRight</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]); <span style="color:#75715e">// =&gt; [3]
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">takeRight</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// =&gt; [2, 3]
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">takeRight</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#ae81ff">5</span>); <span style="color:#75715e">// =&gt; [1, 2, 3]
@@ -402,7 +402,7 @@ tail: 获取除了array数组第一个元素以外的全部元素</p>
 </span><span style="color:#75715e"></span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>); <span style="color:#75715e">// =&gt; [1, 2, 3]
 </span></code></pre></div><h3 id="isarray">isArray</h3>
 <p>Returns true if given value is an array.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> []
 <span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">array</span>) <span style="color:#75715e">// output: true
 </span><span style="color:#75715e"></span>
@@ -419,7 +419,7 @@ Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">arr
 <span style="color:#75715e">// 在JavaScript中,想要判断某个对象值属于哪种内置类型,最靠谱的做法就是通过Object.prototype.toString方法.
 </span></code></pre></div><h3 id="isarraybuffer">isArrayBuffer</h3>
 <p>Checks if value is classified as an ArrayBuffer object.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Lodash
 </span><span style="color:#75715e"></span><span style="color:#ae81ff">_</span>.<span style="color:#a6e22e">isArrayBuffer</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ArrayBuffer</span>(<span style="color:#ae81ff">2</span>)) <span style="color:#75715e">// output: true
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Native

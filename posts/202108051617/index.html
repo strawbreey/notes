@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -109,19 +109,19 @@
 <li>rand函数</li>
 </ol>
 <p>rand() 函数可以不加任何参数，就可以生成随机整数。如果要设置随机数范围，可以在函数中设置 min 和 max 的值。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">rand</span>() 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">rand</span>() 
 <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">rand</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
 </code></pre></div><ol start="2">
 <li>mt_rand函数</li>
 </ol>
 <p>mt_rand() 函数是使用 Mersenne Twister算法 返回随机整数，与rand() 函数的主要区别是： mt_rand() 产生随机数值的平均速度比rand() 快4倍。（就是快了）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">mt_rand</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">mt_rand</span>()
 <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">mt_rand</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
 </code></pre></div><ol start="3">
 <li>uniqid函数</li>
 </ol>
 <p>uniqid() 函数基于以微秒计的当前时间，生成一个唯一的 ID。默认生成ID的长度为13位或者23位，由英文字母和数字组成。uniqid() 函数有两个参数，格式如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">uniqid</span>(<span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">more_entropy</span>) <span style="color:#75715e">// 参数一： prefix: 生成ID的前缀 参数二： more_entropy: 是否添加额外的熵
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">uniqid</span>(<span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">more_entropy</span>) <span style="color:#75715e">// 参数一： prefix: 生成ID的前缀 参数二： more_entropy: 是否添加额外的熵
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">uniqid</span>();                    <span style="color:#75715e">// 生成13位字符串，如：55f540e273e93
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">uniqid</span>(<span style="color:#e6db74">&#39;one.&#39;</span>);              <span style="color:#75715e">// 生成前缀为one.加13位随机字符的字符串，如：one.55f540e273e93

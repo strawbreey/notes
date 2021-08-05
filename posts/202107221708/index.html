@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -105,7 +105,7 @@
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>要获取请求参数，你可以调用 request 组件的 get() 方法和 post() 方法。 他们分别返回 $_GET 和 $_POST 的值。例如，</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    $request <span style="color:#f92672">=</span> <span style="color:#a6e22e">Yii</span><span style="color:#f92672">::</span>$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    $request <span style="color:#f92672">=</span> <span style="color:#a6e22e">Yii</span><span style="color:#f92672">::</span>$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>;
 
     $get <span style="color:#f92672">=</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(); 
     <span style="color:#75715e">// 等价于: $get = $_GET;
@@ -127,7 +127,7 @@
 </span></code></pre></div><blockquote>
 <p>信息： 建议你像上面那样通过 request 组件来获取请求参数，而不是 直接访问 $_GET 和 $_POST。 这使你更容易编写测试用例，因为你可以伪造数据来创建一个模拟请求组件。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$request <span style="color:#f92672">=</span> <span style="color:#a6e22e">Yii</span><span style="color:#f92672">::</span>$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$request <span style="color:#f92672">=</span> <span style="color:#a6e22e">Yii</span><span style="color:#f92672">::</span>$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>;
 
 <span style="color:#75715e">// 返回所有参数
 </span><span style="color:#75715e"></span>$params <span style="color:#f92672">=</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">bodyParams</span>;

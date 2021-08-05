@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,7 +107,7 @@
             <p>PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。</p>
 <p>下面就对PM2进行入门性的介绍，基本涵盖了PM2的常用的功能和配置。</p>
 <h3 id="安装">安装</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install -g pm2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install -g pm2
 </code></pre></div><p>目录介绍</p>
 <p>pm2安装好后，会自动创建下面目录。看文件名基本就知道干嘛的了，就不翻译了。</p>
 <p>$HOME/.pm2 will contain all PM2 related files
@@ -120,7 +120,7 @@ $HOME/.pm2/pub.sock Socket file for publishable events
 $HOME/.pm2/conf.js PM2 Configuration</p>
 <h3 id="常用命令">常用命令</h3>
 <p>参数说明：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--watch：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--watch：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。
 -i --instances：启用多少个实例，可用于负载均衡。如果-i 0或者-i max，则根据当前机器核数确定实例数目。
 --ignore-watch：排除监听的目录/文件，可以是特定的文件名，也可以是正则。比如--ignore-watch<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test node_modules &#34;</span>some scripts<span style="color:#e6db74">&#34;&#34;</span>
 -n --name：应用的名称。查看应用信息的时候可以用到。

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -110,12 +110,12 @@
 <ul>
 <li>Global install</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 全局安装</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 全局安装</span>
 npm install -g yarn
 </code></pre></div><ul>
 <li>Per-project install</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/path/to/project
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/path/to/project
 
 <span style="color:#75715e"># 设置yarn 的版本</span>
 yarn set version berry
@@ -128,7 +128,7 @@ yarn set version from sources
 <span style="color:#75715e"># or</span>
 yarn set version from sources --branch <span style="color:#ae81ff">121</span>
 </code></pre></div><h3 id="usage">Usage</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Accessing the list of commands </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Accessing the list of commands </span>
 yarn help
 
 <span style="color:#75715e"># Starting a new project</span>
@@ -154,7 +154,7 @@ npm install yarn@latest -g
 
 </code></pre></div><h3 id="yarn-cli">yarn CLI</h3>
 <p>yarn add</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
 yarn add <span style="color:#f92672">[</span>--json<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-E,--exact<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-T,--tilde<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-C,--caret<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-D,--dev<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-P,--peer<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-O,--optional<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--prefer-dev<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i,--interactive<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--cached<span style="color:#f92672">]</span> ...
 
 <span style="color:#75715e"># example</span>
@@ -164,7 +164,7 @@ yarn add lodash@https://github.com/lodash/lodash
 yarn add lodash@lodash/lodash
 yarn add lodash-es@lodash/lodash#es
 </code></pre></div><p>yarn bin</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
 yarn bin <span style="color:#f92672">[</span>-v,--verbose<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--json<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>name<span style="color:#f92672">]</span>
 
 <span style="color:#75715e"># example</span>
@@ -172,14 +172,14 @@ yarn bin
 yarn bin eslint
 
 </code></pre></div><p>yarn cache clean</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
 yarn cache clean <span style="color:#f92672">[</span>--mirror<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--all<span style="color:#f92672">]</span>
 
 <span style="color:#75715e"># example</span>
 yarn cache clean
 yarn cache clean --mirror
 </code></pre></div><p>yarn config get</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
 yarn config get <span style="color:#f92672">[</span>--json<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--no-redacted<span style="color:#f92672">]</span> &lt;name&gt;
 
 <span style="color:#75715e"># example</span>
@@ -189,7 +189,7 @@ yarn config get <span style="color:#e6db74">&#39;npmScopes[&#34;my-company&#34;]
 yarn config get npmAuthToken --no-redacted
 yarn config get packageExtensions --json
 </code></pre></div><p>yarn config set</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
 yarn config set <span style="color:#f92672">[</span>--json<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-H,--home<span style="color:#f92672">]</span> &lt;name&gt; &lt;value&gt;
 
 <span style="color:#75715e"># example</span>
@@ -198,7 +198,7 @@ yarn config set initScope --json <span style="color:#ae81ff">\&#34;</span>myScop
 yarn config set unsafeHttpWhitelist --json <span style="color:#e6db74">&#39;[&#34;*.example.com&#34;, &#34;example.com&#34;]&#39;</span>
 yarn config set packageExtensions --json <span style="color:#e6db74">&#39;{ &#34;@babel/parser@*&#34;: { &#34;dependencies&#34;: { &#34;@babel/types&#34;: &#34;*&#34; } } }&#39;</span>
 </code></pre></div><p>yarn config</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># usage</span>
 yarn config <span style="color:#f92672">[</span>-v,--verbose<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--why<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--json<span style="color:#f92672">]</span>
 
 <span style="color:#75715e"># example</span>

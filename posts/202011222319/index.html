@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,9 +106,9 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。</p>
 <p>Object.getOwnPropertyNames() 返回一个数组，该数组对元素是 obj自身拥有的枚举或不可枚举属性名称字符串。 数组中枚举属性的顺序与通过 for&hellip;in 循环（或 Object.keys）迭代该对象属性时一致。数组中不可枚举属性的顺序未定义。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">getOwnPropertyNames</span>(<span style="color:#a6e22e">obj</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">getOwnPropertyNames</span>(<span style="color:#a6e22e">obj</span>)
 </code></pre></div><p>Example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>];
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyNames</span>(<span style="color:#a6e22e">arr</span>).<span style="color:#a6e22e">sort</span>()); <span style="color:#75715e">// [&#34;0&#34;, &#34;1&#34;, &#34;2&#34;, &#34;length&#34;]
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// 类数组对象

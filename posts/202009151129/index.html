@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,12 +106,12 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="基本配置">基本配置</h3>
 <p>Nginx的配置语法灵活，可控制度非常高。在0.7以后的版本中加入了一个try_files指令，配合命名location，可以部分替代原本常用的rewrite配置方式，提高解析效率。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  location / <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  location / <span style="color:#f92672">{</span>
     root          /data/website/baidu;
     try_files     $uri $uri/ /index.php? $query_string;   <span style="color:#75715e"># 当用户请求 http://localhost/example 时，这里的 $uri 就是 /example。</span>
   <span style="color:#f92672">}</span>
-</code></pre></div><p>try_files 会尝试寻找这个文件, 如果存在名为 /$root/example的文件，就直接把这个文件的内容发送给用户。 
-显然，目录中没有叫 example 的文件。然后就看 $uri/，增加了一个 /，也就是看有没有名为 /$root/example/ 的目录。 
+</code></pre></div><p>try_files 会尝试寻找这个文件, 如果存在名为 /$root/example的文件，就直接把这个文件的内容发送给用户。
+显然，目录中没有叫 example 的文件。然后就看 $uri/，增加了一个 /，也就是看有没有名为 /$root/example/ 的目录。
 又找不到，就会 fall back 到 try_files 的最后一个选项 /index.php，发起一个内部 “子请求”，也就是相当于 nginx 发起一个 HTTP 请求到 http://localhost/index.php。</p>
 <h3 id="try_files指令说明">try_files指令说明</h3>
 <pre><code class="language-conf" data-lang="conf">try_files指令

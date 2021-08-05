@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,7 +108,7 @@
 <ol>
 <li>slice() 方法可从已有的数组中返回选定的元素。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">arrayObject</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">start</span>,<span style="color:#a6e22e">end</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">arrayObject</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">start</span>,<span style="color:#a6e22e">end</span>)
 </code></pre></div><ul>
 <li>start	必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</li>
 <li>end	可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</li>
@@ -119,7 +119,7 @@
 <li>splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</li>
 </ol>
 <p>注释：该方法会改变原始数组。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">arrayObject</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">howmany</span>,<span style="color:#a6e22e">item1</span>,.....,<span style="color:#a6e22e">itemX</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">arrayObject</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">howmany</span>,<span style="color:#a6e22e">item1</span>,.....,<span style="color:#a6e22e">itemX</span>)
 </code></pre></div><ul>
 <li>index	必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</li>
 <li>howmany	必需。要删除的项目数量。如果设置为 0，则不会删除项目。</li>
@@ -132,7 +132,7 @@
 <ol>
 <li>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">stringObject</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">start</span>,<span style="color:#a6e22e">end</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">stringObject</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">start</span>,<span style="color:#a6e22e">end</span>)
 </code></pre></div><ul>
 <li>start	要抽取的片断的起始下标。如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。</li>
 <li>end	紧接着要抽取的片段的结尾的下标。若未指定此参数，则要提取的子串包括 start 到原字符串结尾的字符串。如果该参数是负数，那么它规定的是从字符串的尾部开始算起的位置。</li>
@@ -145,7 +145,7 @@
 <ol start="2">
 <li>substring() 方法用于提取字符串中介于两个指定下标之间的字符。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">stringObject</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">start</span>,<span style="color:#a6e22e">stop</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">stringObject</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">start</span>,<span style="color:#a6e22e">stop</span>)
 </code></pre></div><ul>
 <li>start	必需。一个非负的整数，规定要提取的子串的第一个字符在 stringObject 中的位置。</li>
 <li>stop	可选。一个非负的整数，比要提取的子串的最后一个字符在 stringObject 中的位置多 1。</li>

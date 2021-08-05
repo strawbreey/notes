@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="angualr-性能优化">Angualr 性能优化</h3>
 <p>angular编译的js基本都很大达到了mb级别，加载起来很占用带宽，不过angualr也提供了编译时压缩代码的功能，angular build指定为 &ndash;prod即可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 注释下面这一行可以激活延迟加载策略
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 注释下面这一行可以激活延迟加载策略
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routing</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ModuleWithProviders</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RouterModule</span>.<span style="color:#a6e22e">forRoot</span>(<span style="color:#a6e22e">routes</span>, {
   <span style="color:#75715e">// preloadingStrategy: PreloadAllModules,
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// useHash: true
@@ -125,7 +125,7 @@
 <h4 id="减少event-handler的运行时间">减少Event Handler的运行时间</h4>
 <h3 id="cdn加速">CDN加速</h3>
 <h3 id="nginx缓存">nginx缓存</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">events <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">events <span style="color:#f92672">{</span>
   <span style="color:#75715e">#的最大连接数（包含所有连接数）1024</span>
   worker_connections  1024;  <span style="color:#75715e">## Default: 1024</span>
 <span style="color:#f92672">}</span>

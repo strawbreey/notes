@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -116,7 +116,7 @@ git push -u origin master
 git branch -M master
 git push -u origin master
 </code></pre><h2 id="create-gh-pages-branch">create gh-pages branch</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout --orphan gh-pages
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m <span style="color:#e6db74">&#34;Initializing gh-pages branch&#34;</span>
 git push upstream gh-pages
@@ -140,7 +140,7 @@ git submodule add https://github.com/strawbreey/hugo-theme-hello-friend.git them
 </code></pre><h2 id="new-gitignore">new gitignore</h2>
 <pre><code>echo &quot;public&quot; &gt;&gt; .gitignore
 </code></pre><h2 id="set-git-account">Set Git Account</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 查看当前用户</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 查看当前用户</span>
 git config user.name
 git config user.email
 
@@ -148,15 +148,15 @@ git config user.email
 git config user.name <span style="color:#e6db74">&#34;strawbreey&#34;</span> 
 git config user.email <span style="color:#e6db74">&#34;2675882608@qq.com&#34;</span>
 </code></pre></div><h1 id="删除分支">删除分支</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 git branch -d <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
 
 </code></pre></div><h1 id="删除远程分支">删除远程分支</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin --delete <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin --delete <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
  
 git branch -dr <span style="color:#f92672">[</span>remote/branch<span style="color:#f92672">]</span>
 </code></pre></div><h2 id="gh-pages-分之">gh-pages 分之</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git worktree list <span style="color:#75715e"># 查看worktree</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git worktree list <span style="color:#75715e"># 查看worktree</span>
 
 删除worktree
 git worktree prune</code></pre></div>

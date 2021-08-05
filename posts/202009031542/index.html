@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,7 +107,7 @@
             <p>Go 语言切片是对数组的抽象。</p>
 <p>Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go中提供了一种灵活，功能强悍的内置类型切片(&ldquo;动态数组&rdquo;),与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。</p>
 <h3 id="定义切片">定义切片</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 切片不需要说明长度
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 切片不需要说明长度
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">identifier</span> []<span style="color:#66d9ef">type</span>
 
 <span style="color:#75715e">// 或使用make()函数来创建切片:
@@ -116,9 +116,9 @@
 <span style="color:#75715e">// 也可以简写为
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">slice1</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">type</span>, <span style="color:#a6e22e">len</span>)
 </code></pre></div><p>也可以指定容量，其中capacity为可选参数。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">make([]<span style="color:#a6e22e">T</span>, <span style="color:#a6e22e">length</span>, <span style="color:#a6e22e">capacity</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">make([]<span style="color:#a6e22e">T</span>, <span style="color:#a6e22e">length</span>, <span style="color:#a6e22e">capacity</span>)
 </code></pre></div><h3 id="slice-init-切片初始化">slice init 切片初始化</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> [] <span style="color:#66d9ef">int</span> {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span> } 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> [] <span style="color:#66d9ef">int</span> {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span> } 
 <span style="color:#75715e">// 直接初始化切片，[]表示是切片类型，{1,2,3}初始化值依次是1,2,3.其cap=len=3
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">arr</span>[:]
@@ -136,11 +136,11 @@
 <p>切片是可索引的，并且可以由 len() 方法获取长度。</p>
 <p>切片提供了计算容量的方法 cap() 可以测量切片最长可以达到多少</p>
 <h3 id="空nil切片">空(nil)切片</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 一个切片在未初始化之前默认为 nil，长度为 0，实例如下：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 一个切片在未初始化之前默认为 nil，长度为 0，实例如下：
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">numbers</span> []<span style="color:#66d9ef">int</span>
 </code></pre></div><h3 id="切片截取">切片截取</h3>
 <p>可以通过设置下限及上限来设置截取切片 [lower-bound:upper-bound]，实例如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
   <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>}  
   <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;len=%d cap=%d slice=%v\n&#34;</span>,len(<span style="color:#a6e22e">x</span>),cap(<span style="color:#a6e22e">x</span>),<span style="color:#a6e22e">x</span>)
   <span style="color:#75715e">// len=9 cap=9 slice=[0 1 2 3 4 5 6 7 8]
@@ -176,7 +176,7 @@
   <span style="color:#75715e">// len=3 cap=7 slice=[2 3 4]
 </span></code></pre></div><h2 id="append-和-copy-函数">append() 和 copy() 函数</h2>
 <p>如果想增加切片的容量，我们必须创建一个新的更大的切片并把原分片的内容都拷贝过来</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> []<span style="color:#66d9ef">int</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> []<span style="color:#66d9ef">int</span>
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;len=%d cap=%d slice=%v\n&#34;</span>,len(<span style="color:#a6e22e">x</span>),cap(<span style="color:#a6e22e">x</span>),<span style="color:#a6e22e">x</span>)
     <span style="color:#75715e">// len=0 cap=0 slice=[]
 </span><span style="color:#75715e"></span>

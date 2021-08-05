@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -116,8 +116,8 @@
 1） 打开source.list源：</p>
 <p>sudo vi /etc/apt/sources.list</p>
 <p>2） 添加源</p>
-<p>deb <a href="http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu">http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu</a> precise main</p>
-<p>deb-src <a href="http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu">http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu</a> precise main</p>
+<p>deb <a href="http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu</a> precise main</p>
+<p>deb-src <a href="http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu</a> precise main</p>
 <p>3） 执行安装命令</p>
 <p>sudo apt-get install subversion</p>
 <h3 id="svn-常用命令">SVN 常用命令</h3>
@@ -192,10 +192,10 @@ svn help ci</p>
 <li>创建纳入版本控制下的新目录</li>
 </ol>
 <p>svn mkdir: 创建纳入版本控制下的新目录。
-用法: 
+用法:
 1、mkdir PATH&hellip;
 每一个以工作副本 PATH 指定的目录，都会创建在本地端，并且加入新增调度，以待下一次的提交。
-2、mkdir URL&hellip; 创建版本控制的目录。 
+2、mkdir URL&hellip; 创建版本控制的目录。
 每个以URL指定的目录，都会透过立即提交于仓库中创建。在这两个情况下，所有的中间目录都必须事先存在。</p>
 <ol start="15">
 <li>
@@ -206,9 +206,9 @@ svn revert: 恢复原始未改变的工作副本文件 (恢复大部份的本地
 <li>
 <p>代码库URL变更
 svn switch (sw): 更新工作副本至不同的URL。
-用法: 
+用法:
 1、switch URL [PATH]     <br>
-更新你的工作副本，映射到一个新的URL，其行为跟“svn update”很像，也会将      服务器上文件与本地文件合并。这是将工作副本对应到同一仓库中某个分支或者标记的方法。 
+更新你的工作副本，映射到一个新的URL，其行为跟“svn update”很像，也会将      服务器上文件与本地文件合并。这是将工作副本对应到同一仓库中某个分支或者标记的方法。
 2、switch &ndash;relocate FROM TO [PATH&hellip;]<br>
 改写工作副本的URL元数据，以反映单纯的URL上的改变。当仓库的根URL变动     (比如方案名或是主机名称变动)，但是工作副本仍旧对映到同一仓库的同一目录时使用     这个命令更新工作副本与仓库的对应关系。</p>
 </li>
@@ -465,20 +465,20 @@ hello = rw
 <p>[general]
 #匿名访问的权限，可以是read,write,none,默认为read
 anon-access=none
-#使授权用户有写权限 
+#使授权用户有写权限
 auth-access=write
-#密码数据库的路径 
+#密码数据库的路径
 password-db=passwd
-#访问控制文件 
+#访问控制文件
 authz-db=authz
-#认证命名空间，subversion会在认证提示里显示，并且作为凭证缓存的关键字 
+#认证命名空间，subversion会在认证提示里显示，并且作为凭证缓存的关键字
 realm=/data/svn/repositories
 以上语句都必须顶格写, 左侧不能留空格, 否则会出错.</p>
 <p>7.启动svn服务
 查看svn的服务是否启动</p>
 <p>ps -ef|grep svn
 如果没有启动执行 下面命令即可：</p>
-<p>svnserve -d -r /data/svn/repo  &ndash;listen-port=3690 
+<p>svnserve -d -r /data/svn/repo  &ndash;listen-port=3690
 8.开启端口
 /sbin/iptables -I INPUT -p tcp &ndash;dport 3690 -j ACCEPT
 /etc/rc.d/init.d/iptables save

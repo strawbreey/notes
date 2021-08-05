@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,7 +108,7 @@
 <p>Elastic 的底层是开源库 Lucene。但是，你没法直接用 Lucene，必须自己写代码去调用它的接口。Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。</p>
 <h2 id="全文搜索引擎elasticsearch">全文搜索引擎(elasticsearch)</h2>
 <h3 id="install">install</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 下载,解压</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 下载,解压</span>
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip
 unzip elasticsearch-5.5.1.zip
 cd elasticsearch-5.5.1/ 
@@ -123,10 +123,10 @@ cd elasticsearch-5.5.1/
 <h4 id="index">Index</h4>
 <p><code>Elastic</code> 会索引所有字段，经过处理后写入一个反向索引（Inverted Index）。查找数据的时候，直接查找该索引。</p>
 <p>所以，<code>Elastic</code> 数据管理的顶层单位就叫做 Index（索引）。它是单个数据库的同义词。每个 Index （即数据库）的名字必须是小写。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -X GET <span style="color:#e6db74">&#39;http://localhost:9200/_cat/indices?v&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -X GET <span style="color:#e6db74">&#39;http://localhost:9200/_cat/indices?v&#39;</span>
 </code></pre></div><h4 id="document">Document</h4>
 <p>Index 里面单条的记录称为 Document（文档）。许多条 Document 构成了一个 Index。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">document</span> <span style="color:#960050;background-color:#1e0010">demo</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">document</span> <span style="color:#960050;background-color:#1e0010">demo</span>
 {
   <span style="color:#f92672">&#34;user&#34;</span>: <span style="color:#e6db74">&#34;张三&#34;</span>,
   <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;工程师&#34;</span>,
@@ -136,7 +136,7 @@ cd elasticsearch-5.5.1/
 <h4 id="type">Type</h4>
 <p>Document 可以分组，比如weather这个 Index 里面，可以按城市分组（北京和上海），也可以按气候分组（晴天和雨天）。这种分组就叫做 Type，它是虚拟的逻辑分组，用来过滤 Document。</p>
 <h4 id="新建和删除-index">新建和删除 Index</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 新建 Index，可以直接向 Elastic 服务器发出 PUT 请求。</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 新建 Index，可以直接向 Elastic 服务器发出 PUT 请求。</span>
 curl -X PUT <span style="color:#e6db74">&#39;localhost:9200/weather&#39;</span>
 
 <span style="color:#75715e"># 返回</span>
@@ -150,7 +150,7 @@ curl -X DELETE <span style="color:#e6db74">&#39;localhost:9200/weather&#39;</spa
 </code></pre></div><h3 id="数据操作">数据操作</h3>
 <h4 id="新增记录">新增记录</h4>
 <p>向指定的 /Index/Type 发送 PUT 请求，就可以在 Index 里面新增一条记录。比如，向/accounts/person发送请求，就可以新增一条人员记录。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 新增数据</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 新增数据</span>
 curl -X PUT <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1&#39;</span> -d <span style="color:#e6db74">&#39;
 </span><span style="color:#e6db74">{
 </span><span style="color:#e6db74">  &#34;user&#34;: &#34;张三&#34;,
@@ -177,7 +177,7 @@ $ curl -X POST <span style="color:#e6db74">&#39;localhost:9200/accounts/person&#
   <span style="color:#e6db74">&#34;desc&#34;</span>: <span style="color:#e6db74">&#34;系统管理&#34;</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><h4 id="查看记录">查看记录</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># URL 的参数pretty=true表示以易读的格式返回。</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># URL 的参数pretty=true表示以易读的格式返回。</span>
 curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1?pretty=true&#39;</span>
 
 <span style="color:#75715e"># 返回数据</span>
@@ -194,9 +194,9 @@ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1?pretty=tr
   <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><h4 id="删除记录">删除记录</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -X DELETE <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -X DELETE <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1&#39;</span>
 </code></pre></div><h4 id="更新记录">更新记录</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -X PUT <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1&#39;</span> -d <span style="color:#e6db74">&#39;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -X PUT <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1&#39;</span> -d <span style="color:#e6db74">&#39;
 </span><span style="color:#e6db74">{
 </span><span style="color:#e6db74">    &#34;user&#34; : &#34;张三&#34;,
 </span><span style="color:#e6db74">    &#34;title&#34; : &#34;工程师&#34;,
@@ -215,7 +215,7 @@ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1?pretty=tr
 <span style="color:#f92672">}</span>
 </code></pre></div><h4 id="数据查询">数据查询</h4>
 <p>使用 GET 方法，直接请求/Index/Type/_search，就会返回所有记录。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/_search&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/_search&#39;</span>
 
 <span style="color:#75715e"># 返回</span>
 <span style="color:#f92672">{</span>
@@ -258,7 +258,7 @@ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/1?pretty=tr
 <span style="color:#75715e"># hits：返回的记录组成的数组。</span>
 </code></pre></div><h3 id="全文搜索">全文搜索</h3>
 <p>Elastic 的查询非常特别，使用自己的查询语法，要求 GET 请求带有数据体。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/_search&#39;</span>  -d <span style="color:#e6db74">&#39;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/_search&#39;</span>  -d <span style="color:#e6db74">&#39;
 </span><span style="color:#e6db74">{
 </span><span style="color:#e6db74">  &#34;query&#34; : { &#34;match&#34; : { &#34;desc&#34; : &#34;软件&#34; }}
 </span><span style="color:#e6db74">}&#39;</span>
@@ -304,7 +304,7 @@ $ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/_search&#
 
 </code></pre></div><h3 id="逻辑运算">逻辑运算</h3>
 <p>如果有多个搜索关键字， Elastic 认为它们是or关系。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/_search&#39;</span>  -d<span style="color:#e6db74">&#39;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl <span style="color:#e6db74">&#39;localhost:9200/accounts/person/_search&#39;</span>  -d<span style="color:#e6db74">&#39;
 </span><span style="color:#e6db74">{
 </span><span style="color:#e6db74">  &#34;query&#34; : { &#34;match&#34; : { &#34;desc&#34; : &#34;软件 系统&#34; }}
 </span><span style="color:#e6db74">}&#39;</span>

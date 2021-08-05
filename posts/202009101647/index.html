@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,18 +107,18 @@
             <h3 id="数据库">数据库</h3>
 <p>数据库是一以某种方式存储的数据集合</p>
 <p>选择数据库 crashcourse</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">use crashcourse;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">use crashcourse;
 </code></pre></div><p>查看数据库信息</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> DATABASES; <span style="color:#f92672">//</span> <span style="color:#960050;background-color:#1e0010">返回可用数据库的列表，</span> <span style="color:#960050;background-color:#1e0010">数据库、表、列、用户、权限等的信息</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> DATABASES; <span style="color:#f92672">//</span> <span style="color:#960050;background-color:#1e0010">返回可用数据库的列表，</span> <span style="color:#960050;background-color:#1e0010">数据库、表、列、用户、权限等的信息</span>
 </code></pre></div><p>显示数据库内表的列表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">show TABLES; // 显示当前数据库内的表
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">show TABLES; // 显示当前数据库内的表
 
 show status  // 显示服务器状态信息
 
 show create database / show create table <span style="color:#75715e">#显示创建特定数据库/表</span>
 show GRANTS // 显示
 </code></pre></div><h3 id="4-查询数据select">4. 查询数据(SELECT)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products;  <span style="color:#75715e">-- 检索一列数据
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products;  <span style="color:#75715e">-- 检索一列数据
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> prod_id, prod_name, prod_price <span style="color:#66d9ef">FROM</span> products; <span style="color:#75715e">-- 检索多列数据
 </span><span style="color:#75715e"></span>
@@ -134,7 +134,7 @@ show GRANTS // 显示
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> product.prod_name <span style="color:#66d9ef">FROM</span> crashcourse.products; <span style="color:#75715e">-- = SELECT prod_name FROM products;
 </span></code></pre></div><h3 id="5排序数据-order-by">5.排序数据 (ORDER By)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products;
 
 <span style="color:#66d9ef">SELECt</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> prod_name; <span style="color:#75715e">-- 对prod_name以字母顺序排序
 </span><span style="color:#75715e"></span>
@@ -146,7 +146,7 @@ show GRANTS // 显示
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> prod_id, prod_price, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> prod_price <span style="color:#66d9ef">DESC</span> <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">-- 限制一个
 </span></code></pre></div><h3 id="6过滤数据">6.过滤数据</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- where 操作符
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- where 操作符
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_name, prod_price, prod_id <span style="color:#66d9ef">FROM</span>  products <span style="color:#66d9ef">WHERE</span> prod_price <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>.<span style="color:#ae81ff">5</span>  <span style="color:#75715e">-- 只返回值为2.5的值
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> prod_name, prod_price <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fuses&#39;</span> <span style="color:#75715e">--mysql 执行匹配时默认不区分大小写
@@ -165,7 +165,7 @@ show GRANTS // 显示
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> cust_id <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">WHERE</span> cust_email <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>;  
 </code></pre></div><h3 id="7-过滤数据">7. 过滤数据</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_price, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1003</span> <span style="color:#66d9ef">AND</span> prod_price <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">-- AND
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_price, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1003</span> <span style="color:#66d9ef">AND</span> prod_price <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">-- AND
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> prod_id, prod_price, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1002</span> <span style="color:#66d9ef">OR</span> vend_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1003</span> <span style="color:#75715e">-- OR
 </span><span style="color:#75715e"></span>
@@ -180,18 +180,18 @@ show GRANTS // 显示
 <span style="color:#66d9ef">SELECT</span> prod_name, prod_price <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">IN</span> (<span style="color:#ae81ff">1002</span>, <span style="color:#ae81ff">1003</span>) <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> prod_name; <span style="color:#75715e">-- NOT 否定他之后的所有条件
 </span></code></pre></div><h3 id="8-通配符过滤">8. 通配符过滤</h3>
 <p>百分号(%) 通配符： 表示任何字符出现任意次数</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;jet%&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;jet%&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROm</span> prodUcts <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%jet%&#39;</span>; <span style="color:#75715e">-- 检索所有含有jet的词
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROm</span> prodUcts <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%jet&#39;</span>; <span style="color:#75715e">-- 检索所有含有jet结尾的词
 </span><span style="color:#75715e"></span>
 </code></pre></div><p>下划线(_) 通配符： 只能匹配单个字符，而不是多个字符</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;__ inch teddy bear&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;__ inch teddy bear&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">-- 备注: 与%匹配多个字符不同, _ 总是刚好匹配一个字符
 </span></code></pre></div><p>方括号([]) 通配符 用来指定一个字符集</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;__ inch teddy bear&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;__ inch teddy bear&#39;</span>; <span style="color:#75715e">-- 检索所有jet开头的词
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">-- 备注: 与%匹配多个字符不同, _ 总是刚好匹配一个字符
 </span></code></pre></div><p>注意: SQL的通配符很有用,但是这种功能需要消耗更长的时间处理</p>
@@ -201,13 +201,13 @@ show GRANTS // 显示
 <li>主要通配符的位置</li>
 </ul>
 <h3 id="10-创建计算字段">10. 创建计算字段</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> vend_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> vend_countray <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#66d9ef">FROM</span> Vendors <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> vend_name;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> vend_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> vend_countray <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#66d9ef">FROM</span> Vendors <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> vend_name;
 <span style="color:#66d9ef">SELECT</span> vend_name <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">||</span>  vend_countray <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#66d9ef">FROM</span> Vendors <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> vend_name;
 <span style="color:#66d9ef">SELECT</span> RTRIM(vend_name) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> RTRIM(vend_contry) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#66d9ef">FROM</span> Vendors <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> vend_name; <span style="color:#75715e">-- TRIM 去除两遍空格 LTRIM LTRIM 左右空格
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, quantily, item_price <span style="color:#66d9ef">FROM</span> OrderItem <span style="color:#66d9ef">WHERE</span> order_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2008</span>;
 <span style="color:#66d9ef">SELECT</span> prod_id, quantily, item_price, quantily <span style="color:#f92672">*</span> item_price <span style="color:#66d9ef">AS</span> expanded_prce <span style="color:#66d9ef">FROM</span> OrderItems <span style="color:#66d9ef">WHERE</span> order_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2008</span>; <span style="color:#75715e">-- 算术表达式 + - * /
 </span></code></pre></div><h3 id="12-汇总数据">12. 汇总数据</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
 <span style="color:#75715e">-- 聚合函数
 </span><span style="color:#75715e"></span> 
 <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">AVG</span>(prod_price) <span style="color:#66d9ef">AS</span> avg_price <span style="color:#66d9ef">FROM</span> Products; <span style="color:#75715e">-- 平均数
@@ -235,7 +235,7 @@ show GRANTS // 显示
 <span style="color:#66d9ef">FROM</span> Products;
 
 </code></pre></div><h3 id="13-分组数据">13 分组数据</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> num_prods <span style="color:#66d9ef">FROM</span> Products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;DLL01&#39;</span> num_prods;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> num_prods <span style="color:#66d9ef">FROM</span> Products <span style="color:#66d9ef">WHERE</span> vend_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;DLL01&#39;</span> num_prods;
 
 <span style="color:#66d9ef">SELECT</span> vend_id, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> num_prods <span style="color:#66d9ef">FROM</span> Products <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> vend_id; <span style="color:#75715e">-- 创建分组
 </span><span style="color:#75715e"></span>
@@ -253,7 +253,7 @@ show GRANTS // 显示
 <li>(2) 检索具有前一步骤列出的订单编号的所有客户的ID。</li>
 <li>(3) 检索前一步骤返回的所有客户ID的客户信息。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> order_num <span style="color:#66d9ef">from</span> orderitems <span style="color:#66d9ef">where</span> prod_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;TNT2&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> order_num <span style="color:#66d9ef">from</span> orderitems <span style="color:#66d9ef">where</span> prod_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;TNT2&#39;</span>
 
 <span style="color:#66d9ef">select</span> coust_id <span style="color:#66d9ef">from</span> orders order_num <span style="color:#66d9ef">IN</span> (<span style="color:#ae81ff">20005</span>, <span style="color:#ae81ff">20007</span>)
 
@@ -272,7 +272,7 @@ show GRANTS // 显示
 
 </code></pre></div><h3 id="15-联结表">15. 联结表</h3>
 <p>SQL最强大的功能之一就是能在数据检索查询的执行中联结（join）表。联结是利用SQL的SELECT能执行的最重要的操作，很好地理解联结及其语法是学习SQL的一个极为重要的组成部分。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 创建联结
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 创建联结
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">select</span> vend_name, prod_name, prod_price 
        <span style="color:#66d9ef">from</span> vendors, products
@@ -308,7 +308,7 @@ show GRANTS // 显示
 </span><span style="color:#75715e"></span>
 
 </code></pre></div><h3 id="16-高级联结">16. 高级联结</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 使用别名
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 使用别名
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> cust_name, cust_contact
 <span style="color:#66d9ef">from</span> customers <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">c</span>, <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">as</span> o, orderitmes <span style="color:#66d9ef">as</span> oi
 <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">c</span>.cust_id <span style="color:#f92672">=</span> o.cust_id
@@ -352,7 +352,7 @@ show GRANTS // 显示
 <p>❑ 在一个联结中可以包含多个表，甚至对于每个联结可以采用不同的联结类型。虽然这样做是合法的，一般也很有用，但应该在一起测试它们前，分别测试每个联结。这将使故障排除更为简单</p>
 <h3 id="17-组合查询">17. 组合查询</h3>
 <p>创建UNION涉及编写多条SELECT语句</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> vend_id, prod_id, prod_price 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> vend_id, prod_id, prod_price 
 <span style="color:#66d9ef">from</span> products
 <span style="color:#66d9ef">where</span> prod_price <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">5</span>
 
@@ -401,7 +401,7 @@ show GRANTS // 显示
 <p>❑ 明确控制——使用通配符和正则表达式匹配，很难（而且并不总是能）明确地控制匹配什么和不匹配什么。例如，指定一个词必须匹配，一个词必须不匹配，而一个词仅在第一个词确实匹配的情况下才可以匹配或者才可以不匹配。</p>
 <p>❑ 智能化的结果——虽然基于通配符和正则表达式的搜索提供了非常灵活的搜索，但它们都不能提供一种智能化的选择结果的方法。例如，一个特殊词的搜索将会返回包含该词的所有行，而不区分包含单个匹配的行和包含多个匹配的行（按照可能是更好的匹配来排列它们）。类似，一个特殊词的搜索将不会找出不包含该词但包含其他相关词的行。</p>
 <h3 id="19-插入数据">19. 插入数据</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> info customers <span style="color:#66d9ef">values</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> info customers <span style="color:#66d9ef">values</span>(
        <span style="color:#66d9ef">null</span>,
        <span style="color:#e6db74">&#39;pep&#39;</span>,
        <span style="color:#e6db74">&#39;100&#39;</span>,

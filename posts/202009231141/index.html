@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -112,7 +112,7 @@
 <p>array_change_key_case ( array $array [, int $case = CASE_LOWER ] ) : array</p>
 <p>// 参数  array 需要操作的数组, case 可以在这里用两个常量，CASE_UPPER 或 CASE_LOWER(默认值)。
 // 返回值 返回一个键全是小写或者全是大写的数组；如果输入值（array）不是一个数组，那么返回FALSE</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$input_array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;FirSt&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;SecOnd&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">4</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$input_array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;FirSt&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;SecOnd&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">4</span>);
 
 <span style="color:#a6e22e">array_change_key_case</span>($input_array, <span style="color:#a6e22e">CASE_LOWER</span>);
 
@@ -132,7 +132,7 @@
 <li>返回值
 得到的数组是一个多维数组中的单元，其索引从零开始，每一维包含了 size 个元素。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$input_array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$input_array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>);
 <span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">array_chunk</span>($input_array, <span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// [[a,b],[c,d],[e]]
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">array_chunk</span>($input_array, <span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">true</span>)); 
 <span style="color:#75715e">// Array
@@ -162,7 +162,7 @@
 <p>input：需要取出数组列的多维数组。 如果提供的是包含一组对象的数组，只有 public 属性会被直接取出。 为了也能取出 private 和 protected 属性，类必须实现 __get() 和 __isset() 魔术方法。</p>
 <p>column_key： 需要返回值的列，它可以是索引数组的列索引，或者是关联数组的列的键，也可以是属性名。 也可以是NULL，此时将返回整个数组（配合index_key参数来重置数组键的时候，非常管用）</p>
 <p>index_key: 作为返回数组的索引/键的列，它可以是该列的整数索引，或者字符串键值。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 $records <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
     <span style="color:#66d9ef">array</span>(
         <span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2135</span>,
@@ -250,7 +250,7 @@ $people <span style="color:#f92672">=</span> [
 <p>参数：
 keys:将被作为新数组的键。非法的值将会被转换为字符串类型（string） values: 将被作为 Array 的值</p>
 <p>返回值: 返回合并的 array，如果两个数组的单元数不同则返回 FALSE。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;green&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;green&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>);
 $b <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;avocado&#39;</span>, <span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span>);
 $c <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_combine</span>($a, $b);
 
@@ -263,7 +263,7 @@ $c <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_combin
 </span></code></pre></div><h4 id="array_count_values-统计数组中所有的值">array_count_values 统计数组中所有的值</h4>
 <p>array_count_values ( array $array ) : array</p>
 <p>array_count_values() 返回一个数组： 数组的键是 array 里单元的值； 数组的值是 array 单元的值出现的次数。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;world&#34;</span>, <span style="color:#e6db74">&#34;hello&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;world&#34;</span>, <span style="color:#e6db74">&#34;hello&#34;</span>);
 
 <span style="color:#a6e22e">array_count_values</span>($array)
 
@@ -276,7 +276,7 @@ $c <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_combin
 </span></code></pre></div><h4 id="array_diff-计算数组的差集">array_diff 计算数组的差集</h4>
 <p>array_diff ( array $array1 , array $array2 [, array $&hellip; ] ) : array</p>
 <p>对比 array1 和其他一个或者多个数组，返回在 array1 中但是不在其他 array 里的值。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// array_diff() 例子
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// array_diff() 例子
 </span><span style="color:#75715e"></span>$array1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;green&#34;</span>, <span style="color:#e6db74">&#34;red&#34;</span>, <span style="color:#e6db74">&#34;blue&#34;</span>, <span style="color:#e6db74">&#34;red&#34;</span>);
 $array2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;green&#34;</span>, <span style="color:#e6db74">&#34;yellow&#34;</span>, <span style="color:#e6db74">&#34;red&#34;</span>);
 $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_diff</span>($array1, $array2);

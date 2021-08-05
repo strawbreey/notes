@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -141,7 +141,7 @@
 <p>最后将所有从第二个表中检索出的记录与第一个表中合适记录进行合并。</p>
 <p>只在基于规则的优化器中有效。</p>
 <p>举例：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  <span style="color:#75715e">-- 选择TAB2作为基础表 (最好的方法)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  <span style="color:#75715e">-- 选择TAB2作为基础表 (最好的方法)
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> tab1, tab2   <span style="color:#960050;background-color:#1e0010">执行时间</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">96</span><span style="color:#960050;background-color:#1e0010">秒</span>
   
   <span style="color:#75715e">-- 选择TAB2作为基础表 (不佳的方法)
@@ -165,7 +165,7 @@
 </ol>
 <p>Oracle采用自下而上的顺序解析WHERE子句。</p>
 <p>根据这个原理,  表之间的连接必须写在其他WHERE条件之前, 那些可以过滤掉最大数量记录的条件必须写在WHERE子句的末尾。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 低效, 执行时间156.3秒
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 低效, 执行时间156.3秒
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
   <span style="color:#66d9ef">FROM</span> EMP E
 <span style="color:#66d9ef">WHERE</span>  SAL <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">50000</span>
@@ -173,7 +173,7 @@
      <span style="color:#66d9ef">AND</span>  <span style="color:#ae81ff">25</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">FROM</span> EMP
                          <span style="color:#66d9ef">WHERE</span> MGR <span style="color:#f92672">=</span> E.EMPNO)
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 高效, 执行时间10.6秒
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 高效, 执行时间10.6秒
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
   <span style="color:#66d9ef">FROM</span> EMP E
 <span style="color:#66d9ef">WHERE</span> <span style="color:#ae81ff">25</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">FROM</span> EMP
@@ -214,7 +214,7 @@
 <li>计算记录条数</li>
 </ol>
 <p>一般认为, 在没有索引的情况之下, 第一种方式最快。 如果有索引列, 使用索引列当然最快。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> tablename; 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> tablename; 
 <span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">count</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">from</span> tablename; 
 <span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">max</span>(rownum) <span style="color:#66d9ef">from</span> tablename;
 </code></pre></div><ol start="13">
@@ -228,7 +228,7 @@
 </ol>
 <p>在含有子查询的SQL语句中, 要注意减少对表的查询操作。</p>
 <p>低效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> TAB_NAME  <span style="color:#66d9ef">FROM</span> TABLES
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> TAB_NAME  <span style="color:#66d9ef">FROM</span> TABLES
 <span style="color:#66d9ef">WHERE</span> TAB_NAME <span style="color:#f92672">=</span> (<span style="color:#66d9ef">SELECT</span> TAB_NAME
                            <span style="color:#66d9ef">FROM</span> TAB_COLUMNS
                          <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">604</span>) 
@@ -236,7 +236,7 @@
                            <span style="color:#66d9ef">FROM</span> TAB_COLUMNS
                          <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">604</span>)  
 </code></pre></div><p>高效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> TAB_NAME  <span style="color:#66d9ef">FROM</span> TABLES
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> TAB_NAME  <span style="color:#66d9ef">FROM</span> TABLES
 <span style="color:#66d9ef">WHERE</span> (TAB_NAME, DB_VER)<span style="color:#f92672">=</span>
              (<span style="color:#66d9ef">SELECT</span> TAB_NAME, DB_VER
                   <span style="color:#66d9ef">FROM</span> TAB_COLUMNS
@@ -250,13 +250,13 @@
 <li>用EXISTS替代IN</li>
 </ol>
 <p>在许多基于基础表的查询中, 为了满足一个条件 , 往往需要对另一个表进行联接。在这种情况下, 使用EXISTS(或NOT EXISTS)通常将提高查询的效率。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> EMP
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> EMP
 <span style="color:#66d9ef">WHERE</span> EMPNO <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
       <span style="color:#66d9ef">AND</span> DEPTNO <span style="color:#66d9ef">IN</span> (<span style="color:#66d9ef">SELECT</span> DEPTNO 
                         <span style="color:#66d9ef">FROM</span> DEPT 
                         <span style="color:#66d9ef">WHERE</span> LOC <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MELB&#39;</span>)
 </code></pre></div><p>高效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> EMP
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> EMP
 <span style="color:#66d9ef">WHERE</span> EMPNO <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
      <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">EXISTS</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#e6db74">&#39;X&#39;</span>
                       <span style="color:#66d9ef">FROM</span> DEPT 
@@ -268,13 +268,13 @@
 <p>在子查询中, NOT IN子句将执行一个内部的排序和合并, 对子查询中的表执行一个全表遍历, 因此是非常低效的。</p>
 <p>为了避免使用NOT IN, 可以把它改写成外连接 (Outer Joins) 或者NOT EXISTS。</p>
 <p>低效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">…</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">…</span>
     <span style="color:#66d9ef">FROM</span> EMP
     <span style="color:#66d9ef">WHERE</span> DEPT_NO <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">IN</span> (<span style="color:#66d9ef">SELECT</span> DEPT_NO 
                               <span style="color:#66d9ef">FROM</span> DEPT 
                               <span style="color:#66d9ef">WHERE</span> DEPT_CAT<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;A&#39;</span>)
 </code></pre></div><p>高效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
   <span style="color:#66d9ef">FROM</span> EMP E
 <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span>  (<span style="color:#66d9ef">SELECT</span> <span style="color:#e6db74">&#39;X&#39;</span>
                        <span style="color:#66d9ef">FROM</span> DEPT D
@@ -285,11 +285,11 @@
 </ol>
 <p>通常来说 , 采用表连接的方式比EXISTS更有效率 。</p>
 <p>低效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ENAME
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ENAME
    <span style="color:#66d9ef">FROM</span> EMP E
 <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">EXISTS</span> ( <span style="color:#66d9ef">SELECT</span> <span style="color:#e6db74">&#39;X&#39;</span> <span style="color:#66d9ef">FROM</span> DEPT <span style="color:#66d9ef">WHERE</span> DEPT_NO <span style="color:#f92672">=</span> E.DEPT_NO <span style="color:#66d9ef">AND</span> DEPT_CAT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span> )
 </code></pre></div><p>高效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ENAME
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ENAME
    <span style="color:#66d9ef">FROM</span> DEPT D, EMP E
 <span style="color:#66d9ef">WHERE</span> E.DEPT_NO <span style="color:#f92672">=</span> D.DEPT_NO
      <span style="color:#66d9ef">AND</span> DEPT_CAT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>
@@ -299,9 +299,9 @@
 <p>当提交一个包含对多表信息 (比如部门表和雇员表) 的查询时, 避免在SELECT子句中使用DISTINCT。 一般可以考虑用EXIST替换。</p>
 <p>EXISTS 使查询更为迅速, 因为RDBMS核心模块将在子查询的条件一旦满足后, 立刻返回结果。</p>
 <p>低效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> DEPT_NO, DEPT_NAME <span style="color:#66d9ef">FROM</span> DEPT D,  EMP E <span style="color:#66d9ef">WHERE</span> D.DEPT_NO <span style="color:#f92672">=</span> E.DEPT_NO
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> DEPT_NO, DEPT_NAME <span style="color:#66d9ef">FROM</span> DEPT D,  EMP E <span style="color:#66d9ef">WHERE</span> D.DEPT_NO <span style="color:#f92672">=</span> E.DEPT_NO
 </code></pre></div><p>高效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> DEPT_NO, DEPT_NAME
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> DEPT_NO, DEPT_NAME
       <span style="color:#66d9ef">FROM</span> DEPT D
     <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">EXISTS</span>  (<span style="color:#66d9ef">SELECT</span> <span style="color:#e6db74">&#39;X&#39;</span>
                   <span style="color:#66d9ef">FROM</span> EMP E
@@ -310,7 +310,7 @@
 <li>识别低效的SQL语句</li>
 </ol>
 <p>下面的SQL工具可以找出低效SQL ：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> EXECUTIONS,  DISK_READS,  BUFFER_GETS, 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> EXECUTIONS,  DISK_READS,  BUFFER_GETS, 
    ROUND ((BUFFER_GETS<span style="color:#f92672">-</span>DISK_READS)<span style="color:#f92672">/</span>BUFFER_GETS,  <span style="color:#ae81ff">2</span>) Hit_radio, 
    ROUND (DISK_READS<span style="color:#f92672">/</span>EXECUTIONS,  <span style="color:#ae81ff">2</span>) Reads_per_run, 
    SQL_TEXT
@@ -337,7 +337,7 @@ SQL&gt; /
 Execution Plan</h2>
 <p>0      SELECT STATEMENT Optimizer=CHOOSE
 1    0   NESTED LOOPS
-2    1     TABLE ACCESS (FULL) OF &lsquo;EMP&rsquo; 
+2    1     TABLE ACCESS (FULL) OF &lsquo;EMP&rsquo;
 3    1     TABLE ACCESS (BY INDEX ROWID) OF &lsquo;DEPT&rsquo;
 4    3       INDEX (UNIQUE SCAN) OF &lsquo;PK_DEPT&rsquo; (UNIQUE)</p>
 <ol start="23">
@@ -453,7 +453,7 @@ OR  LOC_ID = 30
 高效：</p>
 <p>SELECT…
 FROM LOCATION
-WHERE LOC_IN IN  (10, 20, 30) 
+WHERE LOC_IN IN  (10, 20, 30)
 实际的执行效果还须检验, 在ORACLE8i下,  两者的执行路径似乎是相同的。</p>
 <ol start="27">
 <li>避免在索引列上使用is null和is not null</li>
@@ -482,7 +482,7 @@ WHERE DEPT_CODE &gt;=0;
 </ol>
 <p>由于UNION会对查询结果进行排序, 而且过滤重复记录, 因此其执行效率没有UNION ALL高。 UNION操作会使用到SORT_AREA_SIZE内存块, 因此对这块内存的优化也非常重要。</p>
 <p>可以使用下面的SQL来查询排序的消耗量 ：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> substr (name, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">25</span>)  <span style="color:#e6db74">&#34;Sort Area Name&#34;</span>, 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> substr (name, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">25</span>)  <span style="color:#e6db74">&#34;Sort Area Name&#34;</span>, 
        substr (value, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">15</span>)  <span style="color:#e6db74">&#34;Value&#34;</span>
 <span style="color:#66d9ef">from</span> v$sysstat
 <span style="color:#66d9ef">where</span> name <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;sort%&#39;</span> 
@@ -490,7 +490,7 @@ WHERE DEPT_CODE &gt;=0;
 <li>避免改变索引列的类型</li>
 </ol>
 <p>当比较不同数据类型的数据时,  ORACLE自动对列进行简单的类型转换。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">/*假设EMP_TYPE是一个字符类型的索引列.*/</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">/*假设EMP_TYPE是一个字符类型的索引列.*/</span>
 <span style="color:#66d9ef">SELECT</span> <span style="color:#960050;background-color:#1e0010">…</span>
   <span style="color:#66d9ef">FROM</span> EMP
  <span style="color:#66d9ef">WHERE</span> EMP_TYPE <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>
@@ -527,31 +527,31 @@ USE_HASH 等等。
 <li>下面的例子中, &lsquo;!=&rsquo; 将不使用索引 , 索引只能告诉你什么存在于表中, 而不能告诉你什么不存在于表中。</li>
 </ul>
 <p>不使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">；</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">；</span>
 </code></pre></div><p>使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">；</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">；</span>
 </code></pre></div><ul>
 <li>下面的例子中, &lsquo;||&lsquo;是字符连接函数。就象其他函数那样, 停用了索引。</li>
 </ul>
 <p>不使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME<span style="color:#f92672">||</span>ACCOUNT_TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;AMEXA&#39;</span><span style="color:#960050;background-color:#1e0010">；</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME<span style="color:#f92672">||</span>ACCOUNT_TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;AMEXA&#39;</span><span style="color:#960050;background-color:#1e0010">；</span>
 </code></pre></div><p>使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME,  AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;AMEX&#39;</span> <span style="color:#66d9ef">AND</span> ACCOUNT_TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;A&#39;</span><span style="color:#960050;background-color:#1e0010">；</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME,  AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;AMEX&#39;</span> <span style="color:#66d9ef">AND</span> ACCOUNT_TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;A&#39;</span><span style="color:#960050;background-color:#1e0010">；</span>
 </code></pre></div><p>(3) 下面的例子中, &lsquo;+&lsquo;是数学函数。就象其他数学函数那样, 停用了索引。</p>
 <p>不使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">+</span> <span style="color:#ae81ff">3000</span> <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">5000</span><span style="color:#960050;background-color:#1e0010">；</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">+</span> <span style="color:#ae81ff">3000</span> <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">5000</span><span style="color:#960050;background-color:#1e0010">；</span>
 </code></pre></div><p>使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2000</span> <span style="color:#960050;background-color:#1e0010">；</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> AMOUNT <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2000</span> <span style="color:#960050;background-color:#1e0010">；</span>
 </code></pre></div><p>(4) 下面的例子中, 相同的索引列不能互相比较, 这将会启用全表扫描。</p>
 <p>不使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME,  AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME <span style="color:#f92672">=</span> NVL(:ACC_NAME,  ACCOUNT_NAME)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME,  AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME <span style="color:#f92672">=</span> NVL(:ACC_NAME,  ACCOUNT_NAME)
 </code></pre></div><p>使用索引：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME <span style="color:#66d9ef">LIKE</span> NVL(:ACC_NAME,  <span style="color:#e6db74">&#39;%&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ACCOUNT_NAME, AMOUNT <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">WHERE</span> ACCOUNT_NAME <span style="color:#66d9ef">LIKE</span> NVL(:ACC_NAME,  <span style="color:#e6db74">&#39;%&#39;</span>)
 </code></pre></div><ol start="34">
 <li>连接多个扫描</li>
 </ol>
 <p>如果对一个列和一组有限的值进行比较, 优化器可能执行多次扫描并对结果进行合并连接。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> 
 <span style="color:#66d9ef">FROM</span> LODGING
 <span style="color:#66d9ef">WHERE</span> MANAGER <span style="color:#66d9ef">IN</span> (<span style="color:#e6db74">&#39;BILL GATES&#39;</span>,  <span style="color:#e6db74">&#39;KEN MULLER&#39;</span>)
 
@@ -574,13 +574,13 @@ USE_HASH 等等。
 </ol>
 <p>提高GROUP BY语句的效率, 可以通过将不需要的记录在GROUP BY之前过滤掉。</p>
 <p>低效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> JOB , <span style="color:#66d9ef">AVG</span> (SAL) 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> JOB , <span style="color:#66d9ef">AVG</span> (SAL) 
     <span style="color:#66d9ef">FROM</span> EMP
     <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> JOB
 <span style="color:#66d9ef">HAVING</span> JOB <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PRESIDENT&#39;</span>
     <span style="color:#66d9ef">OR</span> JOB <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MANAGER&#39;</span>
 </code></pre></div><p>高效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> JOB, <span style="color:#66d9ef">AVG</span> (SAL) 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> JOB, <span style="color:#66d9ef">AVG</span> (SAL) 
     <span style="color:#66d9ef">FROM</span> EMP
 <span style="color:#66d9ef">WHERE</span> JOB <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PRESIDENT&#39;</span>
     <span style="color:#66d9ef">OR</span> JOB <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MANAGER&#39;</span>
@@ -589,7 +589,7 @@ USE_HASH 等等。
 <li>使用日期</li>
 </ol>
 <p>当使用日期时, 需要注意如果有超过5位小数加到日期上, 这个日期会进到下一天!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> TO_DATE(<span style="color:#e6db74">&#39;01-JAN-93&#39;</span> <span style="color:#f92672">+</span> .<span style="color:#ae81ff">99999</span>) 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> TO_DATE(<span style="color:#e6db74">&#39;01-JAN-93&#39;</span> <span style="color:#f92672">+</span> .<span style="color:#ae81ff">99999</span>) 
   <span style="color:#66d9ef">FROM</span> DUAL
 <span style="color:#66d9ef">Returns</span>:
 <span style="color:#e6db74">&#39;01-JAN-93 23:59:59&#39;</span>

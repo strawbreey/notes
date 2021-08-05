@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -110,21 +110,21 @@
 <li>创建一个 yii\db\Query 对象来代表一条 SELECT SQL 语句的不同子句（例如 SELECT, FROM）。</li>
 <li>执行 yii\db\Query 的一个查询方法（例如：all()）从数据库当中检索数据。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$rows <span style="color:#f92672">=</span> (<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\yii\db\Query</span>())
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$rows <span style="color:#f92672">=</span> (<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\yii\db\Query</span>())
     <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">select</span>([<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;email&#39;</span>])
     <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#39;user&#39;</span>)
     <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>([<span style="color:#e6db74">&#39;last_name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Smith&#39;</span>])
     <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">limit</span>(<span style="color:#ae81ff">10</span>)
     <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
 </code></pre></div><p>=&gt;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>email<span style="color:#f92672">`</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>email<span style="color:#f92672">`</span> 
 <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">user</span><span style="color:#f92672">`</span>
 <span style="color:#66d9ef">WHERE</span> <span style="color:#f92672">`</span>last_name<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> :last_name
 <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>
 </code></pre></div><h3 id="创建查询">创建查询</h3>
 <h4 id="select">select()</h4>
 <p>select() 方法用来指定 SQL 语句当中的 SELECT 子句。 你可以像下面的例子一样使用一个数组或者字符串来定义需要查询的字段。当 SQL 语句 是由查询对象生成的时候，被查询的字段名称将会自动的被引号括起来。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">select</span>([<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;email&#39;</span>]);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">select</span>([<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;email&#39;</span>]);
 <span style="color:#75715e">// 等同于：
 </span><span style="color:#75715e"></span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">select</span>(<span style="color:#e6db74">&#39;id, email&#39;</span>);
 

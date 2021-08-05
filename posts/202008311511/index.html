@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -105,7 +105,7 @@
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="删除commit提交记录">删除commit提交记录</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># Checkout</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># Checkout</span>
   git checkout --orphan latest_branch;
 
   <span style="color:#75715e"># Add all the files</span>
@@ -126,7 +126,7 @@
   <span style="color:#75715e">#  </span>
   git push --set-upstream origin master
 </code></pre></div><h3 id="撤销上一次的commit">撤销上一次的commit</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  git reset --hard HEAD^ 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  git reset --hard HEAD^ 
   git reset --mixed HEAD^ 
   git reset --soft HEAD^ 
 

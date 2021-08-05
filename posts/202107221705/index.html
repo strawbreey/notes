@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>只要在 php.ini 文件中激活了 allow_url_fopen 选项，就可以在大多数需要用文件名作为参数的函数中使用 HTTP 和 FTP 的 URL 来代替文件名。同时，也可以在 include、include_once、require 及 require_once 语句中使用 URL。</p>
 <h3 id="获取远程文件的标题">获取远程文件的标题</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$file <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span> (<span style="color:#e6db74">&#34;http://www.example.com/&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$file <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span> (<span style="color:#e6db74">&#34;http://www.example.com/&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>);
 <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$file) {
     <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;p&gt;Unable to open remote file.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
     <span style="color:#66d9ef">exit</span>;
@@ -121,7 +121,7 @@
 }
 <span style="color:#a6e22e">fclose</span>($file)
 </code></pre></div><h3 id="将数据保存到远程服务器">将数据保存到远程服务器</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$file <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span> (<span style="color:#e6db74">&#34;ftp://ftp.example.com/incoming/outputfile&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$file <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span> (<span style="color:#e6db74">&#34;ftp://ftp.example.com/incoming/outputfile&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>);
 <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$file) {
     <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;p&gt;Unable to open remote file for writing.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
     <span style="color:#66d9ef">exit</span>;

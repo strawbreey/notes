@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -112,7 +112,7 @@
 <p>PHP 中的数组实际上是一个有序映射。映射是一种把 values 关联到 keys 的类型。此类型在很多方面做了优化，因此可以把它当成真正的数组，或列表（向量），散列表（是映射的一种实现），字典，集合，栈，队列以及更多可能性。由于数组元素的值也可以是另一个数组，树形结构和多维数组也是允许的。</p>
 <h3 id="定义数组">定义数组</h3>
 <p>可以用 array() 语言结构来新建一个数组。它接受任意数量用逗号分隔的 键（key） =&gt; 值（value）对。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">array</span>(  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">array</span>(  
     <span style="color:#a6e22e">key</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">value</span>,
     <span style="color:#f92672">...</span>
 )
@@ -120,7 +120,7 @@
 </span><span style="color:#75715e">// 值（value）可以是任意类型的值
 </span></code></pre></div><p>最后一个数组单元之后的逗号可以省略。通常用于单行数组定义中，例如常用 array(1, 2) 而不是 array(1, 2, )。对多行数组定义通常保留最后一个逗号，这样要添加一个新单元时更方便。</p>
 <p>自 5.4 起可以使用短数组定义语法，用 [] 替代 array()。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
     <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;bar&#34;</span>,
     <span style="color:#e6db74">&#34;bar&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;foo&#34;</span>,
 );
@@ -141,7 +141,7 @@
 </ul>
 <h4 id="类型强制与覆盖示例">类型强制与覆盖示例</h4>
 <p>如果在数组定义中多个单元都使用了同一个键名，则只使用了最后一个，之前的都被覆盖了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
     <span style="color:#ae81ff">1</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;a&#34;</span>,
     <span style="color:#e6db74">&#34;1&#34;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;b&#34;</span>,
     <span style="color:#ae81ff">1.5</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;c&#34;</span>,
@@ -156,7 +156,7 @@
 </span><span style="color:#75715e">// }
 </span><span style="color:#75715e"></span>
 </code></pre></div><h4 id="混合-integer-和-string-键名">混合 integer 和 string 键名</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
     <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;bar&#34;</span>,
     <span style="color:#e6db74">&#34;bar&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;foo&#34;</span>,
     <span style="color:#ae81ff">100</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span>,
@@ -174,7 +174,7 @@
 </span><span style="color:#75715e">// }
 </span></code></pre></div><p>PHP 数组可以同时含有 integer 和 string 类型的键名，因为 PHP 实际并不区分索引数组和关联数组。</p>
 <h4 id="没有键名的索引数组">没有键名的索引数组</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 $array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#e6db74">&#34;hallo&#34;</span>, <span style="color:#e6db74">&#34;world&#34;</span>);
 
 <span style="color:#75715e">// array(4) {
@@ -188,7 +188,7 @@ $array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</s
 </span><span style="color:#75715e">//   string(5) &#34;world&#34;
 </span><span style="color:#75715e">// }
 </span></code></pre></div><h4 id="仅对部分单元指定键名">仅对部分单元指定键名</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
          <span style="color:#e6db74">&#34;a&#34;</span>,
          <span style="color:#e6db74">&#34;b&#34;</span>,
     <span style="color:#ae81ff">6</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;c&#34;</span>,
@@ -207,7 +207,7 @@ $array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</s
 </span><span style="color:#75715e">// }
 </span></code></pre></div><h4 id="方括号语法访问数组单元">方括号语法访问数组单元</h4>
 <p>数组单元可以通过 array[key] 语法来访问。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
     <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;bar&#34;</span>,
     <span style="color:#ae81ff">42</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">24</span>,
     <span style="color:#e6db74">&#34;multi&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
@@ -223,7 +223,7 @@ $array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</s
 </span><span style="color:#75715e"></span>
 </code></pre></div><p>方括号和花括号可以互换使用来访问数组单元（例如 $array[42] 和 $array{42} 在上例中效果相同）。</p>
 <h4 id="数组解引用">数组解引用</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getArray</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getArray</span>() {
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
 }
 
@@ -241,12 +241,12 @@ $secondElement <span style="color:#f92672">=</span> $tmp[<span style="color:#ae8
 </blockquote>
 <h4 id="用方括号的语法新建修改">用方括号的语法新建/修改</h4>
 <p>可以通过明示地设定其中的值来修改一个已有数组。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
 $arr[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
 <span style="color:#75715e">// key 可以是 integer 或 string
 </span><span style="color:#75715e">// value 可以是任意类型的值`
 </span></code></pre></div><p>要修改某个值，通过其键名给该单元赋一个新值。要删除某键值对，对其调用 unset() 函数。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 $arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">5</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">12</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2</span>);
 
 $arr[] <span style="color:#f92672">=</span> <span style="color:#ae81ff">56</span>;    <span style="color:#75715e">// This is the same as $arr[13] = 56;
@@ -265,7 +265,7 @@ $arr[<span style="color:#e6db74">&#34;x&#34;</span>] <span style="color:#f92672"
 <h3 id="常用array函数">常用Array函数</h3>
 <h4 id="unset-函数">unset 函数</h4>
 <p>unset() 函数允许删除数组中的某个键。但要注意数组将不会重建索引。如果需要删除后重建索引，可以用 array_values() 函数。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#ae81ff">2</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;two&#39;</span>, <span style="color:#ae81ff">3</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;three&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#ae81ff">2</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;two&#39;</span>, <span style="color:#ae81ff">3</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;three&#39;</span>);
 <span style="color:#a6e22e">unset</span>($a[<span style="color:#ae81ff">2</span>]);
 <span style="color:#75715e">/* will produce an array that would have been defined as
 </span><span style="color:#75715e">   $a = array(1 =&gt; &#39;one&#39;, 3 =&gt; &#39;three&#39;);
@@ -279,7 +279,7 @@ $b <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_values
 <h3 id="转换为数组">转换为数组</h3>
 <p>对于任意 integer，float，string，boolean 和 resource 类型，如果将一个值转换为数组，将得到一个仅有一个元素的数组，其下标为 0，该元素即为此标量的值。换句话说，(array)$scalarValue 与 array($scalarValue) 完全一样。</p>
 <p>如果一个 object 类型转换为 array，则结果为一个数组，其单元为该对象的属性。键名将为成员变量名，不过有几点例外：整数属性不可访问；私有变量前会加上类名作前缀；保护变量前会加上一个 &lsquo;*&rsquo; 做前缀。这些前缀的前后都各有一个 NULL 字符。这会导致一些不可预知的行为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
     <span style="color:#66d9ef">private</span> $A; <span style="color:#75715e">// This will become &#39;\0A\0A&#39;
 </span><span style="color:#75715e"></span>}
@@ -291,7 +291,7 @@ $b <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_values
 
 <span style="color:#a6e22e">var_dump</span>((<span style="color:#66d9ef">array</span>) <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">B</span>());
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">foreach</span> ($colors <span style="color:#66d9ef">as</span> <span style="color:#f92672">&amp;</span>$color) {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">foreach</span> ($colors <span style="color:#66d9ef">as</span> <span style="color:#f92672">&amp;</span>$color) {
     $color <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtoupper</span>($color); <span style="color:#75715e">// 大写
 </span><span style="color:#75715e"></span>}
 <span style="color:#a6e22e">unset</span>($color); <span style="color:#75715e">/* ensure that following writes to
@@ -303,7 +303,7 @@ $b <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_values
 </code></pre></div><h4 id="比较">比较</h4>
 <p>可以用array_diff() 和 数组运算符来比较数组</p>
 <h4 id="在循环中改变单元">在循环中改变单元</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#75715e">// PHP 5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#75715e">// PHP 5
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">foreach</span> ($colors <span style="color:#66d9ef">as</span> <span style="color:#f92672">&amp;</span>$color) {
     $color <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtoupper</span>($color);
 }
@@ -317,7 +317,7 @@ $b <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_values
 
 <span style="color:#a6e22e">print_r</span>($colors);
 </code></pre></div><h4 id="下标从-1-开始的数组">下标从 1 开始的数组</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$firstquarter  <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;January&#39;</span>, <span style="color:#e6db74">&#39;February&#39;</span>, <span style="color:#e6db74">&#39;March&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$firstquarter  <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;January&#39;</span>, <span style="color:#e6db74">&#39;February&#39;</span>, <span style="color:#e6db74">&#39;March&#39;</span>);
 <span style="color:#a6e22e">print_r</span>($firstquarter);
 
 <span style="color:#75715e">// Array 
@@ -329,7 +329,7 @@ $b <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_values
 </span><span style="color:#75715e"></span>
 
 </code></pre></div><h4 id="填充数组">填充数组</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">opendir</span>(<span style="color:#e6db74">&#39;.&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">opendir</span>(<span style="color:#e6db74">&#39;.&#39;</span>);
 <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">false</span> <span style="color:#f92672">!==</span> ($file <span style="color:#f92672">=</span> <span style="color:#a6e22e">readdir</span>($handle))) {
     $files[] <span style="color:#f92672">=</span> $file;
 }
@@ -338,7 +338,7 @@ $b <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_values
 </code></pre></div><h4 id="数组排序">数组排序</h4>
 <p>因为数组中的值可以为任意值，也可是另一个数组。这样可以产生递归或多维数组。
 s</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 <span style="color:#a6e22e">sort</span>($files);
 <span style="color:#a6e22e">print_r</span>($files);
 </code></pre></div><h3 id="数组-函数">数组 函数</h3>

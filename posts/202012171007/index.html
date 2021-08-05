@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -193,7 +193,7 @@ with quickly:</p>
 <li><strong>Suggest a Fix</strong> - if you can&rsquo;t fix the bug yourself, perhaps you can point to what might be
 causing the problem (line of code or commit)</li>
 </ul>
-<p>Here is a great example of a well defined issue: <a href="https://github.com/angular/angular.js/issues/5069">https://github.com/angular/angular.js/issues/5069</a>.</p>
+<p>Here is a great example of a well defined issue: <a href="https://github.com/angular/angular.js/issues/5069" target="_blank" rel="noopener">https://github.com/angular/angular.js/issues/5069</a>.</p>
 <p><strong>If you get help, help others. Good karma rulez!</strong></p>
 <h2 id="a-namesubmit-pra-pull-request-submission-guidelines"><!-- raw HTML omitted --><!-- raw HTML omitted --> Pull Request Submission Guidelines</h2>
 <p>Before you submit your pull request consider the following guidelines:</p>
@@ -207,7 +207,7 @@ that relates to your submission. You don&rsquo;t want to duplicate effort.</p>
 </li>
 <li>
 <p>Make your changes in a new git branch:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout -b my-fix-branch master
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout -b my-fix-branch master
 </code></pre></div></li>
 <li>
 <p>Create your patch commit, <strong>including appropriate test cases</strong>.</p>
@@ -231,16 +231,16 @@ run the tests on additional browsers.</p>
 <a href="DEVELOPERS.md#commits">commit message conventions</a>. Adherence to the
 <a href="DEVELOPERS.md#commits">commit message conventions</a> is required, because release notes are
 automatically generated from these messages.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -a
 </code></pre></div><p>Note: the optional commit <code>-a</code> command line option will automatically &ldquo;add&rdquo; and &ldquo;rm&rdquo; edited files.</p>
 </li>
 <li>
 <p>Before creating the Pull Request, package and run all tests a last time:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn grunt test
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn grunt test
 </code></pre></div></li>
 <li>
 <p>Push your branch to GitHub:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin my-fix-branch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin my-fix-branch
 </code></pre></div></li>
 <li>
 <p>In GitHub, send a pull request to <code>angular.js:master</code>. This will trigger the check of the
@@ -267,7 +267,7 @@ restarted.</p>
 <li>
 <p>Push the changes to your GitHub repository (this will update your Pull Request).</p>
 <p>You can also amend the initial commits and force push them to the branch.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase master -i
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase master -i
 git push origin my-fix-branch -f
 </code></pre></div><p>This is generally easier to follow, but separate commits are useful if the Pull Request contains
 iterations that might be interesting to see side-by-side.</p>
@@ -282,19 +282,19 @@ from the main (upstream) repository:</p>
 <ul>
 <li>
 <p>Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin --delete my-fix-branch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin --delete my-fix-branch
 </code></pre></div></li>
 <li>
 <p>Check out the master branch:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout master -f
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout master -f
 </code></pre></div></li>
 <li>
 <p>Delete the local branch:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch -D my-fix-branch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch -D my-fix-branch
 </code></pre></div></li>
 <li>
 <p>Update your master with the latest upstream version:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git pull --ff upstream master
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git pull --ff upstream master
 </code></pre></div></li>
 </ul>
 <h2 id="a-nameclaa-signing-the-contributor-license-agreement-cla"><!-- raw HTML omitted --><!-- raw HTML omitted --> Signing the Contributor License Agreement (CLA)</h2>

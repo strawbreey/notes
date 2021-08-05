@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>Xhprof是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程序开关来控制是否进行profile。</p>
 <h3 id="安装xhprof">安装xhprof</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#75715e"># 下载xhprof </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#75715e"># 下载xhprof </span>
   wget https://github.com/longxinH/xhprof/archive/v2.1.0.tar.gz
 
   <span style="color:#75715e"># 解压缩包</span>
@@ -123,7 +123,7 @@
   <span style="color:#75715e"># 编译安装</span>
   make <span style="color:#f92672">&amp;&amp;</span> make install
 </code></pre></div><p>修改php.ini</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[xhprof]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[xhprof]</span>
 <span style="color:#a6e22e">extension</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">xhprof.so</span>
 <span style="color:#a6e22e">xhprof.output_dir</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/tmp/xhprof</span>
 </code></pre></div><h3 id="配置xhprof">配置xhprof</h3>
@@ -131,7 +131,7 @@
 <pre><code>cp -a xhprof_html /data/wwwroot/xhprof
 cp -a xhprof_lib /data/wwwroot/xhprof
 </code></pre><p>把要针对的项目，添加到入口文件中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//开启性能分析
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//开启性能分析
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">xhprof_enable</span>(<span style="color:#a6e22e">XHPROF_FLAGS_MEMORY</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">XHPROF_FLAGS_CPU</span>);
 <span style="color:#75715e">//php中止时运行的函数
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">register_shutdown_function</span>(<span style="color:#66d9ef">function</span> () {
@@ -149,10 +149,10 @@ cp -a xhprof_lib /data/wwwroot/xhprof
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">$run_id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$xhprof_runs</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save_run</span>(<span style="color:#a6e22e">$xhprof_data</span>, <span style="color:#e6db74">&#39;xhprof&#39;</span>);
 });
 </code></pre></div><p>数据默认会导出到xhprof.output_dir指定目录, 给以创建目录相关权限</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /tmp/xhprof
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /tmp/xhprof
 chmod -R <span style="color:#ae81ff">777</span> /tmp/xhprof
 </code></pre></div><h3 id="配置虚拟主机用来查看分析日志">配置虚拟主机，用来查看分析日志</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
     listen       80;
     server_name  xhprof.xxx.com;
     charset utf-8;
@@ -168,7 +168,7 @@ chmod -R <span style="color:#ae81ff">777</span> /tmp/xhprof
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><h3 id="安装-可视化工具">安装 可视化工具</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y libpng
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y libpng
 yum install -y graphviz
 
 <span style="color:#75715e"># 手动安装</span>

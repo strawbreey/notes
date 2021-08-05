@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,7 +108,7 @@
 <p>随后，人们开始看到简洁、易读的数据的好处，这些数据可以在系统之间以编程的方式共享，而开销很小。JSON 诞生了并且能够满足所有的需求。如 CSON，TOML 和 YAML。</p>
 <h3 id="xml">XML</h3>
 <p>XML 语言非常灵活且易于编写，但它的缺点是冗长，人类难以阅读、计算机非常难以读取，并且有很多语法对于传达信息并不是完全必要的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;book</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;bk101&#34;</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;book</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;bk101&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;author&gt;</span>Gambardella, Matthew<span style="color:#f92672">&lt;/author&gt;</span>
     <span style="color:#f92672">&lt;title&gt;</span>XML Developer&#39;s Guide<span style="color:#f92672">&lt;/title&gt;</span>
     <span style="color:#f92672">&lt;genre&gt;</span>Computer<span style="color:#f92672">&lt;/genre&gt;</span>
@@ -117,7 +117,7 @@
     <span style="color:#f92672">&lt;description&gt;</span>An in-depth look at creating applications with XML.<span style="color:#f92672">&lt;/description&gt;</span>
 <span style="color:#f92672">&lt;/book&gt;</span>
 </code></pre></div><p>太棒了。易于阅读、理解、写入，也容易编码一个可以读写它的系统。但请考虑这个例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE r [ &lt;!ENTITY y &#34;a]&gt;</span>b&#34;&gt; ]&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE r [ &lt;!ENTITY y &#34;a]&gt;</span>b&#34;&gt; ]&gt;
 &lt;<span style="color:#f92672">r</span>&gt;
 &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">b</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&amp;y;&gt;&#34;</span> /&gt;
 <span style="color:#75715e">&lt;![CDATA[[a&gt;b &lt;a&gt;b &lt;a]]&gt;</span>
@@ -127,7 +127,7 @@
 <h3 id="json">JSON</h3>
 <p>JavaScript 对象表示法JavaScript Object Notation，简称 JSON。JSON（读起来像 Jason 这个名字） 是 Brendan Eich 发明的，并且得到了伟大而强力的 JavaScript 意见领袖 Douglas Crockford 的推广。它现在几乎用在任何地方。这种格式很容易由人和机器编写，按规范中的严格规则解析也相当容易，并且灵活 —— 允许深层嵌套数据，支持所有的原始数据类型，及将集合解释为数组或对象。JSON 成为了将数据从一个系统传输到另一个系统的事实标准。几乎所有语言都有内置读写它的功能。</p>
 <p>JSON语法很简单。方括号表示数组，花括号表示记录，由冒号分隔的两个值分别表示属性或“键”（在左边）、值（在右边）。所有键必须用双引号括起来：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  {
     <span style="color:#f92672">&#34;books&#34;</span>: [
       {
         <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;bk102&#34;</span>,
@@ -142,7 +142,7 @@
   }
 </code></pre></div><h3 id="toml-缩短到彻底的利他主义">TOML: 缩短到彻底的利他主义</h3>
 <p>TOML（Tom 的显而易见的最小化语言Tom’s Obvious, Minimal Language）允许以相当快捷、简洁的方式定义深层嵌套的数据结构。名字中的 Tom 是指发明者 Tom Preston Werner，他是一位活跃于我们行业的创造者和软件开发人员。与 JSON 相比，语法有点尴尬，更类似 ini 文件。这不是一个糟糕的语法，但是需要一些时间适应。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[[<span style="color:#a6e22e">books</span>]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[[<span style="color:#a6e22e">books</span>]]
 <span style="color:#a6e22e">id</span> = <span style="color:#e6db74">&#39;bk101&#39;</span>
 <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#39;Crockford, Douglas&#39;</span>
 <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;JavaScript: The Good Parts&#39;</span>
@@ -166,7 +166,7 @@
 ]
 </code></pre><h3 id="yaml年轻人的呼喊">YAML：年轻人的呼喊</h3>
 <p>开发人员感到高兴，因为 YAML 来自一个 Python 的贡献者。YAML 具有与 CSON 相同的功能集和类似的语法，有一系列新功能，以及几乎所有 web 编程语言都可用的解析器。它还有一些额外的功能，如循环引用、软包装、多行键、类型转换标签、二进制数据、对象合并和集合映射。它具有非常好的可读性和可写性，并且是 JSON 的超集，因此你可以在 YAML 中使用完全合格的 JSON 语法并且一切正常工作。你几乎不需要引号，它可以解释大多数基本数据类型（字符串、整数、浮点数、布尔值等）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">books</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">books</span>:
   - <span style="color:#f92672">id</span>: <span style="color:#ae81ff">bk102</span>
   <span style="color:#f92672">author</span>: <span style="color:#ae81ff">Crockford, Douglas</span>
   <span style="color:#f92672">title: &#39;JavaScript</span>: <span style="color:#ae81ff">The Good Parts&#39;</span>

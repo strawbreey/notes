@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -141,16 +141,16 @@ or: git checkout [<!-- raw HTML omitted -->] [<!-- raw HTML omitted -->] &ndash;
 <ol>
 <li>新建一个hotfix分支</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b | -B &lt;new _branch&gt; <span style="color:#f92672">[</span>&lt;start point&gt;<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b | -B &lt;new _branch&gt; <span style="color:#f92672">[</span>&lt;start point&gt;<span style="color:#f92672">]</span>
 
 git checkout -b hotfix-1.2.1 master
 <span style="color:#75715e"># 这个时候分支是本地分支，并没有提交到服务器上去，如果这个分支已经被创建，这个命令会失败，这个时候，如果想要重置这个分支，需要使用-B参数。</span>
 </code></pre></div><ol start="2">
 <li>查看分支</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -av
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -av
 </code></pre></div><p>本地发生了一些修改，但是想放弃这些修改</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout <span style="color:#f92672">[</span>&lt;tree-ish&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--<span style="color:#f92672">]</span> &lt;pathspec&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout <span style="color:#f92672">[</span>&lt;tree-ish&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--<span style="color:#f92672">]</span> &lt;pathspec&gt;
 
 git checkout 26a2e80 <span style="color:#75715e"># 26a2e80 是一个commit号，这个命令会把index区域和工作区域的内容都更新</span>
 git checkout -- README <span style="color:#75715e"># README是想恢复的文件名，恢复成index区域里面的内容，为什么要加“--”呢，这个是为了告诉Git，这是一个文件而不是一个分支</span>

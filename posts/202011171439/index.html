@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -105,7 +105,7 @@
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>Deploy Hugo as a GitHub Pages project or personal/organizational site and automate the whole process with a simple shell script.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e"># If a command fails then the deploy stops</span>
 set -e
@@ -131,7 +131,7 @@ git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6
 <span style="color:#75715e"># Push source and build repos.</span>
 git push origin main
 </code></pre></div><p>Deployment of Project Pages from /docs folder on main branch</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Preparations for gh-pages Branch</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Preparations for gh-pages Branch</span>
 git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m <span style="color:#e6db74">&#34;Initializing gh-pages branch&#34;</span>
@@ -141,7 +141,7 @@ git checkout main
 <span style="color:#75715e"># Build and Deployment</span>
 rm -rf public
 git worktree add -B gh-pages public upstream/gh-pages
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;`git status -s`&#34;</span> <span style="color:#f92672">]</span>
 <span style="color:#66d9ef">then</span>

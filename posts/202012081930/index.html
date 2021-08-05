@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -114,7 +114,7 @@
 | 2  | c@d.com |
 | 3  | a@b.com |
 +----+---------+
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> Email <span style="color:#66d9ef">from</span> Person <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> Email <span style="color:#66d9ef">having</span> <span style="color:#66d9ef">count</span>(Email) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> Email <span style="color:#66d9ef">from</span> Person <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> Email <span style="color:#66d9ef">having</span> <span style="color:#66d9ef">count</span>(Email) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>;
 <span style="color:#75715e">-- 前面提到聚合函数（count），where字句无法与聚合函数一起使用。因为where子句的运行顺序排在第二，运行到where时，表还没有被分组。
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">select</span> Email <span style="color:#66d9ef">from</span>
@@ -137,7 +137,7 @@
 <p>给定一个 salary 表，如下所示，有 m = 男性 和 f = 女性 的值。交换所有的 f 和 m 值（例如，将所有 f 值更改为 m，反之亦然）。要求只使用一个更新（Update）语句，并且没有中间的临时表。</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">update</span> salary 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">update</span> salary 
 <span style="color:#66d9ef">set</span>
    sex <span style="color:#f92672">=</span> <span style="color:#66d9ef">case</span> sex 
       <span style="color:#66d9ef">when</span> <span style="color:#e6db74">&#39;m&#39;</span> <span style="color:#66d9ef">then</span> <span style="color:#e6db74">&#39;f&#39;</span>
@@ -152,7 +152,7 @@
 </code></pre></div><ol start="3">
 <li>如果一个国家的面积超过 300 万平方公里，或者人口超过 2500 万，那么这个国家就是大国家。编写一个 SQL 查询，输出表中所有大国家的名称、人口和面积。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> name, population, area <span style="color:#66d9ef">from</span> World <span style="color:#66d9ef">where</span> area <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3000000</span> <span style="color:#f92672">||</span> population <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">25000000</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> name, population, area <span style="color:#66d9ef">from</span> World <span style="color:#66d9ef">where</span> area <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3000000</span> <span style="color:#f92672">||</span> population <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">25000000</span>
 
 
 <span style="color:#66d9ef">SELECT</span> name, population, area <span style="color:#66d9ef">FROM</span> world <span style="color:#66d9ef">WHERE</span> area <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3000000</span> <span style="color:#66d9ef">OR</span> population <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">25000000</span>
@@ -166,7 +166,7 @@
 <li>某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。</li>
 </ol>
 <p>作为该电影院的信息部主管，您需要编写一个 SQL查询，找出所有影片描述为非 boring (不无聊) 的并且 id 为奇数 的影片，结果请按等级 rating 排列。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id, movie, description, rating <span style="color:#66d9ef">from</span> cinema <span style="color:#66d9ef">where</span> description <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;boring&#39;</span> <span style="color:#f92672">&amp;&amp;</span> id <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> rating <span style="color:#66d9ef">desc</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id, movie, description, rating <span style="color:#66d9ef">from</span> cinema <span style="color:#66d9ef">where</span> description <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;boring&#39;</span> <span style="color:#f92672">&amp;&amp;</span> id <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> rating <span style="color:#66d9ef">desc</span>
 
 <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> cinema <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">mod</span>(id, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">and</span> description <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;boring&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> rating <span style="color:#66d9ef">desc</span>
 
@@ -202,7 +202,7 @@ AddressId 是上表主键</p>
 <p>编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：
  </p>
 <pre><code>FirstName, LastName, City, State
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> FirstName, LastName, City, <span style="color:#66d9ef">State</span> <span style="color:#66d9ef">from</span> Person <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">join</span> Address <span style="color:#66d9ef">on</span> Person.PersonId <span style="color:#f92672">=</span> Address.PersonId
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> FirstName, LastName, City, <span style="color:#66d9ef">State</span> <span style="color:#66d9ef">from</span> Person <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">join</span> Address <span style="color:#66d9ef">on</span> Person.PersonId <span style="color:#f92672">=</span> Address.PersonId
 
 <span style="color:#66d9ef">select</span> A.FirstName, A.LastName, B.City, B.<span style="color:#66d9ef">State</span> <span style="color:#66d9ef">from</span> Person A <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">join</span> Address B
 <span style="color:#66d9ef">on</span> A.PersonId <span style="color:#f92672">=</span> B.PersonId;
@@ -249,7 +249,7 @@ AddressId 是上表主键</p>
 +&mdash;&mdash;&mdash;-+
 | Joe      |
 +&mdash;&mdash;&mdash;-+</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
     <span style="color:#f92672">*</span>
 <span style="color:#66d9ef">FROM</span>
     Employee <span style="color:#66d9ef">AS</span> a,
@@ -299,7 +299,7 @@ Orders 表：</p>
 | Henry     |
 | Max       |
 +&mdash;&mdash;&mdash;&ndash;+</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
 <span style="color:#66d9ef">select</span> Name <span style="color:#66d9ef">as</span> Customers
 <span style="color:#66d9ef">from</span> Name
 <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">Join</span> Orders 
@@ -353,7 +353,7 @@ Id 是这个表的主键。
 | 1  | <a href="mailto:john@example.com">john@example.com</a> |
 | 2  | <a href="mailto:bob@example.com">bob@example.com</a>  |
 +&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">DELETE</span> p1 <span style="color:#66d9ef">FROM</span> Person p1, Person p2 <span style="color:#66d9ef">WHERE</span> p1.Email <span style="color:#f92672">=</span> p2.Email <span style="color:#66d9ef">AND</span> p1.Id <span style="color:#f92672">&gt;</span> p2.Id
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">DELETE</span> p1 <span style="color:#66d9ef">FROM</span> Person p1, Person p2 <span style="color:#66d9ef">WHERE</span> p1.Email <span style="color:#f92672">=</span> p2.Email <span style="color:#66d9ef">AND</span> p1.Id <span style="color:#f92672">&gt;</span> p2.Id
 
 <span style="color:#75715e">-- 自连接。其实delete方法和select的写法很相似。在本题代码中，delete的作用是删掉p1表里的一些记录（不是删掉整张表），要删哪些记录，就要看where里的条件了。
 </span><span style="color:#75715e"></span>
@@ -392,7 +392,7 @@ Id 是这个表的主键。
 | 3    | null        | 10000       | null        | &hellip; | null        |
 +&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;-+</p>
 <p>注意，结果表有 13 列 (1个部门 id 列 + 12个月份的收入列)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> w1.Id
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> w1.Id
 <span style="color:#66d9ef">from</span> Weather w1 <span style="color:#66d9ef">join</span> Weather w2
 <span style="color:#66d9ef">on</span> datediff(w1.RecordDate, w2.RecordDate) <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">and</span> w1.Temperature <span style="color:#f92672">&gt;</span> w2.Temperature;
 
@@ -423,7 +423,7 @@ Id 是这个表的主键。
 +&mdash;&mdash;&mdash;+
 | Math    |
 +&mdash;&mdash;&mdash;+</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">FROM</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">FROM</span>
     (<span style="color:#66d9ef">SELECT</span>
         <span style="color:#66d9ef">class</span>, <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> student) <span style="color:#66d9ef">AS</span> num
     <span style="color:#66d9ef">FROM</span>

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -124,7 +124,7 @@ Output: false
 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？</p>
 <p>Solution</p>
 <p>最简单的方式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isAnagram</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">t</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isAnagram</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">t</span>) {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>)
 };
 
@@ -137,7 +137,7 @@ Output: false
 
 空间复杂度：O(\log n)O(logn)。排序需要 O(\log n)O(logn) 的空间复杂度。注意，在某些语言（比如 Java &amp; JavaScript）中字符串是不可变的，因此我们需要额外的 O(n)O(n) 的空间来拷贝字符串。但是我们忽略这一复杂度分析，因为：
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * @param {string} s
 </span><span style="color:#75715e"> * @param {string} t
 </span><span style="color:#75715e"> * @return {boolean}

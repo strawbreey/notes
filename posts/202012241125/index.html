@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -109,7 +109,7 @@
 <p>Map 是一种集合，所以我们可以像迭代数组和切片那样迭代它。不过，Map 是无序的，我们无法决定它的返回顺序，这是因为 Map 是使用 hash 表来实现的。</p>
 <h3 id="定义-map">定义 Map</h3>
 <p>可以使用内建函数 make 也可以使用 map 关键字来定义 Map:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">/* 声明变量，默认 map 是 nil */</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">/* 声明变量，默认 map 是 nil */</span>
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map_variable</span> <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">key_data_type</span>]<span style="color:#a6e22e">value_data_type</span>
 
 <span style="color:#75715e">/* 使用 make 函数 */</span>
@@ -117,7 +117,7 @@
 </code></pre></div><p>如果不初始化 map，那么就会创建一个 nil map。nil map 不能用来存放键值对</p>
 <p>实例
 下面实例演示了创建和使用map:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
@@ -156,7 +156,7 @@
 </span><span style="color:#75715e">// delete() 函数用于删除集合的元素, 参数为 map 和其对应的 key。实例如下：
 </span></code></pre></div><h3 id="delete-函数">delete() 函数</h3>
 <p>delete() 函数用于删除集合的元素, 参数为 map 和其对应的 key。实例如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {

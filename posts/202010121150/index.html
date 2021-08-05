@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>Package strings implements simple functions to manipulate UTF-8 encoded strings.</p>
 <p>func Compare</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Compare</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Compare</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span>
 
 <span style="color:#75715e">// Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and +1 if a &gt; b.
 </span><span style="color:#75715e"></span>
@@ -126,7 +126,7 @@
 </code></pre></div><h3 id="func-containes">func Containes</h3>
 <p>func Containes (s, substr string) bool</p>
 <p>Contains reports whether substr is within s.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
 	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -142,7 +142,7 @@
 </code></pre></div><h3 id="func-containsany">func ContainsAny</h3>
 <p>func ContainsAny (s, chars string) bool</p>
 <p>ntainsAny reports whether any Unicode code points in chars are within s.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;team&#34;</span>, <span style="color:#e6db74">&#34;i&#34;</span>) <span style="color:#75715e">//false
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;team&#34;</span>, <span style="color:#e6db74">&#34;i&#34;</span>) <span style="color:#75715e">//false
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;fail&#34;</span>, <span style="color:#e6db74">&#34;ui&#34;</span>) <span style="color:#75715e">// true
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;ure&#34;</span>, <span style="color:#e6db74">&#34;ui&#34;</span>) <span style="color:#75715e">// true
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;failure&#34;</span>, <span style="color:#e6db74">&#34;ui&#34;</span>) <span style="color:#75715e">//true
@@ -152,7 +152,7 @@
 <p>Rune 符文</p>
 <p>rune is an alias for int32 and is equivalent to int32 in all ways. It is used, by convention, to distinguish character values from integer values.</p>
 <p>func ContainsRune(s string, r rune) bool</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsRune</span>(<span style="color:#e6db74">&#34;aardvark&#34;</span>, <span style="color:#ae81ff">97</span>) <span style="color:#75715e">//true
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsRune</span>(<span style="color:#e6db74">&#34;aardvark&#34;</span>, <span style="color:#ae81ff">97</span>) <span style="color:#75715e">//true
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsRune</span>(<span style="color:#e6db74">&#34;timeout&#34;</span>, <span style="color:#ae81ff">97</span>) <span style="color:#75715e">//false
 </span></code></pre></div>
           </div>

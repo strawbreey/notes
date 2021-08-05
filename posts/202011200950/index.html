@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,13 +108,13 @@
 <h3 id="链表的设计">链表的设计</h3>
 <p>设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作</p>
 <p>Node 类</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//节点
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//节点
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Node</span>(<span style="color:#a6e22e">element</span>) {
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>;   <span style="color:#75715e">//当前节点的元素
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;         <span style="color:#75715e">//下一个节点链接
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>LinkedList类</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//链表类
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//链表类
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">LList</span> () {
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>( <span style="color:#e6db74">&#39;head&#39;</span> );     <span style="color:#75715e">//头节点
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">find</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">find</span>;                   <span style="color:#75715e">//查找节点
@@ -125,7 +125,7 @@
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>insert：向链表插入一个节点</p>
 <p>find：查找给定节点</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">find</span> ( <span style="color:#a6e22e">item</span> ) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">find</span> ( <span style="color:#a6e22e">item</span> ) {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
     <span style="color:#66d9ef">while</span> ( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">element</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">item</span> ){
         <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>;
@@ -133,14 +133,14 @@
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">currNode</span>;
 }
 </code></pre></div><p>insert: 插入节点</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">insert</span> ( <span style="color:#a6e22e">newElement</span> , <span style="color:#a6e22e">item</span> ) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">insert</span> ( <span style="color:#a6e22e">newElement</span> , <span style="color:#a6e22e">item</span> ) {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>( <span style="color:#a6e22e">newElement</span> );
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">find</span>( <span style="color:#a6e22e">item</span> );
     <span style="color:#a6e22e">newNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>;
     <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newNode</span>;
 }
 </code></pre></div><p>display：显示链表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">display</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">display</span> () {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
     <span style="color:#66d9ef">while</span> ( <span style="color:#f92672">!</span>(<span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) ){
         <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">element</span> );
@@ -159,7 +159,7 @@
 </span><span style="color:#75715e">// Banana
 </span><span style="color:#75715e">// Pear
 </span></code></pre></div><p>remove：从链表中删除一个节点</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findPrev</span>( <span style="color:#a6e22e">item</span> ) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findPrev</span>( <span style="color:#a6e22e">item</span> ) {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
     <span style="color:#66d9ef">while</span> ( <span style="color:#f92672">!</span>( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#f92672">&amp;&amp;</span> ( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">element</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">item</span> )){
         <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>;

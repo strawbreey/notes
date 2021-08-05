@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -160,7 +160,7 @@
 <p>当配置某一个加速器地址之后，若发现拉取不到镜像，请切换到另一个加速器地址。国内各大云服务商均提供了 Docker 镜像加速服务，建议根据运行 Docker 的云平台选择对应的镜像加速服务。</p>
 <h3 id="docker-常用命令">docker 常用命令</h3>
 <h4 id="1-安装docker">1. 安装docker</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 <span style="color:#75715e"># 查看内核版本</span>
 uname -r
 
@@ -198,7 +198,7 @@ systemctl start docker
 systemctl enable docker
 
 </code></pre></div><h4 id="2-镜像相关">2. 镜像相关</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 搜索镜像</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 搜索镜像</span>
 docker search java
 
 <span style="color:#75715e"># NAME:镜像仓库名称。</span>
@@ -229,7 +229,7 @@ docker images ls <span style="color:#75715e"># 查看所有镜像</span>
 docker rmi <span style="color:#f92672">[</span>imageName<span style="color:#f92672">]</span> <span style="color:#75715e"># 旧</span>
 docker image rm <span style="color:#f92672">[</span>imageName<span style="color:#f92672">]</span> <span style="color:#75715e"># 新</span>
 </code></pre></div><h4 id="3-容器相关">3. 容器相关</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 新建并启动容器</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 新建并启动容器</span>
 docker run -d -p 91:80 nginx
 
 docker run --rm -ti ubuntu /bin/bash
@@ -280,7 +280,7 @@ docker rm f0b1c8ab3633
 <li>-ti 告诉docker分配一个伪终端并进入交互模式</li>
 </ol>
 <h4 id="4--制作自己的docker容器">4.  制作自己的Docker容器</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 <span style="color:#75715e"># 创建dockerfile 文件</span>
 
 <span style="color:#75715e"># 更具dockerfile生成镜像</span>

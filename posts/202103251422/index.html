@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,18 +108,18 @@
 <ol>
 <li>固定执行文件脚本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PHP 定时任务</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PHP 定时任务</span>
 * */1 * * * /bin/sh /home/wwwroot/php-script.sh
 </code></pre></div><ol start="2">
 <li>php-script.sh 脚本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>php /home/wwwroot/wkr2019.com/Public/cli.php /cli/task/exec &gt;&gt; /home/wwwlogs/sh.log;
 php /home/wwwroot/op.cheduo.com/think task &gt;&gt; /home/wwwlogs/sh.log;
 </code></pre></div><ol start="3">
 <li>php 文件代码</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Cli\Controller</span>;
 <span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Think\Controller</span>;
 

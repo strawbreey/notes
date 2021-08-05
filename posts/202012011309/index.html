@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -104,23 +104,23 @@
 
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
-            <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">maxCandies</span> = <span style="color:#a6e22e">max</span>(<span style="color:#a6e22e">maxCandies</span>, <span style="color:#a6e22e">candies</span>[<span style="color:#a6e22e">i</span>])
+            <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">maxCandies</span> = <span style="color:#a6e22e">max</span>(<span style="color:#a6e22e">maxCandies</span>, <span style="color:#a6e22e">candies</span>[<span style="color:#a6e22e">i</span>])
 </code></pre></div><p>go语言math包里面定义了min/max函数，但是是float64类型的，而并没有整数类型的min/max。</p>
 <p>go语言的math包里面定义的min/max函数如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Min</span>(<span style="color:#66d9ef">float64</span>, <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Min</span>(<span style="color:#66d9ef">float64</span>, <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span>
 <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Max</span>(<span style="color:#66d9ef">float64</span>, <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span>
 </code></pre></div><p>事实上我们更经常要比较的是两个整数的场景：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Min</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Max</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>), <span style="color:#a6e22e">or</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Min</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Max</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>), <span style="color:#a6e22e">or</span>
 <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Min</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Max</span>(<span style="color:#66d9ef">int64</span>, <span style="color:#66d9ef">int64</span>)
 </code></pre></div><p>由于float64类型要处理infinity和not-a-number这种值，而他们的处理非常复杂，一般用户没有能力，所有go需要为用户提供系统级别的解决办法。</p>
 <p>对于int/int64类型的数据，min/max的实现非常简单直接，用户完全可以自己实现，例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Min</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int64</span>) <span style="color:#66d9ef">int64</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Min</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int64</span>) <span style="color:#66d9ef">int64</span> {
     <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> &lt; <span style="color:#a6e22e">y</span> {
         <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>
     }
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">y</span>
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -137,7 +137,7 @@
 
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">max</span>)
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Min</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int64</span>) <span style="color:#66d9ef">int64</span> {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Min</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int64</span>) <span style="color:#66d9ef">int64</span> {
     <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> &lt; <span style="color:#a6e22e">y</span> {
         <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>
     }

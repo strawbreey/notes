@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -112,19 +112,19 @@
 <p>业界所说的 shell 通常都是指 shell 脚本，但读者朋友要知道，shell 和 shell script 是两个不同的概念。</p>
 <p>由于习惯的原因，简洁起见，本文出现的 &ldquo;shell编程&rdquo; 都是指 shell 脚本编程，不是指开发 shell 自身。</p>
 <h3 id="heading"></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash #! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash #! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。
 </span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;Hello World !&#34;</span>
 </code></pre></div><p>运行 Shell 脚本有两种方法：</p>
 <ol>
 <li>作为可执行程序</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./test.sh  <span style="color:#75715e">#执行脚本</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./test.sh  <span style="color:#75715e">#执行脚本</span>
 </code></pre></div><p>注意，一定要写成 ./test.sh，而不是 test.sh，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</p>
 <ol start="2">
 <li>作为解释器参数</li>
 </ol>
 <p>这种运行方式是，直接运行解释器，其参数就是 shell 脚本的文件名，如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/bin/sh test.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/bin/sh test.sh
 /bin/php test.php
 </code></pre></div><p>这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。</p>
 <h3 id="变量">变量</h3>
@@ -135,15 +135,15 @@
 <li>不能使用标点符号。</li>
 <li>不能使用bash里的关键字（可用help命令查看保留关键字）。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 有效的 Shell 变量名</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 有效的 Shell 变量名</span>
 RUNOOB
 LD_LIBRARY_PATH
 _var
 var2
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 使用变量</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 使用变量</span>
 your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qinjx&#34;</span>
 echo $your_name
 echo <span style="color:#e6db74">${</span>your_name<span style="color:#e6db74">}</span>
@@ -164,14 +164,14 @@ unset variable_name
 3. shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行
 </code></pre></div><h3 id="shell-字符串">Shell 字符串</h3>
 <p>单引号</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">str<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this is a string&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">str<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this is a string&#39;</span>
 </code></pre></div><p>单引号字符串的限制：</p>
 <ul>
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
 <li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
 </ul>
 <p>双引号</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;runoob&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  your_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;runoob&#39;</span>
   str<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello, I know you are \&#34;</span>$your_name<span style="color:#e6db74">\&#34;! \n&#34;</span>
   echo -e $str
 </code></pre></div><p>双引号的优点：</p>

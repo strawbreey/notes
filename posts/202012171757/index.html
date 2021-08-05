@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -136,11 +136,11 @@
 <p>对象键值对使用冒号结构表示 key: value，冒号后面要加一个空格。</p>
 <p>也可以使用 key:{key1: value1, key2: value2, &hellip;}。</p>
 <p>还可以使用缩进表示层级关系；</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">key</span>: 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">key</span>: 
     <span style="color:#f92672">child-key</span>: <span style="color:#ae81ff">value</span>
     <span style="color:#f92672">child-key2</span>: <span style="color:#ae81ff">value2</span>
 </code></pre></div><p>较为复杂的对象格式，可以使用问号加一个空格代表一个复杂的 key，配合一个冒号加一个空格代表一个 value：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">?  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">?  
     - <span style="color:#ae81ff">complexkey1</span>
     - <span style="color:#ae81ff">complexkey2</span>
 :
@@ -149,18 +149,18 @@
 </code></pre></div><p>意思即对象的属性是一个数组 [complexkey1,complexkey2]，对应的值也是一个数组 [complexvalue1,complexvalue2]</p>
 <h3 id="yaml-数组">YAML 数组</h3>
 <p>以 - 开头的行表示构成一个数组：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#ae81ff">A</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#ae81ff">A</span>
 - <span style="color:#ae81ff">B</span>
 - <span style="color:#ae81ff">C</span>
 </code></pre></div><p>YAML 支持多维数组，可以使用行内表示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">key</span>: [<span style="color:#ae81ff">value1, value2, ...]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">key</span>: [<span style="color:#ae81ff">value1, value2, ...]</span>
 </code></pre></div><p>数据结构的子成员是一个数组，则可以在该项下面缩进一个空格。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">-
  - <span style="color:#ae81ff">A</span>
  - <span style="color:#ae81ff">B</span>
  - <span style="color:#ae81ff">C</span>
 </code></pre></div><p>一个相对复杂的例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">companies</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">companies</span>:
     -
         <span style="color:#f92672">id</span>: <span style="color:#ae81ff">1</span>
         <span style="color:#f92672">name</span>: <span style="color:#ae81ff">company1</span>
@@ -171,10 +171,10 @@
         <span style="color:#f92672">price</span>: <span style="color:#ae81ff">500W</span>
 </code></pre></div><p>意思是 companies 属性是一个数组，每一个数组元素又是由 id、name、price 三个属性构成。</p>
 <p>数组也可以使用流式(flow)的方式表示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">companies</span>: [{<span style="color:#f92672">id: 1,name: company1,price</span>: <span style="color:#ae81ff">200W},{id: 2,name: company2,price: 500W}]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">companies</span>: [{<span style="color:#f92672">id: 1,name: company1,price</span>: <span style="color:#ae81ff">200W},{id: 2,name: company2,price: 500W}]</span>
 </code></pre></div><h3 id="复合结构">复合结构</h3>
 <p>数组和对象可以构成复合结构，例：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">languages</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">languages</span>:
   - <span style="color:#ae81ff">Ruby</span>
   - <span style="color:#ae81ff">Perl</span>
   - <span style="color:#ae81ff">Python </span>
@@ -184,7 +184,7 @@
   <span style="color:#f92672">Python</span>: <span style="color:#ae81ff">python.org </span>
   <span style="color:#f92672">Perl</span>: <span style="color:#ae81ff">use.perl.org</span>
 </code></pre></div><p>转换为 json 为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ 
   <span style="color:#960050;background-color:#1e0010">languages:</span> <span style="color:#960050;background-color:#1e0010">[</span> <span style="color:#960050;background-color:#1e0010">&#39;Ruby&#39;,</span> <span style="color:#960050;background-color:#1e0010">&#39;Perl&#39;,</span> <span style="color:#960050;background-color:#1e0010">&#39;Python&#39;],</span>
   <span style="color:#960050;background-color:#1e0010">websites:</span> <span style="color:#960050;background-color:#1e0010">{</span>
     <span style="color:#960050;background-color:#1e0010">YAML:</span> <span style="color:#960050;background-color:#1e0010">&#39;yaml.org&#39;,</span>
@@ -205,7 +205,7 @@
 <li>日期</li>
 </ul>
 <p>使用一个例子来快速了解纯量的基本使用：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">boolean</span>: 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">boolean</span>: 
     - <span style="color:#66d9ef">TRUE</span>  <span style="color:#75715e">#true,True都可以</span>
     - <span style="color:#66d9ef">FALSE</span>  <span style="color:#75715e">#false，False都可以</span>
 <span style="color:#f92672">float</span>:
@@ -228,7 +228,7 @@
     -  <span style="color:#e6db74">2018-02-17T15:02:31</span><span style="color:#ae81ff">+08</span>:<span style="color:#ae81ff">00</span>    <span style="color:#75715e">#时间使用ISO 8601格式，时间和日期之间使用T连接，最后使用+代表时区</span>
 </code></pre></div><h3 id="引用">引用</h3>
 <p><code>&amp; </code>锚点和 <code>*</code> 别名，可以用来引用:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">defaults</span>: <span style="color:#75715e">&amp;defaults</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">defaults</span>: <span style="color:#75715e">&amp;defaults</span>
   <span style="color:#f92672">adapter</span>:  <span style="color:#ae81ff">postgres</span>
   <span style="color:#f92672">host</span>:     <span style="color:#ae81ff">localhost</span>
 
@@ -240,7 +240,7 @@
   <span style="color:#f92672">database</span>: <span style="color:#ae81ff">myapp_test</span>
   <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*defaults</span>
 </code></pre></div><p>相当于:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">defaults</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">defaults</span>:
   <span style="color:#f92672">adapter</span>:  <span style="color:#ae81ff">postgres</span>
   <span style="color:#f92672">host</span>:     <span style="color:#ae81ff">localhost</span>
 
@@ -255,13 +255,13 @@
   <span style="color:#f92672">host</span>:     <span style="color:#ae81ff">localhost</span>
 </code></pre></div><p>&amp; 用来建立锚点（defaults），&laquo; 表示合并到当前数据，* 用来引用锚点。</p>
 <p>下面是另一个例子:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#75715e">&amp;showell</span> <span style="color:#ae81ff">Steve </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#75715e">&amp;showell</span> <span style="color:#ae81ff">Steve </span>
 - <span style="color:#ae81ff">Clark </span>
 - <span style="color:#ae81ff">Brian </span>
 - <span style="color:#ae81ff">Oren </span>
 - <span style="color:#75715e">*showell</span> 
 </code></pre></div><p>转为 JavaScript 代码如下:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[ <span style="color:#e6db74">&#39;Steve&#39;</span>, <span style="color:#e6db74">&#39;Clark&#39;</span>, <span style="color:#e6db74">&#39;Brian&#39;</span>, <span style="color:#e6db74">&#39;Oren&#39;</span>, <span style="color:#e6db74">&#39;Steve&#39;</span> ]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[ <span style="color:#e6db74">&#39;Steve&#39;</span>, <span style="color:#e6db74">&#39;Clark&#39;</span>, <span style="color:#e6db74">&#39;Brian&#39;</span>, <span style="color:#e6db74">&#39;Oren&#39;</span>, <span style="color:#e6db74">&#39;Steve&#39;</span> ]
 </code></pre></div><h3 id="参考地址">参考地址：</h3>
 <ul>
 <li><a href="https://www.ruanyifeng.com/blog/2016/07/yaml.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2016/07/yaml.html</a></li>

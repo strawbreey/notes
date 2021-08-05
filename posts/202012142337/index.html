@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -116,7 +116,7 @@
 <p>for循环三个表达式都可以有多部分组成，第二部分多个判断条件用&amp;&amp; ||连接，第一三部分用逗号分割</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">num</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">num</span><span style="color:#f92672">++</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">num</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">num</span><span style="color:#f92672">++</span>) {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>); <span style="color:#75715e">//1,2,3,4,5,6,7,8,9
 </span><span style="color:#75715e"></span>}
 </code></pre></div><h3 id="2-while循环">2. while循环</h3>
@@ -128,7 +128,7 @@
 <li>null/Undefined/NaN:全为假；</li>
 <li>Object：全为真。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#75715e">//1、声明循环变量
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#75715e">//1、声明循环变量
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">num</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span>) {<span style="color:#75715e">//2、判断循环条件;
 </span><span style="color:#75715e"></span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>);<span style="color:#75715e">//3、执行循环体操作；
 </span><span style="color:#75715e"></span>	<span style="color:#a6e22e">num</span><span style="color:#f92672">++</span>;<span style="color:#75715e">//4、更新循环变量；
@@ -136,7 +136,7 @@
 </code></pre></div><h3 id="3-do-while循环">3. do-while循环</h3>
 <p>while循环特点：先判断后执行；</p>
 <p>do-while循环特点：先执行再判断，即使初始条件不成立，do-while循环至少执行一次，也就是说do-while循环比while循环多执行一次。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
             
 <span style="color:#66d9ef">do</span> {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>);<span style="color:#75715e">//10 9 8 7 6 5 4 3 2 1 0
@@ -147,7 +147,7 @@
 </span></code></pre></div><h3 id="4-for---in">4. for - in</h3>
 <p>for - in语句用于对数组或者对象的属性进行循环操作。</p>
 <p>for - in循环中的代码每执行一次，就会对数组或者对象的属性进行一次操作。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;programmer&#39;</span>,<span style="color:#e6db74">&#39;age&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;22&#39;</span>,<span style="color:#e6db74">&#39;height&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;180&#39;</span>};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;programmer&#39;</span>,<span style="color:#e6db74">&#39;age&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;22&#39;</span>,<span style="color:#e6db74">&#39;height&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;180&#39;</span>};
 <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
 	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">i</span>])
 }
@@ -157,7 +157,7 @@
 <ol>
 <li>数组操作：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>];
 
 	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">arr</span>) {
 		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 0 1 2 3
@@ -169,7 +169,7 @@
 </code></pre></div><ol start="2">
 <li>类似数组的对象操作：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">	<span style="color:#75715e">// 字符串
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">	<span style="color:#75715e">// 字符串
 </span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello&#34;</span>;
 	
 	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">str</span>) {

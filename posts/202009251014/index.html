@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="浏览器刷新页面的方法">浏览器刷新页面的方法</h3>
 <h4 id="locationreload">Location.reload</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>([<span style="color:#a6e22e">forcedReload</span>])
 
 <span style="color:#75715e">// demo
@@ -114,7 +114,7 @@
 </code></pre></div><p><code>forcedReload</code> 可选 该参数要求为 布尔 类型，当取值为 true 时，将强制浏览器从服务器重新获取当前页面资源，而不是从浏览器的缓存中读取，如果取值为 false 或不传该参数时，浏览器则可能会从缓存中读取当前页面。</p>
 <p>无缓存刷新页面但页面引用的资源还是可能使用缓存，大多数浏览器可以通过设置在打开开发者工具时禁用缓存实现无缓存需求）</p>
 <h4 id="locationreplace">Location.replace</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">url</span>);
 
 <span style="color:#75715e">// demo
@@ -122,14 +122,14 @@
 </code></pre></div><p>Location.replace() 方法以给定的URL来替换当前的资源。 与assign() 方法 不同的是，调用 replace() 方法后，当前页面不会保存到会话历史中（session History），这样，用户点击回退按钮时，将不会再跳转到该页面。</p>
 <p>因违反安全规则导致的赋值失败，浏览器将会抛出类型为 SECURITY_ERROR 的 DOMException 异常。当调用该方法的脚本所属的源与拥有 Location 对象所属源不同时，通常情况会发生这种异常,此时通常该脚本是存在不同的域下。</p>
 <h4 id="locationassign">Location.assign</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">url</span>);
 
 <span style="color:#75715e">// demo
 </span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">assign</span>(<span style="color:#e6db74">&#39;https://developer.mozilla.org/zh-CN/docs/Web/API/Location/reload&#39;</span>);
 </code></pre></div><p>Location.assign  方法会触发窗口加载并显示指定的URL的内容。 如果由于安全原因无法执行跳转，那么会抛出一个 SECURITY_ERROR 类型的 DOMException。当调用此方法的脚本来源和页面的 Location 对象中定义的来源隶属于不同域的时候，就会抛出上述错误</p>
 <h4 id="javascript刷新页面的几种方法">JavaScript刷新页面的几种方法</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">go</span>(<span style="color:#ae81ff">0</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">go</span>(<span style="color:#ae81ff">0</span>)
   <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>()
   <span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#a6e22e">location</span>
   <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">location</span>)
@@ -138,7 +138,7 @@
   <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">location</span>)
   document.<span style="color:#a6e22e">URL</span><span style="color:#f92672">=</span><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>
 </code></pre></div><h4 id="自动刷新页面的方法">自动刷新页面的方法</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 页面自动刷新 --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 页面自动刷新 --&gt;</span>
 &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20&#34;</span>&gt;
 
 <span style="color:#75715e">&lt;!-- 页面自动跳转 --&gt;</span>

@@ -22,7 +22,7 @@
     <meta name="description" content="Angular Directive">
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -114,7 +114,7 @@
 <p>Reserve the constructor for simple initialization such as wiring constructor parameters to properties. The constructor shouldn&rsquo;t do anything. It certainly shouldn&rsquo;t call a function that makes HTTP requests to a remote server as a real data service would.</p>
 <p>Instead, call getHeroes() inside the ngOnInit lifecycle hook and let Angular call ngOnInit() at an appropriate time after constructing a HeroesComponent instance.</p>
 <h2 id="exmplate">exmplate</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">hero</span>.<span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">ts</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">hero</span>.<span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">ts</span>
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Injectable</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
 
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Observable</span>, <span style="color:#66d9ef">of</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;rxjs&#39;</span>;
@@ -142,7 +142,7 @@
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">heroes$</span>.<span style="color:#a6e22e">next</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">heroes</span>)
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">OnInit</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">OnInit</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
 
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Hero</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;../hero&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">HeroService</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;../hero.service&#39;</span>;
@@ -181,7 +181,7 @@
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">heroService</span>.<span style="color:#a6e22e">addHeroes</span>(<span style="color:#a6e22e">hero</span>)
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Injectable</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Injectable</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">HttpClient</span>, <span style="color:#a6e22e">HttpHeaders</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/common/http&#39;</span>;
 
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Observable</span>, <span style="color:#66d9ef">of</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;rxjs&#39;</span>;

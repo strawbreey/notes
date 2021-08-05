@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,7 +107,7 @@
             <h4 id="创建软链接">创建软链接</h4>
 <p>ln  -s  [源文件或目录]  [目标文件或目录]</p>
 <p>例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 当前路径创建test 引向/var/www/test 文件夹 </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 当前路径创建test 引向/var/www/test 文件夹 </span>
 ln –s  /var/www/test  test
 
 <span style="color:#75715e"># 创建/var/test 引向/var/www/test 文件夹 </span>
@@ -116,14 +116,14 @@ ln –s  /var/www/test   /var/test
 <p>和删除普通的文件是一眼的，删除都是使用rm来进行操作</p>
 <p>rm –rf 软链接名称（请注意不要在后面加”/”，rm –rf 后面加不加”/” 的区别，可自行去百度下啊）</p>
 <p>例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 删除test</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 删除test</span>
 rm –rf test
 
 </code></pre></div><h4 id="修改软链接">修改软链接</h4>
 <p>ln –snf  [新的源文件或目录]  [目标文件或目录]</p>
 <p>这将会修改原有的链接地址为新的地址</p>
 <p>例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 创建一个软链接</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 创建一个软链接</span>
 
 ln –s  /var/www/test   /var/test
 
