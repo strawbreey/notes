@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <meta name="author" content="Sukoshi">
+  
+
+   
+    
+    
+    
+    
+    
+    
+    <meta name="keywords" content="theme,kagome">
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  
+  
+  
+  
+  
+  
+  <title>Yii Data Cache 🌟 梨花细雨不见鹿</title>
+
+  <meta property="og:title" content="Yii Data Cache" />
+<meta property="og:description" content="数据缓存 数据缓存是指将一些 PHP 变量存储到缓存中，使用时再从缓存中取回。 它也是更高级缓存特性的基础，例如查询缓存 和内容缓存。 如下代码是一个典型的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/202012231541/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-23T15:41:39+08:00" />
+<meta property="article:modified_time" content="2020-12-23T15:41:39+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Yii Data Cache"/>
+<meta name="twitter:description" content="数据缓存 数据缓存是指将一些 PHP 变量存储到缓存中，使用时再从缓存中取回。 它也是更高级缓存特性的基础，例如查询缓存 和内容缓存。 如下代码是一个典型的"/>
+
+
+  <link href="https://example.com/css/index.css" rel="stylesheet">    
+
+  <script src="https://example.com/js/main.js" ></script>
+  
+  </head><body><header class="header-container layout-block layout-padding">
+  <div class="header-inner content-padding-large soft-size--large soft-style--box">
+    <div class="header-logo">
+      <a href="https://example.com"><h1>梨花细雨不见鹿</h1></a>
+    </div>
+    <nav class="header-nav">
+      <div class="header-nav--btn">
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+      </div>
+      <div class="header-nav--list">
+        <div>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/" title="">HOME</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/posts" title="">POSTS</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/message" title="">MESSAGE</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/link" title="">LINK</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header><main id="content">
+    
+
+    <div class="single-container layout-block">
+      <div class="article-info">
+        <div class="article-header layout-padding">
+          <div class="article-cover card-container content-padding-large soft-size--large soft-style--box img ">
+
+  <div class="card-cover">
+    
+      <img src="https://example.com/cover/1.jpg" alt="/cover/1.jpg" />
+    
+  </div>
+
+  <div class="card-text">
+    <h1 class="card-text--title">Yii Data Cache</h1>
+    
+      <p class="card-text--row">2020-12-23 15:41</p>
+      
+      
+      
+
+      
+      
+    
+  </div>
+
+</div>
+        </div>
+
+        <div class="article-content">
+          <div class="markdown-body content-padding-large soft-size--large soft-style--box">
+            <h2 id="数据缓存">数据缓存</h2>
+<p>数据缓存是指将一些 PHP 变量存储到缓存中，使用时再从缓存中取回。 它也是更高级缓存特性的基础，例如查询缓存 和内容缓存。</p>
+<p>如下代码是一个典型的数据缓存使用模式。 其中 $cache 指向缓存组件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 尝试从缓存中取回 $data 
+</span><span style="color:#75715e"></span>$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>($key);
+<span style="color:#66d9ef">if</span> ($data <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>) {
+    <span style="color:#75715e">// $data 在缓存中没有找到，则重新计算它的值
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 将 $data 存放到缓存供下次使用
+</span><span style="color:#75715e"></span>    $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>($key, $data);
+}
+<span style="color:#75715e">// 这儿 $data 可以使用了。
+</span></code></pre></div><p>从 2.0.11 版本开始, 缓存组件 提供了 getOrSet() 方法来简化数据的取回、计算和存储。 下面的代码逻辑和上一个例子是完全一样的：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getOrSet</span>($key, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">calculateSomething</span>();
+});
+</code></pre></div><p>当缓存中有关联 $key 的数据时，将返回这个缓存的值。 否则就执行匿名函数来计算出将要缓存的数据并返回它。</p>
+<p>如果匿名函数需要作用域外的数据时，可以使用 use 语句把这些数据传递到匿名函数中。 例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$user_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getOrSet</span>($key, <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">use</span> ($user_id) {
+    <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">calculateSomething</span>($user_id);
+});
+</code></pre></div><blockquote>
+<p>注意： getOrSet() 方法也支持缓存持续性和缓存依赖。 请看缓存过期 和 缓存依赖 来了解详细信息。</p>
+</blockquote>
+<h2 id="缓存组件">缓存组件</h2>
+<p>数据缓存需要缓存组件提供支持，它代表各种缓存存储器， 例如内存，文件，数据库。</p>
+<p>缓存组件通常注册为应用程序组件，这样它们就可以 在全局进行配置与访问。如下代码演示了如何配置应用程序组件 cache 使用两个 memcached 服务器：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
+    <span style="color:#e6db74">&#39;cache&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\caching\MemCache&#39;</span>,
+        <span style="color:#e6db74">&#39;servers&#39;</span> <span style="color:#f92672">=&gt;</span> [
+            [
+                <span style="color:#e6db74">&#39;host&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;server1&#39;</span>,
+                <span style="color:#e6db74">&#39;port&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">11211</span>,
+                <span style="color:#e6db74">&#39;weight&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">100</span>,
+            ],
+            [
+                <span style="color:#e6db74">&#39;host&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;server2&#39;</span>,
+                <span style="color:#e6db74">&#39;port&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">11211</span>,
+                <span style="color:#e6db74">&#39;weight&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">50</span>,
+            ],
+        ],
+    ],
+],
+</code></pre></div><p>然后就可以通过 Yii::$app-&gt;cache 访问上面的缓存组件了。</p>
+<p>由于所有缓存组件都支持同样的一系列 API ，并不需要修改使用缓存的业务代码 就能直接替换为其他底层缓存组件，只需在应用配置中重新配置一下就可以。 例如，你可以将上述配置修改为使用 APC cache：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
+    <span style="color:#e6db74">&#39;cache&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\caching\ApcCache&#39;</span>,
+    ],
+],
+</code></pre></div><blockquote>
+<p>提示： 你可以注册多个缓存组件，很多依赖缓存的类默认调用 名为 cache 的组件（例如 yii\web\UrlManager）。</p>
+</blockquote>
+<h3 id="支持的缓存存储器">支持的缓存存储器</h3>
+<p>Yii 支持一系列缓存存储器，概况如下：</p>
+<ul>
+<li>yii\caching\ApcCache：使用 PHP APC 扩展。 这个选项可以认为是集中式应用程序环境中 （例如：单一服务器，没有独立的负载均衡器等）最快的缓存方案。</li>
+<li>yii\caching\DbCache：使用一个数据库的表存储缓存数据。要使用这个缓存， 你必须创建一个与 yii\caching\DbCache::$cacheTable 对应的表。</li>
+<li>yii\caching\ArrayCache: 仅通过将值存储在数组中来为当前请求提供缓存。 为了增强 ArrayCache 的性能，您可以通过将 yii\caching\ArrayCache::$serializer 设置为 false 来禁用已存储数据的序列化。</li>
+<li>yii\caching\DummyCache：仅作为一个缓存占位符，不实现任何真正的缓存功能。 这个组件的目的是为了简化那些需要查询缓存有效性的代码。例如， 在开发中如果服务器没有实际的缓存支持，用它配置一个缓存组件。 一个真正的缓存服务启用后，可以再切换为使用相应的缓存组件。 两种条件下你都可以使用同样的代码 Yii::$app-&gt;cache-&gt;get($key) 尝试从缓存中取回数据而不用担心 Yii::$app-&gt;cache 可能是 null。</li>
+<li>yii\caching\FileCache：使用标准文件存储缓存数据。 这个特别适用于缓存大块数据，例如一个整页的内容。</li>
+<li>yii\caching\MemCache：使用 PHP memcache 和 memcached 扩展。 这个选项被看作分布式应用环境中（例如：多台服务器，有负载均衡等） 最快的缓存方案。</li>
+<li>yii\redis\Cache：实现了一个基于 Redis 键值对存储器的缓存组件 （需要 redis 2.6.12 及以上版本的支持 ）。</li>
+<li>yii\caching\WinCache：使用 PHP WinCache （另可参考）扩展.</li>
+<li>yii\caching\XCache：使用 PHP XCache扩展。</li>
+<li>yii\caching\ZendDataCache：使用 [Zend Data Cache](<a href="http://files.zend.com/help/Zend-Server-6/zend-">http://files.zend.com/help/Zend-Server-6/zend-</a> server.htm#data_cache_component.htm) 作为底层缓存媒介。</li>
+<li>提示： 你可以在同一个应用程序中使用不同的缓存存储器。一个常见的策略是使用基于内存的缓存存储器 存储小而常用的数据（例如：统计数据），使用基于文件或数据库的缓存存储器 存储大而不太常用的数据（例如：网页内容）。</li>
+</ul>
+<h2 id="缓存-api">缓存 API</h2>
+<p>所有缓存组件都有同样的基类 yii\caching\Cache ，因此都支持如下 API：</p>
+<ul>
+<li>get()：通过一个指定的键（key）从缓存中取回一项数据。 如果该项数据不存在于缓存中或者已经过期/失效，则返回值 false。</li>
+<li>set()：将一个由键指定的数据项存放到缓存中。</li>
+<li>add()：如果缓存中未找到该键，则将指定数据存放到缓存中。</li>
+<li>getOrSet()：返回由键指定的缓存项，或者执行回调函数，把函数的返回值用键来关联存储到缓存中， 最后返回这个函数的返回值。</li>
+<li>multiGet()：由指定的键获取多个缓存数据项。</li>
+<li>multiSet()：一次存储多个数据项到缓存中，每个数据都由一个键来指明。</li>
+<li>multiAdd()：一次存储多个数据项到缓存中，每个数据都由一个键来指明。 如果某个键已经存在，则略过该数据项不缓存。</li>
+<li>exists()：返回一个值，指明某个键是否存在于缓存中。</li>
+<li>delete()：通过一个键，删除缓存中对应的值。</li>
+<li>flush()：删除缓存中的所有数据。</li>
+</ul>
+<blockquote>
+<p>注意： 千万别直接用 false 布尔值当做数据项缓存，因为 get() 方法用 false 作为返回值来表名对应的缓存项不存在。 你可以把 false 放到一个数组里然后缓存这个数组来避免上述的混淆问题。</p>
+</blockquote>
+<p>有些缓存存储器如 MemCache，APC 支持以批量模式取回缓存值，这样可以节省取回缓存数据的开支。 multiGet() 和 multiAdd() API提供对该特性的支持。 如果底层缓存存储器不支持该特性，Yii 也会模拟实现。</p>
+<p>由于 yii\caching\Cache 实现了 PHP ArrayAccess 接口， 缓存组件也可以像数组那样使用，下面是几个例子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$cache[<span style="color:#e6db74">&#39;var1&#39;</span>] <span style="color:#f92672">=</span> $value1;  <span style="color:#75715e">// 等价于： $cache-&gt;set(&#39;var1&#39;, $value1);
+</span><span style="color:#75715e"></span>$value2 <span style="color:#f92672">=</span> $cache[<span style="color:#e6db74">&#39;var2&#39;</span>];  <span style="color:#75715e">// 等价于： $value2 = $cache-&gt;get(&#39;var2&#39;);
+</span></code></pre></div><h3 id="缓存键">缓存键</h3>
+<p>存储在缓存中的每项数据都通过键作唯一识别。 当你在缓存中存储一项数据时，必须为它指定一个键， 稍后从缓存中取回数据时，也需要提供相应的键。</p>
+<p>你可以使用一个字符串或者任意值作为一个缓存键。当键不是一个字符串时， 它将会自动被序列化为一个字符串。</p>
+<p>定义一个缓存键常见的一个策略就是在一个数组中包含所有的决定性因素。 例如，yii\db\Schema 使用如下键存储一个数据表的结构信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">[
+    <span style="color:#66d9ef">__CLASS__</span>,              <span style="color:#75715e">// 结构类名
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">db</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">dsn</span>,         <span style="color:#75715e">// 数据源名称
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">db</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">username</span>,    <span style="color:#75715e">// 数据库登录用户名
+</span><span style="color:#75715e"></span>    $name,                  <span style="color:#75715e">// 表名
+</span><span style="color:#75715e"></span>];
+</code></pre></div><p>如你所见，该键包含了可唯一指定一个数据库表所需的所有必要信息。</p>
+<blockquote>
+<p>注意： 通过 multiSet() 或者 multiAdd() 方法缓存的数据项的键，它的类型只能是字符串或整型， 如果你想使用较为复杂的键，可以通过 set() 或者 add() 方法来存储。</p>
+</blockquote>
+<p>当同一个缓存存储器被用于多个不同的应用时，应该为每个应用指定一个唯一的缓存键前缀以避免缓存键冲突。 可以通过配置 yii\caching\Cache::$keyPrefix 属性实现。 例如，在应用配置中可以编写如下代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">&#39;components&#39;</span> <span style="color:#f92672">=&gt;</span> [
+    <span style="color:#e6db74">&#39;cache&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\caching\ApcCache&#39;</span>,
+        <span style="color:#e6db74">&#39;keyPrefix&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;myapp&#39;</span>,       <span style="color:#75715e">// 唯一键前缀
+</span><span style="color:#75715e"></span>    ],
+],
+</code></pre></div><p>为了确保互通性，此处只能使用字母和数字。</p>
+<h3 id="缓存过期">缓存过期</h3>
+<p>默认情况下，缓存中的数据会永久存留，除非它被某些缓存策略强制移除（例如：缓存空间已满，最老的数据会被移除）。 要改变此特性，你可以在调用 set() 存储一项数据时提供一个过期时间参数。 该参数代表这项数据在缓存中可保持有效多少秒。 当你调用 get() 取回数据时， 如果它已经过了超时时间，该方法将返回 false，表明在缓存中找不到这项数据。 例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 将数据在缓存中保留 45 秒
+</span><span style="color:#75715e"></span>$cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>($key, $data, <span style="color:#ae81ff">45</span>);
+
+<span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">50</span>);
+
+$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>($key);
+<span style="color:#66d9ef">if</span> ($data <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>) {
+    <span style="color:#75715e">// $data 已过期，或者在缓存中找不到
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>从 2.0.11 开始，如果想自定义缓存的持续时间，你可以在缓存组件配置中设置 defaultDuration 成员属性的值。 这样设置会覆盖默认的缓存持续时间，且在使用 set() 方法时不必每次都传递 $duration 参数。</p>
+<h3 id="缓存依赖">缓存依赖</h3>
+<p>除了超时设置，缓存数据还可能受到缓存依赖的影响而失效。 例如，yii\caching\FileDependency 代表对一个文件修改时间的依赖。 这个依赖条件发生变化也就意味着相应的文件已经被修改。 因此，缓存中任何过期的文件内容都应该被置为失效状态， 对 get() 的调用都应该返回 false。</p>
+<p>缓存依赖用 yii\caching\Dependency 的派生类所表示。 当调用 set() 在缓存中存储一项数据时， 可以同时传递一个关联的缓存依赖对象。例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 创建一个对 example.txt 文件修改时间的缓存依赖
+</span><span style="color:#75715e"></span>$dependency <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\yii\caching\FileDependency</span>([<span style="color:#e6db74">&#39;fileName&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;example.txt&#39;</span>]);
+
+<span style="color:#75715e">// 缓存数据将在30秒后超时
+</span><span style="color:#75715e">// 如果 example.txt 被修改，它也可能被更早地置为失效状态。
+</span><span style="color:#75715e"></span>$cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>($key, $data, <span style="color:#ae81ff">30</span>, $dependency);
+
+<span style="color:#75715e">// 缓存会检查数据是否已超时。
+</span><span style="color:#75715e">// 它还会检查关联的依赖是否已变化。
+</span><span style="color:#75715e">// 符合任何一个条件时都会返回 false。
+</span><span style="color:#75715e"></span>$data <span style="color:#f92672">=</span> $cache<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>($key);
+</code></pre></div><p>下面是可用的缓存依赖的概况：</p>
+<ul>
+<li>yii\caching\ChainedDependency：如果依赖链上任何一个依赖产生变化，则依赖改变。</li>
+<li>yii\caching\DbDependency：如果指定 SQL 语句的查询结果发生了变化，则依赖改变。</li>
+<li>yii\caching\ExpressionDependency：如果指定的 PHP 表达式执行结果发生变化，则依赖改变。</li>
+<li>yii\caching\FileDependency：如果文件的最后修改时间发生变化，则依赖改变。</li>
+<li>yii\caching\TagDependency：将缓存的数据项与一个或多个标签相关联。 您可以通过调用yii\caching\TagDependency::invalidate() 来检查指定标签的缓存数据项是否有效。</li>
+</ul>
+<blockquote>
+<p>注意： 避免对带有缓存依赖的缓存项使用 exists() 方法， 因为它不检测缓存依赖（如果有的话）是否有效，所以调用 get() 可能返回 false 而调用 exists() 却返回 true。</p>
+</blockquote>
+<h2 id="查询缓存">查询缓存</h2>
+<p>查询缓存是一个建立在数据缓存之上的特殊缓存特性。 它用于缓存数据库查询的结果。</p>
+<p>查询缓存需要一个 数据库连接 和一个有效的 cache 应用组件。 查询缓存的基本用法如下，假设 $db 是一个 yii\db\Connection 实例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+
+    <span style="color:#75715e">// SQL 查询的结果将从缓存中提供
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 如果启用查询缓存并且在缓存中找到查询结果
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createCommand</span>(<span style="color:#e6db74">&#39;SELECT * FROM customer WHERE id=1&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">queryOne</span>();
+
+});
+</code></pre></div><p>查询缓存可以用在DAO和ActiveRecord上:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getDb</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>([<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>])<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">one</span>();
+});
+</code></pre></div><blockquote>
+<p>信息： 有些 DBMS （例如：MySQL） 也支持数据库服务器端的查询缓存。 你可以选择使用任一查询缓存机制。 上文所述的查询缓存的好处在于你可以指定更灵活的缓存依赖因此可能更加高效。</p>
+</blockquote>
+<p>自 2.0.14 以后，您可以使用以下快捷方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Query</span>())<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#ae81ff">7200</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
+<span style="color:#75715e">// and
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">User</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#ae81ff">7200</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
+</code></pre></div><h3 id="配置">配置</h3>
+<p>查询缓存通过 yii\db\Connection 有三个全局可配置选项：</p>
+<ul>
+<li>enableQueryCache：是否打开或关闭查询缓存。 它默认为 true。 请注意，要有效打开查询缓存，  您还需要有一个由 queryCache 所指定的有效缓存。</li>
+<li>queryCacheDuration：这表示查询结果在缓存中保持有效的秒数。  您可以使用 0 来表示查询结果永久保留在缓存中。 该属性是在未指定持续时间的情况下调用 yii\db\Connection::cache() 使用的默认值。</li>
+<li>queryCache：缓存应用组件的 ID。默认为 &lsquo;cache&rsquo;。 只有在设置了一个有效的缓存应用组件时，查询缓存才会有效。</li>
+</ul>
+<h3 id="使用">使用</h3>
+<p>如果您有多个需要利用查询缓存的 SQL 查询，则可以使用 yii\db\Connection::cache()。 用法如下，</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>;     <span style="color:#75715e">// 缓存查询结果 60 秒。
+</span><span style="color:#75715e"></span>$dependency <span style="color:#f92672">=</span> <span style="color:#f92672">...</span>;  <span style="color:#75715e">// 可选的依赖关系
+</span><span style="color:#75715e"></span>
+$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+
+    <span style="color:#75715e">// ... 在这里执行 SQL 查询 ...
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">return</span> $result;
+
+}, $duration, $dependency);
+</code></pre></div><p>在匿名函数里的任何一个 SQL 查询都将使用指定的依赖项缓存指定的持续时间 如果一个 SQL 查询的结果在缓存中有效，那么这个 SQl 语句将会被跳过而它的查询结果会直接从缓存中读取。 如果你没有指明 $duration 参数， 那么使用 queryCacheDuration 属性。</p>
+<p>有时在cache()里，你可能不想缓存某些特殊的查询， 这时你可以用yii\db\Connection::noCache()。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+
+    <span style="color:#75715e">// 使用查询缓存的 SQL 查询
+</span><span style="color:#75715e"></span>
+    $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">noCache</span>(<span style="color:#66d9ef">function</span> ($db) {
+
+        <span style="color:#75715e">// 不使用查询缓存的 SQL 查询
+</span><span style="color:#75715e"></span>
+    });
+
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">return</span> $result;
+});
+</code></pre></div><p>如果您只想为单个查询使用查询缓存，则可以在构建命令时调用 yii\db\Command::cache()。 例如，</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 使用查询缓存并将查询缓存持续时间设置为 60 秒
+</span><span style="color:#75715e"></span>$customer <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createCommand</span>(<span style="color:#e6db74">&#39;SELECT * FROM customer WHERE id=1&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#ae81ff">60</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">queryOne</span>();
+<span style="color:#a6e22e">您还可以使用</span> <span style="color:#a6e22e">yii\db\Command</span><span style="color:#f92672">::</span><span style="color:#a6e22e">noCache</span>() <span style="color:#a6e22e">禁用单个命令的查询缓存。例如，</span>
+
+$result <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span>(<span style="color:#66d9ef">function</span> ($db) {
+
+    <span style="color:#75715e">// 使用查询缓存的 SQL 查询
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// 对此命令不使用查询缓存
+</span><span style="color:#75715e"></span>    $customer <span style="color:#f92672">=</span> $db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createCommand</span>(<span style="color:#e6db74">&#39;SELECT * FROM customer WHERE id=1&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">noCache</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">queryOne</span>();
+
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">return</span> $result;
+});
+</code></pre></div><h3 id="限制条件">限制条件</h3>
+<p>当查询结果中含有资源句柄时，查询缓存无法使用。 例如，在有些 DBMS 中使用了 BLOB 列的时候， 缓存结果会为该数据列返回一个资源句柄。</p>
+<p>有些缓存存储器有大小限制。例如，memcache 限制每条数据最大为 1MB。 因此，如果查询结果的大小超出了该限制， 则会导致缓存失败。</p>
+<h3 id="缓存冲刷">缓存冲刷</h3>
+<p>当你想让所有的缓存数据失效时，可以调用 yii\caching\Cache::flush()。</p>
+<p>冲刷缓存数据，你还可以从控制台调用 yii cache/flush。</p>
+<ul>
+<li>yii cache：列出应用中可用的缓存组件</li>
+<li>yii cache/flush cache1 cache2：刷新缓存组件cache1，cache2 (可以传递多个用空格分开的缓存组件）</li>
+<li>yii cache/flush-all：刷新应用中所有的缓存组件</li>
+<li>yii cache/flush-schema db：清除给定连接组件的数据库表结构缓存</li>
+</ul>
+<blockquote>
+<p>信息： 默认情况下，控制台应用使用独立的配置文件。 所以，为了上述命令发挥作用，请确保 Web 应用和控制台应用配置相同的缓存组件。</p>
+</blockquote>
+
+          </div>
+        </div>
+                 
+      
+  
+  
+  
+  
+
+  
+
+  <div class="article-paging">
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202012231729/"><h4 class="card-text--title text-ellipsis">Docker Compose Network Mode</h4></a>
+    <p class="card-text--row">2020-12-23 17:29</p>
+  </div>
+</section>
+    
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202012231046/"><h4 class="card-text--title text-ellipsis">Linux Install Software</h4></a>
+    <p class="card-text--row">2020-12-23 10:46</p>
+  </div>
+</section>
+    
+  </div>
+</div>
+  <aside class="widget-info">
+    
+<section class="aside-widget widget-author content-padding-large soft-size--large soft-style--box">
+  <div class="widget-body">
+    <div class="author-box avatar">
+      
+      <img class="author-avatar soft-size--round soft-style--box" src="https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&amp;r=g&amp;d=retro" alt="Sukoshi">
+      
+      <h2 class="author-name text-ellipsis">Sukoshi</h2>
+      
+      <p class="author-desc text-ellipsis">梅花鹿的角叫鹿角</p>
+      
+    </div>
+  </div>
+</section>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<section class="aside-widget widget-articles content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Related Posts</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="post-list">
+      
+      
+        <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051754/">Git Worktree Prune</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051727/">Go Tour</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051717/">Redis Single So Fast</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051617/">Php Rand</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051521/">Go Select</a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-categories content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Categories</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li>
+          <a href="https://example.com/categories/go/">GO</a>
+          <span>2</span>
+        </li>
+      
+    </ul>
+  </div>
+
+  
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-tags content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Tags</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <div class="tags-list">
+      
+        <a href="https://example.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+      
+        <a href="https://example.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
+      
+        <a href="https://example.com/tags/vscode/" data-count="3" class="soft-size--small soft-style--hover soft-style--active">vscode</a>
+      
+        <a href="https://example.com/tags/git/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">git</a>
+      
+        <a href="https://example.com/tags/mysql/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">mysql</a>
+      
+        <a href="https://example.com/tags/webapi/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">webApi</a>
+      
+        <a href="https://example.com/tags/angular/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">angular</a>
+      
+        <a href="https://example.com/tags/devops/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">devops</a>
+      
+        <a href="https://example.com/tags/go/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">GO</a>
+      
+        <a href="https://example.com/tags/interview/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">interview</a>
+      
+        <a href="https://example.com/tags/toggle/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">toggle</a>
+      
+    </div>
+  </div>
+
+  
+</section>
+
+  </aside>
+</div>
+  </main><footer class="footer-container layout-block">
+  
+  <div class="social-icons">
+    
+      <a class="soft-size--primary soft-style--box" href="https://github.com/miiiku" target="_blank" rel="noopener noreferrer">
+          
+        <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://twitter.com/guanquanhong" target="_blank" rel="noopener noreferrer">
+        
+
+          
+        <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.instagram.com/sukoshi_dayo/" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+          
+        <svg class="icon icon-instagram" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M512 0C372.906667 0 355.541333 0.64 300.928 3.072 246.4 5.632 209.28 14.208 176.64 26.88c-33.664 13.056-62.250667 30.592-90.709333 59.050667S39.893333 142.933333 26.88 176.64C14.208 209.28 5.589333 246.4 3.072 300.928 0.512 355.541333 0 372.906667 0 512s0.64 156.458667 3.072 211.072c2.56 54.485333 11.136 91.648 23.808 124.288a251.093333 251.093333 0 0 0 59.050667 90.709333A250.368 250.368 0 0 0 176.64 997.12c32.682667 12.629333 69.802667 21.290667 124.288 23.808C355.541333 1023.488 372.906667 1024 512 1024s156.458667-0.64 211.072-3.072c54.485333-2.56 91.648-11.178667 124.288-23.808a251.648 251.648 0 0 0 90.709333-59.050667 250.026667 250.026667 0 0 0 59.050667-90.709333c12.629333-32.64 21.290667-69.802667 23.808-124.288 2.56-54.613333 3.072-71.978667 3.072-211.072s-0.64-156.458667-3.072-211.072c-2.56-54.485333-11.178667-91.690667-23.808-124.288a251.306667 251.306667 0 0 0-59.050667-90.709333A249.472 249.472 0 0 0 847.36 26.88c-32.64-12.672-69.802667-21.290667-124.288-23.808C668.458667 0.512 651.093333 0 512 0z m0 92.16c136.661333 0 152.96 0.682667 206.933333 3.029333 49.92 2.346667 77.013333 10.624 95.018667 17.706667 23.978667 9.258667 40.96 20.352 58.965333 38.229333 17.877333 17.92 28.970667 34.944 38.229334 58.922667 6.997333 18.005333 15.36 45.098667 17.621333 95.018667 2.432 54.016 2.986667 70.229333 2.986667 206.933333s-0.64 152.96-3.157334 206.933333c-2.602667 49.92-10.922667 77.013333-17.962666 95.018667a162.56 162.56 0 0 1-38.357334 58.965333 159.744 159.744 0 0 1-58.88 38.229334c-17.92 6.997333-45.44 15.36-95.36 17.621333-54.357333 2.432-70.357333 2.986667-207.317333 2.986667-137.002667 0-153.002667-0.64-207.317333-3.157334-49.962667-2.602667-77.482667-10.922667-95.402667-17.962666a158.549333 158.549333 0 0 1-58.837333-38.357334 155.477333 155.477333 0 0 1-38.4-58.88c-7.04-17.92-15.317333-45.44-17.92-95.36-1.92-53.76-2.602667-70.357333-2.602667-206.677333 0-136.362667 0.682667-153.002667 2.602667-207.402667 2.602667-49.92 10.88-77.397333 17.92-95.317333 8.96-24.32 20.437333-40.96 38.4-58.922667 17.877333-17.877333 34.56-29.397333 58.837333-38.314666 17.92-7.082667 44.842667-15.402667 94.762667-17.962667 54.4-1.92 70.4-2.56 207.317333-2.56l1.92 1.28z m0 156.928a262.912 262.912 0 1 0 0 525.824 262.912 262.912 0 1 0 0-525.824zM512 682.666667c-94.293333 0-170.666667-76.373333-170.666667-170.666667s76.373333-170.666667 170.666667-170.666667 170.666667 76.373333 170.666667 170.666667-76.373333 170.666667-170.666667 170.666667z m334.762667-443.946667a61.482667 61.482667 0 0 1-122.88 0 61.44 61.44 0 0 1 122.88 0z"></path>
+        </svg>
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://weibo.com/u/5561168966" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-weibo" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M385.682429 733.696q11.995429-19.456 6.290286-39.424t-25.746286-28.598857q-19.456-7.972571-41.691429-0.585143t-34.304 26.258286q-12.580571 19.456-7.460571 39.131429t24.576 28.891429 42.569143 1.462857 35.693714-27.136zM439.442429 664.576q4.534857-7.460571 1.974857-15.140571t-10.020571-10.605714q-7.972571-2.852571-16.310857 0.292571t-12.288 10.605714q-9.728 17.700571 7.460571 25.746286 7.972571 2.852571 16.603429-0.292571t12.580571-10.605714zM538.843572 725.723429q-25.746286 58.294857-90.258286 85.723429t-128 6.875429q-61.147429-19.456-84.260571-72.265143t3.730286-107.154286q26.843429-53.174857 86.601143-79.433143t120.32-10.825143q63.414857 16.603429 90.550857 68.315429t1.462857 108.836571zM717.165858 634.294857q-5.12-54.857143-50.834286-97.133714t-119.149714-62.317714-156.891429-11.995429q-127.414857 13.165714-211.163429 80.822857t-75.702857 151.113143q5.12 54.857143 50.834286 97.133714t119.149714 62.317714 156.891429 11.995429q127.414857-13.165714 211.163429-80.822857t75.702857-151.113143zM893.147572 636.562286q0 38.838857-21.138286 79.725714t-62.317714 78.262857-96.256 67.145143-129.170286 47.396571-154.550857 17.700571-157.110857-19.163429-137.435429-53.174857-98.011429-86.308571-37.156571-114.029714q0-65.682286 39.716571-139.995429t112.859429-147.456q96.548571-96.548571 195.145143-134.875429t140.873143 4.022857q37.156571 36.571429 11.410286 119.442286-2.267429 7.972571-0.585143 11.410286t5.705143 4.022857 8.265143-0.292571 7.68-1.974857l3.437714-1.170286q79.433143-33.718857 140.580571-33.718857t87.405714 34.889143q25.746286 35.986286 0 101.741714-1.170286 7.460571-2.56 11.410286t2.56 7.168 6.875429 4.315429 9.728 3.437714q32.548571 10.313143 58.88 26.843429t45.714286 46.592 19.456 66.56zM850.871001 279.990857q23.990857 26.843429 31.158857 62.025143t-3.730286 67.145143q-4.534857 13.165714-16.822857 19.456t-25.453714 2.267429q-13.165714-4.534857-19.456-16.822857t-2.267429-25.453714q11.410286-35.986286-13.677714-63.414857t-61.147429-19.968q-13.677714 2.852571-25.746286-4.534857t-14.262857-21.138286q-2.852571-13.677714 4.534857-25.453714t21.138286-14.555429q34.304-7.460571 68.022857 3.145143t57.709714 37.449143zM954.295001 186.88q49.737143 54.857143 64.292571 127.122286t-7.68 138.020571q-5.12 15.433143-19.456 22.820571t-29.696 2.267429-22.820571-19.456-2.852571-29.696q16.018286-46.884571 5.705143-98.304t-45.714286-90.258286q-35.401143-39.424-84.553143-54.564571t-98.889143-4.827429q-16.018286 3.437714-29.696-5.412571t-17.115429-24.868571 5.412571-29.403429 24.868571-16.822857q70.290286-14.848 139.410286 6.582857t118.857143 76.873143z"></path>
+        </svg>
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.zhihu.com/people/miku-84" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-zhihu" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z"></path>
+        </svg>
+        
+      </a>
+    
+  </div>
+  
+
+  <div class="colour-bar"></div>
+  
+  
+  <p>© 2021 <a href="https://github.com/miiiku/hugo-theme-kagome">kagome</a>.</p>
+  
+
+  
+
+  <p>
+    Powered by
+    <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+    Theme - 
+    <a href="https://github.com/miiiku/hugo-theme-kagome" target="_blank" rel="noopener noreferrer author">kagome</a>
+  </p>
+
+  <p>
+    <a href="javascript:;" id="theme-light">🌞 light</a>
+    <a href="javascript:;" id="theme-dark">🌛 dark</a>
+    <a href="javascript:;" id="theme-auto">🤖️ auto</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

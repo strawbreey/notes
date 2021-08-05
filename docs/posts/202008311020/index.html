@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <meta name="author" content="Sukoshi">
+  
+
+   
+    
+    
+    
+    
+    
+    
+    <meta name="keywords" content="theme,kagome">
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  
+  
+  
+  
+  
+  
+  <title>Git Submodule 🌟 梨花细雨不见鹿</title>
+
+  <meta property="og:title" content="Git Submodule" />
+<meta property="og:description" content="echo &#34;Deleting old publication&#34; rm -rf public mkdir public git worktree prune rm -rf .git/worktrees/public/ echo &#34;Checking out gh-pages branch into public&#34; git worktree add -B gh-pages public upstream/gh-pages echo &#34;Removing existing files&#34; rm -rf public/* echo &#34;Generating site&#34; hugo echo &#34;Updating gh-pages branch&#34; cd public &amp;&amp; git add --all &amp;&amp; git commit -m &#34;Publishing to gh-pages (publish.sh)&#34; Git 本身不支持对某一特定文" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/202008311020/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-31T10:20:39+08:00" />
+<meta property="article:modified_time" content="2020-08-31T10:20:39+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Submodule"/>
+<meta name="twitter:description" content="echo &#34;Deleting old publication&#34; rm -rf public mkdir public git worktree prune rm -rf .git/worktrees/public/ echo &#34;Checking out gh-pages branch into public&#34; git worktree add -B gh-pages public upstream/gh-pages echo &#34;Removing existing files&#34; rm -rf public/* echo &#34;Generating site&#34; hugo echo &#34;Updating gh-pages branch&#34; cd public &amp;&amp; git add --all &amp;&amp; git commit -m &#34;Publishing to gh-pages (publish.sh)&#34; Git 本身不支持对某一特定文"/>
+
+
+  <link href="https://example.com/css/index.css" rel="stylesheet">    
+
+  <script src="https://example.com/js/main.js" ></script>
+  
+  </head><body><header class="header-container layout-block layout-padding">
+  <div class="header-inner content-padding-large soft-size--large soft-style--box">
+    <div class="header-logo">
+      <a href="https://example.com"><h1>梨花细雨不见鹿</h1></a>
+    </div>
+    <nav class="header-nav">
+      <div class="header-nav--btn">
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+      </div>
+      <div class="header-nav--list">
+        <div>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/" title="">HOME</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/posts" title="">POSTS</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/message" title="">MESSAGE</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/link" title="">LINK</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header><main id="content">
+    
+
+    <div class="single-container layout-block">
+      <div class="article-info">
+        <div class="article-header layout-padding">
+          <div class="article-cover card-container content-padding-large soft-size--large soft-style--box img ">
+
+  <div class="card-cover">
+    
+      <img src="https://example.com/cover/1.jpg" alt="/cover/1.jpg" />
+    
+  </div>
+
+  <div class="card-text">
+    <h1 class="card-text--title">Git Submodule</h1>
+    
+      <p class="card-text--row">2020-08-31 10:20</p>
+      
+      
+      
+
+      
+      
+    
+  </div>
+
+</div>
+        </div>
+
+        <div class="article-content">
+          <div class="markdown-body content-padding-large soft-size--large soft-style--box">
+            <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;Deleting old publication&#34;</span>
+rm -rf public
+mkdir public
+git worktree prune
+rm -rf .git/worktrees/public/
+
+echo <span style="color:#e6db74">&#34;Checking out gh-pages branch into public&#34;</span>
+git worktree add -B gh-pages public upstream/gh-pages
+
+echo <span style="color:#e6db74">&#34;Removing existing files&#34;</span>
+rm -rf public/*
+
+echo <span style="color:#e6db74">&#34;Generating site&#34;</span>
+hugo
+
+echo <span style="color:#e6db74">&#34;Updating gh-pages branch&#34;</span>
+cd public <span style="color:#f92672">&amp;&amp;</span> git add --all <span style="color:#f92672">&amp;&amp;</span> git commit -m <span style="color:#e6db74">&#34;Publishing to gh-pages (publish.sh)&#34;</span>
+</code></pre></div><p>Git 本身不支持对某一特定文件夹或者子目录的权限控制，但是可以通过子模块的形式间接实现。</p>
+<h3 id="子模块的初始化">子模块的初始化</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># ​通过git submodule add的方式：</span>
+git submodule add https://github.com/xxx/example.git        
+
+</code></pre></div><p>回车后，将在本地的仓库内创建了一个子模块</p>
+<p>我们可以是用git status来查看一下状态，如下面： 在这里我们可以看到两个文件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status
+</code></pre></div><ul>
+<li>
+<p>文件.gitmodules .gitmodules文件里面记录着子模块的路径和项目的url。如果你有多个子模块，你都可以在这里查看到具体的信息，同时也是他人获取你子模块信息的地方。</p>
+</li>
+<li>
+<p>文件example</p>
+</li>
+</ul>
+<p>xxxx是你的子模块的路径。当你不在该路径时，git将不会记录其内容。相反的，git把该模块当作一个特别的提交。当你项目提交的时候，例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -am <span style="color:#e6db74">&#39;added one module&#39;</span>
+</code></pre></div><p>在这里你可以再一次看到子模块当作一个特别的提交（160000模式是git的一个特殊的模式）</p>
+<p>小结：直接在要引入的项目目录下中克隆一个子模块：git submodule add [url]</p>
+<h3 id="克隆一个带有子模块的项目">克隆一个带有子模块的项目</h3>
+<p>当你克隆一个带有子模块的项目时，你会发现，子模块（子路径）里面的内容完全为空。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://git.code.oa.com/xxx/submodules-test.git
+cd submodules-test/
+ls -la
+
+cd example/
+ls
+</code></pre></div><p>此时，你应该在主项目路径下运行git submodule init初始化，再运行git submodule update命令抓取内容下来。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ..
+git submodule init
+<span style="color:#75715e"># Submodule &#39;example&#39; (https://git.code.oa.com/xxx/example.git) registered for path &#39;example&#39;</span>
+
+git submodule update
+<span style="color:#75715e"># Cloning into &#39;example&#39;...</span>
+<span style="color:#75715e"># remote: Counting objects: 3, done.        </span>
+<span style="color:#75715e"># remote: Total 3 (delta 0), reused 0 (delta 0)        </span>
+<span style="color:#75715e"># Unpacking objects: 100% (3/3), done.</span>
+<span style="color:#75715e"># Submodule path &#39;example&#39;: checked out &#39;1cd699621fb9f29a910e5ede48782bbbfd41a627&#39;</span>
+
+git submodule update
+<span style="color:#75715e"># fatal: reference isn’t a tree: 6c5e70b984a60b3cecd395edd5b48a7575bf58e0</span>
+<span style="color:#75715e"># Unable to checkout &#39;6c5e70b984a60b3cecd395edd5ba7575bf58e0&#39; in submodule path…</span>
+</code></pre></div><p>这个时候，你就能看到你子模块下上次最新提交后的内容。 如果你不想这么麻烦，你可以在克隆项目时，附上&ndash;recursive参数，这样git会自动的初始化和抓取子模块的过程， git clone &ndash;recursive <a href="https://git.code.oa.com/xxx/submodules-test.git">https://git.code.oa.com/xxx/submodules-test.git</a>。克隆项目的时候需要谨记的是，每一次抓取包含子模块的项目都必须要这么做。 另外还需要注意的是，如果开发者在本地对子模块进行了修改，却没有push上远程仓库上，其他开发者进行根据它非公开的指针拉取的时会出现以下这个错误。</p>
+<p>会出现这个原因是因为子模块会从.gitmodules中获取url相应的提交，可是此时由于之前的开发者没有push到相应的url，导致而找不到提交的内容，因此会发生非公开的指针和url不匹配的原因。如果想要避免这样的情况，你需要查看一下谁是最后提交的人(git log -1)，然后告知该开发者进行push。</p>
+<p>小结：克隆完一个带有子模块的项目，需要初始化子模块，然后更新子模块（或者克隆项目时带有&ndash;recursive参数）。</p>
+<h3 id="工作在带有子模块的项目中">工作在带有子模块的项目中</h3>
+<p>克隆了一个新的带有子模块的项目在本地仓库，如果此时我们想要修改并提交submodule。这里分两种情况，一种是直接在子项目修改并提交，另一种是其它人修改子模块的git仓库。</p>
+<p>第一种情况</p>
+<p>需要注意一点，子模块的分支处于游离状态，我们在修改它的时候第一步需要执行检出对应的分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#75715e"># 首先，我们进入子模块</span>
+$ cd example
+
+<span style="color:#75715e"># 检出master分支</span>
+$ git checkout master
+
+<span style="color:#75715e"># 然后做修改</span>
+$ vim test.py
+
+<span style="color:#75715e"># 最后做提交</span>
+$ git add .
+$ git commit -m <span style="color:#e6db74">&#34;Get something done&#34;</span>
+$ git push origin master
+
+<span style="color:#75715e"># 如何将submodule的变更在父项目中提交</span>
+
+<span style="color:#75715e"># 回到父项目中更新</span>
+$ cd ..
+
+<span style="color:#75715e"># 子模块被提交后父项目会检测到，正常提交即可</span>
+$ git status
+
+<span style="color:#75715e"># modified:   example (new commits)</span>
+
+<span style="color:#75715e"># add的时候注意再最后不要加 / 斜杠，否则会出现很棘手问题(push远端后子模块不带版本号)</span>
+
+$ git add example
+$ git commit -m <span style="color:#e6db74">&#34;update submodule&#34;</span>
+$ git push
+</code></pre></div><p>第二种情况</p>
+<p>当子模块是属于别人维护的时候，当他更新的时候，如果我们需要同步更新依赖的子模块。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule update --remote example
+  Submodule path <span style="color:#e6db74">&#39;example&#39;</span>: checked out <span style="color:#e6db74">&#39;826a71f68f64cad5cafb3cafdb0b726d41b8d868&#39;</span>
+  
+<span style="color:#75715e"># 子模块更新后父项目会检测到，正常提交即可</span>
+$ git status
+
+<span style="color:#75715e"># modified:   example (new commits)</span>
+
+<span style="color:#75715e"># add的时候注意再最后不要加 / 斜杠，否则会出现很棘手问题(push远端后子模块不带版本号)</span>
+
+$ git add example
+$ git commit -m <span style="color:#e6db74">&#34;update submodule&#34;</span>
+$ git push
+</code></pre></div><h3 id="子模块的删除">子模块的删除</h3>
+<p>删除submodule，需要借助git submodule deinit命令，具体参考如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 逆初始化模块，其中{MOD_NAME}为模块目录，执行后可发现模块目录被清空 .git/config 已被重写</span>
+<span style="color:#75715e"># git submodule deinit {MOD_NAME}</span>
+$ git submodule deinit example
+
+<span style="color:#75715e"># 删除子模块文件，同时删除.gitmodules中记录的模块信息</span>
+$ git rm example
+
+<span style="color:#75715e"># 提交更改到代码库，可观察到&#39;.gitmodules&#39;内容发生变更</span>
+$ git commit -m <span style="color:#e6db74">&#34;Removed submodule &#34;</span>
+
+<span style="color:#75715e"># 删除.git的保存</span>
+$ rm -rf .git/modules/example
+</code></pre></div><h3 id="子模块注意事项">子模块注意事项</h3>
+<ol>
+<li>子模块可以理解为某仓库的指定版本的内容作为当前仓库的某一子目录</li>
+<li>父仓库不直接关注子模块的内容变化，只关注子模块版本号的变化</li>
+<li>父仓库的任意一个版本都唯一的确定了子模块的版本</li>
+<li>子模块的版本号发生变化将导致父仓库产生变化（diff）父仓库需要提交这一变化来记录相应改动，而这，也将导致父仓库产生一个新的版本</li>
+<li>子仓库可以完全不知道父仓库的存在</li>
+<li>父仓库可以不存储任何代码，而仅仅是记录一系列子模块的版本号，这些版本号的变更形成了父仓库的历史</li>
+<li>可以使用子模块来划分目录的权限</li>
+</ol>
+<h3 id="更新submodule的坑">更新submodule的坑</h3>
+<p>submodule 项目和它的父项目本质上是 2 个独立的 git 仓库。只是父项目存储了它依赖的 submodule 项目的版本号信息而已。如果有人更新了submodule，然后更新了父项目中依赖的版本号。 你需要在 git pull 之后，调用 git submodule update 来更新 submodule 信息。这儿的问题在于，如果你 git pull 之后，忘记了调用 git submodule update，那么你极有可能再次把旧的 submodule 依赖信息提交上去。 对于那些习惯使用 git commit -a 的人来说，这种危险会更大一些。所以建议：</p>
+<p>git pull 之后，立即执行 git status, 如果发现 submodule 有修改，立即执行 git submodule update
+尽量不要使用 git commit -a， git add 命令存在的意义就是让你对加入暂存区的文件做二次确认，而 git commit -a 相当于跳过了这个确认过程。
+更复杂一些，如果你的 submodule 又依赖了 submodule，那么很可能你需要在 git pull 和 git submodule update 之后，再分别到每个 submodule 中再执行一次 git submodule update。 这里可以使用 git submodule foreach 命令来实现： git submodule foreach git submodule update</p>
+
+          </div>
+        </div>
+                 
+      
+  
+  
+  
+  
+
+  
+
+  <div class="article-paging">
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202008311036/"><h4 class="card-text--title text-ellipsis">Common Commands</h4></a>
+    <p class="card-text--row">2020-08-31 10:36</p>
+  </div>
+</section>
+    
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202008311015/"><h4 class="card-text--title text-ellipsis">Hugo Start</h4></a>
+    <p class="card-text--row">2020-08-31 10:15</p>
+  </div>
+</section>
+    
+  </div>
+</div>
+  <aside class="widget-info">
+    
+<section class="aside-widget widget-author content-padding-large soft-size--large soft-style--box">
+  <div class="widget-body">
+    <div class="author-box avatar">
+      
+      <img class="author-avatar soft-size--round soft-style--box" src="https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&amp;r=g&amp;d=retro" alt="Sukoshi">
+      
+      <h2 class="author-name text-ellipsis">Sukoshi</h2>
+      
+      <p class="author-desc text-ellipsis">梅花鹿的角叫鹿角</p>
+      
+    </div>
+  </div>
+</section>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<section class="aside-widget widget-articles content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Related Posts</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="post-list">
+      
+      
+        <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051754/">Git Worktree Prune</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051727/">Go Tour</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051717/">Redis Single So Fast</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051617/">Php Rand</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051521/">Go Select</a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-categories content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Categories</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li>
+          <a href="https://example.com/categories/go/">GO</a>
+          <span>2</span>
+        </li>
+      
+    </ul>
+  </div>
+
+  
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-tags content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Tags</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <div class="tags-list">
+      
+        <a href="https://example.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+      
+        <a href="https://example.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
+      
+        <a href="https://example.com/tags/vscode/" data-count="3" class="soft-size--small soft-style--hover soft-style--active">vscode</a>
+      
+        <a href="https://example.com/tags/git/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">git</a>
+      
+        <a href="https://example.com/tags/mysql/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">mysql</a>
+      
+        <a href="https://example.com/tags/webapi/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">webApi</a>
+      
+        <a href="https://example.com/tags/angular/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">angular</a>
+      
+        <a href="https://example.com/tags/devops/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">devops</a>
+      
+        <a href="https://example.com/tags/go/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">GO</a>
+      
+        <a href="https://example.com/tags/interview/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">interview</a>
+      
+        <a href="https://example.com/tags/toggle/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">toggle</a>
+      
+    </div>
+  </div>
+
+  
+</section>
+
+  </aside>
+</div>
+  </main><footer class="footer-container layout-block">
+  
+  <div class="social-icons">
+    
+      <a class="soft-size--primary soft-style--box" href="https://github.com/miiiku" target="_blank" rel="noopener noreferrer">
+          
+        <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://twitter.com/guanquanhong" target="_blank" rel="noopener noreferrer">
+        
+
+          
+        <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.instagram.com/sukoshi_dayo/" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+          
+        <svg class="icon icon-instagram" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M512 0C372.906667 0 355.541333 0.64 300.928 3.072 246.4 5.632 209.28 14.208 176.64 26.88c-33.664 13.056-62.250667 30.592-90.709333 59.050667S39.893333 142.933333 26.88 176.64C14.208 209.28 5.589333 246.4 3.072 300.928 0.512 355.541333 0 372.906667 0 512s0.64 156.458667 3.072 211.072c2.56 54.485333 11.136 91.648 23.808 124.288a251.093333 251.093333 0 0 0 59.050667 90.709333A250.368 250.368 0 0 0 176.64 997.12c32.682667 12.629333 69.802667 21.290667 124.288 23.808C355.541333 1023.488 372.906667 1024 512 1024s156.458667-0.64 211.072-3.072c54.485333-2.56 91.648-11.178667 124.288-23.808a251.648 251.648 0 0 0 90.709333-59.050667 250.026667 250.026667 0 0 0 59.050667-90.709333c12.629333-32.64 21.290667-69.802667 23.808-124.288 2.56-54.613333 3.072-71.978667 3.072-211.072s-0.64-156.458667-3.072-211.072c-2.56-54.485333-11.178667-91.690667-23.808-124.288a251.306667 251.306667 0 0 0-59.050667-90.709333A249.472 249.472 0 0 0 847.36 26.88c-32.64-12.672-69.802667-21.290667-124.288-23.808C668.458667 0.512 651.093333 0 512 0z m0 92.16c136.661333 0 152.96 0.682667 206.933333 3.029333 49.92 2.346667 77.013333 10.624 95.018667 17.706667 23.978667 9.258667 40.96 20.352 58.965333 38.229333 17.877333 17.92 28.970667 34.944 38.229334 58.922667 6.997333 18.005333 15.36 45.098667 17.621333 95.018667 2.432 54.016 2.986667 70.229333 2.986667 206.933333s-0.64 152.96-3.157334 206.933333c-2.602667 49.92-10.922667 77.013333-17.962666 95.018667a162.56 162.56 0 0 1-38.357334 58.965333 159.744 159.744 0 0 1-58.88 38.229334c-17.92 6.997333-45.44 15.36-95.36 17.621333-54.357333 2.432-70.357333 2.986667-207.317333 2.986667-137.002667 0-153.002667-0.64-207.317333-3.157334-49.962667-2.602667-77.482667-10.922667-95.402667-17.962666a158.549333 158.549333 0 0 1-58.837333-38.357334 155.477333 155.477333 0 0 1-38.4-58.88c-7.04-17.92-15.317333-45.44-17.92-95.36-1.92-53.76-2.602667-70.357333-2.602667-206.677333 0-136.362667 0.682667-153.002667 2.602667-207.402667 2.602667-49.92 10.88-77.397333 17.92-95.317333 8.96-24.32 20.437333-40.96 38.4-58.922667 17.877333-17.877333 34.56-29.397333 58.837333-38.314666 17.92-7.082667 44.842667-15.402667 94.762667-17.962667 54.4-1.92 70.4-2.56 207.317333-2.56l1.92 1.28z m0 156.928a262.912 262.912 0 1 0 0 525.824 262.912 262.912 0 1 0 0-525.824zM512 682.666667c-94.293333 0-170.666667-76.373333-170.666667-170.666667s76.373333-170.666667 170.666667-170.666667 170.666667 76.373333 170.666667 170.666667-76.373333 170.666667-170.666667 170.666667z m334.762667-443.946667a61.482667 61.482667 0 0 1-122.88 0 61.44 61.44 0 0 1 122.88 0z"></path>
+        </svg>
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://weibo.com/u/5561168966" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-weibo" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M385.682429 733.696q11.995429-19.456 6.290286-39.424t-25.746286-28.598857q-19.456-7.972571-41.691429-0.585143t-34.304 26.258286q-12.580571 19.456-7.460571 39.131429t24.576 28.891429 42.569143 1.462857 35.693714-27.136zM439.442429 664.576q4.534857-7.460571 1.974857-15.140571t-10.020571-10.605714q-7.972571-2.852571-16.310857 0.292571t-12.288 10.605714q-9.728 17.700571 7.460571 25.746286 7.972571 2.852571 16.603429-0.292571t12.580571-10.605714zM538.843572 725.723429q-25.746286 58.294857-90.258286 85.723429t-128 6.875429q-61.147429-19.456-84.260571-72.265143t3.730286-107.154286q26.843429-53.174857 86.601143-79.433143t120.32-10.825143q63.414857 16.603429 90.550857 68.315429t1.462857 108.836571zM717.165858 634.294857q-5.12-54.857143-50.834286-97.133714t-119.149714-62.317714-156.891429-11.995429q-127.414857 13.165714-211.163429 80.822857t-75.702857 151.113143q5.12 54.857143 50.834286 97.133714t119.149714 62.317714 156.891429 11.995429q127.414857-13.165714 211.163429-80.822857t75.702857-151.113143zM893.147572 636.562286q0 38.838857-21.138286 79.725714t-62.317714 78.262857-96.256 67.145143-129.170286 47.396571-154.550857 17.700571-157.110857-19.163429-137.435429-53.174857-98.011429-86.308571-37.156571-114.029714q0-65.682286 39.716571-139.995429t112.859429-147.456q96.548571-96.548571 195.145143-134.875429t140.873143 4.022857q37.156571 36.571429 11.410286 119.442286-2.267429 7.972571-0.585143 11.410286t5.705143 4.022857 8.265143-0.292571 7.68-1.974857l3.437714-1.170286q79.433143-33.718857 140.580571-33.718857t87.405714 34.889143q25.746286 35.986286 0 101.741714-1.170286 7.460571-2.56 11.410286t2.56 7.168 6.875429 4.315429 9.728 3.437714q32.548571 10.313143 58.88 26.843429t45.714286 46.592 19.456 66.56zM850.871001 279.990857q23.990857 26.843429 31.158857 62.025143t-3.730286 67.145143q-4.534857 13.165714-16.822857 19.456t-25.453714 2.267429q-13.165714-4.534857-19.456-16.822857t-2.267429-25.453714q11.410286-35.986286-13.677714-63.414857t-61.147429-19.968q-13.677714 2.852571-25.746286-4.534857t-14.262857-21.138286q-2.852571-13.677714 4.534857-25.453714t21.138286-14.555429q34.304-7.460571 68.022857 3.145143t57.709714 37.449143zM954.295001 186.88q49.737143 54.857143 64.292571 127.122286t-7.68 138.020571q-5.12 15.433143-19.456 22.820571t-29.696 2.267429-22.820571-19.456-2.852571-29.696q16.018286-46.884571 5.705143-98.304t-45.714286-90.258286q-35.401143-39.424-84.553143-54.564571t-98.889143-4.827429q-16.018286 3.437714-29.696-5.412571t-17.115429-24.868571 5.412571-29.403429 24.868571-16.822857q70.290286-14.848 139.410286 6.582857t118.857143 76.873143z"></path>
+        </svg>
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.zhihu.com/people/miku-84" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-zhihu" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z"></path>
+        </svg>
+        
+      </a>
+    
+  </div>
+  
+
+  <div class="colour-bar"></div>
+  
+  
+  <p>© 2021 <a href="https://github.com/miiiku/hugo-theme-kagome">kagome</a>.</p>
+  
+
+  
+
+  <p>
+    Powered by
+    <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+    Theme - 
+    <a href="https://github.com/miiiku/hugo-theme-kagome" target="_blank" rel="noopener noreferrer author">kagome</a>
+  </p>
+
+  <p>
+    <a href="javascript:;" id="theme-light">🌞 light</a>
+    <a href="javascript:;" id="theme-dark">🌛 dark</a>
+    <a href="javascript:;" id="theme-auto">🤖️ auto</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

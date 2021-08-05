@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interview on 梨花细雨不见鹿</title>
+    <link>https://example.com/tags/interview/</link>
+    <description>Recent content in interview on 梨花细雨不见鹿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>guanquanhong@163.com (Sukoshi)</managingEditor>
+    <webMaster>guanquanhong@163.com (Sukoshi)</webMaster>
+    <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
+    <lastBuildDate>Mon, 25 Jan 2021 16:33:23 +0800</lastBuildDate><atom:link href="https://example.com/tags/interview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Js Interview Event Delegation</title>
+      <link>https://example.com/posts/202101251633/</link>
+      <pubDate>Mon, 25 Jan 2021 16:33:23 +0800</pubDate>
+      <author>guanquanhong@163.com (Sukoshi)</author>
+      <guid>https://example.com/posts/202101251633/</guid>
+      <description>请解释事件委托（event delegation） 事件委托是将事件监听器添加到父元素，而不是每个子元素单独设置事件监听器。当触发子元素时，事件</description>
+    </item>
+    
+  </channel>
+</rss>
