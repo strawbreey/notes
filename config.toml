@@ -1,6 +1,6 @@
 baseURL = "https://note.strawbreey.com"
 languageCode = "en-us"
-title = "梨花细雨不见鹿1"
+title = "梨花细雨不见鹿2"
 theme = "kagome"
 paginate = 7
 copyright = "© 2021 <a href=\"https://github.com/miiiku/hugo-theme-kagome\">kagome</a>."
