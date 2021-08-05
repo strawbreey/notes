@@ -24,11 +24,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.TOKEN }}
-          external_repository: strawbreey/strawbreey.github.io
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          #   keep_files: true
-          user_name: strawbreey
-          user_email: strawbreey@qq.com
-          publish_branch: master
-          cname: note.strawbreey.com
