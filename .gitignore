@@ -3,6 +3,7 @@ public
 themes/
 themes/ananke
 # themes/friend
+themes/hugo-creative-portfolio-theme
 
 /static/images/*.exe
 /static/images/*.zip
