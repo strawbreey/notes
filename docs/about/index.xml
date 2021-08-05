@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About me on 梨花细雨不见鹿</title>
-    <link>https://example.com/about/</link>
+    <link>https://note.strawbreey.com/about/</link>
     <description>Recent content in About me on 梨花细雨不见鹿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>guanquanhong@163.com (Sukoshi)</managingEditor>
     <webMaster>guanquanhong@163.com (Sukoshi)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
-    <lastBuildDate>Sat, 05 Nov 2016 21:05:33 +0530</lastBuildDate><atom:link href="https://example.com/about/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2016 21:05:33 +0530</lastBuildDate><atom:link href="https://note.strawbreey.com/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

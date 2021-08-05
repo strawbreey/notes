@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>angular on 梨花细雨不见鹿</title>
-    <link>https://example.com/tags/angular/</link>
+    <link>https://note.strawbreey.com/tags/angular/</link>
     <description>Recent content in angular on 梨花细雨不见鹿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>guanquanhong@163.com (Sukoshi)</managingEditor>
     <webMaster>guanquanhong@163.com (Sukoshi)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
-    <lastBuildDate>Mon, 09 Nov 2020 17:44:06 +0800</lastBuildDate><atom:link href="https://example.com/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Nov 2020 17:44:06 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/tags/angular/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular Architecture</title>
-      <link>https://example.com/posts/202011091744/</link>
+      <link>https://note.strawbreey.com/posts/202011091744/</link>
       <pubDate>Mon, 09 Nov 2020 17:44:06 +0800</pubDate>
       <author>guanquanhong@163.com (Sukoshi)</author>
-      <guid>https://example.com/posts/202011091744/</guid>
+      <guid>https://note.strawbreey.com/posts/202011091744/</guid>
       <description></description>
     </item>
     
