@@ -6,6 +6,8 @@ image: "img/portfolio/a4-paper.jpg"
 ---
 
 ### Math 函数
+
+```bash
 abs — 绝对值
 acos — 反余弦
 acosh — 反双曲余弦
@@ -56,3 +58,4 @@ sqrt — 平方根
 srand — 播下随机数发生器种子
 tan — 正切
 tanh — 双曲正切
+```
