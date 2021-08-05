@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <meta name="author" content="Sukoshi">
+  
+
+   
+    
+    
+    
+    
+    
+    
+    <meta name="keywords" content="theme,kagome">
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  
+  
+  
+  
+  
+  
+  <title>Sql Interview 🌟 梨花细雨不见鹿</title>
+
+  <meta property="og:title" content="Sql Interview" />
+<meta property="og:description" content="数据库的命令规划 所有数据库对象名称必须使用小写字母并用下划线分割 所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://note.strawbreey.com/posts/202010222304/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-22T23:04:28+08:00" />
+<meta property="article:modified_time" content="2020-10-22T23:04:28+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sql Interview"/>
+<meta name="twitter:description" content="数据库的命令规划 所有数据库对象名称必须使用小写字母并用下划线分割 所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其"/>
+
+
+  <link href="https://note.strawbreey.com/css/index.css" rel="stylesheet">    
+
+  <script src="https://note.strawbreey.com/js/main.js" ></script>
+  
+  </head><body><header class="header-container layout-block layout-padding">
+  <div class="header-inner content-padding-large soft-size--large soft-style--box">
+    <div class="header-logo">
+      <a href="https://note.strawbreey.com"><h1>梨花细雨不见鹿</h1></a>
+    </div>
+    <nav class="header-nav">
+      <div class="header-nav--btn">
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+      </div>
+      <div class="header-nav--list">
+        <div>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/" title="">HOME</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/posts" title="">POSTS</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/message" title="">MESSAGE</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/link" title="">LINK</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header><main id="content">
+    
+
+    <div class="single-container layout-block">
+      <div class="article-info">
+        <div class="article-header layout-padding">
+          <div class="article-cover card-container content-padding-large soft-size--large soft-style--box img ">
+
+  <div class="card-cover">
+    
+      <img src="https://note.strawbreey.com/cover/1.jpg" alt="/cover/1.jpg" />
+    
+  </div>
+
+  <div class="card-text">
+    <h1 class="card-text--title">Sql Interview</h1>
+    
+      <p class="card-text--row">2020-10-22 23:04</p>
+      
+      
+      
+
+      
+      
+    
+  </div>
+
+</div>
+        </div>
+
+        <div class="article-content">
+          <div class="markdown-body content-padding-large soft-size--large soft-style--box">
+            <h3 id="数据库的命令规划">数据库的命令规划</h3>
+<ul>
+<li>所有数据库对象名称必须使用小写字母并用下划线分割</li>
+<li>所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）</li>
+<li>数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符</li>
+<li>临时库表必须以 tmp_为前缀并以日期为后缀，备份表必须以 bak_为前缀并以日期 (时间戳) 为后缀</li>
+<li>所有存储相同数据的列名和列类型必须一致（一般作为关联列，如果查询时关联列类型不一致会自动进行数据类型隐式转换，会造成列上的索引失效，导致查询效率降低）</li>
+</ul>
+<h3 id="数据库基本设计规范">数据库基本设计规范</h3>
+<ol>
+<li>
+<p>所有表必须使用 Innodb 存储引擎</p>
+</li>
+<li>
+<p>数据库和表的字符集统一使用 UTF8</p>
+<p>兼容性更好，统一字符集可以避免由于字符集转换产生的乱码，不同的字符集进行比较前需要进行转换会造成索引失效，如果数据库中有存储 emoji 表情的需要，字符集需要采用 utf8mb4 字符集。</p>
+</li>
+<li>
+<p>所有表和字段都需要添加注释</p>
+<p>使用 comment 从句添加表和列的备注，从一开始就进行数据字典的维护</p>
+</li>
+<li>
+<p>尽量控制单表数据量的大小,建议控制在 500 万以内。</p>
+<p>500 万并不是 MySQL 数据库的限制，过大会造成修改表结构，备份，恢复都会有很大的问题。</p>
+<p>可以用历史数据归档（应用于日志数据），分库分表（应用于业务数据）等手段来控制数据量大小</p>
+</li>
+<li>
+<p>谨慎使用 MySQL 分区表</p>
+<p>分区表在物理上表现为多个文件，在逻辑上表现为一个表；</p>
+<p>谨慎选择分区键，跨分区查询效率可能更低；</p>
+<p>建议采用物理分表的方式管理大数据。</p>
+</li>
+<li>
+<p>.尽量做到冷热数据分离,减小表的宽度</p>
+<p>MySQL 限制每个表最多存储 4096 列，并且每一行数据的大小不能超过 65535 字节。</p>
+<p>减少磁盘 IO,保证热数据的内存缓存命中率（表越宽，把表装载进内存缓冲池时所占用的内存也就越大,也会消耗更多的 IO）；</p>
+<p>更有效的利用缓存，避免读入无用的冷数据；</p>
+<p>经常一起使用的列放到一个表中（避免更多的关联操作）</p>
+</li>
+<li>
+<p>禁止在表中建立预留字段</p>
+<p>预留字段的命名很难做到见名识义。</p>
+<p>预留字段无法确认存储的数据类型，所以无法选择合适的类型。</p>
+<p>对预留字段类型的修改，会对表进行锁定。</p>
+</li>
+<li>
+<p>禁止在数据库中存储图片,文件等大的二进制数据</p>
+<p>通常文件很大，会短时间内造成数据量快速增长，数据库进行数据库读取时，通常会进行大量的随机 IO 操作，文件很大时，IO 操作很耗时。</p>
+<p>通常存储于文件服务器，数据库只存储文件地址信息</p>
+</li>
+<li>
+<p>禁止在线上做数据库压力测试</p>
+</li>
+<li>
+<p>禁止从开发环境,测试环境直接连接生产环境数据库</p>
+</li>
+</ol>
+<h2 id="索引设计规范">索引设计规范</h2>
+<h3 id="1-限制每张表上的索引数量建议单张表索引不超过-5-个">1. 限制每张表上的索引数量,建议单张表索引不超过 5 个</h3>
+<p>索引并不是越多越好！索引可以提高效率同样可以降低效率。</p>
+<p>索引可以增加查询效率，但同样也会降低插入和更新的效率，甚至有些情况下会降低查询效率。</p>
+<p>因为 MySQL 优化器在选择如何优化查询时，会根据统一信息，对每一个可以用到的索引来进行评估，以生成出一个最好的执行计划，如果同时有很多个索引都可以用于查询，就会增加 MySQL 优化器生成执行计划的时间，同样会降低查询性能。</p>
+<h3 id="2-禁止给表中的每一列都建立单独的索引">2. 禁止给表中的每一列都建立单独的索引</h3>
+<p>5.6 版本之前，一个 sql 只能使用到一个表中的一个索引，5.6 以后，虽然有了合并索引的优化方式，但是还是远远没有使用一个联合索引的查询方式好。</p>
+<h3 id="3-每个-innodb-表必须有个主键">3. 每个 Innodb 表必须有个主键</h3>
+<p>Innodb 是一种索引组织表：数据的存储的逻辑顺序和索引的顺序是相同的。每个表都可以有多个索引，但是表的存储顺序只能有一种。</p>
+<p>Innodb 是按照主键索引的顺序来组织表的</p>
+<ul>
+<li>不要使用更新频繁的列作为主键，不适用多列主键（相当于联合索引）</li>
+<li>不要使用 UUID,MD5,HASH,字符串列作为主键（无法保证数据的顺序增长）</li>
+<li>主键建议使用自增 ID 值</li>
+</ul>
+<hr>
+<h3 id="4-常见索引列建议">4. 常见索引列建议</h3>
+<ul>
+<li>出现在 SELECT、UPDATE、DELETE 语句的 WHERE 从句中的列</li>
+<li>包含在 ORDER BY、GROUP BY、DISTINCT 中的字段</li>
+<li>并不要将符合 1 和 2 中的字段的列都建立一个索引， 通常将 1、2 中的字段建立联合索引效果更好</li>
+<li>多表 join 的关联列</li>
+</ul>
+<hr>
+<h3 id="5如何选择索引列的顺序">5.如何选择索引列的顺序</h3>
+<p>建立索引的目的是：希望通过索引进行数据查找，减少随机 IO，增加查询性能 ，索引能过滤出越少的数据，则从磁盘中读入的数据也就越少。</p>
+<ul>
+<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
+<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
+<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
+</ul>
+<hr>
+<h3 id="6-避免建立冗余索引和重复索引增加了查询优化器生成执行计划的时间">6. 避免建立冗余索引和重复索引（增加了查询优化器生成执行计划的时间）</h3>
+<ul>
+<li>重复索引示例：primary key(id)、index(id)、unique index(id)</li>
+<li>冗余索引示例：index(a,b,c)、index(a,b)、index(a)</li>
+</ul>
+<hr>
+<h3 id="7-对于频繁的查询优先考虑使用覆盖索引">7. 对于频繁的查询优先考虑使用覆盖索引</h3>
+<blockquote>
+<p>覆盖索引：就是包含了所有查询字段 (where,select,ordery by,group by 包含的字段) 的索引</p>
+</blockquote>
+<p><strong>覆盖索引的好处：</strong></p>
+<ul>
+<li><strong>避免 Innodb 表进行索引的二次查询:</strong> Innodb 是以聚集索引的顺序来存储的，对于 Innodb 来说，二级索引在叶子节点中所保存的是行的主键信息，如果是用二级索引查询数据的话，在查找到相应的键值后，还要通过主键进行二次查询才能获取我们真实所需要的数据。而在覆盖索引中，二级索引的键值中可以获取所有的数据，避免了对主键的二次查询 ，减少了 IO 操作，提升了查询效率。</li>
+<li><strong>可以把随机 IO 变成顺序 IO 加快查询效率:</strong> 由于覆盖索引是按键值的顺序存储的，对于 IO 密集型的范围查找来说，对比随机从磁盘读取每一行的数据 IO 要少的多，因此利用覆盖索引在访问时也可以把磁盘的随机读取的 IO 转变成索引查找的顺序 IO。</li>
+</ul>
+<hr>
+<h3 id="8索引-set-规范">8.索引 SET 规范</h3>
+<p><strong>尽量避免使用外键约束</strong></p>
+<ul>
+<li>不建议使用外键约束（foreign key），但一定要在表与表之间的关联键上建立索引</li>
+<li>外键可用于保证数据的参照完整性，但建议在业务端实现</li>
+<li>外键会影响父表和子表的写操作从而降低性能</li>
+</ul>
+<hr>
+
+          </div>
+        </div>
+                 
+      
+  
+  
+  
+  
+
+  
+
+  <div class="article-paging">
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202010222312/"><h4 class="card-text--title text-ellipsis">Redis Interview</h4></a>
+    <p class="card-text--row">2020-10-22 23:12</p>
+  </div>
+</section>
+    
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202010221141/"><h4 class="card-text--title text-ellipsis">Yii Active Query</h4></a>
+    <p class="card-text--row">2020-10-22 11:41</p>
+  </div>
+</section>
+    
+  </div>
+</div>
+  <aside class="widget-info">
+    
+<section class="aside-widget widget-author content-padding-large soft-size--large soft-style--box">
+  <div class="widget-body">
+    <div class="author-box avatar">
+      
+      <img class="author-avatar soft-size--round soft-style--box" src="https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&amp;r=g&amp;d=retro" alt="Sukoshi">
+      
+      <h2 class="author-name text-ellipsis">Sukoshi</h2>
+      
+      <p class="author-desc text-ellipsis">梅花鹿的角叫鹿角</p>
+      
+    </div>
+  </div>
+</section>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<section class="aside-widget widget-articles content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Related Posts</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="post-list">
+      
+      
+        <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051754/">Git Worktree Prune</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051727/">Go Tour</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051717/">Redis Single So Fast</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051617/">Php Rand</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051521/">Go Select</a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-categories content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Categories</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li>
+          <a href="https://note.strawbreey.com/categories/go/">GO</a>
+          <span>2</span>
+        </li>
+      
+    </ul>
+  </div>
+
+  
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-tags content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Tags</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <div class="tags-list">
+      
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+      
+        <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
+      
+        <a href="https://note.strawbreey.com/tags/vscode/" data-count="3" class="soft-size--small soft-style--hover soft-style--active">vscode</a>
+      
+        <a href="https://note.strawbreey.com/tags/git/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">git</a>
+      
+        <a href="https://note.strawbreey.com/tags/mysql/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">mysql</a>
+      
+        <a href="https://note.strawbreey.com/tags/webapi/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">webApi</a>
+      
+        <a href="https://note.strawbreey.com/tags/angular/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">angular</a>
+      
+        <a href="https://note.strawbreey.com/tags/devops/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">devops</a>
+      
+        <a href="https://note.strawbreey.com/tags/go/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">GO</a>
+      
+        <a href="https://note.strawbreey.com/tags/interview/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">interview</a>
+      
+        <a href="https://note.strawbreey.com/tags/toggle/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">toggle</a>
+      
+    </div>
+  </div>
+
+  
+</section>
+
+  </aside>
+</div>
+  </main><footer class="footer-container layout-block">
+  
+  <div class="social-icons">
+    
+      <a class="soft-size--primary soft-style--box" href="https://github.com/miiiku" target="_blank" rel="noopener noreferrer">
+          
+        <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://twitter.com/guanquanhong" target="_blank" rel="noopener noreferrer">
+        
+
+          
+        <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.instagram.com/sukoshi_dayo/" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+          
+        <svg class="icon icon-instagram" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M512 0C372.906667 0 355.541333 0.64 300.928 3.072 246.4 5.632 209.28 14.208 176.64 26.88c-33.664 13.056-62.250667 30.592-90.709333 59.050667S39.893333 142.933333 26.88 176.64C14.208 209.28 5.589333 246.4 3.072 300.928 0.512 355.541333 0 372.906667 0 512s0.64 156.458667 3.072 211.072c2.56 54.485333 11.136 91.648 23.808 124.288a251.093333 251.093333 0 0 0 59.050667 90.709333A250.368 250.368 0 0 0 176.64 997.12c32.682667 12.629333 69.802667 21.290667 124.288 23.808C355.541333 1023.488 372.906667 1024 512 1024s156.458667-0.64 211.072-3.072c54.485333-2.56 91.648-11.178667 124.288-23.808a251.648 251.648 0 0 0 90.709333-59.050667 250.026667 250.026667 0 0 0 59.050667-90.709333c12.629333-32.64 21.290667-69.802667 23.808-124.288 2.56-54.613333 3.072-71.978667 3.072-211.072s-0.64-156.458667-3.072-211.072c-2.56-54.485333-11.178667-91.690667-23.808-124.288a251.306667 251.306667 0 0 0-59.050667-90.709333A249.472 249.472 0 0 0 847.36 26.88c-32.64-12.672-69.802667-21.290667-124.288-23.808C668.458667 0.512 651.093333 0 512 0z m0 92.16c136.661333 0 152.96 0.682667 206.933333 3.029333 49.92 2.346667 77.013333 10.624 95.018667 17.706667 23.978667 9.258667 40.96 20.352 58.965333 38.229333 17.877333 17.92 28.970667 34.944 38.229334 58.922667 6.997333 18.005333 15.36 45.098667 17.621333 95.018667 2.432 54.016 2.986667 70.229333 2.986667 206.933333s-0.64 152.96-3.157334 206.933333c-2.602667 49.92-10.922667 77.013333-17.962666 95.018667a162.56 162.56 0 0 1-38.357334 58.965333 159.744 159.744 0 0 1-58.88 38.229334c-17.92 6.997333-45.44 15.36-95.36 17.621333-54.357333 2.432-70.357333 2.986667-207.317333 2.986667-137.002667 0-153.002667-0.64-207.317333-3.157334-49.962667-2.602667-77.482667-10.922667-95.402667-17.962666a158.549333 158.549333 0 0 1-58.837333-38.357334 155.477333 155.477333 0 0 1-38.4-58.88c-7.04-17.92-15.317333-45.44-17.92-95.36-1.92-53.76-2.602667-70.357333-2.602667-206.677333 0-136.362667 0.682667-153.002667 2.602667-207.402667 2.602667-49.92 10.88-77.397333 17.92-95.317333 8.96-24.32 20.437333-40.96 38.4-58.922667 17.877333-17.877333 34.56-29.397333 58.837333-38.314666 17.92-7.082667 44.842667-15.402667 94.762667-17.962667 54.4-1.92 70.4-2.56 207.317333-2.56l1.92 1.28z m0 156.928a262.912 262.912 0 1 0 0 525.824 262.912 262.912 0 1 0 0-525.824zM512 682.666667c-94.293333 0-170.666667-76.373333-170.666667-170.666667s76.373333-170.666667 170.666667-170.666667 170.666667 76.373333 170.666667 170.666667-76.373333 170.666667-170.666667 170.666667z m334.762667-443.946667a61.482667 61.482667 0 0 1-122.88 0 61.44 61.44 0 0 1 122.88 0z"></path>
+        </svg>
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://weibo.com/u/5561168966" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-weibo" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M385.682429 733.696q11.995429-19.456 6.290286-39.424t-25.746286-28.598857q-19.456-7.972571-41.691429-0.585143t-34.304 26.258286q-12.580571 19.456-7.460571 39.131429t24.576 28.891429 42.569143 1.462857 35.693714-27.136zM439.442429 664.576q4.534857-7.460571 1.974857-15.140571t-10.020571-10.605714q-7.972571-2.852571-16.310857 0.292571t-12.288 10.605714q-9.728 17.700571 7.460571 25.746286 7.972571 2.852571 16.603429-0.292571t12.580571-10.605714zM538.843572 725.723429q-25.746286 58.294857-90.258286 85.723429t-128 6.875429q-61.147429-19.456-84.260571-72.265143t3.730286-107.154286q26.843429-53.174857 86.601143-79.433143t120.32-10.825143q63.414857 16.603429 90.550857 68.315429t1.462857 108.836571zM717.165858 634.294857q-5.12-54.857143-50.834286-97.133714t-119.149714-62.317714-156.891429-11.995429q-127.414857 13.165714-211.163429 80.822857t-75.702857 151.113143q5.12 54.857143 50.834286 97.133714t119.149714 62.317714 156.891429 11.995429q127.414857-13.165714 211.163429-80.822857t75.702857-151.113143zM893.147572 636.562286q0 38.838857-21.138286 79.725714t-62.317714 78.262857-96.256 67.145143-129.170286 47.396571-154.550857 17.700571-157.110857-19.163429-137.435429-53.174857-98.011429-86.308571-37.156571-114.029714q0-65.682286 39.716571-139.995429t112.859429-147.456q96.548571-96.548571 195.145143-134.875429t140.873143 4.022857q37.156571 36.571429 11.410286 119.442286-2.267429 7.972571-0.585143 11.410286t5.705143 4.022857 8.265143-0.292571 7.68-1.974857l3.437714-1.170286q79.433143-33.718857 140.580571-33.718857t87.405714 34.889143q25.746286 35.986286 0 101.741714-1.170286 7.460571-2.56 11.410286t2.56 7.168 6.875429 4.315429 9.728 3.437714q32.548571 10.313143 58.88 26.843429t45.714286 46.592 19.456 66.56zM850.871001 279.990857q23.990857 26.843429 31.158857 62.025143t-3.730286 67.145143q-4.534857 13.165714-16.822857 19.456t-25.453714 2.267429q-13.165714-4.534857-19.456-16.822857t-2.267429-25.453714q11.410286-35.986286-13.677714-63.414857t-61.147429-19.968q-13.677714 2.852571-25.746286-4.534857t-14.262857-21.138286q-2.852571-13.677714 4.534857-25.453714t21.138286-14.555429q34.304-7.460571 68.022857 3.145143t57.709714 37.449143zM954.295001 186.88q49.737143 54.857143 64.292571 127.122286t-7.68 138.020571q-5.12 15.433143-19.456 22.820571t-29.696 2.267429-22.820571-19.456-2.852571-29.696q16.018286-46.884571 5.705143-98.304t-45.714286-90.258286q-35.401143-39.424-84.553143-54.564571t-98.889143-4.827429q-16.018286 3.437714-29.696-5.412571t-17.115429-24.868571 5.412571-29.403429 24.868571-16.822857q70.290286-14.848 139.410286 6.582857t118.857143 76.873143z"></path>
+        </svg>
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.zhihu.com/people/miku-84" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-zhihu" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z"></path>
+        </svg>
+        
+      </a>
+    
+  </div>
+  
+
+  <div class="colour-bar"></div>
+  
+  
+  <p>© 2021 <a href="https://github.com/miiiku/hugo-theme-kagome">kagome</a>.</p>
+  
+
+  
+
+  <p>
+    Powered by
+    <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+    Theme - 
+    <a href="https://github.com/miiiku/hugo-theme-kagome" target="_blank" rel="noopener noreferrer author">kagome</a>
+  </p>
+
+  <p>
+    <a href="javascript:;" id="theme-light">🌞 light</a>
+    <a href="javascript:;" id="theme-dark">🌛 dark</a>
+    <a href="javascript:;" id="theme-auto">🤖️ auto</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

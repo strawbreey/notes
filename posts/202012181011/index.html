@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <meta name="author" content="Sukoshi">
+  
+
+   
+    
+    
+    
+    
+    
+    
+    <meta name="keywords" content="theme,kagome">
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  
+  
+  
+  
+  
+  
+  <title>Secure Shell 🌟 梨花细雨不见鹿</title>
+
+  <meta property="og:title" content="Secure Shell" />
+<meta property="og:description" content="SSH or Secure Shell is a cryptographic network protocol for operating network services (网络运营服务) securely over an unsecured network.[1] Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH. SSH provides a secure channel over an unsecured network by using a client–server" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://note.strawbreey.com/posts/202012181011/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-18T10:11:57+08:00" />
+<meta property="article:modified_time" content="2020-12-18T10:11:57+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Secure Shell"/>
+<meta name="twitter:description" content="SSH or Secure Shell is a cryptographic network protocol for operating network services (网络运营服务) securely over an unsecured network.[1] Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH. SSH provides a secure channel over an unsecured network by using a client–server"/>
+
+
+  <link href="https://note.strawbreey.com/css/index.css" rel="stylesheet">    
+
+  <script src="https://note.strawbreey.com/js/main.js" ></script>
+  
+  </head><body><header class="header-container layout-block layout-padding">
+  <div class="header-inner content-padding-large soft-size--large soft-style--box">
+    <div class="header-logo">
+      <a href="https://note.strawbreey.com"><h1>梨花细雨不见鹿</h1></a>
+    </div>
+    <nav class="header-nav">
+      <div class="header-nav--btn">
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+      </div>
+      <div class="header-nav--list">
+        <div>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/" title="">HOME</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/posts" title="">POSTS</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/message" title="">MESSAGE</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/link" title="">LINK</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header><main id="content">
+    
+
+    <div class="single-container layout-block">
+      <div class="article-info">
+        <div class="article-header layout-padding">
+          <div class="article-cover card-container content-padding-large soft-size--large soft-style--box img ">
+
+  <div class="card-cover">
+    
+      <img src="https://note.strawbreey.com/cover/1.jpg" alt="/cover/1.jpg" />
+    
+  </div>
+
+  <div class="card-text">
+    <h1 class="card-text--title">Secure Shell</h1>
+    
+      <p class="card-text--row">2020-12-18 10:11</p>
+      
+      
+      
+
+      
+      
+    
+  </div>
+
+</div>
+        </div>
+
+        <div class="article-content">
+          <div class="markdown-body content-padding-large soft-size--large soft-style--box">
+            <p>SSH or Secure Shell is a cryptographic network protocol for operating network services (网络运营服务) securely over an unsecured network.[1] Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH.</p>
+<p>SSH provides a secure channel over an unsecured network by using a client–server architecture, connecting an SSH client application with an SSH server.[2] The protocol specification distinguishes between two major versions, referred to as SSH-1 and SSH-2. The standard TCP port for SSH is 22. SSH is generally used to access Unix-like operating systems, but it can also be used on Microsoft Windows. Windows 10 uses OpenSSH as its default SSH client and SSH server.[3]</p>
+<p>Despite (尽管) popular misconception (误解), SSH is not an implementation of Telnet with cryptography provided by the Secure Sockets Layer (SSL).</p>
+<p>SSH was designed as a replacement for Telnet and for unsecured remote shell protocols such as the Berkeley rsh and the related rlogin and rexec protocols. Those protocols send information, notably passwords, in plaintext, rendering them susceptible to interception and disclosure using packet analysis.[4] The encryption used by SSH is intended to provide confidentiality and integrity of data over an unsecured network, such as the Internet.</p>
+<h3 id="架构">架构</h3>
+<p>SSH 的软件架构是服务器-客户端模式（Server - Client）。在这个架构中，SSH 软件分成两个部分：向服务器发出请求的部分，称为客户端（client），OpenSSH 的实现为 ssh；接收客户端发出的请求的部分，称为服务器（server），OpenSSH 的实现为 sshd。</p>
+<h3 id="ssh-客户端">SSH 客户端</h3>
+<p>简介
+OpenSSH 的客户端是二进制程序 ssh。它在 Linux/Unix 系统的位置是<code>/usr/local/bin/ssh</code>，Windows 系统的位置是<code>\Program Files\OpenSSH\bin\ssh.exe</code>。Linux 系统一般都自带 ssh，如果没有就需要安装。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Ubuntu 和 Debian</span>
+sudo apt install openssh-client
+
+<span style="color:#75715e"># CentOS 和 Fedora</span>
+sudo dnf install openssh-clients
+
+<span style="color:#75715e"># 安装以后，可以使用-h参数，查看一下是否安装成功。</span>
+ssh -h
+</code></pre></div><h3 id="基本用法">基本用法</h3>
+<p>ssh 最常见的用途就是登录服务器，这要求服务器安装并正在运行 SSH 服务器软件。</p>
+<p>ssh 登录服务器的命令如下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># hostname是主机名，它可以是域名，也可能是 IP 地址或局域网内部的主机名, 不指定用户名的情况下，将使用客户端的当前用户名</span>
+ssh hostname 
+
+<span style="color:#75715e"># 用户名和主机名写在一起了，之间使用@分隔。</span>
+ssh root@hostname
+
+<span style="color:#75715e"># 用户名也可以使用ssh的-l参数指定，</span>
+ssh -l root host
+
+<span style="color:#75715e"># ssh 默认连接服务器的22端口，-p参数可以指定其他端口。连接服务器foo.com的8821端口</span>
+ssh -p <span style="color:#ae81ff">8821</span> foo.com
+</code></pre></div><h3 id="连接流程">连接流程</h3>
+<p>ssh 连接远程服务器后，首先有一个验证过程，验证远程服务器是否为陌生地址。</p>
+<p>如果是第一次连接某一台服务器，命令行会显示一段文字，表示不认识这台机器，提醒用户确认是否需要连接。</p>
+<p>The authenticity of host &lsquo;foo.com (192.168.121.111)&rsquo; can&rsquo;t be established.
+ECDSA key fingerprint is SHA256:Vybt22mVXuNuB5unE++yowF7lgA/9/2bLSiO3qmYWBY.
+Are you sure you want to continue connecting (yes/no)?</p>
+<p>上面这段文字告诉用户，foo.com这台服务器的指纹是陌生的，让用户选择是否要继续连接（输入 yes 或 no）。</p>
+<p>所谓“服务器指纹”，指的是 SSH 服务器公钥的哈希值。每台 SSH 服务器都有唯一一对密钥，用于跟客户端通信，其中公钥的哈希值就可以用来识别服务器。</p>
+<p>下面的命令可以查看某个公钥的指纹。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
+<span style="color:#ae81ff">256</span> da:24:43:0b:2e:c1:3f:a1:84:13:92:01:52:b4:84:ff   <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+</code></pre></div><p>上面的例子中，ssh-keygen -l -f命令会输出公钥<code>/etc/ssh/ssh_host_ecdsa_key.pub</code>的指纹。</p>
+<p>ssh 会将本机连接过的所有服务器公钥的指纹，都储存在本机的~/.ssh/known_hosts文件中。每次连接服务器时，通过该文件判断是否为陌生主机（陌生公钥）。</p>
+<p>在上面这段文字后面，输入yes，就可以将当前服务器的指纹也储存在本机~/.ssh/known_hosts文件中，并显示下面的提示。以后再连接的时候，就不会再出现警告了。</p>
+<p>Warning: Permanently added &lsquo;foo.com (192.168.121.111)&rsquo; (RSA) to the list of known hosts
+然后，客户端就会跟服务器建立连接。接着，ssh 就会要求用户输入所要登录账户的密码。用户输入并验证密码正确以后，就能登录远程服务器的 Shell 了。</p>
+<h3 id="服务器密钥变更">服务器密钥变更</h3>
+<p>服务器指纹可以防止有人恶意冒充远程主机。如果服务器的密钥发生变更（比如重装了 SSH 服务器），客户端再次连接时，就会发生公钥指纹不吻合的情况。这时，客户端就会中断连接，并显示一段警告信息。</p>
+<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that the RSA host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+77:a5:69:81:9b:eb:40:76:7b:13:04:a9:6c:f4:9c:5d.
+Please contact your system administrator.
+Add correct host key in /home/me/.ssh/known_hosts to get rid of this message.
+Offending key in /home/me/.ssh/known_hosts:36</p>
+<p>上面这段文字的意思是，该主机的公钥指纹跟~/.ssh/known_hosts文件储存的不一样，必须处理以后才能连接。这时，你需要确认是什么原因，使得公钥指纹发生变更，到底是恶意劫持，还是管理员变更了 SSH 服务器公钥。</p>
+<p>如果新的公钥确认可以信任，需要继续执行连接，你可以执行下面的命令，将原来的公钥指纹从~/.ssh/known_hosts文件删除。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -R hostname
+</code></pre></div><p>上面命令中，hostname是发生公钥变更的主机名。</p>
+<p>除了使用上面的命令，你也可以手工修改known_hosts文件，将公钥指纹删除。</p>
+<p>删除了原来的公钥指纹以后，重新执行 ssh 命令连接远程服务器，将新的指纹加入known_hosts文件，就可以顺利连接了。</p>
+<h3 id="执行远程命令">执行远程命令</h3>
+<p>SSH 登录成功后，用户就进入了远程主机的命令行环境，所看到的提示符，就是远程主机的提示符。这时，你就可以输入想要在远程主机执行的命令。</p>
+<p>另一种执行远程命令的方法，是将命令直接写在ssh命令的后面。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh username@hostname command
+</code></pre></div><p>上面的命令会使得 SSH 在登录成功后，立刻在远程主机上执行命令command。</p>
+<p>下面是一个例子。</p>
+<p>ssh <a href="mailto:foo@server.example.com">foo@server.example.com</a> cat /etc/hosts
+上面的命令会在登录成功后，立即远程执行命令cat /etc/hosts。</p>
+<p>采用这种语法执行命令时，ssh 客户端不会提供互动式的 Shell 环境，而是直接远程命令的执行结果输出在命令行。但是，有些命令需要互动式的 Shell 环境，这时就要使用-t参数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 报错</span>
+$ ssh remote.server.com emacs
+emacs: standard input is not a tty
+
+<span style="color:#75715e"># 不报错</span>
+$ ssh -t server.example.com emacs
+</code></pre></div><p>上面代码中，emacs命令需要一个互动式 Shell，所以报错。只有加上-t参数，ssh 才会分配一个互动式 Shell。</p>
+<h3 id="加密参数">加密参数</h3>
+<p>SSH 连接的握手阶段，客户端必须跟服务端约定加密参数集（cipher suite）。</p>
+<p>加密参数集包含了若干不同的加密参数，它们之间使用下划线连接在一起，下面是一个例子。</p>
+<p>TLS_RSA_WITH_AES_128_CBC_SHA
+它的含义如下。</p>
+<p>TLS：协议
+RSA：密钥交换算法
+AES：加密算法
+128：加密强度
+CBC：加密模式
+SHA：数字签名的 Hash 函数
+下面是一个例子，客户端向服务器发出的握手信息。</p>
+<p>Handshake protocol: ClientHello
+Version: TLS 1.2
+Random
+Client time: May 22, 2030 02:43:46 GMT
+Random bytes: b76b0e61829557eb4c611adfd2d36eb232dc1332fe29802e321ee871
+Session ID: (empty)
+Cipher Suites
+Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256”
+Suite: TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+Suite: TLS_RSA_WITH_AES_128_GCM_SHA256
+Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+Suite: TLS_RSA_WITH_AES_128_CBC_SHA
+Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA
+Suite: TLS_RSA_WITH_RC4_128_SHA
+Compression methods
+Method: null
+Extensions
+Extension: server_name
+Hostname: <a href="http://www.feistyduck.com">www.feistyduck.com</a>
+Extension: renegotiation_info
+Extension: elliptic_curves
+Named curve: secp256r1
+Named curve: secp384r1
+Extension: signature_algorithms
+Algorithm: sha1/rsa
+Algorithm: sha256/rsa
+Algorithm: sha1/ecdsa
+Algorithm: sha256/ecdsa”
+上面的握手信息（ClientHello）之中，Cipher Suites字段就是客户端列出可选的加密参数集，服务器在其中选择一个自己支持的参数集。</p>
+<p>服务器选择完毕之后，向客户端发出回应。</p>
+<p>Handshake protocol: ServerHello
+Version: TLS 1.2
+Random
+Server time: Mar 10, 2059 02:35:57 GMT”
+Random bytes: 8469b09b480c1978182ce1b59290487609f41132312ca22aacaf5012
+Session ID: 4cae75c91cf5adf55f93c9fb5dd36d19903b1182029af3d527b7a42ef1c32c80
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+Compression method: null
+Extensions
+Extension: server_name
+Extension: renegotiation_info”
+上面的回应信息（ServerHello）中，Cipher Suite字段就是服务器最终选定的加密参数。</p>
+<p>ssh 命令行配置项
+ssh 命令有很多配置项，修改它的默认行为。</p>
+<p>-c</p>
+<p>-c参数指定加密算法。</p>
+<p>$ ssh -c blowfish,3des server.example.com</p>
+<h1 id="或者">或者</h1>
+<p>$ ssh -c blowfish -c 3des server.example.com
+上面命令指定使用加密算法blowfish或3des。</p>
+<p>-C</p>
+<p>-C参数表示压缩数据传输。</p>
+<p>$ ssh -C server.example.com
+-d</p>
+<p>-d参数设置打印的 debug 信息级别，数值越高，输出的内容越详细。</p>
+<p>$ ssh –d 1 foo.com
+-D</p>
+<p>-D参数指定本机的 Socks 监听端口，该端口收到的请求，都将转发到远程的 SSH 主机，又称动态端口转发，详见《端口转发》一章。</p>
+<p>$ ssh -D 1080 server
+上面命令将本机 1080 端口收到的请求，都转发到服务器server。</p>
+<p>-f</p>
+<p>-f参数表示 SSH 连接在后台运行。</p>
+<p>-F</p>
+<p>-F参数指定配置文件。</p>
+<p>$ ssh -F /usr/local/ssh/other_config
+上面命令指定使用配置文件other_config。</p>
+<p>-h，&ndash;help</p>
+<p>-h、&ndash;help参数显示帮助信息。</p>
+<p>$ ssh &ndash;help
+-i</p>
+<p>-i参数用于指定私钥，意为“identity_file”，默认值为~/.ssh/id_dsa。注意，对应的公钥必须存放到服务器，详见《密钥登录》一章。</p>
+<p>$ ssh -i my-key server.example.com
+-l</p>
+<p>-l参数指定远程登录的账户名。</p>
+<p>$ ssh -l sally server.example.com</p>
+<h1 id="等同于">等同于</h1>
+<p>$ ssh <a href="mailto:sally@server.example.com">sally@server.example.com</a>
+-L</p>
+<p>-L参数设置本地端口转发，详见《端口转发》一章。</p>
+<p>$ ssh  -L 9999:targetServer:80 user@remoteserver
+上面命令中，所有发向本地9999端口的请求，都会经过remoteserver发往 targetServer 的 80 端口，这就相当于直接连上了 targetServer 的 80 端口。</p>
+<p>-m</p>
+<p>-m参数指定校验数据完整性的算法（message authentication code，简称 MAC）。</p>
+<p>$ ssh -m hmac-sha1,hmac-md5 server.example.com
+上面命令指定数据校验算法为hmac-sha1或hmac-md5。</p>
+<p>-o</p>
+<p>-o参数用来指定一个配置命令。</p>
+<p>$ ssh -o &ldquo;Keyword Value&rdquo;
+举例来说，配置文件里面有如下内容。</p>
+<p>User sally
+Port 220
+通过-o参数，可以把上面两个配置命令从命令行传入。</p>
+<p>$ ssh -o &ldquo;User sally&rdquo; -o &ldquo;Port 220&rdquo; server.example.com
+使用等号时，配置命令可以不用写在引号里面，但是等号前后不能有空格。</p>
+<p>$ ssh -o User=sally -o Port=220 server.example.com
+-p</p>
+<p>-p参数指定 SSH 客户端连接的服务器端口。</p>
+<p>$ ssh -p 2035 server.example.com
+上面命令连接服务器的2035端口。</p>
+<p>-q</p>
+<p>-q参数表示安静模式（quiet），不向用户输出任何警告信息。</p>
+<p>$ ssh –q foo.com
+root’s password:
+上面命令使用-q参数，只输出要求用户输入密码的提示。</p>
+<p>-R</p>
+<p>-R参数指定远程端口转发，详见《端口转发》一章。</p>
+<p>$ ssh -R 9999:targetServer:902 local
+上面命令需在跳板服务器执行，指定本地计算机local监听自己的 9999 端口，所有发向这个端口的请求，都会转向 targetServer 的 902 端口。</p>
+<p>-t</p>
+<p>-t参数在 ssh 直接运行远端命令时，提供一个互动式 Shell。</p>
+<p>$ ssh -t server.example.com emacs
+-v</p>
+<p>-v参数显示详细信息。</p>
+<p>$ ssh -v server.example.com
+-v可以重复多次，表示信息的详细程度，比如-vv和-vvv。</p>
+<p>$ ssh -vvv server.example.com</p>
+<h1 id="或者-1">或者</h1>
+<p>$ ssh -v -v -v server.example.com
+上面命令会输出最详细的连接信息。</p>
+<p>-V</p>
+<p>-V参数输出 ssh 客户端的版本。</p>
+<p>$ ssh –V
+ssh: SSH Secure Shell 3.2.3 (non-commercial version) on i686-pc-linux-gnu
+上面命令输出本机 ssh 客户端版本是SSH Secure Shell 3.2.3。</p>
+<p>-X</p>
+<p>-X参数表示打开 X 窗口转发。</p>
+<p>$ ssh -X server.example.com
+-1，-2</p>
+<p>-1参数指定使用 SSH 1 协议。</p>
+<p>-2参数指定使用 SSH 2 协议。</p>
+<p>$ ssh -2 server.example.com
+-4，-6</p>
+<p>-4指定使用 IPv4 协议，这是默认值。</p>
+<p>$ ssh -4 server.example.com
+-6指定使用 IPv6 协议。</p>
+<p>$ ssh -6 server.example.com
+客户端配置文件
+位置
+SSH 客户端的全局配置文件是/etc/ssh/ssh_config，用户个人的配置文件在~/.ssh/config，优先级高于全局配置文件。</p>
+<p>除了配置文件，~/.ssh目录还有一些用户个人的密钥文件和其他文件。下面是其中一些常见的文件。</p>
+<p>~/.ssh/id_ecdsa：用户的 ECDSA 私钥。
+~/.ssh/id_ecdsa.pub：用户的 ECDSA 公钥。
+~/.ssh/id_rsa：用于 SSH 协议版本2 的 RSA 私钥。
+~/.ssh/id_rsa.pub：用于SSH 协议版本2 的 RSA 公钥。
+~/.ssh/identity：用于 SSH 协议版本1 的 RSA 私钥。
+~/.ssh/identity.pub：用于 SSH 协议版本1 的 RSA 公钥。
+~/.ssh/known_hosts：包含 SSH 服务器的公钥指纹。
+主机设置
+用户个人的配置文件~/.ssh/config，可以按照不同服务器，列出各自的连接参数，从而不必每一次登录都输入重复的参数。下面是一个例子。</p>
+<p>Host *
+Port 2222</p>
+<p>Host remoteserver
+HostName remote.example.com
+User neo
+Port 2112
+上面代码中，Host *表示对所有主机生效，后面的Port 2222表示所有主机的默认连接端口都是2222，这样就不用在登录时特别指定端口了。这里的缩进并不是必需的，只是为了视觉上，易于识别针对不同主机的设置。</p>
+<p>后面的Host remoteserver表示，下面的设置只对主机remoteserver生效。remoteserver只是一个别名，具体的主机由HostName命令指定，User和Port这两项分别表示用户名和端口。这里的Port会覆盖上面Host *部分的Port设置。</p>
+<p>以后，登录remote.example.com时，只要执行ssh remoteserver命令，就会自动套用 config 文件里面指定的参数。
+单个主机的配置格式如下。</p>
+<p>$ ssh remoteserver</p>
+<h1 id="等同于-1">等同于</h1>
+<p>$ ssh -p 2112 <a href="mailto:neo@remote.example.com">neo@remote.example.com</a>
+Host命令的值可以使用通配符，比如Host *表示对所有主机都有效的设置，Host *.edu表示只对一级域名为.edu的主机有效的设置。它们的设置都可以被单个主机的设置覆盖。</p>
+<p>配置命令的语法
+ssh 客户端配置文件的每一行，就是一个配置命令。配置命令与对应的值之间，可以使用空格，也可以使用等号。</p>
+<p>Compression yes</p>
+<h1 id="等同于-2">等同于</h1>
+<p>Compression = yes
+#开头的行表示注释，会被忽略。空行等同于注释。</p>
+<h3 id="主要配置命令">主要配置命令</h3>
+<p>下面是 ssh 客户端的一些主要配置命令，以及它们的范例值。</p>
+<p>AddressFamily inet：表示只使用 IPv4 协议。如果设为inet6，表示只使用 IPv6 协议。
+BindAddress 192.168.10.235：指定本机的 IP 地址（如果本机有多个 IP 地址）。
+CheckHostIP yes：检查 SSH 服务器的 IP 地址是否跟公钥数据库吻合。
+Ciphers blowfish,3des：指定加密算法。
+Compression yes：是否压缩传输信号。
+ConnectionAttempts 10：客户端进行连接时，最大的尝试次数。
+ConnectTimeout 60：客户端进行连接时，服务器在指定秒数内没有回复，则中断连接尝试。
+DynamicForward 1080：指定动态转发端口。
+GlobalKnownHostsFile /users/smith/.ssh/my_global_hosts_file：指定全局的公钥数据库文件的位置。
+Host server.example.com：指定连接的域名或 IP 地址，也可以是别名，支持通配符。Host命令后面的所有配置，都是针对该主机的，直到下一个Host命令为止。
+HostKeyAlgorithms ssh-dss,ssh-rsa：指定密钥算法，优先级从高到低排列。
+HostName myserver.example.com：在Host命令使用别名的情况下，HostName指定域名或 IP 地址。
+IdentityFile keyfile：指定私钥文件。
+LocalForward 2001 localhost:143：指定本地端口转发。
+LogLevel QUIET：指定日志详细程度。如果设为QUIET，将不输出大部分的警告和提示。
+MACs hmac-sha1,hmac-md5：指定数据校验算法。
+NumberOfPasswordPrompts 2：密码登录时，用户输错密码的最大尝试次数。
+PasswordAuthentication no：指定是否支持密码登录。不过，这里只是客户端禁止，真正的禁止需要在 SSH 服务器设置。
+Port 2035：指定客户端连接的 SSH 服务器端口。
+PreferredAuthentications publickey,hostbased,password：指定各种登录方法的优先级。
+Protocol 2：支持的 SSH 协议版本，多个版本之间使用逗号分隔。
+PubKeyAuthentication yes：是否支持密钥登录。这里只是客户端设置，还需要在 SSH 服务器进行相应设置。
+RemoteForward 2001 server:143：指定远程端口转发。
+SendEnv COLOR：SSH 客户端向服务器发送的环境变量名，多个环境变量之间使用空格分隔。环境变量的值从客户端当前环境中拷贝。
+ServerAliveCountMax 3：如果没有收到服务器的回应，客户端连续发送多少次keepalive信号，才断开连接。该项默认值为3。
+ServerAliveInterval 300：客户端建立连接后，如果在给定秒数内，没有收到服务器发来的消息，客户端向服务器发送keepalive消息。如果不希望客户端发送，这一项设为0。
+StrictHostKeyChecking yes：yes表示严格检查，服务器公钥为未知或发生变化，则拒绝连接。no表示如果服务器公钥未知，则加入客户端公钥数据库，如果公钥发生变化，不改变客户端公钥数据库，输出一条警告，依然允许连接继续进行。ask（默认值）表示询问用户是否继续进行。
+TCPKeepAlive yes：客户端是否定期向服务器发送keepalive信息。
+User userName：指定远程登录的账户名。
+UserKnownHostsFile /users/smith/.ssh/my_local_hosts_file：指定当前用户的known_hosts文件（服务器公钥指纹列表）的位置。
+VerifyHostKeyDNS yes：是否通过检查 SSH 服务器的 DNS 记录，确认公钥指纹是否与known_hosts文件保存的一致。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://wangdoc.com/ssh/scp.html" target="_blank" rel="noopener">SSH 教程</a></li>
+</ul>
+
+          </div>
+        </div>
+                 
+      
+  
+  
+  
+  
+
+  
+
+  <div class="article-paging">
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202012181032/"><h4 class="card-text--title text-ellipsis">Secure Shell Scp</h4></a>
+    <p class="card-text--row">2020-12-18 10:32</p>
+  </div>
+</section>
+    
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202012171757/"><h4 class="card-text--title text-ellipsis">Yaml Tutorial</h4></a>
+    <p class="card-text--row">2020-12-17 17:57</p>
+  </div>
+</section>
+    
+  </div>
+</div>
+  <aside class="widget-info">
+    
+<section class="aside-widget widget-author content-padding-large soft-size--large soft-style--box">
+  <div class="widget-body">
+    <div class="author-box avatar">
+      
+      <img class="author-avatar soft-size--round soft-style--box" src="https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&amp;r=g&amp;d=retro" alt="Sukoshi">
+      
+      <h2 class="author-name text-ellipsis">Sukoshi</h2>
+      
+      <p class="author-desc text-ellipsis">梅花鹿的角叫鹿角</p>
+      
+    </div>
+  </div>
+</section>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<section class="aside-widget widget-articles content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Related Posts</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="post-list">
+      
+      
+        <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051754/">Git Worktree Prune</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051727/">Go Tour</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051717/">Redis Single So Fast</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051617/">Php Rand</a></li>
+      
+        <li class="post-item"><a href="/posts/202108051521/">Go Select</a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-categories content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Categories</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li>
+          <a href="https://note.strawbreey.com/categories/go/">GO</a>
+          <span>2</span>
+        </li>
+      
+    </ul>
+  </div>
+
+  
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-tags content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Tags</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <div class="tags-list">
+      
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+      
+        <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
+      
+        <a href="https://note.strawbreey.com/tags/vscode/" data-count="3" class="soft-size--small soft-style--hover soft-style--active">vscode</a>
+      
+        <a href="https://note.strawbreey.com/tags/git/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">git</a>
+      
+        <a href="https://note.strawbreey.com/tags/mysql/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">mysql</a>
+      
+        <a href="https://note.strawbreey.com/tags/webapi/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">webApi</a>
+      
+        <a href="https://note.strawbreey.com/tags/angular/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">angular</a>
+      
+        <a href="https://note.strawbreey.com/tags/devops/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">devops</a>
+      
+        <a href="https://note.strawbreey.com/tags/go/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">GO</a>
+      
+        <a href="https://note.strawbreey.com/tags/interview/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">interview</a>
+      
+        <a href="https://note.strawbreey.com/tags/toggle/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">toggle</a>
+      
+    </div>
+  </div>
+
+  
+</section>
+
+  </aside>
+</div>
+  </main><footer class="footer-container layout-block">
+  
+  <div class="social-icons">
+    
+      <a class="soft-size--primary soft-style--box" href="https://github.com/miiiku" target="_blank" rel="noopener noreferrer">
+          
+        <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://twitter.com/guanquanhong" target="_blank" rel="noopener noreferrer">
+        
+
+          
+        <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.instagram.com/sukoshi_dayo/" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+          
+        <svg class="icon icon-instagram" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M512 0C372.906667 0 355.541333 0.64 300.928 3.072 246.4 5.632 209.28 14.208 176.64 26.88c-33.664 13.056-62.250667 30.592-90.709333 59.050667S39.893333 142.933333 26.88 176.64C14.208 209.28 5.589333 246.4 3.072 300.928 0.512 355.541333 0 372.906667 0 512s0.64 156.458667 3.072 211.072c2.56 54.485333 11.136 91.648 23.808 124.288a251.093333 251.093333 0 0 0 59.050667 90.709333A250.368 250.368 0 0 0 176.64 997.12c32.682667 12.629333 69.802667 21.290667 124.288 23.808C355.541333 1023.488 372.906667 1024 512 1024s156.458667-0.64 211.072-3.072c54.485333-2.56 91.648-11.178667 124.288-23.808a251.648 251.648 0 0 0 90.709333-59.050667 250.026667 250.026667 0 0 0 59.050667-90.709333c12.629333-32.64 21.290667-69.802667 23.808-124.288 2.56-54.613333 3.072-71.978667 3.072-211.072s-0.64-156.458667-3.072-211.072c-2.56-54.485333-11.178667-91.690667-23.808-124.288a251.306667 251.306667 0 0 0-59.050667-90.709333A249.472 249.472 0 0 0 847.36 26.88c-32.64-12.672-69.802667-21.290667-124.288-23.808C668.458667 0.512 651.093333 0 512 0z m0 92.16c136.661333 0 152.96 0.682667 206.933333 3.029333 49.92 2.346667 77.013333 10.624 95.018667 17.706667 23.978667 9.258667 40.96 20.352 58.965333 38.229333 17.877333 17.92 28.970667 34.944 38.229334 58.922667 6.997333 18.005333 15.36 45.098667 17.621333 95.018667 2.432 54.016 2.986667 70.229333 2.986667 206.933333s-0.64 152.96-3.157334 206.933333c-2.602667 49.92-10.922667 77.013333-17.962666 95.018667a162.56 162.56 0 0 1-38.357334 58.965333 159.744 159.744 0 0 1-58.88 38.229334c-17.92 6.997333-45.44 15.36-95.36 17.621333-54.357333 2.432-70.357333 2.986667-207.317333 2.986667-137.002667 0-153.002667-0.64-207.317333-3.157334-49.962667-2.602667-77.482667-10.922667-95.402667-17.962666a158.549333 158.549333 0 0 1-58.837333-38.357334 155.477333 155.477333 0 0 1-38.4-58.88c-7.04-17.92-15.317333-45.44-17.92-95.36-1.92-53.76-2.602667-70.357333-2.602667-206.677333 0-136.362667 0.682667-153.002667 2.602667-207.402667 2.602667-49.92 10.88-77.397333 17.92-95.317333 8.96-24.32 20.437333-40.96 38.4-58.922667 17.877333-17.877333 34.56-29.397333 58.837333-38.314666 17.92-7.082667 44.842667-15.402667 94.762667-17.962667 54.4-1.92 70.4-2.56 207.317333-2.56l1.92 1.28z m0 156.928a262.912 262.912 0 1 0 0 525.824 262.912 262.912 0 1 0 0-525.824zM512 682.666667c-94.293333 0-170.666667-76.373333-170.666667-170.666667s76.373333-170.666667 170.666667-170.666667 170.666667 76.373333 170.666667 170.666667-76.373333 170.666667-170.666667 170.666667z m334.762667-443.946667a61.482667 61.482667 0 0 1-122.88 0 61.44 61.44 0 0 1 122.88 0z"></path>
+        </svg>
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://weibo.com/u/5561168966" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-weibo" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M385.682429 733.696q11.995429-19.456 6.290286-39.424t-25.746286-28.598857q-19.456-7.972571-41.691429-0.585143t-34.304 26.258286q-12.580571 19.456-7.460571 39.131429t24.576 28.891429 42.569143 1.462857 35.693714-27.136zM439.442429 664.576q4.534857-7.460571 1.974857-15.140571t-10.020571-10.605714q-7.972571-2.852571-16.310857 0.292571t-12.288 10.605714q-9.728 17.700571 7.460571 25.746286 7.972571 2.852571 16.603429-0.292571t12.580571-10.605714zM538.843572 725.723429q-25.746286 58.294857-90.258286 85.723429t-128 6.875429q-61.147429-19.456-84.260571-72.265143t3.730286-107.154286q26.843429-53.174857 86.601143-79.433143t120.32-10.825143q63.414857 16.603429 90.550857 68.315429t1.462857 108.836571zM717.165858 634.294857q-5.12-54.857143-50.834286-97.133714t-119.149714-62.317714-156.891429-11.995429q-127.414857 13.165714-211.163429 80.822857t-75.702857 151.113143q5.12 54.857143 50.834286 97.133714t119.149714 62.317714 156.891429 11.995429q127.414857-13.165714 211.163429-80.822857t75.702857-151.113143zM893.147572 636.562286q0 38.838857-21.138286 79.725714t-62.317714 78.262857-96.256 67.145143-129.170286 47.396571-154.550857 17.700571-157.110857-19.163429-137.435429-53.174857-98.011429-86.308571-37.156571-114.029714q0-65.682286 39.716571-139.995429t112.859429-147.456q96.548571-96.548571 195.145143-134.875429t140.873143 4.022857q37.156571 36.571429 11.410286 119.442286-2.267429 7.972571-0.585143 11.410286t5.705143 4.022857 8.265143-0.292571 7.68-1.974857l3.437714-1.170286q79.433143-33.718857 140.580571-33.718857t87.405714 34.889143q25.746286 35.986286 0 101.741714-1.170286 7.460571-2.56 11.410286t2.56 7.168 6.875429 4.315429 9.728 3.437714q32.548571 10.313143 58.88 26.843429t45.714286 46.592 19.456 66.56zM850.871001 279.990857q23.990857 26.843429 31.158857 62.025143t-3.730286 67.145143q-4.534857 13.165714-16.822857 19.456t-25.453714 2.267429q-13.165714-4.534857-19.456-16.822857t-2.267429-25.453714q11.410286-35.986286-13.677714-63.414857t-61.147429-19.968q-13.677714 2.852571-25.746286-4.534857t-14.262857-21.138286q-2.852571-13.677714 4.534857-25.453714t21.138286-14.555429q34.304-7.460571 68.022857 3.145143t57.709714 37.449143zM954.295001 186.88q49.737143 54.857143 64.292571 127.122286t-7.68 138.020571q-5.12 15.433143-19.456 22.820571t-29.696 2.267429-22.820571-19.456-2.852571-29.696q16.018286-46.884571 5.705143-98.304t-45.714286-90.258286q-35.401143-39.424-84.553143-54.564571t-98.889143-4.827429q-16.018286 3.437714-29.696-5.412571t-17.115429-24.868571 5.412571-29.403429 24.868571-16.822857q70.290286-14.848 139.410286 6.582857t118.857143 76.873143z"></path>
+        </svg>
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="https://www.zhihu.com/people/miku-84" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+        
+
+          
+        <svg class="icon icon-zhihu" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z"></path>
+        </svg>
+        
+      </a>
+    
+  </div>
+  
+
+  <div class="colour-bar"></div>
+  
+  
+  <p>© 2021 <a href="https://github.com/miiiku/hugo-theme-kagome">kagome</a>.</p>
+  
+
+  
+
+  <p>
+    Powered by
+    <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+    Theme - 
+    <a href="https://github.com/miiiku/hugo-theme-kagome" target="_blank" rel="noopener noreferrer author">kagome</a>
+  </p>
+
+  <p>
+    <a href="javascript:;" id="theme-light">🌞 light</a>
+    <a href="javascript:;" id="theme-dark">🌛 dark</a>
+    <a href="javascript:;" id="theme-auto">🤖️ auto</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>
