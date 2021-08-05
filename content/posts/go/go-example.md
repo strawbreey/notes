@@ -1065,6 +1065,188 @@ received two
 
 real    0m2.245s
 
+### 28. 超时处理
+
+超时 对于一个需要连接外部资源， 或者有耗时较长的操作的程序而言是很重要的。 得益于通道和 select，在 Go 中实现超时操作是简洁而优雅的。
+
+```golang
+package main
+import ( "fmt" "time")
+func main() {
+
+    // 在这个例子中，假如我们执行一个外部调用， 并在 2 秒后使用通道 c1 返回它的执行结果。
+    c1 := make(chan string, 1)
+
+    go func() {
+        time.Sleep(2 * time.Second)
+        c1 <- "result 1"
+    }()
+    
+    // 这里是使用 select 实现一个超时操作。 res := <- c1 等待结果，<-Time.After 等待超时（1秒钟）以后发送的值。 由于 select 默认处理第一个已准备好的接收操作， 因此如果操作耗时超过了允许的 1 秒的话，将会执行超时 case。
+
+    select {
+        case res := <-c1:
+            fmt.Println(res)
+        case <-time.After(1 * time.Second):
+            fmt.Println("timeout 1")
+    }
+    // 如果我们允许一个长一点的超时时间：3 秒， 就可以成功的从 c2 接收到值，并且打印出结果。
+
+    c2 := make(chan string, 1)
+    go func() {
+        time.Sleep(2 * time.Second)
+        c2 <- "result 2"
+    }()
+
+    select {
+        case res := <-c2:
+            fmt.Println(res)
+        case <-time.After(3 * time.Second):
+            fmt.Println("timeout 2")
+    }
+}
+```
+运行这个程序，首先显示运行超时的操作，然后是成功接收的。
+
+$ go run timeouts.go 
+timeout 1
+result 2
+
+
+### 29. 非阻塞通道操作
+
+常规的通过通道发送和接收数据是阻塞的。 然而，我们可以使用带一个 default 子句的 select 来实现 非阻塞 的发送、接收，甚至是非阻塞的多路 select。
+
+```golang
+package main
+import "fmt"
+
+func main() {
+    messages := make(chan string)
+    signals := make(chan bool)
+    
+    // 这是一个非阻塞接收的例子。 如果在 messages 中存在，然后 select 将这个值带入 <-messages case 中。 否则，就直接到 default 分支中。
+
+    select {
+        case msg := <-messages:
+            fmt.Println("received message", msg)
+        default:
+            fmt.Println("no message received")
+    }
+    
+    // 一个非阻塞发送的例子，代码结构和上面接收的类似。 msg 不能被发送到 message 通道，因为这是 个无缓冲区通道，并且也没有接收者，因此， default 会执行。
+
+    msg := "hi"
+    select {
+        case messages <- msg:
+            fmt.Println("sent message", msg)
+        default:
+            fmt.Println("no message sent")
+    }
+    // 我们可以在 default 前使用多个 case 子句来实现一个多路的非阻塞的选择器。 这里我们试图在 messages 和 signals 上同时使用非阻塞的接收操作。
+
+    select {
+        case msg := <-messages:
+            fmt.Println("received message", msg)
+        case sig := <-signals:
+            fmt.Println("received signal", sig)
+        default:
+            fmt.Println("no activity")
+    }
+}
+```
+$ go run non-blocking-channel-operations.go 
+no message received
+no message sent
+no activity
+
+
+### 30. 通道的关闭
+
+关闭 一个通道意味着不能再向这个通道发送值了。 该特性可以向通道的接收方传达工作已经完成的信息。
+
+```golang
+
+package main
+import "fmt"
+
+// 在这个例子中，我们将使用一个 jobs 通道，将工作内容， 从 main() 协程传递到一个工作协程中。 当我们没有更多的任务传递给工作协程时，我们将 close 这个 jobs 通道。
+
+func main() {
+    jobs := make(chan int, 5)
+    done := make(chan bool)
+    
+    // 这是工作协程。使用 j, more := <- jobs 循环的从 jobs 接收数据。 根据接收的第二个值，如果 jobs 已经关闭了， 并且通道中所有的值都已经接收完毕，那么 more 的值将是 false。 当我们完成所有的任务时，会使用这个特性通过 done 通道通知 main 协程。
+
+    go func() {
+        for {
+            j, more := <-jobs
+            if more {
+                fmt.Println("received job", j)
+            } else {
+                fmt.Println("received all jobs")
+                done <- true
+                return
+            }
+        }
+    }()
+    // 使用 jobs 发送 3 个任务到工作协程中，然后关闭 jobs。
+
+    for j := 1; j <= 3; j++ {
+        jobs <- j
+        fmt.Println("sent job", j)
+    }
+    close(jobs)
+    fmt.Println("sent all jobs")
+    // 使用前面学到的通道同步方法等待任务结束。
+
+    <-done
+}
+```
+$ go run closing-channels.go
+sent job 1
+received job 1
+sent job 2
+received job 2
+sent job 3
+received job 3
+sent all jobs
+received all jobs
+根据 关闭通道 的思想，可以引出我们的下一个示例：遍历通道。
+
+
+### 31. 通道遍历
+
+在前面的例子中， 我们讲过 for 和 range 为基本的数据结构提供了迭代的功能。 我们也可以使用这个语法来遍历的从通道中取值。
+
+```go
+package main
+import "fmt"
+func main() {
+    // 我们将遍历在 queue 通道中的两个值。
+    queue := make(chan string, 2)
+    queue <- "one"
+    queue <- "two"
+    close(queue)
+    
+    // range 迭代从 queue 中得到每个值。 因为我们在前面 close 了这个通道，所以，这个迭代会在接收完 2 个值之后结束。
+
+    for elem := range queue {
+        fmt.Println(elem)
+    }
+}
+```
+
+这个例子也让我们看到，一个非空的通道也是可以关闭的， 并且，通道中剩下的值仍然可以被接收到。
+
+$ go run range-over-channels.go
+one
+two
+
+
+
+
+
 
 
 ### 参考资料
