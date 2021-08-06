@@ -116,10 +116,12 @@ hello world
 </code></pre></div><p>有时候我们想将我们的程序编译成二进制文件。我们可以通过 go build 命来达到目的。</p>
 <pre><code>go build hello-world.go
 ls
-</code></pre><p>hello-world
-然后我们可以直接运行这个二进制文件。</p>
+</code></pre><blockquote>
+<p>hello-world.exe</p>
+</blockquote>
+<p>然后我们可以直接运行这个二进制文件。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls
-hello-world	hello-world.go
+hello-world.exe	hello-world.go
 ./hello-world
 </code></pre></div><h3 id="2-字符串">2. 字符串</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -942,7 +944,7 @@ ping</p>
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
 }
-</code></pre></div><h3 id="25通道同步">25通道同步</h3>
+</code></pre></div><h3 id="25-通道同步">25. 通道同步</h3>
 <p>可以使用通道来同步协程之间的执行状态。 这儿有一个例子，使用阻塞接收的方式，实现了等待另一个协程完成。 如果需要等待多个协程，WaitGroup 是一个更好的选择。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
 
@@ -970,7 +972,7 @@ ping</p>
 </span><span style="color:#75715e"></span>    <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">done</span>
 }
 
-</code></pre></div><h3 id="26通道方向">26.通道方向</h3>
+</code></pre></div><h3 id="26-通道方向">26. 通道方向</h3>
 <p>当使用通道作为函数的参数时，你可以指定这个通道是否为只读或只写。 该特性可以提升程序的类型安全。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -1188,6 +1190,80 @@ received all jobs
 <p>$ go run range-over-channels.go
 one
 two</p>
+<h3 id="32-timer">32. Timer</h3>
+<p>我们经常需要在未来的某个时间点运行 Go 代码，或者每隔一定时间重复运行代码。 Go 内置的 定时器 和 打点器 特性让这些变得很简单。 我们会先学习定时器，然后再学习打点器。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 定时器表示在未来某一时刻的独立事件。 你告诉定时器需要等待的时间，然后它将提供一个用于通知的通道。 这里的定时器将等待 2 秒。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">timer1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">NewTimer</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+    <span style="color:#75715e">// &lt;-timer1.C 会一直阻塞， 直到定时器的通道 C 明确的发送了定时器失效的值。
+</span><span style="color:#75715e"></span>
+    <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">timer1</span>.<span style="color:#a6e22e">C</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Timer 1 fired&#34;</span>)
+
+    <span style="color:#75715e">// 如果你需要的仅仅是单纯的等待，使用 time.Sleep 就够了。 使用定时器的原因之一就是，你可以在定时器触发之前将其取消。 例如这样。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">timer2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">NewTimer</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">timer2</span>.<span style="color:#a6e22e">C</span>
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Timer 2 fired&#34;</span>)
+    }()
+
+    <span style="color:#a6e22e">stop2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">timer2</span>.<span style="color:#a6e22e">Stop</span>()
+
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">stop2</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Timer 2 stopped&#34;</span>)
+    }
+
+    <span style="color:#75715e">// 给 timer2 足够的时间来触发它，以证明它实际上已经停止了。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+}
+</code></pre></div><p>第一个定时器将在程序开始后大约 2s 触发， 但是第二个定时器还未触发就停止了。</p>
+<p>$ go run timers.go
+Timer 1 fired
+Timer 2 stopped</p>
+<h3 id="33-ticker">33. Ticker</h3>
+<p>定时器 是当你想要在未来某一刻执行一次时使用的 - 打点器 则是为你想要以固定的时间间隔重复执行而准备的。 这里是一个打点器的例子，它将定时的执行，直到我们将它停止。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 打点器和定时器的机制有点相似：使用一个通道来发送数据。 这里我们使用通道内建的 select，等待每 500ms 到达一次的值。
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">ticker</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">NewTicker</span>(<span style="color:#ae81ff">500</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>) <span style="color:#75715e">// ticker 等同于 setinterval, 每500ms 触发一次  
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">done</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">bool</span>)
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#66d9ef">for</span> {
+            <span style="color:#66d9ef">select</span> {
+            <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">done</span>:
+                <span style="color:#66d9ef">return</span>
+            <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ticker</span>.<span style="color:#a6e22e">C</span>:
+                <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Tick at&#34;</span>, <span style="color:#a6e22e">t</span>)
+            }
+        }
+    }()
+    
+    <span style="color:#75715e">// 打点器可以和定时器一样被停止。 打点器一旦停止，将不能再从它的通道中接收到值。 我们将在运行 1600ms 后停止这个打点器。
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">1600</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+    <span style="color:#a6e22e">ticker</span>.<span style="color:#a6e22e">Stop</span>()
+    <span style="color:#a6e22e">done</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Ticker stopped&#34;</span>)
+}
+
+</code></pre></div><p>当我们运行这个程序时，打点器会在我们停止它前打点 3 次。</p>
+<p>$ go run tickers.go
+Tick at 2012-09-23 11:29:56.487625 -0700 PDT
+Tick at 2012-09-23 11:29:56.988063 -0700 PDT
+Tick at 2012-09-23 11:29:57.488076 -0700 PDT
+Ticker stopped</p>
 <h3 id="参考资料">参考资料</h3>
 <ul>
 <li><a href="https://gobyexample.com/" target="_blank" rel="noopener">Go by Example</a></li>
@@ -1270,15 +1346,15 @@ two</p>
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+        <li class="post-item"><a href="/posts/202108061612/">Php Implode</a></li>
+      
+        <li class="post-item"><a href="/posts/202108061510/">Sql Query Null</a></li>
+      
+        <li class="post-item"><a href="/posts/202108061125/">Elk</a></li>
+      
         <li class="post-item"><a href="/posts/202108051754/">Git Worktree Prune</a></li>
       
         <li class="post-item"><a href="/posts/202108051727/">Go Tour</a></li>
-      
-        <li class="post-item"><a href="/posts/202108051717/">Redis Single So Fast</a></li>
-      
-        <li class="post-item"><a href="/posts/202108051617/">Php Rand</a></li>
-      
-        <li class="post-item"><a href="/posts/202108051521/">Go Select</a></li>
       
     </ul>
   </div>

@@ -27,19 +27,19 @@
   
   
   
-  <title>Docker Compose 🌟 梨花细雨不见鹿2</title>
+  <title>Docker Dockerfile 🌟 梨花细雨不见鹿2</title>
 
-  <meta property="og:title" content="Docker Compose" />
-<meta property="og:description" content="Compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以" />
+  <meta property="og:title" content="Docker Dockerfile" />
+<meta property="og:description" content="Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession. FROM FROM [&ndash;platform=] [AS ] FROM [&ndash;platform=] [:] [AS ] FROM [&ndash;platform=] [@] [AS ] RUN RUN RUN [&ldquo;executable&rdquo;," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://note.strawbreey.com/posts/202012171600/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-12-17T16:00:03+08:00" />
-<meta property="article:modified_time" content="2020-12-17T16:00:03+08:00" />
+<meta property="article:published_time" content="2020-12-17T16:00:13+08:00" />
+<meta property="article:modified_time" content="2020-12-17T16:00:13+08:00" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Docker Compose"/>
-<meta name="twitter:description" content="Compose 简介 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以"/>
+<meta name="twitter:title" content="Docker Dockerfile"/>
+<meta name="twitter:description" content="Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession. FROM FROM [&ndash;platform=] [AS ] FROM [&ndash;platform=] [:] [AS ] FROM [&ndash;platform=] [@] [AS ] RUN RUN RUN [&ldquo;executable&rdquo;,"/>
 
 
   <link href="https://note.strawbreey.com/css/index.css" rel="stylesheet">    
@@ -87,7 +87,7 @@
   </div>
 
   <div class="card-text">
-    <h1 class="card-text--title">Docker Compose</h1>
+    <h1 class="card-text--title">Docker Dockerfile</h1>
     
       <p class="card-text--row">2020-12-17 16:00</p>
       
@@ -104,296 +104,17 @@
 
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
-            <h3 id="compose-简介">Compose 简介</h3>
-<p>Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。</p>
-<h3 id="docker-compose-常用命令和配置">Docker Compose 常用命令和配置</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. ps：列出所有运行容器</span>
-docker-compose ps
-
-<span style="color:#75715e"># 2. logs：查看服务日志输出</span>
-docker-compose logs
-
-<span style="color:#75715e"># 3. port：打印绑定的公共端口，下面命令可以输出 eureka 服务 8761 端口所绑定的公共端口</span>
-docker-compose port eureka <span style="color:#ae81ff">8761</span>
-
-<span style="color:#75715e"># 4. build：构建或者重新构建服务</span>
-docker-compose build
-
-<span style="color:#75715e"># 5. start：启动指定服务已存在的容器</span>
-docker-compose start eureka
-
-<span style="color:#75715e"># 6. stop：停止已运行的服务的容器</span>
-docker-compose stop eureka
-
-<span style="color:#75715e"># 7. rm：删除指定服务的容器</span>
-docker-compose rm eureka
-
-<span style="color:#75715e"># 8. up：构建、启动容器</span>
-docker-compose up
- 
-<span style="color:#75715e"># 9. kill：通过发送 SIGKILL 信号来停止指定服务的容器</span>
-docker-compose kill eureka
-
-<span style="color:#75715e"># 10. pull：下载服务镜像</span>
-
-<span style="color:#75715e"># 11 scale：设置指定服务运气容器的个数，以 service=num 形式指定</span>
-docker-compose scale user<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> movie<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
-
-<span style="color:#75715e">#  12. run：在一个服务上执行一个命令</span>
-docker-compose run web bash
-
-</code></pre></div><h3 id="compose-使用的三个步骤">Compose 使用的三个步骤：</h3>
-<ol>
-<li>准备项目</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir composetest
-cd composetest
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">time</span>
-
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">redis</span>
-<span style="color:#a6e22e">from</span> <span style="color:#a6e22e">flask</span> <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Flask</span>
-
-<span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Flask</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">name__</span>)
-<span style="color:#a6e22e">cache</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">Redis</span>(<span style="color:#a6e22e">host</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;redis&#39;</span>, <span style="color:#a6e22e">port</span><span style="color:#f92672">=</span><span style="color:#ae81ff">6379</span>)
-
-
-<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">get_hit_count</span>()<span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">retries</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-    <span style="color:#66d9ef">while</span> <span style="color:#a6e22e">True</span><span style="color:#f92672">:</span>
-        <span style="color:#66d9ef">try</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cache</span>.<span style="color:#a6e22e">incr</span>(<span style="color:#e6db74">&#39;hits&#39;</span>)
-        <span style="color:#a6e22e">except</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">exceptions</span>.<span style="color:#a6e22e">ConnectionError</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">exc</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">retries</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
-                <span style="color:#a6e22e">raise</span> <span style="color:#a6e22e">exc</span>
-            <span style="color:#a6e22e">retries</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-            <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">0.5</span>)
-
-
-<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
-<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">hello</span>()<span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_hit_count</span>()
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello World! I have been seen {} times.\n&#39;</span>.<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">count</span>)
-</code></pre></div><ol start="2">
-<li>使用 Dockerfile 定义应用程序的环境。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># FROM python:3.7-alpine: 从 Python 3.7 映像开始构建镜像。</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.7-alpine</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 将工作目录设置为 /code。</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /code</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># RUN apk add --no-cache gcc musl-dev linux-headers: 安装 gcc，以便诸如 MarkupSafe 和 SQLAlchemy 之类的 Python 包可以编译加</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> FLASK_APP app.py<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> FLASK_RUN_HOST 0.0.0.0<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apk add --no-cache gcc musl-dev linux-headers<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> requirements.txt requirements.txt<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 将 . 项目中的当前目录复制到 . 镜像中的工作目录。</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># CMD [&#34;flask&#34;, &#34;run&#34;]: 容器提供默认的执行命令为：flask run。</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;flask&#34;</span>, <span style="color:#e6db74">&#34;run&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><ol start="2">
-<li>使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">web</span>:
-    <span style="color:#f92672">build</span>: <span style="color:#ae81ff">.</span>
-    <span style="color:#f92672">ports</span>:
-     - <span style="color:#e6db74">&#34;5000:5000&#34;</span>
-  <span style="color:#f92672">redis</span>:
-    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;redis:alpine&#34;</span>
-</code></pre></div><p>该 Compose 文件定义了两个服务：web 和 redis。</p>
+            <p>Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.</p>
+<p>FROM</p>
+<p>FROM [&ndash;platform=<!-- raw HTML omitted -->] <!-- raw HTML omitted --> [AS <!-- raw HTML omitted -->]
+FROM [&ndash;platform=<!-- raw HTML omitted -->] <!-- raw HTML omitted -->[:<!-- raw HTML omitted -->] [AS <!-- raw HTML omitted -->]
+FROM [&ndash;platform=<!-- raw HTML omitted -->] <!-- raw HTML omitted -->[@<!-- raw HTML omitted -->] [AS <!-- raw HTML omitted -->]</p>
+<p>RUN</p>
+<p>RUN <!-- raw HTML omitted -->
+RUN [&ldquo;executable&rdquo;, &ldquo;param1&rdquo;, &ldquo;param2&rdquo;]</p>
+<h3 id="参考资料">参考资料</h3>
 <ul>
-<li>web：该 web 服务使用从 Dockerfile 当前目录中构建的镜像。然后，它将容器和主机绑定到暴露的端口 5000。此示例服务使用 Flask Web 服务器的默认端口 5000 。</li>
-<li>redis：该 redis 服务使用 Docker Hub 的公共 Redis 映像。</li>
-</ul>
-<ol start="4">
-<li>最后，执行 docker-compose up 命令来启动并运行整个应用程序。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 在测试目录中，执行以下命令来启动应用程序：</span>
-docker-compose up
-
-<span style="color:#75715e"># 如果你想在后台执行该服务可以加上 -d 参数：</span>
-docker-compose up -d
-</code></pre></div><h3 id="yml-配置指令参考">yml 配置指令参考</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># version 指定本 yml 依从的 compose 哪个版本制定的。</span>
-<span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.7&#34;</span>
-<span style="color:#75715e"># 多个容器集合</span>
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">webapp</span>:
-    <span style="color:#75715e"># build: 指定为构建镜像上下文路径：例如 webapp 服务，指定为从上下文路径 ./dir/Dockerfile 所构建的镜像：</span>
-    <span style="color:#f92672">build</span>:
-      <span style="color:#75715e"># context: 上下文路径。</span>
-      <span style="color:#f92672">context</span>: <span style="color:#ae81ff">./dir</span>
-      <span style="color:#75715e"># dockerfile: 指定构建镜像的 Dockerfile 文件名。</span>
-      <span style="color:#f92672">dockerfile</span>: <span style="color:#ae81ff">Dockerfile-alternate</span>
-      <span style="color:#75715e"># args: 添加构建参数，这是只能在构建过程中访问的环境变量。</span>
-      <span style="color:#f92672">args</span>:
-        <span style="color:#f92672">buildno</span>: <span style="color:#ae81ff">1</span>
-    <span style="color:#75715e"># 设置构建镜像的标签。</span>
-
-    <span style="color:#75715e"># command：覆盖容器启动后默认执行的命令</span>
-    <span style="color:#f92672">command</span>: <span style="color:#ae81ff">bundle exec thin -p 3000</span>
-    <span style="color:#f92672">labels</span>:
-      - <span style="color:#e6db74">&#34;com.example.description=Accounting webapp&#34;</span>
-      - <span style="color:#e6db74">&#34;com.example.department=Finance&#34;</span>
-      - <span style="color:#e6db74">&#34;com.example.label-with-empty-value&#34;</span>
-    <span style="color:#75715e"># 多层构建，可以指定构建哪一层</span>
-    <span style="color:#f92672">target</span>: <span style="color:#ae81ff">prod</span>
-    <span style="color:#75715e"># 设置依赖关系。</span>
-      <span style="color:#75715e"># docker-compose up ：以依赖性顺序启动服务。在以下示例中，先启动 db 和 redis ，才会启动 web。</span>
-      <span style="color:#75715e"># docker-compose up SERVICE ：自动包含 SERVICE 的依赖项。在以下示例中，docker-compose up web 还将创建并启动 db 和 redis。</span>
-      <span style="color:#75715e"># docker-compose stop ：按依赖关系顺序停止服务。在以下示例中，web 在 db 和 redis 之前停止。</span>
-    <span style="color:#f92672">depends_on</span>:
-      - <span style="color:#ae81ff">db</span>
-      - <span style="color:#ae81ff">redis</span>
-  <span style="color:#f92672">redis</span>:
-    <span style="color:#75715e"># image: 指定容器运行的镜像。以下格式都可以：</span>
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">redis:alpine</span>
-    <span style="color:#75715e"># devices: 指定设备映射列表。</span>
-    <span style="color:#f92672">devices</span>:  
-      - <span style="color:#e6db74">&#34;/dev/ttyUSB0:/dev/ttyUSB0&#34;</span>
-    <span style="color:#75715e"># dns: 自定义 DNS 服务器，可以是单个值或列表的多个值。</span>
-    <span style="color:#f92672">dns</span>: <span style="color:#ae81ff">8.8.8.8</span>
-    <span style="color:#75715e"># dns_search:自定义 DNS 搜索域。可以是单个值或列表。</span>
-    <span style="color:#f92672">dns_search</span>:  <span style="color:#ae81ff">example.com</span>
-    <span style="color:#75715e"># entrypoint: 覆盖容器默认的 entrypoint。</span>
-    <span style="color:#f92672">entrypoint</span>: <span style="color:#ae81ff">/code/entrypoint.sh</span>
-    <span style="color:#75715e"># env_file: 从文件添加环境变量。可以是单个值或列表的多个值。</span>
-    <span style="color:#f92672">env_file</span>:
-      - <span style="color:#ae81ff">./common.env</span>
-      - <span style="color:#ae81ff">./apps/web.env</span>
-      - <span style="color:#ae81ff">/opt/secrets.env</span>
-    <span style="color:#75715e"># environment: 添加环境变量。您可以使用数组或字典、任何布尔值，布尔值需要用引号引起来，以确保 YML 解析器不会将其转换为 True 或 False。</span>
-    <span style="color:#f92672">environment</span>: 
-    <span style="color:#75715e"># expose: 暴露端口，但不映射到宿主机，只被连接的服务访问。</span>
-    <span style="color:#f92672">expose</span>:
-      - <span style="color:#e6db74">&#34;3000&#34;</span>
-      - <span style="color:#e6db74">&#34;8000&#34;</span> 
-    <span style="color:#75715e"># extra_hosts： 添加主机名映射。类似 docker client --add-host。</span>
-    <span style="color:#f92672">extra_hosts</span>: 
-      - <span style="color:#e6db74">&#34;somehost:162.242.195.82&#34;</span>
-      - <span style="color:#e6db74">&#34;otherhost:50.31.209.229&#34;</span>
-    <span style="color:#75715e"># healthcheck: 用于检测 docker 服务是否健康运行。</span>
-    <span style="color:#f92672">healthcheck</span>: 
-      <span style="color:#f92672">test</span>: [<span style="color:#e6db74">&#34;CMD&#34;</span>, <span style="color:#e6db74">&#34;curl&#34;</span>, <span style="color:#e6db74">&#34;-f&#34;</span>, <span style="color:#e6db74">&#34;http://localhost&#34;</span>] <span style="color:#75715e"># 设置检测程序</span>
-      <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">1m30s</span> <span style="color:#75715e"># 设置检测间隔</span>
-      <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">10s</span> <span style="color:#75715e"># 设置检测超时时间</span>
-      <span style="color:#f92672">retries</span>: <span style="color:#ae81ff">3</span> <span style="color:#75715e"># 设置重试次数</span>
-      <span style="color:#f92672">start_period</span>: <span style="color:#ae81ff">40s</span> <span style="color:#75715e"># 启动后，多少秒开始启动检测程序</span>
-    <span style="color:#75715e"># logging 服务的日志记录配置。</span>
-    <span style="color:#f92672">logging</span>:
-      <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">json-file</span>
-      <span style="color:#f92672">options</span>:
-        <span style="color:#f92672">max-size</span>: <span style="color:#e6db74">&#34;200k&#34;</span> <span style="color:#75715e"># 单个文件大小为200k</span>
-        <span style="color:#f92672">max-file</span>: <span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#75715e"># 最多10个文件</span>
-    <span style="color:#75715e"># 设置网络模式。</span>
-    <span style="color:#75715e"># network_mode: &#34;bridge&#34;</span>
-    <span style="color:#75715e"># network_mode: &#34;host&#34;</span>
-    <span style="color:#75715e"># network_mode: &#34;none&#34;</span>
-    <span style="color:#75715e"># network_mode: &#34;service:[service name]&#34;</span>
-    <span style="color:#75715e"># network_mode: &#34;container:[container name/id]&#34;</span>
-    <span style="color:#f92672">network_mode</span>: <span style="color:#e6db74">&#34;bridge&#34;</span>
-
-    <span style="color:#75715e"># restart: o：是默认的重启策略，在任何情况下都不会重启容器。always：容器总是重新启动。on-failure：在容器非正常退出时（退出状态非0），才会重启容器。unless-stopped：在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
-
-    <span style="color:#75715e"># 存储敏感数据，例如密码：</span>
-    <span style="color:#f92672">secrets</span>:
-      - <span style="color:#ae81ff">my_secret</span>
-
-    <span style="color:#75715e"># 修改容器默认的 schema 标签。</span>
-    <span style="color:#f92672">security-opt</span>:
-      - <span style="color:#ae81ff">label:user:USER  </span> <span style="color:#75715e"># 设置容器的用户标签</span>
-      - <span style="color:#ae81ff">label:role:ROLE  </span> <span style="color:#75715e"># 设置容器的角色标签</span>
-      - <span style="color:#ae81ff">label:type:TYPE  </span> <span style="color:#75715e"># 设置容器的安全策略标签</span>
-      - <span style="color:#ae81ff">label:level:LEVEL </span> <span style="color:#75715e"># 设置容器的安全等级标签</span>
-
-    <span style="color:#75715e"># 指定在容器无法处理 SIGTERM (或者任何 stop_signal 的信号)，等待多久后发送 SIGKILL 信号关闭容器。</span>
-    <span style="color:#f92672">stop_grace_period</span>: <span style="color:#ae81ff">1s</span>
-
-    <span style="color:#75715e"># stop_signal</span>
-    <span style="color:#f92672">stop_signal</span>: <span style="color:#ae81ff">SIGUSR1</span>
-
-    <span style="color:#75715e"># 设置容器中的内核参数，可以使用数组或字典格式。</span>
-    <span style="color:#f92672">sysctls</span>:
-      - <span style="color:#ae81ff">net.core.somaxconn=1024</span>
-      - <span style="color:#ae81ff">net.ipv4.tcp_syncookies=0</span>
-
-    <span style="color:#75715e"># 在容器内安装一个临时文件系统。可以是单个值或列表的多个值。</span>
-    <span style="color:#f92672">tmpfs</span>:
-      - <span style="color:#ae81ff">/run</span>
-      - <span style="color:#ae81ff">/tmp</span>
-
-    <span style="color:#75715e"># 覆盖容器默认的 ulimit。</span>
-    <span style="color:#f92672">ulimits</span>:
-      <span style="color:#f92672">nproc</span>: <span style="color:#ae81ff">65535</span>
-      <span style="color:#f92672">nofile</span>:
-        <span style="color:#f92672">soft</span>: <span style="color:#ae81ff">20000</span>
-        <span style="color:#f92672">hard</span>: <span style="color:#ae81ff">40000</span>
-    <span style="color:#75715e"># 将主机的数据卷或着文件挂载到容器里。</span>
-    <span style="color:#f92672">volumes</span>: 
-      - <span style="color:#e6db74">&#34;/localhost/postgres.sock:/var/run/postgres/postgres.sock&#34;</span>
-      - <span style="color:#e6db74">&#34;/localhost/data:/var/lib/postgresql/data&#34;</span>
-    <span style="color:#75715e"># 指定与服务的部署和运行有关的配置。只在 swarm 模式下才会有用。</span>
-    <span style="color:#f92672">deploy</span>:
-      <span style="color:#75715e"># mode: 指定服务提供的模式。 1. replicated：复制服务，复制指定服务到集群的机器上。 2. global：全局服务，服务将部署至集群的每个节点。</span>
-      <span style="color:#f92672">mode</span>: <span style="color:#ae81ff">replicated</span>
-      <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">6</span>
-      <span style="color:#75715e"># endpoint_mode: 访问集群服务的方式 1. vip: Docker 集群服务一个对外的虚拟 ip。所有的请求都会通过这个虚拟 ip 到达集群服务内部的机器。2. dnsrr DNS 轮询（DNSRR）。所有的请求会自动轮询获取到集群 ip 列表中的一个 ip 地址。</span>
-      <span style="color:#f92672">endpoint_mode</span>: <span style="color:#ae81ff">dnsrr</span>
-
-      <span style="color:#75715e">#labels 在服务上设置标签。可以用容器上的 labels（跟 deploy 同级的配置） 覆盖 deploy 下的 labels。</span>
-      <span style="color:#f92672">labels</span>: 
-        <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;This redis service label&#34;</span>
-      <span style="color:#75715e"># 配置服务器资源使用的限制，例如上例子，配置 redis 集群运行需要的 cpu 的百分比 和 内存的占用。避免占用资源过高出现异常</span>
-      <span style="color:#f92672">resources</span>:
-        <span style="color:#f92672">limits</span>:
-          <span style="color:#f92672">cpus</span>: <span style="color:#e6db74">&#39;0.50&#39;</span>
-          <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">50M</span>
-        <span style="color:#f92672">reservations</span>:
-          <span style="color:#f92672">cpus</span>: <span style="color:#e6db74">&#39;0.25&#39;</span>
-          <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">20M</span>
-      <span style="color:#75715e"># 配置如何在退出容器时重新启动容器</span>
-      <span style="color:#f92672">restart_policy</span>:
-        <span style="color:#75715e"># condition：可选 none，on-failure 或者 any（默认值：any）。</span>
-        <span style="color:#f92672">condition</span>: <span style="color:#66d9ef">on</span>-<span style="color:#ae81ff">failure</span>
-        <span style="color:#75715e"># delay：设置多久之后重启（默认值：0）。</span>
-        <span style="color:#f92672">delay</span>: <span style="color:#ae81ff">5s</span>
-        <span style="color:#75715e"># max_attempts：尝试重新启动容器的次数，超出次数，则不再尝试（默认值：一直重试）。</span>
-        <span style="color:#f92672">max_attempts</span>: <span style="color:#ae81ff">3</span>
-        <span style="color:#75715e"># window：设置容器重启超时时间（默认值：0）。</span>
-        <span style="color:#f92672">window</span>: <span style="color:#ae81ff">120s</span>
-      <span style="color:#75715e"># 配置在更新失败的情况下应如何回滚服务。</span>
-      <span style="color:#f92672">rollback_config</span>: 
-        <span style="color:#75715e"># parallelism: 一次要回滚的容器数。如果设置为0，则所有容器将同时回滚。</span>
-        <span style="color:#f92672">parallelism</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#75715e"># delay: 每个容器组回滚之间等待的时间（默认为0s）。</span>
-        <span style="color:#f92672">delay</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#75715e"># failure_action: 如果回滚失败，该怎么办。其中一个 continue 或者 pause（默认pause）。</span>
-        <span style="color:#f92672">failure_action</span>: <span style="color:#ae81ff">continue</span>
-        <span style="color:#75715e"># monitor: 每个容器更新后，持续观察是否失败了的时间 (ns|us|ms|s|m|h)（默认为0s）。</span>
-        <span style="color:#f92672">monitor</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#75715e"># max_failure_ratio: 在回滚期间可以容忍的故障率（默认为0）。</span>
-        <span style="color:#f92672">max_failure_ratio</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#75715e"># order: 回滚期间的操作顺序。其中一个 stop-first（串行回滚），或者 start-first（并行回滚）（默认 stop-first ）。</span>
-        <span style="color:#f92672">order</span>: <span style="color:#ae81ff">start-first</span>
-      <span style="color:#75715e"># 配置应如何更新服务，对于配置滚动更新很有用。</span>
-      <span style="color:#f92672">update_config</span>:
-        <span style="color:#75715e"># parallelism： 一次更新的容器数。</span>
-        <span style="color:#f92672">parallelism</span>: <span style="color:#ae81ff">5</span>
-        <span style="color:#75715e"># delay：在更新一组容器之间等待的时间。</span>
-        <span style="color:#f92672">delay</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#75715e"># failure_action：如果更新失败，该怎么办。其中一个 continue，rollback 或者pause （默认：pause）。</span>
-        <span style="color:#f92672">failure_action</span>: <span style="color:#ae81ff">pause</span>
-        <span style="color:#75715e"># monitor：每个容器更新后，持续观察是否失败了的时间 (ns|us|ms|s|m|h)（默认为0s）。</span>
-        <span style="color:#f92672">monitor</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#75715e"># max_failure_ratio：在更新过程中可以容忍的故障率。</span>
-        <span style="color:#f92672">max_failure_ratio</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#75715e"># order回滚期间的操作顺序。其中一个 stop-first（串行回滚），或者 start-first（并行回滚）（默认stop-first）。</span>
-        <span style="color:#f92672">order</span>: <span style="color:#ae81ff">stop-first</span>
-</code></pre></div><h3 id="参考资料">参考资料</h3>
-<ul>
-<li><a href="https://www.runoob.com/docker/docker-compose.html" target="_blank" rel="noopener">docker-compose</a></li>
+<li><a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noopener">Dockerfile reference</a></li>
 </ul>
 
           </div>
@@ -412,8 +133,8 @@ docker-compose up -d
       <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
   <div class="card-cover" ></div>
   <div class="card-text">
-    <a href="/posts/202012171600/"><h4 class="card-text--title text-ellipsis">Docker Dockerfile</h4></a>
-    <p class="card-text--row">2020-12-17 16:00</p>
+    <a href="/posts/202012171757/"><h4 class="card-text--title text-ellipsis">Yaml Tutorial</h4></a>
+    <p class="card-text--row">2020-12-17 17:57</p>
   </div>
 </section>
     
@@ -421,8 +142,8 @@ docker-compose up -d
       <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
   <div class="card-cover" ></div>
   <div class="card-text">
-    <a href="/posts/202012171449/"><h4 class="card-text--title text-ellipsis">Docker Mirror</h4></a>
-    <p class="card-text--row">2020-12-17 14:49</p>
+    <a href="/posts/202012171600/"><h4 class="card-text--title text-ellipsis">Docker Compose</h4></a>
+    <p class="card-text--row">2020-12-17 16:00</p>
   </div>
 </section>
     
@@ -471,15 +192,15 @@ docker-compose up -d
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+        <li class="post-item"><a href="/posts/202108061612/">Php Implode</a></li>
+      
+        <li class="post-item"><a href="/posts/202108061510/">Sql Query Null</a></li>
+      
+        <li class="post-item"><a href="/posts/202108061125/">Elk</a></li>
+      
         <li class="post-item"><a href="/posts/202108051754/">Git Worktree Prune</a></li>
       
         <li class="post-item"><a href="/posts/202108051727/">Go Tour</a></li>
-      
-        <li class="post-item"><a href="/posts/202108051717/">Redis Single So Fast</a></li>
-      
-        <li class="post-item"><a href="/posts/202108051617/">Php Rand</a></li>
-      
-        <li class="post-item"><a href="/posts/202108051521/">Go Select</a></li>
       
     </ul>
   </div>

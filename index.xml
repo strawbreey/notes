@@ -9,7 +9,7 @@
     <managingEditor>guanquanhong@163.com (Sukoshi)</managingEditor>
     <webMaster>guanquanhong@163.com (Sukoshi)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 05 Aug 2021 17:54:55 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 16:12:45 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gin Start</title>
       <link>https://note.strawbreey.com/posts/202107261428/</link>
@@ -17,6 +17,33 @@
       <author>guanquanhong@163.com (Sukoshi)</author>
       <guid>https://note.strawbreey.com/posts/202107261428/</guid>
       <description>Gin 是一个用 Go (Golang) 编写的 HTTP web 框架。 它是一个类似于 martini 但拥有更好性能的 API 框架, 优于 httprouter，速度提高了近 40 倍。如果你需要极好的性能，使用</description>
+    </item>
+    
+    <item>
+      <title>Php Implode</title>
+      <link>https://note.strawbreey.com/posts/202108061612/</link>
+      <pubDate>Fri, 06 Aug 2021 16:12:45 +0800</pubDate>
+      <author>guanquanhong@163.com (Sukoshi)</author>
+      <guid>https://note.strawbreey.com/posts/202108061612/</guid>
+      <description>implode (PHP 4, PHP 5, PHP 7, PHP 8) implode — 将一个一维数组的值转化为字符串 说明 implode(string $glue, array $pieces): string implode(array $pieces): string 用 glue 将一维数组的值连接为一个字符串。 注意: 因为历史原因，implod</description>
+    </item>
+    
+    <item>
+      <title>Sql Query Null</title>
+      <link>https://note.strawbreey.com/posts/202108061510/</link>
+      <pubDate>Fri, 06 Aug 2021 15:10:34 +0800</pubDate>
+      <author>guanquanhong@163.com (Sukoshi)</author>
+      <guid>https://note.strawbreey.com/posts/202108061510/</guid>
+      <description>sql查询字段为null的值 判断使用 is null 就可以啦 -- 查询数据为空 SELECT * FROM BANK where BANK_CODE is null -- 查询数据不为空 SELECT * FROM BANK where BANK_CODE is not null</description>
+    </item>
+    
+    <item>
+      <title>Elk</title>
+      <link>https://note.strawbreey.com/posts/202108061125/</link>
+      <pubDate>Fri, 06 Aug 2021 11:25:23 +0800</pubDate>
+      <author>guanquanhong@163.com (Sukoshi)</author>
+      <guid>https://note.strawbreey.com/posts/202108061125/</guid>
+      <description>ELK Stack 简介 ELK 不是一款软件，而是 Elasticsearch、Logstash 和 Kibana 三种软件产品的首字母缩写。这三者都是开源软件，通常配合使用，而且</description>
     </item>
     
     <item>
