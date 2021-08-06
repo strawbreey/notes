@@ -1,18 +1,17 @@
 baseURL = "https://note.strawbreey.com"
 languageCode = "en-us"
-title = "梨花细雨不见鹿2"
+title = "如沐春风"
 theme = "kagome"
 paginate = 7
 copyright = "© 2021 <a href=\"https://github.com/miiiku/hugo-theme-kagome\">kagome</a>."
 hasCJKLanguage = true
-# publishDir = "docs"
 
 # 作者信息
 [author]
-  name = "Sukoshi"
-  email = "guanquanhong@163.com"
-  description = "梅花鹿的角叫鹿角"
-  avatar = "https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&r=g&d=retro"
+  name = "strawbreey"
+  email = "strawbreey@qq.com"
+  description = "strawbreey"
+  avatar = "/favicon.png"
 
 # 菜单/导航栏
 [menu]

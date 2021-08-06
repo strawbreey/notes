@@ -2,6 +2,8 @@
 title: "Go Build"
 date: 2021-01-12T16:57:26+08:00
 draft: false
+categories: ['GO']
+tags: ['GO']
 ---
 
 Go 命令

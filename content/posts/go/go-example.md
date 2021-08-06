@@ -2,6 +2,8 @@
 title: "Go Example"
 date: 2020-12-14T12:18:37+08:00
 draft: false
+categories: ['GO']
+tags: ['GO']
 ---
 
 ### 1. 编译

@@ -3,7 +3,7 @@ title: "Gin Start"
 date: 2021-07-26T14:28:16+08:00
 draft: false
 showonlyimage: true
-cover: "img/portfolio/business-card-26.jpg"
+cover: "cover/1.jpg"
 weight: 1
 ---
 

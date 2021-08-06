@@ -2,6 +2,8 @@
 title: "Go for Range"
 date: 2020-11-30T15:46:43+08:00
 draft: false
+categories: ['GO']
+tags: ['GO']
 ---
 
 

@@ -2,6 +2,8 @@
 title: "Go Effective"
 date: 2020-11-19T14:55:01+08:00
 draft: false
+categories: ['GO']
+tags: ['GO']
 ---
 
 ### Introduction 介绍
