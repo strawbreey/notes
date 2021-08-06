@@ -27,12 +27,13 @@ go build hello-world.go
 ls
 ```
 
-hello-world
+> hello-world.exe
+
 然后我们可以直接运行这个二进制文件。
 
 ```bash
 ls
-hello-world	hello-world.go
+hello-world.exe	hello-world.go
 ./hello-world
 ```
 
@@ -952,7 +953,7 @@ func main() {
 }
 ```
 
-### 25通道同步
+### 25. 通道同步
 
 可以使用通道来同步协程之间的执行状态。 这儿有一个例子，使用阻塞接收的方式，实现了等待另一个协程完成。 如果需要等待多个协程，WaitGroup 是一个更好的选择。
 
@@ -985,7 +986,7 @@ func main() {
 
 ```
 
-### 26.通道方向
+### 26. 通道方向
 
 当使用通道作为函数的参数时，你可以指定这个通道是否为只读或只写。 该特性可以提升程序的类型安全。
 
@@ -1244,9 +1245,92 @@ one
 two
 
 
+### 32. Timer
+
+我们经常需要在未来的某个时间点运行 Go 代码，或者每隔一定时间重复运行代码。 Go 内置的 定时器 和 打点器 特性让这些变得很简单。 我们会先学习定时器，然后再学习打点器。
+
+```go
+package main
+import (
+    "fmt"
+    "time"
+)
+func main() {
+    // 定时器表示在未来某一时刻的独立事件。 你告诉定时器需要等待的时间，然后它将提供一个用于通知的通道。 这里的定时器将等待 2 秒。
+    timer1 := time.NewTimer(2 * time.Second)
+    // <-timer1.C 会一直阻塞， 直到定时器的通道 C 明确的发送了定时器失效的值。
+
+    <-timer1.C
+    fmt.Println("Timer 1 fired")
+
+    // 如果你需要的仅仅是单纯的等待，使用 time.Sleep 就够了。 使用定时器的原因之一就是，你可以在定时器触发之前将其取消。 例如这样。
+    timer2 := time.NewTimer(time.Second)
+
+    go func() {
+        <-timer2.C
+        fmt.Println("Timer 2 fired")
+    }()
+
+    stop2 := timer2.Stop()
+
+    if stop2 {
+        fmt.Println("Timer 2 stopped")
+    }
+
+    // 给 timer2 足够的时间来触发它，以证明它实际上已经停止了。
+    time.Sleep(2 * time.Second)
+}
+```
+第一个定时器将在程序开始后大约 2s 触发， 但是第二个定时器还未触发就停止了。
+
+$ go run timers.go
+Timer 1 fired
+Timer 2 stopped
 
 
+### 33. Ticker
 
+定时器 是当你想要在未来某一刻执行一次时使用的 - 打点器 则是为你想要以固定的时间间隔重复执行而准备的。 这里是一个打点器的例子，它将定时的执行，直到我们将它停止。
+
+```go
+
+package main
+import (
+    "fmt"
+    "time"
+)
+func main() {
+    // 打点器和定时器的机制有点相似：使用一个通道来发送数据。 这里我们使用通道内建的 select，等待每 500ms 到达一次的值。
+
+    ticker := time.NewTicker(500 * time.Millisecond) // ticker 等同于 setinterval, 每500ms 触发一次  
+    done := make(chan bool)
+    go func() {
+        for {
+            select {
+            case <-done:
+                return
+            case t := <-ticker.C:
+                fmt.Println("Tick at", t)
+            }
+        }
+    }()
+    
+    // 打点器可以和定时器一样被停止。 打点器一旦停止，将不能再从它的通道中接收到值。 我们将在运行 1600ms 后停止这个打点器。
+
+    time.Sleep(1600 * time.Millisecond)
+    ticker.Stop()
+    done <- true
+    fmt.Println("Ticker stopped")
+}
+
+```
+当我们运行这个程序时，打点器会在我们停止它前打点 3 次。
+
+$ go run tickers.go
+Tick at 2012-09-23 11:29:56.487625 -0700 PDT
+Tick at 2012-09-23 11:29:56.988063 -0700 PDT
+Tick at 2012-09-23 11:29:57.488076 -0700 PDT
+Ticker stopped
 
 
 ### 参考资料
