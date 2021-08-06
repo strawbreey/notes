@@ -1,22 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GO on 梨花细雨不见鹿2</title>
+    <title>GO on 如沐春风</title>
     <link>https://note.strawbreey.com/tags/go/</link>
-    <description>Recent content in GO on 梨花细雨不见鹿2</description>
+    <description>Recent content in GO on 如沐春风</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>guanquanhong@163.com (Sukoshi)</managingEditor>
-    <webMaster>guanquanhong@163.com (Sukoshi)</webMaster>
+    <managingEditor>strawbreey@qq.com (strawbreey)</managingEditor>
+    <webMaster>strawbreey@qq.com (strawbreey)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 26 Nov 2020 19:34:25 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Feb 2021 19:59:14 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Developer Roadmap</title>
+      <link>https://note.strawbreey.com/posts/202102251959/</link>
+      <pubDate>Thu, 25 Feb 2021 19:59:14 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202102251959/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Go Build</title>
+      <link>https://note.strawbreey.com/posts/202101121657/</link>
+      <pubDate>Tue, 12 Jan 2021 16:57:26 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202101121657/</guid>
+      <description>Go 命令 Go is a tool for managing Go source code. Usage: go &amp;lt;command&amp;gt; [arguments] The commands are: bug start a bug report build compile packages and dependencies clean remove object files and cached files doc show documentation for package or symbol env print Go environment information fix update packages to use new APIs fmt gofmt (reformat) package sources generate generate Go files by processing source get add dependencies</description>
+    </item>
+    
+    <item>
+      <title>Go Example</title>
+      <link>https://note.strawbreey.com/posts/202012141218/</link>
+      <pubDate>Mon, 14 Dec 2020 12:18:37 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202012141218/</guid>
+      <description>1. 编译 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello world&amp;#34;) } 要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。 go run hello-world.go hello world 有时候我们想将我们的程序编译成二进制文件。我们可以通</description>
+    </item>
+    
+    <item>
+      <title>Go Copy</title>
+      <link>https://note.strawbreey.com/posts/202012040006/</link>
+      <pubDate>Fri, 04 Dec 2020 00:06:45 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202012040006/</guid>
+      <description>func copy(dst, src []Type) int The copy built-in function copies elements from a source slice into a destination slice. (As a special case, it also will copy bytes from a string to a slice of bytes.) The source and destination may overlap. Copy returns the number of elements copied, which will be the minimum of len(src) and len(dst).</description>
+    </item>
+    
+    <item>
+      <title>Go for Range</title>
+      <link>https://note.strawbreey.com/posts/202011301546/</link>
+      <pubDate>Mon, 30 Nov 2020 15:46:43 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202011301546/</guid>
+      <description>range iterates over elements in a variety of data structures. Let’s see how to use range with some of the data structures we’ve already learned package main import &amp;#34;fmt&amp;#34; func main() { // 声明数组 nums := []int{2, 3, 4} // 声明遍历 sum := 0 // for i, num := range nums i, for _, num :=</description>
+    </item>
+    
     <item>
       <title>Go Uber Guide</title>
       <link>https://note.strawbreey.com/posts/202011261934/</link>
       <pubDate>Thu, 26 Nov 2020 19:34:25 +0800</pubDate>
-      <author>guanquanhong@163.com (Sukoshi)</author>
+      <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202011261934/</guid>
       <description>Uber Go Style Guide Table of Contents Introduction 介绍 Guidelines 指导 Pointers to Interfaces Verify Interface Compliance Receivers and Interfaces Zero-value Mutexes are Valid Copy Slices and Maps at Boundaries Defer to Clean Up Channel Size is One or None Start Enums at One Use &amp;quot;time&amp;quot; to handle time Error Types Error Wrapping Handle Type Assertion Failures Don&amp;rsquo;t Panic Use go.uber.org/atomic Avoid Mutable Globals Avoid Embedding Types in</description>
+    </item>
+    
+    <item>
+      <title>Go Effective</title>
+      <link>https://note.strawbreey.com/posts/202011191455/</link>
+      <pubDate>Thu, 19 Nov 2020 14:55:01 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202011191455/</guid>
+      <description>Introduction 介绍 Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the</description>
+    </item>
+    
+    <item>
+      <title>Go Builtin</title>
+      <link>https://note.strawbreey.com/posts/202010121532/</link>
+      <pubDate>Mon, 12 Oct 2020 15:32:11 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202010121532/</guid>
+      <description>Package builtin provides documentation for Go&amp;rsquo;s predeclared identifiers (预声明的标识符). The items documented here are not actually in package builtin but their descriptions here allow godoc to present documentation for the language&amp;rsquo;s special identifiers (特殊标识符). Package files builtin.go Constants true and false are the two untyped boolean values. const ( true = 0 == 0</description>
     </item>
     
   </channel>
