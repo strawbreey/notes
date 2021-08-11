@@ -29,6 +29,27 @@
     </item>
     
     <item>
+      <title>Git Upgrade</title>
+      <link>https://note.strawbreey.com/posts/202108102050/</link>
+      <pubDate>Tue, 10 Aug 2021 20:50:32 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108102050/</guid>
+      <description>Git版本升级 一、安装依赖包： 下载安装 libiconv-1.14.tar.gz wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz tar zxvf libiconv-1.14.tar.gz cd libiconv-1.14 ./configure --prefix=/usr/local/libiconv make &amp;amp;&amp;amp; make install yum安装依赖包 yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc gcc perl-ExtUtils-MakeMaker tcl xmlto # 注：asciidoc如果无法通</description>
+    </item>
+    
+    <item>
+      <title>Git Start</title>
+      <link>https://note.strawbreey.com/posts/202108062029/</link>
+      <pubDate>Fri, 06 Aug 2021 20:29:41 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108062029/</guid>
+      <description>Quick setup — if you’ve done this kind of thing before or https://github.com/strawbreey/go-admin.git
+Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
+…or create a new repository on the command line
+echo &amp;#34;# go-admin&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.com/strawbreey/go-admin.git git push -u origin main …or push an existing repository from the command line</description>
+    </item>
+    
+    <item>
       <title>Php Opcache</title>
       <link>https://note.strawbreey.com/posts/202108062011/</link>
       <pubDate>Fri, 06 Aug 2021 20:11:19 +0800</pubDate>
