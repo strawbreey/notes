@@ -34,6 +34,14 @@ Use "go help <command>" for more information about a command.
 ```
 
 
-## quote
+Go语言基础，所有一切的基石，务必遵循tRPC-Go研发规范。
+context原理，必须提前了解，特别是对超时控制的理解会很有帮助。
+RPC概念，调用远程服务接口就像调用本地函数一样，能让你更容易创建分布式应用。
+tRPC术语介绍， 必须提前了解tRPC设计中的核心概念，尤其是Service Name和Proto Name的含义，以及相互关系。
+proto3知识，描述服务接口的跨语言协议，简单，方便，通用。
 
-[https://akondas.com/](https://akondas.com/)
+### quote
+
+- https://akondas.com
+- https://books.studygolang.com/gopl-zh/
+- https://draveness.me/golang/
