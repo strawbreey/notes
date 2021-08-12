@@ -9,7 +9,7 @@
     <managingEditor>strawbreey@qq.com (strawbreey)</managingEditor>
     <webMaster>strawbreey@qq.com (strawbreey)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
-    <lastBuildDate>Wed, 11 Aug 2021 09:59:15 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Aug 2021 15:32:39 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gin Start</title>
       <link>https://note.strawbreey.com/posts/202107261428/</link>
@@ -17,6 +17,33 @@
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202107261428/</guid>
       <description>Gin 是一个用 Go (Golang) 编写的 HTTP web 框架。 它是一个类似于 martini 但拥有更好性能的 API 框架, 优于 httprouter，速度提高了近 40 倍。如果你需要极好的性能，使用</description>
+    </item>
+    
+    <item>
+      <title>Sql Explain</title>
+      <link>https://note.strawbreey.com/posts/202108121532/</link>
+      <pubDate>Thu, 12 Aug 2021 15:32:39 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108121532/</guid>
+      <description>在日常工作中，我们会有时会开慢查询去记录一些执行时间比较久的SQL语句，找出这些SQL语句并不意味着完事了，些时我们常常用到explain这</description>
+    </item>
+    
+    <item>
+      <title>Sql Join</title>
+      <link>https://note.strawbreey.com/posts/202108121510/</link>
+      <pubDate>Thu, 12 Aug 2021 15:10:46 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108121510/</guid>
+      <description>SQL JOIN SQL join 用于根据两个或多个表中的列之间的关系，从这些表中查询数据 SELECT Persons.LastName, Persons.FirstName, Orders.OrderNo FROM Persons, Orders WHERE Persons.Id_P = Orders.Id_P INNER JOIN 在表中存在至少一个匹配时，INNER JOIN 关键字返回行</description>
+    </item>
+    
+    <item>
+      <title>Mysql Slow Query</title>
+      <link>https://note.strawbreey.com/posts/202108121123/</link>
+      <pubDate>Thu, 12 Aug 2021 11:23:12 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108121123/</guid>
+      <description>开启 MySQL 慢查询日志 MySQL 提供了慢查询日志, 这个日志会记录所有执行时间超过 long_query_time（默认是 10s）的 SQL 及相关的信息。 mysql&amp;gt; show variables like &amp;#39;long_query_time&amp;#39;;</description>
     </item>
     
     <item>
