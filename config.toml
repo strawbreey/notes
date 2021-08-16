@@ -44,9 +44,9 @@ hasCJKLanguage = true
     url = "https://github.com/strawbreey"
     weight = 1
   [[menu.social]]
-    identifier = "weibo"
-    name = "weibo"
-    url = "https://weibo.com/u/5561168966"
+    identifier = "email"
+    name = "email"
+    url = "1245788423@qq.com"
     weight = 4
 
 # URL格式
