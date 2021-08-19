@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <meta name="author" content="strawbreey">
+  
+
+   
+    
+    
+    
+    
+    
+    
+    <meta name="keywords" content="theme,kagome">
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  
+  
+  
+  
+  
+  <title>Go Json 🌟 如沐春风</title>
+
+  <meta property="og:title" content="Go Json" />
+<meta property="og:description" content="JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://note.strawbreey.com/posts/202108182001/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-18T20:01:32+08:00" />
+<meta property="article:modified_time" content="2021-08-18T20:01:32+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Json"/>
+<meta name="twitter:description" content="JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市"/>
+
+
+  <link href="https://note.strawbreey.com/css/index.css" rel="stylesheet">    
+
+  <script src="https://note.strawbreey.com/js/main.js" ></script>
+  
+  </head><body><header class="header-container layout-block layout-padding">
+  <div class="header-inner content-padding-large soft-size--large soft-style--box">
+    <div class="header-logo">
+      <a href="https://note.strawbreey.com"><h1>如沐春风</h1></a>
+    </div>
+    <nav class="header-nav">
+      <div class="header-nav--btn">
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+      </div>
+      <div class="header-nav--list">
+        <div>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/" title="">HOME</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/posts" title="">POSTS</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/message" title="">MESSAGE</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/link" title="">LINK</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header><main id="content">
+    
+
+    <div class="single-container layout-block">
+      <div class="article-info">
+        <div class="article-header layout-padding">
+          <div class="article-cover card-container content-padding-large soft-size--large soft-style--box img ">
+
+  <div class="card-cover">
+    
+      <img src="https://note.strawbreey.com/cover/1.jpg" alt="/cover/1.jpg" />
+    
+  </div>
+
+  <div class="card-text">
+    <h1 class="card-text--title">Go Json</h1>
+    
+      <p class="card-text--row">2021-08-18 20:01</p>
+      
+      
+      
+
+      
+      
+    
+  </div>
+
+</div>
+        </div>
+
+        <div class="article-content">
+          <div class="markdown-body content-padding-large soft-size--large soft-style--box">
+            <p>JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市场份额。虽然与更紧凑的数据交换格式相比，它的序列化和反序列化性能不足，但是 JSON 提供了良好的可读性与易用性，在不追求极致机制性能的情况下，使用 JSON 作为序列化格式是一种非常好的选择。</p>
+<p>encoding/json 对外提供标准的 JSON 序列化和反序列化方法，即 encoding/json.Marshal 和 encoding/json.Unmarshal，它们也是包中最常用的两个方法。</p>
+<p>序列化和反序列化的开销完全不同，JSON 反序列化的开销是序列化开销的好几倍，相信这背后的原因也非常好理解。Go 语言中的 JSON 序列化过程不需要被序列化的对象预先实现任何接口，它会通过反射获取结构体或者数组中的值并以树形的结构递归地进行编码，标准库也会根据 encoding/json.Unmarshal 中传入的值对 JSON 进行解码。</p>
+<p>Go 语言 JSON 标准库编码和解码的过程大量地运用了反射这一特性，你会在本节的后半部分看到大量的反射代码，这一小节就不过多介绍了。我们在这里会简单介绍 JSON 标准库中的接口和标签，这是它为开发者提供的为数不多的影响编解码过程的接口。</p>
+<p>接口 #
+JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler 两个接口分别可以影响 JSON 的序列化和反序列化结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Marshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">MarshalJSON</span>() ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Unmarshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">UnmarshalJSON</span>([]<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">error</span>
+}
+</code></pre></div><p>在 JSON 序列化和反序列化的过程中，它会使用反射判断结构体类型是否实现了上述接口，如果实现了上述接口就会优先使用对应的方法进行编码和解码操作，除了这两个方法之外，Go 语言其实还提供了另外两个用于控制编解码结果的方法，即 encoding.TextMarshaler 和 encoding.TextUnmarshaler：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TextMarshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">MarshalText</span>() (<span style="color:#a6e22e">text</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TextUnmarshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">UnmarshalText</span>(<span style="color:#a6e22e">text</span> []<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">error</span>
+}
+</code></pre></div><p>一旦发现 JSON 相关的序列化方法没有被实现，上述两个方法会作为候选方法被 JSON 标准库调用并参与编解码的过程。总的来说，我们可以在任意类型上实现上述这四个方法自定义最终的结果，后面的两个方法的适用范围更广，但是不会被 JSON 标准库优先调用。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/" target="_blank" rel="noopener">https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/</a></li>
+</ul>
+
+          </div>
+        </div>
+                 
+      
+  
+  
+  
+  
+
+  
+
+  <div class="article-paging">
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202108182010/"><h4 class="card-text--title text-ellipsis">Go Deploy</h4></a>
+    <p class="card-text--row">2021-08-18 20:10</p>
+  </div>
+</section>
+    
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202108171533/"><h4 class="card-text--title text-ellipsis">Go Version</h4></a>
+    <p class="card-text--row">2021-08-17 15:33</p>
+  </div>
+</section>
+    
+  </div>
+</div>
+  <aside class="widget-info">
+    
+<section class="aside-widget widget-author content-padding-large soft-size--large soft-style--box">
+  <div class="widget-body">
+    <div class="author-box avatar">
+      
+      <img class="author-avatar soft-size--round soft-style--box" src="/favicon.png" alt="strawbreey">
+      
+      <h2 class="author-name text-ellipsis">strawbreey</h2>
+      
+      <p class="author-desc text-ellipsis">strawbreey</p>
+      
+    </div>
+  </div>
+</section>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<section class="aside-widget widget-articles content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Related Posts</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="post-list">
+      
+      
+        <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
+      
+        <li class="post-item"><a href="/posts/202108191303/">Go Fmt</a></li>
+      
+        <li class="post-item"><a href="/posts/202108191257/">Go Print</a></li>
+      
+        <li class="post-item"><a href="/posts/202108191156/">Go Array</a></li>
+      
+        <li class="post-item"><a href="/posts/202108182011/">Go Deploy Docker</a></li>
+      
+        <li class="post-item"><a href="/posts/202108182010/">Go Deploy</a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-categories content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Categories</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li>
+          <a href="https://note.strawbreey.com/categories/go/">GO</a>
+          <span>8</span>
+        </li>
+      
+    </ul>
+  </div>
+
+  
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-tags content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Tags</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <div class="tags-list">
+      
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+      
+        <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
+      
+        <a href="https://note.strawbreey.com/tags/go/" data-count="8" class="soft-size--small soft-style--hover soft-style--active">GO</a>
+      
+        <a href="https://note.strawbreey.com/tags/vscode/" data-count="3" class="soft-size--small soft-style--hover soft-style--active">vscode</a>
+      
+        <a href="https://note.strawbreey.com/tags/git/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">git</a>
+      
+        <a href="https://note.strawbreey.com/tags/mysql/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">mysql</a>
+      
+        <a href="https://note.strawbreey.com/tags/webapi/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">webApi</a>
+      
+        <a href="https://note.strawbreey.com/tags/angular/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">angular</a>
+      
+        <a href="https://note.strawbreey.com/tags/devops/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">devops</a>
+      
+        <a href="https://note.strawbreey.com/tags/interview/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">interview</a>
+      
+        <a href="https://note.strawbreey.com/tags/toggle/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">toggle</a>
+      
+    </div>
+  </div>
+
+  
+</section>
+
+  </aside>
+</div>
+  </main><footer class="footer-container layout-block">
+  
+  <div class="social-icons">
+    
+      <a class="soft-size--primary soft-style--box" href="https://github.com/strawbreey" target="_blank" rel="noopener noreferrer">
+          
+        <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="1245788423@qq.com" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+  </div>
+  
+
+  <div class="colour-bar"></div>
+  
+  
+  <p>© 2021 <a href="https://github.com/miiiku/hugo-theme-kagome">kagome</a>.</p>
+  
+
+  
+
+  <p>
+    Powered by
+    <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+    Theme - 
+    <a href="https://github.com/miiiku/hugo-theme-kagome" target="_blank" rel="noopener noreferrer author">kagome</a>
+  </p>
+
+  <p>
+    <a href="javascript:;" id="theme-light">🌞 light</a>
+    <a href="javascript:;" id="theme-dark">🌛 dark</a>
+    <a href="javascript:;" id="theme-auto">🤖️ auto</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

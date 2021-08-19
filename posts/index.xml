@@ -9,7 +9,7 @@
     <managingEditor>strawbreey@qq.com (strawbreey)</managingEditor>
     <webMaster>strawbreey@qq.com (strawbreey)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
-    <lastBuildDate>Fri, 13 Aug 2021 19:51:28 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 13:03:59 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gin Start</title>
       <link>https://note.strawbreey.com/posts/202107261428/</link>
@@ -17,6 +17,70 @@
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202107261428/</guid>
       <description>Gin 是一个用 Go (Golang) 编写的 HTTP web 框架。 它是一个类似于 martini 但拥有更好性能的 API 框架, 优于 httprouter，速度提高了近 40 倍。如果你需要极好的性能，使用</description>
+    </item>
+    
+    <item>
+      <title>Go Fmt</title>
+      <link>https://note.strawbreey.com/posts/202108191303/</link>
+      <pubDate>Thu, 19 Aug 2021 13:03:59 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108191303/</guid>
+      <description>$ go doc -help Usage of [go] doc: go doc go doc go doc [.] go doc [.][.] go doc [.][.]go doc [.] For more information run go help doc
+Flags: -all show all documentation for package -c symbol matching honors case (paths not affected) -cmd show symbols with package docs even if package is a command -short one-line representation for each symbol -src show source code for symbol -u show unexported symbols as well as exported exit status 2</description>
+    </item>
+    
+    <item>
+      <title>Go Print</title>
+      <link>https://note.strawbreey.com/posts/202108191257/</link>
+      <pubDate>Thu, 19 Aug 2021 12:57:59 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108191257/</guid>
+      <description>Println 与 Printf 区别 Println 与Printf 都是fmt 包中的公共方法，在需要打印信息时需要用到这二个函数，那么这二个函数有什么区别呢？ Println: 可以打印出字符串，和变</description>
+    </item>
+    
+    <item>
+      <title>Go Array</title>
+      <link>https://note.strawbreey.com/posts/202108191156/</link>
+      <pubDate>Thu, 19 Aug 2021 11:56:35 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108191156/</guid>
+      <description>数组是一个由固定长度的特定类型元素组成的序列，一个数组可以由零个或多个元素组成。因为数组的长度是固定的，因此在Go语言中很少直接使用数组。和</description>
+    </item>
+    
+    <item>
+      <title>Go Deploy Docker</title>
+      <link>https://note.strawbreey.com/posts/202108182011/</link>
+      <pubDate>Wed, 18 Aug 2021 20:11:05 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108182011/</guid>
+      <description>使用Docker部署Go Web应用 为什么需要Docker？ 使用docker的主要目标是容器化。也就是为你的应用程序提供一致的环境，而不依赖于</description>
+    </item>
+    
+    <item>
+      <title>Go Deploy</title>
+      <link>https://note.strawbreey.com/posts/202108182010/</link>
+      <pubDate>Wed, 18 Aug 2021 20:10:17 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108182010/</guid>
+      <description>部署Go语言项目的 N 种方法 独立部署 Go 语言支持跨平台交叉编译，也就是说我们可以在 Windows 或 Mac 平台下编写代码，并且将代码编译成能够在 Linux amd64 服务器上运行的</description>
+    </item>
+    
+    <item>
+      <title>Go Json</title>
+      <link>https://note.strawbreey.com/posts/202108182001/</link>
+      <pubDate>Wed, 18 Aug 2021 20:01:32 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108182001/</guid>
+      <description>JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市</description>
+    </item>
+    
+    <item>
+      <title>Go Version</title>
+      <link>https://note.strawbreey.com/posts/202108171533/</link>
+      <pubDate>Tue, 17 Aug 2021 15:33:39 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108171533/</guid>
+      <description>获取go 当前的版本号 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;runtime&amp;#34; ) func main() { fmt.Println(runtime.Version()) }</description>
     </item>
     
     <item>
@@ -98,6 +162,15 @@
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108102050/</guid>
       <description>Git版本升级 一、安装依赖包： 下载安装 libiconv-1.14.tar.gz wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz tar zxvf libiconv-1.14.tar.gz cd libiconv-1.14 ./configure --prefix=/usr/local/libiconv make &amp;amp;&amp;amp; make install yum安装依赖包 yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc gcc perl-ExtUtils-MakeMaker tcl xmlto # 注：asciidoc如果无法通</description>
+    </item>
+    
+    <item>
+      <title>Go Mod Init</title>
+      <link>https://note.strawbreey.com/posts/202108091506/</link>
+      <pubDate>Mon, 09 Aug 2021 15:06:55 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108091506/</guid>
+      <description>go Mod Help $ go help mod Go mod provides access to operations on modules. Note that support for modules is built into all the go commands, not just &amp;#39;go mod&amp;#39;. For example, day-to-day adding, removing, upgrading, and downgrading of dependencies should be done using &amp;#39;go get&amp;#39;. See &amp;#39;go help modules&amp;#39; for an overview of module functionality. Usage: go mod &amp;lt;command&amp;gt; [arguments] The commands are: download download modules to local</description>
     </item>
     
     <item>
@@ -2001,7 +2074,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
       <pubDate>Thu, 03 Dec 2020 13:04:44 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202012031304/</guid>
-      <description></description>
+      <description>Go语言有超过100个的标准包（译注：可以用 go list std | wc -l命令查看标准包的具体数目），标准库为大多数的程序提供了必要的基础构件。在Go的社区</description>
     </item>
     
     <item>
