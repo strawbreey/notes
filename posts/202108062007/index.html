@@ -153,9 +153,9 @@ apc.stat=1
 <p>7、设置临时目录APC需要一个临时目录来存储文件。它会尝试在windows的临时目录缓存文件，事先请给临时目录写的权限。
 8、重新启动apache服务器,查看phpinfo中是否有apc的配置项目,有的话就配置成功了</p>
 <h3 id="apc小结">APC小结</h3>
-<p>1、缓存期限: APC的缓存分两部分:系统缓存和用户数据缓存.
-系统缓存 是自动使用的,是指APC把PHP文件源码的编译结果缓存起来,然后在再次调用时先对比时间标记。如果未过期,则使用缓存代码运行。默认缓存 3600s(一小时).但是这样仍会浪费大量CPU时间.因此可以在php.ini中设置system缓存为永不过期(apc.ttl=0).不过如果这样设置,改运php代码后需要restart一下您的web服务器(比如apache…).目前对APC的性能测试一般指的是这一层cache。</p>
-<p>2、用户数据缓存 由用户在编写php代码时用apc_store和apc_fetch函数操作读取、写入的.如果量不大的话我建议可以使用一下.如果量大,我建议使用memcache会更好. 如果要享受APC带来的缓存大文件上传进度的特性,需要在php.ini中将apc.rfc1867设为1,并且在表单中加一个隐藏域APC_UPLOAD_PROGRESS,这个域的值可以随机生成一个hash,以确何唯一.具体例子请参见前面给出的链接.</p>
+<p>1、缓存期限: APC的缓存分两部分: 系统缓存和用户数据缓存.</p>
+<p>系统缓存 是自动使用的, 是指APC把PHP文件源码的编译结果缓存起来,然后在再次调用时先对比时间标记。如果未过期,则使用缓存代码运行。默认缓存 3600s(一小时). 但是这样仍会浪费大量CPU时间. 因此可以在php.ini中设置system缓存为永不过期(apc.ttl=0).不过如果这样设置,改运php代码后需要restart一下您的web服务器(比如apache…).目前对APC的性能测试一般指的是这一层cache。</p>
+<p>2、用户数据缓存 由用户在编写php代码时用apc_store和apc_fetch函数操作读取、写入的. 如果量不大的话我建议可以使用一下.如果量大,我建议使用memcache会更好. 如果要享受APC带来的缓存大文件上传进度的特性, 需要在php.ini中将apc.rfc1867设为1,并且在表单中加一个隐藏域APC_UPLOAD_PROGRESS,这个域的值可以随机生成一个hash,以确何唯一.具体例子请参见前面给出的链接.</p>
 <p>3、你不能在同一台服务器上同时安装APC和Zend Optimiser，二者只能选其一。</p>
 <p>4、其实所有Windows环境下的php环境都可以使用这个方法。</p>
 
@@ -234,15 +234,15 @@ apc.stat=1
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+        <li class="post-item"><a href="/posts/202108231542/">Php Urlencode</a></li>
+      
+        <li class="post-item"><a href="/posts/202108191616/">Php Arr2string</a></li>
+      
         <li class="post-item"><a href="/posts/202108191303/">Go Fmt</a></li>
       
         <li class="post-item"><a href="/posts/202108191257/">Go Print</a></li>
       
         <li class="post-item"><a href="/posts/202108191156/">Go Array</a></li>
-      
-        <li class="post-item"><a href="/posts/202108182011/">Go Deploy Docker</a></li>
-      
-        <li class="post-item"><a href="/posts/202108182010/">Go Deploy</a></li>
       
     </ul>
   </div>
