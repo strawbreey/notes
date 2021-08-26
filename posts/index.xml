@@ -147,6 +147,15 @@ Flags: -all show all documentation for package -c symbol matching honors case (p
     </item>
     
     <item>
+      <title>Linux Common Command</title>
+      <link>https://note.strawbreey.com/posts/202108171335/</link>
+      <pubDate>Tue, 17 Aug 2021 13:35:01 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108171335/</guid>
+      <description>Linux 常用命令 1、ls命令 就是 list 的缩写，通过 ls 命令不仅可以查看 linux 文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限) 查看目录信息</description>
+    </item>
+    
+    <item>
       <title>Php Function</title>
       <link>https://note.strawbreey.com/posts/202108131951/</link>
       <pubDate>Fri, 13 Aug 2021 19:51:28 +0800</pubDate>
@@ -207,6 +216,15 @@ Flags: -all show all documentation for package -c symbol matching honors case (p
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108110959/</guid>
       <description>当我们想要在 Go 语言中初始化一个结构时，可能会用到两个不同的关键字 — make 和 new。因为它们的功能相似，所以初学者可能会对这两个关键字的作用感到困</description>
+    </item>
+    
+    <item>
+      <title>Linux Vscode Ccls</title>
+      <link>https://note.strawbreey.com/posts/202108102054/</link>
+      <pubDate>Tue, 10 Aug 2021 20:54:26 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108102054/</guid>
+      <description>vscode ccls</description>
     </item>
     
     <item>
@@ -4401,7 +4419,7 @@ Reserve the constructor for simple initialization such as wiring constructor par
       <pubDate>Tue, 01 Sep 2020 10:10:41 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202009011010/</guid>
-      <description>Install PHP install php5.6 wget -c http://cn2.php.net/distributions/php-5.6.21.tar.gz tar -zxvf php-5.6.21.tar.gz 格式：tar zcvf 压缩后的路径及包名 你要压缩的文件 z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看</description>
+      <description>linux 常用命令 格式：tar zcvf 压缩后的路径及包名 你要压缩的文件 z: gzip压缩 c: 创建压缩包 v: 显示打包压缩解压过程 f: 接着压缩 t: 查看压缩包内容 x: 解压 X: 指</description>
     </item>
     
     <item>
@@ -4437,7 +4455,7 @@ Reserve the constructor for simple initialization such as wiring constructor par
       <pubDate>Mon, 31 Aug 2020 10:36:43 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202008311036/</guid>
-      <description>linux common command # 测试镜像是否有用 nslookup mirrors.tencent.com rpm -Uvh https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm # 下载php wget php-7.2.15.tar.bz2 http://cn2.php.net/distributions/php-7.2.15.tar.bz2 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm rpm -Uvh https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm # linux cp 复制 sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm # linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid # linux 安装 yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel libpng libpng-devel freetype</description>
+      <description>linux common command # 测试镜像是否有用 nslookup mirrors.tencent.com rpm -Uvh https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.rpm # 下载php wget php-7.2.15.tar.bz2 http://cn2.php.net/distributions/php-7.2.15.tar.bz2 # 安装 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm rpm -Uvh https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm # linux cp 复制 sudo cp /opt/soft/php/sbin/php-fpm /usr/local/bin/ sudo php-fpm # linux 杀死进程 kill -INT cat /usr/local/php/var/run/php-fpm.pid # linux 安装 yum -y install gcc openssl openssl-devel curl curl-devel libjpeg libjpeg-devel</description>
     </item>
     
     <item>
