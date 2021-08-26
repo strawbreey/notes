@@ -16,6 +16,7 @@ rpm -Uvh https://mirrors.tencent.com/tlinux/rpm/tlinux-release-2-11.tl2.x86_64.r
 # 下载php
 wget php-7.2.15.tar.bz2 http://cn2.php.net/distributions/php-7.2.15.tar.bz2
 
+# 安装
 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 rpm -Uvh  https://mirrors.tencent.com/tlinux/rpm/epel-release-6-12.tl1.noarch.rpm
@@ -35,12 +36,16 @@ killall php-fpm
 # linux 查询进程 php
 ps -ef|grep php
 
+# 查看php-fpm的位置
+whereis php-fpm
+
 # linux 重载
 nginx -s reload
 
 ```
 
 链接数据库异常 
+
 ```shell
 # Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock'
 ```

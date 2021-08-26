@@ -16,101 +16,100 @@ SVN 服务器配置：安装SVN服务器
 
 查看svn版本
 
+```bash
 svnserve --version
+```
 
 ubuntu 安装svn 1.7、1.8
 
 当前 ubuntu 12.04 中的 svn 版本为 1.6，这个版本会在每个子目录新建一个.svn 的目录保存版本文件，很不爽。找到一个第三方编译的 ubuntu 源：
-1） 打开source.list源：
 
+```bash
+# 打开source.list源：
 sudo vi /etc/apt/sources.list   
 
-2） 添加源
-
+# 添加源
 deb http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu precise main
-
 deb-src http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu precise main
 
-
-
-3） 执行安装命令
-
+# 执行安装命令
 sudo apt-get install subversion
-
-
-
+```
 
 ### SVN 常用命令
 
-1. 将文件checkout到本地目录
+```bash
 
+# 1. 将文件checkout到本地目录
 svn checkout path
 svn co path
 
-2. 往版本库中添加新的文件
+# 2. 往版本库中添加新的文件
 svn add file
 
-3. 将改动的文件提交到版本库
+# 3. 将改动的文件提交到版本库
 svn commit -m “LogMessage” [-N] [--no-unlock] PATH(如果选择了保持锁，就使用–no-unlock开关)
-简写：svn ci
+# 简写：svn ci
 
-4. 加锁/解锁
+# 4. 加锁/解锁
+
 svn lock -m “LockMessage” [--force] PATH
 svn unlock PATH
 
-5. 更新到某个版本
-svn update -r m path
-简写：svn up
+# 5. 更新到某个版本
+svn update -r m path # 简写：svn up
 
-6. 查看文件或者目录状态
+
+
+# 6. 查看文件或者目录状态
 1）svn status path（目录下的文件和子目录的状态，正常状态不显示）
 2）svn status -v path(显示文件和子目录状态)
-简写：svn st
 
-7. 删除文件
+# 简写：svn st
+
+# 7. 删除文件
 svn delete path -m “delete test fle”
-简写：svn (del, remove, rm)
+# 简写：svn (del, remove, rm)
 
-8. 查看日志
+# 8. 查看日志
 svn log path
 
-9. 查看文件详细信息
+# 9. 查看文件详细信息
 svn info path
 
-10. 比较差异
+# 10. 比较差异
 
 svn diff path (将修改的文件与基础版本比较)
 svn diff -r m:n path (对版本m和版本n比较差异)
 
-简写：svn di
+# 简写：svn di
 
-11. 将两个版本之间的差异合并到当前文件
+# 11. 将两个版本之间的差异合并到当前文件
 svn merge -r m:n path
 
-12. SVN 帮助
+# 12. SVN 帮助
 svn help
 svn help ci
 
-13. 版本库下的文件和目录列表
+# 13. 版本库下的文件和目录列表
 
 svn list path    
 
 显示path目录下的所有属于版本库的文件和目录简写：svn ls
 
-14. 创建纳入版本控制下的新目录
+# 14. 创建纳入版本控制下的新目录
 
 svn mkdir: 创建纳入版本控制下的新目录。
-用法: 
-1、mkdir PATH...
-每一个以工作副本 PATH 指定的目录，都会创建在本地端，并且加入新增调度，以待下一次的提交。
-2、mkdir URL... 创建版本控制的目录。 
-每个以URL指定的目录，都会透过立即提交于仓库中创建。在这两个情况下，所有的中间目录都必须事先存在。
 
-15. 恢复本地修改
+用法: 
+1、mkdir PATH... 每一个以工作副本 PATH 指定的目录，都会创建在本地端，并且加入新增调度，以待下一次的提交。
+2、mkdir URL... 创建版本控制的目录。 每个以URL指定的目录，都会透过立即提交于仓库中创建。在这两个情况下，所有的中间目录都必须事先存在。
+
+# 15. 恢复本地修改
 svn revert: 恢复原始未改变的工作副本文件 (恢复大部份的本地修改)。
 用法: revert PATH... 注意: 本子命令不会存取网络，并且会解除冲突的状况。但是它不会恢复被删除的目录
 
-16. 代码库URL变更
+# 16. 代码库URL变更
 svn switch (sw): 更新工作副本至不同的URL。
 用法: 
 1、switch URL [PATH]        
@@ -118,21 +117,20 @@ svn switch (sw): 更新工作副本至不同的URL。
 2、switch --relocate FROM TO [PATH...]   
 改写工作副本的URL元数据，以反映单纯的URL上的改变。当仓库的根URL变动     (比如方案名或是主机名称变动)，但是工作副本仍旧对映到同一仓库的同一目录时使用     这个命令更新工作副本与仓库的对应关系。
 
-17. 解决冲突
+# 17. 解决冲突
 svn resolved: 移除工作副本的目录或文件的“冲突”状态。
 用法: resolved PATH... 注意: 本子命令不会依语法来解决冲突或是移除冲突标记；它只是移除冲突的相关文件，然后让 PATH 可以再次提交。
 
-18. 输出指定文件或URL的内容。
+# 18. 输出指定文件或URL的内容。
 svn cat 目标[@版本]...如果指定了版本，将从指定的版本开始查找。 svn cat -r PREV filename > filename (PREV 是上一版本,也可以写具体版本号,这样输出结果是可以提交的）
  
-19. svn cleanup
+# 19. svn cleanup
 当Subversion修改你的工作副本时（或者任何在.svn中的信息），它尝试尽可能做到安全。在改变一个工作副本前，Subversion把它的意 图写到一个日志文件中。接下来它执行日志文件中的命令来应用要求的修改。最后，Subversion删除日志文件。从架构上来说，这与一个日志文件系统 （journaled filesystem）类似。如果一个 Subversion操作被打断（例如，进程被杀掉了，或机器当掉了）了，日志文件仍在硬盘上。重新执行日志文件，Subversion可以完成先前开始 的操作，这样你的工作副本能回到一个可靠的状态。 
 
-20. svn import
-
+# 20. svn import
 使用svn import是把未版本化的文件树复制到资料库的快速办法，它需要创建一个临时目录。 
 
-
+```
 
 ### SVN 常用命令一览表
 
