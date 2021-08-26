@@ -1284,7 +1284,7 @@ The Docker client The Docker client (docker) is the primary way that many Docker
       <pubDate>Thu, 31 Dec 2020 15:16:37 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202012311516/</guid>
-      <description>用户信息 # 设置全局的用户信息 $ git config --global user.name &amp;#34;John Doe&amp;#34; $ git config --global user.email johndoe@example.com # 设置项目的用户信息 $ git config user.name &amp;#34;John Doe&amp;#34; $ git config user.email johndoe@example.com 如果我们git clone的下载代码的时候是连</description>
+      <description>用户信息 # 设置全局的用户信息 git config --global user.name &amp;#34;John Doe&amp;#34; git config --global user.email johndoe@example.com # 设置项目的用户信息 git config user.name &amp;#34;John Doe&amp;#34; git config user.email johndoe@example.com 如果我们git clone的下载代码的时候是连接的ht</description>
     </item>
     
     <item>
