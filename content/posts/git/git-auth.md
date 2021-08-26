@@ -8,14 +8,14 @@ draft: false
 
 ### 用户信息
 
-```shell
+```bash
 # 设置全局的用户信息
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 
 # 设置项目的用户信息
-$ git config user.name "John Doe"
-$ git config user.email johndoe@example.com
+git config user.name "John Doe"
+git config user.email johndoe@example.com
 
 ```
 

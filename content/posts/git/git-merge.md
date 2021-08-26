@@ -270,3 +270,19 @@ subtree是修改版的recursive策略。当合并树A和树B时，如果B是A的
 4.5总结
 在使用三路合并的策略时（指默认的recursive策略），如果一个文件（或一行代码）在当前分支和对方分支都产生变化，但是稍后又在其中一个分支回退，那么这种回退的变化将会在结果中体现。这一点可能会使一些人感到困惑。这是由于在合并的过程中，git仅仅关注共同祖先节点以及两个分支的HEAD节点，而不是两个分支的所有节点。因此，合并算法将会把被回退的部分认为成没有变化，这样，合并后的结果就会变为另一个分支中变化的部分。
 
+
+
+检出，检查（评审）和本地合并
+步骤 1. 获取并检出此合并请求的分支
+
+git fetch origin
+git checkout -b lg-fix-add-loading origin/lg-fix-add-loading
+步骤 2. 在本地查看更改
+
+步骤 3. 合并分支并修复冲突
+
+git checkout test
+git merge --no-ff lg-fix-add-loading
+步骤 4. 将合并结果推送到Git服务器
+
+git push origin HEAD:test
