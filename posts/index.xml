@@ -9,7 +9,7 @@
     <managingEditor>strawbreey@qq.com (strawbreey)</managingEditor>
     <webMaster>strawbreey@qq.com (strawbreey)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
-    <lastBuildDate>Mon, 23 Aug 2021 15:42:26 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Aug 2021 14:56:22 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gin Start</title>
       <link>https://note.strawbreey.com/posts/202107261428/</link>
@@ -17,6 +17,15 @@
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202107261428/</guid>
       <description>Gin 是一个用 Go (Golang) 编写的 HTTP web 框架。 它是一个类似于 martini 但拥有更好性能的 API 框架, 优于 httprouter，速度提高了近 40 倍。如果你需要极好的性能，使用</description>
+    </item>
+    
+    <item>
+      <title>Css Variables</title>
+      <link>https://note.strawbreey.com/posts/202108261456/</link>
+      <pubDate>Thu, 26 Aug 2021 14:56:22 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108261456/</guid>
+      <description>CSS 变量 基本用法 声明一个自定义属性，属性名需要以两个减号（&amp;ndash;）开始，属性值则可以是任何有效的CSS值。和其他属性一样，自定义属性也</description>
     </item>
     
     <item>
