@@ -29,12 +29,39 @@
     </item>
     
     <item>
+      <title>Js ConcatAll</title>
+      <link>https://note.strawbreey.com/posts/202108241426/</link>
+      <pubDate>Tue, 24 Aug 2021 14:26:42 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108241426/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Php Urlencode</title>
       <link>https://note.strawbreey.com/posts/202108231542/</link>
       <pubDate>Mon, 23 Aug 2021 15:42:26 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108231542/</guid>
       <description>urlencode 根据官方文档： string urlencode(string $str ) 此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。 返回字符串，此字符串中除了-_. 之外的</description>
+    </item>
+    
+    <item>
+      <title>Js Random</title>
+      <link>https://note.strawbreey.com/posts/202108191649/</link>
+      <pubDate>Thu, 19 Aug 2021 16:49:59 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108191649/</guid>
+      <description>第一种：使用randomString，e表示长度，默认32位 function randomString(e) { e = e || 32; var t = &amp;#34;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678&amp;#34;, a = t.length, n = &amp;#34;&amp;#34;; for (i = 0; i &amp;lt; e; i++) n += t.charAt(Math.floor(Math.random() * a)); return n } alert(randomString(6)); 第二种：生</description>
+    </item>
+    
+    <item>
+      <title>Js Special Characters</title>
+      <link>https://note.strawbreey.com/posts/202108191648/</link>
+      <pubDate>Thu, 19 Aug 2021 16:48:00 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108191648/</guid>
+      <description>删除字符串中的特殊字符 const pattern=/[`~!@#$^&amp;amp;*()=|{}&amp;#39;:;&amp;#39;,\\\[\]&amp;lt;&amp;gt;\/</description>
     </item>
     
     <item>
