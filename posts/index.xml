@@ -38,6 +38,33 @@
     </item>
     
     <item>
+      <title>Html Entities</title>
+      <link>https://note.strawbreey.com/posts/202109011116/</link>
+      <pubDate>Wed, 01 Sep 2021 11:16:37 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202109011116/</guid>
+      <description>HTML 中的预留字符必须被替换为字符实体。 在 HTML 中，某些字符是预留的。 在 HTML 中不能使用小于号 &amp;lt; 和大于号&amp;gt;，这是因为浏览器会误认为它们是标签。 如果</description>
+    </item>
+    
+    <item>
+      <title>Http ContentType</title>
+      <link>https://note.strawbreey.com/posts/202108311144/</link>
+      <pubDate>Tue, 31 Aug 2021 11:44:00 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108311144/</guid>
+      <description>Content-Type Content-Type 实体头部用于指示资源的MIME类型 media type 。 在响应中，Content-Type标头告诉客户端实际返回的内容的内容类型。浏览器会在某些情况下进</description>
+    </item>
+    
+    <item>
+      <title>Js Form</title>
+      <link>https://note.strawbreey.com/posts/202108311141/</link>
+      <pubDate>Tue, 31 Aug 2021 11:41:40 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108311141/</guid>
+      <description>&amp;lt;form action=&amp;#34;&amp;#34; method=&amp;#34;get&amp;#34; class=&amp;#34;form-example&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;form-example&amp;#34;&amp;gt; &amp;lt;label for=&amp;#34;name&amp;#34;&amp;gt;Enter your name: &amp;lt;/label&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;name&amp;#34; id=&amp;#34;name&amp;#34; required&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;form-example&amp;#34;&amp;gt; &amp;lt;label for=&amp;#34;email&amp;#34;&amp;gt;Enter your email: &amp;lt;/label&amp;gt; &amp;lt;input type=&amp;#34;email&amp;#34; name=&amp;#34;email&amp;#34; id=&amp;#34;email&amp;#34; required&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;form-example&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;Subscribe!&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/form&amp;gt; </description>
+    </item>
+    
+    <item>
       <title>Angular NgZone</title>
       <link>https://note.strawbreey.com/posts/202108311105/</link>
       <pubDate>Tue, 31 Aug 2021 11:05:06 +0800</pubDate>
@@ -65,6 +92,33 @@
     </item>
     
     <item>
+      <title>Ts As</title>
+      <link>https://note.strawbreey.com/posts/202108301736/</link>
+      <pubDate>Mon, 30 Aug 2021 17:36:54 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108301736/</guid>
+      <description>理解Typescript中的as、问号与叹号 as关键字表示断言 在Typescript中，表示断言有两种方式。一种是尖扩号表示法: let someValue: any = &amp;#34;this is</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns</title>
+      <link>https://note.strawbreey.com/posts/202108301536/</link>
+      <pubDate>Mon, 30 Aug 2021 15:36:53 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108301536/</guid>
+      <description>创建型模式 结构型模式 设配器模式 行为模式 参考资料 https://refactoringguru.cn/design-patterns/bridge</description>
+    </item>
+    
+    <item>
+      <title>Js Cos Upload</title>
+      <link>https://note.strawbreey.com/posts/202108271524/</link>
+      <pubDate>Fri, 27 Aug 2021 15:24:57 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108271524/</guid>
+      <description>使用 cos sdk 实现原生上传 var Bucket = &amp;#39;wbp-1258344700&amp;#39;; var Region = &amp;#39;ap-guangzhou&amp;#39;; /* 存储桶所在地域，必须字段 */ var protocol = location.protocol === &amp;#39;https:&amp;#39; ? &amp;#39;https:&amp;#39; : &amp;#39;https:&amp;#39;; var prefix = protocol + &amp;#39;//&amp;#39; + Bucket + &amp;#39;.cos.&amp;#39; + Region + &amp;#39;.myqcloud.com/&amp;#39;; var info = { TmpSecretId: null, TmpSecretKey: null, SecurityToken: null, } // 对更</description>
+    </item>
+    
+    <item>
       <title>Css Variables</title>
       <link>https://note.strawbreey.com/posts/202108261456/</link>
       <pubDate>Thu, 26 Aug 2021 14:56:22 +0800</pubDate>
@@ -74,12 +128,30 @@
     </item>
     
     <item>
+      <title>Webpack Bundle Analyzer</title>
+      <link>https://note.strawbreey.com/posts/202108241744/</link>
+      <pubDate>Tue, 24 Aug 2021 17:44:01 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108241744/</guid>
+      <description>Webpack Bundle Analyzer 对于 Web app 来说，高性能总是最高优先级，对于 Angular 也不例外。但是随着应用复杂度的不断增长，我们如何才能知道哪些内容打包到了应用中呢？如何跟踪包</description>
+    </item>
+    
+    <item>
       <title>Js ConcatAll</title>
       <link>https://note.strawbreey.com/posts/202108241426/</link>
       <pubDate>Tue, 24 Aug 2021 14:26:42 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108241426/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Sql Like</title>
+      <link>https://note.strawbreey.com/posts/202108231548/</link>
+      <pubDate>Mon, 23 Aug 2021 15:48:32 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108231548/</guid>
+      <description>LIKE 操作符用于在 WHERE 子句中搜索列中的指定模式。 例0： 查找含有 特殊字符 % 的字段 SELECT * FROM Persons WHERE City LIKE &amp;#39;%\%%&amp;#39; 例1： 现在，我们希望从上面的 &amp;ldquo;Persons&amp;rdquo; 表中选取居住在以 &amp;ldquo;N&amp;rdquo; 开始</description>
     </item>
     
     <item>
@@ -255,6 +327,15 @@ Flags: -all show all documentation for package -c symbol matching honors case (p
     </item>
     
     <item>
+      <title>Rxgo</title>
+      <link>https://note.strawbreey.com/posts/202108111329/</link>
+      <pubDate>Wed, 11 Aug 2021 13:29:03 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108111329/</guid>
+      <description>Reactive Extensions for the Go Language ReactiveX ReactiveX, or Rx for short, is an API for programming with Observable streams. This is the official ReactiveX API for the Go language. ReactiveX is a new, alternative way of asynchronous programming to callbacks, promises, and deferred. It is about processing streams of events or items, with events being any occurrences or changes within the system. A stream of events is called an</description>
+    </item>
+    
+    <item>
       <title>Go Make</title>
       <link>https://note.strawbreey.com/posts/202108110959/</link>
       <pubDate>Wed, 11 Aug 2021 09:59:15 +0800</pubDate>
@@ -315,6 +396,15 @@ Flags: -all show all documentation for package -c symbol matching honors case (p
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108091126/</guid>
       <description>YII 创建索引 $this-&amp;gt;createIndex( &amp;#39;thing_pre_supplier_id&amp;#39;, &amp;#39;\{\{%thing\}\}&amp;#39;, array(&amp;#39;pre_supplier_id&amp;#39;) ); createIndex() public method Builds and executes a SQL statement for creating a new index. public void createIndex ( $name, $table, $columns, $unique = false ) $name string The name of the index. The name will be properly quoted by the method. $table string The table that the new index will be created for. The table name will be properly quoted</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch Query</title>
+      <link>https://note.strawbreey.com/posts/202108091058/</link>
+      <pubDate>Mon, 09 Aug 2021 10:58:42 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202108091058/</guid>
+      <description>ElasticSearch的Query String语法基本介绍 根据字段名查询(Field names) 接口(interface)为app interface: app 接口(int</description>
     </item>
     
     <item>
@@ -1798,7 +1888,7 @@ The Docker client The Docker client (docker) is the primary way that many Docker
       <pubDate>Thu, 10 Dec 2020 10:56:24 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202012101056/</guid>
-      <description>介绍 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。 Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows 安装 下载并安装do</description>
+      <description>介绍 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。 Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows window 安装 下载并安装d</description>
     </item>
     
     <item>

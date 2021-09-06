@@ -166,13 +166,8 @@
 <p>（2）在通过聚集索引定位到行记录；</p>
 <p>这就是所谓的回表查询，先定位主键值，再定位行记录，它的性能较扫一遍索引树更低。</p>
 <h3 id="二什么是索引覆盖covering-index">二、什么是索引覆盖(Covering index)？</h3>
-<p>额，楼主并没有在MySQL的官网找到这个概念。</p>
-<p>画外音：治学严谨吧？</p>
-<p>借用一下SQL-Server官网的说法。</p>
-<p>图片</p>
-<p>MySQL官网，类似的说法出现在explain查询计划优化章节，即explain的输出结果Extra字段为Using index时，能够触发索引覆盖。</p>
-<p>图片</p>
-<p>不管是SQL-Server官网，还是MySQL官网，都表达了：只需要在一棵索引树上就能获取SQL所需的所有列数据，无需回表，速度更快。</p>
+<p>explain的输出结果Extra字段为Using index时，能够触发索引覆盖。</p>
+<p>只需要在一棵索引树上就能获取SQL所需的所有列数据，无需回表，速度更快。</p>
 <h3 id="三如何实现索引覆盖">三、如何实现索引覆盖？</h3>
 <p>将被查询的字段，建立到联合索引里去。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
@@ -304,11 +299,11 @@
       
         <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
       
-        <li class="post-item"><a href="/posts/202108311105/">Angular NgZone</a></li>
+        <li class="post-item"><a href="/posts/202109011116/">Html Entities</a></li>
       
-        <li class="post-item"><a href="/posts/202108311102/">Angular ChangeDetectorRef</a></li>
+        <li class="post-item"><a href="/posts/202108311144/">Http ContentType</a></li>
       
-        <li class="post-item"><a href="/posts/202108311100/">Angular RunOutSideAngular</a></li>
+        <li class="post-item"><a href="/posts/202108311141/">Js Form</a></li>
       
     </ul>
   </div>
