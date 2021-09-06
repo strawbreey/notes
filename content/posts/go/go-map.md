@@ -75,12 +75,15 @@ import "fmt"
 func main() {
   /* 创建map */
   countryCapitalMap := map[string]string{"France": "Paris", "Italy": "Rome", "Japan": "Tokyo", "India": "New delhi"}
+  
   /* 打印地图 */
   for country := range countryCapitalMap {
     fmt.Println(country, "首都是", countryCapitalMap [ country ])
   }
+  
   /*删除元素*/ 
   delete(countryCapitalMap, "France")
+  
   /*打印地图*/
   for country := range countryCapitalMap {
     fmt.Println(country, "首都是", countryCapitalMap [ country ])
