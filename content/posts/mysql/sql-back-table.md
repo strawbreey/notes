@@ -101,27 +101,10 @@ select * from t where name='lisi';
  
 ### 二、什么是索引覆盖(Covering index)？
 
-额，楼主并没有在MySQL的官网找到这个概念。
+explain的输出结果Extra字段为Using index时，能够触发索引覆盖。
 
-画外音：治学严谨吧？
+只需要在一棵索引树上就能获取SQL所需的所有列数据，无需回表，速度更快。
 
- 
-
-借用一下SQL-Server官网的说法。
-
-图片
-
-
-
-MySQL官网，类似的说法出现在explain查询计划优化章节，即explain的输出结果Extra字段为Using index时，能够触发索引覆盖。
-
-图片
-
- 
-
-不管是SQL-Server官网，还是MySQL官网，都表达了：只需要在一棵索引树上就能获取SQL所需的所有列数据，无需回表，速度更快。
-
- 
 
 ### 三、如何实现索引覆盖？
 
