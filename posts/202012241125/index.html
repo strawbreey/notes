@@ -162,12 +162,15 @@
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
   <span style="color:#75715e">/* 创建map */</span>
   <span style="color:#a6e22e">countryCapitalMap</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;France&#34;</span>: <span style="color:#e6db74">&#34;Paris&#34;</span>, <span style="color:#e6db74">&#34;Italy&#34;</span>: <span style="color:#e6db74">&#34;Rome&#34;</span>, <span style="color:#e6db74">&#34;Japan&#34;</span>: <span style="color:#e6db74">&#34;Tokyo&#34;</span>, <span style="color:#e6db74">&#34;India&#34;</span>: <span style="color:#e6db74">&#34;New delhi&#34;</span>}
+  
   <span style="color:#75715e">/* 打印地图 */</span>
   <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">country</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">countryCapitalMap</span> {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">country</span>, <span style="color:#e6db74">&#34;首都是&#34;</span>, <span style="color:#a6e22e">countryCapitalMap</span> [ <span style="color:#a6e22e">country</span> ])
   }
+  
   <span style="color:#75715e">/*删除元素*/</span> 
   delete(<span style="color:#a6e22e">countryCapitalMap</span>, <span style="color:#e6db74">&#34;France&#34;</span>)
+  
   <span style="color:#75715e">/*打印地图*/</span>
   <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">country</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">countryCapitalMap</span> {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">country</span>, <span style="color:#e6db74">&#34;首都是&#34;</span>, <span style="color:#a6e22e">countryCapitalMap</span> [ <span style="color:#a6e22e">country</span> ])
@@ -261,15 +264,15 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+      
         <li class="post-item"><a href="/posts/202108261456/">Css Variables</a></li>
       
         <li class="post-item"><a href="/posts/202108241426/">Js ConcatAll</a></li>
       
         <li class="post-item"><a href="/posts/202108231542/">Php Urlencode</a></li>
-      
-        <li class="post-item"><a href="/posts/202108191649/">Js Random</a></li>
-      
-        <li class="post-item"><a href="/posts/202108191648/">Js Special Characters</a></li>
       
     </ul>
   </div>
