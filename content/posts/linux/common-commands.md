@@ -39,6 +39,13 @@ ps -ef|grep php
 # 查看php-fpm的位置
 whereis php-fpm
 
+php-fpm: /usr/sbin/php-fpm /etc/php-fpm.d /etc/php-fpm.conf /usr/local/bin/php-fpm /usr/share/man/man8/php-fpm.8.gz
+
+# 启动php-fpm
+usr/sbin/php-fpm
+
+
+
 # linux 重载
 nginx -s reload
 

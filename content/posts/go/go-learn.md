@@ -28,6 +28,12 @@ c := make([]string, len(s))
 copy(c, s)              // 把 s 复制给 c
 l := s[2:5]             // 通过 slice[low:high] 语法进行“切片”操作
 
+// 读取一个切片的最后一个元素：
+sl[len(sl)-1]
+
+// 删除切片最后一个元素
+sl = sl[:len(sl)-1]
+
 str := []string{'a', 'b', 'c'} // 切片简短声明
 sort.Strings(strs)      // 字符串排序 [a, b, c]f
 
@@ -337,6 +343,28 @@ numbers = append(numbers, 0)
 // 将numbers 拷贝到 numbers1
 copy(numbers1, numbers)
 
+// 数组转切片
+
+a := [...]int{1, 2, 3}
+s := make([]int, 3)
+copy(s, a[:2])
+
+// 切片转数组
+s := []int{1, 2, 3}
+var a [3]int
+copy(a, s)
+
+// Array.prototype.unshift()  将一个或多个元素添加到数组的开头
+append([]int{1}, digits...)
+
+// Array.prototype.push()  将一个或多个元素添加到数组的末尾
+append(digits, []int{1}...)
+
+// Array.prototype.pop() 从数组中删除最后一个元素
+
+digits[len(digits) - 2:]
+
+// Array.prototype.shift()  数组中删除第一个元素
 ```
 
 ### 判断
@@ -559,11 +587,21 @@ import "github.com/gin-gonic/gin"
 
 // 多行引入
 import (
+    // 标准包, 默认的包名就是包导入路径名的最后一段
+    "fmt"
+    "math/rand"
+    "encoding/json"
+    "crypto/rand"
+
+    // 以_或.开头的源文件会被构建工具忽略
+    // 所有非标准库包的导入路径建议以所在组织的互联网域名为前缀
+    "golang.org/x/net/html"
+    "github.com/go-sql-driver/mysql"
     "github.com/gin-gonic/gin"   
     "github.com/gin-gonic/gin"
-    // 使用别名
+    // 使用别名(重命名), 如果我们想同时导入两个有着名字相同的包，那么导入声明必须至少为一个同名包指定一个新的包名以避免冲突。
     mrand "math/rand"
-    // 如果只希望导入包，而不使用任何包内的结构和类型，也不调用包内的任何函数时，可以使用匿名导入包
+    // 如果只希望导入包，而不使用任何包内的结构和类型，也不调用包内的任何函数时，可以使用匿名导入， 用下划线_来重命名导入的包。
     _ "github.com/go-admin-team/go-admin-core/sdk/pkg/response"
 )
 
