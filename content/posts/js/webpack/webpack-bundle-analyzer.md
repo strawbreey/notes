@@ -4,7 +4,7 @@ date: 2021-08-24T17:44:01+08:00
 draft: false
 ---
 
-Webpack Bundle Analyzer
+Webpack Bundle Analyzer (分析代码)
 
 对于 Web app 来说，高性能总是最高优先级，对于 Angular 也不例外。但是随着应用复杂度的不断增长，我们如何才能知道哪些内容打包到了应用中呢？如何跟踪包的尺寸？我们不希望一次发送太多的 JavaScript ，以至于拖慢应用的速度。
 
@@ -43,3 +43,4 @@ ng build --prod --stats-json
 ```bash
 npm run bundle-report
 ```
+isset()

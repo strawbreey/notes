@@ -2,22 +2,14 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	i := 0
-	j := 0
-	arr := make([]int, m+n)
-	for i+j < m+n {
-		if nums1[i] <= nums2[j] && i < m {
-			arr[i+j] = nums1[i]
-			i += 1
-		} else if j < n {
-			arr[i+j] = nums2[j]
-			j += 1
-		}
+	for i := m; i < m+n; i++ {
+		nums1[i] = nums2[i-m]
 	}
-	nums1 = arr
+	sort.Ints(nums1)
 }
 
 func main() {

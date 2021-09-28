@@ -34,6 +34,33 @@ scoop install cloc               # Windows with Scoop
 
 ### 常用技巧
 
+```bash
+# 1. 统计文件
+prompt> cloc hello.c
+  1 text file.
+  1 unique file.
+  0 files ignored
+
+# 2. 统计文件夹
+cloc gcc-5.2.0/gcc/c
+  16 text files.
+  15 unique files.
+  3 files ignored.
+
+# 3. 统计git commit
+git clone http://git.tiker.net/trees/pudb.git
+cd pudb
+cloc 6be804e07a5db
+  48 text files.
+  48 unique files.
+  15 files ignored.
+
+```
+
+### 参考资料
+
+https://github.com/AlDanial/cloc
+
 ### cloc command
 
 ```

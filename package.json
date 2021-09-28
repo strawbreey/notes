@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "webpack-bundle-analyzer": "^4.4.2"
+  },
+  "dependencies": {
+    "hotkeys-js": "^3.8.7"
   }
 }
