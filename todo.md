@@ -30,3 +30,8 @@
 
 
 https://juejin.cn/post/7017710911443959839?utm_source=gold_browser_extension
+
+
+### questions (记录所有的问题)
+
+1. Type 'boolean | undefined' is not assignable to type 'string | boolean'.
