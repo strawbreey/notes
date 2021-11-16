@@ -4,9 +4,12 @@ date: 2020-09-27T11:05:18+08:00
 draft: false
 ---
 
+
+
+
 跨源资源共享 (CORS: Cross-origin resource sharing) （或通俗地译为跨域资源共享）是一种机制，该机制使用附加的 HTTP 头来告诉浏览器，准许运行在一个源上的Web应用访问位于另一不同源选定的资源。 当一个Web应用发起一个与自身所在源（域，协议和端口）不同的HTTP请求时，它发起的即跨源HTTP请求。
 
-出于安全性，浏览器限制脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非响应报文包含了正确CORS响应头。
+出于安全性，浏览器限制脚本内发起的跨源HTTP请求。 例如，`XMLHttpRequest` 和 `Fetch API` 遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非响应报文包含了正确CORS响应头。
 
 跨源域资源共享（ CORS ）机制允许 Web 应用服务器进行跨源访问控制，从而使跨源数据传输得以安全进行。现代浏览器支持在 API 容器中（例如 XMLHttpRequest 或 Fetch ）使用 CORS，以降低跨源 HTTP 请求所带来的风险。
 
@@ -16,7 +19,28 @@ draft: false
 
 浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）
 
-#### 简单请求
+### CORS headers
+
+
+Access-Control-Allow-Origin: 域白名单，决定哪些域可以访问资源;
+
+Access-Control-Allow-Credentials: 决定是否响应 withCredentials 为 true即带Cookies的请求;
+
+Access-Control-Allow-Headers 预请求的响应头，决定哪些HTTP头可以用在真正的请求头中;
+
+Access-Control-Allow-Methods 预请求的响应头，决定正式请求可以使用哪些方法（GET, POST, PUT ...）;
+
+Access-Control-Expose-Headers 哪些头可以作为响应头;
+
+Access-Control-Max-Age 预请求的返回可以被缓存的时长;
+
+Access-Control-Request-Headers 预请求的请求头，告知服务器正式请求中哪些请求头会被使用;
+
+Origin 预请求的请求头，告知服务器请求的来源;
+
+当真正一个跨域请求发起时，浏览器会决定这个请求是简单请求还是复杂请求，简单请求则直接发起，复杂请求则需要发起一个预请求来询问服务器是否允许发送该请求。
+
+### 简单请求
 
 （1) 请求方法是以下三种方法之一：
 
@@ -55,3 +79,11 @@ draft: false
   Access-Control-Expose-Headers: FooBar
   Content-Type: text/html; charset=utf-8
 ```
+
+### 复杂请求
+
+没有满足简单请求的条件外的即为复杂请求，复杂请求会触发预检机制，
+客户端会先发送一个OPTIONS方法的请求得到 `Access-Control-Requeset-Method` 等响应头判断是否能够成功发起请求，否则放弃发送正式请求，由于OPTIONS方法的请求不会改变服务器资源，所以预请求被认定是安全的。
+
+如果预检请求返回了重定向，多大数浏览器是不支持对预检请求的重定向的，可以先发送一个简单请求，获取到重定向的URL，然后再发送正式请求。
+

@@ -66,7 +66,38 @@ git config user.email
 # 设置当前的用户信息
 git config user.name "strawbreey" 
 git config user.email "2675882608@qq.com"
+
+git config --global credential.helper store
+
+git config credential.helper store
+
 ```
+
+### 保存 git 密码
+
+1. 通过文件方式 在 `~/`下， touch创建文件 `.git-credentials`, 用vim编辑此文件，输入内容格式：
+
+
+touch .git-credentials
+vim .git-credentials
+
+输入: https://{username}:{password}@github.com
+
+
+2. 在终端下执行
+
+- 全局
+
+git config --global credential.helper store 
+
+- 局部
+git config credential.helper store
+
+3. 通过缓存方式
+
+要求：git版本需要>=1.7.10
+
+git config --global credential.helper cac
 
 
 # 删除分支

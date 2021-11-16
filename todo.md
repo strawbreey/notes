@@ -35,3 +35,5 @@ https://juejin.cn/post/7017710911443959839?utm_source=gold_browser_extension
 ### questions (记录所有的问题)
 
 1. Type 'boolean | undefined' is not assignable to type 'string | boolean'.
+
+https://qastack.cn/superuser/1277819/why-does-chrome-sometimes-download-a-pdf-instead-of-opening-it-duplicate
