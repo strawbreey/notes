@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Package - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Go语言有超过100个的标准包（译注：可以用 go list std | wc -l命令查看标准包的具体数目），标准库为大多数的程序提供了必要的基础构件。在Go的社区，有很多成熟的包被设计、共享、重用和改进，目前互联网上已经发布了非常多的Go语言开源包，它们可以通过 https://pkg.go.dev/ 检索
+任何包系统设计的目的都是为了简化大型程序的设计和维护工作，通过将一组相关的特性放进一个独立的单元以便于理解和更新，在每个单元更新的同时保持和程序中其它单元的相对独立性。这种模块化的特性允许每个包可以被其它的不同项目共享和重用，在项目范围内、甚至全球范围统一的分发和复用。
+当我们修改了一个源文件，我们必须重新编译该源文件对应的包和所有依赖该包的其他包。即使是从头构建，Go语言编译器的编译速度也明显快于其它编译语言。Go语言的闪电般的编译速度主要得益于三个语言特性。
+ 第一点，所有导入的包必须在每个文件的开头显式声明，这样的话编译器就没有必要读取和分析整个源文件来判断包的依赖关系。 第二点，禁止包的环状依赖，因为没有循环依赖，包的依赖关系形成一个有向无环图，每个包可以被独立编译，而且很可能是被并发编译。 第三点，编译后包的目标文件不仅仅记录包本身的导出信息，目标文件同时还记录了包的依赖关系。因此，在编译一个包的时候，编译器只需要读取每个直接导入包的目标文件，而不需要遍历所有依赖的的文件  导入路径 import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; &amp;#34;encoding/json&amp;#34; &amp;#34;golang.org/x/net/html&amp;#34; &amp;#34;github.com/go-sql-driver/mysql&amp;#34; ) // 包声明 通常来说，默认的包名就是包导入路径名的最后一段，因此即使两个包的导入路径不同，它们依然可能有一个相同的包名。例如，math/rand包和crypto/rand包的包名都是rand。
+关于默认包名一般采用导入路径名的最后一段的约定也有三种例外情况。
+  第一个例外，包对应一个可执行程序，也就是main包，这时候main包本身的导入路径是无关紧要的。名字为main的包是给go build（§10.7.3）构建命令一个信息，这个包编译完之后必须调用连接器生成一个可执行程序。
+  第二个例外，包所在的目录中可能有一些文件名是以_test.go为后缀的Go源文件（译注：前面必须有其它的字符，因为以_或.开头的源文件会被构建工具忽略），并且这些源文件声明的包名也是以_test为后缀名的。这种目录可以包含两种包：一种是普通包，另一种则是测试的外部扩展包。所有以_test为后缀包名的测试外部扩展包都由go test命令独立编译，普通包和测试的外部扩展包是相互独立的。测试的外部扩展包一般用来避免测试代码中的循环导入依赖，具体细节我们将在11.2.4节中介绍。
+  第三个例外，一些依赖版本号的管理工具会在导入路径后追加版本号信息，例如“gopkg.in/yaml.v2”。这种情况下包的名字并不包含版本号后缀，而是yaml。
+  导入声明 import &amp;#34;fmt&amp;#34; import &amp;#34;os&amp;#34; // =&amp;gt; 等价于 import ( &amp;#34;fmt&amp;#34; &amp;#34;os&amp;#34; ) import ( &amp;#34;fmt&amp;#34; &amp;#34;html/template&amp;#34; &amp;#34;os&amp;#34; &amp;#34;golang.org/x/net/html&amp;#34; &amp;#34;golang.org/x/net/ipv4&amp;#34; ) // 如果我们想同时导入两个有着名字相同的包，例如math/rand包和crypto/rand包，那么导入声明必须至少为一个同名包指定一个新的包名以避免冲突。这叫做导入包的重命名。  import ( &amp;#34;crypto/rand&amp;#34; mrand &amp;#34;math/rand&amp;#34; // alternative name mrand avoids conflict ) 包的匿名导入 如果只是导入一个包而并不使用导入的包将会导致一个编译错误。但是有时候我们只是想利用导入包而产生的副作用：它会计算包级变量的初始化表达式和执行导入包的init初始化函数（§2." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-package/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Package" />
+<meta property="og:description" content="Go语言有超过100个的标准包（译注：可以用 go list std | wc -l命令查看标准包的具体数目），标准库为大多数的程序提供了必要的基础构件。在Go的社区，有很多成熟的包被设计、共享、重用和改进，目前互联网上已经发布了非常多的Go语言开源包，它们可以通过 https://pkg.go.dev/ 检索
+任何包系统设计的目的都是为了简化大型程序的设计和维护工作，通过将一组相关的特性放进一个独立的单元以便于理解和更新，在每个单元更新的同时保持和程序中其它单元的相对独立性。这种模块化的特性允许每个包可以被其它的不同项目共享和重用，在项目范围内、甚至全球范围统一的分发和复用。
+当我们修改了一个源文件，我们必须重新编译该源文件对应的包和所有依赖该包的其他包。即使是从头构建，Go语言编译器的编译速度也明显快于其它编译语言。Go语言的闪电般的编译速度主要得益于三个语言特性。
+ 第一点，所有导入的包必须在每个文件的开头显式声明，这样的话编译器就没有必要读取和分析整个源文件来判断包的依赖关系。 第二点，禁止包的环状依赖，因为没有循环依赖，包的依赖关系形成一个有向无环图，每个包可以被独立编译，而且很可能是被并发编译。 第三点，编译后包的目标文件不仅仅记录包本身的导出信息，目标文件同时还记录了包的依赖关系。因此，在编译一个包的时候，编译器只需要读取每个直接导入包的目标文件，而不需要遍历所有依赖的的文件  导入路径 import ( &#34;fmt&#34; &#34;math/rand&#34; &#34;encoding/json&#34; &#34;golang.org/x/net/html&#34; &#34;github.com/go-sql-driver/mysql&#34; ) // 包声明 通常来说，默认的包名就是包导入路径名的最后一段，因此即使两个包的导入路径不同，它们依然可能有一个相同的包名。例如，math/rand包和crypto/rand包的包名都是rand。
+关于默认包名一般采用导入路径名的最后一段的约定也有三种例外情况。
+  第一个例外，包对应一个可执行程序，也就是main包，这时候main包本身的导入路径是无关紧要的。名字为main的包是给go build（§10.7.3）构建命令一个信息，这个包编译完之后必须调用连接器生成一个可执行程序。
+  第二个例外，包所在的目录中可能有一些文件名是以_test.go为后缀的Go源文件（译注：前面必须有其它的字符，因为以_或.开头的源文件会被构建工具忽略），并且这些源文件声明的包名也是以_test为后缀名的。这种目录可以包含两种包：一种是普通包，另一种则是测试的外部扩展包。所有以_test为后缀包名的测试外部扩展包都由go test命令独立编译，普通包和测试的外部扩展包是相互独立的。测试的外部扩展包一般用来避免测试代码中的循环导入依赖，具体细节我们将在11.2.4节中介绍。
+  第三个例外，一些依赖版本号的管理工具会在导入路径后追加版本号信息，例如“gopkg.in/yaml.v2”。这种情况下包的名字并不包含版本号后缀，而是yaml。
+  导入声明 import &#34;fmt&#34; import &#34;os&#34; // =&gt; 等价于 import ( &#34;fmt&#34; &#34;os&#34; ) import ( &#34;fmt&#34; &#34;html/template&#34; &#34;os&#34; &#34;golang.org/x/net/html&#34; &#34;golang.org/x/net/ipv4&#34; ) // 如果我们想同时导入两个有着名字相同的包，例如math/rand包和crypto/rand包，那么导入声明必须至少为一个同名包指定一个新的包名以避免冲突。这叫做导入包的重命名。  import ( &#34;crypto/rand&#34; mrand &#34;math/rand&#34; // alternative name mrand avoids conflict ) 包的匿名导入 如果只是导入一个包而并不使用导入的包将会导致一个编译错误。但是有时候我们只是想利用导入包而产生的副作用：它会计算包级变量的初始化表达式和执行导入包的init初始化函数（§2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-package/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-03T13:04:44+08:00" />
+<meta property="article:modified_time" content="2020-12-03T13:04:44+08:00" />
+
+<meta itemprop="name" content="Go Package">
+<meta itemprop="description" content="Go语言有超过100个的标准包（译注：可以用 go list std | wc -l命令查看标准包的具体数目），标准库为大多数的程序提供了必要的基础构件。在Go的社区，有很多成熟的包被设计、共享、重用和改进，目前互联网上已经发布了非常多的Go语言开源包，它们可以通过 https://pkg.go.dev/ 检索
+任何包系统设计的目的都是为了简化大型程序的设计和维护工作，通过将一组相关的特性放进一个独立的单元以便于理解和更新，在每个单元更新的同时保持和程序中其它单元的相对独立性。这种模块化的特性允许每个包可以被其它的不同项目共享和重用，在项目范围内、甚至全球范围统一的分发和复用。
+当我们修改了一个源文件，我们必须重新编译该源文件对应的包和所有依赖该包的其他包。即使是从头构建，Go语言编译器的编译速度也明显快于其它编译语言。Go语言的闪电般的编译速度主要得益于三个语言特性。
+ 第一点，所有导入的包必须在每个文件的开头显式声明，这样的话编译器就没有必要读取和分析整个源文件来判断包的依赖关系。 第二点，禁止包的环状依赖，因为没有循环依赖，包的依赖关系形成一个有向无环图，每个包可以被独立编译，而且很可能是被并发编译。 第三点，编译后包的目标文件不仅仅记录包本身的导出信息，目标文件同时还记录了包的依赖关系。因此，在编译一个包的时候，编译器只需要读取每个直接导入包的目标文件，而不需要遍历所有依赖的的文件  导入路径 import ( &#34;fmt&#34; &#34;math/rand&#34; &#34;encoding/json&#34; &#34;golang.org/x/net/html&#34; &#34;github.com/go-sql-driver/mysql&#34; ) // 包声明 通常来说，默认的包名就是包导入路径名的最后一段，因此即使两个包的导入路径不同，它们依然可能有一个相同的包名。例如，math/rand包和crypto/rand包的包名都是rand。
+关于默认包名一般采用导入路径名的最后一段的约定也有三种例外情况。
+  第一个例外，包对应一个可执行程序，也就是main包，这时候main包本身的导入路径是无关紧要的。名字为main的包是给go build（§10.7.3）构建命令一个信息，这个包编译完之后必须调用连接器生成一个可执行程序。
+  第二个例外，包所在的目录中可能有一些文件名是以_test.go为后缀的Go源文件（译注：前面必须有其它的字符，因为以_或.开头的源文件会被构建工具忽略），并且这些源文件声明的包名也是以_test为后缀名的。这种目录可以包含两种包：一种是普通包，另一种则是测试的外部扩展包。所有以_test为后缀包名的测试外部扩展包都由go test命令独立编译，普通包和测试的外部扩展包是相互独立的。测试的外部扩展包一般用来避免测试代码中的循环导入依赖，具体细节我们将在11.2.4节中介绍。
+  第三个例外，一些依赖版本号的管理工具会在导入路径后追加版本号信息，例如“gopkg.in/yaml.v2”。这种情况下包的名字并不包含版本号后缀，而是yaml。
+  导入声明 import &#34;fmt&#34; import &#34;os&#34; // =&gt; 等价于 import ( &#34;fmt&#34; &#34;os&#34; ) import ( &#34;fmt&#34; &#34;html/template&#34; &#34;os&#34; &#34;golang.org/x/net/html&#34; &#34;golang.org/x/net/ipv4&#34; ) // 如果我们想同时导入两个有着名字相同的包，例如math/rand包和crypto/rand包，那么导入声明必须至少为一个同名包指定一个新的包名以避免冲突。这叫做导入包的重命名。  import ( &#34;crypto/rand&#34; mrand &#34;math/rand&#34; // alternative name mrand avoids conflict ) 包的匿名导入 如果只是导入一个包而并不使用导入的包将会导致一个编译错误。但是有时候我们只是想利用导入包而产生的副作用：它会计算包级变量的初始化表达式和执行导入包的init初始化函数（§2."><meta itemprop="datePublished" content="2020-12-03T13:04:44+08:00" />
+<meta itemprop="dateModified" content="2020-12-03T13:04:44+08:00" />
+<meta itemprop="wordCount" content="210">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Package"/>
+<meta name="twitter:description" content="Go语言有超过100个的标准包（译注：可以用 go list std | wc -l命令查看标准包的具体数目），标准库为大多数的程序提供了必要的基础构件。在Go的社区，有很多成熟的包被设计、共享、重用和改进，目前互联网上已经发布了非常多的Go语言开源包，它们可以通过 https://pkg.go.dev/ 检索
+任何包系统设计的目的都是为了简化大型程序的设计和维护工作，通过将一组相关的特性放进一个独立的单元以便于理解和更新，在每个单元更新的同时保持和程序中其它单元的相对独立性。这种模块化的特性允许每个包可以被其它的不同项目共享和重用，在项目范围内、甚至全球范围统一的分发和复用。
+当我们修改了一个源文件，我们必须重新编译该源文件对应的包和所有依赖该包的其他包。即使是从头构建，Go语言编译器的编译速度也明显快于其它编译语言。Go语言的闪电般的编译速度主要得益于三个语言特性。
+ 第一点，所有导入的包必须在每个文件的开头显式声明，这样的话编译器就没有必要读取和分析整个源文件来判断包的依赖关系。 第二点，禁止包的环状依赖，因为没有循环依赖，包的依赖关系形成一个有向无环图，每个包可以被独立编译，而且很可能是被并发编译。 第三点，编译后包的目标文件不仅仅记录包本身的导出信息，目标文件同时还记录了包的依赖关系。因此，在编译一个包的时候，编译器只需要读取每个直接导入包的目标文件，而不需要遍历所有依赖的的文件  导入路径 import ( &#34;fmt&#34; &#34;math/rand&#34; &#34;encoding/json&#34; &#34;golang.org/x/net/html&#34; &#34;github.com/go-sql-driver/mysql&#34; ) // 包声明 通常来说，默认的包名就是包导入路径名的最后一段，因此即使两个包的导入路径不同，它们依然可能有一个相同的包名。例如，math/rand包和crypto/rand包的包名都是rand。
+关于默认包名一般采用导入路径名的最后一段的约定也有三种例外情况。
+  第一个例外，包对应一个可执行程序，也就是main包，这时候main包本身的导入路径是无关紧要的。名字为main的包是给go build（§10.7.3）构建命令一个信息，这个包编译完之后必须调用连接器生成一个可执行程序。
+  第二个例外，包所在的目录中可能有一些文件名是以_test.go为后缀的Go源文件（译注：前面必须有其它的字符，因为以_或.开头的源文件会被构建工具忽略），并且这些源文件声明的包名也是以_test为后缀名的。这种目录可以包含两种包：一种是普通包，另一种则是测试的外部扩展包。所有以_test为后缀包名的测试外部扩展包都由go test命令独立编译，普通包和测试的外部扩展包是相互独立的。测试的外部扩展包一般用来避免测试代码中的循环导入依赖，具体细节我们将在11.2.4节中介绍。
+  第三个例外，一些依赖版本号的管理工具会在导入路径后追加版本号信息，例如“gopkg.in/yaml.v2”。这种情况下包的名字并不包含版本号后缀，而是yaml。
+  导入声明 import &#34;fmt&#34; import &#34;os&#34; // =&gt; 等价于 import ( &#34;fmt&#34; &#34;os&#34; ) import ( &#34;fmt&#34; &#34;html/template&#34; &#34;os&#34; &#34;golang.org/x/net/html&#34; &#34;golang.org/x/net/ipv4&#34; ) // 如果我们想同时导入两个有着名字相同的包，例如math/rand包和crypto/rand包，那么导入声明必须至少为一个同名包指定一个新的包名以避免冲突。这叫做导入包的重命名。  import ( &#34;crypto/rand&#34; mrand &#34;math/rand&#34; // alternative name mrand avoids conflict ) 包的匿名导入 如果只是导入一个包而并不使用导入的包将会导致一个编译错误。但是有时候我们只是想利用导入包而产生的副作用：它会计算包级变量的初始化表达式和执行导入包的init初始化函数（§2."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Go语言有超过100个的标准包（译注：可以用 <code>go list std | wc -l</code>命令查看标准包的具体数目），标准库为大多数的程序提供了必要的基础构件。在Go的社区，有很多成熟的包被设计、共享、重用和改进，目前互联网上已经发布了非常多的Go语言开源包，它们可以通过 <code>https://pkg.go.dev/</code> 检索</p>
+<p>任何包系统设计的目的都是为了简化大型程序的设计和维护工作，通过将一组相关的特性放进一个独立的单元以便于理解和更新，在每个单元更新的同时保持和程序中其它单元的相对独立性。这种模块化的特性允许每个包可以被其它的不同项目共享和重用，在项目范围内、甚至全球范围统一的分发和复用。</p>
+<p>当我们修改了一个源文件，我们必须<code>重新编译</code>该源文件对应的包和所有依赖该包的其他包。即使是从头构建，Go语言编译器的编译速度也明显快于其它编译语言。Go语言的闪电般的编译速度主要得益于三个语言特性。</p>
+<ul>
+<li>第一点，所有导入的包必须在每个文件的开头显式声明，这样的话编译器就没有必要读取和分析整个源文件来判断包的依赖关系。</li>
+<li>第二点，禁止包的环状依赖，因为没有循环依赖，包的依赖关系形成一个有向无环图，每个包可以被独立编译，而且很可能是被并发编译。</li>
+<li>第三点，编译后包的目标文件不仅仅记录包本身的导出信息，目标文件同时还记录了包的依赖关系。因此，在编译一个包的时候，编译器只需要读取每个直接导入包的目标文件，而不需要遍历所有依赖的的文件</li>
+</ul>
+<h3 id="导入路径">导入路径</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;math/rand&#34;</span>
+    <span style="color:#e6db74">&#34;encoding/json&#34;</span>
+    <span style="color:#e6db74">&#34;golang.org/x/net/html&#34;</span>
+    <span style="color:#e6db74">&#34;github.com/go-sql-driver/mysql&#34;</span>
+)
+
+<span style="color:#75715e">// 包声明
+</span></code></pre></div><p>通常来说，默认的包名就是包导入路径名的最后一段，因此即使两个包的导入路径不同，它们依然可能有一个相同的包名。例如，math/rand包和crypto/rand包的包名都是rand。</p>
+<p>关于默认包名一般采用导入路径名的最后一段的约定也有三种例外情况。</p>
+<ul>
+<li>
+<p>第一个例外，包对应一个可执行程序，也就是main包，这时候main包本身的导入路径是无关紧要的。名字为main的包是给go build（§10.7.3）构建命令一个信息，这个包编译完之后必须调用连接器生成一个可执行程序。</p>
+</li>
+<li>
+<p>第二个例外，包所在的目录中可能有一些文件名是以_test.go为后缀的Go源文件（译注：前面必须有其它的字符，因为以_或.开头的源文件会被构建工具忽略），并且这些源文件声明的包名也是以_test为后缀名的。这种目录可以包含两种包：一种是普通包，另一种则是测试的外部扩展包。所有以_test为后缀包名的测试外部扩展包都由go test命令独立编译，普通包和测试的外部扩展包是相互独立的。测试的外部扩展包一般用来避免测试代码中的循环导入依赖，具体细节我们将在11.2.4节中介绍。</p>
+</li>
+<li>
+<p>第三个例外，一些依赖版本号的管理工具会在导入路径后追加版本号信息，例如“gopkg.in/yaml.v2”。这种情况下包的名字并不包含版本号后缀，而是yaml。</p>
+</li>
+</ul>
+<h3 id="导入声明">导入声明</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;os&#34;</span>
+
+<span style="color:#75715e">// =&gt; 等价于
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;os&#34;</span>
+)
+
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;html/template&#34;</span>
+    <span style="color:#e6db74">&#34;os&#34;</span>
+
+    <span style="color:#e6db74">&#34;golang.org/x/net/html&#34;</span>
+    <span style="color:#e6db74">&#34;golang.org/x/net/ipv4&#34;</span>
+)
+
+<span style="color:#75715e">// 如果我们想同时导入两个有着名字相同的包，例如math/rand包和crypto/rand包，那么导入声明必须至少为一个同名包指定一个新的包名以避免冲突。这叫做导入包的重命名。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;crypto/rand&#34;</span>
+    <span style="color:#a6e22e">mrand</span> <span style="color:#e6db74">&#34;math/rand&#34;</span> <span style="color:#75715e">// alternative name mrand avoids conflict
+</span><span style="color:#75715e"></span>)
+</code></pre></div><h3 id="包的匿名导入">包的匿名导入</h3>
+<p>如果只是导入一个包而并不使用导入的包将会导致一个编译错误。但是有时候我们只是想利用导入包而产生的副作用：它会计算包级变量的初始化表达式和执行导入包的init初始化函数（§2.6.2）。这时候我们需要抑制“unused import”编译错误，我们可以用下划线_来重命名导入的包。像往常一样，下划线_为空白标识符，并不能被访问。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;image/png&#34;</span> <span style="color:#75715e">// register PNG decoder
+</span></code></pre></div><h3 id="包和命名">包和命名</h3>
+<p>当创建一个包，一般要用短小的包名，但也不能太短导致难以理解。标准库中最常用的包有bufio、bytes、flag、fmt、http、io、json、os、sort、sync和time等包。</p>
+<p>尽可能让命名有描述性且无歧义。例如，类似imageutil或ioutilis的工具包命名已经足够简洁了，就无须再命名为util了。要尽量避免包名使用可能被经常用于局部变量的名字，这样可能导致用户重命名导入包，例如前面看到的path包。</p>
+<h3 id="工具">工具</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#  下载 golint 包, 使用命令go get可以下载一个单一的包或者用...下载整个子目录里面的每个包</span>
+go get github.com/golang/lint/golint
+<span style="color:#75715e"># $GOPATH/bin/golint gopl.io/ch2/popcount</span>
+<span style="color:#75715e"># src/gopl.io/ch2/popcount/main.go:1:1:</span>
+<span style="color:#75715e">#   package comment should be of the form &#34;Package popcount ...&#34;</span>
+
+
+<span style="color:#75715e"># 构建包</span>
+<span style="color:#75715e"># go build命令编译命令行参数指定的每个包</span>
+cd $GOPATH/src/gopl.io/ch1/helloworld
+go build
+
+go build gopl.io/ch1/helloworld
+
+cd $GOPATH
+go build ./src/gopl.io/ch1/helloworld
+
+<span style="color:#75715e"># 但不能</span>
+cd $GOPATH
+go build src/gopl.io/ch1/helloworld
+
+go install命令和go build命令很相似，但是它会保存每个包的编译成果，而不是将它们都丢弃。被编译的包会被保存到<span style="color:#e6db74">`</span>$GOPATH/pkg<span style="color:#e6db74">`</span>目录下，目录路径和 src目录路径对应，可执行程序被保存到<span style="color:#e6db74">`</span>$GOPATH/bin<span style="color:#e6db74">`</span>目录。（很多用户会将<span style="color:#e6db74">`</span>$GOPATH/bin<span style="color:#e6db74">`</span>添加到可执行程序的搜索列表中。）还有，<span style="color:#e6db74">`</span>go install<span style="color:#e6db74">`</span>命令和<span style="color:#e6db74">`</span>go build<span style="color:#e6db74">`</span>命令都不会重新编译没有发生变化的包，这可以使后续构建更快捷。为了方便编译依赖的包，<span style="color:#e6db74">`</span>go build -i<span style="color:#e6db74">`</span>命令将安装每个目标所依赖的包。
+
+
+<span style="color:#75715e"># 包文档</span>
+go doc time
+go doc time.Since
+go doc time.Duration.Seconds
+
+<span style="color:#75715e"># godoc</span>
+godoc -http :8000
+
+<span style="color:#75715e"># 查询包</span>
+go list github.com/go-sql-driver/mysql
+
+<span style="color:#75715e"># go list命令的参数还可以用&#34;...&#34;表示匹配任意的包的导入路径。我们可以用它来列出工作区中的所有包</span>
+go list ... 
+
+<span style="color:#75715e"># 特定子目录下的所有包</span>
+go list gopl.io/ch3/...
+
+<span style="color:#75715e"># 某个主题相关的所有包:</span>
+go list ...xml...
+
+<span style="color:#75715e"># go list命令还可以获取每个包完整的元信息，而不仅仅只是导入路径，这些元信息可以以不同格式提供给用户。其中-json命令行参数表示用JSON格式打印每个包的元信息。</span>
+go list -json hash
+
+<span style="color:#75715e"># 命令行参数-f则允许用户使用text/template包（§4.6）的模板语言定义输出文本的格式</span>
+go list -f <span style="color:#e6db74">&#39;{{join .Deps &#34; &#34;}}&#39;</span> strconv
+
+go list -f <span style="color:#e6db74">&#34;{{join .Deps \&#34; \&#34;}}&#34;</span> strconv
+
+go list -f <span style="color:#e6db74">&#34;{{.ImportPath}} -&gt; {{join .Imports \&#34; \&#34;}}&#34;</span> compress/...
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

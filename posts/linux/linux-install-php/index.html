@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux Install Php - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="linux 常用命令 格式：tar zcvf 压缩后的路径及包名 你要压缩的文件 z: gzip压缩 c: 创建压缩包 v: 显示打包压缩解压过程 f: 接着压缩 t: 查看压缩包内容 x: 解压 X: 指定文件列表形式排除不需要打包压缩的文件或目录 -exclude: 指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等） -C: 解压到指定目录
+# 例如：将`/root/cs/test/`下文件压缩到`/root/cs/test1`文件下命名为1 tar zcf /root/cs/test1/1.tar.gz /root/cs/test/ zcvf: 打包压缩 xvf: 解压缩
+php7.2安装 # https://www.php.net/distributions/php-7.2.33.tar.gz # 下载php7.2 wget http://cn2.php.net/distributions/php-7.2.33.tar.gz tar xf php-7.2.33.tar.xz # 解压 tar -zxvf php-7.2.33.tar.xz # 配置 ./configure --prefix=/usr/local/php72 --with-config-file-path=/usr/local/php72/etc --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gd --with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-gettext --enable-session --with-mcrypt --with-curl # 安装 make &amp;amp;&amp;amp; make install # 测试 make test php405安装 安装php5." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/linux/linux-install-php/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Linux Install Php" />
+<meta property="og:description" content="linux 常用命令 格式：tar zcvf 压缩后的路径及包名 你要压缩的文件 z: gzip压缩 c: 创建压缩包 v: 显示打包压缩解压过程 f: 接着压缩 t: 查看压缩包内容 x: 解压 X: 指定文件列表形式排除不需要打包压缩的文件或目录 -exclude: 指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等） -C: 解压到指定目录
+# 例如：将`/root/cs/test/`下文件压缩到`/root/cs/test1`文件下命名为1 tar zcf /root/cs/test1/1.tar.gz /root/cs/test/ zcvf: 打包压缩 xvf: 解压缩
+php7.2安装 # https://www.php.net/distributions/php-7.2.33.tar.gz # 下载php7.2 wget http://cn2.php.net/distributions/php-7.2.33.tar.gz tar xf php-7.2.33.tar.xz # 解压 tar -zxvf php-7.2.33.tar.xz # 配置 ./configure --prefix=/usr/local/php72 --with-config-file-path=/usr/local/php72/etc --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gd --with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-gettext --enable-session --with-mcrypt --with-curl # 安装 make &amp;&amp; make install # 测试 make test php405安装 安装php5." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/linux/linux-install-php/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-01T10:10:41+08:00" />
+<meta property="article:modified_time" content="2020-09-01T10:10:41+08:00" />
+
+<meta itemprop="name" content="Linux Install Php">
+<meta itemprop="description" content="linux 常用命令 格式：tar zcvf 压缩后的路径及包名 你要压缩的文件 z: gzip压缩 c: 创建压缩包 v: 显示打包压缩解压过程 f: 接着压缩 t: 查看压缩包内容 x: 解压 X: 指定文件列表形式排除不需要打包压缩的文件或目录 -exclude: 指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等） -C: 解压到指定目录
+# 例如：将`/root/cs/test/`下文件压缩到`/root/cs/test1`文件下命名为1 tar zcf /root/cs/test1/1.tar.gz /root/cs/test/ zcvf: 打包压缩 xvf: 解压缩
+php7.2安装 # https://www.php.net/distributions/php-7.2.33.tar.gz # 下载php7.2 wget http://cn2.php.net/distributions/php-7.2.33.tar.gz tar xf php-7.2.33.tar.xz # 解压 tar -zxvf php-7.2.33.tar.xz # 配置 ./configure --prefix=/usr/local/php72 --with-config-file-path=/usr/local/php72/etc --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gd --with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-gettext --enable-session --with-mcrypt --with-curl # 安装 make &amp;&amp; make install # 测试 make test php405安装 安装php5."><meta itemprop="datePublished" content="2020-09-01T10:10:41+08:00" />
+<meta itemprop="dateModified" content="2020-09-01T10:10:41+08:00" />
+<meta itemprop="wordCount" content="358">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Install Php"/>
+<meta name="twitter:description" content="linux 常用命令 格式：tar zcvf 压缩后的路径及包名 你要压缩的文件 z: gzip压缩 c: 创建压缩包 v: 显示打包压缩解压过程 f: 接着压缩 t: 查看压缩包内容 x: 解压 X: 指定文件列表形式排除不需要打包压缩的文件或目录 -exclude: 指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等） -C: 解压到指定目录
+# 例如：将`/root/cs/test/`下文件压缩到`/root/cs/test1`文件下命名为1 tar zcf /root/cs/test1/1.tar.gz /root/cs/test/ zcvf: 打包压缩 xvf: 解压缩
+php7.2安装 # https://www.php.net/distributions/php-7.2.33.tar.gz # 下载php7.2 wget http://cn2.php.net/distributions/php-7.2.33.tar.gz tar xf php-7.2.33.tar.xz # 解压 tar -zxvf php-7.2.33.tar.xz # 配置 ./configure --prefix=/usr/local/php72 --with-config-file-path=/usr/local/php72/etc --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gd --with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-gettext --enable-session --with-mcrypt --with-curl # 安装 make &amp;&amp; make install # 测试 make test php405安装 安装php5."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h4 id="linux-常用命令">linux 常用命令</h4>
+<p>格式：tar zcvf 压缩后的路径及包名 你要压缩的文件
+　z: gzip压缩
+c: 创建压缩包
+v: 显示打包压缩解压过程
+f: 接着压缩
+t: 查看压缩包内容
+x: 解压
+X: 指定文件列表形式排除不需要打包压缩的文件或目录
+-exclude: 指定排除文件或目录不需要打包压缩的文件或目录（也可以用正则匹配/通配符等）
+-C: 解压到指定目录</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 例如：将`/root/cs/test/`下文件压缩到`/root/cs/test1`文件下命名为1</span>
+tar zcf /root/cs/test1/1.tar.gz /root/cs/test/
+</code></pre></div><p>zcvf:   打包压缩  <br>
+xvf: 解压缩</p>
+<h3 id="php72安装">php7.2安装</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># https://www.php.net/distributions/php-7.2.33.tar.gz</span>
+
+<span style="color:#75715e"># 下载php7.2</span>
+wget http://cn2.php.net/distributions/php-7.2.33.tar.gz tar xf php-7.2.33.tar.xz
+
+<span style="color:#75715e"># 解压</span>
+tar -zxvf php-7.2.33.tar.xz
+
+<span style="color:#75715e"># 配置</span>
+./configure --prefix<span style="color:#f92672">=</span>/usr/local/php72 --with-config-file-path<span style="color:#f92672">=</span>/usr/local/php72/etc --with-mysql<span style="color:#f92672">=</span>mysqlnd --with-mysqli<span style="color:#f92672">=</span>mysqlnd --with-pdo-mysql<span style="color:#f92672">=</span>mysqlnd --with-gd --with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization  --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-gettext --enable-session --with-mcrypt --with-curl
+
+<span style="color:#75715e"># 安装</span>
+make <span style="color:#f92672">&amp;&amp;</span> make install
+
+<span style="color:#75715e"># 测试</span>
+make test
+</code></pre></div><h3 id="php405安装">php405安装</h3>
+<h3 id="安装php56">安装php5.6</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#75715e"># 下载 php5.6</span>
+wget -c http://cn2.php.net/distributions/php-5.6.21.tar.gz
+
+<span style="color:#75715e"># 解压</span>
+tar -zxvf php-5.6.21.tar.gz
+
+<span style="color:#75715e"># 编译</span>
+./configure --prefix<span style="color:#f92672">=</span>/usr/local/php56 --with-config-file-path<span style="color:#f92672">=</span>/usr/local/php56/etc --with-mysql<span style="color:#f92672">=</span>mysqlnd --with-mysqli<span style="color:#f92672">=</span>mysqlnd --with-pdo-mysql<span style="color:#f92672">=</span>mysqlnd --with-gd --with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization  --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-gettext --enable-session --with-mcrypt --with-curl
+
+<span style="color:#75715e"># 安装</span>
+make <span style="color:#f92672">&amp;&amp;</span> make install
+
+<span style="color:#75715e"># 测试</span>
+make test
+</code></pre></div><h2 id="配置php-fpmconf">配置php-fpm.conf</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 修改php-fpm.cong</span>
+cd /usr/local/php72/etc
+cp php-fpm.conf.default php-fpm.conf
+vi php-fpm.conf
+
+<span style="color:#75715e"># 编译</span>
+/usr/local/php56/bin/phpize  ./configure  --with-php-config<span style="color:#f92672">=</span>/usr/local/php56/bin/php-config
+</code></pre></div><h3 id="linux">linux</h3>
+<p>php-5.3.28.tar.bz</p>
+<p>yum install php54w.x86_64 php54w-cli.x86_64 php54w-common.x86_64 php54w-gd.x86_64 php54w-ldap.x86_64 php54w-mbstring.x86_64 php54w-mcrypt.x86_64 php54w-mysql.x86_64 php54w-pdo.x86_64</p>
+<p>yum -y install php php-fpm php-mysql php-mcrypt php-pdo php-mbstring php-ldap</p>
+<h3 id="yum-安装-php">yum 安装 php</h3>
+<blockquote>
+<p>centos7.0用yum直接安装apache、php他们的默认版本是 apache2.4 和 php5.4</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 在安装前 ，更新一下系统</span>
+yum update
+
+<span style="color:#75715e"># 安装一些必备的包</span>
+yum -y install gcc
+yum -y install gcc-c++
+yum -y install make
+
+<span style="color:#75715e"># 开始安装apache</span>
+yum install httpd
+
+<span style="color:#75715e"># 现在去浏览器中输入的服务器的ip，正常情况你是访问不了的，因为有防火墙默认是没有对80端口开启的，所以现在要去开放防火墙对80端口开放</span>
+
+yum install iptables-services <span style="color:#75715e">## 安装iptables防火墙</span>
+vi /etc/sysconfig/iptables <span style="color:#75715e">##修改配置</span>
+-A INPUT -m state –state NEW -m tcp -p tcp –dport <span style="color:#ae81ff">80</span> -j ACCEPT <span style="color:#75715e">#允许80端口通过防火墙 1</span>
+-A INPUT -m state –state NEW -m tcp -p tcp –dport <span style="color:#ae81ff">3306</span> -j ACCEPT <span style="color:#75715e">#允许3306端口通过防火墙 2</span>
+<span style="color:#75715e"># 把1、2两条规则保存到打开的配置文件里面，注意：要放在20端口下面</span>
+systemctl restart firewalld.service <span style="color:#75715e">##重启防火墙</span>
+
+find / -name httpd.conf <span style="color:#75715e">## 假如找不到httpd.conf文件</span>
+<span style="color:#75715e"># 找到ServerName —–改成：ServerName localhost:80</span>
+<span style="color:#75715e"># 重启：</span>
+systemctl restart httpd.service
+<span style="color:#75715e"># 设置apache开机启动</span>
+systemctl enable httpd.service 
+
+
+<span style="color:#75715e"># 安装php, 默认是php5.4</span>
+yum -y install php-gd php-xml php-mbstring php-ldap php-pear php-xmlrpc
+
+<span style="color:#75715e"># 安装php7.0</span>
+
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+yum -y install php70w.x86_64 php70w-cli.x86_64 php70w-common.x86_64 php70w-gd.x86_64 php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mysql.x86_64 php70w-pdo.x86_64 php70w-pear.noarch php70w-process.x86_64 php70w-xml.x86_64 php70w-xmlrpc.x86_64
+
+
+<span style="color:#75715e"># 安装PHP FPM</span>
+yum install php55w-fpm
+yum install php56w-fpm
+yum install php70w-fpm
+
+<span style="color:#75715e"># 安装mysql</span>
+yum -y install mysql-connector-odbc mysql-devel libdbi-dbd-mysql
+
+
+<span style="color:#75715e"># 安装php支持redis扩展</span>
+
+<span style="color:#75715e"># 下载phpredis包</span>
+<span style="color:#75715e"># tar -zxvf 包名</span>
+/usr/bin/phpize
+./configure –with-php-config<span style="color:#f92672">=</span>php-config的路径 你可以find / -name php-config 查看路径
+make
+make <span style="color:#f92672">&amp;&amp;</span> install
+</code></pre></div><h2 id="引用">引用</h2>
+<p><a href="https://www.jianshu.com/p/600ef6e83af1">CentOs 同时使用多个php版本</a></p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

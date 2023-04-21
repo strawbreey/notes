@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Angular Upgrade - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Angular 升级  升级 angular-cli 到最新你版本  npm install -g @angular/cli@latest 更新项目中angular相关的包。  ng update --all 更新前  无论在那里使用了 Renderer，现在都使用 Renderer2 如果使用了旧版的 HttpModule 和 Http 服务，请切换到 HttpClientModule 和 HttpClient 服务。HttpClient 简化了默认的 ergonomics(不再需要映射(map)到JSON)，并且现在支持类型化的返回值和拦截器。进一步了解 https://angular.io/guide/http 一旦所有依赖更新到 RxJS 6，请移除 rxjs-compat. 如果使用了 Angular Service worker，使用 files 替代 versionedFiles  更新期间   在终端中运行 ng update @angular/cli@8 @angular/core@8 更新 CLI 和核心框架到 v8。
+  使用 ::ng-deep 替代 /deep/, 了解有关 Angular 组件样式和 ::ng-deep 的更多信息。/deep/ 和 ::ng-deep 都不推荐使用，在从浏览器和工具(tools)中移除 shadow-piercing descendant 组合器前最好使用 ::ng-deep。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/angular/angular-upgrade/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Angular Upgrade" />
+<meta property="og:description" content="Angular 升级  升级 angular-cli 到最新你版本  npm install -g @angular/cli@latest 更新项目中angular相关的包。  ng update --all 更新前  无论在那里使用了 Renderer，现在都使用 Renderer2 如果使用了旧版的 HttpModule 和 Http 服务，请切换到 HttpClientModule 和 HttpClient 服务。HttpClient 简化了默认的 ergonomics(不再需要映射(map)到JSON)，并且现在支持类型化的返回值和拦截器。进一步了解 https://angular.io/guide/http 一旦所有依赖更新到 RxJS 6，请移除 rxjs-compat. 如果使用了 Angular Service worker，使用 files 替代 versionedFiles  更新期间   在终端中运行 ng update @angular/cli@8 @angular/core@8 更新 CLI 和核心框架到 v8。
+  使用 ::ng-deep 替代 /deep/, 了解有关 Angular 组件样式和 ::ng-deep 的更多信息。/deep/ 和 ::ng-deep 都不推荐使用，在从浏览器和工具(tools)中移除 shadow-piercing descendant 组合器前最好使用 ::ng-deep。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/angular/angular-upgrade/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-26T17:47:55+08:00" />
+<meta property="article:modified_time" content="2021-03-26T17:47:55+08:00" />
+
+<meta itemprop="name" content="Angular Upgrade">
+<meta itemprop="description" content="Angular 升级  升级 angular-cli 到最新你版本  npm install -g @angular/cli@latest 更新项目中angular相关的包。  ng update --all 更新前  无论在那里使用了 Renderer，现在都使用 Renderer2 如果使用了旧版的 HttpModule 和 Http 服务，请切换到 HttpClientModule 和 HttpClient 服务。HttpClient 简化了默认的 ergonomics(不再需要映射(map)到JSON)，并且现在支持类型化的返回值和拦截器。进一步了解 https://angular.io/guide/http 一旦所有依赖更新到 RxJS 6，请移除 rxjs-compat. 如果使用了 Angular Service worker，使用 files 替代 versionedFiles  更新期间   在终端中运行 ng update @angular/cli@8 @angular/core@8 更新 CLI 和核心框架到 v8。
+  使用 ::ng-deep 替代 /deep/, 了解有关 Angular 组件样式和 ::ng-deep 的更多信息。/deep/ 和 ::ng-deep 都不推荐使用，在从浏览器和工具(tools)中移除 shadow-piercing descendant 组合器前最好使用 ::ng-deep。"><meta itemprop="datePublished" content="2021-03-26T17:47:55+08:00" />
+<meta itemprop="dateModified" content="2021-03-26T17:47:55+08:00" />
+<meta itemprop="wordCount" content="268">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Angular Upgrade"/>
+<meta name="twitter:description" content="Angular 升级  升级 angular-cli 到最新你版本  npm install -g @angular/cli@latest 更新项目中angular相关的包。  ng update --all 更新前  无论在那里使用了 Renderer，现在都使用 Renderer2 如果使用了旧版的 HttpModule 和 Http 服务，请切换到 HttpClientModule 和 HttpClient 服务。HttpClient 简化了默认的 ergonomics(不再需要映射(map)到JSON)，并且现在支持类型化的返回值和拦截器。进一步了解 https://angular.io/guide/http 一旦所有依赖更新到 RxJS 6，请移除 rxjs-compat. 如果使用了 Angular Service worker，使用 files 替代 versionedFiles  更新期间   在终端中运行 ng update @angular/cli@8 @angular/core@8 更新 CLI 和核心框架到 v8。
+  使用 ::ng-deep 替代 /deep/, 了解有关 Angular 组件样式和 ::ng-deep 的更多信息。/deep/ 和 ::ng-deep 都不推荐使用，在从浏览器和工具(tools)中移除 shadow-piercing descendant 组合器前最好使用 ::ng-deep。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="angular-升级">Angular 升级</h3>
+<ol>
+<li>升级 angular-cli 到最新你版本</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install -g @angular/cli@latest
+</code></pre></div><ol start="2">
+<li>更新项目中angular相关的包。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng update --all
+</code></pre></div><h3 id="更新前">更新前</h3>
+<ul>
+<li>无论在那里使用了 Renderer，现在都使用 Renderer2</li>
+<li>如果使用了旧版的 HttpModule 和 Http 服务，请切换到 HttpClientModule 和 HttpClient 服务。HttpClient 简化了默认的 ergonomics(不再需要映射(map)到JSON)，并且现在支持类型化的返回值和拦截器。进一步了解 <a href="https://angular.io/guide/http">https://angular.io/guide/http</a></li>
+<li>一旦所有依赖更新到 RxJS 6，请移除 rxjs-compat.</li>
+<li>如果使用了 Angular Service worker，使用 files 替代 versionedFiles</li>
+</ul>
+<h3 id="更新期间">更新期间</h3>
+<ul>
+<li>
+<p>在终端中运行 ng update @angular/cli@8 @angular/core@8 更新 CLI 和核心框架到 v8。</p>
+</li>
+<li>
+<p>使用 ::ng-deep 替代 /deep/, 了解有关 Angular 组件样式和 ::ng-deep 的更多信息。/deep/ 和 ::ng-deep 都不推荐使用，在从浏览器和工具(tools)中移除 shadow-piercing descendant 组合器前最好使用 ::ng-deep。</p>
+</li>
+<li>
+<p>Angular 现在使用 TypeScript 3.4，阅读更多关于改进类型检查可能产生的错误的信息</p>
+</li>
+<li>
+<p>确保正在使用 Node 10 或更高版本</p>
+</li>
+<li>
+<p>CLI 的 build 命令现在可以自动创建一个具有最少 polyfill 的 ES6 构建(build)，和一个适用于较旧浏览器的兼容 ES5 构建，并根据浏览器加载适当的文件。您可以通过在 tsconfig.json 中将 target 设置为 es5 来取消此更改。了解详细</p>
+</li>
+<li>
+<p>使用新版本的 CLI 时，将询问您是否要选择共享 CLI 使用数据。您也可以添加自己的 Google Analytics 帐户。这样，我们就可以优先考虑哪些 CLI 功能，从而做出更好的决策，并衡量改进的影响。了解详细</p>
+</li>
+<li>
+<p>如果您使用 ViewChild 或 ContentChild，则我们将更新解决这些查询的方式，以使开发人员可以更好地控制。现在，您必须指定更改检测应在设置结果之前运行。例如：@ContentChild(&lsquo;foo&rsquo;, {static: false}) foo !: ElementRef;. ng update 会自动更新您的查询，但会因为使您的查询成为 static 而导致兼容性问题。了解详细</p>
+</li>
+<li>
+<p>我们已经从本地 Sass 编译器切换到 JavaScript 编译器。要切换回 native 版本，请将其安装为devDependency：npm install node-sass &ndash;save-dev。</p>
+</li>
+<li>
+<p>如果要构建自己的 Schematics，它们可能(potentially)是异步(asynchronous)的。从 8.0 开始，Schematics 都是异步的。</p>
+</li>
+</ul>
+<h3 id="更新后">更新后</h3>
+<ul>
+<li>
+<p>对于通过路由器延迟加载的模块，请确保您正在使用动态导入。在 v9 中删除了通过字符串导入。ng update 会自动处理。</p>
+</li>
+<li>
+<p>我们不建议使用 @angular/platform-webworker，因为它与 CLI 不兼容。在 Web Worker 中运行 Angular 的渲染架构无法满足开发人员的需求。您仍然可以将Web worker与Angular一起使用。通过 Web worker 指南了解更多。如果您有需要的用例，请通过 <a href="mailto:devrel@angular.io">devrel@angular.io</a> 与我们联系！</p>
+</li>
+<li>
+<p>在版本 8 中已弃用了对 Angular 中的 Web 跟踪框架的支持。您应该停止使用所有 wtf*API。要进行性能跟踪，我们建议使用浏览器性能工具。</p>
+</li>
+<li>
+<p>删除 angular.json 中的 es5BrowserSupport，并在 tsconfig.json 中将 target 设置为 es2015。Angular 现在使用您的浏览器列表来确定是否需要 ES5 构建。ng update 将自动迁移此项。</p>
+</li>
+</ul>
+<h3 id="升级过程中遇到的警告">升级过程中遇到的警告</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 升级angular 到 8</span>
+$ ng update @angular/cli@8 @angular/core@8
+Using package manager: <span style="color:#e6db74">&#39;yarn&#39;</span>
+Collecting installed dependencies...
+Found <span style="color:#ae81ff">50</span> dependencies.
+Fetching dependency metadata from registry...
+                  Package <span style="color:#e6db74">&#34;@ant-design/icons-angular&#34;</span> has an incompatible peer dependency to <span style="color:#e6db74">&#34;typescript&#34;</span> <span style="color:#f92672">(</span>requires <span style="color:#e6db74">&#34;~3.1.3&#34;</span>, would install <span style="color:#e6db74">&#34;3.5.3&#34;</span><span style="color:#f92672">)</span>.
+× Migration failed: Incompatible peer dependencies found.
+Peer dependency warnings when installing dependencies means that those dependencies might not work correctly together.
+You can use the <span style="color:#e6db74">&#39;--force&#39;</span> option to ignore incompatible peer dependencies and instead address these warnings later.
+  See <span style="color:#e6db74">&#34;C:\Users\V_GUAN~1\AppData\Local\Temp\ng-T8prCL\angular-errors.log&#34;</span> <span style="color:#66d9ef">for</span> further details.
+
+<span style="color:#75715e"># 强制升级到8</span>
+ng update @angular/cli@8 @angular/core@8 --force
+
+<span style="color:#75715e"># 升级antd 到8</span>
+
+ng update ng-zorro-antd@8
+
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

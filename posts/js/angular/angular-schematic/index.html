@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Angular Schematic - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
+原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
+Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
+生成原理图 ng generate my-schematic-collection:my-schematic-name # or ng generate my-schematic-name --collection collection-name 配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
+为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
+添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
+生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
+更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
+生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
+ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &amp;ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/angular/angular-schematic/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Angular Schematic" />
+<meta property="og:description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
+原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
+Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
+生成原理图 ng generate my-schematic-collection:my-schematic-name # or ng generate my-schematic-name --collection collection-name 配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
+为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
+添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
+生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
+更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
+生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
+ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/angular/angular-schematic/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-18T19:40:57+08:00" />
+<meta property="article:modified_time" content="2020-09-18T19:40:57+08:00" />
+
+<meta itemprop="name" content="Angular Schematic">
+<meta itemprop="description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
+原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
+Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
+生成原理图 ng generate my-schematic-collection:my-schematic-name # or ng generate my-schematic-name --collection collection-name 配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
+为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
+添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
+生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
+更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
+生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
+ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。"><meta itemprop="datePublished" content="2020-09-18T19:40:57+08:00" />
+<meta itemprop="dateModified" content="2020-09-18T19:40:57+08:00" />
+<meta itemprop="wordCount" content="180">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Angular Schematic"/>
+<meta name="twitter:description" content="原理图 (Schematic) 原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。
+原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。
+Angular CLI 中的原理图 原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。
+生成原理图 ng generate my-schematic-collection:my-schematic-name # or ng generate my-schematic-name --collection collection-name 配置 CLI 的原理图 编写库的原理图 (Developing schematics for libraries)
+为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。
+添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。
+生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。
+更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。
+生成（Generation）原理图 生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。
+ng generate @angular/material:table 更新原理图 ng update如果你给这个命令指定一组要更新的库（或 &ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="原理图-schematic">原理图 (Schematic)</h3>
+<p>原理图是一个基于模板的支持复杂逻辑的代码生成器。它是一组通过生成代码或修改代码来转换软件项目的指令。原理图会打包成集合（collection）并用 npm 安装。</p>
+<p>原理图的集合可以作为一个强大的工具，以创建、修改和维护任何软件项目，特别是当要自定义 Angular 项目以满足你自己组织的特定需求时。例如，你可以借助原理图来用预定义的模板或布局生成常用的 UI 模式或特定的组件。你也可以使用原理图来强制执行架构规则和约定，让你的项目保持一致性和互操作性。</p>
+<h4 id="angular-cli-中的原理图">Angular CLI 中的原理图</h4>
+<p>原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。</p>
+<h4 id="生成原理图">生成原理图</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ng generate my-schematic-collection:my-schematic-name
+<span style="color:#75715e"># or</span>
+ng generate my-schematic-name --collection collection-name
+</code></pre></div><h4 id="配置-cli-的原理图">配置 CLI 的原理图</h4>
+<p>编写库的原理图  (Developing schematics for libraries)</p>
+<p>为一名库开发人员，你可以创建自己的自定义原理图集合，以便把你的库与 Angular CLI 集成在一起。</p>
+<p>添加（Add）原理图允许开发人员使用 ng add 在 Angular 工作空间中安装你的库。</p>
+<p>生成（Generation）原理图可以告诉 ng generate 子命令如何修改项目、添加配置和脚本，以及为库中定义的工件提供脚手架。</p>
+<p>更新（Update）原理图可以告诉 ng update 命令，如何更新库的依赖，并在发布新版本时调整其中的重大变更。</p>
+<h4 id="生成generation原理图">生成（Generation）原理图</h4>
+<p>生成器原理图是 ng generate 的操作指令。 那些已经有文档的子命令会使用默认的 Angular 生成器原理图，但你可以在子命令中指定另一个原理图来生成你的库中定义的那些工件。</p>
+<pre><code>ng generate @angular/material:table 
+</code></pre><h4 id="更新原理图">更新原理图</h4>
+<pre><code>ng update
+</code></pre><p>如果你给这个命令指定一组要更新的库（或 &ndash;all 标志），它就会更新这些库、这些库的对等依赖，以及对等依赖的对等依赖。</p>
+<blockquote>
+<p>如果存在不一致（例如，如果在某个简单的 semver 范围内无法匹配对等依赖），那么该命令会生成一个错误，并且不会更改工作空间中的任何内容。</p>
+</blockquote>
+<p>我们建议你不要强制更新所有的依赖项，而应该首先尝试更新特定的依赖项。</p>
+<p>如果你创建的新版本的库引入了潜在的重大更改，你可以提供一个更新原理图，让 ng update 命令能够自动解决所更新项目中的任何重大修改。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ng update @angular/material
+</code></pre></div><h3 id="创作原理图">创作原理图</h3>
+<h4 id="概念">概念</h4>
+<p>原理图的公共 API 定义了表达其基本概念的类。</p>
+<ul>
+<li>
+<p>虚拟文件系统用 Tree（树）表示。Tree 数据结构包含一个基础状态 base（一组已经存在的文件）和一个 暂存区 staging（需要应用到 base 的更改列表）。在进行修改的过程中，你并没有真正改变它的 base，而是把那些修改添加到了暂存区。</p>
+</li>
+<li>
+<p>Rule（规则）对象定义了一个函数，它接受 Tree，进行转换，并返回一个新的 Tree。原理图的主文件 index.ts 定义了一组实现原理图逻辑的规则。</p>
+</li>
+<li>
+<p>转换由 Action（动作）表示。有四种动作类型：Create、Rename、Overwrite 和 Delete。</p>
+</li>
+<li>
+<p>每个原理图都在一个上下文中运行，上下文由一个 SchematicContext 对象表示。</p>
+</li>
+</ul>
+<h4 id="定义规则和动作">定义规则和动作</h4>
+<p>你使用 Schematics CLI 创建一个新的空白原理图时，它所生成的入口函数就是一个规则工厂。RuleFactory 对象定义了一个用于创建 Rule 的高阶函数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Rule</span>, <span style="color:#a6e22e">SchematicContext</span>, <span style="color:#a6e22e">Tree</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular-devkit/schematics&#39;</span>;
+
+<span style="color:#75715e">// You don&#39;t have to export the function as default.
+</span><span style="color:#75715e">// You can also have more than one rule factory per file.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">helloWorld</span>(<span style="color:#a6e22e">_options</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Rule</span> {
+ <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">tree</span>: <span style="color:#66d9ef">Tree</span>, <span style="color:#a6e22e">_context</span>: <span style="color:#66d9ef">SchematicContext</span>) <span style="color:#f92672">=&gt;</span> {
+   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">tree</span>;
+ };
+}
+</code></pre></div><p>你的这些规则可以通过调用外部工具和实现逻辑来修改你的项目。比如，你需要一个规则来定义如何将原理图中的模板合并到宿主项目中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> {
+  <span style="color:#a6e22e">JsonAstObject</span>,
+  <span style="color:#a6e22e">JsonObject</span>,
+  <span style="color:#a6e22e">JsonValue</span>,
+  <span style="color:#a6e22e">Path</span>,
+  <span style="color:#a6e22e">normalize</span>,
+  <span style="color:#a6e22e">parseJsonAst</span>,
+  <span style="color:#a6e22e">strings</span>,
+} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular-devkit/core&#39;</span>;
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

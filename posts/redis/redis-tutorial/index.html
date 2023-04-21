@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Redis Tutorial - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Install # download redis wget http://download.redis.io/releases/redis-2.8.17.tar.gz # Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录 tar xzf redis-2.8.17.tar.gz # or xvfz cd redis-2.8.17 make # server cd src ./redis-server # or ./redis-server ../redis.conf Ubuntu 安装 apt-get update apt-get install redis-server # start redis redis-server # test redis redis-cli Redis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
+String
+SET runoob &amp;#34;菜鸟教程&amp;#34; GET runoob #菜鸟教程 一个键最大能存储512MB Hash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/redis/redis-tutorial/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Redis Tutorial" />
+<meta property="og:description" content="Install # download redis wget http://download.redis.io/releases/redis-2.8.17.tar.gz # Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录 tar xzf redis-2.8.17.tar.gz # or xvfz cd redis-2.8.17 make # server cd src ./redis-server # or ./redis-server ../redis.conf Ubuntu 安装 apt-get update apt-get install redis-server # start redis redis-server # test redis redis-cli Redis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
+String
+SET runoob &#34;菜鸟教程&#34; GET runoob #菜鸟教程 一个键最大能存储512MB Hash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/redis/redis-tutorial/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-21T10:29:08+08:00" />
+<meta property="article:modified_time" content="2020-09-21T10:29:08+08:00" />
+
+<meta itemprop="name" content="Redis Tutorial">
+<meta itemprop="description" content="Install # download redis wget http://download.redis.io/releases/redis-2.8.17.tar.gz # Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录 tar xzf redis-2.8.17.tar.gz # or xvfz cd redis-2.8.17 make # server cd src ./redis-server # or ./redis-server ../redis.conf Ubuntu 安装 apt-get update apt-get install redis-server # start redis redis-server # test redis redis-cli Redis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
+String
+SET runoob &#34;菜鸟教程&#34; GET runoob #菜鸟教程 一个键最大能存储512MB Hash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象"><meta itemprop="datePublished" content="2020-09-21T10:29:08+08:00" />
+<meta itemprop="dateModified" content="2020-09-21T10:29:08+08:00" />
+<meta itemprop="wordCount" content="335">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redis Tutorial"/>
+<meta name="twitter:description" content="Install # download redis wget http://download.redis.io/releases/redis-2.8.17.tar.gz # Unzip z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录 tar xzf redis-2.8.17.tar.gz # or xvfz cd redis-2.8.17 make # server cd src ./redis-server # or ./redis-server ../redis.conf Ubuntu 安装 apt-get update apt-get install redis-server # start redis redis-server # test redis redis-cli Redis Data Type Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)
+String
+SET runoob &#34;菜鸟教程&#34; GET runoob #菜鸟教程 一个键最大能存储512MB Hash(哈希) Redis hash 是一个键值对集合 Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="install">Install</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># download redis</span>
+wget http://download.redis.io/releases/redis-2.8.17.tar.gz
+
+<span style="color:#75715e"># Unzip  z:gzip压缩 c:创建压缩包 v:显示打包压缩解压过程 f:接着压缩 t:查看压缩包内容 x:解压 X:指定文件列表形式排除不需要打包压缩的文件或目录</span>
+tar xzf redis-2.8.17.tar.gz <span style="color:#75715e"># or xvfz</span>
+cd redis-2.8.17
+make
+
+<span style="color:#75715e"># server</span>
+cd src
+./redis-server
+<span style="color:#75715e"># or</span>
+./redis-server ../redis.conf
+</code></pre></div><h4 id="ubuntu-安装">Ubuntu 安装</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apt-get update
+apt-get install redis-server
+
+<span style="color:#75715e"># start redis</span>
+redis-server
+
+<span style="color:#75715e"># test redis</span>
+redis-cli
+</code></pre></div><h3 id="redis-data-type">Redis Data Type</h3>
+<p>Redis 支持5中数据类型， string(字符串), hash(哈希), list(列表), set(列表) 和 zset(有序集合)</p>
+<p>String</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">SET runoob <span style="color:#e6db74">&#34;菜鸟教程&#34;</span>
+GET runoob <span style="color:#75715e">#菜鸟教程  一个键最大能存储512MB</span>
+</code></pre></div><p>Hash(哈希)
+Redis hash 是一个键值对集合
+Redis hash 是一个 string 类型的field 和 value 的映射表，hash特别适合用于存储对象</p>
+<pre><code>HMSET data filed1 &quot;hello&quot; filed2 &quot;world&quot;
+HGET data filed1
+</code></pre><p>List(列表)
+Redis 列表是简单的字符串列表, 按照插入顺序排序，你可以添加一个元素到头部(左边)或者尾部(右边)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">lpush data redis
+lpush data mogodb
+lpush data rabitmq
+lrange data <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span>
+</code></pre></div><ol>
+<li>&ldquo;rabitmq&rdquo;</li>
+<li>&ldquo;mongodb&rdquo;</li>
+<li>&ldquo;redis&rdquo;</li>
+</ol>
+<h3 id="set-集合">Set (集合)</h3>
+<p>Redis 的 Set 是 string 类型的无序集合。</p>
+<p>集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sadd data redis
+sadd data mongodb
+sadd data rabitmq
+smembers data
+
+</code></pre></div><ol>
+<li>&ldquo;redis&rdquo;</li>
+<li>&ldquo;rabitmq&rdquo;</li>
+<li>&ldquo;mongodb&rdquo;</li>
+</ol>
+<p>zset 
+Reset 和set 一样的string类型的元素集合,且不允许重复的成员</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">zadd key score member
+zadd data <span style="color:#ae81ff">0</span> redis
+zadd data <span style="color:#ae81ff">0</span> mogodb
+zadd runoob <span style="color:#ae81ff">0</span> rabitmq
+
+ZRANGEBYSCORE runoob <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1000</span>
+</code></pre></div><ol>
+<li>&ldquo;mongodb&rdquo;</li>
+<li>&ldquo;rabitmq&rdquo;</li>
+<li>&ldquo;redis&rdquo;</li>
+</ol>
+<h3 id="redis-command">Redis command</h3>
+<p>语法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 打开终端并输入命令 redis-cli，该命令会连接本地的 redis 服务</span>
+redis-cli
+
+<span style="color:#75715e"># 执行 PING 命令，该命令用于检测 redis 服务是否启动。</span>
+PING
+
+<span style="color:#75715e"># 在远程服务上执行命令</span>
+redis-cli -h host -p port -a password
+
+</code></pre></div><h3 id="redis">Redis</h3>
+<p>语法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#  COMMAND KEY_NAME</span>
+SET key redis
+GET key  <span style="color:#75715e"># redis</span>
+
+
+SET key value <span style="color:#75715e"># 设定指定key的值</span>
+GET key <span style="color:#75715e"># 获取指定key的值</span>
+GETSET key value end <span style="color:#75715e"># 返回字符串值得子字符</span>
+GETSET key value <span style="color:#75715e"># 将给定的key的值设为value， 并返回key的旧值</span>
+GETBIT key offset <span style="color:#75715e"># 对key所存储的字符串值，或者指定偏移量上的位</span>
+MGET key<span style="color:#f92672">[</span>key2...<span style="color:#f92672">]</span> 获取所有给定key的值
+SETBIT key offset value <span style="color:#75715e"># 对key所存储的字符串值，设置或者清除指定偏移量上的位</span>
+
+</code></pre></div><h3 id="redis-列表list">Redis 列表(List)</h3>
+<p>Redis 列表是简单的字符串列表，按照插入顺序，可以添加元素到列表的头部或者尾部。一个列表最多可以包含 232 - 1 个元素 (4294967295, 每个列表超过40亿个元素)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">LPUSH runoobkey redis
+LPUSH runoobkey mongodb
+LPUSH runoobkey mysql
+LRANGE runoobkey <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span>
+
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mysql&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mongodb&#34;</span>
+3<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;redis&#34;</span>
+</code></pre></div><h3 id="redis-事务">Redis 事务</h3>
+<p>Redis 事务可以一次执行多个命令， 并且带有以下三个重要的保证：</p>
+<ul>
+<li>批量操作在发送 EXEC 命令前被放入队列缓存。</li>
+<li>收到 EXEC 命令后进入事务执行，事务中任意命令执行失败，其余的命令依然被执行。</li>
+<li>在事务执行过程，其他客户端提交的命令请求不会插入到事务执行命令序列中。</li>
+</ul>
+<p>一个事务从开始到执行会经历以下三个阶段：</p>
+<ul>
+<li>开始事务。</li>
+<li>命令入队。</li>
+<li>执行事务。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">MULTI
+SET book-name <span style="color:#e6db74">&#34;Mastering C++ in 21 days&#34;</span> QUEUED
+GET book-name QUEUED
+SADD tag <span style="color:#e6db74">&#34;C++&#34;</span> <span style="color:#e6db74">&#34;Programming&#34;</span> <span style="color:#e6db74">&#34;Mastering Series&#34;</span>
+SMEMBERS tag QUEUED
+EXEC
+
+1<span style="color:#f92672">)</span> OK
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;Mastering C++ in 21 days&#34;</span>
+3<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">3</span>
+4<span style="color:#f92672">)</span> 1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;Mastering Series&#34;</span>
+   2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;C++&#34;</span>
+   3<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;Programming&#34;</span>
+</code></pre></div><h4 id="redis-事务命令">Redis 事务命令</h4>
+<ul>
+<li>DISCRAD 取消事务, 放弃执行事务块内的所有命令</li>
+<li>EXEC 执行所有事务块内的命令</li>
+<li>MULTI 标记一个事务块的开始</li>
+<li>UNMATCH 取消WATCH命令对所有key的监事</li>
+<li>WATCH key[key&hellip;] 监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。</li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

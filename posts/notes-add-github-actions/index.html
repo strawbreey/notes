@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Notes Add Github Actions - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="博客系统添加github actions name: CI on: push jobs: deploy: runs-on: ubuntu-18.04 steps: - name: Git checkout uses: actions/checkout@v2 - name: Update theme # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version run: git submodule update --init --recursive - name: Setup hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &amp;#34;0.64.0&amp;#34; - name: Build # remove --minify tag if you do not need it # docs: https://gohugo." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/notes-add-github-actions/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Notes Add Github Actions" />
+<meta property="og:description" content="博客系统添加github actions name: CI on: push jobs: deploy: runs-on: ubuntu-18.04 steps: - name: Git checkout uses: actions/checkout@v2 - name: Update theme # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version run: git submodule update --init --recursive - name: Setup hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &#34;0.64.0&#34; - name: Build # remove --minify tag if you do not need it # docs: https://gohugo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/notes-add-github-actions/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-29T14:42:47+08:00" />
+<meta property="article:modified_time" content="2021-07-29T14:42:47+08:00" />
+
+<meta itemprop="name" content="Notes Add Github Actions">
+<meta itemprop="description" content="博客系统添加github actions name: CI on: push jobs: deploy: runs-on: ubuntu-18.04 steps: - name: Git checkout uses: actions/checkout@v2 - name: Update theme # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version run: git submodule update --init --recursive - name: Setup hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &#34;0.64.0&#34; - name: Build # remove --minify tag if you do not need it # docs: https://gohugo."><meta itemprop="datePublished" content="2021-07-29T14:42:47+08:00" />
+<meta itemprop="dateModified" content="2021-07-29T14:42:47+08:00" />
+<meta itemprop="wordCount" content="100">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Notes Add Github Actions"/>
+<meta name="twitter:description" content="博客系统添加github actions name: CI on: push jobs: deploy: runs-on: ubuntu-18.04 steps: - name: Git checkout uses: actions/checkout@v2 - name: Update theme # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version run: git submodule update --init --recursive - name: Setup hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &#34;0.64.0&#34; - name: Build # remove --minify tag if you do not need it # docs: https://gohugo."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="博客系统添加github-actions">博客系统添加github actions</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">CI</span>
+<span style="color:#f92672">on</span>: <span style="color:#ae81ff">push</span>
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">deploy</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-18.04</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Git checkout</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Update theme</span>
+        <span style="color:#75715e"># (Optional)If you have the theme added as submodule, you can pull it and use the most updated version</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git submodule update --init --recursive</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup hugo</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">hugo-version</span>: <span style="color:#e6db74">&#34;0.64.0&#34;</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+        <span style="color:#75715e"># remove --minify tag if you do not need it</span>
+        <span style="color:#75715e"># docs: https://gohugo.io/hugo-pipes/minification/</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo --minify</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v3</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">personal_token</span>: <span style="color:#ae81ff">${{ secrets.TOKEN }}</span>
+          <span style="color:#f92672">external_repository</span>: <span style="color:#ae81ff">&lt;username&gt;/&lt;username&gt;.github.io</span>
+          <span style="color:#f92672">publish_dir</span>: <span style="color:#ae81ff">./public</span>
+          <span style="color:#75715e">#   keep_files: true</span>
+          <span style="color:#f92672">user_name</span>: <span style="color:#ae81ff">&lt;username&gt;</span>
+          <span style="color:#f92672">user_email</span>: <span style="color:#ae81ff">&lt;username@email.com&gt;</span>
+          <span style="color:#f92672">publish_branch</span>: <span style="color:#ae81ff">master</span>
+        <span style="color:#75715e">#   cname: example.com</span>
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

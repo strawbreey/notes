@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Apc Cache - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="APC缓存简介 APC(Alternative PHP Cache)是一个PHP缓存。它在内存中存储PHP页面并且减少了硬盘的I/O。这对于性能的提升十分明显。你甚至可以在CPU使用率下降50%的情况下提升系统50%的性能。
+windows下安装PHP的APC拓展 1、首先要确定你的Php版本。 2、下载和你的PHP对应的 php_apc.dll 3、官网下载地址：http://pecl.php.net/package/apc 4、把下载php_apc.dll 复制到PHP的ext目录下 5、修改php.ini 在末尾添加 extension=php_apc.dll 6、来配置php.ini文件
+默认的官方APC配置：```bashapc.cache_by_default = Onapc.enable_cli = Offapc.enabled = Onapc.file_update_protection = 2apc.filters =apc.gc_ttl = 3600apc.include_once_override = Offapc.max_file_size = 1Mapc.num_files_hint = 1000apc.optimization = Offapc.report_autofilter = Offapc.shm_segments = 1apc.shm_size = 30apc.slam_defense = 0apc.stat = Onapc.ttl = 0apc.user_entries_hint = 100apc.user_ttl = 0apc." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-apc-cache/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Apc Cache" />
+<meta property="og:description" content="APC缓存简介 APC(Alternative PHP Cache)是一个PHP缓存。它在内存中存储PHP页面并且减少了硬盘的I/O。这对于性能的提升十分明显。你甚至可以在CPU使用率下降50%的情况下提升系统50%的性能。
+windows下安装PHP的APC拓展 1、首先要确定你的Php版本。 2、下载和你的PHP对应的 php_apc.dll 3、官网下载地址：http://pecl.php.net/package/apc 4、把下载php_apc.dll 复制到PHP的ext目录下 5、修改php.ini 在末尾添加 extension=php_apc.dll 6、来配置php.ini文件
+默认的官方APC配置：```bashapc.cache_by_default = Onapc.enable_cli = Offapc.enabled = Onapc.file_update_protection = 2apc.filters =apc.gc_ttl = 3600apc.include_once_override = Offapc.max_file_size = 1Mapc.num_files_hint = 1000apc.optimization = Offapc.report_autofilter = Offapc.shm_segments = 1apc.shm_size = 30apc.slam_defense = 0apc.stat = Onapc.ttl = 0apc.user_entries_hint = 100apc.user_ttl = 0apc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-apc-cache/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-06T20:07:55+08:00" />
+<meta property="article:modified_time" content="2021-08-06T20:07:55+08:00" />
+
+<meta itemprop="name" content="Php Apc Cache">
+<meta itemprop="description" content="APC缓存简介 APC(Alternative PHP Cache)是一个PHP缓存。它在内存中存储PHP页面并且减少了硬盘的I/O。这对于性能的提升十分明显。你甚至可以在CPU使用率下降50%的情况下提升系统50%的性能。
+windows下安装PHP的APC拓展 1、首先要确定你的Php版本。 2、下载和你的PHP对应的 php_apc.dll 3、官网下载地址：http://pecl.php.net/package/apc 4、把下载php_apc.dll 复制到PHP的ext目录下 5、修改php.ini 在末尾添加 extension=php_apc.dll 6、来配置php.ini文件
+默认的官方APC配置：```bashapc.cache_by_default = Onapc.enable_cli = Offapc.enabled = Onapc.file_update_protection = 2apc.filters =apc.gc_ttl = 3600apc.include_once_override = Offapc.max_file_size = 1Mapc.num_files_hint = 1000apc.optimization = Offapc.report_autofilter = Offapc.shm_segments = 1apc.shm_size = 30apc.slam_defense = 0apc.stat = Onapc.ttl = 0apc.user_entries_hint = 100apc.user_ttl = 0apc."><meta itemprop="datePublished" content="2021-08-06T20:07:55+08:00" />
+<meta itemprop="dateModified" content="2021-08-06T20:07:55+08:00" />
+<meta itemprop="wordCount" content="112">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Apc Cache"/>
+<meta name="twitter:description" content="APC缓存简介 APC(Alternative PHP Cache)是一个PHP缓存。它在内存中存储PHP页面并且减少了硬盘的I/O。这对于性能的提升十分明显。你甚至可以在CPU使用率下降50%的情况下提升系统50%的性能。
+windows下安装PHP的APC拓展 1、首先要确定你的Php版本。 2、下载和你的PHP对应的 php_apc.dll 3、官网下载地址：http://pecl.php.net/package/apc 4、把下载php_apc.dll 复制到PHP的ext目录下 5、修改php.ini 在末尾添加 extension=php_apc.dll 6、来配置php.ini文件
+默认的官方APC配置：```bashapc.cache_by_default = Onapc.enable_cli = Offapc.enabled = Onapc.file_update_protection = 2apc.filters =apc.gc_ttl = 3600apc.include_once_override = Offapc.max_file_size = 1Mapc.num_files_hint = 1000apc.optimization = Offapc.report_autofilter = Offapc.shm_segments = 1apc.shm_size = 30apc.slam_defense = 0apc.stat = Onapc.ttl = 0apc.user_entries_hint = 100apc.user_ttl = 0apc."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="apc缓存简介">APC缓存简介</h3>
+<p>APC(Alternative PHP Cache)是一个PHP缓存。它在内存中存储PHP页面并且减少了硬盘的I/O。这对于性能的提升十分明显。你甚至可以在CPU使用率下降50%的情况下提升系统50%的性能。</p>
+<h3 id="windows下安装php的apc拓展">windows下安装PHP的APC拓展</h3>
+<p>1、首先要确定你的Php版本。
+2、下载和你的PHP对应的 php_apc.dll
+3、官网下载地址：http://pecl.php.net/package/apc
+4、把下载php_apc.dll 复制到PHP的ext目录下
+5、修改php.ini 在末尾添加 extension=php_apc.dll
+6、来配置php.ini文件</p>
+<pre><code>默认的官方APC配置：
+
+```bash
+apc.cache_by_default = On
+　　apc.enable_cli = Off
+　　apc.enabled = On
+　　apc.file_update_protection = 2
+　　apc.filters =
+　　apc.gc_ttl = 3600
+　　apc.include_once_override = Off
+　　apc.max_file_size = 1M
+　　apc.num_files_hint = 1000
+　　apc.optimization = Off
+　　apc.report_autofilter = Off
+　　apc.shm_segments = 1
+　　apc.shm_size = 30
+　　apc.slam_defense = 0
+　　apc.stat = On
+　　apc.ttl = 0
+　　apc.user_entries_hint = 100
+　　apc.user_ttl = 0
+　　apc.write_lock = On
+```
+
+关于APC完整的参数设置的解释，请查阅：http://www.php.net/apc
+我们可以做如下设置php.ini
+
+```bash
+apc.enabled = 1
+apc.shm_segments = 1
+apc.shm_size = 128
+apc.max_file_size = 10M
+apc.stat=1
+```
+
+剩余其它的设置将会使用默认值。
+</code></pre>
+<p>7、设置临时目录APC需要一个临时目录来存储文件。它会尝试在windows的临时目录缓存文件，事先请给临时目录写的权限。
+8、重新启动apache服务器,查看phpinfo中是否有apc的配置项目,有的话就配置成功了</p>
+<h3 id="apc小结">APC小结</h3>
+<p>1、缓存期限: APC的缓存分两部分: 系统缓存和用户数据缓存.</p>
+<p>系统缓存 是自动使用的, 是指APC把PHP文件源码的编译结果缓存起来,然后在再次调用时先对比时间标记。如果未过期,则使用缓存代码运行。默认缓存 3600s(一小时). 但是这样仍会浪费大量CPU时间. 因此可以在php.ini中设置system缓存为永不过期(apc.ttl=0).不过如果这样设置,改运php代码后需要restart一下您的web服务器(比如apache…).目前对APC的性能测试一般指的是这一层cache。</p>
+<p>2、用户数据缓存 由用户在编写php代码时用apc_store和apc_fetch函数操作读取、写入的. 如果量不大的话我建议可以使用一下.如果量大,我建议使用memcache会更好. 如果要享受APC带来的缓存大文件上传进度的特性, 需要在php.ini中将apc.rfc1867设为1,并且在表单中加一个隐藏域APC_UPLOAD_PROGRESS,这个域的值可以随机生成一个hash,以确何唯一.具体例子请参见前面给出的链接.</p>
+<p>3、你不能在同一台服务器上同时安装APC和Zend Optimiser，二者只能选其一。</p>
+<p>4、其实所有Windows环境下的php环境都可以使用这个方法。</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

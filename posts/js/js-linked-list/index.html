@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js Linked List - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到的，每种语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问其元素。然而，这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入或移除项的成本很高，因为需要移动元素。（尽管我们已经学过，JavaScript有来自Array类的方法可以帮我们做这些事，但背后的情况同样如此。）链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。下图展示了一个链表的结构。[插图]相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所需的元素
+链表的设计 设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作
+Node 类
+//节点 function Node(element) { this.element = element; //当前节点的元素  this.next = null; //下一个节点链接 } LinkedList类
+//链表类 function LList () { this.head = new Node( &amp;#39;head&amp;#39; ); //头节点  this.find = find; //查找节点  this.insert = insert; //插入节点  this.remove = remove; //删除节点  this.findPrev = findPrev; //查找前一个节点  this.display = display; //显示链表 } insert：向链表插入一个节点
+find：查找给定节点
+function find ( item ) { var currNode = this." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-linked-list/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js Linked List" />
+<meta property="og:description" content="要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到的，每种语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问其元素。然而，这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入或移除项的成本很高，因为需要移动元素。（尽管我们已经学过，JavaScript有来自Array类的方法可以帮我们做这些事，但背后的情况同样如此。）链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。下图展示了一个链表的结构。[插图]相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所需的元素
+链表的设计 设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作
+Node 类
+//节点 function Node(element) { this.element = element; //当前节点的元素  this.next = null; //下一个节点链接 } LinkedList类
+//链表类 function LList () { this.head = new Node( &#39;head&#39; ); //头节点  this.find = find; //查找节点  this.insert = insert; //插入节点  this.remove = remove; //删除节点  this.findPrev = findPrev; //查找前一个节点  this.display = display; //显示链表 } insert：向链表插入一个节点
+find：查找给定节点
+function find ( item ) { var currNode = this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-linked-list/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-20T09:50:38+08:00" />
+<meta property="article:modified_time" content="2020-11-20T09:50:38+08:00" />
+
+<meta itemprop="name" content="Js Linked List">
+<meta itemprop="description" content="要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到的，每种语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问其元素。然而，这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入或移除项的成本很高，因为需要移动元素。（尽管我们已经学过，JavaScript有来自Array类的方法可以帮我们做这些事，但背后的情况同样如此。）链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。下图展示了一个链表的结构。[插图]相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所需的元素
+链表的设计 设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作
+Node 类
+//节点 function Node(element) { this.element = element; //当前节点的元素  this.next = null; //下一个节点链接 } LinkedList类
+//链表类 function LList () { this.head = new Node( &#39;head&#39; ); //头节点  this.find = find; //查找节点  this.insert = insert; //插入节点  this.remove = remove; //删除节点  this.findPrev = findPrev; //查找前一个节点  this.display = display; //显示链表 } insert：向链表插入一个节点
+find：查找给定节点
+function find ( item ) { var currNode = this."><meta itemprop="datePublished" content="2020-11-20T09:50:38+08:00" />
+<meta itemprop="dateModified" content="2020-11-20T09:50:38+08:00" />
+<meta itemprop="wordCount" content="209">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Linked List"/>
+<meta name="twitter:description" content="要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到的，每种语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问其元素。然而，这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入或移除项的成本很高，因为需要移动元素。（尽管我们已经学过，JavaScript有来自Array类的方法可以帮我们做这些事，但背后的情况同样如此。）链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。下图展示了一个链表的结构。[插图]相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所需的元素
+链表的设计 设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作
+Node 类
+//节点 function Node(element) { this.element = element; //当前节点的元素  this.next = null; //下一个节点链接 } LinkedList类
+//链表类 function LList () { this.head = new Node( &#39;head&#39; ); //头节点  this.find = find; //查找节点  this.insert = insert; //插入节点  this.remove = remove; //删除节点  this.findPrev = findPrev; //查找前一个节点  this.display = display; //显示链表 } insert：向链表插入一个节点
+find：查找给定节点
+function find ( item ) { var currNode = this."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到的，每种语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问其元素。然而，这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入或移除项的成本很高，因为需要移动元素。（尽管我们已经学过，JavaScript有来自Array类的方法可以帮我们做这些事，但背后的情况同样如此。）链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。下图展示了一个链表的结构。[插图]相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所需的元素</p>
+<h3 id="链表的设计">链表的设计</h3>
+<p>设计链表包含两个类，一个是Node 类表示节点，用一个是LinkedList 类提供插入节点, 删除节点的操作</p>
+<p>Node 类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//节点
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Node</span>(<span style="color:#a6e22e">element</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>;   <span style="color:#75715e">//当前节点的元素
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;         <span style="color:#75715e">//下一个节点链接
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>LinkedList类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//链表类
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">LList</span> () {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>( <span style="color:#e6db74">&#39;head&#39;</span> );     <span style="color:#75715e">//头节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">find</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">find</span>;                   <span style="color:#75715e">//查找节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">insert</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">insert</span>;               <span style="color:#75715e">//插入节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">remove</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">remove</span>;               <span style="color:#75715e">//删除节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">findPrev</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">findPrev</span>;           <span style="color:#75715e">//查找前一个节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">display</span>;             <span style="color:#75715e">//显示链表
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>insert：向链表插入一个节点</p>
+<p>find：查找给定节点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">find</span> ( <span style="color:#a6e22e">item</span> ) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
+    <span style="color:#66d9ef">while</span> ( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">element</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">item</span> ){
+        <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">currNode</span>;
+}
+</code></pre></div><p>insert: 插入节点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">insert</span> ( <span style="color:#a6e22e">newElement</span> , <span style="color:#a6e22e">item</span> ) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>( <span style="color:#a6e22e">newElement</span> );
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">find</span>( <span style="color:#a6e22e">item</span> );
+    <span style="color:#a6e22e">newNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>;
+    <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newNode</span>;
+}
+</code></pre></div><p>display：显示链表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">display</span> () {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
+    <span style="color:#66d9ef">while</span> ( <span style="color:#f92672">!</span>(<span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) ){
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">element</span> );
+        <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>;
+    }
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LList</span>();
+
+<span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#e6db74">&#39;Apple&#39;</span> , <span style="color:#e6db74">&#39;head&#39;</span>);
+<span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#e6db74">&#39;Banana&#39;</span> , <span style="color:#e6db74">&#39;Apple&#39;</span>);
+<span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#e6db74">&#39;Pear&#39;</span> , <span style="color:#e6db74">&#39;Banana&#39;</span>);
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">display</span>()); 
+<span style="color:#75715e">// Apple
+</span><span style="color:#75715e">// Banana
+</span><span style="color:#75715e">// Pear
+</span></code></pre></div><p>remove：从链表中删除一个节点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findPrev</span>( <span style="color:#a6e22e">item</span> ) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
+    <span style="color:#66d9ef">while</span> ( <span style="color:#f92672">!</span>( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#f92672">&amp;&amp;</span> ( <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">element</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">item</span> )){
+        <span style="color:#a6e22e">currNode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currNode</span>.<span style="color:#a6e22e">next</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">currNode</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">remove</span> ( <span style="color:#a6e22e">item</span> ) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">prevNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">findPrev</span>( <span style="color:#a6e22e">item</span> );
+    <span style="color:#66d9ef">if</span>( <span style="color:#f92672">!</span>( <span style="color:#a6e22e">prevNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> ) ){
+        <span style="color:#a6e22e">prevNode</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prevNode</span>.<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">next</span>;
+    }
+}
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

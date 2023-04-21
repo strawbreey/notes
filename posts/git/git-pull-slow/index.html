@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Git Pull Slow - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
+由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
+ 删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
+ 本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  在网站https://www.ipaddress.com/分别搜索github.global.ssl.fastly.net和github.com，查到的IP与我之前在hosts存储的对应IP不同，使用新IP替换旧IP 使用sudo killall -HUP mDNSResponder命令刷新mac的DNS 由于看到github的两个IP属地为美国，因此将代理服务器切换至美国，并开启全局模式（实际验证PAC模式问题依旧），重新打开一个终端，git pull速度大幅提升
+git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。
+只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–&amp;gt;域名的映射，刷新DNS缓存便可。
+在网站 https://www.ipaddress.com/ 分别搜索：
+github.global.ssl.fastly.netgithub.com打开hosts文件
+ Windows上的hosts文件路径在C:\Windows\System32\drivers\etc\hosts Linux的hosts文件路径在：sudo vim /etc/hosts  在hosts文件末尾添加两行(对应上面查到的ip)
+199.232.69.194 github.global-ssl.fastly.net140.82.113.3 github.com保存更新DNS
+ Winodws: CMD，输入ipconfig /flushdns Linux: 终端 输入sudo /etc/init.d/networking restart  " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/git/git-pull-slow/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Git Pull Slow" />
+<meta property="og:description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
+由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
+ 删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
+ 本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  在网站https://www.ipaddress.com/分别搜索github.global.ssl.fastly.net和github.com，查到的IP与我之前在hosts存储的对应IP不同，使用新IP替换旧IP 使用sudo killall -HUP mDNSResponder命令刷新mac的DNS 由于看到github的两个IP属地为美国，因此将代理服务器切换至美国，并开启全局模式（实际验证PAC模式问题依旧），重新打开一个终端，git pull速度大幅提升
+git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。
+只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–&gt;域名的映射，刷新DNS缓存便可。
+在网站 https://www.ipaddress.com/ 分别搜索：
+github.global.ssl.fastly.netgithub.com打开hosts文件
+ Windows上的hosts文件路径在C:\Windows\System32\drivers\etc\hosts Linux的hosts文件路径在：sudo vim /etc/hosts  在hosts文件末尾添加两行(对应上面查到的ip)
+199.232.69.194 github.global-ssl.fastly.net140.82.113.3 github.com保存更新DNS
+ Winodws: CMD，输入ipconfig /flushdns Linux: 终端 输入sudo /etc/init.d/networking restart  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/git/git-pull-slow/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-22T20:53:33+08:00" />
+<meta property="article:modified_time" content="2020-11-22T20:53:33+08:00" />
+
+<meta itemprop="name" content="Git Pull Slow">
+<meta itemprop="description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
+由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
+ 删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
+ 本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  在网站https://www.ipaddress.com/分别搜索github.global.ssl.fastly.net和github.com，查到的IP与我之前在hosts存储的对应IP不同，使用新IP替换旧IP 使用sudo killall -HUP mDNSResponder命令刷新mac的DNS 由于看到github的两个IP属地为美国，因此将代理服务器切换至美国，并开启全局模式（实际验证PAC模式问题依旧），重新打开一个终端，git pull速度大幅提升
+git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。
+只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–&gt;域名的映射，刷新DNS缓存便可。
+在网站 https://www.ipaddress.com/ 分别搜索：
+github.global.ssl.fastly.netgithub.com打开hosts文件
+ Windows上的hosts文件路径在C:\Windows\System32\drivers\etc\hosts Linux的hosts文件路径在：sudo vim /etc/hosts  在hosts文件末尾添加两行(对应上面查到的ip)
+199.232.69.194 github.global-ssl.fastly.net140.82.113.3 github.com保存更新DNS
+ Winodws: CMD，输入ipconfig /flushdns Linux: 终端 输入sudo /etc/init.d/networking restart  "><meta itemprop="datePublished" content="2020-11-22T20:53:33+08:00" />
+<meta itemprop="dateModified" content="2020-11-22T20:53:33+08:00" />
+<meta itemprop="wordCount" content="45">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Pull Slow"/>
+<meta name="twitter:description" content="解决git节点清点耗时较长的方法 出现节点清点耗时较长的原因
+由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。
+ 删除本地仓库重新clone  将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。
+ 本地仓库执行节点清理命令 节点清理压缩（需较多内存）：在git所在目录执行命令：git gc --aggressive --prune=now。将本地节点清理压缩，减小差异节点清点耗时。  在网站https://www.ipaddress.com/分别搜索github.global.ssl.fastly.net和github.com，查到的IP与我之前在hosts存储的对应IP不同，使用新IP替换旧IP 使用sudo killall -HUP mDNSResponder命令刷新mac的DNS 由于看到github的两个IP属地为美国，因此将代理服务器切换至美国，并开启全局模式（实际验证PAC模式问题依旧），重新打开一个终端，git pull速度大幅提升
+git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。
+只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–&gt;域名的映射，刷新DNS缓存便可。
+在网站 https://www.ipaddress.com/ 分别搜索：
+github.global.ssl.fastly.netgithub.com打开hosts文件
+ Windows上的hosts文件路径在C:\Windows\System32\drivers\etc\hosts Linux的hosts文件路径在：sudo vim /etc/hosts  在hosts文件末尾添加两行(对应上面查到的ip)
+199.232.69.194 github.global-ssl.fastly.net140.82.113.3 github.com保存更新DNS
+ Winodws: CMD，输入ipconfig /flushdns Linux: 终端 输入sudo /etc/init.d/networking restart  "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="解决git节点清点耗时较长的方法">解决git节点清点耗时较长的方法</h3>
+<p>出现节点清点耗时较长的原因</p>
+<p>由于remote与本地仓库长时间运行，导致两遍的仓库节点差异较大。git 每次fetch都会比对差异节点，将remote存在而本地不存在的节点fetch到本地，因此每次清点需要耗较长时间。</p>
+<ul>
+<li>删除本地仓库重新clone</li>
+</ul>
+<p>将本地仓库所有分支和变更都commit并push后。重新clone仓库。新拉下来的仓库与remote节点完全一致。这样清点节点耗时就非常短了，能大大加快清点耗时。</p>
+<ul>
+<li>本地仓库执行节点清理命令
+节点清理压缩（需较多内存）：在git所在目录执行命令：<code>git gc --aggressive --prune=now</code>。将本地节点清理压缩，减小差异节点清点耗时。</li>
+</ul>
+<p>在网站https://www.ipaddress.com/分别搜索<code>github.global.ssl.fastly.net</code>和<code>github.com</code>，查到的IP与我之前在hosts存储的对应IP不同，使用新IP替换旧IP
+使用<code>sudo killall -HUP mDNSResponder</code>命令刷新mac的DNS
+由于看到github的两个IP属地为美国，因此将代理服务器切换至美国，并开启全局模式（实际验证PAC模式问题依旧），重新打开一个终端，git pull速度大幅提升</p>
+<p>git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。</p>
+<p>只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–&gt;域名的映射，刷新DNS缓存便可。</p>
+<p>在网站 <a href="https://www.ipaddress.com/">https://www.ipaddress.com/</a> 分别搜索：</p>
+<pre><code>github.global.ssl.fastly.net
+github.com
+</code></pre><p>打开hosts文件</p>
+<ul>
+<li>Windows上的hosts文件路径在C:\Windows\System32\drivers\etc\hosts</li>
+<li>Linux的hosts文件路径在：sudo vim /etc/hosts</li>
+</ul>
+<p>在hosts文件末尾添加两行(对应上面查到的ip)</p>
+<pre><code>199.232.69.194  github.global-ssl.fastly.net
+140.82.113.3 github.com
+</code></pre><p>保存更新DNS</p>
+<ul>
+<li>Winodws: CMD，输入ipconfig /flushdns</li>
+<li>Linux: 终端 输入sudo /etc/init.d/networking restart</li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

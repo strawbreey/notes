@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Yii Http Cache - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="通过配置 yii\filters\HttpCache 过滤器，控制器操作渲染的内容就能缓存在客户端。
+HttpCache 过滤器仅对 GET 和 HEAD 请求生效， 它能为这些请求设置三种与缓存有关的 HTTP 头。
+Last-Modified 头 Last-Modified 头使用时间戳标明页面自上次客户端缓存后是否被修改过。
+通过配置 yii\filters\HttpCache::$lastModified 属性向客户端发送 Last-Modified 头。 该属性的值应该为 PHP callable 类型，返回的是页面修改时的 Unix 时间戳。 该 callable 的参数和返回值应该如下：
+public function behaviors() { return [ [ &amp;#39;class&amp;#39; =&amp;gt; &amp;#39;yii\filters\HttpCache&amp;#39;, &amp;#39;only&amp;#39; =&amp;gt; [&amp;#39;index&amp;#39;], &amp;#39;lastModified&amp;#39; =&amp;gt; function ($action, $params) { $q = new \yii\db\Query(); return $q-&amp;gt;from(&amp;#39;post&amp;#39;)-&amp;gt;max(&amp;#39;updated_at&amp;#39;); }, ], ]; } 上述代码表明 HTTP 缓存只在 index 操作时启用。 它会基于页面最后修改时间生成一个 Last-Modified HTTP 头。 当浏览器第一次访问 index 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器在页面没被修改期间访问该页， 服务器将不会重新生成页面，浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/yii/yii-http-cache/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Yii Http Cache" />
+<meta property="og:description" content="通过配置 yii\filters\HttpCache 过滤器，控制器操作渲染的内容就能缓存在客户端。
+HttpCache 过滤器仅对 GET 和 HEAD 请求生效， 它能为这些请求设置三种与缓存有关的 HTTP 头。
+Last-Modified 头 Last-Modified 头使用时间戳标明页面自上次客户端缓存后是否被修改过。
+通过配置 yii\filters\HttpCache::$lastModified 属性向客户端发送 Last-Modified 头。 该属性的值应该为 PHP callable 类型，返回的是页面修改时的 Unix 时间戳。 该 callable 的参数和返回值应该如下：
+public function behaviors() { return [ [ &#39;class&#39; =&gt; &#39;yii\filters\HttpCache&#39;, &#39;only&#39; =&gt; [&#39;index&#39;], &#39;lastModified&#39; =&gt; function ($action, $params) { $q = new \yii\db\Query(); return $q-&gt;from(&#39;post&#39;)-&gt;max(&#39;updated_at&#39;); }, ], ]; } 上述代码表明 HTTP 缓存只在 index 操作时启用。 它会基于页面最后修改时间生成一个 Last-Modified HTTP 头。 当浏览器第一次访问 index 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器在页面没被修改期间访问该页， 服务器将不会重新生成页面，浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/yii/yii-http-cache/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-11T18:25:40+08:00" />
+<meta property="article:modified_time" content="2020-11-11T18:25:40+08:00" />
+
+<meta itemprop="name" content="Yii Http Cache">
+<meta itemprop="description" content="通过配置 yii\filters\HttpCache 过滤器，控制器操作渲染的内容就能缓存在客户端。
+HttpCache 过滤器仅对 GET 和 HEAD 请求生效， 它能为这些请求设置三种与缓存有关的 HTTP 头。
+Last-Modified 头 Last-Modified 头使用时间戳标明页面自上次客户端缓存后是否被修改过。
+通过配置 yii\filters\HttpCache::$lastModified 属性向客户端发送 Last-Modified 头。 该属性的值应该为 PHP callable 类型，返回的是页面修改时的 Unix 时间戳。 该 callable 的参数和返回值应该如下：
+public function behaviors() { return [ [ &#39;class&#39; =&gt; &#39;yii\filters\HttpCache&#39;, &#39;only&#39; =&gt; [&#39;index&#39;], &#39;lastModified&#39; =&gt; function ($action, $params) { $q = new \yii\db\Query(); return $q-&gt;from(&#39;post&#39;)-&gt;max(&#39;updated_at&#39;); }, ], ]; } 上述代码表明 HTTP 缓存只在 index 操作时启用。 它会基于页面最后修改时间生成一个 Last-Modified HTTP 头。 当浏览器第一次访问 index 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器在页面没被修改期间访问该页， 服务器将不会重新生成页面，浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。"><meta itemprop="datePublished" content="2020-11-11T18:25:40+08:00" />
+<meta itemprop="dateModified" content="2020-11-11T18:25:40+08:00" />
+<meta itemprop="wordCount" content="156">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Yii Http Cache"/>
+<meta name="twitter:description" content="通过配置 yii\filters\HttpCache 过滤器，控制器操作渲染的内容就能缓存在客户端。
+HttpCache 过滤器仅对 GET 和 HEAD 请求生效， 它能为这些请求设置三种与缓存有关的 HTTP 头。
+Last-Modified 头 Last-Modified 头使用时间戳标明页面自上次客户端缓存后是否被修改过。
+通过配置 yii\filters\HttpCache::$lastModified 属性向客户端发送 Last-Modified 头。 该属性的值应该为 PHP callable 类型，返回的是页面修改时的 Unix 时间戳。 该 callable 的参数和返回值应该如下：
+public function behaviors() { return [ [ &#39;class&#39; =&gt; &#39;yii\filters\HttpCache&#39;, &#39;only&#39; =&gt; [&#39;index&#39;], &#39;lastModified&#39; =&gt; function ($action, $params) { $q = new \yii\db\Query(); return $q-&gt;from(&#39;post&#39;)-&gt;max(&#39;updated_at&#39;); }, ], ]; } 上述代码表明 HTTP 缓存只在 index 操作时启用。 它会基于页面最后修改时间生成一个 Last-Modified HTTP 头。 当浏览器第一次访问 index 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器在页面没被修改期间访问该页， 服务器将不会重新生成页面，浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>通过配置 <code>yii\filters\HttpCache</code> 过滤器，控制器操作渲染的内容就能缓存在客户端。</p>
+<p>HttpCache 过滤器仅对 GET 和 HEAD 请求生效， 它能为这些请求设置三种与缓存有关的 HTTP 头。</p>
+<h3 id="last-modified-头">Last-Modified 头</h3>
+<p>Last-Modified 头使用时间戳标明页面自上次客户端缓存后是否被修改过。</p>
+<p>通过配置 yii\filters\HttpCache::$lastModified 属性向客户端发送 Last-Modified 头。 该属性的值应该为 PHP callable 类型，返回的是页面修改时的 Unix 时间戳。 该 callable 的参数和返回值应该如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">behaviors</span>()
+{
+    <span style="color:#66d9ef">return</span> [
+        [
+            <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\filters\HttpCache&#39;</span>,
+            <span style="color:#e6db74">&#39;only&#39;</span> <span style="color:#f92672">=&gt;</span> [<span style="color:#e6db74">&#39;index&#39;</span>],
+            <span style="color:#e6db74">&#39;lastModified&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($action, $params) {
+                $q <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\yii\db\Query</span>();
+                <span style="color:#66d9ef">return</span> $q<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#39;post&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">max</span>(<span style="color:#e6db74">&#39;updated_at&#39;</span>);
+            },
+        ],
+    ];
+}
+</code></pre></div><p>上述代码表明 HTTP 缓存只在 index 操作时启用。 它会基于页面最后修改时间生成一个 Last-Modified HTTP 头。 当浏览器第一次访问 index 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器在页面没被修改期间访问该页， 服务器将不会重新生成页面，浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。</p>
+<h3 id="etag-头">ETag 头</h3>
+<p>“Entity Tag”（实体标签，简称 ETag）使用一个哈希值表示页面内容。如果页面被修改过， 哈希值也会随之改变。通过对比客户端的哈希值和服务器端生成的哈希值， 浏览器就能判断页面是否被修改过，进而决定是否应该重新传输内容。</p>
+<p>通过配置 yii\filters\HttpCache::$etagSeed 属性向客户端发送 ETag 头。 该属性的值应该为 PHP callable 类型，返回的是一段种子字符用来生成 ETag 哈希值。 该 callable 的参数和返回值应该如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">behaviors</span>()
+{
+    <span style="color:#66d9ef">return</span> [
+        [
+            <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;yii\filters\HttpCache&#39;</span>,
+            <span style="color:#e6db74">&#39;only&#39;</span> <span style="color:#f92672">=&gt;</span> [<span style="color:#e6db74">&#39;view&#39;</span>],
+            <span style="color:#e6db74">&#39;etagSeed&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($action, $params) {
+                $post <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">findModel</span>(<span style="color:#a6e22e">\Yii</span><span style="color:#f92672">::</span>$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;id&#39;</span>));
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">serialize</span>([$post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span>, $post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">content</span>]);
+            },
+        ],
+    ];
+}
+
+<span style="color:#a6e22e">a</span> {
+
+}
+
+<span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">a</span> {
+    
+}
+</code></pre></div><p>上述代码表明 HTTP 缓存只在 view 操作时启用。 它会基于用户请求的标题和内容生成一个 ETag HTTP 头。 当浏览器第一次访问 view 页时，服务器将会生成页面并发送至客户端浏览器。 之后客户端浏览器标题和内容没被修改在期间访问该页，服务器将不会重新生成页面， 浏览器会使用之前客户端缓存下来的内容。 因此服务端渲染和内容传输都将省去。</p>
+<h3 id="cache-control-头">Cache-Control 头</h3>
+<p>Cache-Control 头指定了页面的常规缓存策略。 可以通过配置 yii\filters\HttpCache::$cacheControlHeader 属性发送相应的头信息。默认发送以下头：</p>
+<p>Cache-Control: public, max-age=3600</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

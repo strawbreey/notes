@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mysql Having - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="SQL HAVING Clause The SQL HAVING Clause The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+HAVING Syntax SELECT column_name(s) FROM table_name WHERE condition GROUP BY column_name(s) HAVING condition ORDER BY column_name(s); Demo Database Below is a selection from the &amp;ldquo;Customers&amp;rdquo; table in the Northwind sample database:
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country 1
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany 2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/mysql/mysql-having/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Mysql Having" />
+<meta property="og:description" content="SQL HAVING Clause The SQL HAVING Clause The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+HAVING Syntax SELECT column_name(s) FROM table_name WHERE condition GROUP BY column_name(s) HAVING condition ORDER BY column_name(s); Demo Database Below is a selection from the &ldquo;Customers&rdquo; table in the Northwind sample database:
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country 1
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany 2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/mysql/mysql-having/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-08T19:32:47+08:00" />
+<meta property="article:modified_time" content="2020-12-08T19:32:47+08:00" />
+
+<meta itemprop="name" content="Mysql Having">
+<meta itemprop="description" content="SQL HAVING Clause The SQL HAVING Clause The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+HAVING Syntax SELECT column_name(s) FROM table_name WHERE condition GROUP BY column_name(s) HAVING condition ORDER BY column_name(s); Demo Database Below is a selection from the &ldquo;Customers&rdquo; table in the Northwind sample database:
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country 1
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany 2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda."><meta itemprop="datePublished" content="2020-12-08T19:32:47+08:00" />
+<meta itemprop="dateModified" content="2020-12-08T19:32:47+08:00" />
+<meta itemprop="wordCount" content="371">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mysql Having"/>
+<meta name="twitter:description" content="SQL HAVING Clause The SQL HAVING Clause The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+HAVING Syntax SELECT column_name(s) FROM table_name WHERE condition GROUP BY column_name(s) HAVING condition ORDER BY column_name(s); Demo Database Below is a selection from the &ldquo;Customers&rdquo; table in the Northwind sample database:
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country 1
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany 2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>SQL HAVING Clause
+The SQL HAVING Clause
+The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.</p>
+<p>HAVING Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+Demo Database
+Below is a selection from the &ldquo;Customers&rdquo; table in the Northwind sample database:</p>
+<p>CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1</p>
+<p>Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4</p>
+<p>Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+SQL HAVING Examples
+The following SQL statement lists the number of customers in each country. Only include countries with more than 5 customers:</p>
+<p>Example
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) &gt; 5;
+The following SQL statement lists the number of customers in each country, sorted high to low (Only include countries with more than 5 customers):</p>
+<p>Example
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) &gt; 5
+ORDER BY COUNT(CustomerID) DESC;
+ADVERTISEMENT</p>
+<p>Demo Database
+Below is a selection from the &ldquo;Orders&rdquo; table in the Northwind sample database:</p>
+<p>OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10248	90	5	1996-07-04	3
+10249	81	6	1996-07-05	1
+10250	34	4	1996-07-08	2
+And a selection from the &ldquo;Employees&rdquo; table:</p>
+<p>EmployeeID	LastName	FirstName	BirthDate	Photo	Notes
+1	Davolio	Nancy	1968-12-08	EmpID1.pic	Education includes a BA&hellip;.
+2	Fuller	Andrew	1952-02-19	EmpID2.pic	Andrew received his BTS&hellip;.
+3	Leverling	Janet	1963-08-30	EmpID3.pic	Janet has a BS degree&hellip;.
+More HAVING Examples
+The following SQL statement lists the employees that have registered more than 10 orders:</p>
+<p>Example
+SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+FROM (Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID)
+GROUP BY LastName
+HAVING COUNT(Orders.OrderID) &gt; 10;
+The following SQL statement lists if the employees &ldquo;Davolio&rdquo; or &ldquo;Fuller&rdquo; have registered more than 25 orders:</p>
+<p>Example
+SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+FROM Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+WHERE LastName = &lsquo;Davolio&rsquo; OR LastName = &lsquo;Fuller&rsquo;
+GROUP BY LastName
+HAVING COUNT(Orders.OrderID) &gt; 25;</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://www.w3schools.com/sql/sql_having.asp">SQL HAVING Clause</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

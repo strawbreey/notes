@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Cache - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。
+参考链接  缓存那些事  " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/web-cache/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Cache" />
+<meta property="og:description" content="10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。
+参考链接  缓存那些事  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/web-cache/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-05T11:33:43+08:00" />
+<meta property="article:modified_time" content="2020-11-05T11:33:43+08:00" />
+
+<meta itemprop="name" content="Cache">
+<meta itemprop="description" content="10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。
+参考链接  缓存那些事  "><meta itemprop="datePublished" content="2020-11-05T11:33:43+08:00" />
+<meta itemprop="dateModified" content="2020-11-05T11:33:43+08:00" />
+<meta itemprop="wordCount" content="36">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cache"/>
+<meta name="twitter:description" content="10.6.2 缓存的分类
+1.按照存储位置分类
+● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。
+● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。
+2.按照存储介质分类
+● 内存缓存：将数据缓存在内存里。
+● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。
+3.按照缓存的对象分类
+● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。
+● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。
+10.6.4 缓存使用场景
+（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。
+● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。
+● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。
+● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。
+参考链接  缓存那些事  "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>10.6.2 缓存的分类</p>
+<p>1.按照存储位置分类</p>
+<p>● 本地缓存将数据缓存在本地，常见的本地缓存开源框架有EhCache、OSCache、iBatis和Hibernate，本地缓存数据已经和这些缓存框架做了很好的集成，通过配置化的方式得到无侵入式的使用。</p>
+<p>● 分布式缓存常见的分布式缓存框架包括业界比较流行的Memcached,Tair的MDB解决方案对Memcached进行了很多借鉴。</p>
+<p>2.按照存储介质分类</p>
+<p>● 内存缓存：将数据缓存在内存里。</p>
+<p>● 磁盘缓存：Tair 的 LDB 解决方案是将数据缓存在磁盘（SSD）上，磁盘缓存的主要优势在于数据不容易丢失，即使在掉电的情况下也不会丢失，数据安全性比内存缓存要高。</p>
+<p>3.按照缓存的对象分类</p>
+<p>● 页面缓存对于商品详情页面来说，Web页面缓存的key可以是商品ID，对象是整个商品ID对应的HTML页面。通常缓存整个HTML页面的场景很少，一般的Web页面都含有大量的动态因素，例如商品的价格、库存的数量，这些数据都需要强一致性。通常在这种场景下会使用片段页面缓存，ESI（Eage ServerInclude）是片段页面缓存的常见解决方案，也是最早出现的CDN缓存HTML 的解决方案，它已经成为一个通用的标准，Varnish 及 Squid 页面缓存解决方案都支持ESI的语法和标准。页面缓存也可以通过CDN进行动态加速。</p>
+<p>● 通常对象缓存是为了减少远程网络开销和网络延迟，或为了减少CPU的计算以提升性能，常见的如DB数据对象缓存和远程服务对象缓存。</p>
+<p>10.6.4 缓存使用场景</p>
+<p>（1）什么时候可以使用缓存？这是非常大的命题，不能用简单的一句话来表达清楚，因为有些业务对数据的一致性有很高的要求，所以笔者抛出以下几个观点，也是笔者认为的缓存使用原则。</p>
+<p>● 在容量无法突破的情况下，考虑使用缓存来提升容量，否则尽量不要使用缓存。</p>
+<p>● 对用户访问延迟有明显改善的情况，同时对优化RT有明显的效果，例如如果不缓存需要2s，缓存之后只需要100ms，可以考虑使用缓存。</p>
+<p>● 使用缓存之前一定要了解缓存带来的问题，缓存不保障数据的一致性，要能接受这种不一致带来的各种问题，甚至资损问题。</p>
+<p><img src="/images/epub_920414_4.jpg" alt="cache"></p>
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li><a href="https://tech.meituan.com/2017/03/17/cache-about.html">缓存那些事</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

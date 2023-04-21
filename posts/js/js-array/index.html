@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js Array - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Array.from() // Syntax // arrayLike: An array-like or iterable object to convert to an array. // mapFn Optional: Map function to call on every element of the array. // thisArg Optional: Value to use as this when executing mapFn.  // return value: A new Array instance. Array.from(arrayLike [, mapFn [, thisArg]]) console.log(Array.from(&amp;#39;foo&amp;#39;)); // expected output: Array [&amp;#34;f&amp;#34;, &amp;#34;o&amp;#34;, &amp;#34;o&amp;#34;]  console.log(Array.from([1, 2, 3], x =&amp;gt; x &#43; x)); // expected output: Array [2, 4, 6] Array." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-array/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js Array" />
+<meta property="og:description" content="Array.from() // Syntax // arrayLike: An array-like or iterable object to convert to an array. // mapFn Optional: Map function to call on every element of the array. // thisArg Optional: Value to use as this when executing mapFn.  // return value: A new Array instance. Array.from(arrayLike [, mapFn [, thisArg]]) console.log(Array.from(&#39;foo&#39;)); // expected output: Array [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;]  console.log(Array.from([1, 2, 3], x =&gt; x &#43; x)); // expected output: Array [2, 4, 6] Array." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-array/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-28T11:06:27+08:00" />
+<meta property="article:modified_time" content="2020-09-28T11:06:27+08:00" />
+
+<meta itemprop="name" content="Js Array">
+<meta itemprop="description" content="Array.from() // Syntax // arrayLike: An array-like or iterable object to convert to an array. // mapFn Optional: Map function to call on every element of the array. // thisArg Optional: Value to use as this when executing mapFn.  // return value: A new Array instance. Array.from(arrayLike [, mapFn [, thisArg]]) console.log(Array.from(&#39;foo&#39;)); // expected output: Array [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;]  console.log(Array.from([1, 2, 3], x =&gt; x &#43; x)); // expected output: Array [2, 4, 6] Array."><meta itemprop="datePublished" content="2020-09-28T11:06:27+08:00" />
+<meta itemprop="dateModified" content="2020-09-28T11:06:27+08:00" />
+<meta itemprop="wordCount" content="1910">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Array"/>
+<meta name="twitter:description" content="Array.from() // Syntax // arrayLike: An array-like or iterable object to convert to an array. // mapFn Optional: Map function to call on every element of the array. // thisArg Optional: Value to use as this when executing mapFn.  // return value: A new Array instance. Array.from(arrayLike [, mapFn [, thisArg]]) console.log(Array.from(&#39;foo&#39;)); // expected output: Array [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;]  console.log(Array.from([1, 2, 3], x =&gt; x &#43; x)); // expected output: Array [2, 4, 6] Array."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="arrayfrom">Array.from()</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Syntax
+</span><span style="color:#75715e">// arrayLike: An array-like or iterable object to convert to an array.
+</span><span style="color:#75715e">// mapFn Optional: Map function to call on every element of the array.
+</span><span style="color:#75715e">// thisArg Optional: Value to use as this when executing mapFn.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// return value:  A new Array instance.
+</span><span style="color:#75715e"></span>Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">arrayLike</span> [, <span style="color:#a6e22e">mapFn</span> [, <span style="color:#a6e22e">thisArg</span>]])
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#39;foo&#39;</span>));
+<span style="color:#75715e">// expected output: Array [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span>));
+<span style="color:#75715e">// expected output: Array [2, 4, 6]
+</span></code></pre></div><h3 id="arrayisarray">Array.isArray()</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<span style="color:#75715e">// Array.isArray(value)
+</span><span style="color:#75715e">// The value to be checked.
+</span><span style="color:#75715e"></span>
+Array.<span style="color:#a6e22e">isArray</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);  <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>Array.<span style="color:#a6e22e">isArray</span>({<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">123</span>}); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#e6db74">&#39;foobar&#39;</span>);   <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">undefined</span>);  <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// polyfill
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Array.<span style="color:#a6e22e">isArray</span>) {
+  Array.<span style="color:#a6e22e">isArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">arg</span>) {
+    <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arg</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;[object Array]&#39;</span>;
+  };
+}
+
+<span style="color:#75715e">//Examples: 
+</span><span style="color:#75715e">// return true
+</span><span style="color:#75715e"></span>Array.<span style="color:#a6e22e">isArray</span>([]);
+Array.<span style="color:#a6e22e">isArray</span>([<span style="color:#ae81ff">1</span>]);
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">new</span> Array());
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>));
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">3</span>));
+Array.<span style="color:#a6e22e">isArray</span>(Array.<span style="color:#a6e22e">prototype</span>); 
+
+<span style="color:#75715e">// return false
+</span><span style="color:#75715e"></span>Array.<span style="color:#a6e22e">isArray</span>();
+Array.<span style="color:#a6e22e">isArray</span>({});
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">null</span>);
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">undefined</span>);
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#ae81ff">17</span>);
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#e6db74">&#39;Array&#39;</span>);
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">true</span>);
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">false</span>);
+Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint8Array</span>(<span style="color:#ae81ff">32</span>));
+Array.<span style="color:#a6e22e">isArray</span>({ <span style="color:#ae81ff">__</span><span style="color:#a6e22e">proto__</span><span style="color:#f92672">:</span> Array.<span style="color:#a6e22e">prototype</span> });
+</code></pre></div><h3 id="arrayof">Array.of()</h3>
+<p>Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。</p>
+<p>Array.of() 和 Array 构造函数之间的区别在于处理整数参数：Array.of(7) 创建一个具有单个元素 7 的数组，而 Array(7) 创建一个长度为7的空数组</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">7</span>);       <span style="color:#75715e">// [7] 
+</span><span style="color:#75715e"></span>Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>); <span style="color:#75715e">// [1, 2, 3]
+</span><span style="color:#75715e"></span>
+Array(<span style="color:#ae81ff">7</span>);          <span style="color:#75715e">// array of 7 empty slots
+</span><span style="color:#75715e"></span>Array(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);    <span style="color:#75715e">// [1, 2, 3]
+</span></code></pre></div><h4 id="syntax">Syntax</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#66d9ef">of</span>(<span style="color:#a6e22e">element0</span>[, <span style="color:#a6e22e">element1</span>[, ...[, <span style="color:#a6e22e">elementN</span>]]])
+</code></pre></div><h4 id="polyfill">polyfill</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Array.<span style="color:#66d9ef">of</span>) {
+  Array.<span style="color:#66d9ef">of</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">return</span> Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">slice</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arguments</span>);
+    <span style="color:#75715e">// Or 
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vals</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prop</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">arguments</span>){
+        <span style="color:#a6e22e">vals</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arguments</span>[<span style="color:#a6e22e">prop</span>]);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">vals</span>;
+  }
+}
+</code></pre></div><h3 id="concat">concat()</h3>
+<p>concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>];
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array2</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>];
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">array2</span>);
+</code></pre></div><h3 id="indexof">indexOf</h3>
+<p>法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。</p>
+<p>indexOf 使用strict equality (无论是 ===, 还是 triple-equals操作符都基于同样的方法)进行判断 searchElement与数组中包含的元素之间的关系。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">beasts</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;ant&#39;</span>, <span style="color:#e6db74">&#39;bison&#39;</span>, <span style="color:#e6db74">&#39;camel&#39;</span>, <span style="color:#e6db74">&#39;duck&#39;</span>, <span style="color:#e6db74">&#39;bison&#39;</span>].<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;bison&#39;</span>)
+<span style="color:#75715e">// expected output: 1
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// start from index 2
+</span><span style="color:#75715e"></span>[<span style="color:#e6db74">&#39;ant&#39;</span>, <span style="color:#e6db74">&#39;bison&#39;</span>, <span style="color:#e6db74">&#39;camel&#39;</span>, <span style="color:#e6db74">&#39;duck&#39;</span>, <span style="color:#e6db74">&#39;bison&#39;</span>].<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;bison&#39;</span>, <span style="color:#ae81ff">2</span>)
+<span style="color:#75715e">// expected output: 4
+</span><span style="color:#75715e"></span>
+[<span style="color:#e6db74">&#39;ant&#39;</span>, <span style="color:#e6db74">&#39;bison&#39;</span>, <span style="color:#e6db74">&#39;camel&#39;</span>, <span style="color:#e6db74">&#39;duck&#39;</span>, <span style="color:#e6db74">&#39;bison&#39;</span>].<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;giraffe&#39;</span>)
+<span style="color:#75715e">// expected output: -1
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>];
+<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">2</span>);     <span style="color:#75715e">// 0
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">7</span>);     <span style="color:#75715e">// -1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>);  <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>); <span style="color:#75715e">// -1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 0
+</span></code></pre></div><h3 id="join">join</h3>
+<p>方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Fire&#39;</span>, <span style="color:#e6db74">&#39;Air&#39;</span>, <span style="color:#e6db74">&#39;Water&#39;</span>];
+
+<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">join</span>() <span style="color:#75715e">// expected output: &#34;Fire,Air,Water&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#75715e">// expected output: &#34;FireAirWater&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;-&#39;</span>) <span style="color:#75715e">// expected output: &#34;Fire-Air-Water&#34;
+</span></code></pre></div><h3 id="keys">keys</h3>
+<p>keys() 方法返回一个包含数组中每个索引键的Array Iterator对象。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>];
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">iterator</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">keys</span>();
+
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">iterator</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>);
+}
+
+<span style="color:#75715e">// expected output: 0
+</span><span style="color:#75715e">// expected output: 1
+</span><span style="color:#75715e">// expected output: 2
+</span></code></pre></div><h3 id="copywithin">copyWithin()</h3>
+<p>方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。</p>
+<p>arr.copyWithin(target[, start[, end]])</p>
+<p>target 为基底的索引，复制序列到该位置。如果是负数，target 将从末尾开始计算。
+如果 target 大于等于 arr.length，将会不发生拷贝。如果 target 在 start 之后，复制的序列将被修改以符合 arr.length。</p>
+<p>start 为基底的索引，开始复制元素的起始位置。如果是负数，start 将从末尾开始计算。
+如果 start 被忽略，copyWithin 将会从0开始复制。</p>
+<p>end 为基底的索引，开始复制元素的结束位置。copyWithin 将会拷贝到该位置，但不包括 end 这个位置的元素。如果是负数， end 将从末尾开始计算。
+如果 end 被忽略，copyWithin 方法将会一直复制至数组结尾（默认为 arr.length）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>];
+
+<span style="color:#75715e">// copy to index 0 the element at index 3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>)
+<span style="color:#75715e">// expected output: Array [&#34;d&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// copy to index 1 all elements from index 3 to the end
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>)
+<span style="color:#75715e">// expected output: Array [&#34;d&#34;, &#34;d&#34;, &#34;e&#34;, &#34;d&#34;, &#34;e&#34;]
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">copyWithin</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>) 
+<span style="color:#75715e">// [1, 2, 3, 1, 2] 从下标4开始复制数据
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>)
+<span style="color:#75715e">// [4, 5, 3, 4, 5] 复制数据到下标零处, 从下标3开始 
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>)
+<span style="color:#75715e">// [4, 2, 3, 4, 5]
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">copyWithin</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+<span style="color:#75715e">// [1, 2, 3, 3, 4]
+</span><span style="color:#75715e"></span>
+[].<span style="color:#a6e22e">copyWithin</span>.<span style="color:#a6e22e">call</span>({<span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>}, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>);
+<span style="color:#75715e">// {0: 1, 3: 1, length: 5}
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// ES2015 Typed Arrays are subclasses of Array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i32a</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Int32Array</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]);
+
+<span style="color:#a6e22e">i32a</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>);
+<span style="color:#75715e">// Int32Array [3, 4, 5, 4, 5]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// On platforms that are not yet ES2015 compliant: 
+</span><span style="color:#75715e"></span>[].<span style="color:#a6e22e">copyWithin</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Int32Array</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>);
+<span style="color:#75715e">// Int32Array [4, 2, 3, 4, 5]
+</span></code></pre></div><h3 id="entries">entries</h3>
+<p>方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>];
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">iterator1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">entries</span>();
+
+<span style="color:#a6e22e">iterator1</span>.<span style="color:#a6e22e">next</span>().<span style="color:#a6e22e">value</span>;
+<span style="color:#75715e">// expected output: Array [0, &#34;a&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">iterator1</span>.<span style="color:#a6e22e">next</span>().<span style="color:#a6e22e">value</span>;
+<span style="color:#75715e">// expected output: Array [1, &#34;b&#34;]
+</span></code></pre></div><h3 id="every">every</h3>
+<p>方法测试一个数组内的所有元素是否都能通过某个指定函数的测试</p>
+<p>若收到一个空数组，此方法在一切情况下都会返回 true。</p>
+<p>callback 用来测试每个元素的函数，它可以接收三个参数：</p>
+<p>element 用于测试的当前值。<br>
+index(可选) 用于测试的当前值的索引。<br>
+array(可选) 调用 every 的当前数组。thisArg 执行 callback 时使用的 this 值。</p>
+<p>如果回调函数的每一次返回都为 truthy 值，返回 true ，否则返回 false。</p>
+<h4 id="语法">语法</h4>
+<p>arr.every(callback(element[, index[, array]])[, thisArg])</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isBelowThreshold</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">currentValue</span>) =&gt; <span style="color:#a6e22e">currentValue</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">40</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">39</span>, <span style="color:#ae81ff">29</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">13</span>];
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">every</span>(<span style="color:#a6e22e">isBelowThreshold</span>));
+<span style="color:#75715e">// expected output: true
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">value</span>) =&gt; <span style="color:#a6e22e">value</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">50</span>); 
+<span style="color:#75715e">// expected output: true
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">array2</span> <span style="color:#f92672">=</span> []
+<span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">every</span>(); <span style="color:#75715e">//true 
+</span><span style="color:#75715e"></span>
+</code></pre></div><h4 id="polyfill-1">Polyfill</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">every</span>) {
+  Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">every</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callbackfn</span>, <span style="color:#a6e22e">thisArg</span>) {
+    <span style="color:#e6db74">&#39;use strict&#39;</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">T</span>, <span style="color:#a6e22e">k</span>;
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;this is null or not defined&#39;</span>);
+    }
+
+    <span style="color:#75715e">// 1. Let O be the result of calling ToObject passing the this 
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//    value as the argument.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">O</span> <span style="color:#f92672">=</span> Object(<span style="color:#66d9ef">this</span>);
+
+    <span style="color:#75715e">// 2. Let lenValue be the result of calling the Get internal method
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//    of O with the argument &#34;length&#34;.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 3. Let len be ToUint32(lenValue).
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">O</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#75715e">// 4. If IsCallable(callbackfn) is false, throw a TypeError exception.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">callbackfn</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>();
+    }
+
+    <span style="color:#75715e">// 5. If thisArg was supplied, let T be thisArg; else let T be undefined.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+      <span style="color:#a6e22e">T</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">thisArg</span>;
+    }
+
+    <span style="color:#75715e">// 6. Let k be 0.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#75715e">// 7. Repeat, while k &lt; len
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len</span>) {
+
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">kValue</span>;
+
+      <span style="color:#75715e">// a. Let Pk be ToString(k).
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//   This is implicit for LHS operands of the in operator
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// b. Let kPresent be the result of calling the HasProperty internal 
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//    method of O with argument Pk.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//   This step can be combined with c
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// c. If kPresent is true, then
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">k</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">O</span>) {
+
+        <span style="color:#75715e">// i. Let kValue be the result of calling the Get internal method
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//    of O with argument Pk.
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">kValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">O</span>[<span style="color:#a6e22e">k</span>];
+
+        <span style="color:#75715e">// ii. Let testResult be the result of calling the Call internal method
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     of callbackfn with T as the this value and argument list 
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     containing kValue, k, and O.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">testResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callbackfn</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">T</span>, <span style="color:#a6e22e">kValue</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">O</span>);
+
+        <span style="color:#75715e">// iii. If ToBoolean(testResult) is false, return false.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">testResult</span>) {
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+        }
+      }
+      <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  };
+}
+</code></pre></div><h3 id="fill">fill()</h3>
+<p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
+<p>arr.fill(value[, start[, end]])</p>
+<p>value
+用来填充数组元素的值。
+start 可选
+起始索引，默认值为0。
+end 可选<br>
+终止索引，默认值为 this.length。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>];
+
+<span style="color:#75715e">// fill with 0 from position 2 until position 4
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>)
+<span style="color:#75715e">// expected output: [1, 2, 0, 0]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// fill with 5 from position 1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>)
+<span style="color:#75715e">// expected output: [1, 5, 5, 5]
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">6</span>)
+<span style="color:#75715e">// expected output: [6, 6, 6, 6]
+</span><span style="color:#75715e"></span>
+</code></pre></div><h3 id="filter">filter()</h3>
+<p>方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</p>
+<p>filter 为数组中的每个元素调用一次 callback 函数，并利用所有使得 callback 返回 true 或等价于 true 的值的元素创建一个新数组。callback 只会在已经赋值的索引上被调用，对于那些已经被删除或者从未被赋值的索引不会被调用。那些没有通过 callback 测试的元素会被跳过，不会被包含在新数组中。</p>
+<p>var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])</p>
+<p>callback 用来测试数组的每个元素的函数。返回 true 表示该元素通过测试，保留该元素，false 则不保留。它接受以下三个参数：</p>
+<p>element 数组中当前正在处理的元素。</p>
+<p>index可选 正在处理的元素在数组中的索引。</p>
+<p>array可选 调用了 filter 的数组本身。</p>
+<p>thisArg可选
+执行 callback 时，用于 this 的值。</p>
+<p>返回值
+一个新的、由通过测试的元素组成的数组，如果没有任何数组元素通过测试，则返回空数组。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isBigEnough</span>(<span style="color:#a6e22e">element</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>;
+}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">filtered</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">130</span>, <span style="color:#ae81ff">44</span>].<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">isBigEnough</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">filtered</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">130</span>, <span style="color:#ae81ff">44</span>].<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">element</span>) =&gt; <span style="color:#a6e22e">element</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">40</span>);
+
+<span style="color:#75715e">// 过滤 JSON 中的无效条目
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arrByID</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">isNumber</span>(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">!==</span><span style="color:#ae81ff">0</span>);
+
+<span style="color:#75715e">// 数组中搜索
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">el</span>) =&gt; <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">toLowerCase</span>().<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">toLowerCase</span>()) <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><h4 id="polyfill-2">Polyfill</h4>
+<p>filter 被添加到 ECMA-262 标准第 5 版中，因此在某些实现环境中不被支持。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">filter</span>){
+  Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">filter</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">func</span>, <span style="color:#a6e22e">thisArg</span>) {
+    <span style="color:#e6db74">&#39;use strict&#39;</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>((<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">func</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;Function&#39;</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">func</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;function&#39;</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">this</span>))
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>();
+   
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">0</span>,
+        <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#a6e22e">len</span>), <span style="color:#75715e">// preallocate array
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">thisArg</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>){
+      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">++</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">len</span>){
+        <span style="color:#75715e">// checks to see if the key was set
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">this</span>){
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">func</span>(<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">t</span>)){
+            <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">c</span><span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>];
+          }
+        }
+      }
+    }
+    <span style="color:#66d9ef">else</span>{
+      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">++</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">len</span>){
+        <span style="color:#75715e">// checks to see if the key was set
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">this</span>){
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">func</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">thisArg</span>, <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">t</span>)){
+            <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">c</span><span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>];
+          }
+        }
+      }
+    }
+   
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>; <span style="color:#75715e">// shrink down array to proper size
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+  };
+}
+</code></pre></div><h3 id="find">find()</h3>
+<p>方法返回数组中满足提供的测试函数的第一个元素的值</p>
+<p>find方法对数组中的每一项元素执行一次 callback 函数，直至有一个 callback 返回 true。当找到了这样一个元素后，该方法会立即返回这个元素的值，否则返回 undefined。注意 callback 函数会为数组中的每个索引调用即从 0 到 length - 1，而不仅仅是那些被赋值的索引，这意味着对于稀疏数组来说，该方法的效率要低于那些只遍历有值的索引的方法。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">inventory</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">item</span> =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;apples&#39;</span>)); <span style="color:#75715e">// { name: &#39;apples&#39;, quantity: 5 }
+</span><span style="color:#75715e"></span>
+
+</code></pre></div><h3 id="polyfill-3">Polyfill</h3>
+<p>本方法在ECMAScript 6规范中被加入，可能不存在于某些实现中</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// https://tc39.github.io/ecma262/#sec-array.prototype.find
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">find</span>) {
+  Object.<span style="color:#a6e22e">defineProperty</span>(Array.<span style="color:#a6e22e">prototype</span>, <span style="color:#e6db74">&#39;find&#39;</span>, {
+    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">predicate</span>) {
+     <span style="color:#75715e">// 1. Let O be ? ToObject(this value).
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;&#34;this&#34; is null or not defined&#39;</span>);
+      }
+
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> Object(<span style="color:#66d9ef">this</span>);
+
+      <span style="color:#75715e">// 2. Let len be ? ToLength(? Get(O, &#34;length&#34;)).
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">0</span>;
+
+      <span style="color:#75715e">// 3. If IsCallable(predicate) is false, throw a TypeError exception.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">predicate</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;predicate must be a function&#39;</span>);
+      }
+
+      <span style="color:#75715e">// 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">thisArg</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arguments</span>[<span style="color:#ae81ff">1</span>];
+
+      <span style="color:#75715e">// 5. Let k be 0.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+      <span style="color:#75715e">// 6. Repeat, while k &lt; len
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len</span>) {
+        <span style="color:#75715e">// a. Let Pk be ! ToString(k).
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// b. Let kValue be ? Get(O, Pk).
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// d. If testResult is true, return kValue.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">kValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>[<span style="color:#a6e22e">k</span>];
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">predicate</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">thisArg</span>, <span style="color:#a6e22e">kValue</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">o</span>)) {
+          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">kValue</span>;
+        }
+        <span style="color:#75715e">// e. Increase k by 1.
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>;
+      }
+
+      <span style="color:#75715e">// 7. Return undefined.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">undefined</span>;
+    }
+  });
+}
+</code></pre></div><h3 id="findindex">findIndex</h3>
+<p>方法返回数组中满足提供的测试函数的第一个元素的索引</p>
+<p>findIndex方法对数组中的每个数组索引0..length-1（包括）执行一次callback函数，直到找到一个callback函数返回真实值（强制为true）的值。如果找到这样的元素，findIndex会立即返回该元素的索引。如果回调从不返回真值，或者数组的length为0，则findIndex返回-1。 与某些其他数组方法（如Array#some）不同，在稀疏数组中，即使对于数组中不存在的条目的索引也会调用回调函数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">130</span>, <span style="color:#ae81ff">44</span>];
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isLargeNumber</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">element</span>) =&gt; <span style="color:#a6e22e">element</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">13</span>;
+<span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">findIndex</span>(<span style="color:#a6e22e">isLargeNumber</span>);
+<span style="color:#75715e">// or 
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">findIndex</span>((<span style="color:#a6e22e">element</span>) =&gt; <span style="color:#a6e22e">element</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">13</span>);
+<span style="color:#75715e">// expected output: 3
+</span><span style="color:#75715e"></span>
+</code></pre></div><h3 id="flat">flat</h3>
+<p>方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]].<span style="color:#a6e22e">flat</span>();
+<span style="color:#75715e">// expected output: [0, 1, 2, 3, 4]
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, [[[<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]]]].<span style="color:#a6e22e">flat</span>(<span style="color:#ae81ff">2</span>);
+<span style="color:#75715e">// expected output: [0, 1, 2, [3, 4]]
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]].<span style="color:#a6e22e">flat</span>() 
+<span style="color:#75715e">// [1, 2, 3, 4]
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]]].<span style="color:#a6e22e">flat</span>();
+<span style="color:#75715e">// [1, 2, 3, 4, [5, 6]]
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]]].<span style="color:#a6e22e">flat</span>(<span style="color:#ae81ff">2</span>);
+<span style="color:#75715e">// [1, 2, 3, 4, 5, 6]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//使用 Infinity，可展开任意深度的嵌套数组
+</span><span style="color:#75715e"></span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, [<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, [<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span>]]]]].<span style="color:#a6e22e">flat</span>(<span style="color:#66d9ef">Infinity</span>);
+<span style="color:#75715e">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</span></code></pre></div><h3 id="flatmap">flatMap</h3>
+<p>方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。</p>
+<h3 id="foreach">forEach</h3>
+<p>方法对数组的每个元素执行一次给定的函数。</p>
+<p>forEach() 方法按升序为数组中含有效值的每一项执行一次 callback 函数，那些已删除或者未初始化的项将被跳过（例如在稀疏数组上）。</p>
+<p>注意： 除了抛出异常以外，没有办法中止或跳出 forEach() 循环。如果你需要中止或跳出循环，forEach() 方法不是应当使用的工具。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>];
+<span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">element</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">element</span>));
+</code></pre></div><h3 id="includes">includes</h3>
+<p>includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回false。</p>
+<p>从fromIndex 索引处开始查找 valueToFind。如果为负值，则按升序从 array.length + fromIndex 的索引开始搜</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">2</span>)
+<span style="color:#75715e">// expected output: true
+</span><span style="color:#75715e"></span>
+[<span style="color:#e6db74">&#39;cat&#39;</span>, <span style="color:#e6db74">&#39;dog&#39;</span>, <span style="color:#e6db74">&#39;bat&#39;</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;cat&#39;</span>)
+<span style="color:#75715e">// expected output: true
+</span><span style="color:#75715e"></span>
+[<span style="color:#e6db74">&#39;cat&#39;</span>, <span style="color:#e6db74">&#39;dog&#39;</span>, <span style="color:#e6db74">&#39;bat&#39;</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;at&#39;</span>)
+<span style="color:#75715e">// expected output: false
+</span><span style="color:#75715e"></span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">2</span>);     <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">4</span>);     <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>);  <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">3</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">NaN</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#66d9ef">NaN</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>];
+
+<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#ae81ff">3</span>);   <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#ae81ff">100</span>); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>];
+
+<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>); <span style="color:#75715e">// false
+</span></code></pre></div><h3 id="polyfill-4">Polyfill</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// https://tc39.github.io/ecma262/#sec-array.prototype.includes
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">includes</span>) {
+  Object.<span style="color:#a6e22e">defineProperty</span>(Array.<span style="color:#a6e22e">prototype</span>, <span style="color:#e6db74">&#39;includes&#39;</span>, {
+    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">valueToFind</span>, <span style="color:#a6e22e">fromIndex</span>) {
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;&#34;this&#34; is null or not defined&#39;</span>);
+      }
+
+      <span style="color:#75715e">// 1. Let O be ? ToObject(this value).
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> Object(<span style="color:#66d9ef">this</span>);
+
+      <span style="color:#75715e">// 2. Let len be ? ToLength(? Get(O, &#34;length&#34;)).
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">0</span>;
+
+      <span style="color:#75715e">// 3. If len is 0, return false.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">len</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+      }
+
+      <span style="color:#75715e">// 4. Let n be ? ToInteger(fromIndex).
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//    (If fromIndex is undefined, this step produces the value 0.)
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fromIndex</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span>;
+
+      <span style="color:#75715e">// 5. If n ≥ 0, then
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  a. Let k be n.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// 6. Else n &lt; 0,
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  a. Let k be len + n.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  b. If k &lt; 0, let k be 0.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">max</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">-</span> Math.<span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">n</span>), <span style="color:#ae81ff">0</span>);
+
+      <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sameValueZero</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">||</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;number&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;number&#39;</span> <span style="color:#f92672">&amp;&amp;</span> isNaN(<span style="color:#a6e22e">x</span>) <span style="color:#f92672">&amp;&amp;</span> isNaN(<span style="color:#a6e22e">y</span>));
+      }
+
+      <span style="color:#75715e">// 7. Repeat, while k &lt; len
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len</span>) {
+        <span style="color:#75715e">// a. Let elementK be the result of ? Get(O, ! ToString(k)).
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// b. If SameValueZero(valueToFind, elementK) is true, return true.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sameValueZero</span>(<span style="color:#a6e22e">o</span>[<span style="color:#a6e22e">k</span>], <span style="color:#a6e22e">valueToFind</span>)) {
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+        }
+        <span style="color:#75715e">// c. Increase k by 1. 
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>;
+      }
+
+      <span style="color:#75715e">// 8. Return false
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+    }
+  });
+}
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

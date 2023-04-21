@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>K8s Tutorial - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="# 1. 查看某个名字空间下所有pod kubectl get pod -n barad -o wide # 2. 查看所有名字空间下pod kubectl get pod --all-namespaces # 3. 在某个pod内开启一个交互式shell（即“进入容器内”） kubectl exec -it $POD_NAME -n $NAMESPACE -- /bin/bash # 4. 在pod内执行命令 kubectl exec -it $POD_NAME -n $NAMESPACE -- jps -l # 5. 查看所有node kubectl get node # 6. 查看某个node或pod详细信息 kubectl describe node $NODE_NAME kubectl describe pod $POD_NAME -n $NAMESPACE # 7. 查看某个名字空间下service kubectl get svc -n $NAMESPACE -o wide # 8." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/devops/k8s-tutorial/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="K8s Tutorial" />
+<meta property="og:description" content="# 1. 查看某个名字空间下所有pod kubectl get pod -n barad -o wide # 2. 查看所有名字空间下pod kubectl get pod --all-namespaces # 3. 在某个pod内开启一个交互式shell（即“进入容器内”） kubectl exec -it $POD_NAME -n $NAMESPACE -- /bin/bash # 4. 在pod内执行命令 kubectl exec -it $POD_NAME -n $NAMESPACE -- jps -l # 5. 查看所有node kubectl get node # 6. 查看某个node或pod详细信息 kubectl describe node $NODE_NAME kubectl describe pod $POD_NAME -n $NAMESPACE # 7. 查看某个名字空间下service kubectl get svc -n $NAMESPACE -o wide # 8." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/devops/k8s-tutorial/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-21T15:05:15+08:00" />
+<meta property="article:modified_time" content="2020-12-21T15:05:15+08:00" />
+
+<meta itemprop="name" content="K8s Tutorial">
+<meta itemprop="description" content="# 1. 查看某个名字空间下所有pod kubectl get pod -n barad -o wide # 2. 查看所有名字空间下pod kubectl get pod --all-namespaces # 3. 在某个pod内开启一个交互式shell（即“进入容器内”） kubectl exec -it $POD_NAME -n $NAMESPACE -- /bin/bash # 4. 在pod内执行命令 kubectl exec -it $POD_NAME -n $NAMESPACE -- jps -l # 5. 查看所有node kubectl get node # 6. 查看某个node或pod详细信息 kubectl describe node $NODE_NAME kubectl describe pod $POD_NAME -n $NAMESPACE # 7. 查看某个名字空间下service kubectl get svc -n $NAMESPACE -o wide # 8."><meta itemprop="datePublished" content="2020-12-21T15:05:15+08:00" />
+<meta itemprop="dateModified" content="2020-12-21T15:05:15+08:00" />
+<meta itemprop="wordCount" content="129">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="K8s Tutorial"/>
+<meta name="twitter:description" content="# 1. 查看某个名字空间下所有pod kubectl get pod -n barad -o wide # 2. 查看所有名字空间下pod kubectl get pod --all-namespaces # 3. 在某个pod内开启一个交互式shell（即“进入容器内”） kubectl exec -it $POD_NAME -n $NAMESPACE -- /bin/bash # 4. 在pod内执行命令 kubectl exec -it $POD_NAME -n $NAMESPACE -- jps -l # 5. 查看所有node kubectl get node # 6. 查看某个node或pod详细信息 kubectl describe node $NODE_NAME kubectl describe pod $POD_NAME -n $NAMESPACE # 7. 查看某个名字空间下service kubectl get svc -n $NAMESPACE -o wide # 8."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 查看某个名字空间下所有pod</span>
+kubectl get pod -n barad -o wide
+
+<span style="color:#75715e"># 2. 查看所有名字空间下pod</span>
+kubectl get pod --all-namespaces
+
+<span style="color:#75715e"># 3. 在某个pod内开启一个交互式shell（即“进入容器内”）</span>
+kubectl exec -it $POD_NAME -n $NAMESPACE -- /bin/bash
+
+<span style="color:#75715e"># 4. 在pod内执行命令</span>
+kubectl exec -it $POD_NAME -n $NAMESPACE -- jps -l
+
+<span style="color:#75715e"># 5. 查看所有node</span>
+kubectl get node
+
+<span style="color:#75715e"># 6. 查看某个node或pod详细信息</span>
+kubectl describe node $NODE_NAME
+kubectl describe pod $POD_NAME -n $NAMESPACE
+
+<span style="color:#75715e"># 7. 查看某个名字空间下service</span>
+kubectl get svc -n $NAMESPACE -o wide
+
+<span style="color:#75715e"># 8. 查看某个service详细信息，后端endpoint等</span>
+kubectl describe svc $SVC_NAME -n $NAMESPACE
+
+<span style="color:#75715e"># 9. 删除某个pod</span>
+kubectl delete po $POD_NAME -n $NAMESPACE
+
+<span style="color:#75715e"># 10. 替换某个service</span>
+kubectl delete svc $SVC_NAME -n $NAMESPACE <span style="color:#f92672">&amp;&amp;</span> kubectl create -f xxx.svc.yaml
+
+<span style="color:#75715e"># 11. 查看某个k8s资源的yaml或json定义</span>
+kubectl get po $POD_NAME -n $NAMESPACE -o yaml
+kubectl get po $POD_NAME -n $NAMESPACE -o json
+
+<span style="color:#75715e"># 12.  修改pod的内存大小</span>
+kubectl edit deployment  $deployment -n $NAMESPACE
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

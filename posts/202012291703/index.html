@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    
-    <meta name="author" content="Sukoshi">
+    <meta name="author" content="strawbreey">
   
 
    
@@ -27,7 +27,7 @@
   
   
   
-  <title>Linux Install Svn 🌟 梨花细雨不见鹿</title>
+  <title>Linux Install Svn 🌟 如沐春风</title>
 
   <meta property="og:title" content="Linux Install Svn" />
 <meta property="og:description" content="SVN（Subversion）是一个自由、开源的项目源代码版本控制工具。目前，绝大多数开源软件和企业代码管理，都使用SVN作为代码版本管理软" />
@@ -49,7 +49,7 @@
   </head><body><header class="header-container layout-block layout-padding">
   <div class="header-inner content-padding-large soft-size--large soft-style--box">
     <div class="header-logo">
-      <a href="https://note.strawbreey.com"><h1>梨花细雨不见鹿</h1></a>
+      <a href="https://note.strawbreey.com"><h1>如沐春风</h1></a>
     </div>
     <nav class="header-nav">
       <div class="header-nav--btn">
@@ -110,127 +110,111 @@
 <p>SVN 服务器配置：安装SVN服务器</p>
 <h3 id="svn-安装">svn 安装</h3>
 <p>查看svn版本</p>
-<p>svnserve &ndash;version</p>
-<p>ubuntu 安装svn 1.7、1.8</p>
-<p>当前 ubuntu 12.04 中的 svn 版本为 1.6，这个版本会在每个子目录新建一个.svn 的目录保存版本文件，很不爽。找到一个第三方编译的 ubuntu 源：
-1） 打开source.list源：</p>
-<p>sudo vi /etc/apt/sources.list</p>
-<p>2） 添加源</p>
-<p>deb <a href="http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu">http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu</a> precise main</p>
-<p>deb-src <a href="http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu">http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu</a> precise main</p>
-<p>3） 执行安装命令</p>
-<p>sudo apt-get install subversion</p>
-<h3 id="svn-常用命令">SVN 常用命令</h3>
-<ol>
-<li>将文件checkout到本地目录</li>
-</ol>
-<p>svn checkout path
-svn co path</p>
-<ol start="2">
-<li>
-<p>往版本库中添加新的文件
-svn add file</p>
-</li>
-<li>
-<p>将改动的文件提交到版本库
-svn commit -m “LogMessage” [-N] [&ndash;no-unlock] PATH(如果选择了保持锁，就使用–no-unlock开关)
-简写：svn ci</p>
-</li>
-<li>
-<p>加锁/解锁
-svn lock -m “LockMessage” [&ndash;force] PATH
-svn unlock PATH</p>
-</li>
-<li>
-<p>更新到某个版本
-svn update -r m path
-简写：svn up</p>
-</li>
-<li>
-<p>查看文件或者目录状态
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svnserve --version
+</code></pre></div><p>ubuntu 安装svn 1.7、1.8</p>
+<p>当前 ubuntu 12.04 中的 svn 版本为 1.6，这个版本会在每个子目录新建一个.svn 的目录保存版本文件，很不爽。找到一个第三方编译的 ubuntu 源：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打开source.list源：</span>
+sudo vi /etc/apt/sources.list   
+
+<span style="color:#75715e"># 添加源</span>
+deb http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu precise main
+deb-src http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu precise main
+
+<span style="color:#75715e"># 执行安装命令</span>
+sudo apt-get install subversion
+</code></pre></div><h3 id="svn-常用命令">SVN 常用命令</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#75715e"># 1. 将文件checkout到本地目录</span>
+svn checkout path
+svn co path
+
+<span style="color:#75715e"># 2. 往版本库中添加新的文件</span>
+svn add file
+
+<span style="color:#75715e"># 3. 将改动的文件提交到版本库</span>
+svn commit -m “LogMessage” <span style="color:#f92672">[</span>-N<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--no-unlock<span style="color:#f92672">]</span> PATH<span style="color:#f92672">(</span>如果选择了保持锁，就使用–no-unlock开关<span style="color:#f92672">)</span>
+<span style="color:#75715e"># 简写：svn ci</span>
+
+<span style="color:#75715e"># 4. 加锁/解锁</span>
+
+svn lock -m “LockMessage” <span style="color:#f92672">[</span>--force<span style="color:#f92672">]</span> PATH
+svn unlock PATH
+
+<span style="color:#75715e"># 5. 更新到某个版本</span>
+svn update -r m path <span style="color:#75715e"># 简写：svn up</span>
+
+
+
+<span style="color:#75715e"># 6. 查看文件或者目录状态</span>
 1）svn status path（目录下的文件和子目录的状态，正常状态不显示）
-2）svn status -v path(显示文件和子目录状态)
-简写：svn st</p>
-</li>
-<li>
-<p>删除文件
+2）svn status -v path<span style="color:#f92672">(</span>显示文件和子目录状态<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># 简写：svn st</span>
+
+<span style="color:#75715e"># 7. 删除文件</span>
 svn delete path -m “delete test fle”
-简写：svn (del, remove, rm)</p>
-</li>
-<li>
-<p>查看日志
-svn log path</p>
-</li>
-<li>
-<p>查看文件详细信息
-svn info path</p>
-</li>
-<li>
-<p>比较差异</p>
-</li>
-</ol>
-<p>svn diff path (将修改的文件与基础版本比较)
-svn diff -r m:n path (对版本m和版本n比较差异)</p>
-<p>简写：svn di</p>
-<ol start="11">
-<li>
-<p>将两个版本之间的差异合并到当前文件
-svn merge -r m:n path</p>
-</li>
-<li>
-<p>SVN 帮助
+<span style="color:#75715e"># 简写：svn (del, remove, rm)</span>
+
+<span style="color:#75715e"># 8. 查看日志</span>
+svn log path
+
+<span style="color:#75715e"># 9. 查看文件详细信息</span>
+svn info path
+
+<span style="color:#75715e"># 10. 比较差异</span>
+
+svn diff path <span style="color:#f92672">(</span>将修改的文件与基础版本比较<span style="color:#f92672">)</span>
+svn diff -r m:n path <span style="color:#f92672">(</span>对版本m和版本n比较差异<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># 简写：svn di</span>
+
+<span style="color:#75715e"># 11. 将两个版本之间的差异合并到当前文件</span>
+svn merge -r m:n path
+
+<span style="color:#75715e"># 12. SVN 帮助</span>
 svn help
-svn help ci</p>
-</li>
-<li>
-<p>版本库下的文件和目录列表</p>
-</li>
-</ol>
-<p>svn list path</p>
-<p>显示path目录下的所有属于版本库的文件和目录简写：svn ls</p>
-<ol start="14">
-<li>创建纳入版本控制下的新目录</li>
-</ol>
-<p>svn mkdir: 创建纳入版本控制下的新目录。
+svn help ci
+
+<span style="color:#75715e"># 13. 版本库下的文件和目录列表</span>
+
+svn list path    
+
+显示path目录下的所有属于版本库的文件和目录简写：svn ls
+
+<span style="color:#75715e"># 14. 创建纳入版本控制下的新目录</span>
+
+svn mkdir: 创建纳入版本控制下的新目录。
+
 用法: 
-1、mkdir PATH&hellip;
-每一个以工作副本 PATH 指定的目录，都会创建在本地端，并且加入新增调度，以待下一次的提交。
-2、mkdir URL&hellip; 创建版本控制的目录。 
-每个以URL指定的目录，都会透过立即提交于仓库中创建。在这两个情况下，所有的中间目录都必须事先存在。</p>
-<ol start="15">
-<li>
-<p>恢复本地修改
-svn revert: 恢复原始未改变的工作副本文件 (恢复大部份的本地修改)。
-用法: revert PATH&hellip; 注意: 本子命令不会存取网络，并且会解除冲突的状况。但是它不会恢复被删除的目录</p>
-</li>
-<li>
-<p>代码库URL变更
-svn switch (sw): 更新工作副本至不同的URL。
+1、mkdir PATH... 每一个以工作副本 PATH 指定的目录，都会创建在本地端，并且加入新增调度，以待下一次的提交。
+2、mkdir URL... 创建版本控制的目录。 每个以URL指定的目录，都会透过立即提交于仓库中创建。在这两个情况下，所有的中间目录都必须事先存在。
+
+<span style="color:#75715e"># 15. 恢复本地修改</span>
+svn revert: 恢复原始未改变的工作副本文件 <span style="color:#f92672">(</span>恢复大部份的本地修改<span style="color:#f92672">)</span>。
+用法: revert PATH... 注意: 本子命令不会存取网络，并且会解除冲突的状况。但是它不会恢复被删除的目录
+
+<span style="color:#75715e"># 16. 代码库URL变更</span>
+svn switch <span style="color:#f92672">(</span>sw<span style="color:#f92672">)</span>: 更新工作副本至不同的URL。
 用法: 
-1、switch URL [PATH]     <br>
+1、switch URL <span style="color:#f92672">[</span>PATH<span style="color:#f92672">]</span>        
 更新你的工作副本，映射到一个新的URL，其行为跟“svn update”很像，也会将      服务器上文件与本地文件合并。这是将工作副本对应到同一仓库中某个分支或者标记的方法。 
-2、switch &ndash;relocate FROM TO [PATH&hellip;]<br>
-改写工作副本的URL元数据，以反映单纯的URL上的改变。当仓库的根URL变动     (比如方案名或是主机名称变动)，但是工作副本仍旧对映到同一仓库的同一目录时使用     这个命令更新工作副本与仓库的对应关系。</p>
-</li>
-<li>
-<p>解决冲突
+2、switch --relocate FROM TO <span style="color:#f92672">[</span>PATH...<span style="color:#f92672">]</span>   
+改写工作副本的URL元数据，以反映单纯的URL上的改变。当仓库的根URL变动     <span style="color:#f92672">(</span>比如方案名或是主机名称变动<span style="color:#f92672">)</span>，但是工作副本仍旧对映到同一仓库的同一目录时使用     这个命令更新工作副本与仓库的对应关系。
+
+<span style="color:#75715e"># 17. 解决冲突</span>
 svn resolved: 移除工作副本的目录或文件的“冲突”状态。
-用法: resolved PATH&hellip; 注意: 本子命令不会依语法来解决冲突或是移除冲突标记；它只是移除冲突的相关文件，然后让 PATH 可以再次提交。</p>
-</li>
-<li>
-<p>输出指定文件或URL的内容。
-svn cat 目标[@版本]&hellip;如果指定了版本，将从指定的版本开始查找。 svn cat -r PREV filename &gt; filename (PREV 是上一版本,也可以写具体版本号,这样输出结果是可以提交的）</p>
-</li>
-<li>
-<p>svn cleanup
-当Subversion修改你的工作副本时（或者任何在.svn中的信息），它尝试尽可能做到安全。在改变一个工作副本前，Subversion把它的意 图写到一个日志文件中。接下来它执行日志文件中的命令来应用要求的修改。最后，Subversion删除日志文件。从架构上来说，这与一个日志文件系统 （journaled filesystem）类似。如果一个 Subversion操作被打断（例如，进程被杀掉了，或机器当掉了）了，日志文件仍在硬盘上。重新执行日志文件，Subversion可以完成先前开始 的操作，这样你的工作副本能回到一个可靠的状态。</p>
-</li>
-<li>
-<p>svn import</p>
-</li>
-</ol>
-<p>使用svn import是把未版本化的文件树复制到资料库的快速办法，它需要创建一个临时目录。</p>
-<h3 id="svn-常用命令一览表">SVN 常用命令一览表</h3>
+用法: resolved PATH... 注意: 本子命令不会依语法来解决冲突或是移除冲突标记；它只是移除冲突的相关文件，然后让 PATH 可以再次提交。
+
+<span style="color:#75715e"># 18. 输出指定文件或URL的内容。</span>
+svn cat 目标<span style="color:#f92672">[</span>@版本<span style="color:#f92672">]</span>...如果指定了版本，将从指定的版本开始查找。 svn cat -r PREV filename &gt; filename <span style="color:#f92672">(</span>PREV 是上一版本,也可以写具体版本号,这样输出结果是可以提交的）
+ 
+<span style="color:#75715e"># 19. svn cleanup</span>
+当Subversion修改你的工作副本时（或者任何在.svn中的信息），它尝试尽可能做到安全。在改变一个工作副本前，Subversion把它的意 图写到一个日志文件中。接下来它执行日志文件中的命令来应用要求的修改。最后，Subversion删除日志文件。从架构上来说，这与一个日志文件系统 （journaled filesystem）类似。如果一个 Subversion操作被打断（例如，进程被杀掉了，或机器当掉了）了，日志文件仍在硬盘上。重新执行日志文件，Subversion可以完成先前开始 的操作，这样你的工作副本能回到一个可靠的状态。 
+
+<span style="color:#75715e"># 20. svn import</span>
+使用svn import是把未版本化的文件树复制到资料库的快速办法，它需要创建一个临时目录。 
+
+</code></pre></div><h3 id="svn-常用命令一览表">SVN 常用命令一览表</h3>
 <table>
 <thead>
 <tr>
@@ -531,11 +515,11 @@ svn://ip地址</p>
   <div class="widget-body">
     <div class="author-box avatar">
       
-      <img class="author-avatar soft-size--round soft-style--box" src="https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&amp;r=g&amp;d=retro" alt="Sukoshi">
+      <img class="author-avatar soft-size--round soft-style--box" src="/favicon.png" alt="strawbreey">
       
-      <h2 class="author-name text-ellipsis">Sukoshi</h2>
+      <h2 class="author-name text-ellipsis">strawbreey</h2>
       
-      <p class="author-desc text-ellipsis">梅花鹿的角叫鹿角</p>
+      <p class="author-desc text-ellipsis">strawbreey</p>
       
     </div>
   </div>
@@ -568,15 +552,15 @@ svn://ip地址</p>
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
-        <li class="post-item"><a href="/posts/202108051754/">Git Worktree Prune</a></li>
+        <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
-        <li class="post-item"><a href="/posts/202108051727/">Go Tour</a></li>
+        <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
       
-        <li class="post-item"><a href="/posts/202108051717/">Redis Single So Fast</a></li>
+        <li class="post-item"><a href="/posts/202109261812/">Php Isset</a></li>
       
-        <li class="post-item"><a href="/posts/202108051617/">Php Rand</a></li>
+        <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
-        <li class="post-item"><a href="/posts/202108051521/">Go Select</a></li>
+        <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
       
     </ul>
   </div>
@@ -599,7 +583,7 @@ svn://ip地址</p>
       
         <li>
           <a href="https://note.strawbreey.com/categories/go/">GO</a>
-          <span>2</span>
+          <span>8</span>
         </li>
       
     </ul>
@@ -623,9 +607,11 @@ svn://ip地址</p>
   <div class="widget-body">
     <div class="tags-list">
       
-        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+        <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
+      
+        <a href="https://note.strawbreey.com/tags/go/" data-count="8" class="soft-size--small soft-style--hover soft-style--active">GO</a>
       
         <a href="https://note.strawbreey.com/tags/vscode/" data-count="3" class="soft-size--small soft-style--hover soft-style--active">vscode</a>
       
@@ -638,8 +624,6 @@ svn://ip地址</p>
         <a href="https://note.strawbreey.com/tags/angular/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">angular</a>
       
         <a href="https://note.strawbreey.com/tags/devops/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">devops</a>
-      
-        <a href="https://note.strawbreey.com/tags/go/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">GO</a>
       
         <a href="https://note.strawbreey.com/tags/interview/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">interview</a>
       
@@ -657,7 +641,7 @@ svn://ip地址</p>
   
   <div class="social-icons">
     
-      <a class="soft-size--primary soft-style--box" href="https://github.com/miiiku" target="_blank" rel="noopener noreferrer">
+      <a class="soft-size--primary soft-style--box" href="https://github.com/strawbreey" target="_blank" rel="noopener noreferrer">
           
         <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
@@ -673,55 +657,7 @@ svn://ip地址</p>
         
       </a>
     
-      <a class="soft-size--primary soft-style--box" href="https://twitter.com/guanquanhong" target="_blank" rel="noopener noreferrer">
-        
-
-          
-        <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
-        </svg>
-        
-
-        
-
-        
-
-        
-      </a>
-    
-      <a class="soft-size--primary soft-style--box" href="https://www.instagram.com/sukoshi_dayo/" target="_blank" rel="noopener noreferrer">
-        
-
-        
-
-          
-        <svg class="icon icon-instagram" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M512 0C372.906667 0 355.541333 0.64 300.928 3.072 246.4 5.632 209.28 14.208 176.64 26.88c-33.664 13.056-62.250667 30.592-90.709333 59.050667S39.893333 142.933333 26.88 176.64C14.208 209.28 5.589333 246.4 3.072 300.928 0.512 355.541333 0 372.906667 0 512s0.64 156.458667 3.072 211.072c2.56 54.485333 11.136 91.648 23.808 124.288a251.093333 251.093333 0 0 0 59.050667 90.709333A250.368 250.368 0 0 0 176.64 997.12c32.682667 12.629333 69.802667 21.290667 124.288 23.808C355.541333 1023.488 372.906667 1024 512 1024s156.458667-0.64 211.072-3.072c54.485333-2.56 91.648-11.178667 124.288-23.808a251.648 251.648 0 0 0 90.709333-59.050667 250.026667 250.026667 0 0 0 59.050667-90.709333c12.629333-32.64 21.290667-69.802667 23.808-124.288 2.56-54.613333 3.072-71.978667 3.072-211.072s-0.64-156.458667-3.072-211.072c-2.56-54.485333-11.178667-91.690667-23.808-124.288a251.306667 251.306667 0 0 0-59.050667-90.709333A249.472 249.472 0 0 0 847.36 26.88c-32.64-12.672-69.802667-21.290667-124.288-23.808C668.458667 0.512 651.093333 0 512 0z m0 92.16c136.661333 0 152.96 0.682667 206.933333 3.029333 49.92 2.346667 77.013333 10.624 95.018667 17.706667 23.978667 9.258667 40.96 20.352 58.965333 38.229333 17.877333 17.92 28.970667 34.944 38.229334 58.922667 6.997333 18.005333 15.36 45.098667 17.621333 95.018667 2.432 54.016 2.986667 70.229333 2.986667 206.933333s-0.64 152.96-3.157334 206.933333c-2.602667 49.92-10.922667 77.013333-17.962666 95.018667a162.56 162.56 0 0 1-38.357334 58.965333 159.744 159.744 0 0 1-58.88 38.229334c-17.92 6.997333-45.44 15.36-95.36 17.621333-54.357333 2.432-70.357333 2.986667-207.317333 2.986667-137.002667 0-153.002667-0.64-207.317333-3.157334-49.962667-2.602667-77.482667-10.922667-95.402667-17.962666a158.549333 158.549333 0 0 1-58.837333-38.357334 155.477333 155.477333 0 0 1-38.4-58.88c-7.04-17.92-15.317333-45.44-17.92-95.36-1.92-53.76-2.602667-70.357333-2.602667-206.677333 0-136.362667 0.682667-153.002667 2.602667-207.402667 2.602667-49.92 10.88-77.397333 17.92-95.317333 8.96-24.32 20.437333-40.96 38.4-58.922667 17.877333-17.877333 34.56-29.397333 58.837333-38.314666 17.92-7.082667 44.842667-15.402667 94.762667-17.962667 54.4-1.92 70.4-2.56 207.317333-2.56l1.92 1.28z m0 156.928a262.912 262.912 0 1 0 0 525.824 262.912 262.912 0 1 0 0-525.824zM512 682.666667c-94.293333 0-170.666667-76.373333-170.666667-170.666667s76.373333-170.666667 170.666667-170.666667 170.666667 76.373333 170.666667 170.666667-76.373333 170.666667-170.666667 170.666667z m334.762667-443.946667a61.482667 61.482667 0 0 1-122.88 0 61.44 61.44 0 0 1 122.88 0z"></path>
-        </svg>
-        
-
-        
-
-        
-      </a>
-    
-      <a class="soft-size--primary soft-style--box" href="https://weibo.com/u/5561168966" target="_blank" rel="noopener noreferrer">
-        
-
-        
-
-        
-
-          
-        <svg class="icon icon-weibo" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M385.682429 733.696q11.995429-19.456 6.290286-39.424t-25.746286-28.598857q-19.456-7.972571-41.691429-0.585143t-34.304 26.258286q-12.580571 19.456-7.460571 39.131429t24.576 28.891429 42.569143 1.462857 35.693714-27.136zM439.442429 664.576q4.534857-7.460571 1.974857-15.140571t-10.020571-10.605714q-7.972571-2.852571-16.310857 0.292571t-12.288 10.605714q-9.728 17.700571 7.460571 25.746286 7.972571 2.852571 16.603429-0.292571t12.580571-10.605714zM538.843572 725.723429q-25.746286 58.294857-90.258286 85.723429t-128 6.875429q-61.147429-19.456-84.260571-72.265143t3.730286-107.154286q26.843429-53.174857 86.601143-79.433143t120.32-10.825143q63.414857 16.603429 90.550857 68.315429t1.462857 108.836571zM717.165858 634.294857q-5.12-54.857143-50.834286-97.133714t-119.149714-62.317714-156.891429-11.995429q-127.414857 13.165714-211.163429 80.822857t-75.702857 151.113143q5.12 54.857143 50.834286 97.133714t119.149714 62.317714 156.891429 11.995429q127.414857-13.165714 211.163429-80.822857t75.702857-151.113143zM893.147572 636.562286q0 38.838857-21.138286 79.725714t-62.317714 78.262857-96.256 67.145143-129.170286 47.396571-154.550857 17.700571-157.110857-19.163429-137.435429-53.174857-98.011429-86.308571-37.156571-114.029714q0-65.682286 39.716571-139.995429t112.859429-147.456q96.548571-96.548571 195.145143-134.875429t140.873143 4.022857q37.156571 36.571429 11.410286 119.442286-2.267429 7.972571-0.585143 11.410286t5.705143 4.022857 8.265143-0.292571 7.68-1.974857l3.437714-1.170286q79.433143-33.718857 140.580571-33.718857t87.405714 34.889143q25.746286 35.986286 0 101.741714-1.170286 7.460571-2.56 11.410286t2.56 7.168 6.875429 4.315429 9.728 3.437714q32.548571 10.313143 58.88 26.843429t45.714286 46.592 19.456 66.56zM850.871001 279.990857q23.990857 26.843429 31.158857 62.025143t-3.730286 67.145143q-4.534857 13.165714-16.822857 19.456t-25.453714 2.267429q-13.165714-4.534857-19.456-16.822857t-2.267429-25.453714q11.410286-35.986286-13.677714-63.414857t-61.147429-19.968q-13.677714 2.852571-25.746286-4.534857t-14.262857-21.138286q-2.852571-13.677714 4.534857-25.453714t21.138286-14.555429q34.304-7.460571 68.022857 3.145143t57.709714 37.449143zM954.295001 186.88q49.737143 54.857143 64.292571 127.122286t-7.68 138.020571q-5.12 15.433143-19.456 22.820571t-29.696 2.267429-22.820571-19.456-2.852571-29.696q16.018286-46.884571 5.705143-98.304t-45.714286-90.258286q-35.401143-39.424-84.553143-54.564571t-98.889143-4.827429q-16.018286 3.437714-29.696-5.412571t-17.115429-24.868571 5.412571-29.403429 24.868571-16.822857q70.290286-14.848 139.410286 6.582857t118.857143 76.873143z"></path>
-        </svg>
-        
-
-        
-      </a>
-    
-      <a class="soft-size--primary soft-style--box" href="https://www.zhihu.com/people/miku-84" target="_blank" rel="noopener noreferrer">
+      <a class="soft-size--primary soft-style--box" href="1245788423@qq.com" target="_blank" rel="noopener noreferrer">
         
 
         
@@ -730,10 +666,6 @@ svn://ip地址</p>
 
         
 
-          
-        <svg class="icon icon-zhihu" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z"></path>
-        </svg>
         
       </a>
     

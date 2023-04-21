@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Example - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="1. 编译 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello world&amp;#34;) } 要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。
+go run hello-world.go hello world 有时候我们想将我们的程序编译成二进制文件。我们可以通过 go build 命来达到目的。
+go build hello-world.gols hello-world.exe
+ 然后我们可以直接运行这个二进制文件。
+ls hello-world.exe	hello-world.go ./hello-world 2. 字符串 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;go&amp;#34; &#43; &amp;#34;lang&amp;#34;) fmt.Println(&amp;#34;1&#43;1 =&amp;#34;, 1&#43;1) fmt.Println(&amp;#34;7.0/3.0 =&amp;#34;, 7.0/3.0) fmt.Println(true &amp;amp;&amp;amp; false) fmt.Println(true || false) fmt.Println(!true) // golang  // 1&#43;1 = 2  // 7." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-example/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Example" />
+<meta property="og:description" content="1. 编译 package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello world&#34;) } 要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。
+go run hello-world.go hello world 有时候我们想将我们的程序编译成二进制文件。我们可以通过 go build 命来达到目的。
+go build hello-world.gols hello-world.exe
+ 然后我们可以直接运行这个二进制文件。
+ls hello-world.exe	hello-world.go ./hello-world 2. 字符串 package main import &#34;fmt&#34; func main() { fmt.Println(&#34;go&#34; &#43; &#34;lang&#34;) fmt.Println(&#34;1&#43;1 =&#34;, 1&#43;1) fmt.Println(&#34;7.0/3.0 =&#34;, 7.0/3.0) fmt.Println(true &amp;&amp; false) fmt.Println(true || false) fmt.Println(!true) // golang  // 1&#43;1 = 2  // 7." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-example/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-14T12:18:37+08:00" />
+<meta property="article:modified_time" content="2020-12-14T12:18:37+08:00" />
+
+<meta itemprop="name" content="Go Example">
+<meta itemprop="description" content="1. 编译 package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello world&#34;) } 要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。
+go run hello-world.go hello world 有时候我们想将我们的程序编译成二进制文件。我们可以通过 go build 命来达到目的。
+go build hello-world.gols hello-world.exe
+ 然后我们可以直接运行这个二进制文件。
+ls hello-world.exe	hello-world.go ./hello-world 2. 字符串 package main import &#34;fmt&#34; func main() { fmt.Println(&#34;go&#34; &#43; &#34;lang&#34;) fmt.Println(&#34;1&#43;1 =&#34;, 1&#43;1) fmt.Println(&#34;7.0/3.0 =&#34;, 7.0/3.0) fmt.Println(true &amp;&amp; false) fmt.Println(true || false) fmt.Println(!true) // golang  // 1&#43;1 = 2  // 7."><meta itemprop="datePublished" content="2020-12-14T12:18:37+08:00" />
+<meta itemprop="dateModified" content="2020-12-14T12:18:37+08:00" />
+<meta itemprop="wordCount" content="3007">
+<meta itemprop="keywords" content="GO," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Example"/>
+<meta name="twitter:description" content="1. 编译 package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello world&#34;) } 要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。
+go run hello-world.go hello world 有时候我们想将我们的程序编译成二进制文件。我们可以通过 go build 命来达到目的。
+go build hello-world.gols hello-world.exe
+ 然后我们可以直接运行这个二进制文件。
+ls hello-world.exe	hello-world.go ./hello-world 2. 字符串 package main import &#34;fmt&#34; func main() { fmt.Println(&#34;go&#34; &#43; &#34;lang&#34;) fmt.Println(&#34;1&#43;1 =&#34;, 1&#43;1) fmt.Println(&#34;7.0/3.0 =&#34;, 7.0/3.0) fmt.Println(true &amp;&amp; false) fmt.Println(true || false) fmt.Println(!true) // golang  // 1&#43;1 = 2  // 7."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="1-编译">1. 编译</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;hello world&#34;</span>)
+}
+</code></pre></div><p>要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run hello-world.go
+hello world
+</code></pre></div><p>有时候我们想将我们的程序编译成二进制文件。我们可以通过 go build 命来达到目的。</p>
+<pre><code>go build hello-world.go
+ls
+</code></pre><blockquote>
+<p>hello-world.exe</p>
+</blockquote>
+<p>然后我们可以直接运行这个二进制文件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls
+hello-world.exe	hello-world.go
+./hello-world
+</code></pre></div><h3 id="2-字符串">2. 字符串</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;go&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;lang&#34;</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;1+1 =&#34;</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;7.0/3.0 =&#34;</span>, <span style="color:#ae81ff">7.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3.0</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">false</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">false</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(!<span style="color:#66d9ef">true</span>)
+
+    <span style="color:#75715e">// golang
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 1+1 = 2
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 7.0/3.0 = 2.3333333333333335
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// fals
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="3-变量">3. 变量</h3>
+<ol>
+<li>var 声明 1 个或者多个变量。</li>
+<li>你可以申明一次性声明多个变量。</li>
+<li>Go 将自动推断已经初始化的变量类型。</li>
+<li>声明变量且没有给出对应的初始值时，变量将会初始化为零值 。例如，一个 int 的零值是 0。</li>
+<li>:= 语句是申明并初始化变量的简写，例如这个例子中的 var f string = &ldquo;short&rdquo;。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">&#34;initial&#34;</span>
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> = <span style="color:#66d9ef">true</span>
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;short&#34;</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>)
+
+    <span style="color:#75715e">// initial
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 1 2
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 0
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// short
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="4-常量">4. 常量</h3>
+<ul>
+<li>Go 支持字符、字符串、布尔和数值 常量 。</li>
+<li>const 用于声明一个常量。</li>
+<li>const 语句可以出现在任何 var 语句可以出现的地方</li>
+<li>常数表达式可以执行任意精度的运算</li>
+<li>数值型常量是没有确定的类型的，直到它们被给定了一个类型，比如说一次显示的类型转化</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;math&#34;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">&#34;constant&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">n</span> = <span style="color:#ae81ff">500000000</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">d</span> = <span style="color:#ae81ff">3e20</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">n</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">d</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(int64(<span style="color:#a6e22e">d</span>))
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sin</span>(<span style="color:#a6e22e">n</span>))
+
+    <span style="color:#75715e">// constant
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 6e+11
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 600000000000
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// -0.28470407323754404
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="5-for-循环">5. For 循环</h3>
+<p>for 是 Go 中唯一的循环结构。这里有 for 循环的三个基本使用方式。</p>
+<ul>
+<li>单个循环条件</li>
+<li>经典的初始化/条件/后续形式 for 循环</li>
+<li>不带条件的 for 循环将一直执行，直到在循环体内使用了 break 或者 return 来跳出循环</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// `for` 是 Go 中唯一的循环结构。这里有 `for` 循环的三个基本使用方式。
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+	<span style="color:#75715e">// 最常用的方式，带单个循环条件。
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>)
+		<span style="color:#a6e22e">i</span> = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+	}
+
+	<span style="color:#75715e">// 经典的初始化/条件/后续形式 `for` 循环。
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">7</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">j</span>)
+	}
+
+	<span style="color:#75715e">// 不带条件的 `for` 循环将一直执行，直到在循环体内使用了 `break` 或者 `return` 来跳出循环。
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;loop&#34;</span>)
+		<span style="color:#66d9ef">break</span>
+	}
+}
+	
+<span style="color:#75715e">// $ go run for.go
+</span><span style="color:#75715e">// 1
+</span><span style="color:#75715e">// 2
+</span><span style="color:#75715e">// 3
+</span><span style="color:#75715e">// 7
+</span><span style="color:#75715e">// 8
+</span><span style="color:#75715e">// 9
+</span><span style="color:#75715e">// loop
+</span></code></pre></div><h3 id="6-ifelse-分支">6. if/else 分支</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// `if` 和 `else` 分支结构在 Go 中当然是直接了当的了。
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 这里是一个基本的例子。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;7 is even&#34;</span>)
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;7 is odd&#34;</span>)
+    }
+
+    <span style="color:#75715e">// 你可以不要 `else` 只用 `if` 语句。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">%</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;8 is divisible by 4&#34;</span>)
+    }
+
+    <span style="color:#75715e">// 在条件语句之前可以有一个语句；任何在这里声明的变量
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 都可以在所有的条件分支中使用。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">num</span> &lt; <span style="color:#ae81ff">0</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">num</span>, <span style="color:#e6db74">&#34;is negative&#34;</span>)
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &lt; <span style="color:#ae81ff">10</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">num</span>, <span style="color:#e6db74">&#34;has 1 digit&#34;</span>)
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">num</span>, <span style="color:#e6db74">&#34;has multiple digits&#34;</span>)
+    }
+}
+
+<span style="color:#75715e">// 注意，在 Go 中，你可以不适用圆括号，但是花括号是需
+</span><span style="color:#75715e">// 要的。
+</span><span style="color:#75715e"></span>
+</code></pre></div><blockquote>
+<p>Go 里没有三目运算符，所以即使你只需要基本的条件判断，你仍需要使用完整的 if 语句。</p>
+</blockquote>
+<h3 id="7-switch-分支结构">7. switch 分支结构</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _switch_ ，方便的条件分支语句。
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;time&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// 一个基本的 `switch`。
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;write &#34;</span>, <span style="color:#a6e22e">i</span>, <span style="color:#e6db74">&#34; as &#34;</span>)
+
+	<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">i</span> {
+		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;one&#34;</span>)
+		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;two&#34;</span>)
+		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;three&#34;</span>)
+	}
+
+	<span style="color:#75715e">// 在一个 `case` 语句中，你可以使用逗号来分隔多个表达式。在这个例子中，我们很好的使用了可选的`default` 分支。
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">Weekday</span>() {
+		<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Saturday</span>, <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sunday</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;it&#39;s the weekend&#34;</span>)
+		<span style="color:#66d9ef">default</span>:
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;it&#39;s a weekday&#34;</span>)
+	}
+
+	<span style="color:#75715e">// 不带表达式的 `switch` 是实现 if/else 逻辑的另一种方式。这里展示了 `case` 表达式是如何使用非常量的。
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+	<span style="color:#66d9ef">switch</span> {
+		<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Hour</span>() &lt; <span style="color:#ae81ff">12</span>:
+				<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;it&#39;s before noon&#34;</span>)
+		<span style="color:#66d9ef">default</span>:
+				<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;it&#39;s after noon&#34;</span>)
+	}
+}
+
+<span style="color:#75715e">// todo: type switches
+</span></code></pre></div><h3 id="8-数组">8. 数组</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 在 Go 中，_数组_ 是一个固定长度的数列。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 这里我们创建了一个数组 `a` 来存放刚好 5 个 `int`。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 元素的类型和长度都是数组类型的一部分。数组默认是
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 零值的，对于 `int` 数组来说也就是 `0`。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;emp:&#34;</span>, <span style="color:#a6e22e">a</span>)
+
+    <span style="color:#75715e">// 我们可以使用 `array[index] = value` 语法来设置数组
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 指定位置的值，或者用 `array[index]` 得到值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">4</span>] = <span style="color:#ae81ff">100</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;set:&#34;</span>, <span style="color:#a6e22e">a</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;get:&#34;</span>, <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">4</span>])
+
+    <span style="color:#75715e">// 使用内置函数 `len` 返回数组的长度
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;len:&#34;</span>, len(<span style="color:#a6e22e">a</span>))
+
+    <span style="color:#75715e">// 使用这个语法在一行内初始化一个数组
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>}
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;dcl:&#34;</span>, <span style="color:#a6e22e">b</span>)
+
+    <span style="color:#75715e">// 数组的存储类型是单一的，但是你可以组合这些数据
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 来构造多维的数据结构。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">twoD</span> [<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">3</span>]<span style="color:#66d9ef">int</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+            <span style="color:#a6e22e">twoD</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span>
+        }
+    }
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;2d: &#34;</span>, <span style="color:#a6e22e">twoD</span>)
+}
+
+</code></pre></div><h3 id="9-切片">9. 切片</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _Slice_ 是 Go 中一个重要的数据类型，它提供了比数组更强大的序列交互方式。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 与数组不同，slice 的类型仅由它所包含的元素的类型决定（与元素个数无关）。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 要创建一个长度不为 0 的空 slice，需要使用内建函数 `make`。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 这里我们创建了一个长度为 3 的 `string` 类型的 slice（初始值为零值）。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">3</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;emp:&#34;</span>, <span style="color:#a6e22e">s</span>)
+
+    <span style="color:#75715e">// 我们可以和数组一样设置和得到值
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;a&#34;</span>
+    <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#34;b&#34;</span>
+    <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#34;c&#34;</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;set:&#34;</span>, <span style="color:#a6e22e">s</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;get:&#34;</span>, <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">2</span>])
+
+    <span style="color:#75715e">// `len` 返回 slice 的长度
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;len:&#34;</span>, len(<span style="color:#a6e22e">s</span>))
+
+    <span style="color:#75715e">// 除了基本操作外，slice 支持比数组更丰富的操作。比如 slice 支持内建函数 `append`，
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 该函数会返回一个包含了一个或者多个新值的 slice。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 注意由于 `append` 可能返回一个新的 slice，我们需要接收其返回值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#e6db74">&#34;d&#34;</span>)
+    <span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#e6db74">&#34;e&#34;</span>, <span style="color:#e6db74">&#34;f&#34;</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;apd:&#34;</span>, <span style="color:#a6e22e">s</span>)
+
+    <span style="color:#75715e">// slice 还可以 `copy`。这里我们创建一个空的和 `s` 有相同长度的 slice——`c`，
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 然后将 `s` 复制给 `c`。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, len(<span style="color:#a6e22e">s</span>))
+    copy(<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">s</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;cpy:&#34;</span>, <span style="color:#a6e22e">c</span>)
+
+    <span style="color:#75715e">// slice 支持通过 `slice[low:high]` 语法进行“切片”操作。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 例如，右边的操作可以得到一个包含元素 `s[2]`、`s[3]` 和 `s[4]` 的 slice。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">l</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">5</span>]
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sl1:&#34;</span>, <span style="color:#a6e22e">l</span>)
+
+    <span style="color:#75715e">// 这个 slice 包含从 `s[0]` 到 `s[5]`（不包含 5）的元素。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">s</span>[:<span style="color:#ae81ff">5</span>]
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sl2:&#34;</span>, <span style="color:#a6e22e">l</span>)
+
+    <span style="color:#75715e">// 这个 slice 包含从 `s[2]`（包含 2）之后的元素。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">2</span>:]
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sl3:&#34;</span>, <span style="color:#a6e22e">l</span>)
+
+    <span style="color:#75715e">// 我们可以在一行代码中声明并初始化一个 slice 变量。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;g&#34;</span>, <span style="color:#e6db74">&#34;h&#34;</span>, <span style="color:#e6db74">&#34;i&#34;</span>}
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;dcl:&#34;</span>, <span style="color:#a6e22e">t</span>)
+
+    <span style="color:#75715e">// Slice 可以组成多维数据结构。内部的 slice 长度可以不一致，这一点和多维数组不同。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">twoD</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">3</span>)
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+        <span style="color:#a6e22e">innerLen</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#a6e22e">twoD</span>[<span style="color:#a6e22e">i</span>] = make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">innerLen</span>)
+        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">innerLen</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+            <span style="color:#a6e22e">twoD</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span>
+        }
+    }
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;2d: &#34;</span>, <span style="color:#a6e22e">twoD</span>)
+}
+</code></pre></div><h3 id="10-map">10. Map</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _map_ 是 Go 内建的[关联数据类型](http://zh.wikipedia.org/wiki/关联数组)
+</span><span style="color:#75715e">// （在一些其他的语言中也被称为 _哈希(hash)_ 或者 _字典(dict)_ ）。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 要创建一个空 map，需要使用内建函数 `make`：`make(map[key-type]val-type)`。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+
+    <span style="color:#75715e">// 使用典型的 `make[key] = val` 语法来设置键值对。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;k1&#34;</span>] = <span style="color:#ae81ff">7</span>
+    <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;k2&#34;</span>] = <span style="color:#ae81ff">13</span>
+
+    <span style="color:#75715e">// 打印 map。例如，使用 `fmt.Println` 打印一个 map，会输出它所有的键值对。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;map:&#34;</span>, <span style="color:#a6e22e">m</span>)
+
+    <span style="color:#75715e">// 使用 `name[key]` 来获取一个键的值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">v1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;k1&#34;</span>]
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;v1: &#34;</span>, <span style="color:#a6e22e">v1</span>)
+
+    <span style="color:#75715e">// 内建函数 `len` 可以返回一个 map 的键值对数量。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;len:&#34;</span>, len(<span style="color:#a6e22e">m</span>))
+
+    <span style="color:#75715e">// 内建函数 `delete` 可以从一个 map 中移除键值对。
+</span><span style="color:#75715e"></span>    delete(<span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;k2&#34;</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;map:&#34;</span>, <span style="color:#a6e22e">m</span>)
+
+    <span style="color:#75715e">// 当从一个 map 中取值时，还有可以选择是否接收的第二个返回值，该值表明了 map 中是否存在这个键。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 这可以用来消除 `键不存在` 和 `键的值为零值` 产生的歧义，
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 例如 `0` 和 `&#34;&#34;`。这里我们不需要值，所以用 _空白标识符(blank identifier)_ _ 将其忽略。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">prs</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;k2&#34;</span>]
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;prs:&#34;</span>, <span style="color:#a6e22e">prs</span>)
+
+    <span style="color:#75715e">// 你也可以通过右边的语法在一行代码中声明并初始化一个新的 map。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{<span style="color:#e6db74">&#34;foo&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;bar&#34;</span>: <span style="color:#ae81ff">2</span>}
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;map:&#34;</span>, <span style="color:#a6e22e">n</span>)
+}
+
+<span style="color:#75715e">// map: map[k1:7 k2:13]
+</span><span style="color:#75715e">// v1:  7
+</span><span style="color:#75715e">// len: 2
+</span><span style="color:#75715e">// map: map[k1:7]
+</span><span style="color:#75715e">// prs: false
+</span><span style="color:#75715e">// map: map[bar:2 foo:1]
+</span></code></pre></div><h3 id="11-range-遍历">11. Range 遍历</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _range_ 用于迭代各种各样的数据结构。
+</span><span style="color:#75715e">// 让我们来看看如何在我们已经学过的数据结构上使用 `range`。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 这里我们使用 `range` 来对 slice 中的元素求和。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 数组也可以用这种方法初始化并赋初值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">nums</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+        <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span>
+    }
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sum:&#34;</span>, <span style="color:#a6e22e">sum</span>)
+
+    <span style="color:#75715e">// `range` 在数组和 slice 中提供对每项的索引和值的访问。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 上面我们不需要索引，所以我们使用 _空白标识符_ `_` 将其忽略。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 实际上，我们有时候是需要这个索引的。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> {
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;index:&#34;</span>, <span style="color:#a6e22e">i</span>)
+        }
+    }
+
+    <span style="color:#75715e">// `range` 在 map 中迭代键值对。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">kvs</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;a&#34;</span>: <span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>: <span style="color:#e6db74">&#34;banana&#34;</span>}
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">kvs</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%s -&gt; %s\n&#34;</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>)
+    }
+
+    <span style="color:#75715e">// `range` 也可以只遍历 map 的键。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">kvs</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;key:&#34;</span>, <span style="color:#a6e22e">k</span>)
+    }
+
+    <span style="color:#75715e">// `range` 在字符串中迭代 unicode 码点(code point)。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 第一个返回值是字符的起始字节位置，然后第二个是字符本身。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#e6db74">&#34;go&#34;</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span>)
+    }
+}
+
+
+</code></pre></div><h3 id="12-函数">12. 函数</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _函数_ 是 Go 的核心。我们将通过一些不同的例子来进行学习它。
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// 这里是一个函数，接受两个 `int` 并且以 `int` 返回它们的和
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">plus</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#75715e">// Go 需要明确的 return，也就是说，它不会自动 return 最后一个表达式的值
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
+}
+
+<span style="color:#75715e">// 当多个连续的参数为同样类型时，
+</span><span style="color:#75715e">// 可以仅声明最后一个参数的类型，忽略之前相同类型参数的类型声明。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">plusPlus</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>
+}
+
+<span style="color:#75715e">// Go 原生支持 _多返回值_。
+</span><span style="color:#75715e">// 这个特性在 Go 语言中经常用到，例如用来同时返回一个函数的结果和错误信息。
+</span><span style="color:#75715e">// `(int, int)` 在这个函数中标志着这个函数返回 2 个 `int`。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">vals</span>() (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">7</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 通过 `函数名(参数列表)` 来调用函数，
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">plus</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;1+2 =&#34;</span>, <span style="color:#a6e22e">res</span>)
+
+    <span style="color:#a6e22e">res</span> = <span style="color:#a6e22e">plusPlus</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;1+2+3 =&#34;</span>, <span style="color:#a6e22e">res</span>)
+
+    <span style="color:#75715e">// 这里我们通过 _多赋值_ 操作来使用这两个不同的返回值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">vals</span>()
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">b</span>)
+
+    <span style="color:#75715e">// 如果你仅仅需要返回值的一部分的话，你可以使用空白标识符 `_`。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">vals</span>()
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>)
+}
+
+</code></pre></div><h3 id="13-多返回值">13. 多返回值</h3>
+<h3 id="14-可变参数函数">14. 可变参数函数</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#75715e">// [_可变参数函数_](https://zh.wikipedia.org/wiki/%E5%8F%AF%E8%AE%8A%E5%8F%83%E6%95%B8%E5%87%BD%E6%95%B8)。
+</span><span style="color:#75715e">// 在调用时可以传递任意数量的参数。
+</span><span style="color:#75715e">// 例如，`fmt.Println` 就是一个常见的变参函数。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// 这个函数接受任意数量的 `int` 作为参数。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">nums</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">int</span>) {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#e6db74">&#34; &#34;</span>)
+    <span style="color:#a6e22e">total</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+        <span style="color:#a6e22e">total</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span>
+    }
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">total</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 变参函数使用常规的调用方式，传入独立的参数。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+    <span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+
+    <span style="color:#75715e">// 如果你有一个含有多个值的 slice，想把它们作为参数使用，
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 你需要这样调用 `func(slice...)`。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">nums</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+
+    <span style="color:#75715e">// ...展开符
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">nums</span><span style="color:#f92672">...</span>)
+}
+</code></pre></div><h3 id="15-闭包">15. 闭包</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持[_匿名函数_](http://zh.wikipedia.org/wiki/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0)，
+</span><span style="color:#75715e">// 并能用其构造 &lt;a href=&#34;http://zh.wikipedia.org/wiki/%E9%97%AD%E5%8C%85_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)&#34;&gt;&lt;em&gt;闭包&lt;/em&gt;&lt;/a&gt;。
+</span><span style="color:#75715e">// 匿名函数在你想定义一个不需要命名的内联函数时是很实用的。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// `intSeq` 函数返回一个在其函数体内定义的匿名函数。
+</span><span style="color:#75715e">// 返回的函数使用闭包的方式 _隐藏_ 变量 `i`。
+</span><span style="color:#75715e">// 返回的函数 _隐藏_ 变量 `i` 以形成闭包。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">intSeq</span>() <span style="color:#66d9ef">func</span>() <span style="color:#66d9ef">int</span> {
+    <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>() <span style="color:#66d9ef">int</span> {
+        <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+    }
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 我们调用 `intSeq` 函数，将返回值（一个函数）赋给 `nextInt`。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 这个函数的值包含了自己的值 `i`，这样在每次调用 `nextInt` 时，都会更新 `i` 的值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">nextInt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">intSeq</span>()
+
+    <span style="color:#75715e">// 通过多次调用 `nextInt` 来看看闭包的效果。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">nextInt</span>())
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">nextInt</span>())
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">nextInt</span>())
+
+    <span style="color:#75715e">// 为了确认这个状态对于这个特定的函数是唯一的，我们重新创建并测试一下。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">newInts</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">intSeq</span>()
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">newInts</span>())
+}
+
+</code></pre></div><h3 id="16-递归">16. 递归</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持 &lt;a href=&#34;http://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)&#34;&gt;&lt;em&gt;递归&lt;/em&gt;&lt;/a&gt;。
+</span><span style="color:#75715e">// 这里是一个经典的阶乘示例。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// `fact` 函数在到达 `fact(0)` 前一直调用自身。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">fact</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">fact</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">fact</span>(<span style="color:#ae81ff">7</span>))
+}
+
+</code></pre></div><h3 id="17-指针">17. 指针</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持 &lt;em&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/%E6%8C%87%E6%A8%99_(%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8)&#34;&gt;指针&lt;/a&gt;&lt;/em&gt;，
+</span><span style="color:#75715e">// 允许在程序中通过 `引用传递` 来传递值和数据结构。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// 我们将通过两个函数：`zeroval` 和 `zeroptr` 来比较 `指针` 和 `值`。
+</span><span style="color:#75715e">// `zeroval` 有一个 `int` 型参数，所以使用值传递。
+</span><span style="color:#75715e">// `zeroval` 将从调用它的那个函数中得到一个实参的拷贝：ival。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">zeroval</span>(<span style="color:#a6e22e">ival</span> <span style="color:#66d9ef">int</span>) {
+    <span style="color:#a6e22e">ival</span> = <span style="color:#ae81ff">0</span>
+}
+
+<span style="color:#75715e">// `zeroptr` 有一个和上面不同的参数：`*int`，这意味着它使用了 `int` 指针。
+</span><span style="color:#75715e">// 紧接着，函数体内的 `*iptr` 会 _解引用_ 这个指针，从它的内存地址得到这个地址当前对应的值。
+</span><span style="color:#75715e">// 对解引用的指针赋值，会改变这个指针引用的真实地址的值。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">zeroptr</span>(<span style="color:#a6e22e">iptr</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>) {
+    <span style="color:#f92672">*</span><span style="color:#a6e22e">iptr</span> = <span style="color:#ae81ff">0</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;initial:&#34;</span>, <span style="color:#a6e22e">i</span>)
+
+    <span style="color:#a6e22e">zeroval</span>(<span style="color:#a6e22e">i</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;zeroval:&#34;</span>, <span style="color:#a6e22e">i</span>)
+
+    <span style="color:#75715e">// 通过 `&amp;i` 语法来取得 `i` 的内存地址，即指向 `i` 的指针。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">zeroptr</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">i</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;zeroptr:&#34;</span>, <span style="color:#a6e22e">i</span>)
+
+    <span style="color:#75715e">// 指针也是可以被打印的。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;pointer:&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">i</span>)
+}
+
+<span style="color:#75715e">// initial: 1
+</span><span style="color:#75715e">// zeroval: 1
+</span><span style="color:#75715e">// zeroptr: 0
+</span><span style="color:#75715e">// pointer: 0xc00002c008
+</span></code></pre></div><h3 id="17-结构体">17. 结构体</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 的_结构体(struct)_ 是带类型的字段(fields)集合。
+</span><span style="color:#75715e">// 这在组织数据时非常有用。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// 这里的 `person` 结构体包含了 `name` 和 `age` 两个字段。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">person</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+    <span style="color:#a6e22e">age</span>  <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 使用这个语法创建新的结构体元素。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">person</span>{<span style="color:#e6db74">&#34;Bob&#34;</span>, <span style="color:#ae81ff">20</span>})
+
+    <span style="color:#75715e">// 你可以在初始化一个结构体元素时指定字段名字。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">person</span>{<span style="color:#a6e22e">name</span>: <span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#a6e22e">age</span>: <span style="color:#ae81ff">30</span>})
+
+    <span style="color:#75715e">// 省略的字段将被初始化为零值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">person</span>{<span style="color:#a6e22e">name</span>: <span style="color:#e6db74">&#34;Fred&#34;</span>})
+
+    <span style="color:#75715e">// `&amp;` 前缀生成一个结构体指针。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">person</span>{<span style="color:#a6e22e">name</span>: <span style="color:#e6db74">&#34;Ann&#34;</span>, <span style="color:#a6e22e">age</span>: <span style="color:#ae81ff">40</span>})
+
+    <span style="color:#75715e">// 使用`.`来访问结构体字段。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">person</span>{<span style="color:#a6e22e">name</span>: <span style="color:#e6db74">&#34;Sean&#34;</span>, <span style="color:#a6e22e">age</span>: <span style="color:#ae81ff">50</span>}
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span>)
+
+    <span style="color:#75715e">// 也可以对结构体指针使用`.` - 指针会被自动解引用。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sp</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">s</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sp</span>.<span style="color:#a6e22e">age</span>)
+
+    <span style="color:#75715e">// 结构体是可变(mutable)的。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sp</span>.<span style="color:#a6e22e">age</span> = <span style="color:#ae81ff">51</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sp</span>.<span style="color:#a6e22e">age</span>)
+}
+
+</code></pre></div><h3 id="18-方法">18. 方法</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持为结构体类型定义_方法(methods)_ 。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">rect</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">height</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#75715e">// 这里的 `area` 是一个拥有 `*rect` 类型接收器(receiver)的方法。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rect</span>) <span style="color:#a6e22e">area</span>() <span style="color:#66d9ef">int</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">height</span>
+}
+
+<span style="color:#75715e">// 可以为值类型或者指针类型的接收者定义方法。
+</span><span style="color:#75715e">// 这是一个值类型接收者的例子。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">rect</span>) <span style="color:#a6e22e">perim</span>() <span style="color:#66d9ef">int</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">height</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">rect</span>{<span style="color:#a6e22e">width</span>: <span style="color:#ae81ff">10</span>, <span style="color:#a6e22e">height</span>: <span style="color:#ae81ff">5</span>}
+
+    <span style="color:#75715e">// 这里我们调用上面为结构体定义的两个方法。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;area: &#34;</span>, <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">area</span>())
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;perim:&#34;</span>, <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">perim</span>())
+
+    <span style="color:#75715e">// 调用方法时，Go 会自动处理值和指针之间的转换。
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 想要避免在调用方法时产生一个拷贝，或者想让方法可以修改接受结构体的值，
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 你都可以使用指针来调用方法。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">rp</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">r</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;area: &#34;</span>, <span style="color:#a6e22e">rp</span>.<span style="color:#a6e22e">area</span>())
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;perim:&#34;</span>, <span style="color:#a6e22e">rp</span>.<span style="color:#a6e22e">perim</span>())
+}
+</code></pre></div><h3 id="19-接口">19. 接口</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 方法签名的集合叫做：_接口(Interfaces)_。
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;math&#34;</span>
+)
+
+<span style="color:#75715e">// 这是一个几何体的基本接口。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">geometry</span> <span style="color:#66d9ef">interface</span> {
+    <span style="color:#a6e22e">area</span>() <span style="color:#66d9ef">float64</span>
+    <span style="color:#a6e22e">perim</span>() <span style="color:#66d9ef">float64</span>
+}
+
+<span style="color:#75715e">// 在这个例子中，我们将为 `rect` 和 `circle` 实现该接口。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">rect</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">height</span> <span style="color:#66d9ef">float64</span>
+}
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">circle</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">radius</span> <span style="color:#66d9ef">float64</span>
+}
+
+<span style="color:#75715e">// 要在 Go 中实现一个接口，我们只需要实现接口中的所有方法。
+</span><span style="color:#75715e">// 这里我们为 `rect` 实现了 `geometry` 接口。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">rect</span>) <span style="color:#a6e22e">area</span>() <span style="color:#66d9ef">float64</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">height</span>
+}
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">rect</span>) <span style="color:#a6e22e">perim</span>() <span style="color:#66d9ef">float64</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">height</span>
+}
+
+<span style="color:#75715e">// `circle` 的实现。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">circle</span>) <span style="color:#a6e22e">area</span>() <span style="color:#66d9ef">float64</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pi</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">radius</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">radius</span>
+}
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">circle</span>) <span style="color:#a6e22e">perim</span>() <span style="color:#66d9ef">float64</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pi</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">radius</span>
+}
+
+<span style="color:#75715e">// 如果一个变量实现了某个接口，我们就可以调用指定接口中的方法。
+</span><span style="color:#75715e">// 这儿有一个通用的 `measure` 函数，我们可以通过它来使用所有的 `geometry`。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">measure</span>(<span style="color:#a6e22e">g</span> <span style="color:#a6e22e">geometry</span>) {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">g</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">area</span>())
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">perim</span>())
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">rect</span>{<span style="color:#a6e22e">width</span>: <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">height</span>: <span style="color:#ae81ff">4</span>}
+    <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">circle</span>{<span style="color:#a6e22e">radius</span>: <span style="color:#ae81ff">5</span>}
+
+    <span style="color:#75715e">// 结构体类型 `circle` 和 `rect` 都实现了 `geometry` 接口，
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 所以我们可以将其实例作为 `measure` 的参数。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">measure</span>(<span style="color:#a6e22e">r</span>)
+    <span style="color:#a6e22e">measure</span>(<span style="color:#a6e22e">c</span>)
+}
+
+</code></pre></div><h3 id="21-错误处理">21. 错误处理</h3>
+<p>符合 Go 语言习惯的做法是使用一个独立、明确的返回值来传递错误信息。 这与 Java、Ruby 使用的异常（exception） 以及在 C 语言中有时用到的重载 (overloaded) 的单返回/错误值有着明显的不同。 Go 语言的处理方式能清楚的知道哪个函数返回了错误，并使用跟其他（无异常处理的）语言类似的方式来处理错误。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> ( <span style="color:#e6db74">&#34;errors&#34;</span> <span style="color:#e6db74">&#34;fmt&#34;</span> )
+
+
+<span style="color:#75715e">// 按照惯例，错误通常是最后一个返回值并且是 error 类型，它是一个内建的接口。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">f1</span>(<span style="color:#a6e22e">arg</span> <span style="color:#66d9ef">int</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">error</span>) {
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">arg</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">42</span> {
+        <span style="color:#75715e">// errors.New 使用给定的错误信息构造一个基本的 error 值。 
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;can&#39;t work with 42&#34;</span>)
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arg</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">nil</span>
+}
+
+
+<span style="color:#75715e">// 你还可以通过实现 Error() 方法来自定义 error 类型。 这里使用自定义错误类型来表示上面例子中的参数错误。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">argError</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">arg</span>  <span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">prob</span> <span style="color:#66d9ef">string</span>
+}
+
+<span style="color:#75715e">// 你还可以通过实现 Error() 方法来自定义 error 类型。 这里使用自定义错误类型来表示上面例子中的参数错误
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">e</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">argError</span>) <span style="color:#a6e22e">Error</span>() <span style="color:#66d9ef">string</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%d - %s&#34;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">arg</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">prob</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">f2</span>(<span style="color:#a6e22e">arg</span> <span style="color:#66d9ef">int</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">error</span>) {
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">arg</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">42</span> {
+
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">argError</span>{<span style="color:#a6e22e">arg</span>, <span style="color:#e6db74">&#34;can&#39;t work with it&#34;</span>}
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arg</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">nil</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">42</span>} {
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span>, <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f1</span>(<span style="color:#a6e22e">i</span>); <span style="color:#a6e22e">e</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;f1 failed:&#34;</span>, <span style="color:#a6e22e">e</span>)
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;f1 worked:&#34;</span>, <span style="color:#a6e22e">r</span>)
+        }
+    }
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">42</span>} {
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span>, <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f2</span>(<span style="color:#a6e22e">i</span>); <span style="color:#a6e22e">e</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;f2 failed:&#34;</span>, <span style="color:#a6e22e">e</span>)
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;f2 worked:&#34;</span>, <span style="color:#a6e22e">r</span>)
+        }
+    }
+
+    <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f2</span>(<span style="color:#ae81ff">42</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ae</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">e</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">argError</span>); <span style="color:#a6e22e">ok</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">ae</span>.<span style="color:#a6e22e">arg</span>)
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">ae</span>.<span style="color:#a6e22e">prob</span>)
+    }
+}
+</code></pre></div><h3 id="22-协程">22. 协程</h3>
+<p>协程(goroutine) 是轻量级的执行线程。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">from</span> <span style="color:#66d9ef">string</span>) {
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">from</span>, <span style="color:#e6db74">&#34;:&#34;</span>, <span style="color:#a6e22e">i</span>)
+    }
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 假设我们有一个函数叫做 f(s)。 我们一般会这样 同步地 调用它
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">f</span>(<span style="color:#e6db74">&#34;direct&#34;</span>)
+
+    <span style="color:#75715e">// 使用 go f(s) 在一个协程中调用这个函数。 这个新的 Go 协程将会 并发地 执行这个函数。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">f</span>(<span style="color:#e6db74">&#34;goroutine&#34;</span>)
+
+    <span style="color:#75715e">// 你也可以为匿名函数启动一个协程。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">msg</span> <span style="color:#66d9ef">string</span>) {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">msg</span>)
+    }(<span style="color:#e6db74">&#34;going&#34;</span>)
+
+    <span style="color:#75715e">// 现在两个协程在独立的协程中 异步地 运行， 然后等待两个协程完成（更好的方法是使用 WaitGroup）。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;done&#34;</span>)
+}
+
+</code></pre></div><p>direct : 0
+direct : 1
+direct : 2
+goroutine : 0
+going
+goroutine : 1
+goroutine : 2
+done</p>
+<h3 id="23-通道">23. 通道</h3>
+<p>通道(channels) 是连接多个协程的管道。 你可以从一个协程将值发送到通道，然后在另一个协程中接收。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 使用 make(chan val-type) 创建一个新的通道。 通道类型就是他们需要传递值的类型。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">messages</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>)
+
+    <span style="color:#75715e">// 使用 channel &lt;- 语法 发送 一个新的值到通道中。 这里我们在一个新的协程中发送 &#34;ping&#34; 到上面创建的 messages 通道中。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">messages</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;ping&#34;</span> }()
+
+    <span style="color:#75715e">// 使用 &lt;-channel 语法从通道中 接收 一个值。 这里我们会收到在上面发送的 &#34;ping&#34; 消息并将其打印出来。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">msg</span>)
+    <span style="color:#75715e">// 我们运行程序时，通过通道， 成功的将消息 &#34;ping&#34; 从一个协程传送到了另一个协程中。
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>$ go run channels.go
+ping</p>
+<p>默认发送和接收操作是阻塞的，直到发送方和接收方都就绪。 这个特性允许我们，不使用任何其它的同步操作， 就可以在程序结尾处等待消息 &ldquo;ping&rdquo;。</p>
+<h3 id="24-通道缓冲">24. 通道缓冲</h3>
+<p>默认情况下，通道是 无缓冲 的，这意味着只有对应的接收（&lt;- chan） 通道准备好接收时，才允许进行发送（chan &lt;-）。 有缓冲通道 允许在没有对应接收者的情况下，缓存一定数量的值。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#a6e22e">messages</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">2</span>)
+
+    <span style="color:#a6e22e">messages</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;buffered&#34;</span>
+    <span style="color:#a6e22e">messages</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;channel&#34;</span>
+
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
+}
+</code></pre></div><h3 id="25-通道同步">25. 通道同步</h3>
+<p>可以使用通道来同步协程之间的执行状态。 这儿有一个例子，使用阻塞接收的方式，实现了等待另一个协程完成。 如果需要等待多个协程，WaitGroup 是一个更好的选择。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+<span style="color:#75715e">//  我们将要在协程中运行这个函数。 done 通道将被用于通知其他协程这个函数已经完成工作。
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">worker</span>(<span style="color:#a6e22e">done</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">bool</span>) {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;working...&#34;</span>)
+    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;done&#34;</span>)
+    
+    <span style="color:#75715e">// 发送一个值来通知我们已经完工啦。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">done</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">true</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 运行一个 worker 协程，并给予用于通知的通道。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">done</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">bool</span>, <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">worker</span>(<span style="color:#a6e22e">done</span>)
+    <span style="color:#75715e">// 程序将一直阻塞，直至收到 worker 使用通道发送的通知。
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">done</span>
+}
+
+</code></pre></div><h3 id="26-通道方向">26. 通道方向</h3>
+<p>当使用通道作为函数的参数时，你可以指定这个通道是否为只读或只写。 该特性可以提升程序的类型安全。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// ping 函数定义了一个只能发送数据的（只写）通道。 尝试从这个通道接收数据会是一个编译时错误。
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ping</span>(<span style="color:#a6e22e">pings</span> <span style="color:#66d9ef">chan</span><span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">msg</span> <span style="color:#66d9ef">string</span>) {
+    <span style="color:#a6e22e">pings</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">msg</span>
+}
+
+<span style="color:#75715e">// pong 函数接收两个通道，pings 仅用于接收数据（只读），pongs 仅用于发送数据（只写）。
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pong</span>(<span style="color:#a6e22e">pings</span> <span style="color:#f92672">&lt;-</span><span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">pongs</span> <span style="color:#66d9ef">chan</span><span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">string</span>) {
+    <span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">pings</span>
+    <span style="color:#a6e22e">pongs</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">msg</span>
+}
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">pings</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">pongs</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">ping</span>(<span style="color:#a6e22e">pings</span>, <span style="color:#e6db74">&#34;passed message&#34;</span>)
+    <span style="color:#a6e22e">pong</span>(<span style="color:#a6e22e">pings</span>, <span style="color:#a6e22e">pongs</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">pongs</span>)
+}
+<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#a6e22e">channel</span><span style="color:#f92672">-</span><span style="color:#a6e22e">directions</span>.<span style="color:#66d9ef">go</span>
+</code></pre></div><h3 id="27-通过选择器">27. 通过选择器</h3>
+<p>Go 的 选择器（select） 让你可以同时等待多个通道操作。 将协程、通道和选择器结合，是 Go 的一个强大特性。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 在这个例子中，我们将从两个通道中选择。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">c1</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>)
+    <span style="color:#a6e22e">c2</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>)
+
+    <span style="color:#75715e">// 各个通道将在一定时间后接收一个值， 通过这种方式来模拟并行的协程执行（例如，RPC 操作）时造成的阻塞（耗时）。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+        <span style="color:#a6e22e">c1</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;one&#34;</span>
+    }()
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+        <span style="color:#a6e22e">c2</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;two&#34;</span>
+    }()
+    
+    <span style="color:#75715e">// 我们使用 select 关键字来同时等待这两个值， 并打印各自接收到的值。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+        <span style="color:#66d9ef">select</span> {
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg1</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c1</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;received&#34;</span>, <span style="color:#a6e22e">msg1</span>)
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg2</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c2</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;received&#34;</span>, <span style="color:#a6e22e">msg2</span>)
+        }
+    }
+}
+
+</code></pre></div><p>// 跟预期的一样，我们首先接收到值 &ldquo;one&rdquo;，然后是 &ldquo;two&rdquo;。</p>
+<p>$ time go run select.go 
+received one
+received two
+注意，程序总共仅运行了两秒左右。因为 1 秒 和 2 秒的 Sleeps 是并发执行的，</p>
+<p>real    0m2.245s</p>
+<h3 id="28-超时处理">28. 超时处理</h3>
+<p>超时 对于一个需要连接外部资源， 或者有耗时较长的操作的程序而言是很重要的。 得益于通道和 select，在 Go 中实现超时操作是简洁而优雅的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> ( <span style="color:#e6db74">&#34;fmt&#34;</span> <span style="color:#e6db74">&#34;time&#34;</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#75715e">// 在这个例子中，假如我们执行一个外部调用， 并在 2 秒后使用通道 c1 返回它的执行结果。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">c1</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">1</span>)
+
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+        <span style="color:#a6e22e">c1</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;result 1&#34;</span>
+    }()
+    
+    <span style="color:#75715e">// 这里是使用 select 实现一个超时操作。 res := &lt;- c1 等待结果，&lt;-Time.After 等待超时（1秒钟）以后发送的值。 由于 select 默认处理第一个已准备好的接收操作， 因此如果操作耗时超过了允许的 1 秒的话，将会执行超时 case。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">select</span> {
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c1</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">res</span>)
+        <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">After</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>):
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;timeout 1&#34;</span>)
+    }
+    <span style="color:#75715e">// 如果我们允许一个长一点的超时时间：3 秒， 就可以成功的从 c2 接收到值，并且打印出结果。
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">c2</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+        <span style="color:#a6e22e">c2</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;result 2&#34;</span>
+    }()
+
+    <span style="color:#66d9ef">select</span> {
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c2</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">res</span>)
+        <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">After</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>):
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;timeout 2&#34;</span>)
+    }
+}
+</code></pre></div><p>运行这个程序，首先显示运行超时的操作，然后是成功接收的。</p>
+<p>$ go run timeouts.go 
+timeout 1
+result 2</p>
+<h3 id="29-非阻塞通道操作">29. 非阻塞通道操作</h3>
+<p>常规的通过通道发送和接收数据是阻塞的。 然而，我们可以使用带一个 default 子句的 select 来实现 非阻塞 的发送、接收，甚至是非阻塞的多路 select。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">messages</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>)
+    <span style="color:#a6e22e">signals</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">bool</span>)
+    
+    <span style="color:#75715e">// 这是一个非阻塞接收的例子。 如果在 messages 中存在，然后 select 将这个值带入 &lt;-messages case 中。 否则，就直接到 default 分支中。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">select</span> {
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;received message&#34;</span>, <span style="color:#a6e22e">msg</span>)
+        <span style="color:#66d9ef">default</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;no message received&#34;</span>)
+    }
+    
+    <span style="color:#75715e">// 一个非阻塞发送的例子，代码结构和上面接收的类似。 msg 不能被发送到 message 通道，因为这是 个无缓冲区通道，并且也没有接收者，因此， default 会执行。
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;hi&#34;</span>
+    <span style="color:#66d9ef">select</span> {
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">messages</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">msg</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sent message&#34;</span>, <span style="color:#a6e22e">msg</span>)
+        <span style="color:#66d9ef">default</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;no message sent&#34;</span>)
+    }
+    <span style="color:#75715e">// 我们可以在 default 前使用多个 case 子句来实现一个多路的非阻塞的选择器。 这里我们试图在 messages 和 signals 上同时使用非阻塞的接收操作。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">select</span> {
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;received message&#34;</span>, <span style="color:#a6e22e">msg</span>)
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">sig</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">signals</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;received signal&#34;</span>, <span style="color:#a6e22e">sig</span>)
+        <span style="color:#66d9ef">default</span>:
+            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;no activity&#34;</span>)
+    }
+}
+</code></pre></div><p>$ go run non-blocking-channel-operations.go 
+no message received
+no message sent
+no activity</p>
+<h3 id="30-通道的关闭">30. 通道的关闭</h3>
+<p>关闭 一个通道意味着不能再向这个通道发送值了。 该特性可以向通道的接收方传达工作已经完成的信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang">
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// 在这个例子中，我们将使用一个 jobs 通道，将工作内容， 从 main() 协程传递到一个工作协程中。 当我们没有更多的任务传递给工作协程时，我们将 close 这个 jobs 通道。
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">jobs</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">5</span>)
+    <span style="color:#a6e22e">done</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">bool</span>)
+    
+    <span style="color:#75715e">// 这是工作协程。使用 j, more := &lt;- jobs 循环的从 jobs 接收数据。 根据接收的第二个值，如果 jobs 已经关闭了， 并且通道中所有的值都已经接收完毕，那么 more 的值将是 false。 当我们完成所有的任务时，会使用这个特性通过 done 通道通知 main 协程。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#66d9ef">for</span> {
+            <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">more</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">jobs</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">more</span> {
+                <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;received job&#34;</span>, <span style="color:#a6e22e">j</span>)
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;received all jobs&#34;</span>)
+                <span style="color:#a6e22e">done</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">true</span>
+                <span style="color:#66d9ef">return</span>
+            }
+        }
+    }()
+    <span style="color:#75715e">// 使用 jobs 发送 3 个任务到工作协程中，然后关闭 jobs。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+        <span style="color:#a6e22e">jobs</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">j</span>
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sent job&#34;</span>, <span style="color:#a6e22e">j</span>)
+    }
+    close(<span style="color:#a6e22e">jobs</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sent all jobs&#34;</span>)
+    <span style="color:#75715e">// 使用前面学到的通道同步方法等待任务结束。
+</span><span style="color:#75715e"></span>
+    <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">done</span>
+}
+</code></pre></div><p>$ go run closing-channels.go
+sent job 1
+received job 1
+sent job 2
+received job 2
+sent job 3
+received job 3
+sent all jobs
+received all jobs
+根据 关闭通道 的思想，可以引出我们的下一个示例：遍历通道。</p>
+<h3 id="31-通道遍历">31. 通道遍历</h3>
+<p>在前面的例子中， 我们讲过 for 和 range 为基本的数据结构提供了迭代的功能。 我们也可以使用这个语法来遍历的从通道中取值。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 我们将遍历在 queue 通道中的两个值。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">2</span>)
+    <span style="color:#a6e22e">queue</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;one&#34;</span>
+    <span style="color:#a6e22e">queue</span> <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;two&#34;</span>
+    close(<span style="color:#a6e22e">queue</span>)
+    
+    <span style="color:#75715e">// range 迭代从 queue 中得到每个值。 因为我们在前面 close 了这个通道，所以，这个迭代会在接收完 2 个值之后结束。
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">elem</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">queue</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">elem</span>)
+    }
+}
+</code></pre></div><p>这个例子也让我们看到，一个非空的通道也是可以关闭的， 并且，通道中剩下的值仍然可以被接收到。</p>
+<p>$ go run range-over-channels.go
+one
+two</p>
+<h3 id="32-timer">32. Timer</h3>
+<p>我们经常需要在未来的某个时间点运行 Go 代码，或者每隔一定时间重复运行代码。 Go 内置的 定时器 和 打点器 特性让这些变得很简单。 我们会先学习定时器，然后再学习打点器。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 定时器表示在未来某一时刻的独立事件。 你告诉定时器需要等待的时间，然后它将提供一个用于通知的通道。 这里的定时器将等待 2 秒。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">timer1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">NewTimer</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+    <span style="color:#75715e">// &lt;-timer1.C 会一直阻塞， 直到定时器的通道 C 明确的发送了定时器失效的值。
+</span><span style="color:#75715e"></span>
+    <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">timer1</span>.<span style="color:#a6e22e">C</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Timer 1 fired&#34;</span>)
+
+    <span style="color:#75715e">// 如果你需要的仅仅是单纯的等待，使用 time.Sleep 就够了。 使用定时器的原因之一就是，你可以在定时器触发之前将其取消。 例如这样。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">timer2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">NewTimer</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">timer2</span>.<span style="color:#a6e22e">C</span>
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Timer 2 fired&#34;</span>)
+    }()
+
+    <span style="color:#a6e22e">stop2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">timer2</span>.<span style="color:#a6e22e">Stop</span>()
+
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">stop2</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Timer 2 stopped&#34;</span>)
+    }
+
+    <span style="color:#75715e">// 给 timer2 足够的时间来触发它，以证明它实际上已经停止了。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+}
+</code></pre></div><p>第一个定时器将在程序开始后大约 2s 触发， 但是第二个定时器还未触发就停止了。</p>
+<p>$ go run timers.go
+Timer 1 fired
+Timer 2 stopped</p>
+<h3 id="33-ticker">33. Ticker</h3>
+<p>定时器 是当你想要在未来某一刻执行一次时使用的 - 打点器 则是为你想要以固定的时间间隔重复执行而准备的。 这里是一个打点器的例子，它将定时的执行，直到我们将它停止。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 打点器和定时器的机制有点相似：使用一个通道来发送数据。 这里我们使用通道内建的 select，等待每 500ms 到达一次的值。
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">ticker</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">NewTicker</span>(<span style="color:#ae81ff">500</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>) <span style="color:#75715e">// ticker 等同于 setinterval, 每500ms 触发一次  
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">done</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">bool</span>)
+    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#66d9ef">for</span> {
+            <span style="color:#66d9ef">select</span> {
+            <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">done</span>:
+                <span style="color:#66d9ef">return</span>
+            <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ticker</span>.<span style="color:#a6e22e">C</span>:
+                <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Tick at&#34;</span>, <span style="color:#a6e22e">t</span>)
+            }
+        }
+    }()
+    
+    <span style="color:#75715e">// 打点器可以和定时器一样被停止。 打点器一旦停止，将不能再从它的通道中接收到值。 我们将在运行 1600ms 后停止这个打点器。
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">1600</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+    <span style="color:#a6e22e">ticker</span>.<span style="color:#a6e22e">Stop</span>()
+    <span style="color:#a6e22e">done</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Ticker stopped&#34;</span>)
+}
+
+</code></pre></div><p>当我们运行这个程序时，打点器会在我们停止它前打点 3 次。</p>
+<p>$ go run tickers.go
+Tick at 2012-09-23 11:29:56.487625 -0700 PDT
+Tick at 2012-09-23 11:29:56.988063 -0700 PDT
+Tick at 2012-09-23 11:29:57.488076 -0700 PDT
+Ticker stopped</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://gobyexample.com/">Go by Example</a></li>
+<li><a href="https://gobyexample-cn.github.io/">Go by Example 中文版</a></li>
+<li><a href="https://blog.golang.org/error-handling-and-go">error-handling-and-go</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

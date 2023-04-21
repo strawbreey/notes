@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sql High Performance - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。
+ ● explain计划
+可以使用EXPLAIN命令来验证MySQL的执行计划。从MySQL 5.7.2开始，可以使用EXPLAIN命令来检查当前在其他会话中执行的查询。执行EXPLAIN FORMAT=JSON命令，将得到详细信息。
+explain select name from dept -- 使用EXPLAIN JSON explain format = json select name from dept ● 基准查询和服务器
+可以使用mysqlslap工具（就在MySQL客户端的安装包中），它模拟MySQL服务器的客户端负载，并报告每个阶段所耗费的时间，就像多个客户端正在访该问服务器一样。
+● 添加索引
+InnoDB有两大类索引：
+聚集索引(clustered index) #主键索引, 普通索引(secondary index) #第二索引
+关于主键的选择，有如下一些小技巧：
+ 它应该是UNIQUE（唯一）和NOT NULL（非空）的。 选择最小的可能键，因为所有的二级索引都会存储主键。所以如果主键很大，整个索引也会占用更多的空间。 选择一个单调递增的值。物理行是根据主键进行排序的。所以，如果你选择一个随机键，需要做多次行重排，这会导致性能下降。AUTO_INCREMENT非常适合主键。 最好选择一个主键。如果找不到任何主键，请添加一个AUTO_INCREMENT列。如果你不选择任何内容，InnoDB会在内部生成一个带有6字节行ID的隐藏聚簇索引。  ● 不可见索引
+如果你想删除未使用的索引，可以不立即删除，而是先将其标记为不可见，然后监控应用程序的行为，稍后再删除它。之后，如果你还需要该索引，则可以将其标记为可见，这与先删除索引再重新添加相比会快很多。
+● 降序索引
+● 使用pt-query-digest分析慢查询 pt-query-digest是Percona工具包的一部分，用于对查询进行分析。可以通过以下任何方式收集查询：
+ 慢查询日志 通用查询日志 进程列表 二进制日志 TCP转储  ● 优化数据类型
+● 删除重复和冗余索引
+你可以在一列上定义多个索引。如果不小心的话，你可能会重复定义相同的索引（相同的列、相同的列顺序或相同的键顺序），这被称为重复索引。如果只有部分索引（最左边的列）是重复的，则称为冗余索引。重复索引没有什么用处。在某些情况下，冗余索引可能很有用（本节末尾的提示中提到了一个用例），但是这两者都会减慢插入的速度。因此，找出并移除这两种索引非常重要
+● 检查索引使用情况
+● 控制查询优化器
+● 使用索引提示（hint）" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/mysql/sql-high-performance/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Sql High Performance" />
+<meta property="og:description" content="数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。
+ ● explain计划
+可以使用EXPLAIN命令来验证MySQL的执行计划。从MySQL 5.7.2开始，可以使用EXPLAIN命令来检查当前在其他会话中执行的查询。执行EXPLAIN FORMAT=JSON命令，将得到详细信息。
+explain select name from dept -- 使用EXPLAIN JSON explain format = json select name from dept ● 基准查询和服务器
+可以使用mysqlslap工具（就在MySQL客户端的安装包中），它模拟MySQL服务器的客户端负载，并报告每个阶段所耗费的时间，就像多个客户端正在访该问服务器一样。
+● 添加索引
+InnoDB有两大类索引：
+聚集索引(clustered index) #主键索引, 普通索引(secondary index) #第二索引
+关于主键的选择，有如下一些小技巧：
+ 它应该是UNIQUE（唯一）和NOT NULL（非空）的。 选择最小的可能键，因为所有的二级索引都会存储主键。所以如果主键很大，整个索引也会占用更多的空间。 选择一个单调递增的值。物理行是根据主键进行排序的。所以，如果你选择一个随机键，需要做多次行重排，这会导致性能下降。AUTO_INCREMENT非常适合主键。 最好选择一个主键。如果找不到任何主键，请添加一个AUTO_INCREMENT列。如果你不选择任何内容，InnoDB会在内部生成一个带有6字节行ID的隐藏聚簇索引。  ● 不可见索引
+如果你想删除未使用的索引，可以不立即删除，而是先将其标记为不可见，然后监控应用程序的行为，稍后再删除它。之后，如果你还需要该索引，则可以将其标记为可见，这与先删除索引再重新添加相比会快很多。
+● 降序索引
+● 使用pt-query-digest分析慢查询 pt-query-digest是Percona工具包的一部分，用于对查询进行分析。可以通过以下任何方式收集查询：
+ 慢查询日志 通用查询日志 进程列表 二进制日志 TCP转储  ● 优化数据类型
+● 删除重复和冗余索引
+你可以在一列上定义多个索引。如果不小心的话，你可能会重复定义相同的索引（相同的列、相同的列顺序或相同的键顺序），这被称为重复索引。如果只有部分索引（最左边的列）是重复的，则称为冗余索引。重复索引没有什么用处。在某些情况下，冗余索引可能很有用（本节末尾的提示中提到了一个用例），但是这两者都会减慢插入的速度。因此，找出并移除这两种索引非常重要
+● 检查索引使用情况
+● 控制查询优化器
+● 使用索引提示（hint）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/mysql/sql-high-performance/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-13T10:13:21+08:00" />
+<meta property="article:modified_time" content="2021-08-13T10:13:21+08:00" />
+
+<meta itemprop="name" content="Sql High Performance">
+<meta itemprop="description" content="数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。
+ ● explain计划
+可以使用EXPLAIN命令来验证MySQL的执行计划。从MySQL 5.7.2开始，可以使用EXPLAIN命令来检查当前在其他会话中执行的查询。执行EXPLAIN FORMAT=JSON命令，将得到详细信息。
+explain select name from dept -- 使用EXPLAIN JSON explain format = json select name from dept ● 基准查询和服务器
+可以使用mysqlslap工具（就在MySQL客户端的安装包中），它模拟MySQL服务器的客户端负载，并报告每个阶段所耗费的时间，就像多个客户端正在访该问服务器一样。
+● 添加索引
+InnoDB有两大类索引：
+聚集索引(clustered index) #主键索引, 普通索引(secondary index) #第二索引
+关于主键的选择，有如下一些小技巧：
+ 它应该是UNIQUE（唯一）和NOT NULL（非空）的。 选择最小的可能键，因为所有的二级索引都会存储主键。所以如果主键很大，整个索引也会占用更多的空间。 选择一个单调递增的值。物理行是根据主键进行排序的。所以，如果你选择一个随机键，需要做多次行重排，这会导致性能下降。AUTO_INCREMENT非常适合主键。 最好选择一个主键。如果找不到任何主键，请添加一个AUTO_INCREMENT列。如果你不选择任何内容，InnoDB会在内部生成一个带有6字节行ID的隐藏聚簇索引。  ● 不可见索引
+如果你想删除未使用的索引，可以不立即删除，而是先将其标记为不可见，然后监控应用程序的行为，稍后再删除它。之后，如果你还需要该索引，则可以将其标记为可见，这与先删除索引再重新添加相比会快很多。
+● 降序索引
+● 使用pt-query-digest分析慢查询 pt-query-digest是Percona工具包的一部分，用于对查询进行分析。可以通过以下任何方式收集查询：
+ 慢查询日志 通用查询日志 进程列表 二进制日志 TCP转储  ● 优化数据类型
+● 删除重复和冗余索引
+你可以在一列上定义多个索引。如果不小心的话，你可能会重复定义相同的索引（相同的列、相同的列顺序或相同的键顺序），这被称为重复索引。如果只有部分索引（最左边的列）是重复的，则称为冗余索引。重复索引没有什么用处。在某些情况下，冗余索引可能很有用（本节末尾的提示中提到了一个用例），但是这两者都会减慢插入的速度。因此，找出并移除这两种索引非常重要
+● 检查索引使用情况
+● 控制查询优化器
+● 使用索引提示（hint）"><meta itemprop="datePublished" content="2021-08-13T10:13:21+08:00" />
+<meta itemprop="dateModified" content="2021-08-13T10:13:21+08:00" />
+<meta itemprop="wordCount" content="73">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sql High Performance"/>
+<meta name="twitter:description" content="数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。
+ ● explain计划
+可以使用EXPLAIN命令来验证MySQL的执行计划。从MySQL 5.7.2开始，可以使用EXPLAIN命令来检查当前在其他会话中执行的查询。执行EXPLAIN FORMAT=JSON命令，将得到详细信息。
+explain select name from dept -- 使用EXPLAIN JSON explain format = json select name from dept ● 基准查询和服务器
+可以使用mysqlslap工具（就在MySQL客户端的安装包中），它模拟MySQL服务器的客户端负载，并报告每个阶段所耗费的时间，就像多个客户端正在访该问服务器一样。
+● 添加索引
+InnoDB有两大类索引：
+聚集索引(clustered index) #主键索引, 普通索引(secondary index) #第二索引
+关于主键的选择，有如下一些小技巧：
+ 它应该是UNIQUE（唯一）和NOT NULL（非空）的。 选择最小的可能键，因为所有的二级索引都会存储主键。所以如果主键很大，整个索引也会占用更多的空间。 选择一个单调递增的值。物理行是根据主键进行排序的。所以，如果你选择一个随机键，需要做多次行重排，这会导致性能下降。AUTO_INCREMENT非常适合主键。 最好选择一个主键。如果找不到任何主键，请添加一个AUTO_INCREMENT列。如果你不选择任何内容，InnoDB会在内部生成一个带有6字节行ID的隐藏聚簇索引。  ● 不可见索引
+如果你想删除未使用的索引，可以不立即删除，而是先将其标记为不可见，然后监控应用程序的行为，稍后再删除它。之后，如果你还需要该索引，则可以将其标记为可见，这与先删除索引再重新添加相比会快很多。
+● 降序索引
+● 使用pt-query-digest分析慢查询 pt-query-digest是Percona工具包的一部分，用于对查询进行分析。可以通过以下任何方式收集查询：
+ 慢查询日志 通用查询日志 进程列表 二进制日志 TCP转储  ● 优化数据类型
+● 删除重复和冗余索引
+你可以在一列上定义多个索引。如果不小心的话，你可能会重复定义相同的索引（相同的列、相同的列顺序或相同的键顺序），这被称为重复索引。如果只有部分索引（最左边的列）是重复的，则称为冗余索引。重复索引没有什么用处。在某些情况下，冗余索引可能很有用（本节末尾的提示中提到了一个用例），但是这两者都会减慢插入的速度。因此，找出并移除这两种索引非常重要
+● 检查索引使用情况
+● 控制查询优化器
+● 使用索引提示（hint）"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <blockquote>
+<p>数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。</p>
+</blockquote>
+<p>● explain计划</p>
+<p>可以使用EXPLAIN命令来验证MySQL的执行计划。从MySQL 5.7.2开始，可以使用EXPLAIN命令来检查当前在其他会话中执行的查询。执行EXPLAIN FORMAT=JSON命令，将得到详细信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> name <span style="color:#66d9ef">from</span> dept
+
+<span style="color:#75715e">-- 使用EXPLAIN JSON
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">explain</span> format <span style="color:#f92672">=</span> json <span style="color:#66d9ef">select</span> name <span style="color:#66d9ef">from</span> dept
+</code></pre></div><p>● 基准查询和服务器</p>
+<p>可以使用mysqlslap工具（就在MySQL客户端的安装包中），它模拟MySQL服务器的客户端负载，并报告每个阶段所耗费的时间，就像多个客户端正在访该问服务器一样。</p>
+<p>● 添加索引</p>
+<p>InnoDB有两大类索引：</p>
+<p>聚集索引(clustered index) #主键索引, 
+普通索引(secondary index) #第二索引</p>
+<p>关于主键的选择，有如下一些小技巧：</p>
+<ul>
+<li>它应该是UNIQUE（唯一）和NOT NULL（非空）的。</li>
+<li>选择最小的可能键，因为所有的二级索引都会存储主键。所以如果主键很大，整个索引也会占用更多的空间。</li>
+<li>选择一个单调递增的值。物理行是根据主键进行排序的。所以，如果你选择一个随机键，需要做多次行重排，这会导致性能下降。AUTO_INCREMENT非常适合主键。</li>
+<li>最好选择一个主键。如果找不到任何主键，请添加一个AUTO_INCREMENT列。如果你不选择任何内容，InnoDB会在内部生成一个带有6字节行ID的隐藏聚簇索引。</li>
+</ul>
+<p>● 不可见索引</p>
+<p>如果你想删除未使用的索引，可以不立即删除，而是先将其标记为不可见，然后监控应用程序的行为，稍后再删除它。之后，如果你还需要该索引，则可以将其标记为可见，这与先删除索引再重新添加相比会快很多。</p>
+<p>● 降序索引</p>
+<p>● 使用pt-query-digest分析慢查询
+pt-query-digest是Percona工具包的一部分，用于对查询进行分析。可以通过以下任何方式收集查询：</p>
+<ul>
+<li>慢查询日志</li>
+<li>通用查询日志</li>
+<li>进程列表</li>
+<li>二进制日志</li>
+<li>TCP转储</li>
+</ul>
+<p>● 优化数据类型</p>
+<p>● 删除重复和冗余索引</p>
+<p>你可以在一列上定义多个索引。如果不小心的话，你可能会重复定义相同的索引（相同的列、相同的列顺序或相同的键顺序），这被称为重复索引。如果只有部分索引（最左边的列）是重复的，则称为冗余索引。重复索引没有什么用处。在某些情况下，冗余索引可能很有用（本节末尾的提示中提到了一个用例），但是这两者都会减慢插入的速度。因此，找出并移除这两种索引非常重要</p>
+<p>● 检查索引使用情况</p>
+<p>● 控制查询优化器</p>
+<p>● 使用索引提示（hint）</p>
+<p>● 使用生成的列为JSON建立索引</p>
+<p>● 使用资源组</p>
+<p>● 使用performance_schema</p>
+<p>● 使用sys schema</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Swagger Api - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Swagger 是一套围绕 OpenAPI 规范构建的开源工具，可以帮助您设计，构建，记录和使用 REST API。
+Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。Swagger 的目标是对 REST API 定义一个标准的和语言无关的接口，可让人和计算机无需访问源码、文档或网络流量监测就可以发现和理解服务的能力。当通过 Swagger 进行正确定义，用户可以理解远程服务并使用最少实现逻辑与远程服务进行交互。
+Swagger 工具集包含：
+ Swagger Editor – 一个在线编写 OpenAPI 规范的编辑器 Swagger UI – 使用 OpenAPI 规范生成的交互式文档 Swagger Codegen – 使用 OpenAPI 规范分别生成客户端/服务器代码（Server-stub）的工具  为什么要用 OpenAPI 规范？ 强大的描述 API 结构能力是使用 OpenAPI 规范的根本原因，一旦编写完成，配合 Swagger 工具集会帮助你加速 API 开发进度。
+ 使用 Swagger Codegen 生成 Server stub API，而无需等候逻辑的实现。 使用 Swagger Codegen 生成 客户端 API。 使用 Swagger UI 生成的交互式文档。 大部分 API 相关的工具都兼容 OpenAPI 规范。例如：可以在 SoapUI 里测试这份规范文档。   注解 -&amp;gt; yaml -&amp;gt; swagger ui" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/api/swagger/swagger-api/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Swagger Api" />
+<meta property="og:description" content="Swagger 是一套围绕 OpenAPI 规范构建的开源工具，可以帮助您设计，构建，记录和使用 REST API。
+Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。Swagger 的目标是对 REST API 定义一个标准的和语言无关的接口，可让人和计算机无需访问源码、文档或网络流量监测就可以发现和理解服务的能力。当通过 Swagger 进行正确定义，用户可以理解远程服务并使用最少实现逻辑与远程服务进行交互。
+Swagger 工具集包含：
+ Swagger Editor – 一个在线编写 OpenAPI 规范的编辑器 Swagger UI – 使用 OpenAPI 规范生成的交互式文档 Swagger Codegen – 使用 OpenAPI 规范分别生成客户端/服务器代码（Server-stub）的工具  为什么要用 OpenAPI 规范？ 强大的描述 API 结构能力是使用 OpenAPI 规范的根本原因，一旦编写完成，配合 Swagger 工具集会帮助你加速 API 开发进度。
+ 使用 Swagger Codegen 生成 Server stub API，而无需等候逻辑的实现。 使用 Swagger Codegen 生成 客户端 API。 使用 Swagger UI 生成的交互式文档。 大部分 API 相关的工具都兼容 OpenAPI 规范。例如：可以在 SoapUI 里测试这份规范文档。   注解 -&gt; yaml -&gt; swagger ui" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/api/swagger/swagger-api/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-24T15:57:21+08:00" />
+<meta property="article:modified_time" content="2020-11-24T15:57:21+08:00" />
+
+<meta itemprop="name" content="Swagger Api">
+<meta itemprop="description" content="Swagger 是一套围绕 OpenAPI 规范构建的开源工具，可以帮助您设计，构建，记录和使用 REST API。
+Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。Swagger 的目标是对 REST API 定义一个标准的和语言无关的接口，可让人和计算机无需访问源码、文档或网络流量监测就可以发现和理解服务的能力。当通过 Swagger 进行正确定义，用户可以理解远程服务并使用最少实现逻辑与远程服务进行交互。
+Swagger 工具集包含：
+ Swagger Editor – 一个在线编写 OpenAPI 规范的编辑器 Swagger UI – 使用 OpenAPI 规范生成的交互式文档 Swagger Codegen – 使用 OpenAPI 规范分别生成客户端/服务器代码（Server-stub）的工具  为什么要用 OpenAPI 规范？ 强大的描述 API 结构能力是使用 OpenAPI 规范的根本原因，一旦编写完成，配合 Swagger 工具集会帮助你加速 API 开发进度。
+ 使用 Swagger Codegen 生成 Server stub API，而无需等候逻辑的实现。 使用 Swagger Codegen 生成 客户端 API。 使用 Swagger UI 生成的交互式文档。 大部分 API 相关的工具都兼容 OpenAPI 规范。例如：可以在 SoapUI 里测试这份规范文档。   注解 -&gt; yaml -&gt; swagger ui"><meta itemprop="datePublished" content="2020-11-24T15:57:21+08:00" />
+<meta itemprop="dateModified" content="2020-11-24T15:57:21+08:00" />
+<meta itemprop="wordCount" content="80">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Swagger Api"/>
+<meta name="twitter:description" content="Swagger 是一套围绕 OpenAPI 规范构建的开源工具，可以帮助您设计，构建，记录和使用 REST API。
+Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。Swagger 的目标是对 REST API 定义一个标准的和语言无关的接口，可让人和计算机无需访问源码、文档或网络流量监测就可以发现和理解服务的能力。当通过 Swagger 进行正确定义，用户可以理解远程服务并使用最少实现逻辑与远程服务进行交互。
+Swagger 工具集包含：
+ Swagger Editor – 一个在线编写 OpenAPI 规范的编辑器 Swagger UI – 使用 OpenAPI 规范生成的交互式文档 Swagger Codegen – 使用 OpenAPI 规范分别生成客户端/服务器代码（Server-stub）的工具  为什么要用 OpenAPI 规范？ 强大的描述 API 结构能力是使用 OpenAPI 规范的根本原因，一旦编写完成，配合 Swagger 工具集会帮助你加速 API 开发进度。
+ 使用 Swagger Codegen 生成 Server stub API，而无需等候逻辑的实现。 使用 Swagger Codegen 生成 客户端 API。 使用 Swagger UI 生成的交互式文档。 大部分 API 相关的工具都兼容 OpenAPI 规范。例如：可以在 SoapUI 里测试这份规范文档。   注解 -&gt; yaml -&gt; swagger ui"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Swagger 是一套围绕 OpenAPI 规范构建的开源工具，可以帮助您设计，构建，记录和使用 REST API。</p>
+<p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。Swagger 的目标是对 REST API 定义一个标准的和语言无关的接口，可让人和计算机无需访问源码、文档或网络流量监测就可以发现和理解服务的能力。当通过 Swagger 进行正确定义，用户可以理解远程服务并使用最少实现逻辑与远程服务进行交互。</p>
+<p>Swagger 工具集包含：</p>
+<ul>
+<li>Swagger Editor – 一个在线编写 OpenAPI 规范的编辑器</li>
+<li>Swagger UI –  使用 OpenAPI 规范生成的交互式文档</li>
+<li>Swagger Codegen – 使用 OpenAPI 规范分别生成客户端/服务器代码（Server-stub）的工具</li>
+</ul>
+<h3 id="为什么要用-openapi-规范">为什么要用 OpenAPI 规范？</h3>
+<p>强大的描述 API 结构能力是使用 OpenAPI 规范的根本原因，一旦编写完成，配合 Swagger 工具集会帮助你加速 API 开发进度。</p>
+<ul>
+<li>使用 Swagger Codegen 生成 Server stub API，而无需等候逻辑的实现。</li>
+<li>使用 Swagger Codegen 生成 客户端 API。</li>
+<li>使用 Swagger UI 生成的交互式文档。</li>
+<li>大部分 API 相关的工具都兼容 OpenAPI 规范。例如：可以在 SoapUI 里测试这份规范文档。</li>
+</ul>
+<h3 id="heading"></h3>
+<p>注解 -&gt; yaml -&gt; swagger ui</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

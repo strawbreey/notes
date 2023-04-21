@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Arr2string - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="explode() 函数 explode() 函数可以基于字符串分隔符拆分字符串，即它将一个字符串根据分隔符拆分为若干个子串，然后将这些子串组合成数组并返回。其语法格式如下：
+explode($delimiter, $string [, $limit]) 参数说明如下：
+$delimiter：用于分割字符串的分隔字符； $string：需要分割的字符串； $limit：可选参数，可以为空，规定要返回数组元素的数目；
+如果 $limit 不为空且为正数，则返回的数组最多包含 $limit 个元素，最后的那个元素包含了 $string 的剩余部分； 如果 $limit 不为空且为负数，则返回除了最后的 $limit 个元素外的所有元素； 如果 $limit 为 0，则会被当作 1； 如果 $limit 为空，则表示返回所有数组元素。
+如果 $delimiter 为空字符串&amp;quot;&amp;quot;，程序将会提示 Warning，并且 explode() 函数将返回 FALSE；如果 $delimiter 所包含的值在 $string 中找不到，并且使用了负数的 $limit，则会返回空的 array，否则返回包含 $string 单个元素的数组。
+// 使用 explode() 函数分割一个字符串。 $str = &amp;#39;C语言中文网,PHP教程,http://c.biancheng.net/php/,explode()函数,字符串转数组&amp;#39;; echo &amp;#39;&amp;lt;pre&amp;gt;&amp;#39;; $arr = explode(&amp;#39;,&amp;#39;, $str); print_r($arr); $arr = explode(&amp;#39;,&amp;#39;, $str, 3); print_r($arr); $arr = explode(&amp;#39;,&amp;#39;, $str, -2); print_r($arr); $arr = explode(&amp;#39;,&amp;#39;, $str, 0); print_r($arr); $arr = explode(&amp;#39;&amp;#39;, $str); var_dump($arr); $arr = explode(&amp;#39;@&amp;#39;, $str, -1); print_r($arr); implode 函数 implode() 函数可以将一个一维数组转化为字符串，其语法格式如下：" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-arr2string/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Arr2string" />
+<meta property="og:description" content="explode() 函数 explode() 函数可以基于字符串分隔符拆分字符串，即它将一个字符串根据分隔符拆分为若干个子串，然后将这些子串组合成数组并返回。其语法格式如下：
+explode($delimiter, $string [, $limit]) 参数说明如下：
+$delimiter：用于分割字符串的分隔字符； $string：需要分割的字符串； $limit：可选参数，可以为空，规定要返回数组元素的数目；
+如果 $limit 不为空且为正数，则返回的数组最多包含 $limit 个元素，最后的那个元素包含了 $string 的剩余部分； 如果 $limit 不为空且为负数，则返回除了最后的 $limit 个元素外的所有元素； 如果 $limit 为 0，则会被当作 1； 如果 $limit 为空，则表示返回所有数组元素。
+如果 $delimiter 为空字符串&quot;&quot;，程序将会提示 Warning，并且 explode() 函数将返回 FALSE；如果 $delimiter 所包含的值在 $string 中找不到，并且使用了负数的 $limit，则会返回空的 array，否则返回包含 $string 单个元素的数组。
+// 使用 explode() 函数分割一个字符串。 $str = &#39;C语言中文网,PHP教程,http://c.biancheng.net/php/,explode()函数,字符串转数组&#39;; echo &#39;&lt;pre&gt;&#39;; $arr = explode(&#39;,&#39;, $str); print_r($arr); $arr = explode(&#39;,&#39;, $str, 3); print_r($arr); $arr = explode(&#39;,&#39;, $str, -2); print_r($arr); $arr = explode(&#39;,&#39;, $str, 0); print_r($arr); $arr = explode(&#39;&#39;, $str); var_dump($arr); $arr = explode(&#39;@&#39;, $str, -1); print_r($arr); implode 函数 implode() 函数可以将一个一维数组转化为字符串，其语法格式如下：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-arr2string/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-19T16:16:21+08:00" />
+<meta property="article:modified_time" content="2021-08-19T16:16:21+08:00" />
+
+<meta itemprop="name" content="Php Arr2string">
+<meta itemprop="description" content="explode() 函数 explode() 函数可以基于字符串分隔符拆分字符串，即它将一个字符串根据分隔符拆分为若干个子串，然后将这些子串组合成数组并返回。其语法格式如下：
+explode($delimiter, $string [, $limit]) 参数说明如下：
+$delimiter：用于分割字符串的分隔字符； $string：需要分割的字符串； $limit：可选参数，可以为空，规定要返回数组元素的数目；
+如果 $limit 不为空且为正数，则返回的数组最多包含 $limit 个元素，最后的那个元素包含了 $string 的剩余部分； 如果 $limit 不为空且为负数，则返回除了最后的 $limit 个元素外的所有元素； 如果 $limit 为 0，则会被当作 1； 如果 $limit 为空，则表示返回所有数组元素。
+如果 $delimiter 为空字符串&quot;&quot;，程序将会提示 Warning，并且 explode() 函数将返回 FALSE；如果 $delimiter 所包含的值在 $string 中找不到，并且使用了负数的 $limit，则会返回空的 array，否则返回包含 $string 单个元素的数组。
+// 使用 explode() 函数分割一个字符串。 $str = &#39;C语言中文网,PHP教程,http://c.biancheng.net/php/,explode()函数,字符串转数组&#39;; echo &#39;&lt;pre&gt;&#39;; $arr = explode(&#39;,&#39;, $str); print_r($arr); $arr = explode(&#39;,&#39;, $str, 3); print_r($arr); $arr = explode(&#39;,&#39;, $str, -2); print_r($arr); $arr = explode(&#39;,&#39;, $str, 0); print_r($arr); $arr = explode(&#39;&#39;, $str); var_dump($arr); $arr = explode(&#39;@&#39;, $str, -1); print_r($arr); implode 函数 implode() 函数可以将一个一维数组转化为字符串，其语法格式如下："><meta itemprop="datePublished" content="2021-08-19T16:16:21+08:00" />
+<meta itemprop="dateModified" content="2021-08-19T16:16:21+08:00" />
+<meta itemprop="wordCount" content="139">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Arr2string"/>
+<meta name="twitter:description" content="explode() 函数 explode() 函数可以基于字符串分隔符拆分字符串，即它将一个字符串根据分隔符拆分为若干个子串，然后将这些子串组合成数组并返回。其语法格式如下：
+explode($delimiter, $string [, $limit]) 参数说明如下：
+$delimiter：用于分割字符串的分隔字符； $string：需要分割的字符串； $limit：可选参数，可以为空，规定要返回数组元素的数目；
+如果 $limit 不为空且为正数，则返回的数组最多包含 $limit 个元素，最后的那个元素包含了 $string 的剩余部分； 如果 $limit 不为空且为负数，则返回除了最后的 $limit 个元素外的所有元素； 如果 $limit 为 0，则会被当作 1； 如果 $limit 为空，则表示返回所有数组元素。
+如果 $delimiter 为空字符串&quot;&quot;，程序将会提示 Warning，并且 explode() 函数将返回 FALSE；如果 $delimiter 所包含的值在 $string 中找不到，并且使用了负数的 $limit，则会返回空的 array，否则返回包含 $string 单个元素的数组。
+// 使用 explode() 函数分割一个字符串。 $str = &#39;C语言中文网,PHP教程,http://c.biancheng.net/php/,explode()函数,字符串转数组&#39;; echo &#39;&lt;pre&gt;&#39;; $arr = explode(&#39;,&#39;, $str); print_r($arr); $arr = explode(&#39;,&#39;, $str, 3); print_r($arr); $arr = explode(&#39;,&#39;, $str, -2); print_r($arr); $arr = explode(&#39;,&#39;, $str, 0); print_r($arr); $arr = explode(&#39;&#39;, $str); var_dump($arr); $arr = explode(&#39;@&#39;, $str, -1); print_r($arr); implode 函数 implode() 函数可以将一个一维数组转化为字符串，其语法格式如下："/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="explode-函数">explode() 函数</h3>
+<p>explode() 函数可以基于字符串分隔符拆分字符串，即它将一个字符串根据分隔符拆分为若干个子串，然后将这些子串组合成数组并返回。其语法格式如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">explode</span>($delimiter, $string [, $limit])
+</code></pre></div><p>参数说明如下：</p>
+<p>$delimiter：用于分割字符串的分隔字符；
+$string：需要分割的字符串；
+$limit：可选参数，可以为空，规定要返回数组元素的数目；</p>
+<p>如果 $limit 不为空且为正数，则返回的数组最多包含 $limit 个元素，最后的那个元素包含了 $string 的剩余部分；
+如果 $limit 不为空且为负数，则返回除了最后的 $limit 个元素外的所有元素；
+如果 $limit 为 0，则会被当作 1；
+如果 $limit 为空，则表示返回所有数组元素。</p>
+<p>如果 $delimiter 为空字符串&quot;&quot;，程序将会提示 Warning，并且 explode() 函数将返回 FALSE；如果 $delimiter 所包含的值在 $string 中找不到，并且使用了负数的 $limit，则会返回空的 array，否则返回包含 $string 单个元素的数组。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 使用 explode() 函数分割一个字符串。
+</span><span style="color:#75715e"></span>$str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C语言中文网,PHP教程,http://c.biancheng.net/php/,explode()函数,字符串转数组&#39;</span>;
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;pre&gt;&#39;</span>;
+$arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;,&#39;</span>, $str);
+<span style="color:#a6e22e">print_r</span>($arr);
+$arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;,&#39;</span>, $str, <span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">print_r</span>($arr);
+$arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;,&#39;</span>, $str, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">print_r</span>($arr);
+$arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;,&#39;</span>, $str, <span style="color:#ae81ff">0</span>);
+<span style="color:#a6e22e">print_r</span>($arr);
+$arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;&#39;</span>, $str);
+<span style="color:#a6e22e">var_dump</span>($arr);
+$arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;@&#39;</span>, $str, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">print_r</span>($arr);
+</code></pre></div><h3 id="implode-函数">implode 函数</h3>
+<p>implode() 函数可以将一个一维数组转化为字符串，其语法格式如下：</p>
+<p>等同于 join</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">implode</span>($glue, $array) 
+<span style="color:#75715e">// 或者
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">implode</span>($array)
+</code></pre></div><p>其中，$glue 用来设置一个字符串，表示使用 $glue 将数组每个元素连接在一起，默认情况下 $glue 为空字符串；$array 为需要转换的数组。
+提示：implode() 函数的 $glue 参数是可选的，可以省略。</p>
+<p>使用 implode() 函数将数组转换为字符串。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;C语言中文网&#39;</span>,<span style="color:#e6db74">&#39;PHP教程&#39;</span>,<span style="color:#e6db74">&#39;http://c.biancheng.net/php/&#39;</span>,<span style="color:#e6db74">&#39;implode()函数&#39;</span>,<span style="color:#e6db74">&#39;数组转字符串&#39;</span>];
+$str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</span>($arr);
+<span style="color:#66d9ef">echo</span> $str<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+$str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</span>(<span style="color:#e6db74">&#39; &#39;</span>,$arr);
+<span style="color:#66d9ef">echo</span> $str<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+$str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</span>(<span style="color:#e6db74">&#39;，&#39;</span>,$arr);
+<span style="color:#66d9ef">echo</span> $str<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+$str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</span>(<span style="color:#e6db74">&#39;--&#39;</span>,$arr);
+<span style="color:#66d9ef">echo</span> $str<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

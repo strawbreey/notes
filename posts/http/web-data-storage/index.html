@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Data Storage - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
+Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
+最常见的用处之一就是身份验证：
+登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
+alert(document.cookie) 写入 document.cookie
+document.cookie = &amp;#34;user=John&amp;#34;; // 只会更新名称为 user 的 cookie alert(document.cookie); // 展示所有 cookie 从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
+// 特殊字符（空格），需要编码 let name = &amp;#34;my name&amp;#34;; let value = &amp;#34;John Smith&amp;#34; // 将 cookie 编码为 my%20name=John%20Smith document.cookie = encodeURIComponent(name) &#43; &amp;#39;=&amp;#39; &#43; encodeURIComponent(value); alert(document." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/http/web-data-storage/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Web Data Storage" />
+<meta property="og:description" content="Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
+Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
+最常见的用处之一就是身份验证：
+登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
+alert(document.cookie) 写入 document.cookie
+document.cookie = &#34;user=John&#34;; // 只会更新名称为 user 的 cookie alert(document.cookie); // 展示所有 cookie 从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
+// 特殊字符（空格），需要编码 let name = &#34;my name&#34;; let value = &#34;John Smith&#34; // 将 cookie 编码为 my%20name=John%20Smith document.cookie = encodeURIComponent(name) &#43; &#39;=&#39; &#43; encodeURIComponent(value); alert(document." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/http/web-data-storage/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-14T22:36:39+08:00" />
+<meta property="article:modified_time" content="2020-10-14T22:36:39+08:00" />
+
+<meta itemprop="name" content="Web Data Storage">
+<meta itemprop="description" content="Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
+Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
+最常见的用处之一就是身份验证：
+登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
+alert(document.cookie) 写入 document.cookie
+document.cookie = &#34;user=John&#34;; // 只会更新名称为 user 的 cookie alert(document.cookie); // 展示所有 cookie 从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
+// 特殊字符（空格），需要编码 let name = &#34;my name&#34;; let value = &#34;John Smith&#34; // 将 cookie 编码为 my%20name=John%20Smith document.cookie = encodeURIComponent(name) &#43; &#39;=&#39; &#43; encodeURIComponent(value); alert(document."><meta itemprop="datePublished" content="2020-10-14T22:36:39+08:00" />
+<meta itemprop="dateModified" content="2020-10-14T22:36:39+08:00" />
+<meta itemprop="wordCount" content="179">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web Data Storage"/>
+<meta name="twitter:description" content="Cookie Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 RFC 6265 规范定义。
+Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中
+最常见的用处之一就是身份验证：
+登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。 下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。 所以服务器知道是谁发起了请求。
+alert(document.cookie) 写入 document.cookie
+document.cookie = &#34;user=John&#34;; // 只会更新名称为 user 的 cookie alert(document.cookie); // 展示所有 cookie 从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：
+// 特殊字符（空格），需要编码 let name = &#34;my name&#34;; let value = &#34;John Smith&#34; // 将 cookie 编码为 my%20name=John%20Smith document.cookie = encodeURIComponent(name) &#43; &#39;=&#39; &#43; encodeURIComponent(value); alert(document."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h2 id="cookie">Cookie</h2>
+<p>Cookie 是直接存储在浏览器中的一小串数据。它们是 HTTP 协议的一部分，由 <a href="https://tools.ietf.org/html/rfc6265">RFC 6265</a> 规范定义。</p>
+<p>Cookie 通常是由 Web 服务器使用响应 Set-Cookie HTTP-header 设置的。然后浏览器使用 Cookie HTTP-header 将它们自动添加到（几乎）每个对相同域的请求中</p>
+<p>最常见的用处之一就是身份验证：</p>
+<p>登录后，服务器在响应中使用 Set-Cookie HTTP-header 来设置具有唯一“会话标识符（session identifier）”的 cookie。
+下次如果请求是由相同域发起的，浏览器会使用 Cookie HTTP-header 通过网络发送 cookie。
+所以服务器知道是谁发起了请求。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>)
+</code></pre></div><p>写入 document.cookie</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user=John&#34;</span>; <span style="color:#75715e">// 只会更新名称为 user 的 cookie
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>); <span style="color:#75715e">// 展示所有 cookie
+</span></code></pre></div><p>从技术上讲，cookie 的名称和值可以是任何字符，为了保持有效的格式，它们应该使用内建的 encodeURIComponent 函数对其进行转义：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 特殊字符（空格），需要编码
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my name&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;John Smith&#34;</span>
+
+<span style="color:#75715e">// 将 cookie 编码为 my%20name=John%20Smith
+</span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> encodeURIComponent(<span style="color:#a6e22e">name</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;=&#39;</span> <span style="color:#f92672">+</span> encodeURIComponent(<span style="color:#a6e22e">value</span>);
+
+<span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>); <span style="color:#75715e">// ...; my%20name=John%20Smith
+</span></code></pre></div><p>存在一些限制：</p>
+<pre><code>encodeURIComponent 编码后的 name=value 对，大小不能超过 4kb。因此，我们不能在一个 cookie 中保存大的东西。
+每个域的 cookie 总数不得超过 20+ 左右，具体限制取决于浏览器。
+</code></pre>
+<p>domain</p>
+<p>可访问 cookie 的域。但是在实际中，有一些限制。我们无法设置任何域。</p>
+<p>默认情况下，cookie 只有在设置的域下才能被访问到。所以，如果 cookie 设置在 site.com 下，我们在 other.com 下就无法获取它。</p>
+<h3 id="expiresmax-age">expires，max-age</h3>
+<p>默认情况下，如果一个 cookie 没有设置这两个参数中的任何一个，那么在关闭浏览器之后，它就会消失。此类 cookie 被称为 &ldquo;session cookie”。</p>
+<p>为了让 cookie 在浏览器关闭后仍然存在，我们可以设置 expires 或 max-age 选项中的一个。</p>
+<p>expires=Tue, 19 Jan 2038 03:14:07 GMT
+cookie 的到期日期，那时浏览器会自动删除它。</p>
+<p>日期必须完全采用 GMT 时区的这种格式。我们可以使用 date.toUTCString 来获取它。例如，我们可以将 cookie 设置为 1 天后过期。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 当前时间 +1 天
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(Date.<span style="color:#a6e22e">now</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">86400e3</span>);
+<span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toUTCString</span>();
+document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user=John; expires=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>;
+</code></pre></div><p>max-age=3600
+expires 的替代选项，具指明 cookie 的过期时间距离当前时间的秒数。</p>
+<p>如果为 0 或负数，则 cookie 会被删除：</p>
+<p>// cookie 会在一小时后失效
+document.cookie = &ldquo;user=John; max-age=3600&rdquo;;</p>
+<p>// 删除 cookie（让它立即过期）
+document.cookie = &ldquo;user=John; max-age=0&rdquo;;</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

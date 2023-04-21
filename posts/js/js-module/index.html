@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js Module - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
+AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
+语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
+什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.js export function sayHi(user) { alert(`Hello, ${user}!`); } // 📁 main.js import {sayHi} from &amp;#39;./sayHi.js&amp;#39;; alert(sayHi); // function... sayHi(&amp;#39;John&amp;#39;); // Hello, John! 由于模块支持特殊的关键字和功能，因此我们必须通过使用 &amp;lt;script type=&amp;quot;module&amp;quot;&amp;gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
+&amp;lt;!doctype html&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34;&amp;gt; import {sayHi} from &amp;#39;./say.js&amp;#39;; document.body.innerHTML = sayHi(&amp;#39;John&amp;#39;); &amp;lt;/script&amp;gt; 浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-module/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js Module" />
+<meta property="og:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
+AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
+语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
+什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.js export function sayHi(user) { alert(`Hello, ${user}!`); } // 📁 main.js import {sayHi} from &#39;./sayHi.js&#39;; alert(sayHi); // function... sayHi(&#39;John&#39;); // Hello, John! 由于模块支持特殊的关键字和功能，因此我们必须通过使用 &lt;script type=&quot;module&quot;&gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
+&lt;!doctype html&gt; &lt;script type=&#34;module&#34;&gt; import {sayHi} from &#39;./say.js&#39;; document.body.innerHTML = sayHi(&#39;John&#39;); &lt;/script&gt; 浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-module/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-16T00:13:48+08:00" />
+<meta property="article:modified_time" content="2020-10-16T00:13:48+08:00" />
+
+<meta itemprop="name" content="Js Module">
+<meta itemprop="description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
+AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
+语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
+什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.js export function sayHi(user) { alert(`Hello, ${user}!`); } // 📁 main.js import {sayHi} from &#39;./sayHi.js&#39;; alert(sayHi); // function... sayHi(&#39;John&#39;); // Hello, John! 由于模块支持特殊的关键字和功能，因此我们必须通过使用 &lt;script type=&quot;module&quot;&gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
+&lt;!doctype html&gt; &lt;script type=&#34;module&#34;&gt; import {sayHi} from &#39;./say.js&#39;; document.body.innerHTML = sayHi(&#39;John&#39;); &lt;/script&gt; 浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。"><meta itemprop="datePublished" content="2020-10-16T00:13:48+08:00" />
+<meta itemprop="dateModified" content="2020-10-16T00:13:48+08:00" />
+<meta itemprop="wordCount" content="108">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Module"/>
+<meta name="twitter:description" content="JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。
+但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。
+AMD —— 最古老的模块系统之一，最初由 require.js 库实现。 CommonJS —— 为 Node.js 服务器创建的模块系统。 UMD —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。
+语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。
+什么是模块？  export 关键字标记了可以从当前模块外部访问的变量和函数。 import 关键字允许从其他模块导入功能。  // sayHi.js export function sayHi(user) { alert(`Hello, ${user}!`); } // 📁 main.js import {sayHi} from &#39;./sayHi.js&#39;; alert(sayHi); // function... sayHi(&#39;John&#39;); // Hello, John! 由于模块支持特殊的关键字和功能，因此我们必须通过使用 &lt;script type=&quot;module&quot;&gt; 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。
+&lt;!doctype html&gt; &lt;script type=&#34;module&#34;&gt; import {sayHi} from &#39;./say.js&#39;; document.body.innerHTML = sayHi(&#39;John&#39;); &lt;/script&gt; 浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>JavaScript 很长一段时间内都没有语言级（language-level）的模块语法。这不是一个问题，因为最初的脚本又小又简单，所以没必要将其模块化。</p>
+<p>但是最终脚本变得越来越复杂，因此社区发明了许多种方法来将代码组织到模块中，使用特殊的库按需加载模块。</p>
+<p><a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD</a> —— 最古老的模块系统之一，最初由 require.js 库实现。
+<a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">CommonJS</a> —— 为 Node.js 服务器创建的模块系统。
+<a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">UMD</a> —— 另外一个模块系统，建议作为通用的模块系统，它与 AMD 和 CommonJS 都兼容。</p>
+<p>语言级的模块系统在 2015 年的时候出现在了标准（ES6）中，此后逐渐发展，现在已经得到了所有主流浏览器和 Node.js 的支持。因此，我们将从现在开始学习现代 JavaScript 模块（module）。</p>
+<h3 id="什么是模块">什么是模块？</h3>
+<ul>
+<li>export 关键字标记了可以从当前模块外部访问的变量和函数。</li>
+<li>import 关键字允许从其他模块导入功能。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//  sayHi.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayHi</span>(<span style="color:#a6e22e">user</span>) {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`Hello, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>);
+}
+
+<span style="color:#75715e">// 📁 main.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">sayHi</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./sayHi.js&#39;</span>;
+
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">sayHi</span>); <span style="color:#75715e">// function...
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">sayHi</span>(<span style="color:#e6db74">&#39;John&#39;</span>); <span style="color:#75715e">// Hello, John!
+</span></code></pre></div><p>由于模块支持特殊的关键字和功能，因此我们必须通过使用 <code>&lt;script type=&quot;module&quot;&gt;</code> 特性（attribute）来告诉浏览器，此脚本应该被当作模块（module）来对待。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!doctype html&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
+  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">sayHi</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./say.js&#39;</span>;
+
+  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sayHi</span>(<span style="color:#e6db74">&#39;John&#39;</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>浏览器会自动获取并解析（evaluate）导入的模块（如果需要，还可以分析该模块的导入），然后运行该脚本。</p>
+<p>模块只通过 HTTP(s) 工作，在本地文件则不行。如果你尝试通过 file:// 协议在本地打开一个网页，你会发现 import/export 指令不起作用。你可以使用本地 Web 服务器，例如 static-server，或者使用编辑器的“实时服务器”功能，例如 VS Code 的 Live Server Extension 来测试模块。</p>
+<p>模块核心功能</p>
+<ul>
+<li>
+<p>始终使用 “use strict”</p>
+<p>模块始终默认使用 use strict，例如，对一个未声明的变量赋值将产生错误</p>
+</li>
+<li>
+<p>模块级作用域</p>
+<p>每个模块都有自己的顶级作用域（top-level scope）。换句话说，一个模块中的顶级作用域变量和函数在其他脚本中是不可见的。</p>
+</li>
+</ul>
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li><a href="https://www.jianshu.com/p/f65e84bfeb16">CommonJS、requirejs、ES6的对比</a></li>
+<li><a href="https://requirejs.org/docs/start.html">requirejs.org</a></li>
+<li><a href="https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs">Relation between CommonJS, AMD and RequireJS?</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

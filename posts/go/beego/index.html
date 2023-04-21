@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Beego - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="deploy 通过 bee 创建的项目，beego 默认情况下是开发模式。
+我们可以通过如下的方式改变我们的模式：
+beego.RunMode = &amp;quot;prod&amp;quot;或者我们在 conf/app.conf 下面设置如下：
+runmode = prod发行部署
+Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：
+独立部署
+独立部署即为在后端运行程序，让程序跑在后台。
+在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：
+nohup ./beepkg &amp;amp; Windows 在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：
+制作 bat 文件，放在“启动”里面 制作成服务
+nginx 部署
+server {listen 80;server_name .a.com;charset utf-8;access_log /home/a.com.access.log;location /(css|js|fonts|img)/ {access_log off;expires 1d;root &amp;quot;/path/to/app_a/static&amp;quot;;try_files $uri @backend;}location / {try_files /_not_exists_ @backend;}location @backend {proxy_set_header X-Forwarded-For $remote_addr;proxy_set_header Host $http_host;proxy_pass http://127." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/beego/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Beego" />
+<meta property="og:description" content="deploy 通过 bee 创建的项目，beego 默认情况下是开发模式。
+我们可以通过如下的方式改变我们的模式：
+beego.RunMode = &quot;prod&quot;或者我们在 conf/app.conf 下面设置如下：
+runmode = prod发行部署
+Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：
+独立部署
+独立部署即为在后端运行程序，让程序跑在后台。
+在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：
+nohup ./beepkg &amp; Windows 在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：
+制作 bat 文件，放在“启动”里面 制作成服务
+nginx 部署
+server {listen 80;server_name .a.com;charset utf-8;access_log /home/a.com.access.log;location /(css|js|fonts|img)/ {access_log off;expires 1d;root &quot;/path/to/app_a/static&quot;;try_files $uri @backend;}location / {try_files /_not_exists_ @backend;}location @backend {proxy_set_header X-Forwarded-For $remote_addr;proxy_set_header Host $http_host;proxy_pass http://127." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/beego/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-08T02:09:21+08:00" />
+<meta property="article:modified_time" content="2020-10-08T02:09:21+08:00" />
+
+<meta itemprop="name" content="Beego">
+<meta itemprop="description" content="deploy 通过 bee 创建的项目，beego 默认情况下是开发模式。
+我们可以通过如下的方式改变我们的模式：
+beego.RunMode = &quot;prod&quot;或者我们在 conf/app.conf 下面设置如下：
+runmode = prod发行部署
+Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：
+独立部署
+独立部署即为在后端运行程序，让程序跑在后台。
+在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：
+nohup ./beepkg &amp; Windows 在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：
+制作 bat 文件，放在“启动”里面 制作成服务
+nginx 部署
+server {listen 80;server_name .a.com;charset utf-8;access_log /home/a.com.access.log;location /(css|js|fonts|img)/ {access_log off;expires 1d;root &quot;/path/to/app_a/static&quot;;try_files $uri @backend;}location / {try_files /_not_exists_ @backend;}location @backend {proxy_set_header X-Forwarded-For $remote_addr;proxy_set_header Host $http_host;proxy_pass http://127."><meta itemprop="datePublished" content="2020-10-08T02:09:21+08:00" />
+<meta itemprop="dateModified" content="2020-10-08T02:09:21+08:00" />
+<meta itemprop="wordCount" content="145">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Beego"/>
+<meta name="twitter:description" content="deploy 通过 bee 创建的项目，beego 默认情况下是开发模式。
+我们可以通过如下的方式改变我们的模式：
+beego.RunMode = &quot;prod&quot;或者我们在 conf/app.conf 下面设置如下：
+runmode = prod发行部署
+Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：
+独立部署
+独立部署即为在后端运行程序，让程序跑在后台。
+在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：
+nohup ./beepkg &amp; Windows 在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：
+制作 bat 文件，放在“启动”里面 制作成服务
+nginx 部署
+server {listen 80;server_name .a.com;charset utf-8;access_log /home/a.com.access.log;location /(css|js|fonts|img)/ {access_log off;expires 1d;root &quot;/path/to/app_a/static&quot;;try_files $uri @backend;}location / {try_files /_not_exists_ @backend;}location @backend {proxy_set_header X-Forwarded-For $remote_addr;proxy_set_header Host $http_host;proxy_pass http://127."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="deploy">deploy</h3>
+<p>通过 bee 创建的项目，beego 默认情况下是开发模式。</p>
+<p>我们可以通过如下的方式改变我们的模式：</p>
+<pre><code>beego.RunMode = &quot;prod&quot;
+</code></pre><p>或者我们在 conf/app.conf 下面设置如下：</p>
+<pre><code>runmode = prod
+</code></pre><p>发行部署</p>
+<p>Go 语言的应用最后编译之后是一个二进制文件，你只需要 copy 这个应用到服务器上，运行起来就行。beego 由于带有几个静态文件、配置文件、模板文件三个目录，所以用户部署的时候需要同时 copy 这三个目录到相应的部署应用之下，下面以我实际的应用部署为例：</p>
+<p>独立部署</p>
+<p>独立部署即为在后端运行程序，让程序跑在后台。</p>
+<p>在 linux 下面部署，我们可以利用 nohup 命令，把应用部署在后端，如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nohup ./beepkg &amp;
+</code></pre></div><p>Windows
+在 Windows 系统中，设置开机自动，后台运行，有如下几种方式：</p>
+<p>制作 bat 文件，放在“启动”里面
+制作成服务</p>
+<p>nginx 部署</p>
+<pre><code class="language-conf" data-lang="conf">server {
+    listen       80;
+    server_name  .a.com;
+
+    charset utf-8;
+    access_log  /home/a.com.access.log;
+
+    location /(css|js|fonts|img)/ {
+        access_log off;
+        expires 1d;
+
+        root &quot;/path/to/app_a/static&quot;;
+        try_files $uri @backend;
+    }
+
+    location / {
+        try_files /_not_exists_ @backend;
+    }
+
+    location @backend {
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host            $http_host;
+
+        proxy_pass http://127.0.0.1:8080;
+    }
+}
+
+server {
+    listen       80;
+    server_name  .b.com;
+
+    charset utf-8;
+    access_log  /home/b.com.access.log  main;
+
+    location /(css|js|fonts|img)/ {
+        access_log off;
+        expires 1d;
+
+        root &quot;/path/to/app_b/static&quot;;
+        try_files $uri @backend;
+    }
+
+    location / {
+        try_files /_not_exists_ @backend;
+    }
+
+    location @backend {
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host            $http_host;
+
+        proxy_pass http://127.0.0.1:8081;
+    }
+
+</code></pre><p>Apache 配置</p>
+<p>apache 和 nginx 的实现原理一样，都是做一个反向代理，把请求向后端传递，配置如下所示：</p>
+<p>Supervisord</p>
+<p>Supervisord 是用 Python 实现的一款非常实用的进程管理工具，supervisord 还要求管理的程序是非 daemon 程序，supervisord 会帮你把它转成 dae</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

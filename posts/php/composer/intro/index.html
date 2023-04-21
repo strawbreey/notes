@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Intro - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Composer 不是一个包管理器。是的，它涉及 &amp;ldquo;packages&amp;rdquo; 和 &amp;ldquo;libraries&amp;rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。
+Composer 将这样为你解决问题：
+a) 你有一个项目依赖于若干个库。
+b) 其中一些库依赖于其他库。
+c) 你声明你所依赖的东西。
+d) Composer 会找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）。
+安装composer  局部安装  要真正获取 Composer，我们需要做两件事。首先安装 Composer （同样的，这意味着它将下载到你的项目中）：
+curl -sS https://getcomposer.org/installer | php 全局安装  你可以将此文件放在任何地方。如果你把它放在系统的 PATH 目录中，你就能在全局访问它。 在类Unix系统中，你甚至可以在使用时不加 php 前缀。
+curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer
+测试  composer -V
+使用 Composer " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/composer/intro/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Intro" />
+<meta property="og:description" content="Composer 不是一个包管理器。是的，它涉及 &ldquo;packages&rdquo; 和 &ldquo;libraries&rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。
+Composer 将这样为你解决问题：
+a) 你有一个项目依赖于若干个库。
+b) 其中一些库依赖于其他库。
+c) 你声明你所依赖的东西。
+d) Composer 会找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）。
+安装composer  局部安装  要真正获取 Composer，我们需要做两件事。首先安装 Composer （同样的，这意味着它将下载到你的项目中）：
+curl -sS https://getcomposer.org/installer | php 全局安装  你可以将此文件放在任何地方。如果你把它放在系统的 PATH 目录中，你就能在全局访问它。 在类Unix系统中，你甚至可以在使用时不加 php 前缀。
+curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer
+测试  composer -V
+使用 Composer " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/composer/intro/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-29T17:41:16+08:00" />
+<meta property="article:modified_time" content="2021-04-29T17:41:16+08:00" />
+
+<meta itemprop="name" content="Intro">
+<meta itemprop="description" content="Composer 不是一个包管理器。是的，它涉及 &ldquo;packages&rdquo; 和 &ldquo;libraries&rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。
+Composer 将这样为你解决问题：
+a) 你有一个项目依赖于若干个库。
+b) 其中一些库依赖于其他库。
+c) 你声明你所依赖的东西。
+d) Composer 会找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）。
+安装composer  局部安装  要真正获取 Composer，我们需要做两件事。首先安装 Composer （同样的，这意味着它将下载到你的项目中）：
+curl -sS https://getcomposer.org/installer | php 全局安装  你可以将此文件放在任何地方。如果你把它放在系统的 PATH 目录中，你就能在全局访问它。 在类Unix系统中，你甚至可以在使用时不加 php 前缀。
+curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer
+测试  composer -V
+使用 Composer "><meta itemprop="datePublished" content="2021-04-29T17:41:16+08:00" />
+<meta itemprop="dateModified" content="2021-04-29T17:41:16+08:00" />
+<meta itemprop="wordCount" content="48">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Intro"/>
+<meta name="twitter:description" content="Composer 不是一个包管理器。是的，它涉及 &ldquo;packages&rdquo; 和 &ldquo;libraries&rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。
+Composer 将这样为你解决问题：
+a) 你有一个项目依赖于若干个库。
+b) 其中一些库依赖于其他库。
+c) 你声明你所依赖的东西。
+d) Composer 会找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）。
+安装composer  局部安装  要真正获取 Composer，我们需要做两件事。首先安装 Composer （同样的，这意味着它将下载到你的项目中）：
+curl -sS https://getcomposer.org/installer | php 全局安装  你可以将此文件放在任何地方。如果你把它放在系统的 PATH 目录中，你就能在全局访问它。 在类Unix系统中，你甚至可以在使用时不加 php 前缀。
+curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer
+测试  composer -V
+使用 Composer "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Composer 不是一个包管理器。是的，它涉及 &ldquo;packages&rdquo; 和 &ldquo;libraries&rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。</p>
+<p>Composer 将这样为你解决问题：</p>
+<p>a) 你有一个项目依赖于若干个库。</p>
+<p>b) 其中一些库依赖于其他库。</p>
+<p>c) 你声明你所依赖的东西。</p>
+<p>d) Composer 会找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）。</p>
+<h3 id="安装composer">安装composer</h3>
+<ol>
+<li>局部安装</li>
+</ol>
+<p>要真正获取 Composer，我们需要做两件事。首先安装 Composer （同样的，这意味着它将下载到你的项目中）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -sS https://getcomposer.org/installer | php
+</code></pre></div><ol start="2">
+<li>全局安装</li>
+</ol>
+<p>你可以将此文件放在任何地方。如果你把它放在系统的 PATH 目录中，你就能在全局访问它。 在类Unix系统中，你甚至可以在使用时不加 php 前缀。</p>
+<p>curl -sS <a href="https://getcomposer.org/installer">https://getcomposer.org/installer</a> | php
+mv composer.phar /usr/local/bin/composer</p>
+<ol start="3">
+<li>测试</li>
+</ol>
+<p>composer -V</p>
+<h3 id="使用-composer">使用 Composer</h3>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

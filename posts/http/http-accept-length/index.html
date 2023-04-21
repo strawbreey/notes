@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Http Accept Length - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="$interval=120; //2分钟 if(isset($_SERVER[&amp;#39;HTTP_IF_MODIFIED_SINCE&amp;#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间.  // 缓存时间&#43;时长.  $c_time = strtotime($_SERVER[&amp;#39;HTTP_IF_MODIFIED_SINCE&amp;#39;])&#43;$interval; // 当大于当前时间时, 表示还在缓存中... 释放304  if($c_time &amp;gt; time()){ header(&amp;#39;HTTP/1.1 304 Not Modified&amp;#39;); exit(); } } // Cache-Control头，告诉让浏览器自己缓存个120秒 header(&amp;#39;Cache-Control:max-age=120&amp;#39;); // 在当前时间的120秒后缓存失效，浏览器会在120秒后把缓存失效，再次请求时会到服务器端请求而不是本地 header(&amp;#34;Expires: &amp;#34; . gmdate(&amp;#34;D, d M Y H:i:s&amp;#34;,time()&#43; 120).&amp;#34; GMT&amp;#34;); // Last-Modified则是说明这个文档最后修改时间 header(&amp;#34;Last-Modified: &amp;#34; . gmdate(&amp;#34;D, d M Y H:i:s&amp;#34;) . &amp;#34; GMT&amp;#34;);   当浏览器再次访问时（刷新页面），浏览器因为在第一次时接收到了Last-Modified，它便会根据这个时间去检查服务器的文档是否更新过，也就是会把这个时间用HTTP_IF_MODIFIED_SINCE这个东西带过去，于是也就有了第一个花括号内容的判断。而花括号内再次根据这个时间加上你设置的时间（120秒），看看是不是超出了当前的时间time()，如果超出了，那就是还在缓存期内，帮直接返回304，然后直接退出。这时候浏览器便会自动用缓存的内容。这样子做，服务器返回的内容就很短，只是一个304响应头而已，而内容不需要返回，这可大大节省网络流量，显然浏览器的响应速度也会感觉明显快了。
+  按F5刷新或者按浏览器的刷新按钮时，你将发现2分钟内你的PHP请求将是304状态返回。 强制刷新（CTRL&#43;F5）时，浏览器不会带HTTP_IF_MODIFIED_SINCE这个东西去判断，所以同正常浏览一样，返回200状态。这个逻辑是正常的，因为强制刷新本就相当于完全请求一遍最新内容。
+  php中在做文件下载的时候，其中要加上这么一些header信息：
+header(&amp;#34;Content-type: application/octet-stream&amp;#34;); header(&amp;#34;Accept-Ranges: bytes&amp;#34;); header(&amp;#34;Accept-Length:&amp;#34;." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/http/http-accept-length/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Http Accept Length" />
+<meta property="og:description" content="$interval=120; //2分钟 if(isset($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间.  // 缓存时间&#43;时长.  $c_time = strtotime($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])&#43;$interval; // 当大于当前时间时, 表示还在缓存中... 释放304  if($c_time &gt; time()){ header(&#39;HTTP/1.1 304 Not Modified&#39;); exit(); } } // Cache-Control头，告诉让浏览器自己缓存个120秒 header(&#39;Cache-Control:max-age=120&#39;); // 在当前时间的120秒后缓存失效，浏览器会在120秒后把缓存失效，再次请求时会到服务器端请求而不是本地 header(&#34;Expires: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;,time()&#43; 120).&#34; GMT&#34;); // Last-Modified则是说明这个文档最后修改时间 header(&#34;Last-Modified: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;) . &#34; GMT&#34;);   当浏览器再次访问时（刷新页面），浏览器因为在第一次时接收到了Last-Modified，它便会根据这个时间去检查服务器的文档是否更新过，也就是会把这个时间用HTTP_IF_MODIFIED_SINCE这个东西带过去，于是也就有了第一个花括号内容的判断。而花括号内再次根据这个时间加上你设置的时间（120秒），看看是不是超出了当前的时间time()，如果超出了，那就是还在缓存期内，帮直接返回304，然后直接退出。这时候浏览器便会自动用缓存的内容。这样子做，服务器返回的内容就很短，只是一个304响应头而已，而内容不需要返回，这可大大节省网络流量，显然浏览器的响应速度也会感觉明显快了。
+  按F5刷新或者按浏览器的刷新按钮时，你将发现2分钟内你的PHP请求将是304状态返回。 强制刷新（CTRL&#43;F5）时，浏览器不会带HTTP_IF_MODIFIED_SINCE这个东西去判断，所以同正常浏览一样，返回200状态。这个逻辑是正常的，因为强制刷新本就相当于完全请求一遍最新内容。
+  php中在做文件下载的时候，其中要加上这么一些header信息：
+header(&#34;Content-type: application/octet-stream&#34;); header(&#34;Accept-Ranges: bytes&#34;); header(&#34;Accept-Length:&#34;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/http/http-accept-length/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-16T15:21:03+08:00" />
+<meta property="article:modified_time" content="2020-12-16T15:21:03+08:00" />
+
+<meta itemprop="name" content="Http Accept Length">
+<meta itemprop="description" content="$interval=120; //2分钟 if(isset($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间.  // 缓存时间&#43;时长.  $c_time = strtotime($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])&#43;$interval; // 当大于当前时间时, 表示还在缓存中... 释放304  if($c_time &gt; time()){ header(&#39;HTTP/1.1 304 Not Modified&#39;); exit(); } } // Cache-Control头，告诉让浏览器自己缓存个120秒 header(&#39;Cache-Control:max-age=120&#39;); // 在当前时间的120秒后缓存失效，浏览器会在120秒后把缓存失效，再次请求时会到服务器端请求而不是本地 header(&#34;Expires: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;,time()&#43; 120).&#34; GMT&#34;); // Last-Modified则是说明这个文档最后修改时间 header(&#34;Last-Modified: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;) . &#34; GMT&#34;);   当浏览器再次访问时（刷新页面），浏览器因为在第一次时接收到了Last-Modified，它便会根据这个时间去检查服务器的文档是否更新过，也就是会把这个时间用HTTP_IF_MODIFIED_SINCE这个东西带过去，于是也就有了第一个花括号内容的判断。而花括号内再次根据这个时间加上你设置的时间（120秒），看看是不是超出了当前的时间time()，如果超出了，那就是还在缓存期内，帮直接返回304，然后直接退出。这时候浏览器便会自动用缓存的内容。这样子做，服务器返回的内容就很短，只是一个304响应头而已，而内容不需要返回，这可大大节省网络流量，显然浏览器的响应速度也会感觉明显快了。
+  按F5刷新或者按浏览器的刷新按钮时，你将发现2分钟内你的PHP请求将是304状态返回。 强制刷新（CTRL&#43;F5）时，浏览器不会带HTTP_IF_MODIFIED_SINCE这个东西去判断，所以同正常浏览一样，返回200状态。这个逻辑是正常的，因为强制刷新本就相当于完全请求一遍最新内容。
+  php中在做文件下载的时候，其中要加上这么一些header信息：
+header(&#34;Content-type: application/octet-stream&#34;); header(&#34;Accept-Ranges: bytes&#34;); header(&#34;Accept-Length:&#34;."><meta itemprop="datePublished" content="2020-12-16T15:21:03+08:00" />
+<meta itemprop="dateModified" content="2020-12-16T15:21:03+08:00" />
+<meta itemprop="wordCount" content="97">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Http Accept Length"/>
+<meta name="twitter:description" content="$interval=120; //2分钟 if(isset($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])){ // HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间.  // 缓存时间&#43;时长.  $c_time = strtotime($_SERVER[&#39;HTTP_IF_MODIFIED_SINCE&#39;])&#43;$interval; // 当大于当前时间时, 表示还在缓存中... 释放304  if($c_time &gt; time()){ header(&#39;HTTP/1.1 304 Not Modified&#39;); exit(); } } // Cache-Control头，告诉让浏览器自己缓存个120秒 header(&#39;Cache-Control:max-age=120&#39;); // 在当前时间的120秒后缓存失效，浏览器会在120秒后把缓存失效，再次请求时会到服务器端请求而不是本地 header(&#34;Expires: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;,time()&#43; 120).&#34; GMT&#34;); // Last-Modified则是说明这个文档最后修改时间 header(&#34;Last-Modified: &#34; . gmdate(&#34;D, d M Y H:i:s&#34;) . &#34; GMT&#34;);   当浏览器再次访问时（刷新页面），浏览器因为在第一次时接收到了Last-Modified，它便会根据这个时间去检查服务器的文档是否更新过，也就是会把这个时间用HTTP_IF_MODIFIED_SINCE这个东西带过去，于是也就有了第一个花括号内容的判断。而花括号内再次根据这个时间加上你设置的时间（120秒），看看是不是超出了当前的时间time()，如果超出了，那就是还在缓存期内，帮直接返回304，然后直接退出。这时候浏览器便会自动用缓存的内容。这样子做，服务器返回的内容就很短，只是一个304响应头而已，而内容不需要返回，这可大大节省网络流量，显然浏览器的响应速度也会感觉明显快了。
+  按F5刷新或者按浏览器的刷新按钮时，你将发现2分钟内你的PHP请求将是304状态返回。 强制刷新（CTRL&#43;F5）时，浏览器不会带HTTP_IF_MODIFIED_SINCE这个东西去判断，所以同正常浏览一样，返回200状态。这个逻辑是正常的，因为强制刷新本就相当于完全请求一遍最新内容。
+  php中在做文件下载的时候，其中要加上这么一些header信息：
+header(&#34;Content-type: application/octet-stream&#34;); header(&#34;Accept-Ranges: bytes&#34;); header(&#34;Accept-Length:&#34;."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$interval<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>; <span style="color:#75715e">//2分钟
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_IF_MODIFIED_SINCE&#39;</span>])){
+    <span style="color:#75715e">// HTTP_IF_MODIFIED_SINCE即下面的: Last-Modified,文档缓存时间.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 缓存时间+时长.
+</span><span style="color:#75715e"></span>    
+    $c_time <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtotime</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_IF_MODIFIED_SINCE&#39;</span>])<span style="color:#f92672">+</span>$interval;
+
+    <span style="color:#75715e">// 当大于当前时间时, 表示还在缓存中... 释放304
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>($c_time <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">time</span>()){
+        <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;HTTP/1.1 304 Not Modified&#39;</span>);
+        <span style="color:#66d9ef">exit</span>();
+    }
+}
+
+<span style="color:#75715e">// Cache-Control头，告诉让浏览器自己缓存个120秒
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Cache-Control:max-age=120&#39;</span>);
+
+<span style="color:#75715e">// 在当前时间的120秒后缓存失效，浏览器会在120秒后把缓存失效，再次请求时会到服务器端请求而不是本地
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Expires: &#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">gmdate</span>(<span style="color:#e6db74">&#34;D, d M Y H:i:s&#34;</span>,<span style="color:#a6e22e">time</span>()<span style="color:#f92672">+</span> <span style="color:#ae81ff">120</span>)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34; GMT&#34;</span>);
+
+<span style="color:#75715e">// Last-Modified则是说明这个文档最后修改时间
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Last-Modified: &#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">gmdate</span>(<span style="color:#e6db74">&#34;D, d M Y H:i:s&#34;</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34; GMT&#34;</span>);
+</code></pre></div><ol>
+<li>
+<p>当浏览器再次访问时（刷新页面），浏览器因为在第一次时接收到了Last-Modified，它便会根据这个时间去检查服务器的文档是否更新过，也就是会把这个时间用HTTP_IF_MODIFIED_SINCE这个东西带过去，于是也就有了第一个花括号内容的判断。而花括号内再次根据这个时间加上你设置的时间（120秒），看看是不是超出了当前的时间time()，如果超出了，那就是还在缓存期内，帮直接返回304，然后直接退出。这时候浏览器便会自动用缓存的内容。这样子做，服务器返回的内容就很短，只是一个304响应头而已，而内容不需要返回，这可大大节省网络流量，显然浏览器的响应速度也会感觉明显快了。</p>
+</li>
+<li>
+<p>按F5刷新或者按浏览器的刷新按钮时，你将发现2分钟内你的PHP请求将是304状态返回。
+强制刷新（CTRL+F5）时，浏览器不会带HTTP_IF_MODIFIED_SINCE这个东西去判断，所以同正常浏览一样，返回200状态。这个逻辑是正常的，因为强制刷新本就相当于完全请求一遍最新内容。</p>
+</li>
+</ol>
+<p><img src="/images/977033-20170410175310876-1823314432.png" alt="http 403缓存"></p>
+<p>php中在做文件下载的时候，其中要加上这么一些header信息：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Content-type: application/octet-stream&#34;</span>);
+<span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Accept-Ranges: bytes&#34;</span>);
+<span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Accept-Length:&#34;</span><span style="color:#f92672">.</span>$fileSize);
+<span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Content-Length:&#34;</span><span style="color:#f92672">.</span>$fileSize);
+<span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Content-Disposition: attachment; filename=&#34;</span><span style="color:#f92672">.</span>$fileName);
+</code></pre></div><ul>
+<li>Content-Length: 获取下载文件的大小, 但下载大小和真实大小不一定时, 会导致下载不完整</li>
+</ul>
+<h3 id="http-header-常见配置">http header 常见配置</h3>
+<ol>
+<li>max-age：</li>
+</ol>
+<p>header(&lsquo;Cache-Control:max-age=120&rsquo;);</p>
+<p>这个的输出是表明让浏览器缓存120秒。这个指令很有用，但是局限性在于，刷新这个页面时还是会重新请求，所以你会感觉这个头好像没什么作用，但是对于一些输出的JS、CSS内容时是有用的，也就是说你刷新的页面不是它本身，而只是引用了设置有此头的PHP文件的话，它就会在你指定的时间内从本地缓存中读取内容而不会请求服务器。同时通过超链接过来的已经请求过的页面时，你也会看到浏览器从本地cache里读取而不用通过服务器。</p>
+<ol start="2">
+<li>Expires</li>
+</ol>
+<p>Expires是HTTP/1.0中的,它比max-age要麻烦点.Expires指定的时间分下面二种,这个主要考虑到apache中设置是A还是M.</p>
+<ul>
+<li>相对文件的最后访问时间(Atime)
+当Apache使用A时间来做Expires时.这样设置时.他就和max-age的值相等,因为max-age是相对文件的请求时间(Atime).</li>
+</ul>
+<p>例如:ExpiresByType text/html A600</p>
+<p>由上面我们得知,Apache设置Atime时,过期为600秒时.</p>
+<p>Expires=18:00+600=18:10
+max-age=18:00+600=18:10</p>
+<p>得出:Expires=max-age</p>
+<ul>
+<li>绝对修改时间(MTime)
+这又分二种情况,我们来拿A.htm来讲
+假设文件的建立时间为18:00.</li>
+</ul>
+<p>当用户Request请求为18:00时,过期为600秒</p>
+<p>Expires=18:00+600=18:10
+max-age=18:00+600=18:10</p>
+<p>得出:Expires等于max-age</p>
+<ol start="3">
+<li>Cache-Control</li>
+</ol>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://blog.csdn.net/u012375924/article/details/82806617">浅谈http中的Cache-Control</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

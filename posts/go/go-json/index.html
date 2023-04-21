@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Json - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市场份额。虽然与更紧凑的数据交换格式相比，它的序列化和反序列化性能不足，但是 JSON 提供了良好的可读性与易用性，在不追求极致机制性能的情况下，使用 JSON 作为序列化格式是一种非常好的选择。
+encoding/json 对外提供标准的 JSON 序列化和反序列化方法，即 encoding/json.Marshal 和 encoding/json.Unmarshal，它们也是包中最常用的两个方法。
+序列化和反序列化的开销完全不同，JSON 反序列化的开销是序列化开销的好几倍，相信这背后的原因也非常好理解。Go 语言中的 JSON 序列化过程不需要被序列化的对象预先实现任何接口，它会通过反射获取结构体或者数组中的值并以树形的结构递归地进行编码，标准库也会根据 encoding/json.Unmarshal 中传入的值对 JSON 进行解码。
+Go 语言 JSON 标准库编码和解码的过程大量地运用了反射这一特性，你会在本节的后半部分看到大量的反射代码，这一小节就不过多介绍了。我们在这里会简单介绍 JSON 标准库中的接口和标签，这是它为开发者提供的为数不多的影响编解码过程的接口。
+接口 # JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler 两个接口分别可以影响 JSON 的序列化和反序列化结果：
+type Marshaler interface { MarshalJSON() ([]byte, error) } type Unmarshaler interface { UnmarshalJSON([]byte) error } 在 JSON 序列化和反序列化的过程中，它会使用反射判断结构体类型是否实现了上述接口，如果实现了上述接口就会优先使用对应的方法进行编码和解码操作，除了这两个方法之外，Go 语言其实还提供了另外两个用于控制编解码结果的方法，即 encoding.TextMarshaler 和 encoding.TextUnmarshaler：
+type TextMarshaler interface { MarshalText() (text []byte, err error) } type TextUnmarshaler interface { UnmarshalText(text []byte) error } 一旦发现 JSON 相关的序列化方法没有被实现，上述两个方法会作为候选方法被 JSON 标准库调用并参与编解码的过程。总的来说，我们可以在任意类型上实现上述这四个方法自定义最终的结果，后面的两个方法的适用范围更广，但是不会被 JSON 标准库优先调用。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-json/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Json" />
+<meta property="og:description" content="JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市场份额。虽然与更紧凑的数据交换格式相比，它的序列化和反序列化性能不足，但是 JSON 提供了良好的可读性与易用性，在不追求极致机制性能的情况下，使用 JSON 作为序列化格式是一种非常好的选择。
+encoding/json 对外提供标准的 JSON 序列化和反序列化方法，即 encoding/json.Marshal 和 encoding/json.Unmarshal，它们也是包中最常用的两个方法。
+序列化和反序列化的开销完全不同，JSON 反序列化的开销是序列化开销的好几倍，相信这背后的原因也非常好理解。Go 语言中的 JSON 序列化过程不需要被序列化的对象预先实现任何接口，它会通过反射获取结构体或者数组中的值并以树形的结构递归地进行编码，标准库也会根据 encoding/json.Unmarshal 中传入的值对 JSON 进行解码。
+Go 语言 JSON 标准库编码和解码的过程大量地运用了反射这一特性，你会在本节的后半部分看到大量的反射代码，这一小节就不过多介绍了。我们在这里会简单介绍 JSON 标准库中的接口和标签，这是它为开发者提供的为数不多的影响编解码过程的接口。
+接口 # JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler 两个接口分别可以影响 JSON 的序列化和反序列化结果：
+type Marshaler interface { MarshalJSON() ([]byte, error) } type Unmarshaler interface { UnmarshalJSON([]byte) error } 在 JSON 序列化和反序列化的过程中，它会使用反射判断结构体类型是否实现了上述接口，如果实现了上述接口就会优先使用对应的方法进行编码和解码操作，除了这两个方法之外，Go 语言其实还提供了另外两个用于控制编解码结果的方法，即 encoding.TextMarshaler 和 encoding.TextUnmarshaler：
+type TextMarshaler interface { MarshalText() (text []byte, err error) } type TextUnmarshaler interface { UnmarshalText(text []byte) error } 一旦发现 JSON 相关的序列化方法没有被实现，上述两个方法会作为候选方法被 JSON 标准库调用并参与编解码的过程。总的来说，我们可以在任意类型上实现上述这四个方法自定义最终的结果，后面的两个方法的适用范围更广，但是不会被 JSON 标准库优先调用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-json/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-18T20:01:32+08:00" />
+<meta property="article:modified_time" content="2021-08-18T20:01:32+08:00" />
+
+<meta itemprop="name" content="Go Json">
+<meta itemprop="description" content="JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市场份额。虽然与更紧凑的数据交换格式相比，它的序列化和反序列化性能不足，但是 JSON 提供了良好的可读性与易用性，在不追求极致机制性能的情况下，使用 JSON 作为序列化格式是一种非常好的选择。
+encoding/json 对外提供标准的 JSON 序列化和反序列化方法，即 encoding/json.Marshal 和 encoding/json.Unmarshal，它们也是包中最常用的两个方法。
+序列化和反序列化的开销完全不同，JSON 反序列化的开销是序列化开销的好几倍，相信这背后的原因也非常好理解。Go 语言中的 JSON 序列化过程不需要被序列化的对象预先实现任何接口，它会通过反射获取结构体或者数组中的值并以树形的结构递归地进行编码，标准库也会根据 encoding/json.Unmarshal 中传入的值对 JSON 进行解码。
+Go 语言 JSON 标准库编码和解码的过程大量地运用了反射这一特性，你会在本节的后半部分看到大量的反射代码，这一小节就不过多介绍了。我们在这里会简单介绍 JSON 标准库中的接口和标签，这是它为开发者提供的为数不多的影响编解码过程的接口。
+接口 # JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler 两个接口分别可以影响 JSON 的序列化和反序列化结果：
+type Marshaler interface { MarshalJSON() ([]byte, error) } type Unmarshaler interface { UnmarshalJSON([]byte) error } 在 JSON 序列化和反序列化的过程中，它会使用反射判断结构体类型是否实现了上述接口，如果实现了上述接口就会优先使用对应的方法进行编码和解码操作，除了这两个方法之外，Go 语言其实还提供了另外两个用于控制编解码结果的方法，即 encoding.TextMarshaler 和 encoding.TextUnmarshaler：
+type TextMarshaler interface { MarshalText() (text []byte, err error) } type TextUnmarshaler interface { UnmarshalText(text []byte) error } 一旦发现 JSON 相关的序列化方法没有被实现，上述两个方法会作为候选方法被 JSON 标准库调用并参与编解码的过程。总的来说，我们可以在任意类型上实现上述这四个方法自定义最终的结果，后面的两个方法的适用范围更广，但是不会被 JSON 标准库优先调用。"><meta itemprop="datePublished" content="2021-08-18T20:01:32+08:00" />
+<meta itemprop="dateModified" content="2021-08-18T20:01:32+08:00" />
+<meta itemprop="wordCount" content="89">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Json"/>
+<meta name="twitter:description" content="JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市场份额。虽然与更紧凑的数据交换格式相比，它的序列化和反序列化性能不足，但是 JSON 提供了良好的可读性与易用性，在不追求极致机制性能的情况下，使用 JSON 作为序列化格式是一种非常好的选择。
+encoding/json 对外提供标准的 JSON 序列化和反序列化方法，即 encoding/json.Marshal 和 encoding/json.Unmarshal，它们也是包中最常用的两个方法。
+序列化和反序列化的开销完全不同，JSON 反序列化的开销是序列化开销的好几倍，相信这背后的原因也非常好理解。Go 语言中的 JSON 序列化过程不需要被序列化的对象预先实现任何接口，它会通过反射获取结构体或者数组中的值并以树形的结构递归地进行编码，标准库也会根据 encoding/json.Unmarshal 中传入的值对 JSON 进行解码。
+Go 语言 JSON 标准库编码和解码的过程大量地运用了反射这一特性，你会在本节的后半部分看到大量的反射代码，这一小节就不过多介绍了。我们在这里会简单介绍 JSON 标准库中的接口和标签，这是它为开发者提供的为数不多的影响编解码过程的接口。
+接口 # JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler 两个接口分别可以影响 JSON 的序列化和反序列化结果：
+type Marshaler interface { MarshalJSON() ([]byte, error) } type Unmarshaler interface { UnmarshalJSON([]byte) error } 在 JSON 序列化和反序列化的过程中，它会使用反射判断结构体类型是否实现了上述接口，如果实现了上述接口就会优先使用对应的方法进行编码和解码操作，除了这两个方法之外，Go 语言其实还提供了另外两个用于控制编解码结果的方法，即 encoding.TextMarshaler 和 encoding.TextUnmarshaler：
+type TextMarshaler interface { MarshalText() (text []byte, err error) } type TextUnmarshaler interface { UnmarshalText(text []byte) error } 一旦发现 JSON 相关的序列化方法没有被实现，上述两个方法会作为候选方法被 JSON 标准库调用并参与编解码的过程。总的来说，我们可以在任意类型上实现上述这四个方法自定义最终的结果，后面的两个方法的适用范围更广，但是不会被 JSON 标准库优先调用。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>JSON（JavaScript 对象表示，JavaScript Object Notation）作为一种轻量级的数据交换格式1，在今天几乎占据了绝大多数的市场份额。虽然与更紧凑的数据交换格式相比，它的序列化和反序列化性能不足，但是 JSON 提供了良好的可读性与易用性，在不追求极致机制性能的情况下，使用 JSON 作为序列化格式是一种非常好的选择。</p>
+<p>encoding/json 对外提供标准的 JSON 序列化和反序列化方法，即 encoding/json.Marshal 和 encoding/json.Unmarshal，它们也是包中最常用的两个方法。</p>
+<p>序列化和反序列化的开销完全不同，JSON 反序列化的开销是序列化开销的好几倍，相信这背后的原因也非常好理解。Go 语言中的 JSON 序列化过程不需要被序列化的对象预先实现任何接口，它会通过反射获取结构体或者数组中的值并以树形的结构递归地进行编码，标准库也会根据 encoding/json.Unmarshal 中传入的值对 JSON 进行解码。</p>
+<p>Go 语言 JSON 标准库编码和解码的过程大量地运用了反射这一特性，你会在本节的后半部分看到大量的反射代码，这一小节就不过多介绍了。我们在这里会简单介绍 JSON 标准库中的接口和标签，这是它为开发者提供的为数不多的影响编解码过程的接口。</p>
+<p>接口 #
+JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler 两个接口分别可以影响 JSON 的序列化和反序列化结果：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Marshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">MarshalJSON</span>() ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Unmarshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">UnmarshalJSON</span>([]<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">error</span>
+}
+</code></pre></div><p>在 JSON 序列化和反序列化的过程中，它会使用反射判断结构体类型是否实现了上述接口，如果实现了上述接口就会优先使用对应的方法进行编码和解码操作，除了这两个方法之外，Go 语言其实还提供了另外两个用于控制编解码结果的方法，即 encoding.TextMarshaler 和 encoding.TextUnmarshaler：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TextMarshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">MarshalText</span>() (<span style="color:#a6e22e">text</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TextUnmarshaler</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">UnmarshalText</span>(<span style="color:#a6e22e">text</span> []<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">error</span>
+}
+</code></pre></div><p>一旦发现 JSON 相关的序列化方法没有被实现，上述两个方法会作为候选方法被 JSON 标准库调用并参与编解码的过程。总的来说，我们可以在任意类型上实现上述这四个方法自定义最终的结果，后面的两个方法的适用范围更广，但是不会被 JSON 标准库优先调用。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/">https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

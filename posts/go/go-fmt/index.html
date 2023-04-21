@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Fmt - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="$ go doc -help Usage of [go] doc: go doc go doc go doc [.] go doc [.][.] go doc [.][.]go doc [.] For more information run go help doc
+Flags: -all show all documentation for package -c symbol matching honors case (paths not affected) -cmd show symbols with package docs even if package is a command -short one-line representation for each symbol -src show source code for symbol -u show unexported symbols as well as exported exit status 2" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-fmt/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Fmt" />
+<meta property="og:description" content="$ go doc -help Usage of [go] doc: go doc go doc go doc [.] go doc [.][.] go doc [.][.]go doc [.] For more information run go help doc
+Flags: -all show all documentation for package -c symbol matching honors case (paths not affected) -cmd show symbols with package docs even if package is a command -short one-line representation for each symbol -src show source code for symbol -u show unexported symbols as well as exported exit status 2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-fmt/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-19T13:03:59+08:00" />
+<meta property="article:modified_time" content="2021-08-19T13:03:59+08:00" />
+
+<meta itemprop="name" content="Go Fmt">
+<meta itemprop="description" content="$ go doc -help Usage of [go] doc: go doc go doc go doc [.] go doc [.][.] go doc [.][.]go doc [.] For more information run go help doc
+Flags: -all show all documentation for package -c symbol matching honors case (paths not affected) -cmd show symbols with package docs even if package is a command -short one-line representation for each symbol -src show source code for symbol -u show unexported symbols as well as exported exit status 2"><meta itemprop="datePublished" content="2021-08-19T13:03:59+08:00" />
+<meta itemprop="dateModified" content="2021-08-19T13:03:59+08:00" />
+<meta itemprop="wordCount" content="2621">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Fmt"/>
+<meta name="twitter:description" content="$ go doc -help Usage of [go] doc: go doc go doc go doc [.] go doc [.][.] go doc [.][.]go doc [.] For more information run go help doc
+Flags: -all show all documentation for package -c symbol matching honors case (paths not affected) -cmd show symbols with package docs even if package is a command -short one-line representation for each symbol -src show source code for symbol -u show unexported symbols as well as exported exit status 2"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>$ go doc -help
+Usage of [go] doc:
+go doc
+go doc <!-- raw HTML omitted -->
+go doc <!-- raw HTML omitted -->[.<!-- raw HTML omitted -->]
+go doc [<!-- raw HTML omitted -->.]<!-- raw HTML omitted -->[.<!-- raw HTML omitted -->]
+go doc [<!-- raw HTML omitted -->.][<!-- raw HTML omitted -->.]<!-- raw HTML omitted -->
+go doc <!-- raw HTML omitted --> <!-- raw HTML omitted -->[.<!-- raw HTML omitted -->]
+For more information run
+go help doc</p>
+<p>Flags:
+-all
+show all documentation for package
+-c    symbol matching honors case (paths not affected)
+-cmd
+show symbols with package docs even if package is a command
+-short
+one-line representation for each symbol
+-src
+show source code for symbol
+-u    show unexported symbols as well as exported
+exit status 2</p>
+<p>$ go doc fmt
+package fmt // import &ldquo;fmt&rdquo;</p>
+<p>Package fmt implements formatted I/O with functions analogous to C&rsquo;s printf
+and scanf. The format &lsquo;verbs&rsquo; are derived from C&rsquo;s but are simpler.</p>
+<p>Printing</p>
+<p>The verbs:</p>
+<p>General:</p>
+<pre><code>%v  the value in a default format
+    when printing structs, the plus flag (%+v) adds field names
+%#v a Go-syntax representation of the value
+%T  a Go-syntax representation of the type of the value
+%%  a literal percent sign; consumes no value
+</code></pre>
+<p>Boolean:</p>
+<pre><code>%t  the word true or false
+</code></pre>
+<p>Integer:</p>
+<pre><code>%b  base 2
+%c  the character represented by the corresponding Unicode code point
+%d  base 10
+%o  base 8
+%O  base 8 with 0o prefix
+%q  a single-quoted character literal safely escaped with Go syntax.
+%x  base 16, with lower-case letters for a-f
+%X  base 16, with upper-case letters for A-F
+%U  Unicode format: U+1234; same as &quot;U+%04X&quot;
+</code></pre>
+<p>Floating-point and complex constituents:</p>
+<pre><code>%b  decimalless scientific notation with exponent a power of two,
+    in the manner of strconv.FormatFloat with the 'b' format,
+    e.g. -123456p-78
+%e  scientific notation, e.g. -1.234456e+78
+%E  scientific notation, e.g. -1.234456E+78
+%f  decimal point but no exponent, e.g. 123.456
+%F  synonym for %f
+%g  %e for large exponents, %f otherwise. Precision is discussed below.
+%G  %E for large exponents, %F otherwise
+%x  hexadecimal notation (with decimal power of two exponent), e.g. -0x1.23abcp+20
+%X  upper-case hexadecimal notation, e.g. -0X1.23ABCP+20
+</code></pre>
+<p>String and slice of bytes (treated equivalently with these verbs):</p>
+<pre><code>%s  the uninterpreted bytes of the string or slice
+%q  a double-quoted string safely escaped with Go syntax
+%x  base 16, lower-case, two characters per byte
+%X  base 16, upper-case, two characters per byte
+</code></pre>
+<p>Slice:</p>
+<pre><code>%p  address of 0th element in base 16 notation, with leading 0x
+</code></pre>
+<p>Pointer:</p>
+<pre><code>%p  base 16 notation, with leading 0x
+The %b, %d, %o, %x and %X verbs also work with pointers,
+formatting the value exactly as if it were an integer.
+</code></pre>
+<p>The default format for %v is:</p>
+<pre><code>bool:                    %t
+int, int8 etc.:          %d
+uint, uint8 etc.:        %d, %#x if printed with %#v
+float32, complex64, etc: %g
+string:                  %s
+chan:                    %p
+pointer:                 %p
+</code></pre>
+<p>For compound objects, the elements are printed using these rules,
+recursively, laid out like this:</p>
+<pre><code>struct:             {field0 field1 ...}
+array, slice:       [elem0 elem1 ...]
+maps:               map[key1:value1 key2:value2 ...]
+pointer to above:   &amp;{}, &amp;[], &amp;map[]
+</code></pre>
+<p>Width is specified by an optional decimal number immediately preceding the
+verb. If absent, the width is whatever is necessary to represent the value.
+Precision is specified after the (optional) width by a period followed by a
+decimal number. If no period is present, a default precision is used. A
+period with no following number specifies a precision of zero. Examples:</p>
+<pre><code>%f     default width, default precision
+%9f    width 9, default precision
+%.2f   default width, precision 2
+%9.2f  width 9, precision 2
+%9.f   width 9, precision 0
+</code></pre>
+<p>Width and precision are measured in units of Unicode code points, that is,
+runes. (This differs from C&rsquo;s printf where the units are always measured in
+bytes.) Either or both of the flags may be replaced with the character &lsquo;*&rsquo;,
+causing their values to be obtained from the next operand (preceding the one
+to format), which must be of type int.</p>
+<p>For most values, width is the minimum number of runes to output, padding the
+formatted form with spaces if necessary.</p>
+<p>For strings, byte slices and byte arrays, however, precision limits the
+length of the input to be formatted (not the size of the output), truncating
+if necessary. Normally it is measured in runes, but for these types when
+formatted with the %x or %X format it is measured in bytes.</p>
+<p>For floating-point values, width sets the minimum width of the field and
+precision sets the number of places after the decimal, if appropriate,
+except that for %g/%G precision sets the maximum number of significant
+digits (trailing zeros are removed). For example, given 12.345 the format
+%6.3f prints 12.345 while %.3g prints 12.3. The default precision for %e, %f
+and %#g is 6; for %g it is the smallest number of digits necessary to
+identify the value uniquely.</p>
+<p>For complex numbers, the width and precision apply to the two components
+independently and the result is parenthesized, so %f applied to 1.2+3.4i
+produces (1.200000+3.400000i).</p>
+<p>Other flags:</p>
+<pre><code>+   always print a sign for numeric values;
+    guarantee ASCII-only output for %q (%+q)
+-   pad with spaces on the right rather than the left (left-justify the field)
+#   alternate format: add leading 0b for binary (%#b), 0 for octal (%#o),
+    0x or 0X for hex (%#x or %#X); suppress 0x for %p (%#p);
+    for %q, print a raw (backquoted) string if strconv.CanBackquote
+    returns true;
+    always print a decimal point for %e, %E, %f, %F, %g and %G;
+    do not remove trailing zeros for %g and %G;
+    write e.g. U+0078 'x' if the character is printable for %U (%#U).
+' ' (space) leave a space for elided sign in numbers (% d);
+    put spaces between bytes printing strings or slices in hex (% x, % X)
+0   pad with leading zeros rather than spaces;
+    for numbers, this moves the padding after the sign
+</code></pre>
+<p>Flags are ignored by verbs that do not expect them. For example there is no
+alternate decimal format, so %#d and %d behave identically.</p>
+<p>For each Printf-like function, there is also a Print function that takes no
+format and is equivalent to saying %v for every operand. Another variant
+Println inserts blanks between operands and appends a newline.</p>
+<p>Regardless of the verb, if an operand is an interface value, the internal
+concrete value is used, not the interface itself. Thus:</p>
+<pre><code>var i interface{} = 23
+fmt.Printf(&quot;%v\n&quot;, i)
+</code></pre>
+<p>will print 23.</p>
+<p>Except when printed using the verbs %T and %p, special formatting
+considerations apply for operands that implement certain interfaces. In
+order of application:</p>
+<ol>
+<li>
+<p>If the operand is a reflect.Value, the operand is replaced by the
+concrete value that it holds, and printing continues with the next rule.</p>
+</li>
+<li>
+<p>If an operand implements the Formatter interface, it will be invoked. In
+this case the interpretation of verbs and flags is controlled by that
+implementation.</p>
+</li>
+<li>
+<p>If the %v verb is used with the # flag (%#v) and the operand implements
+the GoStringer interface, that will be invoked.</p>
+</li>
+</ol>
+<p>If the format (which is implicitly %v for Println etc.) is valid for a
+string (%s %q %v %x %X), the following two rules apply:</p>
+<ol start="4">
+<li>
+<p>If an operand implements the error interface, the Error method will be
+invoked to convert the object to a string, which will then be formatted as
+required by the verb (if any).</p>
+</li>
+<li>
+<p>If an operand implements method String() string, that method will be
+invoked to convert the object to a string, which will then be formatted as
+required by the verb (if any).</p>
+</li>
+</ol>
+<p>For compound operands such as slices and structs, the format applies to the
+elements of each operand, recursively, not to the operand as a whole. Thus
+%q will quote each element of a slice of strings, and %6.2f will control
+formatting for each element of a floating-point array.</p>
+<p>However, when printing a byte slice with a string-like verb (%s %q %x %X),
+it is treated identically to a string, as a single item.</p>
+<p>To avoid recursion in cases such as</p>
+<pre><code>type X string
+func (x X) String() string { return Sprintf(&quot;&lt;%s&gt;&quot;, x) }
+</code></pre>
+<p>convert the value before recurring:</p>
+<pre><code>func (x X) String() string { return Sprintf(&quot;&lt;%s&gt;&quot;, string(x)) }
+</code></pre>
+<p>Infinite recursion can also be triggered by self-referential data
+structures, such as a slice that contains itself as an element, if that type
+has a String method. Such pathologies are rare, however, and the package
+does not protect against them.</p>
+<p>When printing a struct, fmt cannot and therefore does not invoke formatting
+methods such as Error or String on unexported fields.</p>
+<p>Explicit argument indexes:</p>
+<p>In Printf, Sprintf, and Fprintf, the default behavior is for each formatting
+verb to format successive arguments passed in the call. However, the
+notation [n] immediately before the verb indicates that the nth one-indexed
+argument is to be formatted instead. The same notation before a &lsquo;*&rsquo; for a
+width or precision selects the argument index holding the value. After
+processing a bracketed expression [n], subsequent verbs will use arguments
+n+1, n+2, etc. unless otherwise directed.</p>
+<p>For example,</p>
+<pre><code>fmt.Sprintf(&quot;%[2]d %[1]d\n&quot;, 11, 22)
+</code></pre>
+<p>will yield &ldquo;22 11&rdquo;, while</p>
+<pre><code>fmt.Sprintf(&quot;%[3]*.[2]*[1]f&quot;, 12.0, 2, 6)
+</code></pre>
+<p>equivalent to</p>
+<pre><code>fmt.Sprintf(&quot;%6.2f&quot;, 12.0)
+</code></pre>
+<p>will yield &quot; 12.00&quot;. Because an explicit index affects subsequent verbs,
+this notation can be used to print the same values multiple times by
+resetting the index for the first argument to be repeated:</p>
+<pre><code>fmt.Sprintf(&quot;%d %d %#[1]x %#x&quot;, 16, 17)
+</code></pre>
+<p>will yield &ldquo;16 17 0x10 0x11&rdquo;.</p>
+<p>Format errors:</p>
+<p>If an invalid argument is given for a verb, such as providing a string to
+%d, the generated string will contain a description of the problem, as in
+these examples:</p>
+<pre><code>Wrong type or unknown verb: %!verb(type=value)
+    Printf(&quot;%d&quot;, &quot;hi&quot;):        %!d(string=hi)
+Too many arguments: %!(EXTRA type=value)
+    Printf(&quot;hi&quot;, &quot;guys&quot;):      hi%!(EXTRA string=guys)
+Too few arguments: %!verb(MISSING)
+    Printf(&quot;hi%d&quot;):            hi%!d(MISSING)
+Non-int for width or precision: %!(BADWIDTH) or %!(BADPREC)
+    Printf(&quot;%*s&quot;, 4.5, &quot;hi&quot;):  %!(BADWIDTH)hi
+    Printf(&quot;%.*s&quot;, 4.5, &quot;hi&quot;): %!(BADPREC)hi
+Invalid or invalid use of argument index: %!(BADINDEX)
+    Printf(&quot;%*[2]d&quot;, 7):       %!d(BADINDEX)
+    Printf(&quot;%.[2]d&quot;, 7):       %!d(BADINDEX)
+</code></pre>
+<p>All errors begin with the string &ldquo;%!&rdquo; followed sometimes by a single
+character (the verb) and end with a parenthesized description.</p>
+<p>If an Error or String method triggers a panic when called by a print
+routine, the fmt package reformats the error message from the panic,
+decorating it with an indication that it came through the fmt package. For
+example, if a String method calls panic(&ldquo;bad&rdquo;), the resulting formatted
+message will look like</p>
+<pre><code>%!s(PANIC=bad)
+</code></pre>
+<p>The %!s just shows the print verb in use when the failure occurred. If the
+panic is caused by a nil receiver to an Error or String method, however, the
+output is the undecorated string, &ldquo;<!-- raw HTML omitted -->&rdquo;.</p>
+<p>Scanning</p>
+<p>An analogous set of functions scans formatted text to yield values. Scan,
+Scanf and Scanln read from os.Stdin; Fscan, Fscanf and Fscanln read from a
+specified io.Reader; Sscan, Sscanf and Sscanln read from an argument string.</p>
+<p>Scan, Fscan, Sscan treat newlines in the input as spaces.</p>
+<p>Scanln, Fscanln and Sscanln stop scanning at a newline and require that the
+items be followed by a newline or EOF.</p>
+<p>Scanf, Fscanf, and Sscanf parse the arguments according to a format string,
+analogous to that of Printf. In the text that follows, &lsquo;space&rsquo; means any
+Unicode whitespace character except newline.</p>
+<p>In the format string, a verb introduced by the % character consumes and
+parses input; these verbs are described in more detail below. A character
+other than %, space, or newline in the format consumes exactly that input
+character, which must be present. A newline with zero or more spaces before
+it in the format string consumes zero or more spaces in the input followed
+by a single newline or the end of the input. A space following a newline in
+the format string consumes zero or more spaces in the input. Otherwise, any
+run of one or more spaces in the format string consumes as many spaces as
+possible in the input. Unless the run of spaces in the format string appears
+adjacent to a newline, the run must consume at least one space from the
+input or find the end of the input.</p>
+<p>The handling of spaces and newlines differs from that of C&rsquo;s scanf family:
+in C, newlines are treated as any other space, and it is never an error when
+a run of spaces in the format string finds no spaces to consume in the
+input.</p>
+<p>The verbs behave analogously to those of Printf. For example, %x will scan
+an integer as a hexadecimal number, and %v will scan the default
+representation format for the value. The Printf verbs %p and %T and the
+flags # and + are not implemented. For floating-point and complex values,
+all valid formatting verbs (%b %e %E %f %F %g %G %x %X and %v) are
+equivalent and accept both decimal and hexadecimal notation (for example:
+&ldquo;2.3e+7&rdquo;, &ldquo;0x4.5p-8&rdquo;) and digit-separating underscores (for example:
+&ldquo;3.14159_26535_89793&rdquo;).</p>
+<p>Input processed by verbs is implicitly space-delimited: the implementation
+of every verb except %c starts by discarding leading spaces from the
+remaining input, and the %s verb (and %v reading into a string) stops
+consuming input at the first space or newline character.</p>
+<p>The familiar base-setting prefixes 0b (binary), 0o and 0 (octal), and 0x
+(hexadecimal) are accepted when scanning integers without a format or with
+the %v verb, as are digit-separating underscores.</p>
+<p>Width is interpreted in the input text but there is no syntax for scanning
+with a precision (no %5.2f, just %5f). If width is provided, it applies
+after leading spaces are trimmed and specifies the maximum number of runes
+to read to satisfy the verb. For example,</p>
+<pre><code>Sscanf(&quot; 1234567 &quot;, &quot;%5s%d&quot;, &amp;s, &amp;i)
+</code></pre>
+<p>will set s to &ldquo;12345&rdquo; and i to 67 while</p>
+<pre><code>Sscanf(&quot; 12 34 567 &quot;, &quot;%5s%d&quot;, &amp;s, &amp;i)
+</code></pre>
+<p>will set s to &ldquo;12&rdquo; and i to 34.</p>
+<p>In all the scanning functions, a carriage return followed immediately by a
+newline is treated as a plain newline (\r\n means the same as \n).</p>
+<p>In all the scanning functions, if an operand implements method Scan (that
+is, it implements the Scanner interface) that method will be used to scan
+the text for that operand. Also, if the number of arguments scanned is less
+than the number of arguments provided, an error is returned.</p>
+<p>All arguments to be scanned must be either pointers to basic types or
+implementations of the Scanner interface.</p>
+<p>Like Scanf and Fscanf, Sscanf need not consume its entire input. There is no
+way to recover how much of the input string Sscanf used.</p>
+<p>Note: Fscan etc. can read one character (rune) past the input they return,
+which means that a loop calling a scan routine may skip some of the input.
+This is usually a problem only when there is no space between input values.
+If the reader provided to Fscan implements ReadRune, that method will be
+used to read characters. If the reader also implements UnreadRune, that
+method will be used to save the character and successive calls will not lose
+data. To attach ReadRune and UnreadRune methods to a reader without that
+capability, use bufio.NewReader.</p>
+<p>func Errorf(format string, a &hellip;interface{}) error
+func Fprint(w io.Writer, a &hellip;interface{}) (n int, err error)
+func Fprintf(w io.Writer, format string, a &hellip;interface{}) (n int, err error)
+func Fprintln(w io.Writer, a &hellip;interface{}) (n int, err error)
+func Fscan(r io.Reader, a &hellip;interface{}) (n int, err error)
+func Fscanf(r io.Reader, format string, a &hellip;interface{}) (n int, err error)
+func Fscanln(r io.Reader, a &hellip;interface{}) (n int, err error)
+func Print(a &hellip;interface{}) (n int, err error)
+func Printf(format string, a &hellip;interface{}) (n int, err error)
+func Println(a &hellip;interface{}) (n int, err error)
+func Scan(a &hellip;interface{}) (n int, err error)
+func Scanf(format string, a &hellip;interface{}) (n int, err error)
+func Scanln(a &hellip;interface{}) (n int, err error)
+func Sprint(a &hellip;interface{}) string
+func Sprintf(format string, a &hellip;interface{}) string
+func Sprintln(a &hellip;interface{}) string
+func Sscan(str string, a &hellip;interface{}) (n int, err error)
+func Sscanf(str string, format string, a &hellip;interface{}) (n int, err error)
+func Sscanln(str string, a &hellip;interface{}) (n int, err error)
+type Formatter interface{ &hellip; }
+type GoStringer interface{ &hellip; }
+type ScanState interface{ &hellip; }
+type Scanner interface{ &hellip; }
+type State interface{ &hellip; }
+type Stringer interface{ &hellip; }</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Css Interview BFC - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Describe BFC (Block Formatting Context) and how it works.
+ BFC(Block formatting context) 块级格式化上下文 A block formatting context is a part of a visual CSS rendering of a web page. It&amp;rsquo;s the region in which the layout of block boxes occurs and in which floats interact with other elements.
+BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域
+what A block formatting context is created by at least one of the following:
+ The root element of the document ()." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/css/css-interview-bfc/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Css Interview BFC" />
+<meta property="og:description" content="Describe BFC (Block Formatting Context) and how it works.
+ BFC(Block formatting context) 块级格式化上下文 A block formatting context is a part of a visual CSS rendering of a web page. It&rsquo;s the region in which the layout of block boxes occurs and in which floats interact with other elements.
+BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域
+what A block formatting context is created by at least one of the following:
+ The root element of the document ()." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/css/css-interview-bfc/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-03T10:02:39+08:00" />
+<meta property="article:modified_time" content="2020-09-03T10:02:39+08:00" />
+
+<meta itemprop="name" content="Css Interview BFC">
+<meta itemprop="description" content="Describe BFC (Block Formatting Context) and how it works.
+ BFC(Block formatting context) 块级格式化上下文 A block formatting context is a part of a visual CSS rendering of a web page. It&rsquo;s the region in which the layout of block boxes occurs and in which floats interact with other elements.
+BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域
+what A block formatting context is created by at least one of the following:
+ The root element of the document ()."><meta itemprop="datePublished" content="2020-09-03T10:02:39+08:00" />
+<meta itemprop="dateModified" content="2020-09-03T10:02:39+08:00" />
+<meta itemprop="wordCount" content="375">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Css Interview BFC"/>
+<meta name="twitter:description" content="Describe BFC (Block Formatting Context) and how it works.
+ BFC(Block formatting context) 块级格式化上下文 A block formatting context is a part of a visual CSS rendering of a web page. It&rsquo;s the region in which the layout of block boxes occurs and in which floats interact with other elements.
+BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域
+what A block formatting context is created by at least one of the following:
+ The root element of the document ()."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <blockquote>
+<p>Describe BFC (Block Formatting Context) and how it works.</p>
+</blockquote>
+<h2 id="bfcblock-formatting-context-块级格式化上下文">BFC(Block formatting context) 块级格式化上下文</h2>
+<p>A block formatting context is a part of a visual CSS rendering of a web page. It&rsquo;s the region in which the layout of block boxes occurs and in which floats interact with other elements.</p>
+<p>BFC是Web页面的CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域</p>
+<h2 id="what">what</h2>
+<p>A block formatting context is created by at least one of the following:</p>
+<ul>
+<li>The root element of the document (<!-- raw HTML omitted -->).</li>
+<li>Floats (elements where float isn&rsquo;t none).</li>
+<li>Absolutely positioned elements (elements where position is absolute or fixed).</li>
+<li>Inline-blocks (elements with display: inline-block).</li>
+<li>Table cells (elements with display: table-cell, which is the default for HTML table cells).</li>
+<li>Table captions (elements with display: table-caption, which is the default for HTML table captions).</li>
+<li>Anonymous table cells implicitly created by the elements with display: table, table-row, table-row-group, table-header-group, table-footer-group (which is the default for HTML tables, table rows, table bodies, table  headers, and table footers, respectively), or inline-table.</li>
+<li>Block elements where overflow has a value other than visible.</li>
+<li>display: flow-root.</li>
+<li>Elements with contain: layout, content, or paint.</li>
+<li>Flex items (direct children of the element with display: flex or inline-flex) if they are neither flex nor grid nor table containers themselves.</li>
+<li>Grid items (direct children of the element with display: grid or inline-grid) if they are neither flex nor grid nor table containers themselves.</li>
+<li>Multicol containers (elements where column-count or column-width isn&rsquo;t auto, including elements with column-count: 1).</li>
+<li>column-span: all should always create a new formatting context, even when the column-span: all element isn&rsquo;t contained by a multicol container (Spec change, Chrome bug).</li>
+</ul>
+<p>Formatting contexts affect layout, but typically, we create a new block formatting context for the positioning and clearing floats rather than changing the layout, because an element that establishes a new block formatting context will:</p>
+<h2 id="margin-collapsing">Margin collapsing</h2>
+<p>Creating a new BFC to avoid the margin collapsing between two neighbor div:</p>
+<h2 id="quote">quote</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context">Block formatting context</a></p>
+<h2 id="meaning">meaning</h2>
+<pre><code>region [ˈriːdʒən]
+n: (通常界限不明的)地区，区域，地方;行政区;(一国除首都以外的)全部地区，所有区域
+
+occurs [əˈkɜːrz]
+v. 发生;出现;存在于;出现在
+
+interact [ˌɪntərˈækt]
+v. 交流;沟通;合作;相互影响;相互作用
+
+at least one of
+至少有一个
+
+Anonymous [əˈnɑːnɪməs]
+adj. 不知姓名的; 名字不公开的; 匿名的; 不具名的; 没有特色的
+adj. (of a person) not identified by name; of unknown name.
+
+collapsing [kəˈlæpsɪŋ]
+v: (突然)倒塌，坍塌;(尤指因病重而)倒下，昏倒，晕倒;(尤指工作劳累后)坐下，躺下放松
+
+implicitly [ɪmˈplɪsətli]
+adv. 暗中地；不明显地；含蓄地；蕴涵地;无疑问地；无保留地；绝对地
+adv. in a way that is not directly expressed; tacitly.
+
+typically  [ˈtɪpɪkli]
+adv. 通常;一般;典型地;具有代表性地;不出所料;果然
+adv. in most cases; usually.
+</code></pre>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

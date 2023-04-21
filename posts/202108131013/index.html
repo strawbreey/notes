@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <meta name="author" content="strawbreey">
+  
+
+   
+    
+    
+    
+    
+    
+    
+    <meta name="keywords" content="theme,kagome">
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  
+  
+  
+  
+  
+  
+  <title>Sql High Performance 🌟 如沐春风</title>
+
+  <meta property="og:title" content="Sql High Performance" />
+<meta property="og:description" content="数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。 ● explain" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://note.strawbreey.com/posts/202108131013/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-13T10:13:21+08:00" />
+<meta property="article:modified_time" content="2021-08-13T10:13:21+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sql High Performance"/>
+<meta name="twitter:description" content="数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。 ● explain"/>
+
+
+  <link href="https://note.strawbreey.com/css/index.css" rel="stylesheet">    
+
+  <script src="https://note.strawbreey.com/js/main.js" ></script>
+  
+  </head><body><header class="header-container layout-block layout-padding">
+  <div class="header-inner content-padding-large soft-size--large soft-style--box">
+    <div class="header-logo">
+      <a href="https://note.strawbreey.com"><h1>如沐春风</h1></a>
+    </div>
+    <nav class="header-nav">
+      <div class="header-nav--btn">
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+      </div>
+      <div class="header-nav--list">
+        <div>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/" title="">HOME</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/posts" title="">POSTS</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/message" title="">MESSAGE</a>
+          
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="/link" title="">LINK</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header><main id="content">
+    
+
+    <div class="single-container layout-block">
+      <div class="article-info">
+        <div class="article-header layout-padding">
+          <div class="article-cover card-container content-padding-large soft-size--large soft-style--box img ">
+
+  <div class="card-cover">
+    
+      <img src="https://note.strawbreey.com/cover/1.jpg" alt="/cover/1.jpg" />
+    
+  </div>
+
+  <div class="card-text">
+    <h1 class="card-text--title">Sql High Performance</h1>
+    
+      <p class="card-text--row">2021-08-13 10:13</p>
+      
+      
+      
+
+      
+      
+    
+  </div>
+
+</div>
+        </div>
+
+        <div class="article-content">
+          <div class="markdown-body content-padding-large soft-size--large soft-style--box">
+            <blockquote>
+<p>数据库就是用于执行查询的，提高查询速度是调优的最终目标。数据库的性能取决于许多因素，主要是查询、schema、配置项和硬件。</p>
+</blockquote>
+<p>● explain计划</p>
+<p>可以使用EXPLAIN命令来验证MySQL的执行计划。从MySQL 5.7.2开始，可以使用EXPLAIN命令来检查当前在其他会话中执行的查询。执行EXPLAIN FORMAT=JSON命令，将得到详细信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> name <span style="color:#66d9ef">from</span> dept
+
+<span style="color:#75715e">-- 使用EXPLAIN JSON
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">explain</span> format <span style="color:#f92672">=</span> json <span style="color:#66d9ef">select</span> name <span style="color:#66d9ef">from</span> dept
+</code></pre></div><p>● 基准查询和服务器</p>
+<p>可以使用mysqlslap工具（就在MySQL客户端的安装包中），它模拟MySQL服务器的客户端负载，并报告每个阶段所耗费的时间，就像多个客户端正在访该问服务器一样。</p>
+<p>● 添加索引</p>
+<p>InnoDB有两大类索引：</p>
+<p>聚集索引(clustered index) #主键索引, 
+普通索引(secondary index) #第二索引</p>
+<p>关于主键的选择，有如下一些小技巧：</p>
+<ul>
+<li>它应该是UNIQUE（唯一）和NOT NULL（非空）的。</li>
+<li>选择最小的可能键，因为所有的二级索引都会存储主键。所以如果主键很大，整个索引也会占用更多的空间。</li>
+<li>选择一个单调递增的值。物理行是根据主键进行排序的。所以，如果你选择一个随机键，需要做多次行重排，这会导致性能下降。AUTO_INCREMENT非常适合主键。</li>
+<li>最好选择一个主键。如果找不到任何主键，请添加一个AUTO_INCREMENT列。如果你不选择任何内容，InnoDB会在内部生成一个带有6字节行ID的隐藏聚簇索引。</li>
+</ul>
+<p>● 不可见索引</p>
+<p>如果你想删除未使用的索引，可以不立即删除，而是先将其标记为不可见，然后监控应用程序的行为，稍后再删除它。之后，如果你还需要该索引，则可以将其标记为可见，这与先删除索引再重新添加相比会快很多。</p>
+<p>● 降序索引</p>
+<p>● 使用pt-query-digest分析慢查询
+pt-query-digest是Percona工具包的一部分，用于对查询进行分析。可以通过以下任何方式收集查询：</p>
+<ul>
+<li>慢查询日志</li>
+<li>通用查询日志</li>
+<li>进程列表</li>
+<li>二进制日志</li>
+<li>TCP转储</li>
+</ul>
+<p>● 优化数据类型</p>
+<p>● 删除重复和冗余索引</p>
+<p>你可以在一列上定义多个索引。如果不小心的话，你可能会重复定义相同的索引（相同的列、相同的列顺序或相同的键顺序），这被称为重复索引。如果只有部分索引（最左边的列）是重复的，则称为冗余索引。重复索引没有什么用处。在某些情况下，冗余索引可能很有用（本节末尾的提示中提到了一个用例），但是这两者都会减慢插入的速度。因此，找出并移除这两种索引非常重要</p>
+<p>● 检查索引使用情况</p>
+<p>● 控制查询优化器</p>
+<p>● 使用索引提示（hint）</p>
+<p>● 使用生成的列为JSON建立索引</p>
+<p>● 使用资源组</p>
+<p>● 使用performance_schema</p>
+<p>● 使用sys schema</p>
+
+          </div>
+        </div>
+                 
+      
+  
+  
+  
+  
+
+  
+
+  <div class="article-paging">
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202108131052/"><h4 class="card-text--title text-ellipsis">Sql Back Table</h4></a>
+    <p class="card-text--row">2021-08-13 10:52</p>
+  </div>
+</section>
+    
+    
+      <section class="post-paging--item card-container content-padding-primary soft-size--primary soft-style--box">
+  <div class="card-cover" ></div>
+  <div class="card-text">
+    <a href="/posts/202108121532/"><h4 class="card-text--title text-ellipsis">Sql Explain</h4></a>
+    <p class="card-text--row">2021-08-12 15:32</p>
+  </div>
+</section>
+    
+  </div>
+</div>
+  <aside class="widget-info">
+    
+<section class="aside-widget widget-author content-padding-large soft-size--large soft-style--box">
+  <div class="widget-body">
+    <div class="author-box avatar">
+      
+      <img class="author-avatar soft-size--round soft-style--box" src="/favicon.png" alt="strawbreey">
+      
+      <h2 class="author-name text-ellipsis">strawbreey</h2>
+      
+      <p class="author-desc text-ellipsis">strawbreey</p>
+      
+    </div>
+  </div>
+</section>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<section class="aside-widget widget-articles content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Related Posts</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="post-list">
+      
+      
+        <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
+      
+        <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
+      
+        <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
+      
+        <li class="post-item"><a href="/posts/202109261812/">Php Isset</a></li>
+      
+        <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
+      
+        <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-categories content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Categories</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li>
+          <a href="https://note.strawbreey.com/categories/go/">GO</a>
+          <span>8</span>
+        </li>
+      
+    </ul>
+  </div>
+
+  
+</section>
+
+
+    
+
+
+
+
+<section class="aside-widget widget-tags content-padding-large soft-size--large soft-style--box">
+  <h2 class="widget-header">
+    <div class="title">
+      <span>Tags</span>
+    </div>
+  </h2>
+  <div class="widget-body">
+    <div class="tags-list">
+      
+        <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+      
+        <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
+      
+        <a href="https://note.strawbreey.com/tags/go/" data-count="8" class="soft-size--small soft-style--hover soft-style--active">GO</a>
+      
+        <a href="https://note.strawbreey.com/tags/vscode/" data-count="3" class="soft-size--small soft-style--hover soft-style--active">vscode</a>
+      
+        <a href="https://note.strawbreey.com/tags/git/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">git</a>
+      
+        <a href="https://note.strawbreey.com/tags/mysql/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">mysql</a>
+      
+        <a href="https://note.strawbreey.com/tags/webapi/" data-count="2" class="soft-size--small soft-style--hover soft-style--active">webApi</a>
+      
+        <a href="https://note.strawbreey.com/tags/angular/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">angular</a>
+      
+        <a href="https://note.strawbreey.com/tags/devops/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">devops</a>
+      
+        <a href="https://note.strawbreey.com/tags/interview/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">interview</a>
+      
+        <a href="https://note.strawbreey.com/tags/toggle/" data-count="1" class="soft-size--small soft-style--hover soft-style--active">toggle</a>
+      
+    </div>
+  </div>
+
+  
+</section>
+
+  </aside>
+</div>
+  </main><footer class="footer-container layout-block">
+  
+  <div class="social-icons">
+    
+      <a class="soft-size--primary soft-style--box" href="https://github.com/strawbreey" target="_blank" rel="noopener noreferrer">
+          
+        <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+        </svg>
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+      <a class="soft-size--primary soft-style--box" href="1245788423@qq.com" target="_blank" rel="noopener noreferrer">
+        
+
+        
+
+        
+
+        
+
+        
+      </a>
+    
+  </div>
+  
+
+  <div class="colour-bar"></div>
+  
+  
+  <p>© 2021 <a href="https://github.com/miiiku/hugo-theme-kagome">kagome</a>.</p>
+  
+
+  
+
+  <p>
+    Powered by
+    <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+    Theme - 
+    <a href="https://github.com/miiiku/hugo-theme-kagome" target="_blank" rel="noopener noreferrer author">kagome</a>
+  </p>
+
+  <p>
+    <a href="javascript:;" id="theme-light">🌞 light</a>
+    <a href="javascript:;" id="theme-dark">🌛 dark</a>
+    <a href="javascript:;" id="theme-auto">🤖️ auto</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

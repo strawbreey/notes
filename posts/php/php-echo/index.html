@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Echo - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="echo 和 print 的区别 echo 是一个语言结构，使用的时候可以不用加括号，也可以加上括号： echo 或 echo()。 print 同样是一个语言结构，可以使用括号，也可以不使用括号： print 或 print()。 这里就详细说说echo 和 print 的区别
+echo - 可以输出一个或多个字符串 print - 只允许输出一个字符串，返回值总为 1
+输出一个或多个字符串是用用逗号分隔，并不是有.连接符，用到连接符已经是把多个字符变成了一个字符了
+echo()函数 输出一个或多个字符串。实际上它并不是一个函数，所以不必对它使用括号，直接用echo就行。然而，如果您希望向echo()传递一个以上的参数，使用括号将会生成解析错误。echo()函数比print()速度稍快一点。echo输出多个字符串时，用逗号隔开。
+print()函数 输出一个或多个字符串。同echo一样，实际上它并不是一个函数。print有返回值，而echo没有，当其执行失败时返回false,成功则返回true,速度比echo稍慢。只能打印出简单类型变量的值，如：int、string。
+print_r() 能打印出复杂类型变量的值。利用print_r()可以打印出整个数组内容及结构，按照一定格式显示键和元素，事实上，它不仅仅用于打印，而是用于打印关于变量的易于理解的信息。
+var_dump() 判断一个变量的类型与长度，并输出变量的数值，如果变量有值，输出的是变量的值，并返回数据类型。此函数显示关于一个或多个表达式的结构信息，包括表达式的类型和值。数组将递归展开值，通过缩进显示其结构。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-echo/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Echo" />
+<meta property="og:description" content="echo 和 print 的区别 echo 是一个语言结构，使用的时候可以不用加括号，也可以加上括号： echo 或 echo()。 print 同样是一个语言结构，可以使用括号，也可以不使用括号： print 或 print()。 这里就详细说说echo 和 print 的区别
+echo - 可以输出一个或多个字符串 print - 只允许输出一个字符串，返回值总为 1
+输出一个或多个字符串是用用逗号分隔，并不是有.连接符，用到连接符已经是把多个字符变成了一个字符了
+echo()函数 输出一个或多个字符串。实际上它并不是一个函数，所以不必对它使用括号，直接用echo就行。然而，如果您希望向echo()传递一个以上的参数，使用括号将会生成解析错误。echo()函数比print()速度稍快一点。echo输出多个字符串时，用逗号隔开。
+print()函数 输出一个或多个字符串。同echo一样，实际上它并不是一个函数。print有返回值，而echo没有，当其执行失败时返回false,成功则返回true,速度比echo稍慢。只能打印出简单类型变量的值，如：int、string。
+print_r() 能打印出复杂类型变量的值。利用print_r()可以打印出整个数组内容及结构，按照一定格式显示键和元素，事实上，它不仅仅用于打印，而是用于打印关于变量的易于理解的信息。
+var_dump() 判断一个变量的类型与长度，并输出变量的数值，如果变量有值，输出的是变量的值，并返回数据类型。此函数显示关于一个或多个表达式的结构信息，包括表达式的类型和值。数组将递归展开值，通过缩进显示其结构。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-echo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-22T15:54:34+08:00" />
+<meta property="article:modified_time" content="2021-07-22T15:54:34+08:00" />
+
+<meta itemprop="name" content="Php Echo">
+<meta itemprop="description" content="echo 和 print 的区别 echo 是一个语言结构，使用的时候可以不用加括号，也可以加上括号： echo 或 echo()。 print 同样是一个语言结构，可以使用括号，也可以不使用括号： print 或 print()。 这里就详细说说echo 和 print 的区别
+echo - 可以输出一个或多个字符串 print - 只允许输出一个字符串，返回值总为 1
+输出一个或多个字符串是用用逗号分隔，并不是有.连接符，用到连接符已经是把多个字符变成了一个字符了
+echo()函数 输出一个或多个字符串。实际上它并不是一个函数，所以不必对它使用括号，直接用echo就行。然而，如果您希望向echo()传递一个以上的参数，使用括号将会生成解析错误。echo()函数比print()速度稍快一点。echo输出多个字符串时，用逗号隔开。
+print()函数 输出一个或多个字符串。同echo一样，实际上它并不是一个函数。print有返回值，而echo没有，当其执行失败时返回false,成功则返回true,速度比echo稍慢。只能打印出简单类型变量的值，如：int、string。
+print_r() 能打印出复杂类型变量的值。利用print_r()可以打印出整个数组内容及结构，按照一定格式显示键和元素，事实上，它不仅仅用于打印，而是用于打印关于变量的易于理解的信息。
+var_dump() 判断一个变量的类型与长度，并输出变量的数值，如果变量有值，输出的是变量的值，并返回数据类型。此函数显示关于一个或多个表达式的结构信息，包括表达式的类型和值。数组将递归展开值，通过缩进显示其结构。"><meta itemprop="datePublished" content="2021-07-22T15:54:34+08:00" />
+<meta itemprop="dateModified" content="2021-07-22T15:54:34+08:00" />
+<meta itemprop="wordCount" content="34">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Echo"/>
+<meta name="twitter:description" content="echo 和 print 的区别 echo 是一个语言结构，使用的时候可以不用加括号，也可以加上括号： echo 或 echo()。 print 同样是一个语言结构，可以使用括号，也可以不使用括号： print 或 print()。 这里就详细说说echo 和 print 的区别
+echo - 可以输出一个或多个字符串 print - 只允许输出一个字符串，返回值总为 1
+输出一个或多个字符串是用用逗号分隔，并不是有.连接符，用到连接符已经是把多个字符变成了一个字符了
+echo()函数 输出一个或多个字符串。实际上它并不是一个函数，所以不必对它使用括号，直接用echo就行。然而，如果您希望向echo()传递一个以上的参数，使用括号将会生成解析错误。echo()函数比print()速度稍快一点。echo输出多个字符串时，用逗号隔开。
+print()函数 输出一个或多个字符串。同echo一样，实际上它并不是一个函数。print有返回值，而echo没有，当其执行失败时返回false,成功则返回true,速度比echo稍慢。只能打印出简单类型变量的值，如：int、string。
+print_r() 能打印出复杂类型变量的值。利用print_r()可以打印出整个数组内容及结构，按照一定格式显示键和元素，事实上，它不仅仅用于打印，而是用于打印关于变量的易于理解的信息。
+var_dump() 判断一个变量的类型与长度，并输出变量的数值，如果变量有值，输出的是变量的值，并返回数据类型。此函数显示关于一个或多个表达式的结构信息，包括表达式的类型和值。数组将递归展开值，通过缩进显示其结构。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="echo-和-print-的区别">echo 和 print 的区别</h3>
+<p>echo 是一个语言结构，使用的时候可以不用加括号，也可以加上括号： echo 或 echo()。
+print 同样是一个语言结构，可以使用括号，也可以不使用括号： print 或 print()。
+这里就详细说说echo 和 print 的区别</p>
+<p>echo - 可以输出一个或多个字符串
+print - 只允许输出一个字符串，返回值总为 1</p>
+<p>输出一个或多个字符串是用用逗号分隔，并不是有.连接符，用到连接符已经是把多个字符变成了一个字符了</p>
+<h3 id="echo函数">echo()函数</h3>
+<p>输出一个或多个字符串。实际上它并不是一个函数，所以不必对它使用括号，直接用echo就行。然而，如果您希望向echo()传递一个以上的参数，使用括号将会生成解析错误。echo()函数比print()速度稍快一点。echo输出多个字符串时，用逗号隔开。</p>
+<h3 id="print函数">print()函数</h3>
+<p>输出一个或多个字符串。同echo一样，实际上它并不是一个函数。print有返回值，而echo没有，当其执行失败时返回false,成功则返回true,速度比echo稍慢。只能打印出简单类型变量的值，如：int、string。</p>
+<h3 id="print_r">print_r()</h3>
+<p>能打印出复杂类型变量的值。利用print_r()可以打印出整个数组内容及结构，按照一定格式显示键和元素，事实上，它不仅仅用于打印，而是用于打印关于变量的易于理解的信息。</p>
+<h3 id="var_dump">var_dump()</h3>
+<p>判断一个变量的类型与长度，并输出变量的数值，如果变量有值，输出的是变量的值，并返回数据类型。此函数显示关于一个或多个表达式的结构信息，包括表达式的类型和值。数组将递归展开值，通过缩进显示其结构。</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

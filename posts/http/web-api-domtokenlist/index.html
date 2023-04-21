@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Api Domtokenlist - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="DOMTokenList 接口表示一组空格分隔的标记（tokens）。如由 Element.classList、HTMLLinkElement.relList、HTMLAnchorElement.relList 或 HTMLAreaElement.relList 返回的一组值。它和 JavaScript Array 对象一样，索引从 0 开始。DOMTokenList 总是区分大小写（case-sensitive）。
+方法  DOMTokenList.item(index)  根据传入的索引值返回一个值，如果索引值大于等于符号列表的长度（length），则返回 undefined 或 null，在 Gecko 7.0 之前的版本中返回 null。
+ DOMTokenList.contains(token)  如果 DOMTokenList 列表中包括相应的字符串 token，则返回 true，否则返回 false。
+ DOMTokenList.add(token1[, token2[, &amp;hellip;tokenN]])  添加一个或多个标记（token）到 DOMTokenList 列表中。
+ DOMTokenList.remove(token1[, token2[, &amp;hellip;tokenN]])  从 DOMTokenList 列表中移除一个或多个标记（token）。
+ DOMTokenList.replace(oldToken, newToken)  使用 newToken 替换 token 。
+ DOMTokenList.supports(token)  如果传入的 token 是相关属性（attribute）支持的标记，则返回 true 。
+ DOMTokenList.toggle(token [, force])  从 DOMTokenList 字符串中移除标记字串（token），并返回 false。如果传入的字串（token）不存在，则将其添加进去，并返回 true 。force 是一个可选的布尔值，如果传入 true ，且传入的 token 不存在，则将其添加进去并返回 true ，若传入的 token 存在，则直接返回 true ；反之，如果传入 false ，则移除存在的 token ，并返回 false ，如 token 不存在则直接返回 false 。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/http/web-api-domtokenlist/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Web Api Domtokenlist" />
+<meta property="og:description" content="DOMTokenList 接口表示一组空格分隔的标记（tokens）。如由 Element.classList、HTMLLinkElement.relList、HTMLAnchorElement.relList 或 HTMLAreaElement.relList 返回的一组值。它和 JavaScript Array 对象一样，索引从 0 开始。DOMTokenList 总是区分大小写（case-sensitive）。
+方法  DOMTokenList.item(index)  根据传入的索引值返回一个值，如果索引值大于等于符号列表的长度（length），则返回 undefined 或 null，在 Gecko 7.0 之前的版本中返回 null。
+ DOMTokenList.contains(token)  如果 DOMTokenList 列表中包括相应的字符串 token，则返回 true，否则返回 false。
+ DOMTokenList.add(token1[, token2[, &hellip;tokenN]])  添加一个或多个标记（token）到 DOMTokenList 列表中。
+ DOMTokenList.remove(token1[, token2[, &hellip;tokenN]])  从 DOMTokenList 列表中移除一个或多个标记（token）。
+ DOMTokenList.replace(oldToken, newToken)  使用 newToken 替换 token 。
+ DOMTokenList.supports(token)  如果传入的 token 是相关属性（attribute）支持的标记，则返回 true 。
+ DOMTokenList.toggle(token [, force])  从 DOMTokenList 字符串中移除标记字串（token），并返回 false。如果传入的字串（token）不存在，则将其添加进去，并返回 true 。force 是一个可选的布尔值，如果传入 true ，且传入的 token 不存在，则将其添加进去并返回 true ，若传入的 token 存在，则直接返回 true ；反之，如果传入 false ，则移除存在的 token ，并返回 false ，如 token 不存在则直接返回 false 。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/http/web-api-domtokenlist/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-16T19:24:00+08:00" />
+<meta property="article:modified_time" content="2020-11-16T19:24:00+08:00" />
+
+<meta itemprop="name" content="Web Api Domtokenlist">
+<meta itemprop="description" content="DOMTokenList 接口表示一组空格分隔的标记（tokens）。如由 Element.classList、HTMLLinkElement.relList、HTMLAnchorElement.relList 或 HTMLAreaElement.relList 返回的一组值。它和 JavaScript Array 对象一样，索引从 0 开始。DOMTokenList 总是区分大小写（case-sensitive）。
+方法  DOMTokenList.item(index)  根据传入的索引值返回一个值，如果索引值大于等于符号列表的长度（length），则返回 undefined 或 null，在 Gecko 7.0 之前的版本中返回 null。
+ DOMTokenList.contains(token)  如果 DOMTokenList 列表中包括相应的字符串 token，则返回 true，否则返回 false。
+ DOMTokenList.add(token1[, token2[, &hellip;tokenN]])  添加一个或多个标记（token）到 DOMTokenList 列表中。
+ DOMTokenList.remove(token1[, token2[, &hellip;tokenN]])  从 DOMTokenList 列表中移除一个或多个标记（token）。
+ DOMTokenList.replace(oldToken, newToken)  使用 newToken 替换 token 。
+ DOMTokenList.supports(token)  如果传入的 token 是相关属性（attribute）支持的标记，则返回 true 。
+ DOMTokenList.toggle(token [, force])  从 DOMTokenList 字符串中移除标记字串（token），并返回 false。如果传入的字串（token）不存在，则将其添加进去，并返回 true 。force 是一个可选的布尔值，如果传入 true ，且传入的 token 不存在，则将其添加进去并返回 true ，若传入的 token 存在，则直接返回 true ；反之，如果传入 false ，则移除存在的 token ，并返回 false ，如 token 不存在则直接返回 false 。"><meta itemprop="datePublished" content="2020-11-16T19:24:00+08:00" />
+<meta itemprop="dateModified" content="2020-11-16T19:24:00+08:00" />
+<meta itemprop="wordCount" content="134">
+<meta itemprop="keywords" content="webApi," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web Api Domtokenlist"/>
+<meta name="twitter:description" content="DOMTokenList 接口表示一组空格分隔的标记（tokens）。如由 Element.classList、HTMLLinkElement.relList、HTMLAnchorElement.relList 或 HTMLAreaElement.relList 返回的一组值。它和 JavaScript Array 对象一样，索引从 0 开始。DOMTokenList 总是区分大小写（case-sensitive）。
+方法  DOMTokenList.item(index)  根据传入的索引值返回一个值，如果索引值大于等于符号列表的长度（length），则返回 undefined 或 null，在 Gecko 7.0 之前的版本中返回 null。
+ DOMTokenList.contains(token)  如果 DOMTokenList 列表中包括相应的字符串 token，则返回 true，否则返回 false。
+ DOMTokenList.add(token1[, token2[, &hellip;tokenN]])  添加一个或多个标记（token）到 DOMTokenList 列表中。
+ DOMTokenList.remove(token1[, token2[, &hellip;tokenN]])  从 DOMTokenList 列表中移除一个或多个标记（token）。
+ DOMTokenList.replace(oldToken, newToken)  使用 newToken 替换 token 。
+ DOMTokenList.supports(token)  如果传入的 token 是相关属性（attribute）支持的标记，则返回 true 。
+ DOMTokenList.toggle(token [, force])  从 DOMTokenList 字符串中移除标记字串（token），并返回 false。如果传入的字串（token）不存在，则将其添加进去，并返回 true 。force 是一个可选的布尔值，如果传入 true ，且传入的 token 不存在，则将其添加进去并返回 true ，若传入的 token 存在，则直接返回 true ；反之，如果传入 false ，则移除存在的 token ，并返回 false ，如 token 不存在则直接返回 false 。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>DOMTokenList 接口表示一组空格分隔的标记（tokens）。如由 Element.classList、HTMLLinkElement.relList、HTMLAnchorElement.relList 或 HTMLAreaElement.relList 返回的一组值。它和 JavaScript Array 对象一样，索引从 0 开始。DOMTokenList 总是区分大小写（case-sensitive）。</p>
+<h3 id="方法">方法</h3>
+<ul>
+<li>DOMTokenList.item(index)</li>
+</ul>
+<p>根据传入的索引值返回一个值，如果索引值大于等于符号列表的长度（length），则返回 undefined 或 null，在 Gecko 7.0 之前的版本中返回 null。</p>
+<ul>
+<li>DOMTokenList.contains(token)</li>
+</ul>
+<p>如果 DOMTokenList 列表中包括相应的字符串 token，则返回 true，否则返回 false。</p>
+<ul>
+<li>DOMTokenList.add(token1[, token2[, &hellip;tokenN]])</li>
+</ul>
+<p>添加一个或多个标记（token）到 DOMTokenList 列表中。</p>
+<ul>
+<li>DOMTokenList.remove(token1[, token2[, &hellip;tokenN]])</li>
+</ul>
+<p>从 DOMTokenList 列表中移除一个或多个标记（token）。</p>
+<ul>
+<li>DOMTokenList.replace(oldToken, newToken)</li>
+</ul>
+<p>使用 newToken 替换 token 。</p>
+<ul>
+<li>DOMTokenList.supports(token)</li>
+</ul>
+<p>如果传入的 token 是相关属性（attribute）支持的标记，则返回 true 。</p>
+<ul>
+<li>DOMTokenList.toggle(token [, force])</li>
+</ul>
+<p>从 DOMTokenList 字符串中移除标记字串（token），并返回 false。如果传入的字串（token）不存在，则将其添加进去，并返回 true 。force 是一个可选的布尔值，如果传入 true ，且传入的 token 不存在，则将其添加进去并返回 true ，若传入的 token 存在，则直接返回 true ；反之，如果传入 false ，则移除存在的 token ，并返回 false ，如 token 不存在则直接返回 false 。</p>
+<ul>
+<li>DOMTokenList.entries()</li>
+</ul>
+<p>返回一个迭代器（iterator） ，以遍历这个对象中的所有键值对。</p>
+<ul>
+<li>DOMTokenList.forEach(callback [, thisArg])</li>
+</ul>
+<p>为每个 DOMTokenList 中的元素都调用一次传入的 callback 函数 。</p>
+<ul>
+<li>DOMTokenList.keys()</li>
+</ul>
+<p>返回一个迭代器（iterator）以遍历这个对象中所有键值对的键。</p>
+<ul>
+<li>DOMTokenList.values()</li>
+</ul>
+<p>返回一个迭代器（iterator）以遍历这个对象中所有键值对的值。</p>
+<h3 id="example">example：</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// &lt;p class=&#34;a b c&#34;&gt;&lt;/p&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">para</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;p&#34;</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">classes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">para</span>.<span style="color:#a6e22e">classList</span>;
+
+<span style="color:#a6e22e">para</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;d&#34;</span>);
+<span style="color:#75715e">// a b c d
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">para</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`paragraph classList is &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">classes</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>;
+<span style="color:#75715e">// paragraph classList is &#34;a b c d&#34;
+</span></code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

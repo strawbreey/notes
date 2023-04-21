@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js This - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
+this 的值是在代码运行时计算出来的，它取决于代码上下文。
+let user = { name: &amp;#34;John&amp;#34; }; let admin = { name: &amp;#34;Admin&amp;#34; }; function sayHi() { alert( this.name ); } // 在两个对象中使用相同的函数 user.f = sayHi; admin.f = sayHi; // 这两个调用有不同的 this 值 // 函数内部的 &amp;#34;this&amp;#34; 是“点符号前面”的那个对象 user.f(); // John（this == user） admin.f(); // Admin（this == admin）  admin[&amp;#39;f&amp;#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。） 这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-this/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js This" />
+<meta property="og:description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
+this 的值是在代码运行时计算出来的，它取决于代码上下文。
+let user = { name: &#34;John&#34; }; let admin = { name: &#34;Admin&#34; }; function sayHi() { alert( this.name ); } // 在两个对象中使用相同的函数 user.f = sayHi; admin.f = sayHi; // 这两个调用有不同的 this 值 // 函数内部的 &#34;this&#34; 是“点符号前面”的那个对象 user.f(); // John（this == user） admin.f(); // Admin（this == admin）  admin[&#39;f&#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。） 这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-this/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-29T11:15:16+08:00" />
+<meta property="article:modified_time" content="2020-10-29T11:15:16+08:00" />
+
+<meta itemprop="name" content="Js This">
+<meta itemprop="description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
+this 的值是在代码运行时计算出来的，它取决于代码上下文。
+let user = { name: &#34;John&#34; }; let admin = { name: &#34;Admin&#34; }; function sayHi() { alert( this.name ); } // 在两个对象中使用相同的函数 user.f = sayHi; admin.f = sayHi; // 这两个调用有不同的 this 值 // 函数内部的 &#34;this&#34; 是“点符号前面”的那个对象 user.f(); // John（this == user） admin.f(); // Admin（this == admin）  admin[&#39;f&#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。） 这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。"><meta itemprop="datePublished" content="2020-10-29T11:15:16+08:00" />
+<meta itemprop="dateModified" content="2020-10-29T11:15:16+08:00" />
+<meta itemprop="wordCount" content="744">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js This"/>
+<meta name="twitter:description" content="在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。
+this 的值是在代码运行时计算出来的，它取决于代码上下文。
+let user = { name: &#34;John&#34; }; let admin = { name: &#34;Admin&#34; }; function sayHi() { alert( this.name ); } // 在两个对象中使用相同的函数 user.f = sayHi; admin.f = sayHi; // 这两个调用有不同的 this 值 // 函数内部的 &#34;this&#34; 是“点符号前面”的那个对象 user.f(); // John（this == user） admin.f(); // Admin（this == admin）  admin[&#39;f&#39;](); // Admin（使用点符号或方括号语法来访问这个方法，都没有关系。） 这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>在 JavaScript 中，this 关键字与其他大多数编程语言中的不同。JavaScript 中的 this 可以用于任何函数。</p>
+<p>this 的值是在代码运行时计算出来的，它取决于代码上下文。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span> };
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">admin</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Admin&#34;</span> };
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayHi</span>() {
+  <span style="color:#a6e22e">alert</span>( <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> );
+}
+
+<span style="color:#75715e">// 在两个对象中使用相同的函数
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sayHi</span>;
+<span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sayHi</span>;
+
+<span style="color:#75715e">// 这两个调用有不同的 this 值
+</span><span style="color:#75715e">// 函数内部的 &#34;this&#34; 是“点符号前面”的那个对象
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">f</span>(); <span style="color:#75715e">// John（this == user）
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">f</span>(); <span style="color:#75715e">// Admin（this == admin）
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">admin</span>[<span style="color:#e6db74">&#39;f&#39;</span>](); <span style="color:#75715e">// Admin（使用点符号或方括号语法来访问这个方法，都没有关系。）
+</span></code></pre></div><p>这个规则很简单：如果 obj.f() 被调用了，则 this 在 f 函数调用期间是 obj。所以在上面的例子中 this 先是 user，之后是 admin。</p>
+<p>在没有对象的情况下调用：this == undefined</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayHi</span>() {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>);
+}
+
+<span style="color:#a6e22e">sayHi</span>(); <span style="color:#75715e">// undefined
+</span></code></pre></div><p>在这种情况下，严格模式下的 this 值为 undefined。如果我们尝试访问 this.name，将会报错。</p>
+<p>在非严格模式的情况下，this 将会是 全局对象（浏览器中的 window，我们稍后会在 全局对象 一章中学习它）。这是一个历史行为，&ldquo;use strict&rdquo; 已经将其修复了。</p>
+<p>如果你经常使用其他的编程语言，那么你可能已经习惯了“绑定 this”的概念，即在对象中定义的方法总是有指向该对象的 this。</p>
+<p>在 JavaScript 中，this 是“自由”的，它的值是在调用时计算出来的，它的值并不取决于方法声明的位置，而是取决于在“点符号前”的是什么对象</p>
+<p>在运行时对 this 求值的这个概念既有优点也有缺点。一方面，函数可以被重用于不同的对象。另一方面，更大的灵活性造成了更大的出错的可能。</p>
+<h4 id="箭头函数没有自己的-this">箭头函数没有自己的 “this”</h4>
+<p>箭头函数有些特别：它们没有自己的 this。如果我们在这样的函数中引用 this，this 值取决于外部“正常的”函数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">firstName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ilya&#34;</span>,
+  <span style="color:#a6e22e">sayHi</span> () {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span>);  <span style="color:#75715e">//Ilya
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arrow</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span>); <span style="color:#75715e">// Ilya
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">arrow</span>();
+  }
+};
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">firstName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ilya&#34;</span>,
+  <span style="color:#a6e22e">sayHi</span><span style="color:#f92672">:</span> () =&gt;{
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span>);  <span style="color:#75715e">// undefined 严格模式下, this 指向为undefined, 否则为上下文
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arrow</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span>); <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">arrow</span>();
+  }
+};
+
+</code></pre></div><h3 id="总结">总结</h3>
+<ul>
+<li>存储在对象属性中的函数被称为“方法”。</li>
+<li>方法允许对象进行像 object.doSomething() 这样的“操作”。</li>
+<li>方法可以将对象引用为 this。</li>
+</ul>
+<p>this 的值是在程序运行时得到的。</p>
+<ul>
+<li>一个函数在声明时，可能就使用了 this，但是这个 this 只有在函数被调用时才会有值。</li>
+<li>可以在对象之间复制函数。</li>
+<li>以“方法”的语法调用函数时：object.method()，调用过程中的 this 值是 object。</li>
+</ul>
+<p>请注意箭头函数有些特别：它们没有 this。在箭头函数内部访问到的 this 都是从外部获取的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">identify</span>() {
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">toUpperCase</span>();
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">speak</span>() {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, I&#39;m &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">identify</span>.<span style="color:#a6e22e">call</span>( <span style="color:#66d9ef">this</span> );
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">greeting</span> );
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">me</span> <span style="color:#f92672">=</span> {
+	<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Kyle&#34;</span>
+};
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">you</span> <span style="color:#f92672">=</span> {
+	<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Reader&#34;</span>
+};
+
+<span style="color:#a6e22e">identify</span>.<span style="color:#a6e22e">call</span>( <span style="color:#a6e22e">me</span> ); <span style="color:#75715e">// KYLE
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">identify</span>.<span style="color:#a6e22e">call</span>( <span style="color:#a6e22e">you</span> ); <span style="color:#75715e">// READER
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">speak</span>.<span style="color:#a6e22e">call</span>( <span style="color:#a6e22e">me</span> ); <span style="color:#75715e">// Hello, I&#39;m KYLE
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">speak</span>.<span style="color:#a6e22e">call</span>( <span style="color:#a6e22e">you</span> ); <span style="color:#75715e">// Hello, I&#39;m READER
+</span></code></pre></div><p>与使用 this 相反地，你可以明确地将环境对象传递给 identify() 和 speak()。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">identify</span>(<span style="color:#a6e22e">context</span>) {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">toUpperCase</span>();
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">speak</span>(<span style="color:#a6e22e">context</span>) {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, I&#39;m &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">identify</span>( <span style="color:#a6e22e">context</span> );
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">greeting</span> );
+}
+
+<span style="color:#a6e22e">identify</span>( <span style="color:#a6e22e">you</span> ); <span style="color:#75715e">// READER
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">speak</span>( <span style="color:#a6e22e">me</span> ); <span style="color:#75715e">// Hello, I&#39;m KYLE
+</span></code></pre></div><p>然而，this 机制提供了更优雅的方式来隐含地“传递”一个对象引用，导致更加干净的API设计和更容易的复用。</p>
+<p>你的使用模式越复杂，你就会越清晰地看到：将执行环境作为一个明确参数传递，通常比传递 this 执行环境要乱。当我们探索对象和原型时，你将会看到一组可以自动引用恰当执行环境对象的函数是多么有用。</p>
+<h3 id="this-指向">this 指向</h3>
+<ul>
+<li>第一种常见的倾向是认为 this 指向函数自己</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">num</span>) {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#e6db74">&#34;foo: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">num</span> );
+	<span style="color:#75715e">// 追踪 `foo` 被调用了多少次
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+}
+
+<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>;
+
+<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>) {
+		<span style="color:#a6e22e">foo</span>( <span style="color:#a6e22e">i</span> );
+	}
+}
+<span style="color:#75715e">// foo: 6
+</span><span style="color:#75715e">// foo: 7
+</span><span style="color:#75715e">// foo: 8
+</span><span style="color:#75715e">// foo: 9
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// `foo` 被调用了多少次？
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">count</span> ); <span style="color:#75715e">// 0 -- 这是怎么回事……？
+</span></code></pre></div><p>当代码执行 foo.count = 0 时，它确实向函数对象 foo 添加了一个 count 属性。但是对于函数内部的 this.count 引用，this 其实 根本就不 指向那个函数对象，即便属性名称一样，但根对象也不同，因而产生了混淆。</p>
+<p>强制this指向</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">num</span>) {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#e6db74">&#34;foo: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">num</span> );
+
+	<span style="color:#75715e">// 追踪 `foo` 被调用了多少次
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 注意：由于 `foo` 的被调用方式（见下方），`this` 现在确实是 `foo`
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+}
+
+<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>;
+
+<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>) {
+		<span style="color:#75715e">// 使用 `call(..)`，我们可以保证 `this` 指向函数对象(`foo`)
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>( <span style="color:#a6e22e">foo</span>, <span style="color:#a6e22e">i</span> );
+	}
+}
+<span style="color:#75715e">// foo: 6
+</span><span style="color:#75715e">// foo: 7
+</span><span style="color:#75715e">// foo: 8
+</span><span style="color:#75715e">// foo: 9
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// `foo` 被调用了多少次？
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">count</span> ); <span style="color:#75715e">// 4
+</span></code></pre></div><p>this 作用域</p>
+<p>明确地说，this 不会以任何方式指向函数的 词法作用域。作用域好像是一个将所有可用标识符作为属性的对象，这从内部来说是对的。但是 JavasScript 代码不能访问作用域“对象”。它是 引擎 的内部实现。</p>
+<pre><code>function foo() {
+	var a = 2;
+	this.bar();
+}
+
+function bar() {
+	console.log( this.a );
+}
+
+foo(); //undefined
+</code></pre><h3 id="调用点和调用栈">调用点和调用栈</h3>
+<p>为了理解 this 绑定，我们不得不理解调用点(一个函数是在哪里被调用的)：函数在代码中被调用的位置（不是被声明的位置）。我们必须考察调用点来回答这个问题：这个 this 指向什么？</p>
+<p>考虑 调用栈（call-stack） （使我们到达当前执行位置而被调用的所有方法的堆栈）是十分重要的。我们关心的调用点就位于当前执行中的函数 之前 的调用。</p>
+<p>我们来展示一下调用栈和调用点：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">baz</span>() {
+    <span style="color:#75715e">// 调用栈是: `baz`
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 我们的调用点是 global scope（全局作用域）
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#e6db74">&#34;baz&#34;</span> );
+    <span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// &lt;-- `bar` 的调用点
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bar</span>() {
+    <span style="color:#75715e">// 调用栈是: `baz` -&gt; `bar`
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 我们的调用点位于 `baz`
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#e6db74">&#34;bar&#34;</span> );
+    <span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// &lt;-- `foo` 的 call-site
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+    <span style="color:#75715e">// 调用栈是: `baz` -&gt; `bar` -&gt; `foo`
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 我们的调用点位于 `bar`
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#e6db74">&#34;foo&#34;</span> );
+}
+
+<span style="color:#a6e22e">baz</span>(); <span style="color:#75715e">// &lt;-- `baz` 的调用点
+</span></code></pre></div><p>你可以通过按顺序观察函数的调用链在你的大脑中建立调用栈的视图，就像我们在上面代码段中的注释那样。但是这很痛苦而且易错。另一种观察调用栈的方式是使用你的浏览器的调试工具。大多数现代的桌面浏览器都内建开发者工具，其中就包含 JS 调试器。在上面的代码段中，你可以在调试工具中为 foo() 函数的第一行设置一个断点，或者简单的在这第一行上插入一个 debugger 语句。当你运行这个网页时，调试工具将会停止在这个位置，并且向你展示一个到达这一行之前所有被调用过的函数的列表，这就是你的调用栈。所以，如果你想调查this 绑定，可以使用开发者工具取得调用栈，之后从上向下找到第二个记录，那就是你真正的调用点。</p>
+<h3 id="this-绑定方式">this 绑定方式</h3>
+<h4 id="默认绑定default-binding">默认绑定（Default Binding）</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> );
+}
+
+<span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// 2
+</span><span style="color:#75715e">// 非严格模式下, this 指向全局
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#34;use strict&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> );
+}
+
+<span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// TypeError: `this` is `undefined`
+</span></code></pre></div><h4 id="隐含绑定implicit-binding">隐含绑定（Implicit Binding）</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> );
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+	<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+	<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>
+};
+
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// 2
+</span></code></pre></div><h4 id="隐含丢失implicitly-lost">隐含丢失（Implicitly Lost）</h4>
+<p>this 绑定最常让人沮丧的事情之一，就是当一个 隐含绑定 丢失了它的绑定，这通常意味着它会退回到 默认绑定， 根据 strict mode 的状态，其结果不是全局对象就是 undefined。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> );
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+	<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+	<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>
+};
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// 函数引用！
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;oops, global&#34;</span>; <span style="color:#75715e">// `a` 也是一个全局对象的属性
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// &#34;oops, global&#34;
+</span></code></pre></div><h4 id="明确绑定explicit-binding">明确绑定（Explicit Binding）</h4>
+<p>函数拥有 call(..) 和 apply(..) 方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> );
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+	<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+};
+
+<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>( <span style="color:#a6e22e">obj</span> ); <span style="color:#75715e">// 2
+</span></code></pre></div><h4 id="硬绑定hard-binding">硬绑定（Hard Binding)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> );
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+	<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+};
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+	<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>( <span style="color:#a6e22e">obj</span> );
+};
+
+<span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">setTimeout</span>( <span style="color:#a6e22e">bar</span>, <span style="color:#ae81ff">100</span> ); <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// `bar` 将 `foo` 的 `this` 硬绑定到 `obj`
+</span><span style="color:#75715e">// 所以它不可以被覆盖
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">call</span>( window ); <span style="color:#75715e">// 2
+</span></code></pre></div><p>创建了一个函数 bar()，在它的内部手动调用 foo.call(obj)，由此强制 this 绑定到 obj 并调用 foo。无论你过后怎样调用函数 bar，它总是手动使用 obj 调用 foo。这种绑定即明确又坚定，所以我们称之为 硬绑定（hard binding）</p>
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li>[你不懂JS: this 与对象原型] (<a href="https://github.com/getify/You-Dont-Know-JS/blob/1ed-zh-CN/this%20%26%20object%20prototypes/ch2.md">https://github.com/getify/You-Dont-Know-JS/blob/1ed-zh-CN/this%20%26%20object%20prototypes/ch2.md</a>)</li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

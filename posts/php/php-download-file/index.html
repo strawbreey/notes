@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Download File - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="// 1. 方案一 // file — 把整个文件读入一个数组中 $fp=file($url); foreach ($fp as $fileLine) { echo $fileLine; } // 2. 方案二 // file_get_contents — 将整个文件读入一个字符串 echo file_get_content($url) // 3. 方案三 // 注意fopen读取文件需要配合使用fgets和fclose函数。 // 可以使用 &amp;#39;b&amp;#39; 来强制使用二进制模式，这样就不会转换数据。要使用这些标记，要么用 &amp;#39;b&amp;#39; 或者用 &amp;#39;t&amp;#39; 作为 mode 参数的最后一个字符。 $fp = fopen($file_name, &amp;#39;rb&amp;#39;); while (!feof($fp)) { // fgets — 从文件指针中读取一行  // 从 handle 指向的文件中读取一行并返回长度最多为 length - 1 字节的字符串。碰到换行符（包括在返回值中）、EOF 或者已经读取了 length - 1 字节后停止（看先碰到那一种情况）。  // 如果没有指定 length，则默认为 1K，或者说 1024 字节。  // 16384 字节 16k  $buffer = fgets($fp, 16384); echo $buffer; } fclose($fp); // 4." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-download-file/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Download File" />
+<meta property="og:description" content="// 1. 方案一 // file — 把整个文件读入一个数组中 $fp=file($url); foreach ($fp as $fileLine) { echo $fileLine; } // 2. 方案二 // file_get_contents — 将整个文件读入一个字符串 echo file_get_content($url) // 3. 方案三 // 注意fopen读取文件需要配合使用fgets和fclose函数。 // 可以使用 &#39;b&#39; 来强制使用二进制模式，这样就不会转换数据。要使用这些标记，要么用 &#39;b&#39; 或者用 &#39;t&#39; 作为 mode 参数的最后一个字符。 $fp = fopen($file_name, &#39;rb&#39;); while (!feof($fp)) { // fgets — 从文件指针中读取一行  // 从 handle 指向的文件中读取一行并返回长度最多为 length - 1 字节的字符串。碰到换行符（包括在返回值中）、EOF 或者已经读取了 length - 1 字节后停止（看先碰到那一种情况）。  // 如果没有指定 length，则默认为 1K，或者说 1024 字节。  // 16384 字节 16k  $buffer = fgets($fp, 16384); echo $buffer; } fclose($fp); // 4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-download-file/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-16T15:24:48+08:00" />
+<meta property="article:modified_time" content="2020-12-16T15:24:48+08:00" />
+
+<meta itemprop="name" content="Php Download File">
+<meta itemprop="description" content="// 1. 方案一 // file — 把整个文件读入一个数组中 $fp=file($url); foreach ($fp as $fileLine) { echo $fileLine; } // 2. 方案二 // file_get_contents — 将整个文件读入一个字符串 echo file_get_content($url) // 3. 方案三 // 注意fopen读取文件需要配合使用fgets和fclose函数。 // 可以使用 &#39;b&#39; 来强制使用二进制模式，这样就不会转换数据。要使用这些标记，要么用 &#39;b&#39; 或者用 &#39;t&#39; 作为 mode 参数的最后一个字符。 $fp = fopen($file_name, &#39;rb&#39;); while (!feof($fp)) { // fgets — 从文件指针中读取一行  // 从 handle 指向的文件中读取一行并返回长度最多为 length - 1 字节的字符串。碰到换行符（包括在返回值中）、EOF 或者已经读取了 length - 1 字节后停止（看先碰到那一种情况）。  // 如果没有指定 length，则默认为 1K，或者说 1024 字节。  // 16384 字节 16k  $buffer = fgets($fp, 16384); echo $buffer; } fclose($fp); // 4."><meta itemprop="datePublished" content="2020-12-16T15:24:48+08:00" />
+<meta itemprop="dateModified" content="2020-12-16T15:24:48+08:00" />
+<meta itemprop="wordCount" content="202">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Download File"/>
+<meta name="twitter:description" content="// 1. 方案一 // file — 把整个文件读入一个数组中 $fp=file($url); foreach ($fp as $fileLine) { echo $fileLine; } // 2. 方案二 // file_get_contents — 将整个文件读入一个字符串 echo file_get_content($url) // 3. 方案三 // 注意fopen读取文件需要配合使用fgets和fclose函数。 // 可以使用 &#39;b&#39; 来强制使用二进制模式，这样就不会转换数据。要使用这些标记，要么用 &#39;b&#39; 或者用 &#39;t&#39; 作为 mode 参数的最后一个字符。 $fp = fopen($file_name, &#39;rb&#39;); while (!feof($fp)) { // fgets — 从文件指针中读取一行  // 从 handle 指向的文件中读取一行并返回长度最多为 length - 1 字节的字符串。碰到换行符（包括在返回值中）、EOF 或者已经读取了 length - 1 字节后停止（看先碰到那一种情况）。  // 如果没有指定 length，则默认为 1K，或者说 1024 字节。  // 16384 字节 16k  $buffer = fgets($fp, 16384); echo $buffer; } fclose($fp); // 4."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 1. 方案一
+</span><span style="color:#75715e">// file — 把整个文件读入一个数组中
+</span><span style="color:#75715e"></span>$fp<span style="color:#f92672">=</span><span style="color:#a6e22e">file</span>($url);
+
+<span style="color:#66d9ef">foreach</span> ($fp <span style="color:#66d9ef">as</span> $fileLine) {
+  <span style="color:#66d9ef">echo</span> $fileLine;
+}
+
+<span style="color:#75715e">// 2. 方案二
+</span><span style="color:#75715e">// file_get_contents — 将整个文件读入一个字符串
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">file_get_content</span>($url)
+
+<span style="color:#75715e">// 3. 方案三
+</span><span style="color:#75715e">// 注意fopen读取文件需要配合使用fgets和fclose函数。
+</span><span style="color:#75715e">// 可以使用 &#39;b&#39; 来强制使用二进制模式，这样就不会转换数据。要使用这些标记，要么用 &#39;b&#39; 或者用 &#39;t&#39; 作为 mode 参数的最后一个字符。
+</span><span style="color:#75715e"></span>$fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($file_name, <span style="color:#e6db74">&#39;rb&#39;</span>);
+<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">feof</span>($fp)) {
+  <span style="color:#75715e">// fgets — 从文件指针中读取一行
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 从 handle 指向的文件中读取一行并返回长度最多为 length - 1 字节的字符串。碰到换行符（包括在返回值中）、EOF 或者已经读取了 length - 1 字节后停止（看先碰到那一种情况）。
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 如果没有指定 length，则默认为 1K，或者说 1024 字节。
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 16384 字节 16k
+</span><span style="color:#75715e"></span>  $buffer <span style="color:#f92672">=</span> <span style="color:#a6e22e">fgets</span>($fp, <span style="color:#ae81ff">16384</span>);
+  <span style="color:#66d9ef">echo</span> $buffer;
+}
+<span style="color:#a6e22e">fclose</span>($fp);
+
+<span style="color:#75715e">// 4. 方案四
+</span><span style="color:#75715e"></span>$file <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($file_path, <span style="color:#e6db74">&#39;rb&#39;</span>);
+
+<span style="color:#75715e">//打开缓冲区
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ob_start</span>();
+
+<span style="color:#75715e">// 如果设置为 true，则忽略与用户的断开，如果设置为 false，会导致脚本停止运行。
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ignore_user_abort</span>(<span style="color:#66d9ef">TRUE</span>);
+
+<span style="color:#75715e">// Send data in 16kb blocks
+</span><span style="color:#75715e"></span>$block <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">16</span>;
+
+<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">feof</span>($file))<span style="color:#75715e">//AND ($pos = ftell($file)) &lt;= $end
+</span><span style="color:#75715e"></span>{
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">connection_aborted</span>()) {
+        <span style="color:#66d9ef">break</span>;
+    }
+    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">fread</span>($file, $block);
+    <span style="color:#a6e22e">ob_flush</span>();
+    <span style="color:#a6e22e">flush</span>();
+}
+<span style="color:#a6e22e">ob_flush</span>();
+<span style="color:#a6e22e">flush</span>();
+<span style="color:#75715e">// 关闭缓冲区
+</span><span style="color:#75715e">// 清空（擦除）缓冲区并关闭输出缓冲
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fclose</span>($file);
+<span style="color:#a6e22e">ob_end_clean</span>();
+</code></pre></div><p>通过上面两个例子的对比，可以看出使用file_get_contents()打开URL，也许是更多人的选择，因为其比fopen()更简单便捷。</p>
+<p>不过，如果是读取比较大的资源，则是用fopen()比较合适。</p>
+<h3 id="fread-和-fget-的区别">fread 和 fget 的区别</h3>
+<h3 id="fread-和-fget-的区别-1">fread 和 fget 的区别</h3>
+<h3 id="fread-和-fget-的区别-2">fread 和 fget 的区别</h3>
+<h3 id="fread-和-fget-的区别-3">fread 和 fget 的区别</h3>
+<h3 id="获取url的后缀">获取url的后缀</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//获取要下载的图片的MIME信息
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getMime</span>($url) {
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(jpg|jpeg)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;image/jpeg&#34;</span>;
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(gif)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;image/gif&#34;</span>;
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(png)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;image/png&#34;</span>;
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(bmp)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;image/bmp&#34;</span>;
+  <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;err&#34;</span>;
+}
+
+<span style="color:#75715e">//获取要下载的图片后缀名
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getExt</span>($url) {
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(jpg|jpeg)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;jpg&#34;</span>;
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(gif)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;gif&#34;</span>;
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(png)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;png&#34;</span>;
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/\.(bmp)$/&#34;</span>,$url))
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;bmp&#34;</span>;
+  <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;err&#34;</span>;
+}
+</code></pre></div><h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://www.php.net/manual/zh/function.file.php">file</a></li>
+<li><a href="https://www.php.net/manual/zh/function.file-get-contents.php">file_get_contents</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

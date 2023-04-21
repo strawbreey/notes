@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Urlencode - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="urlencode 根据官方文档：
+string urlencode(string $str ) 此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号%后跟两位十六进制数，空格则编码为加号&#43;。
+此编码与 WWW 表单 POST 数据的编码方式是一样的，同时与 application/x-www-form-urlencoded 的媒体类型编码方式一样。
+由于历史原因，此编码在将空格编码为加号（&#43;）方面与RFC1738 编码不同。
+解决方法：
+使用rawurlencode进行编码
+string rawurlencode(string $str ) 根据 RFC 3986编码指定的字符。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号（%）后跟两位十六进制数。这是在RFC 3986 中描述的编码，是为了保护原义字符以免其被解释为特殊的URL定界符，同时保护 URL格式以免其被传输媒体（像一些邮件系统）使用字符转换时弄乱。
+特殊字符 项目中有一个接口是用GET方法接收参数的，测试的时候发现当URL的参数中出现 &#43; 号的时候，传到后端 &#43; 号全都变成了空格了。 然后从网上找到了原因：URL参数中是不能出现&#43; % # &amp;amp; = ? /等特殊字符的，因为这些字符在URL中有默认的含义，比如&amp;amp;在URL中表示参数间的分隔符，如果不将&amp;amp;转义而直接放在GET请求的参数里，后端的Tomcat就会以这个&amp;amp;为分隔符将参数拆分掉。 如果要传递这些特殊字符给后端，需要将它们转义。转码的格式为：%加字符的ASCII码，即一个百分号%，后面跟对应字符的ASCII（16进制）码值。例如 &#43;号的编码值是&amp;quot;%2B&amp;quot;。
+下表中列出了一些URL特殊符号及编码：
+特殊字符 在URL中的默认含义 转义码# 表示书签 %23&amp;amp; URL 中指定的参数间的分隔符 %26% 指定特殊字符 %25= URL 中指定参数的值	%3D&#43; URL 中&#43;号表示空格 %2B空格 %20/ 分隔目录和子目录 %2F?" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-urlencode/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Urlencode" />
+<meta property="og:description" content="urlencode 根据官方文档：
+string urlencode(string $str ) 此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号%后跟两位十六进制数，空格则编码为加号&#43;。
+此编码与 WWW 表单 POST 数据的编码方式是一样的，同时与 application/x-www-form-urlencoded 的媒体类型编码方式一样。
+由于历史原因，此编码在将空格编码为加号（&#43;）方面与RFC1738 编码不同。
+解决方法：
+使用rawurlencode进行编码
+string rawurlencode(string $str ) 根据 RFC 3986编码指定的字符。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号（%）后跟两位十六进制数。这是在RFC 3986 中描述的编码，是为了保护原义字符以免其被解释为特殊的URL定界符，同时保护 URL格式以免其被传输媒体（像一些邮件系统）使用字符转换时弄乱。
+特殊字符 项目中有一个接口是用GET方法接收参数的，测试的时候发现当URL的参数中出现 &#43; 号的时候，传到后端 &#43; 号全都变成了空格了。 然后从网上找到了原因：URL参数中是不能出现&#43; % # &amp; = ? /等特殊字符的，因为这些字符在URL中有默认的含义，比如&amp;在URL中表示参数间的分隔符，如果不将&amp;转义而直接放在GET请求的参数里，后端的Tomcat就会以这个&amp;为分隔符将参数拆分掉。 如果要传递这些特殊字符给后端，需要将它们转义。转码的格式为：%加字符的ASCII码，即一个百分号%，后面跟对应字符的ASCII（16进制）码值。例如 &#43;号的编码值是&quot;%2B&quot;。
+下表中列出了一些URL特殊符号及编码：
+特殊字符 在URL中的默认含义 转义码# 表示书签 %23&amp; URL 中指定的参数间的分隔符 %26% 指定特殊字符 %25= URL 中指定参数的值	%3D&#43; URL 中&#43;号表示空格 %2B空格 %20/ 分隔目录和子目录 %2F?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-urlencode/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-23T15:42:26+08:00" />
+<meta property="article:modified_time" content="2021-08-23T15:42:26+08:00" />
+
+<meta itemprop="name" content="Php Urlencode">
+<meta itemprop="description" content="urlencode 根据官方文档：
+string urlencode(string $str ) 此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号%后跟两位十六进制数，空格则编码为加号&#43;。
+此编码与 WWW 表单 POST 数据的编码方式是一样的，同时与 application/x-www-form-urlencoded 的媒体类型编码方式一样。
+由于历史原因，此编码在将空格编码为加号（&#43;）方面与RFC1738 编码不同。
+解决方法：
+使用rawurlencode进行编码
+string rawurlencode(string $str ) 根据 RFC 3986编码指定的字符。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号（%）后跟两位十六进制数。这是在RFC 3986 中描述的编码，是为了保护原义字符以免其被解释为特殊的URL定界符，同时保护 URL格式以免其被传输媒体（像一些邮件系统）使用字符转换时弄乱。
+特殊字符 项目中有一个接口是用GET方法接收参数的，测试的时候发现当URL的参数中出现 &#43; 号的时候，传到后端 &#43; 号全都变成了空格了。 然后从网上找到了原因：URL参数中是不能出现&#43; % # &amp; = ? /等特殊字符的，因为这些字符在URL中有默认的含义，比如&amp;在URL中表示参数间的分隔符，如果不将&amp;转义而直接放在GET请求的参数里，后端的Tomcat就会以这个&amp;为分隔符将参数拆分掉。 如果要传递这些特殊字符给后端，需要将它们转义。转码的格式为：%加字符的ASCII码，即一个百分号%，后面跟对应字符的ASCII（16进制）码值。例如 &#43;号的编码值是&quot;%2B&quot;。
+下表中列出了一些URL特殊符号及编码：
+特殊字符 在URL中的默认含义 转义码# 表示书签 %23&amp; URL 中指定的参数间的分隔符 %26% 指定特殊字符 %25= URL 中指定参数的值	%3D&#43; URL 中&#43;号表示空格 %2B空格 %20/ 分隔目录和子目录 %2F?"><meta itemprop="datePublished" content="2021-08-23T15:42:26+08:00" />
+<meta itemprop="dateModified" content="2021-08-23T15:42:26+08:00" />
+<meta itemprop="wordCount" content="83">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Urlencode"/>
+<meta name="twitter:description" content="urlencode 根据官方文档：
+string urlencode(string $str ) 此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号%后跟两位十六进制数，空格则编码为加号&#43;。
+此编码与 WWW 表单 POST 数据的编码方式是一样的，同时与 application/x-www-form-urlencoded 的媒体类型编码方式一样。
+由于历史原因，此编码在将空格编码为加号（&#43;）方面与RFC1738 编码不同。
+解决方法：
+使用rawurlencode进行编码
+string rawurlencode(string $str ) 根据 RFC 3986编码指定的字符。
+返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号（%）后跟两位十六进制数。这是在RFC 3986 中描述的编码，是为了保护原义字符以免其被解释为特殊的URL定界符，同时保护 URL格式以免其被传输媒体（像一些邮件系统）使用字符转换时弄乱。
+特殊字符 项目中有一个接口是用GET方法接收参数的，测试的时候发现当URL的参数中出现 &#43; 号的时候，传到后端 &#43; 号全都变成了空格了。 然后从网上找到了原因：URL参数中是不能出现&#43; % # &amp; = ? /等特殊字符的，因为这些字符在URL中有默认的含义，比如&amp;在URL中表示参数间的分隔符，如果不将&amp;转义而直接放在GET请求的参数里，后端的Tomcat就会以这个&amp;为分隔符将参数拆分掉。 如果要传递这些特殊字符给后端，需要将它们转义。转码的格式为：%加字符的ASCII码，即一个百分号%，后面跟对应字符的ASCII（16进制）码值。例如 &#43;号的编码值是&quot;%2B&quot;。
+下表中列出了一些URL特殊符号及编码：
+特殊字符 在URL中的默认含义 转义码# 表示书签 %23&amp; URL 中指定的参数间的分隔符 %26% 指定特殊字符 %25= URL 中指定参数的值	%3D&#43; URL 中&#43;号表示空格 %2B空格 %20/ 分隔目录和子目录 %2F?"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="urlencode">urlencode</h3>
+<p>根据官方文档：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">urlencode</span>(<span style="color:#a6e22e">string</span>  $str )
+</code></pre></div><p>此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。</p>
+<p>返回字符串，此字符串中除了<code>-_.</code> 之外的所有非字母数字字符都将被替换成百分号<code>%</code>后跟两位十六进制数，空格则编码为加号<code>+</code>。</p>
+<p>此编码与 WWW 表单 POST 数据的编码方式是一样的，同时与 application/x-www-form-urlencoded 的媒体类型编码方式一样。</p>
+<p>由于历史原因，此编码在将空格编码为加号（+）方面与RFC1738 编码不同。</p>
+<p>解决方法：</p>
+<p>使用rawurlencode进行编码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">rawurlencode</span>(<span style="color:#a6e22e">string</span>  $str )
+</code></pre></div><p>根据 RFC 3986编码指定的字符。</p>
+<p>返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号（%）后跟两位十六进制数。这是在RFC 3986 中描述的编码，是为了保护原义字符以免其被解释为特殊的URL定界符，同时保护 URL格式以免其被传输媒体（像一些邮件系统）使用字符转换时弄乱。</p>
+<h3 id="特殊字符">特殊字符</h3>
+<p>项目中有一个接口是用GET方法接收参数的，测试的时候发现当URL的参数中出现 + 号的时候，传到后端 + 号全都变成了空格了。
+然后从网上找到了原因：URL参数中是不能出现+ % # &amp; = ? /等特殊字符的，因为这些字符在URL中有默认的含义，比如&amp;在URL中表示参数间的分隔符，如果不将&amp;转义而直接放在GET请求的参数里，后端的Tomcat就会以这个&amp;为分隔符将参数拆分掉。
+如果要传递这些特殊字符给后端，需要将它们转义。转码的格式为：%加字符的ASCII码，即一个百分号%，后面跟对应字符的ASCII（16进制）码值。例如 +号的编码值是&quot;%2B&quot;。</p>
+<p>下表中列出了一些URL特殊符号及编码：</p>
+<pre><code>特殊字符             在URL中的默认含义               转义码
+#                   表示书签                        %23
+&amp;                   URL 中指定的参数间的分隔符       %26
+%                   指定特殊字符                    %25
+=                   URL 中指定参数的值	            %3D
++                   URL 中+号表示空格               %2B
+空格                                               %20
+/                   分隔目录和子目录                %2F
+?                   分隔实际的 URL 和参数           %3F
+
+</code></pre><h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://www.php.net/manual/zh/function.urlencode.php">https://www.php.net/manual/zh/function.urlencode.php</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

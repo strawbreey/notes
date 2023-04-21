@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Yii Run Applications - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
+一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/yii/yii-run-applications/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Yii Run Applications" />
+<meta property="og:description" content="应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
+一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/yii/yii-run-applications/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-15T15:22:56+08:00" />
+<meta property="article:modified_time" content="2020-09-15T15:22:56+08:00" />
+
+<meta itemprop="name" content="Yii Run Applications">
+<meta itemprop="description" content="应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
+一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。"><meta itemprop="datePublished" content="2020-09-15T15:22:56+08:00" />
+<meta itemprop="dateModified" content="2020-09-15T15:22:56+08:00" />
+<meta itemprop="wordCount" content="182">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Yii Run Applications"/>
+<meta name="twitter:description" content="应用结构 basic/ 应用根目录composer.json Composer 配置文件, 描述包信息config/ 包含应用配置及其它配置console.php 控制台应用配置信息应用配置信息配置信息web.php Web 应用配置信息配置信息commands/ 包含控制台命令类controllers/ 包含控制器类控制器类models/ 包含模型类runtime/ 包含vendor/ 包含已经安装的views/ 包含视图文件视图文件web/ Web 应用根目录assets/ 包含index.php 应用入口文件入口文件yii Yii 控制台命令执行脚本命令执行脚本执行脚本一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。
+一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
+请求生命周期  用户向入口脚本 web/index.php 发起请求。 入口脚本加载应用配置并创建一个应用 实例去处理请求。 应用通过请求组件解析请求的 路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤器都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。  入口脚本 入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="应用结构">应用结构</h3>
+<pre><code class="language-menu" data-lang="menu">basic/                  应用根目录
+    composer.json       Composer 配置文件, 描述包信息
+    config/             包含应用配置及其它配置
+        console.php     控制台应用配置信息应用配置信息配置信息
+        web.php         Web 应用配置信息配置信息
+    commands/           包含控制台命令类
+    controllers/        包含控制器类控制器类
+    models/             包含模型类
+    runtime/            包含
+    vendor/             包含已经安装的
+    views/              包含视图文件视图文件
+    web/                Web 应用根目录
+        assets/         包含
+        index.php       应用入口文件入口文件
+    yii                 Yii 控制台命令执行脚本命令执行脚本执行脚本
+</code></pre><p>一般来说，应用中的文件可被分为两类：在 basic/web 下的和在其它目录下的。 前者可以直接通过 HTTP 访问（例如浏览器），后者不能也不应该被直接访问。</p>
+<p>一个应用的静态结构</p>
+<p><img src="/images/application-structure.png" alt="application-structure"></p>
+<p>每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。</p>
+<h3 id="请求生命周期">请求生命周期</h3>
+<p><img src="/images/request-lifecycle.png" alt="request-lifecycle"></p>
+<ul>
+<li>用户向入口脚本 web/index.php 发起请求。</li>
+<li>入口脚本加载应用配置并创建一个应用 实例去处理请求。</li>
+<li>应用通过请求组件解析请求的 路由。</li>
+<li>应用创建一个控制器实例去处理请求。</li>
+<li>控制器创建一个动作实例并针对操作执行过滤器。</li>
+<li>如果任何一个过滤器返回失败，则动作取消。</li>
+<li>如果所有过滤器都通过，动作将被执行。</li>
+<li>动作会加载一个数据模型，或许是来自数据库。</li>
+<li>动作会渲染一个视图，把数据模型提供给它。</li>
+<li>渲染结果返回给响应组件。</li>
+<li>响应组件发送渲染结果给用户浏览器。</li>
+</ul>
+<h2 id="入口脚本">入口脚本</h2>
+<p>入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将请求转发到应用。</p>
+<p>Web 应用的入口脚本必须放在终端用户能够访问的目录下， 通常命名为 index.php， 也可以使用 Web 服务器能定位到的其他名称。</p>
+<p>控制台应用的入口脚本一般在应用根目录下命名为 yii（后缀为.php）， 该文件需要有执行权限， 这样用户就能通过命令 ./yii <!-- raw HTML omitted --> [arguments] [options] 来运行控制台应用。</p>
+<p>入口脚本主要完成以下工作：</p>
+<ul>
+<li>定义全局常量；</li>
+<li>注册 Composer 自动加载器；</li>
+<li>包含 Yii 类文件；</li>
+<li>加载应用配置；</li>
+<li>创建一个应用实例并配置;</li>
+<li>调用 yii\base\Application::run() 来处理请求。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+
+<span style="color:#a6e22e">defined</span>(<span style="color:#e6db74">&#39;YII_DEBUG&#39;</span>) <span style="color:#66d9ef">or</span> <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;YII_DEBUG&#39;</span>, <span style="color:#66d9ef">true</span>);
+<span style="color:#a6e22e">defined</span>(<span style="color:#e6db74">&#39;YII_ENV&#39;</span>) <span style="color:#66d9ef">or</span> <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;YII_ENV&#39;</span>, <span style="color:#e6db74">&#39;dev&#39;</span>);
+
+<span style="color:#75715e">// 注册 Composer 自动加载器
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/../vendor/autoload.php&#39;</span>;
+
+<span style="color:#75715e">// 包含 Yii 类文件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/../vendor/yiisoft/yii2/Yii.php&#39;</span>;
+
+<span style="color:#75715e">// 加载应用配置
+</span><span style="color:#75715e"></span>$config <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/../config/web.php&#39;</span>;
+
+<span style="color:#75715e">// 创建、配置、运行一个应用
+</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">yii\web\Application</span>($config))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">run</span>();
+</code></pre></div><p><img src="/images/application-lifecycle.png" alt="application-lifecycle"></p>
+<p>当运行 入口脚本 处理请求时， 应用主体会经历以下生命周期:</p>
+<ul>
+<li>入口脚本加载应用主体配置数组。</li>
+<li>入口脚本创建一个应用主体实例：</li>
+<li>调用 preInit() 配置几个高级别应用主体属性， 比如 basePath。</li>
+<li>注册 error handler 错误处理方法。</li>
+<li>配置应用主体属性。</li>
+<li>调用 init() 初始化，该函数会调用 bootstrap() 运行引导启动组件。</li>
+<li>入口脚本调用 yii\base\Application::run() 运行应用主体:</li>
+<li>触发 EVENT_BEFORE_REQUEST 事件。</li>
+<li>处理请求：解析请求 路由 和相关参数； 创建路由指定的模块、控制器和动作对应的类，并运行动作。</li>
+<li>触发 EVENT_AFTER_REQUEST 事件。</li>
+<li>发送响应到终端用户。</li>
+<li>入口脚本接收应用主体传来的退出状态并完成请求的处理。</li>
+</ul>
+<p>应用主体是服务定位器， 它部署一组提供各种不同功能的 应用组件 来处理请求。 例如，urlManager组件负责处理网页请求路由到对应的控制器。 db组件提供数据库相关服务等等。</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

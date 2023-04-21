@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Fpm - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="PHP-FPM是一个PHP的PHPFastCGI管理器。
+PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
+kill -INT `cat /var/run/php-fpm/php-fpm.pid` # 杀死进程 killall php-fpm # 开启进程 /usr/local/php72/sbin/php-fpm # 查看端口号 netstat -lnt | grep 9000 # 查看php-fpm ps aux | grep php-fpm # 重新启动并加载配置 /usr/local/php/sbin-php-fpm -c php.ini 1 修改php.ini或www.conf？ 修改php.ini文件：
+$ php &amp;ndash;ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
+$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
+2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-fpm/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Fpm" />
+<meta property="og:description" content="PHP-FPM是一个PHP的PHPFastCGI管理器。
+PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
+kill -INT `cat /var/run/php-fpm/php-fpm.pid` # 杀死进程 killall php-fpm # 开启进程 /usr/local/php72/sbin/php-fpm # 查看端口号 netstat -lnt | grep 9000 # 查看php-fpm ps aux | grep php-fpm # 重新启动并加载配置 /usr/local/php/sbin-php-fpm -c php.ini 1 修改php.ini或www.conf？ 修改php.ini文件：
+$ php &ndash;ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
+$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
+2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-fpm/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-07T17:25:15+08:00" />
+<meta property="article:modified_time" content="2020-09-07T17:25:15+08:00" />
+
+<meta itemprop="name" content="Php Fpm">
+<meta itemprop="description" content="PHP-FPM是一个PHP的PHPFastCGI管理器。
+PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
+kill -INT `cat /var/run/php-fpm/php-fpm.pid` # 杀死进程 killall php-fpm # 开启进程 /usr/local/php72/sbin/php-fpm # 查看端口号 netstat -lnt | grep 9000 # 查看php-fpm ps aux | grep php-fpm # 重新启动并加载配置 /usr/local/php/sbin-php-fpm -c php.ini 1 修改php.ini或www.conf？ 修改php.ini文件：
+$ php &ndash;ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
+$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
+2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6."><meta itemprop="datePublished" content="2020-09-07T17:25:15+08:00" />
+<meta itemprop="dateModified" content="2020-09-07T17:25:15+08:00" />
+<meta itemprop="wordCount" content="260">
+<meta itemprop="keywords" content="php," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Fpm"/>
+<meta name="twitter:description" content="PHP-FPM是一个PHP的PHPFastCGI管理器。
+PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。
+kill -INT `cat /var/run/php-fpm/php-fpm.pid` # 杀死进程 killall php-fpm # 开启进程 /usr/local/php72/sbin/php-fpm # 查看端口号 netstat -lnt | grep 9000 # 查看php-fpm ps aux | grep php-fpm # 重新启动并加载配置 /usr/local/php/sbin-php-fpm -c php.ini 1 修改php.ini或www.conf？ 修改php.ini文件：
+$ php &ndash;ini # 确定php.ini文件的位置 $ sudo vi /etc/php.ini # 修改php.ini文件 修改php-fpm.conf文件：
+$ sudo vi /etc/php-fpm/www.conf 编辑之后保存。
+2 CentOS/RHEL 7 $ sudo systemctl start php-fpm # 启动php-fpm $ sudo systemctl stop php-fpm # 停止php-fpm $ sudo systemctl reload php-fpm # 重载php-fpm $ sudo systemctl restart php-fpm # 重启php-fpm 3 CentOS/RHEL 6."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>PHP-FPM是一个PHP的PHPFastCGI管理器。</p>
+<p>PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进程、可以平滑重载PHP配置，比spawn-fcgi具有更多优点，所以被PHP官方收录了。在./configure的时候带 –enable-fpm参数即可开启PHP-FPM。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kill -INT <span style="color:#e6db74">`</span>cat /var/run/php-fpm/php-fpm.pid<span style="color:#e6db74">`</span>
+
+<span style="color:#75715e"># 杀死进程</span>
+killall php-fpm
+
+<span style="color:#75715e"># 开启进程</span>
+/usr/local/php72/sbin/php-fpm
+
+<span style="color:#75715e"># 查看端口号</span>
+netstat -lnt | grep <span style="color:#ae81ff">9000</span>
+
+<span style="color:#75715e"># 查看php-fpm</span>
+ps aux | grep php-fpm
+
+<span style="color:#75715e"># 重新启动并加载配置</span>
+/usr/local/php/sbin-php-fpm -c php.ini
+</code></pre></div><p>1 修改php.ini或www.conf？
+修改php.ini文件：</p>
+<p>$ php &ndash;ini                               # 确定php.ini文件的位置
+$ sudo vi /etc/php.ini                    # 修改php.ini文件
+修改php-fpm.conf文件：</p>
+<p>$ sudo vi /etc/php-fpm/www.conf
+编辑之后保存。</p>
+<p>2 CentOS/RHEL 7
+$ sudo systemctl start php-fpm      # 启动php-fpm
+$ sudo systemctl stop php-fpm       # 停止php-fpm
+$ sudo systemctl reload php-fpm     # 重载php-fpm
+$ sudo systemctl restart php-fpm    # 重启php-fpm
+3 CentOS/RHEL 6.x等旧版本
+$ sudo service php-fpm start        # 启动php-fpm
+$ sudo service php-fpm stop         # 停止php-fpm
+$ sudo service php-fpm restart      # 重启php-fpm
+$ sudo service php-fpm reload       # 重载php-fpm
+4 Ubuntu/Debian
+$ sudo service php5-fpm start       # 启动
+$ sudo service php5-fpm stop        # 停止
+$ sudo service php5-fpm restart     # 重启
+$ sudo service php5-fpm reload      # 重载
+如果系统使用systemd，比如Ubuntu Linux 16.04+ LTS或者Debian Linux 8.x+，可以这样：</p>
+<p>$ sudo systemctl start php5-fpm.service        # 启动
+$ sudo systemctl stop php5-fpm.service         # 停止
+$ sudo systemctl restart php5-fpm.service      # 重启
+$ sudo systemctl reload php5-fpm.service       # 重载
+5 Ubuntu/Debian操作php7.0-fpm
+$ sudo service php7.0-fpm start
+$ sudo service php7.0-fpm stop
+$ sudo service php7.0-fpm restart
+$ sudo service php7.0-fpm reload
+如果系统使用systemd，比如Ubuntu Linux 16.04+ LTS或者Debian Linux 8.x+，可以这样：</p>
+<p>$ sudo systemctl start php7.0-fpm.service
+$ sudo systemctl stop php7.0-fpm.service
+$ sudo systemctl restart php7.0-fpm.service
+$ sudo systemctl reload php7.0-fpm.service
+6 Alpine Linux</p>
+<h1 id="etcinitdphp-fpm-start">/etc/init.d/php-fpm start</h1>
+<h1 id="etcinitdphp-fpm-stop">/etc/init.d/php-fpm stop</h1>
+<h1 id="etcinitdphp-fpm-restart">/etc/init.d/php-fpm restart</h1>
+<p>7 FreeBSD Unix</p>
+<h1 id="usrlocaletcrcdphp-fpm-start">/usr/local/etc/rc.d/php-fpm start</h1>
+<h1 id="usrlocaletcrcdphp-fpm-stop">/usr/local/etc/rc.d/php-fpm stop</h1>
+<h1 id="usrlocaletcrcdphp-fpm-reload">/usr/local/etc/rc.d/php-fpm reload</h1>
+<h1 id="usrlocaletcrcdphp-fpm-restart">/usr/local/etc/rc.d/php-fpm restart</h1>
+<p>或者用service命令：</p>
+<h1 id="service-php-fpm-start">service php-fpm start</h1>
+<h1 id="service-php-fpm-stop">service php-fpm stop</h1>
+<h1 id="service-php-fpm-restart">service php-fpm restart</h1>
+<h1 id="service-php-fpm-reload">service php-fpm reload</h1>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

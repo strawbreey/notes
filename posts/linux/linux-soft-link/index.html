@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux Soft Link - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="创建软链接 ln -s [源文件或目录] [目标文件或目录]
+例如：
+# 当前路径创建test 引向/var/www/test 文件夹  ln –s /var/www/test test # 创建/var/test 引向/var/www/test 文件夹  ln –s /var/www/test /var/test 删除软链接 和删除普通的文件是一眼的，删除都是使用rm来进行操作
+rm –rf 软链接名称（请注意不要在后面加”/”，rm –rf 后面加不加”/” 的区别，可自行去百度下啊）
+例如：
+# 删除test rm –rf test 修改软链接 ln –snf [新的源文件或目录] [目标文件或目录]
+这将会修改原有的链接地址为新的地址
+例如：
+# 创建一个软链接 ln –s /var/www/test /var/test # 修改指向的新路径 ln –snf /var/www/test1 /var/test 常用的参数：
+-b 删除，覆盖以前建立的链接
+-d 允许超级用户制作目录的硬链接
+-f 强制执行
+-i 交互模式，文件存在则提示用户是否覆盖
+-n 把符号链接视为一般目录
+-s 软链接(符号链接)" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/linux/linux-soft-link/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Linux Soft Link" />
+<meta property="og:description" content="创建软链接 ln -s [源文件或目录] [目标文件或目录]
+例如：
+# 当前路径创建test 引向/var/www/test 文件夹  ln –s /var/www/test test # 创建/var/test 引向/var/www/test 文件夹  ln –s /var/www/test /var/test 删除软链接 和删除普通的文件是一眼的，删除都是使用rm来进行操作
+rm –rf 软链接名称（请注意不要在后面加”/”，rm –rf 后面加不加”/” 的区别，可自行去百度下啊）
+例如：
+# 删除test rm –rf test 修改软链接 ln –snf [新的源文件或目录] [目标文件或目录]
+这将会修改原有的链接地址为新的地址
+例如：
+# 创建一个软链接 ln –s /var/www/test /var/test # 修改指向的新路径 ln –snf /var/www/test1 /var/test 常用的参数：
+-b 删除，覆盖以前建立的链接
+-d 允许超级用户制作目录的硬链接
+-f 强制执行
+-i 交互模式，文件存在则提示用户是否覆盖
+-n 把符号链接视为一般目录
+-s 软链接(符号链接)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/linux/linux-soft-link/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-09T19:49:01+08:00" />
+<meta property="article:modified_time" content="2020-10-09T19:49:01+08:00" />
+
+<meta itemprop="name" content="Linux Soft Link">
+<meta itemprop="description" content="创建软链接 ln -s [源文件或目录] [目标文件或目录]
+例如：
+# 当前路径创建test 引向/var/www/test 文件夹  ln –s /var/www/test test # 创建/var/test 引向/var/www/test 文件夹  ln –s /var/www/test /var/test 删除软链接 和删除普通的文件是一眼的，删除都是使用rm来进行操作
+rm –rf 软链接名称（请注意不要在后面加”/”，rm –rf 后面加不加”/” 的区别，可自行去百度下啊）
+例如：
+# 删除test rm –rf test 修改软链接 ln –snf [新的源文件或目录] [目标文件或目录]
+这将会修改原有的链接地址为新的地址
+例如：
+# 创建一个软链接 ln –s /var/www/test /var/test # 修改指向的新路径 ln –snf /var/www/test1 /var/test 常用的参数：
+-b 删除，覆盖以前建立的链接
+-d 允许超级用户制作目录的硬链接
+-f 强制执行
+-i 交互模式，文件存在则提示用户是否覆盖
+-n 把符号链接视为一般目录
+-s 软链接(符号链接)"><meta itemprop="datePublished" content="2020-10-09T19:49:01+08:00" />
+<meta itemprop="dateModified" content="2020-10-09T19:49:01+08:00" />
+<meta itemprop="wordCount" content="70">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Soft Link"/>
+<meta name="twitter:description" content="创建软链接 ln -s [源文件或目录] [目标文件或目录]
+例如：
+# 当前路径创建test 引向/var/www/test 文件夹  ln –s /var/www/test test # 创建/var/test 引向/var/www/test 文件夹  ln –s /var/www/test /var/test 删除软链接 和删除普通的文件是一眼的，删除都是使用rm来进行操作
+rm –rf 软链接名称（请注意不要在后面加”/”，rm –rf 后面加不加”/” 的区别，可自行去百度下啊）
+例如：
+# 删除test rm –rf test 修改软链接 ln –snf [新的源文件或目录] [目标文件或目录]
+这将会修改原有的链接地址为新的地址
+例如：
+# 创建一个软链接 ln –s /var/www/test /var/test # 修改指向的新路径 ln –snf /var/www/test1 /var/test 常用的参数：
+-b 删除，覆盖以前建立的链接
+-d 允许超级用户制作目录的硬链接
+-f 强制执行
+-i 交互模式，文件存在则提示用户是否覆盖
+-n 把符号链接视为一般目录
+-s 软链接(符号链接)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h4 id="创建软链接">创建软链接</h4>
+<p>ln  -s  [源文件或目录]  [目标文件或目录]</p>
+<p>例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 当前路径创建test 引向/var/www/test 文件夹 </span>
+ln –s  /var/www/test  test
+
+<span style="color:#75715e"># 创建/var/test 引向/var/www/test 文件夹 </span>
+ln –s  /var/www/test   /var/test 
+</code></pre></div><h4 id="删除软链接">删除软链接</h4>
+<p>和删除普通的文件是一眼的，删除都是使用rm来进行操作</p>
+<p>rm –rf 软链接名称（请注意不要在后面加”/”，rm –rf 后面加不加”/” 的区别，可自行去百度下啊）</p>
+<p>例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 删除test</span>
+rm –rf test
+
+</code></pre></div><h4 id="修改软链接">修改软链接</h4>
+<p>ln –snf  [新的源文件或目录]  [目标文件或目录]</p>
+<p>这将会修改原有的链接地址为新的地址</p>
+<p>例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 创建一个软链接</span>
+
+ln –s  /var/www/test   /var/test
+
+<span style="color:#75715e"># 修改指向的新路径</span>
+
+ln –snf  /var/www/test1   /var/test
+
+</code></pre></div><p>常用的参数：</p>
+<p>-b 删除，覆盖以前建立的链接</p>
+<p>-d 允许超级用户制作目录的硬链接</p>
+<p>-f 强制执行</p>
+<p>-i 交互模式，文件存在则提示用户是否覆盖</p>
+<p>-n 把符号链接视为一般目录</p>
+<p>-s 软链接(符号链接)</p>
+<p>-v 显示详细的处理过程</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

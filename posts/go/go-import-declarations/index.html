@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Import Declarations - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Import declarations An import declaration states that the source file containing the declaration depends on functionality of the imported package (§Program initialization and execution) and enables access to exported identifiers of that package. The import names an identifier (PackageName) to be used for access and an ImportPath that specifies the package to be imported.
+ImportDecl = &amp;ldquo;import&amp;rdquo; ( ImportSpec | &amp;ldquo;(&amp;rdquo; { ImportSpec &amp;ldquo;;&amp;rdquo; } &amp;ldquo;)&amp;rdquo; ) . ImportSpec = [ &amp;ldquo;." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-import-declarations/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Import Declarations" />
+<meta property="og:description" content="Import declarations An import declaration states that the source file containing the declaration depends on functionality of the imported package (§Program initialization and execution) and enables access to exported identifiers of that package. The import names an identifier (PackageName) to be used for access and an ImportPath that specifies the package to be imported.
+ImportDecl = &ldquo;import&rdquo; ( ImportSpec | &ldquo;(&rdquo; { ImportSpec &ldquo;;&rdquo; } &ldquo;)&rdquo; ) . ImportSpec = [ &ldquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-import-declarations/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-02T20:23:53+08:00" />
+<meta property="article:modified_time" content="2021-08-02T20:23:53+08:00" />
+
+<meta itemprop="name" content="Go Import Declarations">
+<meta itemprop="description" content="Import declarations An import declaration states that the source file containing the declaration depends on functionality of the imported package (§Program initialization and execution) and enables access to exported identifiers of that package. The import names an identifier (PackageName) to be used for access and an ImportPath that specifies the package to be imported.
+ImportDecl = &ldquo;import&rdquo; ( ImportSpec | &ldquo;(&rdquo; { ImportSpec &ldquo;;&rdquo; } &ldquo;)&rdquo; ) . ImportSpec = [ &ldquo;."><meta itemprop="datePublished" content="2021-08-02T20:23:53+08:00" />
+<meta itemprop="dateModified" content="2021-08-02T20:23:53+08:00" />
+<meta itemprop="wordCount" content="361">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Import Declarations"/>
+<meta name="twitter:description" content="Import declarations An import declaration states that the source file containing the declaration depends on functionality of the imported package (§Program initialization and execution) and enables access to exported identifiers of that package. The import names an identifier (PackageName) to be used for access and an ImportPath that specifies the package to be imported.
+ImportDecl = &ldquo;import&rdquo; ( ImportSpec | &ldquo;(&rdquo; { ImportSpec &ldquo;;&rdquo; } &ldquo;)&rdquo; ) . ImportSpec = [ &ldquo;."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="import-declarations">Import declarations</h3>
+<p>An import declaration states that the source file containing the declaration depends on functionality of the imported package (§Program initialization and execution) and enables access to exported identifiers of that package. The import names an identifier (PackageName) to be used for access and an ImportPath that specifies the package to be imported.</p>
+<p>ImportDecl       = &ldquo;import&rdquo; ( ImportSpec | &ldquo;(&rdquo; { ImportSpec &ldquo;;&rdquo; } &ldquo;)&rdquo; ) .
+ImportSpec       = [ &ldquo;.&rdquo; | PackageName ] ImportPath .
+ImportPath       = string_lit .
+The PackageName is used in qualified identifiers to access exported identifiers of the package within the importing source file. It is declared in the file block. If the PackageName is omitted, it defaults to the identifier specified in the package clause of the imported package. If an explicit period (.) appears instead of a name, all the package&rsquo;s exported identifiers declared in that package&rsquo;s package block will be declared in the importing source file&rsquo;s file block and must be accessed without a qualifier.</p>
+<p>The interpretation of the ImportPath is implementation-dependent but it is typically a substring of the full file name of the compiled package and may be relative to a repository of installed packages.</p>
+<p>Implementation restriction: A compiler may restrict ImportPaths to non-empty strings using only characters belonging to Unicode&rsquo;s L, M, N, P, and S general categories (the Graphic characters without spaces) and may also exclude the characters !&quot;#$%&amp;'()*,:;&lt;=&gt;?[]^`{|} and the Unicode replacement character U+FFFD.</p>
+<p>Assume we have compiled a package containing the package clause package math, which exports function Sin, and installed the compiled package in the file identified by &ldquo;lib/math&rdquo;. This table illustrates how Sin is accessed in files that import the package after the various types of import declaration.</p>
+<p>Import declaration          Local name of Sin</p>
+<p>import   &ldquo;lib/math&rdquo;         math.Sin
+import m &ldquo;lib/math&rdquo;         m.Sin
+import . &ldquo;lib/math&rdquo;         Sin
+An import declaration declares a dependency relation between the importing and imported package. It is illegal for a package to import itself, directly or indirectly, or to directly import a package without referring to any of its exported identifiers. To import a package solely for its side-effects (initialization), use the blank identifier as explicit package name:</p>
+<p>import _ &ldquo;lib/math&rdquo;</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mysql Binlog - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="binlog是Mysql sever层维护的一种二进制日志，与innodb引擎中的redo/undo log是完全不同的日志；其主要是用来记录对mysql数据更新或潜在发生更新的SQL语句，并以&amp;quot;事务&amp;quot;的形式保存在磁盘中；
+作用主要有：
+ 复制：MySQL Replication在Master端开启binlog，Master把它的二进制日志传- 递给slaves并回放来达到master-slave数据一致的目的 数据恢复：通过mysqlbinlog工具恢复数据 增量备份  binlog管理   开启binlogmy.cnf配置中设置：log_bin=&amp;ldquo;存放binlog路径目录&amp;rdquo;
+  reset master 清空binlog日志文件
+  # binlog信息查询binlog开启后，可以在配置文件中查看其位置信息，也可以在myslq命令行中查看： show variables like &amp;#39;%log_bin%&amp;#39;; &#43;---------------------------------&#43;-------------------------------------&#43; | Variable_name | Value | &#43;---------------------------------&#43;-------------------------------------&#43; | log_bin | ON | | log_bin_basename | /var/lib/mysql/3306/mysql-bin | | log_bin_index | /var/lib/mysql/3306/mysql-bin.index | | log_bin_trust_function_creators | OFF | | log_bin_use_v1_row_events | OFF | | sql_log_bin | ON | &#43;---------------------------------&#43;-------------------------------------&#43; # binlog文件开启binlog后，会在数据目录（默认）生产host-bin.n（具体binlog信息）文件及host-bin.index索引文件（记录binlog文件列表）。当binlog日志写满(binlog大小max_binlog_size，默认1G),或者数据库重启才会生产新文件，但是也可通过手工进行切换让其重新生成新的文件（flush logs）；另外，如果正使用大的事务，由于一个事务不能横跨两个文件，因此也可能在binlog文件未满的情况下刷新文件 # 查看binlog文件列表, mysql&amp;gt; show binary logs; &#43;------------------&#43;-----------&#43; | Log_name | File_size | &#43;------------------&#43;-----------&#43; | mysql-bin." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/mysql/mysql-binlog/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Mysql Binlog" />
+<meta property="og:description" content="binlog是Mysql sever层维护的一种二进制日志，与innodb引擎中的redo/undo log是完全不同的日志；其主要是用来记录对mysql数据更新或潜在发生更新的SQL语句，并以&quot;事务&quot;的形式保存在磁盘中；
+作用主要有：
+ 复制：MySQL Replication在Master端开启binlog，Master把它的二进制日志传- 递给slaves并回放来达到master-slave数据一致的目的 数据恢复：通过mysqlbinlog工具恢复数据 增量备份  binlog管理   开启binlogmy.cnf配置中设置：log_bin=&ldquo;存放binlog路径目录&rdquo;
+  reset master 清空binlog日志文件
+  # binlog信息查询binlog开启后，可以在配置文件中查看其位置信息，也可以在myslq命令行中查看： show variables like &#39;%log_bin%&#39;; &#43;---------------------------------&#43;-------------------------------------&#43; | Variable_name | Value | &#43;---------------------------------&#43;-------------------------------------&#43; | log_bin | ON | | log_bin_basename | /var/lib/mysql/3306/mysql-bin | | log_bin_index | /var/lib/mysql/3306/mysql-bin.index | | log_bin_trust_function_creators | OFF | | log_bin_use_v1_row_events | OFF | | sql_log_bin | ON | &#43;---------------------------------&#43;-------------------------------------&#43; # binlog文件开启binlog后，会在数据目录（默认）生产host-bin.n（具体binlog信息）文件及host-bin.index索引文件（记录binlog文件列表）。当binlog日志写满(binlog大小max_binlog_size，默认1G),或者数据库重启才会生产新文件，但是也可通过手工进行切换让其重新生成新的文件（flush logs）；另外，如果正使用大的事务，由于一个事务不能横跨两个文件，因此也可能在binlog文件未满的情况下刷新文件 # 查看binlog文件列表, mysql&gt; show binary logs; &#43;------------------&#43;-----------&#43; | Log_name | File_size | &#43;------------------&#43;-----------&#43; | mysql-bin." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/mysql/mysql-binlog/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-24T10:43:56+08:00" />
+<meta property="article:modified_time" content="2020-11-24T10:43:56+08:00" />
+
+<meta itemprop="name" content="Mysql Binlog">
+<meta itemprop="description" content="binlog是Mysql sever层维护的一种二进制日志，与innodb引擎中的redo/undo log是完全不同的日志；其主要是用来记录对mysql数据更新或潜在发生更新的SQL语句，并以&quot;事务&quot;的形式保存在磁盘中；
+作用主要有：
+ 复制：MySQL Replication在Master端开启binlog，Master把它的二进制日志传- 递给slaves并回放来达到master-slave数据一致的目的 数据恢复：通过mysqlbinlog工具恢复数据 增量备份  binlog管理   开启binlogmy.cnf配置中设置：log_bin=&ldquo;存放binlog路径目录&rdquo;
+  reset master 清空binlog日志文件
+  # binlog信息查询binlog开启后，可以在配置文件中查看其位置信息，也可以在myslq命令行中查看： show variables like &#39;%log_bin%&#39;; &#43;---------------------------------&#43;-------------------------------------&#43; | Variable_name | Value | &#43;---------------------------------&#43;-------------------------------------&#43; | log_bin | ON | | log_bin_basename | /var/lib/mysql/3306/mysql-bin | | log_bin_index | /var/lib/mysql/3306/mysql-bin.index | | log_bin_trust_function_creators | OFF | | log_bin_use_v1_row_events | OFF | | sql_log_bin | ON | &#43;---------------------------------&#43;-------------------------------------&#43; # binlog文件开启binlog后，会在数据目录（默认）生产host-bin.n（具体binlog信息）文件及host-bin.index索引文件（记录binlog文件列表）。当binlog日志写满(binlog大小max_binlog_size，默认1G),或者数据库重启才会生产新文件，但是也可通过手工进行切换让其重新生成新的文件（flush logs）；另外，如果正使用大的事务，由于一个事务不能横跨两个文件，因此也可能在binlog文件未满的情况下刷新文件 # 查看binlog文件列表, mysql&gt; show binary logs; &#43;------------------&#43;-----------&#43; | Log_name | File_size | &#43;------------------&#43;-----------&#43; | mysql-bin."><meta itemprop="datePublished" content="2020-11-24T10:43:56+08:00" />
+<meta itemprop="dateModified" content="2020-11-24T10:43:56+08:00" />
+<meta itemprop="wordCount" content="171">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mysql Binlog"/>
+<meta name="twitter:description" content="binlog是Mysql sever层维护的一种二进制日志，与innodb引擎中的redo/undo log是完全不同的日志；其主要是用来记录对mysql数据更新或潜在发生更新的SQL语句，并以&quot;事务&quot;的形式保存在磁盘中；
+作用主要有：
+ 复制：MySQL Replication在Master端开启binlog，Master把它的二进制日志传- 递给slaves并回放来达到master-slave数据一致的目的 数据恢复：通过mysqlbinlog工具恢复数据 增量备份  binlog管理   开启binlogmy.cnf配置中设置：log_bin=&ldquo;存放binlog路径目录&rdquo;
+  reset master 清空binlog日志文件
+  # binlog信息查询binlog开启后，可以在配置文件中查看其位置信息，也可以在myslq命令行中查看： show variables like &#39;%log_bin%&#39;; &#43;---------------------------------&#43;-------------------------------------&#43; | Variable_name | Value | &#43;---------------------------------&#43;-------------------------------------&#43; | log_bin | ON | | log_bin_basename | /var/lib/mysql/3306/mysql-bin | | log_bin_index | /var/lib/mysql/3306/mysql-bin.index | | log_bin_trust_function_creators | OFF | | log_bin_use_v1_row_events | OFF | | sql_log_bin | ON | &#43;---------------------------------&#43;-------------------------------------&#43; # binlog文件开启binlog后，会在数据目录（默认）生产host-bin.n（具体binlog信息）文件及host-bin.index索引文件（记录binlog文件列表）。当binlog日志写满(binlog大小max_binlog_size，默认1G),或者数据库重启才会生产新文件，但是也可通过手工进行切换让其重新生成新的文件（flush logs）；另外，如果正使用大的事务，由于一个事务不能横跨两个文件，因此也可能在binlog文件未满的情况下刷新文件 # 查看binlog文件列表, mysql&gt; show binary logs; &#43;------------------&#43;-----------&#43; | Log_name | File_size | &#43;------------------&#43;-----------&#43; | mysql-bin."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>binlog是Mysql sever层维护的一种二进制日志，与innodb引擎中的redo/undo log是完全不同的日志；其主要是用来记录对mysql数据更新或潜在发生更新的SQL语句，并以&quot;事务&quot;的形式保存在磁盘中；</p>
+<p>作用主要有：</p>
+<ul>
+<li>复制：MySQL Replication在Master端开启binlog，Master把它的二进制日志传- 递给slaves并回放来达到master-slave数据一致的目的</li>
+<li>数据恢复：通过mysqlbinlog工具恢复数据</li>
+<li>增量备份</li>
+</ul>
+<h3 id="binlog管理">binlog管理</h3>
+<ul>
+<li>
+<p>开启binlogmy.cnf配置中设置：log_bin=&ldquo;存放binlog路径目录&rdquo;</p>
+</li>
+<li>
+<p>reset master 清空binlog日志文件</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># binlog信息查询binlog开启后，可以在配置文件中查看其位置信息，也可以在myslq命令行中查看：</span>
+show variables like <span style="color:#e6db74">&#39;%log_bin%&#39;</span>;
++---------------------------------+-------------------------------------+
+| Variable_name                   | Value                               |
++---------------------------------+-------------------------------------+
+| log_bin                         | ON                                  |
+| log_bin_basename                | /var/lib/mysql/3306/mysql-bin       |
+| log_bin_index                   | /var/lib/mysql/3306/mysql-bin.index |
+| log_bin_trust_function_creators | OFF                                 |
+| log_bin_use_v1_row_events       | OFF                                 |
+| sql_log_bin                     | ON                                  |
++---------------------------------+-------------------------------------+
+
+<span style="color:#75715e"># binlog文件开启binlog后，会在数据目录（默认）生产host-bin.n（具体binlog信息）文件及host-bin.index索引文件（记录binlog文件列表）。当binlog日志写满(binlog大小max_binlog_size，默认1G),或者数据库重启才会生产新文件，但是也可通过手工进行切换让其重新生成新的文件（flush logs）；另外，如果正使用大的事务，由于一个事务不能横跨两个文件，因此也可能在binlog文件未满的情况下刷新文件</span>
+
+<span style="color:#75715e"># 查看binlog文件列表,</span>
+mysql&gt; show binary logs; 
++------------------+-----------+
+| Log_name         | File_size |
++------------------+-----------+
+| mysql-bin.000001 |       <span style="color:#ae81ff">177</span> |
+| mysql-bin.000002 |       <span style="color:#ae81ff">177</span> |
+| mysql-bin.000003 |  <span style="color:#ae81ff">10343266</span> |
+| mysql-bin.000004 |  <span style="color:#ae81ff">10485660</span> |
+| mysql-bin.000005 |     <span style="color:#ae81ff">53177</span> |
+| mysql-bin.000006 |      <span style="color:#ae81ff">2177</span> |
+| mysql-bin.000007 |      <span style="color:#ae81ff">1383</span> |
++------------------+-----------+
+
+<span style="color:#75715e"># 查看binlog的状态：show master status可查看当前二进制日志文件的状态信息，显示正在写入的二进制文件，及当前position</span>
+  mysql&gt; show master status;
+ +------------------+----------+--------------+------------------+-------------------+
+ | File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
+ +------------------+----------+--------------+------------------+-------------------+
+ | mysql-bin.000007 |      <span style="color:#ae81ff">120</span> |              |                  |                   |
+ +------------------+----------+--------------+------------------+-------------------+
+</code></pre></div><p>默认情况下binlog日志是二进制格式，无法直接查看。可使用两种方式进行查看：</p>
+<ul>
+<li>
+<p>mysqlbinlog: /usr/bin/mysqlbinlog  mysql-bin.000007</p>
+<ul>
+<li>mysqlbinlog是mysql官方提供的一个binlog查看工具，</li>
+<li>也可使用–read-from-remote-server从远程服务器读取二进制日志，</li>
+<li>还可使用&ndash;start-position &ndash;stop-position、&ndash;start-time= &ndash;stop-time精确解析binlog日志</li>
+</ul>
+</li>
+<li>
+<p>直命令行解析</p>
+<p>SHOW BINLOG EVENTS
+[IN &lsquo;log_name&rsquo;] //要查询的binlog文件名
+[FROM pos]<br>
+[LIMIT [offset,] row_count]</p>
+</li>
+</ul>
+<h3 id="binlog格式">binlog格式</h3>
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li><a href="https://dev.mysql.com/doc/internals/en/binary-log-versions.html">Binary Log Versions</a></li>
+<li><a href="https://stackoverflow.com/questions/1366184/what-is-binlog-in-mysql">What is binlog in mysql?</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

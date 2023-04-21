@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sql Back Table - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="如何避免回表查询, 什么是索引覆盖? 数据库表结构：
+create table user ( id int primary key, name varchar(20), sex varchar(5), index(name) ) engine=innodb; -- 多查询了一个属性，为何检索过程完全不同 s? select id,name where name=&amp;#39;shenjian&amp;#39; select id,name,sex where name=&amp;#39;shenjian&amp;#39; 一、什么是回表查询？ 这先要从InnoDB的索引实现说起，InnoDB有两大类索引：
+  聚集索引(clustered index) =&amp;gt; 主键索引
+  普通索引(secondary index) =&amp;gt; 第二索引
+  InnoDB聚集索引和普通索引有什么差异？
+InnoDB聚集索引的叶子节点存储行记录，因此， InnoDB必须要有，且只有一个聚集索引：
+  如果表定义了PK (primary key)，则PK (primary key)就是聚集索引；
+  如果表没有定义PK，则第一个not NULL unique列是聚集索引；
+  否则，InnoDB会创建一个隐藏的row-id作为聚集索引；
+  画外音：所以PK查询非常快，直接定位行记录。
+InnoDB普通索引的叶子节点存储主键值。
+ 注意，不是存储行记录头指针，MyISAM的索引叶子节点存储记录指针。
+ 举个栗子，不妨设有表：" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/mysql/sql-back-table/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Sql Back Table" />
+<meta property="og:description" content="如何避免回表查询, 什么是索引覆盖? 数据库表结构：
+create table user ( id int primary key, name varchar(20), sex varchar(5), index(name) ) engine=innodb; -- 多查询了一个属性，为何检索过程完全不同 s? select id,name where name=&#39;shenjian&#39; select id,name,sex where name=&#39;shenjian&#39; 一、什么是回表查询？ 这先要从InnoDB的索引实现说起，InnoDB有两大类索引：
+  聚集索引(clustered index) =&gt; 主键索引
+  普通索引(secondary index) =&gt; 第二索引
+  InnoDB聚集索引和普通索引有什么差异？
+InnoDB聚集索引的叶子节点存储行记录，因此， InnoDB必须要有，且只有一个聚集索引：
+  如果表定义了PK (primary key)，则PK (primary key)就是聚集索引；
+  如果表没有定义PK，则第一个not NULL unique列是聚集索引；
+  否则，InnoDB会创建一个隐藏的row-id作为聚集索引；
+  画外音：所以PK查询非常快，直接定位行记录。
+InnoDB普通索引的叶子节点存储主键值。
+ 注意，不是存储行记录头指针，MyISAM的索引叶子节点存储记录指针。
+ 举个栗子，不妨设有表：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/mysql/sql-back-table/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-13T10:52:47+08:00" />
+<meta property="article:modified_time" content="2021-08-13T10:52:47+08:00" />
+
+<meta itemprop="name" content="Sql Back Table">
+<meta itemprop="description" content="如何避免回表查询, 什么是索引覆盖? 数据库表结构：
+create table user ( id int primary key, name varchar(20), sex varchar(5), index(name) ) engine=innodb; -- 多查询了一个属性，为何检索过程完全不同 s? select id,name where name=&#39;shenjian&#39; select id,name,sex where name=&#39;shenjian&#39; 一、什么是回表查询？ 这先要从InnoDB的索引实现说起，InnoDB有两大类索引：
+  聚集索引(clustered index) =&gt; 主键索引
+  普通索引(secondary index) =&gt; 第二索引
+  InnoDB聚集索引和普通索引有什么差异？
+InnoDB聚集索引的叶子节点存储行记录，因此， InnoDB必须要有，且只有一个聚集索引：
+  如果表定义了PK (primary key)，则PK (primary key)就是聚集索引；
+  如果表没有定义PK，则第一个not NULL unique列是聚集索引；
+  否则，InnoDB会创建一个隐藏的row-id作为聚集索引；
+  画外音：所以PK查询非常快，直接定位行记录。
+InnoDB普通索引的叶子节点存储主键值。
+ 注意，不是存储行记录头指针，MyISAM的索引叶子节点存储记录指针。
+ 举个栗子，不妨设有表："><meta itemprop="datePublished" content="2021-08-13T10:52:47+08:00" />
+<meta itemprop="dateModified" content="2021-08-13T10:52:47+08:00" />
+<meta itemprop="wordCount" content="217">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sql Back Table"/>
+<meta name="twitter:description" content="如何避免回表查询, 什么是索引覆盖? 数据库表结构：
+create table user ( id int primary key, name varchar(20), sex varchar(5), index(name) ) engine=innodb; -- 多查询了一个属性，为何检索过程完全不同 s? select id,name where name=&#39;shenjian&#39; select id,name,sex where name=&#39;shenjian&#39; 一、什么是回表查询？ 这先要从InnoDB的索引实现说起，InnoDB有两大类索引：
+  聚集索引(clustered index) =&gt; 主键索引
+  普通索引(secondary index) =&gt; 第二索引
+  InnoDB聚集索引和普通索引有什么差异？
+InnoDB聚集索引的叶子节点存储行记录，因此， InnoDB必须要有，且只有一个聚集索引：
+  如果表定义了PK (primary key)，则PK (primary key)就是聚集索引；
+  如果表没有定义PK，则第一个not NULL unique列是聚集索引；
+  否则，InnoDB会创建一个隐藏的row-id作为聚集索引；
+  画外音：所以PK查询非常快，直接定位行记录。
+InnoDB普通索引的叶子节点存储主键值。
+ 注意，不是存储行记录头指针，MyISAM的索引叶子节点存储记录指针。
+ 举个栗子，不妨设有表："/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="如何避免回表查询-什么是索引覆盖">如何避免回表查询, 什么是索引覆盖?</h3>
+<p>数据库表结构：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">user</span> (
+    id int <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
+    name varchar(<span style="color:#ae81ff">20</span>),
+    sex varchar(<span style="color:#ae81ff">5</span>),
+    <span style="color:#66d9ef">index</span>(name)
+) engine<span style="color:#f92672">=</span>innodb;
+
+<span style="color:#75715e">-- 多查询了一个属性，为何检索过程完全不同 s?
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id,name <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>
+<span style="color:#66d9ef">select</span> id,name,sex <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>
+</code></pre></div><h3 id="一什么是回表查询">一、什么是回表查询？</h3>
+<p>这先要从InnoDB的索引实现说起，InnoDB有两大类索引：</p>
+<ul>
+<li>
+<p>聚集索引(clustered index) =&gt; 主键索引</p>
+</li>
+<li>
+<p>普通索引(secondary index) =&gt; 第二索引</p>
+</li>
+</ul>
+<p>InnoDB聚集索引和普通索引有什么差异？</p>
+<p>InnoDB聚集索引的叶子节点存储行记录，因此， InnoDB必须要有，且只有一个聚集索引：</p>
+<ul>
+<li>
+<p>如果表定义了PK (primary key)，则PK (primary key)就是聚集索引；</p>
+</li>
+<li>
+<p>如果表没有定义PK，则第一个not NULL unique列是聚集索引；</p>
+</li>
+<li>
+<p>否则，InnoDB会创建一个隐藏的row-id作为聚集索引；</p>
+</li>
+</ul>
+<p>画外音：所以PK查询非常快，直接定位行记录。</p>
+<p>InnoDB普通索引的叶子节点存储主键值。</p>
+<blockquote>
+<p>注意，不是存储行记录头指针，MyISAM的索引叶子节点存储记录指针。</p>
+</blockquote>
+<p>举个栗子，不妨设有表：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">t(id PK, name <span style="color:#66d9ef">KEY</span>, sex, flag);
+
+<span style="color:#75715e">-- id是聚集索引，name是普通索引。
+</span></code></pre></div><p>表中有四条记录：</p>
+<p>1, shenjian, m, A</p>
+<p>3, zhangsan, m, A</p>
+<p>5, lisi, m, A</p>
+<p>9, wangwu, f, B</p>
+<p>两个B+树索引分别如上图：</p>
+<p>（1）id为PK，聚集索引，叶子节点存储行记录；</p>
+<p>（2）name为KEY，普通索引，叶子节点存储PK值，即id；</p>
+<p>既然从普通索引无法直接定位行记录，那普通索引的查询过程是怎么样的呢？</p>
+<p>通常情况下，需要扫码两遍索引树。</p>
+<p>例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> t <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lisi&#39;</span>;
+</code></pre></div><p>是如何执行的呢？</p>
+<p>如粉红色路径，需要扫码两遍索引树：</p>
+<p>（1）先通过普通索引定位到主键值id=5；</p>
+<p>（2）在通过聚集索引定位到行记录；</p>
+<p>这就是所谓的回表查询，先定位主键值，再定位行记录，它的性能较扫一遍索引树更低。</p>
+<h3 id="二什么是索引覆盖covering-index">二、什么是索引覆盖(Covering index)？</h3>
+<p>explain的输出结果Extra字段为Using index时，能够触发索引覆盖。</p>
+<p>只需要在一棵索引树上就能获取SQL所需的所有列数据，无需回表，速度更快。</p>
+<h3 id="三如何实现索引覆盖">三、如何实现索引覆盖？</h3>
+<p>将被查询的字段，建立到联合索引里去。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#75715e">-- 创建用户表
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">user</span> (
+    id int <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
+    name varchar(<span style="color:#ae81ff">20</span>),
+    sex varchar(<span style="color:#ae81ff">5</span>),
+    <span style="color:#66d9ef">index</span>(name)
+)engine<span style="color:#f92672">=</span>innodb;
+
+<span style="color:#66d9ef">select</span> id, name <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>;
+
+<span style="color:#75715e">-- 能够命中name索引，索引叶子节点存储了主键id，通过name的索引树即可获取id和name，无需回表，符合索引覆盖，效率较高。
+</span><span style="color:#75715e"></span>
+
+<span style="color:#66d9ef">select</span> id,name,sex <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>;
+
+<span style="color:#75715e">-- 能够命中name索引，索引叶子节点存储了主键id，但sex字段必须回表查询才能获取到，不符合索引覆盖，需要再次通过id值扫码聚集索引获取sex字段，效率会降低。
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">-- 如果把(name)单列索引升级为联合索引(name, sex)就不同了。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">user</span> (
+    id int <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
+    name varchar(<span style="color:#ae81ff">20</span>),
+    sex varchar(<span style="color:#ae81ff">5</span>),
+    <span style="color:#66d9ef">index</span>(name, sex)
+)engine<span style="color:#f92672">=</span>innodb;
+
+<span style="color:#66d9ef">select</span> id,name ... <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>;
+<span style="color:#66d9ef">select</span> id,name,sex ... <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>;
+<span style="color:#75715e">-- 都能够命中索引覆盖，无需回表。
+</span></code></pre></div><h3 id="四哪些场景可以利用索引覆盖来优化sql">四、哪些场景可以利用索引覆盖来优化SQL？</h3>
+<p>场景1：全表count查询优化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 不能利用索引覆盖
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(name) <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span>;
+
+<span style="color:#75715e">-- 添加索引
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">key</span>(name)
+
+<span style="color:#75715e">-- 能够利用索引覆盖
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(name) <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span>;
+</code></pre></div><p>场景2：列查询回表优化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 单列索引会导致回表
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id, name, sex <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>;
+
+<span style="color:#75715e">-- 将单列索引(name)升级为联合索引(name, sex)，即可避免回表。
+</span></code></pre></div><p>场景3：分页查询</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 单列索引会导致回表
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id, name, sex <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> name <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">500</span>,<span style="color:#ae81ff">100</span>;
+
+<span style="color:#75715e">-- 将单列索引(name)升级为联合索引(name, sex)，也可以避免回表。
+</span></code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Json Schema - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="什么是Json Schema？ 以一个例子来说明
+假设有一个web api，接受一个json请求，返回某个用户在某个城市关系最近的若干个好友。一个请求的例子如下：
+{ &amp;#34;city&amp;#34; : &amp;#34;chicago&amp;#34;, &amp;#34;number&amp;#34;: 20, &amp;#34;user&amp;#34; : { &amp;#34;name&amp;#34;:&amp;#34;Alex&amp;#34;, &amp;#34;age&amp;#34;:20 } } 在上面的例子中，web api要求提供city，number，user三个成员，其中city是字符串，number是数值，user是一个对象，又包含了name和age两个成员。
+对于api来说，需要定义什么样的请求合法，即什么样的Json对于api来说是合法的输入。这个规范可以通过Json Schema来描述，对应的Json Schema如下。
+{ &amp;#34;type&amp;#34;: &amp;#34;object&amp;#34;, &amp;#34;properties&amp;#34;: { &amp;#34;city&amp;#34;: { &amp;#34;type&amp;#34;: &amp;#34;string&amp;#34; }, &amp;#34;number&amp;#34;: { &amp;#34;type&amp;#34;: &amp;#34;number&amp;#34; }, &amp;#34;user&amp;#34;: { &amp;#34;type&amp;#34;: &amp;#34;object&amp;#34;, &amp;#34;properties&amp;#34;: { &amp;#34;name&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;}, &amp;#34;age&amp;#34; : {&amp;#34;type&amp;#34;: &amp;#34;number&amp;#34;} } } } } 例子可以通过Json Schema Validator来验证。
+什么是Json Schema？
+Json Schema定义了一套词汇和规则，这套词汇和规则用来定义Json元数据，且元数据也是通过Json数据形式表达的。Json元数据定义了Json数据需要满足的规范，规范包括成员、结构、类型、约束等。
+本文后面的部分是简要介绍Json Schema定义的这些规则，以及如何用这些规则描述规范。
+Json Schema定义了一系列关键字，元数据通过这些关键字来描述Json数据的规范。其中有些关键字是通用的；有些关键字是针对特定类型的；还有些关键字是描述型的，不影响合法性校验。本文的主要内容就是介绍这些关键字的应用。
+类型关键字  首先需要了解的是&amp;quot;type&amp;quot;关键字，这个关键字定义了Json数据需要满足的类型要求。&amp;ldquo;type&amp;quot;关键字的用法如下面几个例子：" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/json-schema/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Json Schema" />
+<meta property="og:description" content="什么是Json Schema？ 以一个例子来说明
+假设有一个web api，接受一个json请求，返回某个用户在某个城市关系最近的若干个好友。一个请求的例子如下：
+{ &#34;city&#34; : &#34;chicago&#34;, &#34;number&#34;: 20, &#34;user&#34; : { &#34;name&#34;:&#34;Alex&#34;, &#34;age&#34;:20 } } 在上面的例子中，web api要求提供city，number，user三个成员，其中city是字符串，number是数值，user是一个对象，又包含了name和age两个成员。
+对于api来说，需要定义什么样的请求合法，即什么样的Json对于api来说是合法的输入。这个规范可以通过Json Schema来描述，对应的Json Schema如下。
+{ &#34;type&#34;: &#34;object&#34;, &#34;properties&#34;: { &#34;city&#34;: { &#34;type&#34;: &#34;string&#34; }, &#34;number&#34;: { &#34;type&#34;: &#34;number&#34; }, &#34;user&#34;: { &#34;type&#34;: &#34;object&#34;, &#34;properties&#34;: { &#34;name&#34; : {&#34;type&#34;: &#34;string&#34;}, &#34;age&#34; : {&#34;type&#34;: &#34;number&#34;} } } } } 例子可以通过Json Schema Validator来验证。
+什么是Json Schema？
+Json Schema定义了一套词汇和规则，这套词汇和规则用来定义Json元数据，且元数据也是通过Json数据形式表达的。Json元数据定义了Json数据需要满足的规范，规范包括成员、结构、类型、约束等。
+本文后面的部分是简要介绍Json Schema定义的这些规则，以及如何用这些规则描述规范。
+Json Schema定义了一系列关键字，元数据通过这些关键字来描述Json数据的规范。其中有些关键字是通用的；有些关键字是针对特定类型的；还有些关键字是描述型的，不影响合法性校验。本文的主要内容就是介绍这些关键字的应用。
+类型关键字  首先需要了解的是&quot;type&quot;关键字，这个关键字定义了Json数据需要满足的类型要求。&ldquo;type&quot;关键字的用法如下面几个例子：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/json-schema/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-29T14:28:15+08:00" />
+<meta property="article:modified_time" content="2021-07-29T14:28:15+08:00" />
+
+<meta itemprop="name" content="Json Schema">
+<meta itemprop="description" content="什么是Json Schema？ 以一个例子来说明
+假设有一个web api，接受一个json请求，返回某个用户在某个城市关系最近的若干个好友。一个请求的例子如下：
+{ &#34;city&#34; : &#34;chicago&#34;, &#34;number&#34;: 20, &#34;user&#34; : { &#34;name&#34;:&#34;Alex&#34;, &#34;age&#34;:20 } } 在上面的例子中，web api要求提供city，number，user三个成员，其中city是字符串，number是数值，user是一个对象，又包含了name和age两个成员。
+对于api来说，需要定义什么样的请求合法，即什么样的Json对于api来说是合法的输入。这个规范可以通过Json Schema来描述，对应的Json Schema如下。
+{ &#34;type&#34;: &#34;object&#34;, &#34;properties&#34;: { &#34;city&#34;: { &#34;type&#34;: &#34;string&#34; }, &#34;number&#34;: { &#34;type&#34;: &#34;number&#34; }, &#34;user&#34;: { &#34;type&#34;: &#34;object&#34;, &#34;properties&#34;: { &#34;name&#34; : {&#34;type&#34;: &#34;string&#34;}, &#34;age&#34; : {&#34;type&#34;: &#34;number&#34;} } } } } 例子可以通过Json Schema Validator来验证。
+什么是Json Schema？
+Json Schema定义了一套词汇和规则，这套词汇和规则用来定义Json元数据，且元数据也是通过Json数据形式表达的。Json元数据定义了Json数据需要满足的规范，规范包括成员、结构、类型、约束等。
+本文后面的部分是简要介绍Json Schema定义的这些规则，以及如何用这些规则描述规范。
+Json Schema定义了一系列关键字，元数据通过这些关键字来描述Json数据的规范。其中有些关键字是通用的；有些关键字是针对特定类型的；还有些关键字是描述型的，不影响合法性校验。本文的主要内容就是介绍这些关键字的应用。
+类型关键字  首先需要了解的是&quot;type&quot;关键字，这个关键字定义了Json数据需要满足的类型要求。&ldquo;type&quot;关键字的用法如下面几个例子："><meta itemprop="datePublished" content="2021-07-29T14:28:15+08:00" />
+<meta itemprop="dateModified" content="2021-07-29T14:28:15+08:00" />
+<meta itemprop="wordCount" content="883">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Json Schema"/>
+<meta name="twitter:description" content="什么是Json Schema？ 以一个例子来说明
+假设有一个web api，接受一个json请求，返回某个用户在某个城市关系最近的若干个好友。一个请求的例子如下：
+{ &#34;city&#34; : &#34;chicago&#34;, &#34;number&#34;: 20, &#34;user&#34; : { &#34;name&#34;:&#34;Alex&#34;, &#34;age&#34;:20 } } 在上面的例子中，web api要求提供city，number，user三个成员，其中city是字符串，number是数值，user是一个对象，又包含了name和age两个成员。
+对于api来说，需要定义什么样的请求合法，即什么样的Json对于api来说是合法的输入。这个规范可以通过Json Schema来描述，对应的Json Schema如下。
+{ &#34;type&#34;: &#34;object&#34;, &#34;properties&#34;: { &#34;city&#34;: { &#34;type&#34;: &#34;string&#34; }, &#34;number&#34;: { &#34;type&#34;: &#34;number&#34; }, &#34;user&#34;: { &#34;type&#34;: &#34;object&#34;, &#34;properties&#34;: { &#34;name&#34; : {&#34;type&#34;: &#34;string&#34;}, &#34;age&#34; : {&#34;type&#34;: &#34;number&#34;} } } } } 例子可以通过Json Schema Validator来验证。
+什么是Json Schema？
+Json Schema定义了一套词汇和规则，这套词汇和规则用来定义Json元数据，且元数据也是通过Json数据形式表达的。Json元数据定义了Json数据需要满足的规范，规范包括成员、结构、类型、约束等。
+本文后面的部分是简要介绍Json Schema定义的这些规则，以及如何用这些规则描述规范。
+Json Schema定义了一系列关键字，元数据通过这些关键字来描述Json数据的规范。其中有些关键字是通用的；有些关键字是针对特定类型的；还有些关键字是描述型的，不影响合法性校验。本文的主要内容就是介绍这些关键字的应用。
+类型关键字  首先需要了解的是&quot;type&quot;关键字，这个关键字定义了Json数据需要满足的类型要求。&ldquo;type&quot;关键字的用法如下面几个例子："/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="什么是json-schema">什么是Json Schema？</h3>
+<p>以一个例子来说明</p>
+<p>假设有一个web api，接受一个json请求，返回某个用户在某个城市关系最近的若干个好友。一个请求的例子如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;city&#34;</span> : <span style="color:#e6db74">&#34;chicago&#34;</span>, 
+    <span style="color:#f92672">&#34;number&#34;</span>: <span style="color:#ae81ff">20</span>, 
+    <span style="color:#f92672">&#34;user&#34;</span> : {
+        <span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Alex&#34;</span>, 
+        <span style="color:#f92672">&#34;age&#34;</span>:<span style="color:#ae81ff">20</span>
+        }
+}
+</code></pre></div><p>在上面的例子中，web api要求提供city，number，user三个成员，其中city是字符串，number是数值，user是一个对象，又包含了name和age两个成员。</p>
+<p>对于api来说，需要定义什么样的请求合法，即什么样的Json对于api来说是合法的输入。这个规范可以通过Json Schema来描述，对应的Json Schema如下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ 
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#f92672">&#34;properties&#34;</span>: {
+        <span style="color:#f92672">&#34;city&#34;</span>: { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> },
+        <span style="color:#f92672">&#34;number&#34;</span>: { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span> },
+        <span style="color:#f92672">&#34;user&#34;</span>: { 
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+            <span style="color:#f92672">&#34;properties&#34;</span>: {
+                <span style="color:#f92672">&#34;name&#34;</span> : {<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>},
+                <span style="color:#f92672">&#34;age&#34;</span> : {<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>}
+            }                       
+        }
+    }
+}
+</code></pre></div><p>例子可以通过Json Schema Validator来验证。</p>
+<p>什么是Json Schema？</p>
+<p>Json Schema定义了一套词汇和规则，这套词汇和规则用来定义Json元数据，且元数据也是通过Json数据形式表达的。Json元数据定义了Json数据需要满足的规范，规范包括成员、结构、类型、约束等。</p>
+<p>本文后面的部分是简要介绍Json Schema定义的这些规则，以及如何用这些规则描述规范。</p>
+<p>Json Schema定义了一系列关键字，元数据通过这些关键字来描述Json数据的规范。其中有些关键字是通用的；有些关键字是针对特定类型的；还有些关键字是描述型的，不影响合法性校验。本文的主要内容就是介绍这些关键字的应用。</p>
+<ol start="2">
+<li>类型关键字</li>
+</ol>
+<p>首先需要了解的是&quot;type&quot;关键字，这个关键字定义了Json数据需要满足的类型要求。&ldquo;type&quot;关键字的用法如下面几个例子：</p>
+<p>{&ldquo;type&rdquo;:&ldquo;string&rdquo;}。规定了Json数据必须是一个字符串，符合要求的数据可以是
+&ldquo;Today is a good day.&rdquo;
+&ldquo;I love you&rdquo;</p>
+<p>{&ldquo;type&rdquo; : &ldquo;object&rdquo;}。规定了Json数据必须是一个对象，符合要求的数据可以是
+{&ldquo;name&rdquo; : &ldquo;Alexander&rdquo;, &ldquo;age&rdquo; : 98}
+{}</p>
+<p>{&ldquo;type&rdquo; : &ldquo;number&rdquo;}。规定了Json数据必须是一个数值，符合要求的数据可以是。Java Script不区分整数、浮点数，但是Json Schema可以区分。
+2
+0.5</p>
+<p>{&ldquo;type&rdquo;: &ldquo;integer&rdquo;}。要求数据必须是整数。
+2</p>
+<p>{&ldquo;type&rdquo; : &ldquo;array&rdquo;}。规定了Json数据必须是一个数组，符合要求的数据可以是
+[&ldquo;abc&rdquo;, &ldquo;cdf&rdquo;]
+[1, 2, 3]
+[&ldquo;abc&rdquo;, 25, {&ldquo;name&rdquo;: &ldquo;Alexander&rdquo;} ]
+[]</p>
+<p>{&ldquo;type&rdquo; : &ldquo;boolean&rdquo;}。这个Json Schema规定了Json数据必须是一个布尔，只有两个合法值
+true
+false</p>
+<p>{&ldquo;type&rdquo; : &ldquo;null&rdquo;}。null类型只有一个合法值
+null</p>
+<ol>
+<li>简单类型
+这部分介绍类型特定的关键，包括字符串、数值、布尔、空值几种基本类型。</li>
+</ol>
+<p>3.1 字符串
+Json合法的字符串</p>
+<p>&ldquo;Today is a good day.&rdquo;</p>
+<p>对应的Json Schema</p>
+<p>{&ldquo;type&rdquo;: &ldquo;string&rdquo;}</p>
+<p>可以进一步对字符串做规范要求。字符串长度、匹配正则表达式、字符串格式。</p>
+<p>3.1.1 字符串长度
+关键字： minLength, maxLength</p>
+<p>可以对字符串的最小长度、最大长度做规范。</p>
+<p>{
+&ldquo;type&rdquo; : &ldquo;string&rdquo;,
+&ldquo;minLength&rdquo; : 2,
+&ldquo;maxLength&rdquo; : 3,
+}
+3.1.2 正则表达式
+关键字： pattern</p>
+<p>可以对字符串应满足的Pattern做规范，Pattern通过正则表达式描述。</p>
+<p>{
+&ldquo;type&rdquo; : &ldquo;string&rdquo;,
+&ldquo;pattern&rdquo; : &ldquo;^(\([0-9]{3}\))?[0-9]{3}-[0-9]{4}$&rdquo;,
+}
+3.1.3 字符串Format
+关键字： format</p>
+<p>可以通过Json Schema内建的一些类型，对字符串的格式做规范，例如电子邮件、日期、域名等。</p>
+<p>{
+&ldquo;type&rdquo; : &ldquo;string&rdquo;,
+&ldquo;format&rdquo; : &ldquo;date&rdquo;,
+}
+Json Schema支持的format包括&quot;date&rdquo;, &ldquo;time&rdquo;, &ldquo;date-time&rdquo;, &ldquo;email&rdquo;, &ldquo;hostname&quot;等。具体可以参考文档。</p>
+<p>3.2 数值
+Json Schema数值类型包括&quot;number&quot;和&quot;integer&rdquo;。number合法的数值可以是</p>
+<p>2
+0.1</p>
+<p>对应的Json Schema为</p>
+<p>{&ldquo;type&rdquo;: &ldquo;number&rdquo;}</p>
+<p>如果是integer则只能是整数。&ldquo;number&quot;和&quot;integer&quot;的类型特定参数相同，可以限制倍数、范围。</p>
+<p>3.2.1 数值满足倍数
+关键字： multipleOf</p>
+<p>可以要求数值必须某个特定值的整数倍。例如要求数值必须是10的整数倍。</p>
+<p>{
+&ldquo;type&rdquo; : &ldquo;number&rdquo;,
+&ldquo;multipleOf&rdquo; : 10,
+}
+3.2.2 数值范围
+关键字： minimum, maximum, exclusiveMinimum, exclusiveMaximum</p>
+<p>可以限制数值的方位，包括最大值、最小值、开区间最大值、开区间最小值。</p>
+<p>要求数值在[0, 100)范围内。</p>
+<p>{
+&ldquo;type&rdquo; : &ldquo;number&rdquo;,
+&ldquo;minimum&rdquo;: 0,
+&ldquo;exclusiveMaximum&rdquo;: 100
+}
+3.3 布尔
+布尔类型没有额外的类型特定参数。</p>
+<p>3.4 空值
+null类型没有额外的类型特定参数。</p>
+<ol start="4">
+<li>复合类型
+复合类型可以通过Nest的方式构建复杂的数据结构。包括数组、对象。</li>
+</ol>
+<p>4.1 数组
+Json数组合法数据的例子</p>
+<p>[1, 2, 3]
+[1, &ldquo;abc&rdquo;, {&ldquo;name&rdquo; : &ldquo;alex&rdquo;}]
+[]</p>
+<p>Json Schema为</p>
+<p>{&ldquo;type&rdquo;: &ldquo;array&rdquo;}</p>
+<p>数组的类型特定参数，可以用来限制成员类型、是否允许额外成员、最小元素个数、最大元素个数、是否允许元素重复。</p>
+<p>4.1.1 数组成员类型
+关键字： items</p>
+<p>可以要求数组内每个成员都是某种类型，通过关键字items实现。下面的Schema要求数组内所有元素都是数值，这时关键字&quot;items&quot;对应一个嵌套的Json Schema，这个Json Schema定义了每个元素应该满足的规范。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;array&rdquo;,
+&ldquo;items&rdquo;: {
+&ldquo;type&rdquo;: &ldquo;number&rdquo;
+}
+}
+[1, 2, 3]</p>
+<p>关键字items还可以对应一个数组，这时Json数组内的元素必须与Json Schema内items数组内的每个Schema按位置一一匹配。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;array&rdquo;,
+&ldquo;items&rdquo;: [
+{
+&ldquo;type&rdquo;: &ldquo;number&rdquo;
+},
+{
+&ldquo;type&rdquo;: &ldquo;string&rdquo;
+}]
+}
+[1, &ldquo;abc&rdquo;]</p>
+<p>4.1.2 数组是否允许额外成员
+关键字： additionalItems</p>
+<p>当使用了items关键字，并且items关键字对应的是Schema数组，这个限制才起作用。关键字additionalItems规定Json数组内的元素，除了一一匹配items数组内的Schema外，是否还允许多余的元组。当additionalItems为true时，允许额外元素。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;array&rdquo;,
+&ldquo;items&rdquo;: [
+{
+&ldquo;type&rdquo;: &ldquo;number&rdquo;
+},
+{
+&ldquo;type&rdquo;: &ldquo;string&rdquo;
+}],
+&ldquo;additionalItems&rdquo; : true
+}
+[1, &ldquo;abc&rdquo;, &ldquo;x&rdquo;]</p>
+<p>4.1.3 数组元素个数
+关键字： minItems, maxItems</p>
+<p>可以限制数组内元素的个数。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;array&rdquo;,
+&ldquo;items&rdquo;: {
+&ldquo;type&rdquo;: &ldquo;number&rdquo;
+},
+&ldquo;minItems&rdquo; : 5,
+&ldquo;maxItems&rdquo; : 10
+}
+[1,2,3,4,5,6]</p>
+<p>4.1.4 数组内元素是否必须唯一
+关键字： uniqueItems</p>
+<p>规定数组内的元素是否必须唯一。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;array&rdquo;,
+&ldquo;items&rdquo;: {
+&ldquo;type&rdquo;: &ldquo;number&rdquo;
+},
+&ldquo;uniqueItems&rdquo; : true
+}
+[1,2,3,4,5]</p>
+<p>4.2 对象
+Json对象是最常见的Json数据类型，合法的数据可以是</p>
+<p>{
+&ldquo;name&rdquo;: &ldquo;Froid&rdquo;,
+&ldquo;age&rdquo; : 26,
+&ldquo;address&rdquo; : {
+&ldquo;city&rdquo; : &ldquo;New York&rdquo;,
+&ldquo;country&rdquo; : &ldquo;USA&rdquo;
+}
+}
+就对象类型而言，最基本的类型限制Schema是</p>
+<p>{&ldquo;type&rdquo; : &ldquo;object&rdquo;}</p>
+<p>然而，除了类型外，我们通常需要对其成员做进一步约定。对象的类型特定关键字，大多是为此目的服务的。</p>
+<p>4.2.1 成员的Schema
+关键字：properties</p>
+<p>规定对象各成原所应遵循的Schema。</p>
+<p>{ 
+&ldquo;type&rdquo;: &ldquo;object&rdquo;,  <br>
+&ldquo;properties&rdquo;: {   <br>
+&ldquo;name&rdquo;: {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
+&ldquo;age&rdquo; : {&ldquo;type&rdquo; : &ldquo;integer&rdquo;},
+&ldquo;address&rdquo; : {
+&ldquo;type&rdquo; : &ldquo;object&rdquo;,
+&ldquo;properties&rdquo; : {
+&ldquo;city&rdquo; : {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
+&ldquo;country&rdquo; : {&ldquo;type&rdquo; : &ldquo;string&rdquo;}
+}
+}
+}
+}
+对于上例中的Schema，合法的data是</p>
+<p>{
+&ldquo;name&rdquo;: &ldquo;Froid&rdquo;,
+&ldquo;age&rdquo; : 26,
+&ldquo;address&rdquo; : {
+&ldquo;city&rdquo; : &ldquo;New York&rdquo;,
+&ldquo;country&rdquo; : &ldquo;USA&rdquo;
+}
+}
+properties关键字的内容是一个key/value结构的字典，其key对应Json数据中的key，其value是一个嵌套的Json Schema。表示Json数据中key对应的值所应遵守的Json Schema。在上面的例子中，&ldquo;name&quot;对应的Schema是{&ldquo;type&rdquo; : &ldquo;string&rdquo;}，表示&quot;name&quot;的值必须是一个字符串。在Json数据中，对象可以嵌套，同样在Json Schema中也可以嵌套。如&quot;address&quot;字段，在Json Schema中它的内容是一个嵌套的object类型的Json Schema。</p>
+<p>4.2.2 批量定义成员Schema
+关键字：patternProperties</p>
+<p>与properties一样，但是key通过正则表达式匹配属性名。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;object&rdquo;,
+&ldquo;patternProperties&rdquo;: {
+&ldquo;^S_&quot;: { &ldquo;type&rdquo;: &ldquo;string&rdquo; },
+&ldquo;^I_&quot;: { &ldquo;type&rdquo;: &ldquo;integer&rdquo; }
+}
+}
+{&ldquo;S_1&rdquo; : &ldquo;abc&rdquo;}
+{&ldquo;S_1&rdquo; : &ldquo;abc&rdquo;, &ldquo;I_3&rdquo; : 1}</p>
+<p>4.2.3 必须出现的成员
+关键字：required</p>
+<p>规定哪些对象成员是必须的。</p>
+<p>{ 
+&ldquo;type&rdquo;: &ldquo;object&rdquo;,  <br>
+&ldquo;properties&rdquo;: {   <br>
+&ldquo;name&rdquo;: {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
+&ldquo;age&rdquo; : {&ldquo;type&rdquo; : &ldquo;integer&rdquo;},
+},
+&ldquo;required&rdquo; : [&ldquo;name&rdquo;]
+}
+上例中&quot;name&quot;成员是必须的，因此合法的数据可以是</p>
+<p>{&ldquo;name&rdquo; : &ldquo;mary&rdquo;, &ldquo;age&rdquo; : 26}
+{&ldquo;name&rdquo; ： &ldquo;mary&rdquo;}</p>
+<p>但缺少&quot;name&quot;则是非法的</p>
+<p>{&ldquo;age&rdquo; : 26}</p>
+<p>4.2.4 成员依赖关系
+关键字：dependencies</p>
+<p>规定某些成员的依赖成员，不能在依赖成员缺席的情况下单独出现，属于数据完整性方面的约束。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;object&rdquo;,
+&ldquo;dependencies&rdquo;: {
+&ldquo;credit_card&rdquo;: [&ldquo;billing_address&rdquo;]
+}
+}
+dependencies也是一个字典结构，key是Json数据的属性名，value是一个数组，数组内也是Json数据的属性名，表示key必须依赖的其他属性。</p>
+<p>上面Json Schema合法的数据可以是</p>
+<p>{}
+{&ldquo;billing_address&rdquo; : &ldquo;abc&rdquo;}</p>
+<p>但如果有&quot;credit_card&quot;属性，则&quot;billing_address&rdquo; 属性不能缺席。下面的数据是非法的</p>
+<p>{&ldquo;credit_card&rdquo;: &ldquo;7389301761239089&rdquo;}</p>
+<p>4.2.5 是否允许额外属性
+关键字：additionaProperties</p>
+<p>规定object类型是否允许出现不在properties中规定的属性，只能取true/false。</p>
+<p>{ 
+&ldquo;type&rdquo;: &ldquo;object&rdquo;,  <br>
+&ldquo;properties&rdquo;: {   <br>
+&ldquo;name&rdquo;: {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
+&ldquo;age&rdquo; : {&ldquo;type&rdquo; : &ldquo;integer&rdquo;},
+},
+&ldquo;required&rdquo; : [&ldquo;name&rdquo;],
+&ldquo;additionalProperties&rdquo; : false
+}
+上例中规定对象不能有&quot;name&quot;和&quot;age&quot;之外的成员。合法的数据</p>
+<p>{&ldquo;name&rdquo; : &ldquo;mary&rdquo;}
+{&ldquo;name&rdquo; : &ldquo;mary&rdquo;, &ldquo;age&rdquo; : 26}</p>
+<p>非法的数据</p>
+<p>{&ldquo;name&rdquo; : &ldquo;mary&rdquo;, &ldquo;phone&rdquo; : &ldquo;&ldquo;84893948}</p>
+<p>4.2.6 属性个数的限制
+关键字：minProperties, maxProperties</p>
+<p>规定最少、最多有几个属性成员。</p>
+<p>{
+&ldquo;type&rdquo;: &ldquo;object&rdquo;,
+&ldquo;minProperties&rdquo;: 2,
+&ldquo;maxProperties&rdquo;: 3
+}
+{&ldquo;name&rdquo; : &ldquo;mary&rdquo;, &ldquo;age&rdquo; : 26}
+{&ldquo;name&rdquo; : &ldquo;mary&rdquo;, &ldquo;age&rdquo; : 26, &ldquo;phone&rdquo; : &ldquo;37839233&rdquo;}</p>
+<ol start="5">
+<li>逻辑组合</li>
+<li></li>
+</ol>
+<p>关键字：allOf, anyOf, oneOf, not</p>
+<p>从关键字名字可以看出其含义，满足所有、满足任意、满足一个。前三个关键字的使用形式是一致的，以allOf为例说明其形式。</p>
+<p>{
+&ldquo;allOf&rdquo; : [
+Schema1,
+Schema2,
+&hellip;
+]
+}
+其中，&ldquo;allOf&quot;的内容是一个数组，数组内的成员都是内嵌的Json Schema。上例Schema1、Schema2都是内嵌的Json Schema。整个Schema表示当前Json数据，需要同时满足Schema1、Schema2,。</p>
+<p>5.1 allOf
+满足allOf数组中的所有Json Schema。</p>
+<p>{
+&ldquo;allOf&rdquo; : [
+Schema1,
+Schema2,
+&hellip;
+]
+}
+需要注意，不论在内嵌的Schema里还是外部的Schema里，都不应该使&quot;additionalProperties&quot;为false。否则可能会生成任何数据都无法满足的矛盾Schema。</p>
+<p>可以用来实现类似“继承”的关系，例如我们定义了一个Schema_base，如果想要对其进行进一步修饰，可以这样来实现。</p>
+<p>{
+&ldquo;allOf&rdquo; : [
+Schema_base
+]
+&ldquo;properties&rdquo; : {
+&ldquo;other_pro1&rdquo; : {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
+&ldquo;other_pro2&rdquo; : {&ldquo;type&rdquo; : &ldquo;string&rdquo;}
+},
+&ldquo;required&rdquo; : [&ldquo;other_pro1&rdquo;, &ldquo;other_pro2&rdquo;]
+}
+Json数据既需要满足Schema_base，又要具备属性&quot;other_pro1&rdquo;、&ldquo;other_pro2&rdquo;。</p>
+<p>5.2 anyOf
+满足anyOf数组中的任意个Schema。</p>
+<p>{
+&ldquo;anyOf&rdquo; : [
+Schema1,
+Schema2,
+&hellip;
+]
+}
+Json数据需要满足Schema1、Schema2中的一个或多个。</p>
+<p>5.3 oneOf
+满足且进满足oneOf数组中的一个Schema，这也是与anyOf的区别。</p>
+<p>{
+&ldquo;oneOf&rdquo; : [
+Schema1,
+Schema2,
+&hellip;
+]
+}
+5.4 not
+这个关键字不严格规定Json数据应满足什么要求，它告诉Json不能满足not所对应的Schema。</p>
+<p>{
+&ldquo;not&rdquo; : {&ldquo;type&rdquo; : &ldquo;string&rdquo;}
+}
+只要不是string类型的都Json数据都可以。</p>
+<ol start="6">
+<li>复杂结构
+对复杂结构的支持包括定义和引用。可以将相同的结构定义成一个“类型”，需要使用该“类型”时，可以通过其路径或id来引用。</li>
+</ol>
+<p>6.1 定义
+关键字：无</p>
+<p>定义一个类型，并不需要特殊的关键字。通常的习惯是在root节点的definations下面，定义需要多次引用的schema。definations是一个json对象，key是想要定义的“类型”的名称，value是一个json schema。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;definitions&#34;</span>: {
+        <span style="color:#f92672">&#34;address&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+            <span style="color:#f92672">&#34;properties&#34;</span>: {
+                <span style="color:#f92672">&#34;street_address&#34;</span>: { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> },
+                <span style="color:#f92672">&#34;city&#34;</span>:           { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> },
+                <span style="color:#f92672">&#34;state&#34;</span>:          { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> }
+            },
+            <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;street_address&#34;</span>, <span style="color:#e6db74">&#34;city&#34;</span>, <span style="color:#e6db74">&#34;state&#34;</span>]
+        }
+    },
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#f92672">&#34;properties&#34;</span>: {
+        <span style="color:#f92672">&#34;billing_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#/definitions/address&#34;</span> },
+        <span style="color:#f92672">&#34;shipping_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#/definitions/address&#34;</span> }
+    }
+}
+</code></pre></div><p>上例中定义了一个address的schema，并且在两个地方引用了它，#/definitions/address表示从根节点开始的路径。</p>
+<p>6.2 $id
+关键字：$id</p>
+<p>可以在上面的定义中加入id属性，这样可以通过id属性的值对该schema进行引用，而不需要完整的路径。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#e6db74">&#34;address&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+            <span style="color:#f92672">&#34;$id&#34;</span> : <span style="color:#e6db74">&#34;address&#34;</span>,
+            <span style="color:#f92672">&#34;properties&#34;</span>: {
+                <span style="color:#f92672">&#34;street_address&#34;</span>: { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> },
+                <span style="color:#f92672">&#34;city&#34;</span>:           { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> },
+                <span style="color:#f92672">&#34;state&#34;</span>:          { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> }
+            },
+            <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;street_address&#34;</span>, <span style="color:#e6db74">&#34;city&#34;</span>, <span style="color:#e6db74">&#34;state&#34;</span>]
+        }
+</code></pre></div><p>6.3 引用
+关键字：$ref</p>
+<p>关键字$ref可以用在任何需要使用json schema的地方。如上例中，billing_address的value应该是一个json schema，通过一个$ref替代了。</p>
+<p>$ref的value，是该schema的定义在json中的路径，以#开头代表根节点。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;properties&#34;</span>: {
+        <span style="color:#f92672">&#34;billing_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#/definitions/address&#34;</span> },
+        <span style="color:#f92672">&#34;shipping_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#/definitions/address&#34;</span> }
+    }
+}
+</code></pre></div><p>如果schema定义了$id属性，也可以通过该属性的值进行引用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;properties&#34;</span>: {
+        <span style="color:#f92672">&#34;billing_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#address&#34;</span> },
+        <span style="color:#f92672">&#34;shipping_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#address&#34;</span> }
+    }
+}
+</code></pre></div><ol start="7">
+<li>通用关键字
+通用关键字可以在任何json schema中出现，有些影响合法性校验，有些只是描述作用，不影响合法性校验。</li>
+</ol>
+<p>7.1 enum
+关键字：enum</p>
+<p>可以在任何json schema中出现，其value是一个list，表示json数据的取值只能是list中的某个。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+    <span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;red&#34;</span>, <span style="color:#e6db74">&#34;amber&#34;</span>, <span style="color:#e6db74">&#34;green&#34;</span>]
+}
+</code></pre></div><p>上例的schema规定数据只能是一个string，且只能是&quot;red&rdquo;、&ldquo;amber&rdquo;、&ldquo;green&quot;之一。</p>
+<p>7.2 metadata</p>
+<p>关键字：title，description，default，example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Match anything&#34;</span>,
+    <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;This is a schema that matches anything.&#34;</span>,
+    <span style="color:#f92672">&#34;default&#34;</span> : <span style="color:#e6db74">&#34;Default value&#34;</span>,
+    <span style="color:#f92672">&#34;examples&#34;</span> : [
+        <span style="color:#e6db74">&#34;Anything&#34;</span>,
+        <span style="color:#ae81ff">4035</span>
+    ]
+}
+</code></pre></div><p>只作为描述作用，不影响对数据的校验。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://json-schema.org/">https://json-schema.org/</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

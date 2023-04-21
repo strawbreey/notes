@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Strings Api - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Package strings implements simple functions to manipulate UTF-8 encoded strings.
+func Compare
+func Compare (a, b string) int // Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &amp;lt; b, and &#43;1 if a &amp;gt; b.  package main import ( &amp;#34;fmt&amp;#34; &amp;#34;strings&amp;#34; ) func main() { strings.Compare(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;) // -1  strings.Compare(&amp;#34;a&amp;#34;, &amp;#34;a&amp;#34;) // 0  strings.Compare(&amp;#34;b&amp;#34;, &amp;#34;a&amp;#34;) // 1 } func Containes func Containes (s, substr string) bool" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-strings-api/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Strings Api" />
+<meta property="og:description" content="Package strings implements simple functions to manipulate UTF-8 encoded strings.
+func Compare
+func Compare (a, b string) int // Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and &#43;1 if a &gt; b.  package main import ( &#34;fmt&#34; &#34;strings&#34; ) func main() { strings.Compare(&#34;a&#34;, &#34;b&#34;) // -1  strings.Compare(&#34;a&#34;, &#34;a&#34;) // 0  strings.Compare(&#34;b&#34;, &#34;a&#34;) // 1 } func Containes func Containes (s, substr string) bool" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-strings-api/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-12T11:50:11+08:00" />
+<meta property="article:modified_time" content="2020-10-12T11:50:11+08:00" />
+
+<meta itemprop="name" content="Go Strings Api">
+<meta itemprop="description" content="Package strings implements simple functions to manipulate UTF-8 encoded strings.
+func Compare
+func Compare (a, b string) int // Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and &#43;1 if a &gt; b.  package main import ( &#34;fmt&#34; &#34;strings&#34; ) func main() { strings.Compare(&#34;a&#34;, &#34;b&#34;) // -1  strings.Compare(&#34;a&#34;, &#34;a&#34;) // 0  strings.Compare(&#34;b&#34;, &#34;a&#34;) // 1 } func Containes func Containes (s, substr string) bool"><meta itemprop="datePublished" content="2020-10-12T11:50:11+08:00" />
+<meta itemprop="dateModified" content="2020-10-12T11:50:11+08:00" />
+<meta itemprop="wordCount" content="192">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Strings Api"/>
+<meta name="twitter:description" content="Package strings implements simple functions to manipulate UTF-8 encoded strings.
+func Compare
+func Compare (a, b string) int // Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and &#43;1 if a &gt; b.  package main import ( &#34;fmt&#34; &#34;strings&#34; ) func main() { strings.Compare(&#34;a&#34;, &#34;b&#34;) // -1  strings.Compare(&#34;a&#34;, &#34;a&#34;) // 0  strings.Compare(&#34;b&#34;, &#34;a&#34;) // 1 } func Containes func Containes (s, substr string) bool"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Package strings implements simple functions to manipulate UTF-8 encoded strings.</p>
+<p>func Compare</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Compare</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span>
+
+<span style="color:#75715e">// Compare returns an integer comparing two strings lexicographically. The result will be 0 if a==b, -1 if a &lt; b, and +1 if a &gt; b.
+</span><span style="color:#75715e"></span>
+
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Compare</span>(<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>)  <span style="color:#75715e">// -1
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Compare</span>(<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;a&#34;</span>)  <span style="color:#75715e">// 0
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Compare</span>(<span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;a&#34;</span>)  <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="func-containes">func Containes</h3>
+<p>func Containes (s, substr string) bool</p>
+<p>Contains reports whether substr is within s.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#e6db74">&#34;seafood&#34;</span>, <span style="color:#e6db74">&#34;foo&#34;</span>) <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#e6db74">&#34;seafood&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>) <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#e6db74">&#34;seafood&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="func-containsany">func ContainsAny</h3>
+<p>func ContainsAny (s, chars string) bool</p>
+<p>ntainsAny reports whether any Unicode code points in chars are within s.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;team&#34;</span>, <span style="color:#e6db74">&#34;i&#34;</span>) <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;fail&#34;</span>, <span style="color:#e6db74">&#34;ui&#34;</span>) <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;ure&#34;</span>, <span style="color:#e6db74">&#34;ui&#34;</span>) <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;failure&#34;</span>, <span style="color:#e6db74">&#34;ui&#34;</span>) <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)  <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsAny</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#75715e">//false
+</span></code></pre></div><h3 id="func-containsrune">func ContainsRune</h3>
+<p>Rune 符文</p>
+<p>rune is an alias for int32 and is equivalent to int32 in all ways. It is used, by convention, to distinguish character values from integer values.</p>
+<p>func ContainsRune(s string, r rune) bool</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsRune</span>(<span style="color:#e6db74">&#34;aardvark&#34;</span>, <span style="color:#ae81ff">97</span>) <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ContainsRune</span>(<span style="color:#e6db74">&#34;timeout&#34;</span>, <span style="color:#ae81ff">97</span>) <span style="color:#75715e">//false
+</span></code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Http Load Balancer - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="负载均衡
+服务器端负载均衡 负载均衡是我们处理高并发、缓解网络压力和进行服务端扩容的重要手段之一，但是一般情况下我们所说的负载均衡通常都是指服务端负载均衡，服务端负载均衡又分为两种，一种是硬件负载均衡，还有一种是软件负载均衡。
+硬件负载均衡主要通过在服务器节点之间安装专门用于负载均衡的设备，常见的如F5。
+软件负载均衡则主要是在服务器上安装一些具有负载均衡功能的软件来完成请求分发进而实现负载均衡，常见的就是Nginx。
+客户端负载 而在客户端负载均衡中，客户端可以知道所有服务端的详细信息，当需要调用 Server上的接口时，客户端从自身已知的Server列表中，根据提前配置的负载均衡策略，自己挑选一个服务端来调用，此时客户端知道自己调用的是哪一个 Server
+总结 常见的负载均衡系统包括 3 种：
+DNS 负载均衡：一般用来实现地理级别的均衡。 硬件负载均衡： 通过单独的硬件设备比如 F5 来实现负载均衡功能（硬件的价格一般很贵）。 软件负载均衡：通过负载均衡软件比如 Nginx 来实现负载均衡功能。
+参考链接  nginx http load balancer 一道滴滴的负载均衡前端面试题 讲讲亿级PV的负载均衡架构 负载均衡有哪几种实现方式？  " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/http/http-load-balancer/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Http Load Balancer" />
+<meta property="og:description" content="负载均衡
+服务器端负载均衡 负载均衡是我们处理高并发、缓解网络压力和进行服务端扩容的重要手段之一，但是一般情况下我们所说的负载均衡通常都是指服务端负载均衡，服务端负载均衡又分为两种，一种是硬件负载均衡，还有一种是软件负载均衡。
+硬件负载均衡主要通过在服务器节点之间安装专门用于负载均衡的设备，常见的如F5。
+软件负载均衡则主要是在服务器上安装一些具有负载均衡功能的软件来完成请求分发进而实现负载均衡，常见的就是Nginx。
+客户端负载 而在客户端负载均衡中，客户端可以知道所有服务端的详细信息，当需要调用 Server上的接口时，客户端从自身已知的Server列表中，根据提前配置的负载均衡策略，自己挑选一个服务端来调用，此时客户端知道自己调用的是哪一个 Server
+总结 常见的负载均衡系统包括 3 种：
+DNS 负载均衡：一般用来实现地理级别的均衡。 硬件负载均衡： 通过单独的硬件设备比如 F5 来实现负载均衡功能（硬件的价格一般很贵）。 软件负载均衡：通过负载均衡软件比如 Nginx 来实现负载均衡功能。
+参考链接  nginx http load balancer 一道滴滴的负载均衡前端面试题 讲讲亿级PV的负载均衡架构 负载均衡有哪几种实现方式？  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/http/http-load-balancer/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-27T10:32:00+08:00" />
+<meta property="article:modified_time" content="2020-10-27T10:32:00+08:00" />
+
+<meta itemprop="name" content="Http Load Balancer">
+<meta itemprop="description" content="负载均衡
+服务器端负载均衡 负载均衡是我们处理高并发、缓解网络压力和进行服务端扩容的重要手段之一，但是一般情况下我们所说的负载均衡通常都是指服务端负载均衡，服务端负载均衡又分为两种，一种是硬件负载均衡，还有一种是软件负载均衡。
+硬件负载均衡主要通过在服务器节点之间安装专门用于负载均衡的设备，常见的如F5。
+软件负载均衡则主要是在服务器上安装一些具有负载均衡功能的软件来完成请求分发进而实现负载均衡，常见的就是Nginx。
+客户端负载 而在客户端负载均衡中，客户端可以知道所有服务端的详细信息，当需要调用 Server上的接口时，客户端从自身已知的Server列表中，根据提前配置的负载均衡策略，自己挑选一个服务端来调用，此时客户端知道自己调用的是哪一个 Server
+总结 常见的负载均衡系统包括 3 种：
+DNS 负载均衡：一般用来实现地理级别的均衡。 硬件负载均衡： 通过单独的硬件设备比如 F5 来实现负载均衡功能（硬件的价格一般很贵）。 软件负载均衡：通过负载均衡软件比如 Nginx 来实现负载均衡功能。
+参考链接  nginx http load balancer 一道滴滴的负载均衡前端面试题 讲讲亿级PV的负载均衡架构 负载均衡有哪几种实现方式？  "><meta itemprop="datePublished" content="2020-10-27T10:32:00+08:00" />
+<meta itemprop="dateModified" content="2020-10-27T10:32:00+08:00" />
+<meta itemprop="wordCount" content="30">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Http Load Balancer"/>
+<meta name="twitter:description" content="负载均衡
+服务器端负载均衡 负载均衡是我们处理高并发、缓解网络压力和进行服务端扩容的重要手段之一，但是一般情况下我们所说的负载均衡通常都是指服务端负载均衡，服务端负载均衡又分为两种，一种是硬件负载均衡，还有一种是软件负载均衡。
+硬件负载均衡主要通过在服务器节点之间安装专门用于负载均衡的设备，常见的如F5。
+软件负载均衡则主要是在服务器上安装一些具有负载均衡功能的软件来完成请求分发进而实现负载均衡，常见的就是Nginx。
+客户端负载 而在客户端负载均衡中，客户端可以知道所有服务端的详细信息，当需要调用 Server上的接口时，客户端从自身已知的Server列表中，根据提前配置的负载均衡策略，自己挑选一个服务端来调用，此时客户端知道自己调用的是哪一个 Server
+总结 常见的负载均衡系统包括 3 种：
+DNS 负载均衡：一般用来实现地理级别的均衡。 硬件负载均衡： 通过单独的硬件设备比如 F5 来实现负载均衡功能（硬件的价格一般很贵）。 软件负载均衡：通过负载均衡软件比如 Nginx 来实现负载均衡功能。
+参考链接  nginx http load balancer 一道滴滴的负载均衡前端面试题 讲讲亿级PV的负载均衡架构 负载均衡有哪几种实现方式？  "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>负载均衡</p>
+<h3 id="服务器端负载均衡">服务器端负载均衡</h3>
+<p>负载均衡是我们处理高并发、缓解网络压力和进行服务端扩容的重要手段之一，但是一般情况下我们所说的负载均衡通常都是指服务端负载均衡，服务端负载均衡又分为两种，一种是硬件负载均衡，还有一种是软件负载均衡。</p>
+<p>硬件负载均衡主要通过在服务器节点之间安装专门用于负载均衡的设备，常见的如F5。</p>
+<p>软件负载均衡则主要是在服务器上安装一些具有负载均衡功能的软件来完成请求分发进而实现负载均衡，常见的就是Nginx。</p>
+<h3 id="客户端负载">客户端负载</h3>
+<p>而在客户端负载均衡中，客户端可以知道所有服务端的详细信息，当需要调用 Server上的接口时，客户端从自身已知的Server列表中，根据提前配置的负载均衡策略，自己挑选一个服务端来调用，此时客户端知道自己调用的是哪一个 Server</p>
+<h3 id="总结">总结</h3>
+<p>常见的负载均衡系统包括 3 种：</p>
+<p>DNS 负载均衡：一般用来实现地理级别的均衡。
+硬件负载均衡： 通过单独的硬件设备比如 F5 来实现负载均衡功能（硬件的价格一般很贵）。
+软件负载均衡：通过负载均衡软件比如 Nginx 来实现负载均衡功能。</p>
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li><a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/">nginx http load balancer</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25600864">一道滴滴的负载均衡前端面试题</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/61847281">讲讲亿级PV的负载均衡架构</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/128565873">负载均衡有哪几种实现方式？</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

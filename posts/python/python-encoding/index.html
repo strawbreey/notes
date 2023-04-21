@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Python - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Python 编码 Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无法正确打印汉字，所以在读取中文时会报错。
+解决方法为只要在文件开头加入 # -- coding: UTF-8 -- 或者 # coding=utf-8 就行了
+注意：
+  Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。
+  如果你使用编辑器，同时需要设置 py 文件存储的格式为 UTF-8，否则会出现类似以下错误信息：
+  乱码原因： 因为你的文件声明为utf-8，并且也应该是用utf-8的编码保存的源文件。但是windows的本地默认编码是cp936，也就是gbk编码，所以在控制台直接打印utf-8的字符串当然是乱码了。
+  python编程中 系统编码，python编码，文件编码 的概念 系统编码：默认写源码的编辑器的编码方式。它代表源码文件内的所有内容都是根据词方式编码成二进制码流。存入到磁盘中的。linux下通过locale命令查看。
+python编码：指python内设置的解码方式。如果不设定的话，python默认的是ascii解码方式。如果python源代码文件中不出现中文的话，这个地方怎么设定应该不会问题。
+设定方法：在源码文件开头（一定是第一行）：#--coding:UTF-8--，源码文件的设置解码方式是UTF-8 或者
+一般情况下输出乱码的原因就是 没有按照系统解码的方式进行编码。 比如print s, s类型为str，linux系统下系统默认编码为utf8编码，s在输出前就应该编码为utf8。如果s为gbk编码就应该这样输出。print s.decode(&amp;lsquo;gbk&amp;rsquo;).encode(&amp;lsquo;utf8&amp;rsquo;)才能输出中文。
+window下面情况相同，window默认编码为gbk编码，所以s输出前必须编码为gbk。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/python/python-encoding/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Python" />
+<meta property="og:description" content="Python 编码 Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无法正确打印汉字，所以在读取中文时会报错。
+解决方法为只要在文件开头加入 # -- coding: UTF-8 -- 或者 # coding=utf-8 就行了
+注意：
+  Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。
+  如果你使用编辑器，同时需要设置 py 文件存储的格式为 UTF-8，否则会出现类似以下错误信息：
+  乱码原因： 因为你的文件声明为utf-8，并且也应该是用utf-8的编码保存的源文件。但是windows的本地默认编码是cp936，也就是gbk编码，所以在控制台直接打印utf-8的字符串当然是乱码了。
+  python编程中 系统编码，python编码，文件编码 的概念 系统编码：默认写源码的编辑器的编码方式。它代表源码文件内的所有内容都是根据词方式编码成二进制码流。存入到磁盘中的。linux下通过locale命令查看。
+python编码：指python内设置的解码方式。如果不设定的话，python默认的是ascii解码方式。如果python源代码文件中不出现中文的话，这个地方怎么设定应该不会问题。
+设定方法：在源码文件开头（一定是第一行）：#--coding:UTF-8--，源码文件的设置解码方式是UTF-8 或者
+一般情况下输出乱码的原因就是 没有按照系统解码的方式进行编码。 比如print s, s类型为str，linux系统下系统默认编码为utf8编码，s在输出前就应该编码为utf8。如果s为gbk编码就应该这样输出。print s.decode(&lsquo;gbk&rsquo;).encode(&lsquo;utf8&rsquo;)才能输出中文。
+window下面情况相同，window默认编码为gbk编码，所以s输出前必须编码为gbk。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/python/python-encoding/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-28T17:29:21+08:00" />
+<meta property="article:modified_time" content="2021-04-28T17:29:21+08:00" />
+
+<meta itemprop="name" content="Python">
+<meta itemprop="description" content="Python 编码 Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无法正确打印汉字，所以在读取中文时会报错。
+解决方法为只要在文件开头加入 # -- coding: UTF-8 -- 或者 # coding=utf-8 就行了
+注意：
+  Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。
+  如果你使用编辑器，同时需要设置 py 文件存储的格式为 UTF-8，否则会出现类似以下错误信息：
+  乱码原因： 因为你的文件声明为utf-8，并且也应该是用utf-8的编码保存的源文件。但是windows的本地默认编码是cp936，也就是gbk编码，所以在控制台直接打印utf-8的字符串当然是乱码了。
+  python编程中 系统编码，python编码，文件编码 的概念 系统编码：默认写源码的编辑器的编码方式。它代表源码文件内的所有内容都是根据词方式编码成二进制码流。存入到磁盘中的。linux下通过locale命令查看。
+python编码：指python内设置的解码方式。如果不设定的话，python默认的是ascii解码方式。如果python源代码文件中不出现中文的话，这个地方怎么设定应该不会问题。
+设定方法：在源码文件开头（一定是第一行）：#--coding:UTF-8--，源码文件的设置解码方式是UTF-8 或者
+一般情况下输出乱码的原因就是 没有按照系统解码的方式进行编码。 比如print s, s类型为str，linux系统下系统默认编码为utf8编码，s在输出前就应该编码为utf8。如果s为gbk编码就应该这样输出。print s.decode(&lsquo;gbk&rsquo;).encode(&lsquo;utf8&rsquo;)才能输出中文。
+window下面情况相同，window默认编码为gbk编码，所以s输出前必须编码为gbk。"><meta itemprop="datePublished" content="2021-04-28T17:29:21+08:00" />
+<meta itemprop="dateModified" content="2021-04-28T17:29:21+08:00" />
+<meta itemprop="wordCount" content="40">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python"/>
+<meta name="twitter:description" content="Python 编码 Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无法正确打印汉字，所以在读取中文时会报错。
+解决方法为只要在文件开头加入 # -- coding: UTF-8 -- 或者 # coding=utf-8 就行了
+注意：
+  Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。
+  如果你使用编辑器，同时需要设置 py 文件存储的格式为 UTF-8，否则会出现类似以下错误信息：
+  乱码原因： 因为你的文件声明为utf-8，并且也应该是用utf-8的编码保存的源文件。但是windows的本地默认编码是cp936，也就是gbk编码，所以在控制台直接打印utf-8的字符串当然是乱码了。
+  python编程中 系统编码，python编码，文件编码 的概念 系统编码：默认写源码的编辑器的编码方式。它代表源码文件内的所有内容都是根据词方式编码成二进制码流。存入到磁盘中的。linux下通过locale命令查看。
+python编码：指python内设置的解码方式。如果不设定的话，python默认的是ascii解码方式。如果python源代码文件中不出现中文的话，这个地方怎么设定应该不会问题。
+设定方法：在源码文件开头（一定是第一行）：#--coding:UTF-8--，源码文件的设置解码方式是UTF-8 或者
+一般情况下输出乱码的原因就是 没有按照系统解码的方式进行编码。 比如print s, s类型为str，linux系统下系统默认编码为utf8编码，s在输出前就应该编码为utf8。如果s为gbk编码就应该这样输出。print s.decode(&lsquo;gbk&rsquo;).encode(&lsquo;utf8&rsquo;)才能输出中文。
+window下面情况相同，window默认编码为gbk编码，所以s输出前必须编码为gbk。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h2 id="python-编码">Python 编码</h2>
+<p>Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无法正确打印汉字，所以在读取中文时会报错。</p>
+<p>解决方法为只要在文件开头加入 # -<em>- coding: UTF-8 -</em>- 或者 # coding=utf-8 就行了</p>
+<p>注意：</p>
+<ol>
+<li>
+<p>Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。</p>
+</li>
+<li>
+<p>如果你使用编辑器，同时需要设置 py 文件存储的格式为 UTF-8，否则会出现类似以下错误信息：</p>
+</li>
+<li>
+<p>乱码原因： 因为你的文件声明为utf-8，并且也应该是用utf-8的编码保存的源文件。但是windows的本地默认编码是cp936，也就是gbk编码，所以在控制台直接打印utf-8的字符串当然是乱码了。</p>
+</li>
+</ol>
+<h3 id="python编程中-系统编码python编码文件编码-的概念">python编程中 系统编码，python编码，文件编码 的概念</h3>
+<p>系统编码：默认写源码的编辑器的编码方式。它代表源码文件内的所有内容都是根据词方式编码成二进制码流。存入到磁盘中的。linux下通过locale命令查看。</p>
+<p>python编码：指python内设置的解码方式。如果不设定的话，python默认的是ascii解码方式。如果python源代码文件中不出现中文的话，这个地方怎么设定应该不会问题。</p>
+<p>设定方法：在源码文件开头（一定是第一行）：#-<em>-coding:UTF-8-</em>-，源码文件的设置解码方式是UTF-8 或者</p>
+<p>一般情况下输出乱码的原因就是 没有按照系统解码的方式进行编码。
+比如print s, s类型为str，linux系统下系统默认编码为utf8编码，s在输出前就应该编码为utf8。如果s为gbk编码就应该这样输出。print s.decode(&lsquo;gbk&rsquo;).encode(&lsquo;utf8&rsquo;)才能输出中文。</p>
+<p>window下面情况相同，window默认编码为gbk编码，所以s输出前必须编码为gbk。</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

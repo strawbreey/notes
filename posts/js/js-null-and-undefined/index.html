@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js Null and Undefined - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="null、undefined和未声明变量之间有什么区别？如何检查判断这些状态值？ 当你没有提前使用var、let或const声明变量，就为一个变量赋值时，该变量是未声明变量（undeclared variables）。未声明变量会脱离当前作用域，成为全局作用域下定义的变量。在严格模式下，给未声明的变量赋值，会抛出ReferenceError错误。和使用全局变量一样，使用未声明变量也是非常不好的做法，应当尽可能避免。要检查判断它们，需要将用到它们的代码放在try/catch语句中。
+function foo() { x = 1; // 在严格模式下，抛出 ReferenceError 错误 } foo(); console.log(x); // 1 当一个变量已经声明，但没有赋值时，该变量的值是undefined。如果一个函数的执行结果被赋值给一个变量，但是这个函数却没有返回任何值，那么该变量的值是undefined。要检查它，需要使用严格相等（===）；或者使用typeof，它会返回&amp;rsquo;undefined&amp;rsquo;字符串。请注意，不能使用非严格相等（==）来检查，因为如果变量值为null，使用非严格相等也会返回true。
+var foo; console.log(foo); // undefined console.log(foo === undefined); // true console.log(typeof foo === &amp;#39;undefined&amp;#39;); // true  console.log(foo == null); // true. 错误，不要使用非严格相等！  function bar() {} var baz = bar(); console.log(baz); // undefined null只能被显式赋值给变量。它表示空值，与被显式赋值 undefined 的意义不同。要检查判断null值，需要使用严格相等运算符。请注意，和前面一样，不能使用非严格相等（==）来检查，因为如果变量值为undefined，使用非严格相等也会返回true。
+var foo = null; console.log(foo === null); // true console.log(foo == undefined); // true. 错误，不要使用非严格相等！ 作为一种个人习惯，我从不使用未声明变量。如果定义了暂时没有用到的变量，我会在声明后明确地给它们赋值为null" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-null-and-undefined/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js Null and Undefined" />
+<meta property="og:description" content="null、undefined和未声明变量之间有什么区别？如何检查判断这些状态值？ 当你没有提前使用var、let或const声明变量，就为一个变量赋值时，该变量是未声明变量（undeclared variables）。未声明变量会脱离当前作用域，成为全局作用域下定义的变量。在严格模式下，给未声明的变量赋值，会抛出ReferenceError错误。和使用全局变量一样，使用未声明变量也是非常不好的做法，应当尽可能避免。要检查判断它们，需要将用到它们的代码放在try/catch语句中。
+function foo() { x = 1; // 在严格模式下，抛出 ReferenceError 错误 } foo(); console.log(x); // 1 当一个变量已经声明，但没有赋值时，该变量的值是undefined。如果一个函数的执行结果被赋值给一个变量，但是这个函数却没有返回任何值，那么该变量的值是undefined。要检查它，需要使用严格相等（===）；或者使用typeof，它会返回&rsquo;undefined&rsquo;字符串。请注意，不能使用非严格相等（==）来检查，因为如果变量值为null，使用非严格相等也会返回true。
+var foo; console.log(foo); // undefined console.log(foo === undefined); // true console.log(typeof foo === &#39;undefined&#39;); // true  console.log(foo == null); // true. 错误，不要使用非严格相等！  function bar() {} var baz = bar(); console.log(baz); // undefined null只能被显式赋值给变量。它表示空值，与被显式赋值 undefined 的意义不同。要检查判断null值，需要使用严格相等运算符。请注意，和前面一样，不能使用非严格相等（==）来检查，因为如果变量值为undefined，使用非严格相等也会返回true。
+var foo = null; console.log(foo === null); // true console.log(foo == undefined); // true. 错误，不要使用非严格相等！ 作为一种个人习惯，我从不使用未声明变量。如果定义了暂时没有用到的变量，我会在声明后明确地给它们赋值为null" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-null-and-undefined/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-27T14:19:43+08:00" />
+<meta property="article:modified_time" content="2021-01-27T14:19:43+08:00" />
+
+<meta itemprop="name" content="Js Null and Undefined">
+<meta itemprop="description" content="null、undefined和未声明变量之间有什么区别？如何检查判断这些状态值？ 当你没有提前使用var、let或const声明变量，就为一个变量赋值时，该变量是未声明变量（undeclared variables）。未声明变量会脱离当前作用域，成为全局作用域下定义的变量。在严格模式下，给未声明的变量赋值，会抛出ReferenceError错误。和使用全局变量一样，使用未声明变量也是非常不好的做法，应当尽可能避免。要检查判断它们，需要将用到它们的代码放在try/catch语句中。
+function foo() { x = 1; // 在严格模式下，抛出 ReferenceError 错误 } foo(); console.log(x); // 1 当一个变量已经声明，但没有赋值时，该变量的值是undefined。如果一个函数的执行结果被赋值给一个变量，但是这个函数却没有返回任何值，那么该变量的值是undefined。要检查它，需要使用严格相等（===）；或者使用typeof，它会返回&rsquo;undefined&rsquo;字符串。请注意，不能使用非严格相等（==）来检查，因为如果变量值为null，使用非严格相等也会返回true。
+var foo; console.log(foo); // undefined console.log(foo === undefined); // true console.log(typeof foo === &#39;undefined&#39;); // true  console.log(foo == null); // true. 错误，不要使用非严格相等！  function bar() {} var baz = bar(); console.log(baz); // undefined null只能被显式赋值给变量。它表示空值，与被显式赋值 undefined 的意义不同。要检查判断null值，需要使用严格相等运算符。请注意，和前面一样，不能使用非严格相等（==）来检查，因为如果变量值为undefined，使用非严格相等也会返回true。
+var foo = null; console.log(foo === null); // true console.log(foo == undefined); // true. 错误，不要使用非严格相等！ 作为一种个人习惯，我从不使用未声明变量。如果定义了暂时没有用到的变量，我会在声明后明确地给它们赋值为null"><meta itemprop="datePublished" content="2021-01-27T14:19:43+08:00" />
+<meta itemprop="dateModified" content="2021-01-27T14:19:43+08:00" />
+<meta itemprop="wordCount" content="72">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Null and Undefined"/>
+<meta name="twitter:description" content="null、undefined和未声明变量之间有什么区别？如何检查判断这些状态值？ 当你没有提前使用var、let或const声明变量，就为一个变量赋值时，该变量是未声明变量（undeclared variables）。未声明变量会脱离当前作用域，成为全局作用域下定义的变量。在严格模式下，给未声明的变量赋值，会抛出ReferenceError错误。和使用全局变量一样，使用未声明变量也是非常不好的做法，应当尽可能避免。要检查判断它们，需要将用到它们的代码放在try/catch语句中。
+function foo() { x = 1; // 在严格模式下，抛出 ReferenceError 错误 } foo(); console.log(x); // 1 当一个变量已经声明，但没有赋值时，该变量的值是undefined。如果一个函数的执行结果被赋值给一个变量，但是这个函数却没有返回任何值，那么该变量的值是undefined。要检查它，需要使用严格相等（===）；或者使用typeof，它会返回&rsquo;undefined&rsquo;字符串。请注意，不能使用非严格相等（==）来检查，因为如果变量值为null，使用非严格相等也会返回true。
+var foo; console.log(foo); // undefined console.log(foo === undefined); // true console.log(typeof foo === &#39;undefined&#39;); // true  console.log(foo == null); // true. 错误，不要使用非严格相等！  function bar() {} var baz = bar(); console.log(baz); // undefined null只能被显式赋值给变量。它表示空值，与被显式赋值 undefined 的意义不同。要检查判断null值，需要使用严格相等运算符。请注意，和前面一样，不能使用非严格相等（==）来检查，因为如果变量值为undefined，使用非严格相等也会返回true。
+var foo = null; console.log(foo === null); // true console.log(foo == undefined); // true. 错误，不要使用非严格相等！ 作为一种个人习惯，我从不使用未声明变量。如果定义了暂时没有用到的变量，我会在声明后明确地给它们赋值为null"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h2 id="nullundefined和未声明变量之间有什么区别如何检查判断这些状态值">null、undefined和未声明变量之间有什么区别？如何检查判断这些状态值？</h2>
+<p>当你没有提前使用var、let或const声明变量，就为一个变量赋值时，该变量是未声明变量（undeclared variables）。未声明变量会脱离当前作用域，成为全局作用域下定义的变量。在严格模式下，给未声明的变量赋值，会抛出ReferenceError错误。和使用全局变量一样，使用未声明变量也是非常不好的做法，应当尽可能避免。要检查判断它们，需要将用到它们的代码放在try/catch语句中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+  <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 在严格模式下，抛出 ReferenceError 错误
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">foo</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// 1
+</span></code></pre></div><p>当一个变量已经声明，但没有赋值时，该变量的值是undefined。如果一个函数的执行结果被赋值给一个变量，但是这个函数却没有返回任何值，那么该变量的值是undefined。要检查它，需要使用严格相等（===）；或者使用typeof，它会返回&rsquo;undefined&rsquo;字符串。请注意，不能使用非严格相等（==）来检查，因为如果变量值为null，使用非严格相等也会返回true。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>); <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// true. 错误，不要使用非严格相等！
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bar</span>() {}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">baz</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">bar</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">baz</span>); <span style="color:#75715e">// undefined
+</span></code></pre></div><p>null只能被显式赋值给变量。它表示空值，与被显式赋值 undefined 的意义不同。要检查判断null值，需要使用严格相等运算符。请注意，和前面一样，不能使用非严格相等（==）来检查，因为如果变量值为undefined，使用非严格相等也会返回true。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true. 错误，不要使用非严格相等！
+</span></code></pre></div><p>作为一种个人习惯，我从不使用未声明变量。如果定义了暂时没有用到的变量，我会在声明后明确地给它们赋值为null</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/15985875/effect-of-declared-and-undeclared-variables">https://stackoverflow.com/questions/15985875/effect-of-declared-and-undeclared-variables</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mysql Design - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="字符集 统一使用 utf8mb4 MySQL在 5.5.3 之后增加了 utf8mb4 字符编码，简单的说utf8mb4才是真正的utf-8，因为它可以支持4个字节每个字符，ps：当我们要存储emoji表情就必须使用utf8mb4，性能上不会有损失
+建表规范   字段名必须小写
+  小数类型为decimal
+  如果存储的字符串长度几乎相等，使用 char 定长字符串类型（与varchar的区别，例如，存储字符串“abc&amp;quot;，对于char (10)，表示你存储的字符将占10个字节(包括7个空字符)，而同样的varchar (10)则只占用3个字节的长度，10只是最大值，当你存储的字符小于10时，按实际长度存储）
+  varchar 是可变长字符串，不会预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索 引效率
+  表必备三字段:id, date_create, date_update
+  为避免关连查询，字段允许适当冗余，以高查询性能，但必须考虑数据一致。冗余字段应遵循 1.不是频繁修改的字段 2.不是 varchar 超长字段，更不能是 text 字段
+  合适的字符存储长度，无负数的情况需要使用无符号位存储，扩大表示范围
+ unsigned tinyint	无符号位 0-255 // 一个字节 8 bit unsigned smallint	无符号位 0-65535 // 八个字节unsigned int	无符号位 约 0-42.9亿 // 64个字节unsigned bigint	无符号位 约 0-10的19次方  " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/mysql/mysql-design/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Mysql Design" />
+<meta property="og:description" content="字符集 统一使用 utf8mb4 MySQL在 5.5.3 之后增加了 utf8mb4 字符编码，简单的说utf8mb4才是真正的utf-8，因为它可以支持4个字节每个字符，ps：当我们要存储emoji表情就必须使用utf8mb4，性能上不会有损失
+建表规范   字段名必须小写
+  小数类型为decimal
+  如果存储的字符串长度几乎相等，使用 char 定长字符串类型（与varchar的区别，例如，存储字符串“abc&quot;，对于char (10)，表示你存储的字符将占10个字节(包括7个空字符)，而同样的varchar (10)则只占用3个字节的长度，10只是最大值，当你存储的字符小于10时，按实际长度存储）
+  varchar 是可变长字符串，不会预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索 引效率
+  表必备三字段:id, date_create, date_update
+  为避免关连查询，字段允许适当冗余，以高查询性能，但必须考虑数据一致。冗余字段应遵循 1.不是频繁修改的字段 2.不是 varchar 超长字段，更不能是 text 字段
+  合适的字符存储长度，无负数的情况需要使用无符号位存储，扩大表示范围
+ unsigned tinyint	无符号位 0-255 // 一个字节 8 bit unsigned smallint	无符号位 0-65535 // 八个字节unsigned int	无符号位 约 0-42.9亿 // 64个字节unsigned bigint	无符号位 约 0-10的19次方  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/mysql/mysql-design/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-20T15:24:10+08:00" />
+<meta property="article:modified_time" content="2020-11-20T15:24:10+08:00" />
+
+<meta itemprop="name" content="Mysql Design">
+<meta itemprop="description" content="字符集 统一使用 utf8mb4 MySQL在 5.5.3 之后增加了 utf8mb4 字符编码，简单的说utf8mb4才是真正的utf-8，因为它可以支持4个字节每个字符，ps：当我们要存储emoji表情就必须使用utf8mb4，性能上不会有损失
+建表规范   字段名必须小写
+  小数类型为decimal
+  如果存储的字符串长度几乎相等，使用 char 定长字符串类型（与varchar的区别，例如，存储字符串“abc&quot;，对于char (10)，表示你存储的字符将占10个字节(包括7个空字符)，而同样的varchar (10)则只占用3个字节的长度，10只是最大值，当你存储的字符小于10时，按实际长度存储）
+  varchar 是可变长字符串，不会预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索 引效率
+  表必备三字段:id, date_create, date_update
+  为避免关连查询，字段允许适当冗余，以高查询性能，但必须考虑数据一致。冗余字段应遵循 1.不是频繁修改的字段 2.不是 varchar 超长字段，更不能是 text 字段
+  合适的字符存储长度，无负数的情况需要使用无符号位存储，扩大表示范围
+ unsigned tinyint	无符号位 0-255 // 一个字节 8 bit unsigned smallint	无符号位 0-65535 // 八个字节unsigned int	无符号位 约 0-42.9亿 // 64个字节unsigned bigint	无符号位 约 0-10的19次方  "><meta itemprop="datePublished" content="2020-11-20T15:24:10+08:00" />
+<meta itemprop="dateModified" content="2020-11-20T15:24:10+08:00" />
+<meta itemprop="wordCount" content="58">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mysql Design"/>
+<meta name="twitter:description" content="字符集 统一使用 utf8mb4 MySQL在 5.5.3 之后增加了 utf8mb4 字符编码，简单的说utf8mb4才是真正的utf-8，因为它可以支持4个字节每个字符，ps：当我们要存储emoji表情就必须使用utf8mb4，性能上不会有损失
+建表规范   字段名必须小写
+  小数类型为decimal
+  如果存储的字符串长度几乎相等，使用 char 定长字符串类型（与varchar的区别，例如，存储字符串“abc&quot;，对于char (10)，表示你存储的字符将占10个字节(包括7个空字符)，而同样的varchar (10)则只占用3个字节的长度，10只是最大值，当你存储的字符小于10时，按实际长度存储）
+  varchar 是可变长字符串，不会预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索 引效率
+  表必备三字段:id, date_create, date_update
+  为避免关连查询，字段允许适当冗余，以高查询性能，但必须考虑数据一致。冗余字段应遵循 1.不是频繁修改的字段 2.不是 varchar 超长字段，更不能是 text 字段
+  合适的字符存储长度，无负数的情况需要使用无符号位存储，扩大表示范围
+ unsigned tinyint	无符号位 0-255 // 一个字节 8 bit unsigned smallint	无符号位 0-65535 // 八个字节unsigned int	无符号位 约 0-42.9亿 // 64个字节unsigned bigint	无符号位 约 0-10的19次方  "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="字符集">字符集</h3>
+<p>统一使用 utf8mb4 MySQL在 5.5.3 之后增加了 utf8mb4 字符编码，简单的说utf8mb4才是真正的utf-8，因为它可以支持4个字节每个字符，ps：当我们要存储emoji表情就必须使用utf8mb4，性能上不会有损失</p>
+<h3 id="建表规范">建表规范</h3>
+<ul>
+<li>
+<p>字段名必须小写</p>
+</li>
+<li>
+<p>小数类型为decimal</p>
+</li>
+<li>
+<p>如果存储的字符串长度几乎相等，使用 char 定长字符串类型（与varchar的区别，例如，存储字符串“abc&quot;，对于char (10)，表示你存储的字符将占10个字节(包括7个空字符)，而同样的varchar (10)则只占用3个字节的长度，10只是最大值，当你存储的字符小于10时，按实际长度存储）</p>
+</li>
+<li>
+<p>varchar 是可变长字符串，不会预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索 引效率</p>
+</li>
+<li>
+<p>表必备三字段:id, date_create, date_update</p>
+</li>
+<li>
+<p>为避免关连查询，字段允许适当冗余，以高查询性能，但必须考虑数据一致。冗余字段应遵循 1.不是频繁修改的字段 2.不是 varchar 超长字段，更不能是 text 字段</p>
+</li>
+<li>
+<p>合适的字符存储长度，无负数的情况需要使用无符号位存储，扩大表示范围</p>
+<pre><code>  unsigned tinyint	无符号位 0-255    // 一个字节 8 bit 
+  unsigned smallint	无符号位 0-65535  // 八个字节
+  unsigned int	无符号位 约 0-42.9亿  // 64个字节
+  unsigned bigint	无符号位 约 0-10的19次方
+</code></pre></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

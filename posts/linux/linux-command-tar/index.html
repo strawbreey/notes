@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux Command Tar - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、.Z、.tar等众多的压缩文件名，此外windows下的.zip和.rar也可以在Linux下使 用，不过在Linux使用.zip和.rar的人就太少了。（因为 7z 和 zip 压缩格式都不能保留 unix 风格的文件权限，比如解压出个可执行文件要重新 chmod chown 才能恢复正常。而 tar 格式可以。而 tar 本身不提供压缩，无非就是把包括所有文件的內容和权限拼成一个文件而己，所以用另外如 gzip 格式压缩。为什么是 gzip，因为几乎所有 linux 都支持而已。)
+两个概念：打包和压缩。
+ 打包是指将一大堆文件或目录什么的变成一个总的文件 压缩则是将一个大的文件通过一些压缩算法变成一个小文件。  为什么要区分这 两个概念呢？其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就得先借助另外的工具将这一大堆文件先打 成一个包，然后再就原来的压缩程序进行压缩。
+Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的
+基本用法： tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：
+tar -cf all.tar *.jpg # 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。 tar -rf all.tar *.gif # 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。 tar -uf all.tar logo.gif # 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。 tar -tf all.tar # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思 tar -xf all.tar # 这条命令是解出all.tar包中所有文件，-x是解包的意思 以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。
+ tar调用gzip  gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：
+tar -czf all.tar.gz *.jpg# 这条命令是将所有." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/linux/linux-command-tar/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Linux Command Tar" />
+<meta property="og:description" content="Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、.Z、.tar等众多的压缩文件名，此外windows下的.zip和.rar也可以在Linux下使 用，不过在Linux使用.zip和.rar的人就太少了。（因为 7z 和 zip 压缩格式都不能保留 unix 风格的文件权限，比如解压出个可执行文件要重新 chmod chown 才能恢复正常。而 tar 格式可以。而 tar 本身不提供压缩，无非就是把包括所有文件的內容和权限拼成一个文件而己，所以用另外如 gzip 格式压缩。为什么是 gzip，因为几乎所有 linux 都支持而已。)
+两个概念：打包和压缩。
+ 打包是指将一大堆文件或目录什么的变成一个总的文件 压缩则是将一个大的文件通过一些压缩算法变成一个小文件。  为什么要区分这 两个概念呢？其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就得先借助另外的工具将这一大堆文件先打 成一个包，然后再就原来的压缩程序进行压缩。
+Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的
+基本用法： tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：
+tar -cf all.tar *.jpg # 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。 tar -rf all.tar *.gif # 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。 tar -uf all.tar logo.gif # 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。 tar -tf all.tar # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思 tar -xf all.tar # 这条命令是解出all.tar包中所有文件，-x是解包的意思 以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。
+ tar调用gzip  gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：
+tar -czf all.tar.gz *.jpg# 这条命令是将所有." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/linux/linux-command-tar/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-13T11:21:48+08:00" />
+<meta property="article:modified_time" content="2021-01-13T11:21:48+08:00" />
+
+<meta itemprop="name" content="Linux Command Tar">
+<meta itemprop="description" content="Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、.Z、.tar等众多的压缩文件名，此外windows下的.zip和.rar也可以在Linux下使 用，不过在Linux使用.zip和.rar的人就太少了。（因为 7z 和 zip 压缩格式都不能保留 unix 风格的文件权限，比如解压出个可执行文件要重新 chmod chown 才能恢复正常。而 tar 格式可以。而 tar 本身不提供压缩，无非就是把包括所有文件的內容和权限拼成一个文件而己，所以用另外如 gzip 格式压缩。为什么是 gzip，因为几乎所有 linux 都支持而已。)
+两个概念：打包和压缩。
+ 打包是指将一大堆文件或目录什么的变成一个总的文件 压缩则是将一个大的文件通过一些压缩算法变成一个小文件。  为什么要区分这 两个概念呢？其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就得先借助另外的工具将这一大堆文件先打 成一个包，然后再就原来的压缩程序进行压缩。
+Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的
+基本用法： tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：
+tar -cf all.tar *.jpg # 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。 tar -rf all.tar *.gif # 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。 tar -uf all.tar logo.gif # 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。 tar -tf all.tar # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思 tar -xf all.tar # 这条命令是解出all.tar包中所有文件，-x是解包的意思 以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。
+ tar调用gzip  gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：
+tar -czf all.tar.gz *.jpg# 这条命令是将所有."><meta itemprop="datePublished" content="2021-01-13T11:21:48+08:00" />
+<meta itemprop="dateModified" content="2021-01-13T11:21:48+08:00" />
+<meta itemprop="wordCount" content="302">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Command Tar"/>
+<meta name="twitter:description" content="Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、.Z、.tar等众多的压缩文件名，此外windows下的.zip和.rar也可以在Linux下使 用，不过在Linux使用.zip和.rar的人就太少了。（因为 7z 和 zip 压缩格式都不能保留 unix 风格的文件权限，比如解压出个可执行文件要重新 chmod chown 才能恢复正常。而 tar 格式可以。而 tar 本身不提供压缩，无非就是把包括所有文件的內容和权限拼成一个文件而己，所以用另外如 gzip 格式压缩。为什么是 gzip，因为几乎所有 linux 都支持而已。)
+两个概念：打包和压缩。
+ 打包是指将一大堆文件或目录什么的变成一个总的文件 压缩则是将一个大的文件通过一些压缩算法变成一个小文件。  为什么要区分这 两个概念呢？其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就得先借助另外的工具将这一大堆文件先打 成一个包，然后再就原来的压缩程序进行压缩。
+Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的
+基本用法： tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：
+tar -cf all.tar *.jpg # 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。 tar -rf all.tar *.gif # 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。 tar -uf all.tar logo.gif # 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。 tar -tf all.tar # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思 tar -xf all.tar # 这条命令是解出all.tar包中所有文件，-x是解包的意思 以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。
+ tar调用gzip  gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：
+tar -czf all.tar.gz *.jpg# 这条命令是将所有."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Windows下最常见的压缩文件就只有两种，一是,zip，另一个是.rar。但Linux就不同，它有.gz、.tar.gz、tgz、bz2、.Z、.tar等众多的压缩文件名，此外windows下的.zip和.rar也可以在Linux下使 用，不过在Linux使用.zip和.rar的人就太少了。（因为 7z 和 zip 压缩格式都不能保留 unix 风格的文件权限，比如解压出个可执行文件要重新 chmod chown 才能恢复正常。而 tar 格式可以。而 tar 本身不提供压缩，无非就是把包括所有文件的內容和权限拼成一个文件而己，所以用另外如 gzip 格式压缩。为什么是 gzip，因为几乎所有 linux 都支持而已。)</p>
+<p>两个概念：打包和压缩。</p>
+<ul>
+<li>打包是指将一大堆文件或目录什么的变成一个总的文件</li>
+<li>压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</li>
+</ul>
+<p>为什么要区分这 两个概念呢？其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就得先借助另外的工具将这一大堆文件先打 成一个包，然后再就原来的压缩程序进行压缩。</p>
+<p>Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的</p>
+<h3 id="基本用法">基本用法：</h3>
+<p>tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cf all.tar *.jpg
+<span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</span>
+
+tar -rf all.tar *.gif
+<span style="color:#75715e"># 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</span>
+
+tar -uf all.tar logo.gif
+<span style="color:#75715e"># 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</span>
+
+tar -tf all.tar
+<span style="color:#75715e"># 这条命令是列出all.tar包中所有文件，-t是列出文件的意思</span>
+tar -xf all.tar
+<span style="color:#75715e"># 这条命令是解出all.tar包中所有文件，-x是解包的意思</span>
+
+</code></pre></div><p>以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。</p>
+<ol>
+<li>tar调用gzip</li>
+</ol>
+<p>gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：</p>
+<pre><code class="language-bash　　" data-lang="bash　　">tar -czf all.tar.gz *.jpg
+# 这条命令是将所有.jpg的文件打成一个tar包，并且将其用gzip压缩，生成一个gzip压缩过的包，包名为all.tar.gz
+
+tar -xzf all.tar.gz
+# 这条命令是将上面产生的包解开。
+</code></pre><ol start="2">
+<li>tar调用bzip2</li>
+</ol>
+<p>bzip2是一个压缩能力更强的压缩程序，.bz2结尾的文件就是bzip2压缩的结果。与bzip2相对的解压程序是bunzip2。tar中使用-j这个参数来调用bzip2。下面来举例说明一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cjf all.tar.bz2 *.jpg
+<span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个tar包，并且调用bzip2压缩，生成一个bzip2压缩过的包，包名为all.tar.bz2</span>
+tar -xjf all.tar.bz2
+<span style="color:#75715e"># 这条命令是将上面产生的包解开。</span>
+</code></pre></div><ol start="3">
+<li>tar调用compress</li>
+</ol>
+<p>compress也是一个压缩程序，但是好象使用compress的人不如gzip和bzip2的人多。.Z结尾的文件就是bzip2压缩的结果。与compress相对的解压程序是uncompress。tar中使用-Z这个参数来调用gzip。下面来举例说明一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cZf all.tar.Z *.jpg
+<span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个tar包，并且调用compress压缩，生成一个uncompress压缩过的包，包名为all.tar.Z</span>
+
+tar -xZf all.tar.Z
+<span style="color:#75715e"># 这条命令是将上面产生的包解开</span>
+</code></pre></div><h3 id="linux下最常用的压缩工具">Linux下最常用的压缩工具</h3>
+<p>1、tar</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+tar -zcvf too.tar.gz too
+
+<span style="color:#75715e"># 解压</span>
+.tar.gz tar -zxvf  too.tar.gz
+.tar.gz2 tar -jxvf   too.tar.gz2
+
+<span style="color:#75715e"># 把too目录打包成too.tar.gz，除logs目录；注这里的too/logs后面不能加/，如果加的话还是会打包进去。</span>
+tar -czvf too.tar.gz --exclude<span style="color:#f92672">=</span>too/logs too
+
+<span style="color:#75715e"># 加-C参数， 这样的话可以只打包api3.0 ，而不会从/usr开始一个一个目录都打包进去</span>
+tar -zcf api3.0_<span style="color:#e6db74">`</span>date +%Y%m%d%H%M%S<span style="color:#e6db74">`</span>.tar.gz -C /usr/local/tomcat/webapps api3.0
+</code></pre></div><p>2、gzip</p>
+<p>gzip工具是Linux中最流行、最快的文件压缩工具，Gzip工具保留原始文件名称压缩文件的扩展名.gz和时间戳。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打包</span>
+gzip filename
+
+<span style="color:#75715e"># 解压</span>
+gzip -d filename <span style="color:#75715e"># 打包的文件会被删除</span>
+</code></pre></div><p>3、bzip2</p>
+<p>Bzip2实用程序执行更快的gzip，它压缩文件和文件夹更紧凑。压缩文件时需要更多的内存，为了减少内存消耗，在选项中通过-s标志。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+bzip2 examplefile or bzip2 -s examplefile
+
+<span style="color:#75715e"># 解压</span>
+bzip2 -d examplefile.bz2 or bunzip2 examplefile.bz2
+
+<span style="color:#75715e"># 详细说明</span>
+bzip2 -v examplefile
+</code></pre></div><p>4、lzma</p>
+<p>Lzma是一种压缩工具，与zip或tar类似，但与bzip相比，它的执行速度更快，虽然lzma是一个强大的工具，但它在Linux用户中并不流行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+lzma -c --stdout examplefile&gt; examplefile.lzma
+
+<span style="color:#75715e"># 解压</span>
+lzma -d --stdout examplefile.lzma &gt;examplefile
+</code></pre></div><p>5、xz</p>
+<p>XZ是lzma实用程序的继承者，它只能压缩单个文件，但不能在一个命令中压缩多个文件，它将自动为压缩文件添加.xz扩展名。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+xz examplefile
+
+<span style="color:#75715e"># 解压</span>
+xz -d examplefile
+
+</code></pre></div><p>6、pax</p>
+<p>Pax它的执行速度很快，而且它不仅仅是一个压缩器，它可以真正的归档它可以远程复制文件，在Ubuntu/Mint Linux中，默认情况下Pax没有安装。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+pax -wf examplefile.tar examplefile
+pax -wf examplefile.tar.gz examplefile 
+
+<span style="color:#75715e"># 解压</span>
+pax -r &lt;examplefile.tar
+
+<span style="color:#75715e"># 查看压缩包文件清单</span>
+pax -f examplefile.tar
+</code></pre></div><p>7、7zip</p>
+<p>7Zip文件压缩器是一个开源工具，它最初是为微软Windows开发的，它支持多种文件压缩格式和高文件压缩，它可以用一个命令压缩多个文件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装7zip</span>
+wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86<span style="color:#ae81ff">\_</span>64/Packages/p/p7zip-16.02-10.el7.x86<span style="color:#ae81ff">\_</span>64.rpm
+wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86<span style="color:#ae81ff">\_</span>64/Packages/p/p7zip-plugins-16.02-10.el7.x86<span style="color:#ae81ff">\_</span>64.rpm
+ 
+sudo rpm -U --quiet p7zip-16.02-10.el7.x86_64.rpm 
+sudo rpm -U --quiet p7zip-plugins-16.02-10.el7.x86_64.rpm 
+
+<span style="color:#75715e"># 压缩</span>
+7z  a examplefile.7z examplefile
+
+<span style="color:#75715e"># 解压</span>
+7z  a examplefile.7z examplefile
+</code></pre></div><p>8、shar</p>
+<p>Shar是一个命令行工具，可以用来压缩测试文件，Shar可以定义为“shell archive”。一个简单而快速的文件存档实用程序对于获取shell脚本的存档非常有用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装shar工具</span>
+yum -y install sharutils
+
+<span style="color:#75715e"># 压缩</span>
+shar examplefile &gt; examplefile.shar
+
+<span style="color:#75715e"># 解压</span>
+unshar examplefile.shar
+</code></pre></div><p>9、cpio</p>
+<p>可以定义为复制输入和输出，它在输入中逐行读取文件名列表，在输出中读取归档文件。这是一个内置的经典命令。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+ls | cpio -ov &gt;/home/username/backup.cpio
+
+<span style="color:#75715e"># 解压</span>
+cpio -idv &lt;backup.cpio
+</code></pre></div><p>10、ar</p>
+<p>rar的前身，仍然在Debian及其衍生物中使用，它是一个简单的归档工具，但并不是很流行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+ar cvsr examplefile.a examplefile
+
+<span style="color:#75715e"># 解压</span>
+ar -xv examplefile.a
+</code></pre></div><p>11、iso</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ISO制作iso镜像</span>
+dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/media/dvd of<span style="color:#f92672">=</span>/home/username/filename.iso
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

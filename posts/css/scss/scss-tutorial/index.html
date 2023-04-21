@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Scss Tutorial - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Sass supports two different syntaxes. Each one can load the other, so it&amp;rsquo;s up to you and your team which one to choose.
+SCSS permalinkSCSS The SCSS syntax uses the file extension .scss. With a few small exceptions, it’s a superset of CSS, which means essentially all valid CSS is valid SCSS as well. Because of its similarity to CSS, it’s the easiest syntax to get used to and the most popular." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/css/scss/scss-tutorial/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Scss Tutorial" />
+<meta property="og:description" content="Sass supports two different syntaxes. Each one can load the other, so it&rsquo;s up to you and your team which one to choose.
+SCSS permalinkSCSS The SCSS syntax uses the file extension .scss. With a few small exceptions, it’s a superset of CSS, which means essentially all valid CSS is valid SCSS as well. Because of its similarity to CSS, it’s the easiest syntax to get used to and the most popular." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/css/scss/scss-tutorial/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-11T17:48:35+08:00" />
+<meta property="article:modified_time" content="2020-12-11T17:48:35+08:00" />
+
+<meta itemprop="name" content="Scss Tutorial">
+<meta itemprop="description" content="Sass supports two different syntaxes. Each one can load the other, so it&rsquo;s up to you and your team which one to choose.
+SCSS permalinkSCSS The SCSS syntax uses the file extension .scss. With a few small exceptions, it’s a superset of CSS, which means essentially all valid CSS is valid SCSS as well. Because of its similarity to CSS, it’s the easiest syntax to get used to and the most popular."><meta itemprop="datePublished" content="2020-12-11T17:48:35+08:00" />
+<meta itemprop="dateModified" content="2020-12-11T17:48:35+08:00" />
+<meta itemprop="wordCount" content="247">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scss Tutorial"/>
+<meta name="twitter:description" content="Sass supports two different syntaxes. Each one can load the other, so it&rsquo;s up to you and your team which one to choose.
+SCSS permalinkSCSS The SCSS syntax uses the file extension .scss. With a few small exceptions, it’s a superset of CSS, which means essentially all valid CSS is valid SCSS as well. Because of its similarity to CSS, it’s the easiest syntax to get used to and the most popular."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Sass supports two different syntaxes. Each one can load the other, so it&rsquo;s up to you and your team which one to choose.</p>
+<h3 id="scss-permalinkscss">SCSS permalinkSCSS</h3>
+<p>The SCSS syntax uses the file extension .scss. With a few small exceptions, it’s a superset of CSS, which means essentially all valid CSS is valid SCSS as well. Because of its similarity to CSS, it’s the easiest syntax to get used to and the most popular.</p>
+<p>SCSS looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#66d9ef">@mixin</span><span style="color:#a6e22e"> button-base</span>() {
+  <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> typography</span>(button);
+  <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> ripple-surface</span>;
+  <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> ripple-radius-bounded</span>;
+
+  <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> inline-flex;
+  <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> relative;
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> $button-height;
+  <span style="color:#a6e22e">border</span><span style="color:#f92672">:</span> none;
+  <span style="color:#a6e22e">vertical-align</span><span style="color:#f92672">:</span> middle;
+
+  <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:hover</span> { <span style="color:#a6e22e">cursor</span><span style="color:#f92672">:</span> pointer; }
+
+  <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:disabled</span> {
+    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> $mdc-button-disabled-ink-color;
+    <span style="color:#a6e22e">cursor</span><span style="color:#f92672">:</span> default;
+    <span style="color:#a6e22e">pointer-events</span><span style="color:#f92672">:</span> none;
+  }
+}
+</code></pre></div><h3 id="the-indented-syntax">The Indented Syntax</h3>
+<p>The indented syntax was Sass’s original syntax, and so it uses the file extension .sass. Because of this extension, it’s sometimes just called “Sass”. The indented syntax supports all the same features as SCSS, but it uses indentation instead of curly braces and semicolons to describe the format of the document.</p>
+<p>In general, any time you’d write curly braces in CSS or SCSS, you can just indent one level deeper in the indented syntax. And any time a line ends, that counts as a semicolon. There are also a few additional differences in the indented syntax that are noted throughout the reference.</p>
+<p>The indented syntax looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sass" data-lang="sass"><span style="color:#66d9ef">@mixin</span><span style="color:#a6e22e"> button-base</span>()
+  <span style="color:#f92672">@</span><span style="color:#f92672">include</span> <span style="color:#f92672">typography</span><span style="color:#f92672">(</span><span style="color:#f92672">button</span><span style="color:#f92672">)</span>
+  <span style="color:#f92672">@</span><span style="color:#f92672">include</span> <span style="color:#f92672">ripple-surface</span>
+  <span style="color:#f92672">@</span><span style="color:#f92672">include</span> <span style="color:#f92672">ripple-radius-bounded</span>
+
+<span style="color:#960050;background-color:#1e0010">  </span><span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">flex</span>
+<span style="color:#960050;background-color:#1e0010">  </span><span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">relative</span>
+<span style="color:#960050;background-color:#1e0010">  </span><span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> $button-height
+<span style="color:#960050;background-color:#1e0010">  </span><span style="color:#a6e22e">border</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">none</span>
+<span style="color:#960050;background-color:#1e0010">  </span><span style="color:#a6e22e">vertical-align</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">middle</span>
+
+  <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:hover</span>
+<span style="color:#960050;background-color:#1e0010">    </span><span style="color:#a6e22e">cursor</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">pointer</span>
+
+  <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:disabled</span>
+<span style="color:#960050;background-color:#1e0010">    </span><span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> $mdc-button-disabled-ink-color
+<span style="color:#960050;background-color:#1e0010">    </span><span style="color:#a6e22e">cursor</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">default</span>
+<span style="color:#960050;background-color:#1e0010">    </span><span style="color:#a6e22e">pointer-events</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">none</span>
+</code></pre></div><h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://www.sass.hk/about/">scss 快速入门</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

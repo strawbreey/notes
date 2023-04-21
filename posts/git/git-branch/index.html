@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Git Branch - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="$ git versiongit version 2.18.0.windows.1$ git branch -helpusage: git branch [&amp;lt;options&amp;gt;] [-r | -a] [--merged | --no-merged]or: git branch [&amp;lt;options&amp;gt;] [-l] [-f] &amp;lt;branch-name&amp;gt; [&amp;lt;start-point&amp;gt;]or: git branch [&amp;lt;options&amp;gt;] [-r] (-d | -D) &amp;lt;branch-name&amp;gt;...or: git branch [&amp;lt;options&amp;gt;] (-m | -M) [&amp;lt;old-branch&amp;gt;] &amp;lt;new-branch&amp;gt;or: git branch [&amp;lt;options&amp;gt;] (-c | -C) [&amp;lt;old-branch&amp;gt;] &amp;lt;new-branch&amp;gt;or: git branch [&amp;lt;options&amp;gt;] [-r | -a] [--points-at]or: git branch [&amp;lt;options&amp;gt;] [-r | -a] [--format]Generic options-v, --verbose show hash and subject, give twice for upstream branch-q, --quiet suppress informational messages-t, --track set up tracking mode (see git-pull(1))-u, --set-upstream-to &amp;lt;upstream&amp;gt;change the upstream info--unset-upstream Unset the upstream info--color[=&amp;lt;when&amp;gt;] use colored output-r, --remotes act on remote-tracking branches--contains &amp;lt;commit&amp;gt; print only branches that contain the commit--no-contains &amp;lt;commit&amp;gt;print only branches that don&#39;t contain the commit--abbrev[=&amp;lt;n&amp;gt;] use &amp;lt;n&amp;gt; digits to display SHA-1sSpecific git-branch actions:-a, --all list both remote-tracking and local branches-d, --delete delete fully merged branch-D delete branch (even if not merged)-m, --move move/rename a branch and its reflog-M move/rename a branch, even if target exists-c, --copy copy a branch and its reflog-C copy a branch, even if target exists--list list branch names-l, --create-reflog create the branch&#39;s reflog--edit-description edit the description for the branch-f, --force force creation, move/rename, deletion--merged &amp;lt;commit&amp;gt; print only branches that are merged--no-merged &amp;lt;commit&amp;gt; print only branches that are not merged--column[=&amp;lt;style&amp;gt;] list branches in columns--sort &amp;lt;key&amp;gt; field name to sort on--points-at &amp;lt;object&amp;gt; print only branches of the object-i, --ignore-case sorting and filtering are case insensitive--format &amp;lt;format&amp;gt; format to use for the output常用命令 # 删除分支 git branch -D xxx # 查看本地分支 git branch # 查看所有分支 git branch -a 团队Git分支管理规范 分支管理" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/git/git-branch/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Git Branch" />
+<meta property="og:description" content="$ git versiongit version 2.18.0.windows.1$ git branch -helpusage: git branch [&lt;options&gt;] [-r | -a] [--merged | --no-merged]or: git branch [&lt;options&gt;] [-l] [-f] &lt;branch-name&gt; [&lt;start-point&gt;]or: git branch [&lt;options&gt;] [-r] (-d | -D) &lt;branch-name&gt;...or: git branch [&lt;options&gt;] (-m | -M) [&lt;old-branch&gt;] &lt;new-branch&gt;or: git branch [&lt;options&gt;] (-c | -C) [&lt;old-branch&gt;] &lt;new-branch&gt;or: git branch [&lt;options&gt;] [-r | -a] [--points-at]or: git branch [&lt;options&gt;] [-r | -a] [--format]Generic options-v, --verbose show hash and subject, give twice for upstream branch-q, --quiet suppress informational messages-t, --track set up tracking mode (see git-pull(1))-u, --set-upstream-to &lt;upstream&gt;change the upstream info--unset-upstream Unset the upstream info--color[=&lt;when&gt;] use colored output-r, --remotes act on remote-tracking branches--contains &lt;commit&gt; print only branches that contain the commit--no-contains &lt;commit&gt;print only branches that don&#39;t contain the commit--abbrev[=&lt;n&gt;] use &lt;n&gt; digits to display SHA-1sSpecific git-branch actions:-a, --all list both remote-tracking and local branches-d, --delete delete fully merged branch-D delete branch (even if not merged)-m, --move move/rename a branch and its reflog-M move/rename a branch, even if target exists-c, --copy copy a branch and its reflog-C copy a branch, even if target exists--list list branch names-l, --create-reflog create the branch&#39;s reflog--edit-description edit the description for the branch-f, --force force creation, move/rename, deletion--merged &lt;commit&gt; print only branches that are merged--no-merged &lt;commit&gt; print only branches that are not merged--column[=&lt;style&gt;] list branches in columns--sort &lt;key&gt; field name to sort on--points-at &lt;object&gt; print only branches of the object-i, --ignore-case sorting and filtering are case insensitive--format &lt;format&gt; format to use for the output常用命令 # 删除分支 git branch -D xxx # 查看本地分支 git branch # 查看所有分支 git branch -a 团队Git分支管理规范 分支管理" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/git/git-branch/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-16T11:24:15+08:00" />
+<meta property="article:modified_time" content="2021-03-16T11:24:15+08:00" />
+
+<meta itemprop="name" content="Git Branch">
+<meta itemprop="description" content="$ git versiongit version 2.18.0.windows.1$ git branch -helpusage: git branch [&lt;options&gt;] [-r | -a] [--merged | --no-merged]or: git branch [&lt;options&gt;] [-l] [-f] &lt;branch-name&gt; [&lt;start-point&gt;]or: git branch [&lt;options&gt;] [-r] (-d | -D) &lt;branch-name&gt;...or: git branch [&lt;options&gt;] (-m | -M) [&lt;old-branch&gt;] &lt;new-branch&gt;or: git branch [&lt;options&gt;] (-c | -C) [&lt;old-branch&gt;] &lt;new-branch&gt;or: git branch [&lt;options&gt;] [-r | -a] [--points-at]or: git branch [&lt;options&gt;] [-r | -a] [--format]Generic options-v, --verbose show hash and subject, give twice for upstream branch-q, --quiet suppress informational messages-t, --track set up tracking mode (see git-pull(1))-u, --set-upstream-to &lt;upstream&gt;change the upstream info--unset-upstream Unset the upstream info--color[=&lt;when&gt;] use colored output-r, --remotes act on remote-tracking branches--contains &lt;commit&gt; print only branches that contain the commit--no-contains &lt;commit&gt;print only branches that don&#39;t contain the commit--abbrev[=&lt;n&gt;] use &lt;n&gt; digits to display SHA-1sSpecific git-branch actions:-a, --all list both remote-tracking and local branches-d, --delete delete fully merged branch-D delete branch (even if not merged)-m, --move move/rename a branch and its reflog-M move/rename a branch, even if target exists-c, --copy copy a branch and its reflog-C copy a branch, even if target exists--list list branch names-l, --create-reflog create the branch&#39;s reflog--edit-description edit the description for the branch-f, --force force creation, move/rename, deletion--merged &lt;commit&gt; print only branches that are merged--no-merged &lt;commit&gt; print only branches that are not merged--column[=&lt;style&gt;] list branches in columns--sort &lt;key&gt; field name to sort on--points-at &lt;object&gt; print only branches of the object-i, --ignore-case sorting and filtering are case insensitive--format &lt;format&gt; format to use for the output常用命令 # 删除分支 git branch -D xxx # 查看本地分支 git branch # 查看所有分支 git branch -a 团队Git分支管理规范 分支管理"><meta itemprop="datePublished" content="2021-03-16T11:24:15+08:00" />
+<meta itemprop="dateModified" content="2021-03-16T11:24:15+08:00" />
+<meta itemprop="wordCount" content="302">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Branch"/>
+<meta name="twitter:description" content="$ git versiongit version 2.18.0.windows.1$ git branch -helpusage: git branch [&lt;options&gt;] [-r | -a] [--merged | --no-merged]or: git branch [&lt;options&gt;] [-l] [-f] &lt;branch-name&gt; [&lt;start-point&gt;]or: git branch [&lt;options&gt;] [-r] (-d | -D) &lt;branch-name&gt;...or: git branch [&lt;options&gt;] (-m | -M) [&lt;old-branch&gt;] &lt;new-branch&gt;or: git branch [&lt;options&gt;] (-c | -C) [&lt;old-branch&gt;] &lt;new-branch&gt;or: git branch [&lt;options&gt;] [-r | -a] [--points-at]or: git branch [&lt;options&gt;] [-r | -a] [--format]Generic options-v, --verbose show hash and subject, give twice for upstream branch-q, --quiet suppress informational messages-t, --track set up tracking mode (see git-pull(1))-u, --set-upstream-to &lt;upstream&gt;change the upstream info--unset-upstream Unset the upstream info--color[=&lt;when&gt;] use colored output-r, --remotes act on remote-tracking branches--contains &lt;commit&gt; print only branches that contain the commit--no-contains &lt;commit&gt;print only branches that don&#39;t contain the commit--abbrev[=&lt;n&gt;] use &lt;n&gt; digits to display SHA-1sSpecific git-branch actions:-a, --all list both remote-tracking and local branches-d, --delete delete fully merged branch-D delete branch (even if not merged)-m, --move move/rename a branch and its reflog-M move/rename a branch, even if target exists-c, --copy copy a branch and its reflog-C copy a branch, even if target exists--list list branch names-l, --create-reflog create the branch&#39;s reflog--edit-description edit the description for the branch-f, --force force creation, move/rename, deletion--merged &lt;commit&gt; print only branches that are merged--no-merged &lt;commit&gt; print only branches that are not merged--column[=&lt;style&gt;] list branches in columns--sort &lt;key&gt; field name to sort on--points-at &lt;object&gt; print only branches of the object-i, --ignore-case sorting and filtering are case insensitive--format &lt;format&gt; format to use for the output常用命令 # 删除分支 git branch -D xxx # 查看本地分支 git branch # 查看所有分支 git branch -a 团队Git分支管理规范 分支管理"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <pre><code>$ git version
+
+git version 2.18.0.windows.1
+
+$ git branch -help
+
+usage: git branch [&lt;options&gt;] [-r | -a] [--merged | --no-merged]
+   or: git branch [&lt;options&gt;] [-l] [-f] &lt;branch-name&gt; [&lt;start-point&gt;]
+   or: git branch [&lt;options&gt;] [-r] (-d | -D) &lt;branch-name&gt;...
+   or: git branch [&lt;options&gt;] (-m | -M) [&lt;old-branch&gt;] &lt;new-branch&gt;
+   or: git branch [&lt;options&gt;] (-c | -C) [&lt;old-branch&gt;] &lt;new-branch&gt;
+   or: git branch [&lt;options&gt;] [-r | -a] [--points-at]
+   or: git branch [&lt;options&gt;] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to &lt;upstream&gt;
+                          change the upstream info
+    --unset-upstream      Unset the upstream info
+    --color[=&lt;when&gt;]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains &lt;commit&gt;   print only branches that contain the commit
+    --no-contains &lt;commit&gt;
+                          print only branches that don't contain the commit
+    --abbrev[=&lt;n&gt;]        use &lt;n&gt; digits to display SHA-1s
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    --list                list branch names
+    -l, --create-reflog   create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged &lt;commit&gt;     print only branches that are merged
+    --no-merged &lt;commit&gt;  print only branches that are not merged
+    --column[=&lt;style&gt;]    list branches in columns
+    --sort &lt;key&gt;          field name to sort on
+    --points-at &lt;object&gt;  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format &lt;format&gt;     format to use for the output
+</code></pre><h3 id="常用命令">常用命令</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#75715e"># 删除分支</span>
+
+git branch -D xxx
+
+<span style="color:#75715e"># 查看本地分支</span>
+
+git branch 
+
+<span style="color:#75715e"># 查看所有分支</span>
+
+git branch -a
+
+</code></pre></div><h3 id="团队git分支管理规范">团队Git分支管理规范</h3>
+<p>分支管理</p>
+<ul>
+<li>
+<p>develop 开发环境的稳定分支</p>
+</li>
+<li>
+<p>pre-release: 测试环境稳定分支</p>
+</li>
+<li>
+<p>master 生产环境稳定分支</p>
+</li>
+<li>
+<p>release</p>
+</li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

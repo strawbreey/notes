@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Docker Install - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="介绍 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。
+Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows
+window 安装   下载并安装docker
+  安装 window subsystem for linux
+  安装 Hyper-V Hyper-V 是微软开发的虚拟机，类似于 VMWare 或 VirtualBox，仅适用于 Windows 10。这是 Docker Desktop for Windows 所使用的虚拟机。
+  但是，这个虚拟机一旦启用，QEMU、VirtualBox 或 VMWare Workstation 15 及以下版本将无法使用！如果你必须在电脑上使用其他虚拟机（例如开发 Android 应用必须使用的模拟器），请不要使用 Hyper-V！
+ 开启 Hyper-V
+  设置代理 settings -&amp;gt; Docker Engine
+  { &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://mirrors." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/devops/docker-install/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Docker Install" />
+<meta property="og:description" content="介绍 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。
+Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows
+window 安装   下载并安装docker
+  安装 window subsystem for linux
+  安装 Hyper-V Hyper-V 是微软开发的虚拟机，类似于 VMWare 或 VirtualBox，仅适用于 Windows 10。这是 Docker Desktop for Windows 所使用的虚拟机。
+  但是，这个虚拟机一旦启用，QEMU、VirtualBox 或 VMWare Workstation 15 及以下版本将无法使用！如果你必须在电脑上使用其他虚拟机（例如开发 Android 应用必须使用的模拟器），请不要使用 Hyper-V！
+ 开启 Hyper-V
+  设置代理 settings -&gt; Docker Engine
+  { &#34;registry-mirrors&#34;: [ &#34;https://mirrors." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/devops/docker-install/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-10T10:56:24+08:00" />
+<meta property="article:modified_time" content="2020-12-10T10:56:24+08:00" />
+
+<meta itemprop="name" content="Docker Install">
+<meta itemprop="description" content="介绍 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。
+Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows
+window 安装   下载并安装docker
+  安装 window subsystem for linux
+  安装 Hyper-V Hyper-V 是微软开发的虚拟机，类似于 VMWare 或 VirtualBox，仅适用于 Windows 10。这是 Docker Desktop for Windows 所使用的虚拟机。
+  但是，这个虚拟机一旦启用，QEMU、VirtualBox 或 VMWare Workstation 15 及以下版本将无法使用！如果你必须在电脑上使用其他虚拟机（例如开发 Android 应用必须使用的模拟器），请不要使用 Hyper-V！
+ 开启 Hyper-V
+  设置代理 settings -&gt; Docker Engine
+  { &#34;registry-mirrors&#34;: [ &#34;https://mirrors."><meta itemprop="datePublished" content="2020-12-10T10:56:24+08:00" />
+<meta itemprop="dateModified" content="2020-12-10T10:56:24+08:00" />
+<meta itemprop="wordCount" content="179">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker Install"/>
+<meta name="twitter:description" content="介绍 Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。
+Docker Desktop 官方下载地址： https://hub.docker.com/editions/community/docker-ce-desktop-windows
+window 安装   下载并安装docker
+  安装 window subsystem for linux
+  安装 Hyper-V Hyper-V 是微软开发的虚拟机，类似于 VMWare 或 VirtualBox，仅适用于 Windows 10。这是 Docker Desktop for Windows 所使用的虚拟机。
+  但是，这个虚拟机一旦启用，QEMU、VirtualBox 或 VMWare Workstation 15 及以下版本将无法使用！如果你必须在电脑上使用其他虚拟机（例如开发 Android 应用必须使用的模拟器），请不要使用 Hyper-V！
+ 开启 Hyper-V
+  设置代理 settings -&gt; Docker Engine
+  { &#34;registry-mirrors&#34;: [ &#34;https://mirrors."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h2 id="介绍">介绍</h2>
+<p>Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。</p>
+<p>Docker Desktop 官方下载地址： <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">https://hub.docker.com/editions/community/docker-ce-desktop-windows</a></p>
+<h3 id="window-安装">window 安装</h3>
+<ol>
+<li>
+<p>下载并安装docker</p>
+</li>
+<li>
+<p>安装 <a href="/pages/window-subsystem-for-linux">window subsystem for linux</a></p>
+</li>
+<li>
+<p>安装 Hyper-V
+Hyper-V 是微软开发的虚拟机，类似于 VMWare 或 VirtualBox，仅适用于 Windows 10。这是 Docker Desktop for Windows 所使用的虚拟机。</p>
+</li>
+</ol>
+<p>但是，这个虚拟机一旦启用，QEMU、VirtualBox 或 VMWare Workstation 15 及以下版本将无法使用！如果你必须在电脑上使用其他虚拟机（例如开发 Android 应用必须使用的模拟器），请不要使用 Hyper-V！</p>
+<ol start="4">
+<li>
+<p>开启 Hyper-V</p>
+</li>
+<li>
+<p>设置代理  settings -&gt; Docker Engine</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;registry-mirrors&#34;</span>: [
+    <span style="color:#e6db74">&#34;https://mirrors.tencent.com&#34;</span>,
+    <span style="color:#e6db74">&#34;https://hub-mirror.c.163.com/&#34;</span>,
+    <span style="color:#e6db74">&#34;https://&lt;你的ID&gt;.mirror.aliyuncs.com&#34;</span>,
+    <span style="color:#e6db74">&#34;https://reg-mirror.qiniu.com&#34;</span>
+  ],
+  <span style="color:#f92672">&#34;insecure-registries&#34;</span>: [],
+  <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#66d9ef">false</span>,
+  <span style="color:#f92672">&#34;experimental&#34;</span>: <span style="color:#66d9ef">false</span>,
+  <span style="color:#f92672">&#34;features&#34;</span>: {
+    <span style="color:#f92672">&#34;buildkit&#34;</span>: <span style="color:#66d9ef">true</span>
+  }
+}
+</code></pre></div><h3 id="linux-安装">linux 安装</h3>
+<ol>
+<li>查看系统要求, 确认使用linux 版本</li>
+</ol>
+<p>Docker 要求 CentOS 系统的内核版本高于 3.10, 查看CentOS的内核版本。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># linux 查看系统信息</span>
+uname -a 
+
+<span style="color:#75715e"># cat /etc/tlinux-release</span>
+</code></pre></div><ol start="2">
+<li>删除旧版本</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum remove docker  docker-common docker-selinux docker-engine
+</code></pre></div><ol start="3">
+<li>安装需要的软件包</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</span>
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+</code></pre></div><ol start="4">
+<li>设置Docker yum源</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+</code></pre></div><ol start="5">
+<li>查看所有仓库中所有docker版本</li>
+</ol>
+<p>可以查看所有仓库中所有docker版本,并选择特定的版本安装。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum list docker-ce --showduplicates | sort -r
+</code></pre></div><ol start="6">
+<li>安装docker</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 由于repo中默认只开启stable仓库，故这里安装的是最新稳定版本。</span>
+sudo yum install docker-ce
+
+<span style="color:#75715e"># or</span>
+yum install docker-ce -y
+
+<span style="color:#75715e"># 如果要安装特定版本：</span>
+sudo yum install docker-ce-18.06.1.ce
+</code></pre></div><ol start="7">
+<li>启动</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 设置为开机启动</span>
+systemctl enable docker
+
+<span style="color:#75715e"># 开启</span>
+systemctl start docker
+
+<span style="color:#75715e"># 查看启动状态</span>
+systemctl status docker
+
+<span style="color:#75715e"># 查看版本</span>
+docker version
+
+<span style="color:#75715e"># 重启</span>
+systemctl daemon-reload
+systemctl restart docker
+</code></pre></div><h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://www.runoob.com/docker/windows-docker-install.html">Windows Docker 安装</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js Parcel - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Parcel 是 Web 应用打包工具，适用于经验不同的开发者。 不同于 webpack 它利用多核处理提供了极快的速度，并且不需要任何配置。
+首先通过 Yarn 或者 npm 安装 Parcel ：
+Yarn:
+yarn global add parcel-bundler
+npm:
+npm install -g parcel-bundler
+在你正在使用的项目目录下创建一个 package.json 文件：
+yarn init -yornpm init -yParcel 可以使用任何类型的文件作为入口，但是最好还是使用 HTML 或 JavaScript 文件。如果在 HTML 中使用相对路径引入主要的 JavaScript 文件，Parcel 也将会对它进行处理将其替换为相对于输出文件的 URL 地址。
+接下来，创建一个 index.html 和 index.js 文件。
+console.log(&amp;lsquo;hello world&amp;rsquo;) Parcel 内置了一个当你改变文件时能够自动重新构建应用的开发服务器，而且为了实现快速开发，该开发服务器支持热模块替换。只需要在入口文件指出：
+parcel index.html 现在在浏览器中打开 http://localhost:1234/。如果模块热重载没有生效，你可能需要配置你的编辑器。你也可以使用 -p 选项覆盖默认的端口。 如果没有自己的服务器可使用开发服务器，或者你的应用程序完全由客户端呈现。如果有自己的服务器，你可以在watch 模式下运行 Parcel 。当文件改变它仍然会自动重新构建并支持热替换，但是不会启动 web 服务。
+parcel watch index." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-parcel/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js Parcel" />
+<meta property="og:description" content="Parcel 是 Web 应用打包工具，适用于经验不同的开发者。 不同于 webpack 它利用多核处理提供了极快的速度，并且不需要任何配置。
+首先通过 Yarn 或者 npm 安装 Parcel ：
+Yarn:
+yarn global add parcel-bundler
+npm:
+npm install -g parcel-bundler
+在你正在使用的项目目录下创建一个 package.json 文件：
+yarn init -yornpm init -yParcel 可以使用任何类型的文件作为入口，但是最好还是使用 HTML 或 JavaScript 文件。如果在 HTML 中使用相对路径引入主要的 JavaScript 文件，Parcel 也将会对它进行处理将其替换为相对于输出文件的 URL 地址。
+接下来，创建一个 index.html 和 index.js 文件。
+console.log(&lsquo;hello world&rsquo;) Parcel 内置了一个当你改变文件时能够自动重新构建应用的开发服务器，而且为了实现快速开发，该开发服务器支持热模块替换。只需要在入口文件指出：
+parcel index.html 现在在浏览器中打开 http://localhost:1234/。如果模块热重载没有生效，你可能需要配置你的编辑器。你也可以使用 -p 选项覆盖默认的端口。 如果没有自己的服务器可使用开发服务器，或者你的应用程序完全由客户端呈现。如果有自己的服务器，你可以在watch 模式下运行 Parcel 。当文件改变它仍然会自动重新构建并支持热替换，但是不会启动 web 服务。
+parcel watch index." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-parcel/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-05T10:44:47+08:00" />
+<meta property="article:modified_time" content="2021-08-05T10:44:47+08:00" />
+
+<meta itemprop="name" content="Js Parcel">
+<meta itemprop="description" content="Parcel 是 Web 应用打包工具，适用于经验不同的开发者。 不同于 webpack 它利用多核处理提供了极快的速度，并且不需要任何配置。
+首先通过 Yarn 或者 npm 安装 Parcel ：
+Yarn:
+yarn global add parcel-bundler
+npm:
+npm install -g parcel-bundler
+在你正在使用的项目目录下创建一个 package.json 文件：
+yarn init -yornpm init -yParcel 可以使用任何类型的文件作为入口，但是最好还是使用 HTML 或 JavaScript 文件。如果在 HTML 中使用相对路径引入主要的 JavaScript 文件，Parcel 也将会对它进行处理将其替换为相对于输出文件的 URL 地址。
+接下来，创建一个 index.html 和 index.js 文件。
+console.log(&lsquo;hello world&rsquo;) Parcel 内置了一个当你改变文件时能够自动重新构建应用的开发服务器，而且为了实现快速开发，该开发服务器支持热模块替换。只需要在入口文件指出：
+parcel index.html 现在在浏览器中打开 http://localhost:1234/。如果模块热重载没有生效，你可能需要配置你的编辑器。你也可以使用 -p 选项覆盖默认的端口。 如果没有自己的服务器可使用开发服务器，或者你的应用程序完全由客户端呈现。如果有自己的服务器，你可以在watch 模式下运行 Parcel 。当文件改变它仍然会自动重新构建并支持热替换，但是不会启动 web 服务。
+parcel watch index."><meta itemprop="datePublished" content="2021-08-05T10:44:47+08:00" />
+<meta itemprop="dateModified" content="2021-08-05T10:44:47+08:00" />
+<meta itemprop="wordCount" content="82">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Parcel"/>
+<meta name="twitter:description" content="Parcel 是 Web 应用打包工具，适用于经验不同的开发者。 不同于 webpack 它利用多核处理提供了极快的速度，并且不需要任何配置。
+首先通过 Yarn 或者 npm 安装 Parcel ：
+Yarn:
+yarn global add parcel-bundler
+npm:
+npm install -g parcel-bundler
+在你正在使用的项目目录下创建一个 package.json 文件：
+yarn init -yornpm init -yParcel 可以使用任何类型的文件作为入口，但是最好还是使用 HTML 或 JavaScript 文件。如果在 HTML 中使用相对路径引入主要的 JavaScript 文件，Parcel 也将会对它进行处理将其替换为相对于输出文件的 URL 地址。
+接下来，创建一个 index.html 和 index.js 文件。
+console.log(&lsquo;hello world&rsquo;) Parcel 内置了一个当你改变文件时能够自动重新构建应用的开发服务器，而且为了实现快速开发，该开发服务器支持热模块替换。只需要在入口文件指出：
+parcel index.html 现在在浏览器中打开 http://localhost:1234/。如果模块热重载没有生效，你可能需要配置你的编辑器。你也可以使用 -p 选项覆盖默认的端口。 如果没有自己的服务器可使用开发服务器，或者你的应用程序完全由客户端呈现。如果有自己的服务器，你可以在watch 模式下运行 Parcel 。当文件改变它仍然会自动重新构建并支持热替换，但是不会启动 web 服务。
+parcel watch index."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Parcel 是 Web 应用打包工具，适用于经验不同的开发者。 不同于 <code>webpack</code> 它利用多核处理提供了极快的速度，并且不需要任何配置。</p>
+<p>首先通过 Yarn 或者 npm 安装 Parcel ：</p>
+<p>Yarn:</p>
+<p><code>yarn global add parcel-bundler</code></p>
+<p>npm:</p>
+<p><code>npm install -g parcel-bundler</code></p>
+<p>在你正在使用的项目目录下创建一个 package.json 文件：</p>
+<pre><code>yarn init -y
+or
+
+npm init -y
+</code></pre><p>Parcel 可以使用任何类型的文件作为入口，但是最好还是使用 HTML 或 JavaScript 文件。如果在 HTML 中使用相对路径引入主要的 JavaScript 文件，Parcel 也将会对它进行处理将其替换为相对于输出文件的 URL 地址。</p>
+<p>接下来，创建一个 index.html 和 index.js 文件。</p>
+<!-- raw HTML omitted -->
+<p>console.log(&lsquo;hello world&rsquo;)
+Parcel 内置了一个当你改变文件时能够自动重新构建应用的开发服务器，而且为了实现快速开发，该开发服务器支持热模块替换。只需要在入口文件指出：</p>
+<p>parcel index.html
+现在在浏览器中打开 http://localhost:1234/。如果模块热重载没有生效，你可能需要配置你的编辑器。你也可以使用 -p <!-- raw HTML omitted --> 选项覆盖默认的端口。 如果没有自己的服务器可使用开发服务器，或者你的应用程序完全由客户端呈现。如果有自己的服务器，你可以在watch 模式下运行 Parcel 。当文件改变它仍然会自动重新构建并支持热替换，但是不会启动 web 服务。</p>
+<p>parcel watch index.html
+你也能使用createapp.dev在浏览器中创建一个 Parcel 项目。选择你需要的特性列如 React， Vue，Typescript 和 CSS，然后你将会看到项目实时生成。你能通过这个工具去学习如何怎么建立一个新的项目并且你也能下载这个项目作为一个 zip 文件然后立即开始写代码。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://zh.parceljs.org/how_it_works.html">https://zh.parceljs.org/how_it_works.html</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

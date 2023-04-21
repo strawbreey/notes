@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Components - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="众所周知，开发复杂软件的原则是：不要让软件复杂
+如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
+只有让复杂的事情简单化的架构才是好架构。
+一个组件有：
+自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
+Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
+Custom elements (自定义标签) class MyElement extends HTMLElement { constructor() { super(); // 元素在这里创建  } connectedCallback() { // 在元素被添加到文档之后，浏览器会调用这个方法  //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } disconnectedCallback() { // 在元素从文档移除到时候，浏览器会调用这个方法  // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } static get observedAttributes() { return [/* 属性数组，这些属性的变化会被被监视 */]; } attributeChangedCallback(name, oldValue, newValue) { // 当上面数组里面的属性变化的时候，这个方法会被调用  } adoptedCallback() { // 在元素被移动到新的文档的时候，这个方法会被调用  // （document." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/http/web-components/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Web Components" />
+<meta property="og:description" content="众所周知，开发复杂软件的原则是：不要让软件复杂
+如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
+只有让复杂的事情简单化的架构才是好架构。
+一个组件有：
+自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
+Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
+Custom elements (自定义标签) class MyElement extends HTMLElement { constructor() { super(); // 元素在这里创建  } connectedCallback() { // 在元素被添加到文档之后，浏览器会调用这个方法  //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } disconnectedCallback() { // 在元素从文档移除到时候，浏览器会调用这个方法  // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } static get observedAttributes() { return [/* 属性数组，这些属性的变化会被被监视 */]; } attributeChangedCallback(name, oldValue, newValue) { // 当上面数组里面的属性变化的时候，这个方法会被调用  } adoptedCallback() { // 在元素被移动到新的文档的时候，这个方法会被调用  // （document." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/http/web-components/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-14T21:45:06+08:00" />
+<meta property="article:modified_time" content="2020-10-14T21:45:06+08:00" />
+
+<meta itemprop="name" content="Web Components">
+<meta itemprop="description" content="众所周知，开发复杂软件的原则是：不要让软件复杂
+如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
+只有让复杂的事情简单化的架构才是好架构。
+一个组件有：
+自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
+Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
+Custom elements (自定义标签) class MyElement extends HTMLElement { constructor() { super(); // 元素在这里创建  } connectedCallback() { // 在元素被添加到文档之后，浏览器会调用这个方法  //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } disconnectedCallback() { // 在元素从文档移除到时候，浏览器会调用这个方法  // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } static get observedAttributes() { return [/* 属性数组，这些属性的变化会被被监视 */]; } attributeChangedCallback(name, oldValue, newValue) { // 当上面数组里面的属性变化的时候，这个方法会被调用  } adoptedCallback() { // 在元素被移动到新的文档的时候，这个方法会被调用  // （document."><meta itemprop="datePublished" content="2020-10-14T21:45:06+08:00" />
+<meta itemprop="dateModified" content="2020-10-14T21:45:06+08:00" />
+<meta itemprop="wordCount" content="754">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web Components"/>
+<meta name="twitter:description" content="众所周知，开发复杂软件的原则是：不要让软件复杂
+如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。
+只有让复杂的事情简单化的架构才是好架构。
+一个组件有：
+自己的 JavaScript 类。 DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。 CSS 样式，作用在这个组件上。 API：事件，类方法等等，让组件可以与其他组件交互。
+Custom elements —— 用于自定义 HTML 元素. Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。 CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。 Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。
+Custom elements (自定义标签) class MyElement extends HTMLElement { constructor() { super(); // 元素在这里创建  } connectedCallback() { // 在元素被添加到文档之后，浏览器会调用这个方法  //（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } disconnectedCallback() { // 在元素从文档移除到时候，浏览器会调用这个方法  // （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）  } static get observedAttributes() { return [/* 属性数组，这些属性的变化会被被监视 */]; } attributeChangedCallback(name, oldValue, newValue) { // 当上面数组里面的属性变化的时候，这个方法会被调用  } adoptedCallback() { // 在元素被移动到新的文档的时候，这个方法会被调用  // （document."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>众所周知，开发复杂软件的原则是：不要让软件复杂</p>
+<p>如果某个部分变得复杂了 —— 将其拆分成更简单的部分，再以最简明的方式组合起来。</p>
+<p>只有让复杂的事情简单化的架构才是好架构。</p>
+<p>一个组件有：</p>
+<p>自己的 JavaScript 类。
+DOM 结构，并且只由自己的类管理，无法被外部代码操作。（「封装」原则）。
+CSS 样式，作用在这个组件上。
+API：事件，类方法等等，让组件可以与其他组件交互。</p>
+<p>Custom elements —— 用于自定义 HTML 元素.
+Shadow DOM —— 为组件创建内部 DOM，它对外部是不可见的。
+CSS Scoping —— 申明仅应用于组件的 Shadow DOM 内的样式。
+Event retargeting 以及更多的小东西，让自定义组件更适用于开发工作。</p>
+<h3 id="custom-elements-自定义标签">Custom elements (自定义标签)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyElement</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">super</span>();
+    <span style="color:#75715e">// 元素在这里创建
+</span><span style="color:#75715e"></span>  }
+
+  <span style="color:#a6e22e">connectedCallback</span>() {
+    <span style="color:#75715e">// 在元素被添加到文档之后，浏览器会调用这个方法
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//（如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）
+</span><span style="color:#75715e"></span>  }
+
+  <span style="color:#a6e22e">disconnectedCallback</span>() {
+    <span style="color:#75715e">// 在元素从文档移除到时候，浏览器会调用这个方法
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// （如果一个元素被反复添加到文档／移除文档，那么这个方法会被多次调用）
+</span><span style="color:#75715e"></span>  }
+
+  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">observedAttributes</span>() {
+    <span style="color:#66d9ef">return</span> [<span style="color:#75715e">/* 属性数组，这些属性的变化会被被监视 */</span>];
+  }
+
+  <span style="color:#a6e22e">attributeChangedCallback</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">oldValue</span>, <span style="color:#a6e22e">newValue</span>) {
+    <span style="color:#75715e">// 当上面数组里面的属性变化的时候，这个方法会被调用
+</span><span style="color:#75715e"></span>  }
+
+  <span style="color:#a6e22e">adoptedCallback</span>() {
+    <span style="color:#75715e">// 在元素被移动到新的文档的时候，这个方法会被调用
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// （document.adoptNode 会用到, 非常少见）
+</span><span style="color:#75715e"></span>  }
+
+  <span style="color:#75715e">// 还可以添加更多的元素方法和属性
+</span><span style="color:#75715e"></span>}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 让浏览器知道我们新定义的类是为 &lt;my-element&gt; 服务的
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#34;my-element&#34;</span>, <span style="color:#a6e22e">MyElement</span>);
+</code></pre></div><pre><code>Custom element 名称必须包括一个短横线 -
+Custom element 名称必须包括一个短横线 -, 比如 my-element 和 super-button 都是有效的元素名，但 myelement 并不是。
+
+这是为了确保 custom element 和内置 HTML 元素之间不会发生命名冲突。
+</code></pre>
+<p>创建一个自定义时间标签</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimeFormatted</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> { 
+  <span style="color:#75715e">// 在元素被添加到文档之后，浏览器会调用这个方法 =&gt; 相当于生命周期的mount
+</span><span style="color:#75715e"></span>
+  <span style="color:#a6e22e">connectedCallback</span>() {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;datetime&#39;</span>) <span style="color:#f92672">||</span> Date.<span style="color:#a6e22e">now</span>());
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#e6db74">&#34;default&#34;</span>, {
+      <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;year&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;month&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;day&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">hour</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;hour&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">minute</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;minute&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">second</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;second&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">timeZoneName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;time-zone-name&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+    }).<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">date</span>);
+  }
+
+}
+
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#34;time-formatted&#34;</span>, <span style="color:#a6e22e">TimeFormatted</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+<span style="color:#75715e">&lt;!-- (3) --&gt;</span>
+&lt;<span style="color:#f92672">time-formatted</span> 
+    <span style="color:#a6e22e">datetime</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2019-12-01&#34;</span>
+    <span style="color:#a6e22e">year</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span> 
+    <span style="color:#a6e22e">month</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;long&#34;</span> 
+    <span style="color:#a6e22e">day</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span>
+    <span style="color:#a6e22e">hour</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span> 
+    <span style="color:#a6e22e">minute</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span> 
+    <span style="color:#a6e22e">second</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span>
+    <span style="color:#a6e22e">time-zone-name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;short&#34;</span>
+&gt;&lt;/<span style="color:#f92672">time-formatted</span>&gt;
+
+</code></pre></div><p>在 connectedCallback 中渲染，而不是 constructor 中
+在上面的例子中，元素里面的内容是在 connectedCallback 中渲染（创建）的。</p>
+<p>为什么不在 constructor 中渲染？</p>
+<p>原因很简单：在 constructor 被调用的时候，还为时过早。虽然这个元素实例已经被创建了，但还没有插入页面。在这个阶段，浏览器还没有处理／创建元素属性：调用 getAttribute 将会得到 null。所以我们并不能在那里渲染元素。</p>
+<p>而且，如果你仔细考虑，这样作对于性能更好 —— 推迟渲染直到真正需要的时候。</p>
+<p>在元素被添加到文档的时候，它的 connectedCallback 方法会被调用。这个元素不仅仅是被添加为了另一个元素的子元素，同样也成为了页面的一部分。因此我们可以构建分离的 DOM，创建元素并且让它们为之后的使用准备好。它们只有在插入页面的时候才会真的被渲染。</p>
+<h3 id="监视属性">监视属性</h3>
+<p>我们目前的 <!-- raw HTML omitted --> 实现中，在元素渲染以后，后续的属性变化并不会带来任何影响。这对于 HTML 元素来说有点奇怪。通常当我们改变一个属性的时候，比如 a.href，我们会预期立即看到变化。我们将会在下面修正这一点。</p>
+<p>为了监视这些属性，我们可以在 observedAttributes() static getter 中提供属性列表。当这些属性发生变化的时候，attributeChangedCallback 会被调用。出于性能优化的考虑，其他属性变化的时候并不会触发这个回调方法。</p>
+<p>以下是 <!-- raw HTML omitted --> 的新版本，它会在属性变化的时候自动更新：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimeFormatted</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+
+  <span style="color:#a6e22e">render</span>() { <span style="color:#75715e">// (1)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;datetime&#39;</span>) <span style="color:#f92672">||</span> Date.<span style="color:#a6e22e">now</span>());
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Intl</span>.<span style="color:#a6e22e">DateTimeFormat</span>(<span style="color:#e6db74">&#34;default&#34;</span>, {
+      <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;year&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;month&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;day&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">hour</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;hour&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">minute</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;minute&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">second</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;second&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+      <span style="color:#a6e22e">timeZoneName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;time-zone-name&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#66d9ef">undefined</span>,
+    }).<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">date</span>);
+  }
+
+  <span style="color:#a6e22e">connectedCallback</span>() { <span style="color:#75715e">// (2)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">rendered</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>();
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">rendered</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    }
+  }
+
+    <span style="color:#75715e">// 设置监听属性
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">observedAttributes</span>() { <span style="color:#75715e">// (3)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#39;datetime&#39;</span>, <span style="color:#e6db74">&#39;year&#39;</span>, <span style="color:#e6db74">&#39;month&#39;</span>, <span style="color:#e6db74">&#39;day&#39;</span>, <span style="color:#e6db74">&#39;hour&#39;</span>, <span style="color:#e6db74">&#39;minute&#39;</span>, <span style="color:#e6db74">&#39;second&#39;</span>, <span style="color:#e6db74">&#39;time-zone-name&#39;</span>];
+  }
+
+  <span style="color:#a6e22e">attributeChangedCallback</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">oldValue</span>, <span style="color:#a6e22e">newValue</span>) { <span style="color:#75715e">// (4)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>();
+  }
+
+}
+
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#34;time-formatted&#34;</span>, <span style="color:#a6e22e">TimeFormatted</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">time-formatted</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;elem&#34;</span> <span style="color:#a6e22e">hour</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span> <span style="color:#a6e22e">minute</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span> <span style="color:#a6e22e">second</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;numeric&#34;</span>&gt;&lt;/<span style="color:#f92672">time-formatted</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#a6e22e">setInterval</span>(() =&gt; <span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;datetime&#39;</span>, <span style="color:#66d9ef">new</span> Date()), <span style="color:#ae81ff">1000</span>); <span style="color:#75715e">// (5)
+</span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>渲染逻辑被移动到了 render() 这个辅助方法里面。
+这个方法在元素被插入到页面的时候调用。
+attributeChangedCallback 在 observedAttributes() 里的属性改变的时候被调用。
+…… 然后重渲染元素。
+最终，一个计时器就这样被我们轻松地实现了。</p>
+<h3 id="渲染顺序">渲染顺序</h3>
+<p>在 HTML 解析器构建 DOM 的时候，会按照先后顺序处理元素，先处理父级元素再处理子元素。例如，如果我们有 <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->，那么 <!-- raw HTML omitted --> 元素会首先被创建并接入到 DOM，然后才是 <!-- raw HTML omitted -->。</p>
+<p>这对 custom elements 产生了重要影响。</p>
+<p>比如，如果一个 custom element 想要在 connectedCallback 内访问 innerHTML，它什么也拿不到:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;user-info&#39;</span>, <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+  <span style="color:#a6e22e">connectedCallback</span>() {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span>); <span style="color:#75715e">// empty (*)
+</span><span style="color:#75715e"></span>  }
+});
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">user-info</span>&gt;John&lt;/<span style="color:#f92672">user-info</span>&gt;
+</code></pre></div><p>如果我们要给 custom element 传入信息，我们可以使用元素属性。它们是即时生效的。</p>
+<p>或者，如果我们需要子元素，我们可以使用延迟时间为零的 setTimeout 来推迟访问子元素。</p>
+<p>这样是可行的：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;user-info&#39;</span>, <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+
+  <span style="color:#a6e22e">connectedCallback</span>() {
+    <span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span>)); <span style="color:#75715e">// John (*)
+</span><span style="color:#75715e"></span>  }
+
+});
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">user-info</span>&gt;John&lt;/<span style="color:#f92672">user-info</span>&gt;
+</code></pre></div><p>让我们用一个例子来说明：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;user-info&#39;</span>, <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+  <span style="color:#a6e22e">connectedCallback</span>() {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> 已连接。`</span>);
+    <span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> 初始化完成。`</span>));
+  }
+});
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">user-info</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;outer&#34;</span>&gt;
+  &lt;<span style="color:#f92672">user-info</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inner&#34;</span>&gt;&lt;/<span style="color:#f92672">user-info</span>&gt;
+&lt;/<span style="color:#f92672">user-info</span>&gt;
+</code></pre></div><p>输出顺序：</p>
+<p>outer 已连接。
+inner 已连接。
+outer 初始化完成。
+inner 初始化完成。</p>
+<h3 id="seo">SEO</h3>
+<p>我们创建的 <!-- raw HTML omitted --> 这些新元素，并没有任何相关的语义。搜索引擎并不知晓它们的存在，同时无障碍设备也无法处理它们。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#75715e">// 这个按钮在被点击的时候说 &#34;hello&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloButton</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLButtonElement</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">super</span>();
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, () =&gt; <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hello!&#34;</span>));
+  }
+}
+
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;hello-button&#39;</span>, <span style="color:#a6e22e">HelloButton</span>, {<span style="color:#66d9ef">extends</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;button&#39;</span>});
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">is</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello-button&#34;</span>&gt;Click me&lt;/<span style="color:#f92672">button</span>&gt;
+
+&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">is</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello-button&#34;</span> <span style="color:#a6e22e">disabled</span>&gt;Disabled&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div><h3 id="总结">总结</h3>
+<p>有两种 custom element</p>
+<p>“Autonomous” —— 全新的标签，继承 HTMLElement。</p>
+<p>定义方式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyElement</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+  <span style="color:#a6e22e">constructor</span>() { <span style="color:#66d9ef">super</span>(); <span style="color:#75715e">/* ... */</span> }
+  <span style="color:#a6e22e">connectedCallback</span>() { <span style="color:#75715e">/* ... */</span> }
+  <span style="color:#a6e22e">disconnectedCallback</span>() { <span style="color:#75715e">/* ... */</span>  }
+  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">observedAttributes</span>() { <span style="color:#66d9ef">return</span> [<span style="color:#75715e">/* ... */</span>]; }
+  <span style="color:#a6e22e">attributeChangedCallback</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">oldValue</span>, <span style="color:#a6e22e">newValue</span>) { <span style="color:#75715e">/* ... */</span> }
+  <span style="color:#a6e22e">adoptedCallback</span>() { <span style="color:#75715e">/* ... */</span> }
+ }
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;my-element&#39;</span>, <span style="color:#a6e22e">MyElement</span>);
+<span style="color:#75715e">/* &lt;my-element&gt; */</span>
+
+</code></pre></div><p>“Customized built-in elements” —— 已有元素的扩展。</p>
+<p>需要多一个 .define 参数，同时 is=&quot;&hellip;&quot; 在 HTML 中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyButton</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLButtonElement</span> { <span style="color:#75715e">/*...*/</span> }
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;my-button&#39;</span>, <span style="color:#a6e22e">MyElement</span>, {<span style="color:#66d9ef">extends</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;button&#39;</span>});
+<span style="color:#75715e">/* &lt;button is=&#34;my-button&#34;&gt; */</span>
+</code></pre></div><p>请注意：</p>
+<p>在元素被从文档移除的时候，我们会清除 setInterval 的 timer。这非常重要，否则即使我们不再需要它了，它仍然会继续计时。这样浏览器就不能清除这个元素占用和被这个元素引用的内存了。
+我们可以通过 elem.date 属性得到当前时间。类所有的方法和属性天生就是元素的方法和属性。</p>
+<h2 id="shadow-dom">Shadow DOM</h2>
+<p>Shadow DOM 为封装而生。它可以让一个组件拥有自己的「影子」DOM 树，这个 DOM 树不能在主文档中被任意访问，可能拥有局部样式规则，还有其他特性。</p>
+<p>内建 shadow DOM</p>
+<p>浏览器在内部使用 DOM/CSS 来绘制它们。这个 DOM 结构一般来说对我们是隐藏的，但我们可以在开发者工具里面看见它。比如，在 Chrome 里，我们需要打开「Show user agent shadow DOM」选项。</p>
+<p>然后 <!-- raw HTML omitted --> 看起来会像这样：</p>
+<p>你在 #shadow-root 下看到的就是被称为「shadow DOM」的东西。</p>
+<p>我们不能使用一般的 JavaScript 调用或者选择器来获取内建 shadow DOM 元素。它们不是常规的子元素，而是一个强大的封装手段。</p>
+<p>在上面的例子中，我们可以看到一个有用的属性 pseudo。这是一个因为历史原因而存在的属性，并不在标准中。我们可以使用它来给子元素加上 CSS 样式，像这样：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+<span style="color:#75715e">/* 让滑块轨道变红 */</span>
+<span style="color:#f92672">input</span>::<span style="color:#a6e22e">-webkit-slider-runnable-track</span> {
+  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span>&gt;
+</code></pre></div><h3 id="shadow-tree">Shadow tree</h3>
+<p>一个 DOM 元素可以有以下两类 DOM 子树：</p>
+<p>Light tree（光明树） —— 一个常规 DOM 子树，由 HTML 子元素组成。我们在之前章节看到的所有子树都是「光明的」。
+Shadow tree（影子树） —— 一个隐藏的 DOM 子树，不在 HTML 中反映，无法被察觉。</p>
+<h3 id="封装">封装</h3>
+<p>Shadow DOM 被非常明显地和主文档分开：</p>
+<p>Shadow DOM 元素对于 light DOM 中的 querySelector 不可见。实际上，Shadow DOM 中的元素可能与 light DOM 中某些元素的 id 冲突。这些元素必须在 shadow tree 中独一无二。
+Shadow DOM 有自己的样式。外部样式规则在 shadow DOM 中不产生作用。</p>
+<h3 id="总结-1">总结</h3>
+<p>Shadow DOM 是创建组件级别 DOM 的一种方法。</p>
+<p>shadowRoot = elem.attachShadow({mode: open|closed}) —— 为 elem 创建 shadow DOM。如果 mode=&ldquo;open&rdquo;，那么它通过 elem.shadowRoot 属性被访问。
+我们可以使用 innerHTML 或者其他 DOM 方法来扩展 shadowRoot。
+Shadow DOM 元素：</p>
+<p>有自己的 id 空间。
+对主文档的 JavaScript 选择器隐身，比如 querySelector。
+只使用 shadow tree 内部的样式，不使用主文档的样式。
+Shadow DOM，如果存在的话，会被浏览器渲染而不是所谓的 「light DOM」（普通子元素）。在 Shadow DOM 插槽，组成 章节中我们将会看到如何组织它们。</p>
+<h2 id="模板元素">模板元素</h2>
+<p>内建的 <!-- raw HTML omitted --> 元素用来存储 HTML 模板。浏览器将忽略它的内容，仅检查语法的有效性，但是我们可以在 JavaScript 中访问和使用它来创建其他元素。</p>
+<p>从理论上讲，我们可以在 HTML 中的任何位置创建不可见元素来储存 HTML 模板。那 <!-- raw HTML omitted --> 元素有什么优势？</p>
+<p>首先，其内容可以是任何有效的HTML，即使它通常需要特定的封闭标签。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;Contents&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+</code></pre></div><h3 id="总结-2">总结</h3>
+<p><!-- raw HTML omitted --> 的内容可以是任何语法正确的 HTML。
+<!-- raw HTML omitted --> 内容被视为“超出文档范围”，因此它不会产生任何影响。
+我们可以在JavaScript 中访问 template.content ，将其克隆以在新组件中重复使用。
+<!-- raw HTML omitted --> 标签非常独特，因为：
+浏览器将检查其中的HTML语法（与在脚本中使用模板字符串不同）。
+但允许使用任何顶级 HTML 标签，即使没有适当包装元素的无意义的元素（例如 <!-- raw HTML omitted --> ）。
+其内容是交互式的：插入其文档后，脚本会运行， <!-- raw HTML omitted --> 会自动播放。
+<!-- raw HTML omitted --> 元素不具有任何迭代机制，数据绑定或变量替换的功能，但我们可以在其基础上实现这些功能。</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Install Xhprof - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Xhprof是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程序开关来控制是否进行profile。
+安装xhprof # 下载xhprof  wget https://github.com/longxinH/xhprof/archive/v2.1.0.tar.gz # 解压缩包 tar xf v2.1.0.tar.gz cd xhprof-2.1.0/extension # 运行phpize /data/nmp/php7/bin/phpize # 运行configure ./configure --with-php-config=/data/nmp/php7/bin/php-config # 编译安装 make &amp;amp;&amp;amp; make install 修改php.ini
+[xhprof] extension = xhprof.so xhprof.output_dir = /tmp/xhprof 配置xhprof 把扩展目录下xhprof_html和xhprof_lib 复制出来，单独存放在一个目录中
+cp -a xhprof_html /data/wwwroot/xhprofcp -a xhprof_lib /data/wwwroot/xhprof把要针对的项目，添加到入口文件中
+//开启性能分析 xhprof_enable(XHPROF_FLAGS_MEMORY | XHPROF_FLAGS_CPU); //php中止时运行的函数 register_shutdown_function(function () { //停止性能分析  $xhprof_data = xhprof_disable(); if (function_exists(&amp;#39;fastcgi_finish_request&amp;#39;)) { fastcgi_finish_request(); } //引入xhprof库文件，路径请自行修改  $XHPROF_ROOT = realpath(dirname(__FILE__) ." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-install-xhprof/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Install Xhprof" />
+<meta property="og:description" content="Xhprof是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程序开关来控制是否进行profile。
+安装xhprof # 下载xhprof  wget https://github.com/longxinH/xhprof/archive/v2.1.0.tar.gz # 解压缩包 tar xf v2.1.0.tar.gz cd xhprof-2.1.0/extension # 运行phpize /data/nmp/php7/bin/phpize # 运行configure ./configure --with-php-config=/data/nmp/php7/bin/php-config # 编译安装 make &amp;&amp; make install 修改php.ini
+[xhprof] extension = xhprof.so xhprof.output_dir = /tmp/xhprof 配置xhprof 把扩展目录下xhprof_html和xhprof_lib 复制出来，单独存放在一个目录中
+cp -a xhprof_html /data/wwwroot/xhprofcp -a xhprof_lib /data/wwwroot/xhprof把要针对的项目，添加到入口文件中
+//开启性能分析 xhprof_enable(XHPROF_FLAGS_MEMORY | XHPROF_FLAGS_CPU); //php中止时运行的函数 register_shutdown_function(function () { //停止性能分析  $xhprof_data = xhprof_disable(); if (function_exists(&#39;fastcgi_finish_request&#39;)) { fastcgi_finish_request(); } //引入xhprof库文件，路径请自行修改  $XHPROF_ROOT = realpath(dirname(__FILE__) ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-install-xhprof/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-30T11:51:49+08:00" />
+<meta property="article:modified_time" content="2020-11-30T11:51:49+08:00" />
+
+<meta itemprop="name" content="Php Install Xhprof">
+<meta itemprop="description" content="Xhprof是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程序开关来控制是否进行profile。
+安装xhprof # 下载xhprof  wget https://github.com/longxinH/xhprof/archive/v2.1.0.tar.gz # 解压缩包 tar xf v2.1.0.tar.gz cd xhprof-2.1.0/extension # 运行phpize /data/nmp/php7/bin/phpize # 运行configure ./configure --with-php-config=/data/nmp/php7/bin/php-config # 编译安装 make &amp;&amp; make install 修改php.ini
+[xhprof] extension = xhprof.so xhprof.output_dir = /tmp/xhprof 配置xhprof 把扩展目录下xhprof_html和xhprof_lib 复制出来，单独存放在一个目录中
+cp -a xhprof_html /data/wwwroot/xhprofcp -a xhprof_lib /data/wwwroot/xhprof把要针对的项目，添加到入口文件中
+//开启性能分析 xhprof_enable(XHPROF_FLAGS_MEMORY | XHPROF_FLAGS_CPU); //php中止时运行的函数 register_shutdown_function(function () { //停止性能分析  $xhprof_data = xhprof_disable(); if (function_exists(&#39;fastcgi_finish_request&#39;)) { fastcgi_finish_request(); } //引入xhprof库文件，路径请自行修改  $XHPROF_ROOT = realpath(dirname(__FILE__) ."><meta itemprop="datePublished" content="2020-11-30T11:51:49+08:00" />
+<meta itemprop="dateModified" content="2020-11-30T11:51:49+08:00" />
+<meta itemprop="wordCount" content="149">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Install Xhprof"/>
+<meta name="twitter:description" content="Xhprof是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程序开关来控制是否进行profile。
+安装xhprof # 下载xhprof  wget https://github.com/longxinH/xhprof/archive/v2.1.0.tar.gz # 解压缩包 tar xf v2.1.0.tar.gz cd xhprof-2.1.0/extension # 运行phpize /data/nmp/php7/bin/phpize # 运行configure ./configure --with-php-config=/data/nmp/php7/bin/php-config # 编译安装 make &amp;&amp; make install 修改php.ini
+[xhprof] extension = xhprof.so xhprof.output_dir = /tmp/xhprof 配置xhprof 把扩展目录下xhprof_html和xhprof_lib 复制出来，单独存放在一个目录中
+cp -a xhprof_html /data/wwwroot/xhprofcp -a xhprof_lib /data/wwwroot/xhprof把要针对的项目，添加到入口文件中
+//开启性能分析 xhprof_enable(XHPROF_FLAGS_MEMORY | XHPROF_FLAGS_CPU); //php中止时运行的函数 register_shutdown_function(function () { //停止性能分析  $xhprof_data = xhprof_disable(); if (function_exists(&#39;fastcgi_finish_request&#39;)) { fastcgi_finish_request(); } //引入xhprof库文件，路径请自行修改  $XHPROF_ROOT = realpath(dirname(__FILE__) ."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>Xhprof是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程序开关来控制是否进行profile。</p>
+<h3 id="安装xhprof">安装xhprof</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#75715e"># 下载xhprof </span>
+  wget https://github.com/longxinH/xhprof/archive/v2.1.0.tar.gz
+
+  <span style="color:#75715e"># 解压缩包</span>
+  tar xf v2.1.0.tar.gz
+
+  cd xhprof-2.1.0/extension
+
+  <span style="color:#75715e"># 运行phpize</span>
+  /data/nmp/php7/bin/phpize
+
+  <span style="color:#75715e"># 运行configure</span>
+  ./configure --with-php-config<span style="color:#f92672">=</span>/data/nmp/php7/bin/php-config
+  
+  <span style="color:#75715e"># 编译安装</span>
+  make <span style="color:#f92672">&amp;&amp;</span> make install
+</code></pre></div><p>修改php.ini</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[xhprof]</span>
+<span style="color:#a6e22e">extension</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">xhprof.so</span>
+<span style="color:#a6e22e">xhprof.output_dir</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/tmp/xhprof</span>
+</code></pre></div><h3 id="配置xhprof">配置xhprof</h3>
+<p>把扩展目录下xhprof_html和xhprof_lib 复制出来，单独存放在一个目录中</p>
+<pre><code>cp -a xhprof_html /data/wwwroot/xhprof
+cp -a xhprof_lib /data/wwwroot/xhprof
+</code></pre><p>把要针对的项目，添加到入口文件中</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//开启性能分析
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhprof_enable</span>(<span style="color:#a6e22e">XHPROF_FLAGS_MEMORY</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">XHPROF_FLAGS_CPU</span>);
+<span style="color:#75715e">//php中止时运行的函数
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">register_shutdown_function</span>(<span style="color:#66d9ef">function</span> () {
+    <span style="color:#75715e">//停止性能分析
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">$xhprof_data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xhprof_disable</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">function_exists</span>(<span style="color:#e6db74">&#39;fastcgi_finish_request&#39;</span>)) {
+        <span style="color:#a6e22e">fastcgi_finish_request</span>();
+    }
+    <span style="color:#75715e">//引入xhprof库文件，路径请自行修改
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">$XHPROF_ROOT</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">realpath</span>(<span style="color:#a6e22e">dirname</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">FILE__</span>) . <span style="color:#e6db74">&#39;/xhprof&#39;</span>);
+    <span style="color:#a6e22e">include_once</span> <span style="color:#a6e22e">$XHPROF_ROOT</span> . <span style="color:#e6db74">&#34;/xhprof_lib/utils/xhprof_lib.php&#34;</span>;
+    <span style="color:#a6e22e">include_once</span> <span style="color:#a6e22e">$XHPROF_ROOT</span> . <span style="color:#e6db74">&#34;/xhprof_lib/utils/xhprof_runs.php&#34;</span>;
+    <span style="color:#a6e22e">$xhprof_runs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XHProfRuns_Default</span>();
+    <span style="color:#75715e">//导出性能分析数据，默认xhprof.output_dir指定的目录
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">$run_id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$xhprof_runs</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save_run</span>(<span style="color:#a6e22e">$xhprof_data</span>, <span style="color:#e6db74">&#39;xhprof&#39;</span>);
+});
+</code></pre></div><p>数据默认会导出到xhprof.output_dir指定目录, 给以创建目录相关权限</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /tmp/xhprof
+chmod -R <span style="color:#ae81ff">777</span> /tmp/xhprof
+</code></pre></div><h3 id="配置虚拟主机用来查看分析日志">配置虚拟主机，用来查看分析日志</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
+    listen       80;
+    server_name  xhprof.xxx.com;
+    charset utf-8;
+  
+    root   /data/wwwroot/xhprof/xhprof_html;
+    index  index.html index.htm index.php;
+ 
+    location ~ <span style="color:#ae81ff">\.</span>php$ <span style="color:#f92672">{</span>
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="安装-可视化工具">安装 可视化工具</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y libpng
+yum install -y graphviz
+
+<span style="color:#75715e"># 手动安装</span>
+https://graphviz.gitlab.io/_pages/Download/Download_source.html
+
+<span style="color:#75715e"># 编译系统</span>
+tar xf graphviz.tar.gz
+cd graphviz-2.40.1
+./configure
+make
+make install
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

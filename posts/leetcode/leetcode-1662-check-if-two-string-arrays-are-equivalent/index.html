@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Leetcode 1662 Check if Two String Arrays Are Equivalent - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&amp;quot;ab&amp;quot;, &amp;quot;c&amp;quot;], word2 = [&amp;quot;a&amp;quot;, &amp;quot;bc&amp;quot;]输出：true解释：word1 表示的字符串为 &amp;quot;ab&amp;quot; &#43; &amp;quot;c&amp;quot; -&amp;gt; &amp;quot;abc&amp;quot;word2 表示的字符串为 &amp;quot;a&amp;quot; &#43; &amp;quot;bc&amp;quot; -&amp;gt; &amp;quot;abc&amp;quot;两个字符串相同，返回 true输入：word1 = [&amp;quot;a&amp;quot;, &amp;quot;cb&amp;quot;], word2 = [&amp;quot;ab&amp;quot;, &amp;quot;c&amp;quot;]输出：false输入：word1 = [&amp;quot;abc&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;defg&amp;quot;], word2 = [&amp;quot;abcddefg&amp;quot;]输出：true提示：
+ 1 &amp;lt;= word1.length, word2.length &amp;lt;= 103 1 &amp;lt;= word1[i].length, word2[i].length &amp;lt;= 103 1 &amp;lt;= sum(word1[i]." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/leetcode/leetcode-1662-check-if-two-string-arrays-are-equivalent/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Leetcode 1662 Check if Two String Arrays Are Equivalent" />
+<meta property="og:description" content="给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&quot;ab&quot;, &quot;c&quot;], word2 = [&quot;a&quot;, &quot;bc&quot;]输出：true解释：word1 表示的字符串为 &quot;ab&quot; &#43; &quot;c&quot; -&gt; &quot;abc&quot;word2 表示的字符串为 &quot;a&quot; &#43; &quot;bc&quot; -&gt; &quot;abc&quot;两个字符串相同，返回 true输入：word1 = [&quot;a&quot;, &quot;cb&quot;], word2 = [&quot;ab&quot;, &quot;c&quot;]输出：false输入：word1 = [&quot;abc&quot;, &quot;d&quot;, &quot;defg&quot;], word2 = [&quot;abcddefg&quot;]输出：true提示：
+ 1 &lt;= word1.length, word2.length &lt;= 103 1 &lt;= word1[i].length, word2[i].length &lt;= 103 1 &lt;= sum(word1[i]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/leetcode/leetcode-1662-check-if-two-string-arrays-are-equivalent/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-26T10:45:53+08:00" />
+<meta property="article:modified_time" content="2020-11-26T10:45:53+08:00" />
+
+<meta itemprop="name" content="Leetcode 1662 Check if Two String Arrays Are Equivalent">
+<meta itemprop="description" content="给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&quot;ab&quot;, &quot;c&quot;], word2 = [&quot;a&quot;, &quot;bc&quot;]输出：true解释：word1 表示的字符串为 &quot;ab&quot; &#43; &quot;c&quot; -&gt; &quot;abc&quot;word2 表示的字符串为 &quot;a&quot; &#43; &quot;bc&quot; -&gt; &quot;abc&quot;两个字符串相同，返回 true输入：word1 = [&quot;a&quot;, &quot;cb&quot;], word2 = [&quot;ab&quot;, &quot;c&quot;]输出：false输入：word1 = [&quot;abc&quot;, &quot;d&quot;, &quot;defg&quot;], word2 = [&quot;abcddefg&quot;]输出：true提示：
+ 1 &lt;= word1.length, word2.length &lt;= 103 1 &lt;= word1[i].length, word2[i].length &lt;= 103 1 &lt;= sum(word1[i]."><meta itemprop="datePublished" content="2020-11-26T10:45:53+08:00" />
+<meta itemprop="dateModified" content="2020-11-26T10:45:53+08:00" />
+<meta itemprop="wordCount" content="105">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 1662 Check if Two String Arrays Are Equivalent"/>
+<meta name="twitter:description" content="给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+输入：word1 = [&quot;ab&quot;, &quot;c&quot;], word2 = [&quot;a&quot;, &quot;bc&quot;]输出：true解释：word1 表示的字符串为 &quot;ab&quot; &#43; &quot;c&quot; -&gt; &quot;abc&quot;word2 表示的字符串为 &quot;a&quot; &#43; &quot;bc&quot; -&gt; &quot;abc&quot;两个字符串相同，返回 true输入：word1 = [&quot;a&quot;, &quot;cb&quot;], word2 = [&quot;ab&quot;, &quot;c&quot;]输出：false输入：word1 = [&quot;abc&quot;, &quot;d&quot;, &quot;defg&quot;], word2 = [&quot;abcddefg&quot;]输出：true提示：
+ 1 &lt;= word1.length, word2.length &lt;= 103 1 &lt;= word1[i].length, word2[i].length &lt;= 103 1 &lt;= sum(word1[i]."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。</p>
+<p>数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。</p>
+<pre><code>输入：word1 = [&quot;ab&quot;, &quot;c&quot;], word2 = [&quot;a&quot;, &quot;bc&quot;]
+输出：true
+解释：
+word1 表示的字符串为 &quot;ab&quot; + &quot;c&quot; -&gt; &quot;abc&quot;
+word2 表示的字符串为 &quot;a&quot; + &quot;bc&quot; -&gt; &quot;abc&quot;
+两个字符串相同，返回 true
+
+输入：word1 = [&quot;a&quot;, &quot;cb&quot;], word2 = [&quot;ab&quot;, &quot;c&quot;]
+输出：false
+
+
+输入：word1  = [&quot;abc&quot;, &quot;d&quot;, &quot;defg&quot;], word2 = [&quot;abcddefg&quot;]
+输出：true
+
+</code></pre><p>提示：</p>
+<ul>
+<li>1 &lt;= word1.length, word2.length &lt;= 103</li>
+<li>1 &lt;= word1[i].length, word2[i].length &lt;= 103</li>
+<li>1 &lt;= sum(word1[i].length), sum(word2[i].length) &lt;= 103</li>
+<li>word1[i] 和 word2[i] 由小写字母组成</li>
+</ul>
+<p>Solution</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @param {string[]} word1
+</span><span style="color:#75715e"> * @param {string[]} word2
+</span><span style="color:#75715e"> * @return {boolean}
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arrayStringsAreEqual</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">word1</span>, <span style="color:#a6e22e">word2</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">word1</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#a6e22e">word2</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+};
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

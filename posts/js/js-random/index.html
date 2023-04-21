@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js Random - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="第一种：使用randomString，e表示长度，默认32位
+function randomString(e) { e = e || 32; var t = &amp;#34;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678&amp;#34;, a = t.length, n = &amp;#34;&amp;#34;; for (i = 0; i &amp;lt; e; i&#43;&#43;) n &#43;= t.charAt(Math.floor(Math.random() * a)); return n } alert(randomString(6)); 第二种：生成随机数
+// 本例子代表生成100000-999999的随机数 function GetRandomNum(Min,Max) { var Range = Max - Min; var Rand = Math.random(); return(Min &#43; Math.round(Rand * Range)); } var num = GetRandomNum(10000,999999); alert(num); 第三种：对定义的数组字符集进行随机选取
+var str = [&amp;#39;0&amp;#39;,&amp;#39;1&amp;#39;,&amp;#39;2&amp;#39;,&amp;#39;3&amp;#39;,&amp;#39;4&amp;#39;,&amp;#39;5&amp;#39;,&amp;#39;6&amp;#39;,&amp;#39;7&amp;#39;,&amp;#39;8&amp;#39;,&amp;#39;9&amp;#39;,&amp;#39;A&amp;#39;,&amp;#39;B&amp;#39;,&amp;#39;C&amp;#39;,&amp;#39;D&amp;#39;,&amp;#39;E&amp;#39;,&amp;#39;F&amp;#39;,&amp;#39;G&amp;#39;,&amp;#39;H&amp;#39;,&amp;#39;I&amp;#39;,&amp;#39;J&amp;#39;,&amp;#39;K&amp;#39;,&amp;#39;L&amp;#39;,&amp;#39;M&amp;#39;,&amp;#39;N&amp;#39;,&amp;#39;O&amp;#39;,&amp;#39;P&amp;#39;,&amp;#39;Q&amp;#39;,&amp;#39;R&amp;#39;,&amp;#39;S&amp;#39;,&amp;#39;T&amp;#39;,&amp;#39;U&amp;#39;,&amp;#39;V&amp;#39;,&amp;#39;W&amp;#39;,&amp;#39;X&amp;#39;,&amp;#39;Y&amp;#39;,&amp;#39;Z&amp;#39;]; function generateMixed(n) { var res = &amp;#34;&amp;#34;; for(var i = 0; i &amp;lt; n ; i &#43;&#43;) { var id = Math." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-random/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js Random" />
+<meta property="og:description" content="第一种：使用randomString，e表示长度，默认32位
+function randomString(e) { e = e || 32; var t = &#34;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678&#34;, a = t.length, n = &#34;&#34;; for (i = 0; i &lt; e; i&#43;&#43;) n &#43;= t.charAt(Math.floor(Math.random() * a)); return n } alert(randomString(6)); 第二种：生成随机数
+// 本例子代表生成100000-999999的随机数 function GetRandomNum(Min,Max) { var Range = Max - Min; var Rand = Math.random(); return(Min &#43; Math.round(Rand * Range)); } var num = GetRandomNum(10000,999999); alert(num); 第三种：对定义的数组字符集进行随机选取
+var str = [&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;,&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;,&#39;G&#39;,&#39;H&#39;,&#39;I&#39;,&#39;J&#39;,&#39;K&#39;,&#39;L&#39;,&#39;M&#39;,&#39;N&#39;,&#39;O&#39;,&#39;P&#39;,&#39;Q&#39;,&#39;R&#39;,&#39;S&#39;,&#39;T&#39;,&#39;U&#39;,&#39;V&#39;,&#39;W&#39;,&#39;X&#39;,&#39;Y&#39;,&#39;Z&#39;]; function generateMixed(n) { var res = &#34;&#34;; for(var i = 0; i &lt; n ; i &#43;&#43;) { var id = Math." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-random/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-19T16:49:59+08:00" />
+<meta property="article:modified_time" content="2021-08-19T16:49:59+08:00" />
+
+<meta itemprop="name" content="Js Random">
+<meta itemprop="description" content="第一种：使用randomString，e表示长度，默认32位
+function randomString(e) { e = e || 32; var t = &#34;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678&#34;, a = t.length, n = &#34;&#34;; for (i = 0; i &lt; e; i&#43;&#43;) n &#43;= t.charAt(Math.floor(Math.random() * a)); return n } alert(randomString(6)); 第二种：生成随机数
+// 本例子代表生成100000-999999的随机数 function GetRandomNum(Min,Max) { var Range = Max - Min; var Rand = Math.random(); return(Min &#43; Math.round(Rand * Range)); } var num = GetRandomNum(10000,999999); alert(num); 第三种：对定义的数组字符集进行随机选取
+var str = [&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;,&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;,&#39;G&#39;,&#39;H&#39;,&#39;I&#39;,&#39;J&#39;,&#39;K&#39;,&#39;L&#39;,&#39;M&#39;,&#39;N&#39;,&#39;O&#39;,&#39;P&#39;,&#39;Q&#39;,&#39;R&#39;,&#39;S&#39;,&#39;T&#39;,&#39;U&#39;,&#39;V&#39;,&#39;W&#39;,&#39;X&#39;,&#39;Y&#39;,&#39;Z&#39;]; function generateMixed(n) { var res = &#34;&#34;; for(var i = 0; i &lt; n ; i &#43;&#43;) { var id = Math."><meta itemprop="datePublished" content="2021-08-19T16:49:59+08:00" />
+<meta itemprop="dateModified" content="2021-08-19T16:49:59+08:00" />
+<meta itemprop="wordCount" content="146">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Random"/>
+<meta name="twitter:description" content="第一种：使用randomString，e表示长度，默认32位
+function randomString(e) { e = e || 32; var t = &#34;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678&#34;, a = t.length, n = &#34;&#34;; for (i = 0; i &lt; e; i&#43;&#43;) n &#43;= t.charAt(Math.floor(Math.random() * a)); return n } alert(randomString(6)); 第二种：生成随机数
+// 本例子代表生成100000-999999的随机数 function GetRandomNum(Min,Max) { var Range = Max - Min; var Rand = Math.random(); return(Min &#43; Math.round(Rand * Range)); } var num = GetRandomNum(10000,999999); alert(num); 第三种：对定义的数组字符集进行随机选取
+var str = [&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;,&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;,&#39;G&#39;,&#39;H&#39;,&#39;I&#39;,&#39;J&#39;,&#39;K&#39;,&#39;L&#39;,&#39;M&#39;,&#39;N&#39;,&#39;O&#39;,&#39;P&#39;,&#39;Q&#39;,&#39;R&#39;,&#39;S&#39;,&#39;T&#39;,&#39;U&#39;,&#39;V&#39;,&#39;W&#39;,&#39;X&#39;,&#39;Y&#39;,&#39;Z&#39;]; function generateMixed(n) { var res = &#34;&#34;; for(var i = 0; i &lt; n ; i &#43;&#43;) { var id = Math."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>第一种：使用randomString，e表示长度，默认32位</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomString</span>(<span style="color:#a6e22e">e</span>) {  
+  <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">32</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678&#34;</span>,
+  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">length</span>,
+  <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">e</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) <span style="color:#a6e22e">n</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">charAt</span>(Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">a</span>));
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>
+}
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">randomString</span>(<span style="color:#ae81ff">6</span>));
+</code></pre></div><p>第二种：生成随机数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 本例子代表生成100000-999999的随机数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">GetRandomNum</span>(<span style="color:#a6e22e">Min</span>,<span style="color:#a6e22e">Max</span>)
+{
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Range</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Max</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Min</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Rand</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>();
+<span style="color:#66d9ef">return</span>(<span style="color:#a6e22e">Min</span> <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">Rand</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">Range</span>));
+}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetRandomNum</span>(<span style="color:#ae81ff">10000</span>,<span style="color:#ae81ff">999999</span>);
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">num</span>);
+</code></pre></div><p>第三种：对定义的数组字符集进行随机选取</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;0&#39;</span>,<span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;2&#39;</span>,<span style="color:#e6db74">&#39;3&#39;</span>,<span style="color:#e6db74">&#39;4&#39;</span>,<span style="color:#e6db74">&#39;5&#39;</span>,<span style="color:#e6db74">&#39;6&#39;</span>,<span style="color:#e6db74">&#39;7&#39;</span>,<span style="color:#e6db74">&#39;8&#39;</span>,<span style="color:#e6db74">&#39;9&#39;</span>,<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>,<span style="color:#e6db74">&#39;F&#39;</span>,<span style="color:#e6db74">&#39;G&#39;</span>,<span style="color:#e6db74">&#39;H&#39;</span>,<span style="color:#e6db74">&#39;I&#39;</span>,<span style="color:#e6db74">&#39;J&#39;</span>,<span style="color:#e6db74">&#39;K&#39;</span>,<span style="color:#e6db74">&#39;L&#39;</span>,<span style="color:#e6db74">&#39;M&#39;</span>,<span style="color:#e6db74">&#39;N&#39;</span>,<span style="color:#e6db74">&#39;O&#39;</span>,<span style="color:#e6db74">&#39;P&#39;</span>,<span style="color:#e6db74">&#39;Q&#39;</span>,<span style="color:#e6db74">&#39;R&#39;</span>,<span style="color:#e6db74">&#39;S&#39;</span>,<span style="color:#e6db74">&#39;T&#39;</span>,<span style="color:#e6db74">&#39;U&#39;</span>,<span style="color:#e6db74">&#39;V&#39;</span>,<span style="color:#e6db74">&#39;W&#39;</span>,<span style="color:#e6db74">&#39;X&#39;</span>,<span style="color:#e6db74">&#39;Y&#39;</span>,<span style="color:#e6db74">&#39;Z&#39;</span>];
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generateMixed</span>(<span style="color:#a6e22e">n</span>) {
+   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+   <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">n</span> ; <span style="color:#a6e22e">i</span> <span style="color:#f92672">++</span>) {
+     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">ceil</span>(Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">*</span><span style="color:#ae81ff">35</span>);
+     <span style="color:#a6e22e">res</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">str</span>[<span style="color:#a6e22e">id</span>];
+   }
+   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+}
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">generateMixed</span>(<span style="color:#ae81ff">6</span>));
+</code></pre></div><p>第四种：生成随机数转成36进制，再截取部分</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//Math.random() 生成随机数字, eg: 0.123456
+</span><span style="color:#75715e">//.toString(36) 转化成36进制 : &#34;0.4fzyo82mvyr&#34;
+</span><span style="color:#75715e">//.slice(-8); 截取最后八位 : &#34;yo82mvyr&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>).<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">6</span>);
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">str</span>);
+</code></pre></div><p>第五种：对字符串集合随机排列，随机输出指定的长度</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomString</span>(<span style="color:#a6e22e">length</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>; <span style="color:#f92672">--</span><span style="color:#a6e22e">i</span>) 
+    <span style="color:#a6e22e">result</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">str</span>[Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">length</span>)];
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
+}
+<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">randomString</span>(<span style="color:#ae81ff">6</span>));
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go String Range - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="索引值是返回的第二个值的当前“字符”的的一个byte的索引。它不是当前“字符”的索引，这与其他语言不同。注意真实的字符可能会由多个rune表示。如果你需要处理字符，确保你使用了“norm”包。
+string变量的for range语句将会尝试把数据翻译为UTF8文本。对于它无法理解的任何byte序列，它将返回0xfffd runes，而不是真实的数据。如果你任意（非UTF8文本）的数据保存在string变量中，确保把它们转换为byte slice，以得到所有保存的数据。
+for pos, char := range &amp;#34;日本語&amp;#34; { fmt.Printf(&amp;#34;character %c starts at byte position %d\n&amp;#34;, char, pos) } // character 日 starts at byte position 0 // character 本 starts at byte position 3 // character 語 starts at byte position 6 参考资料   The Go Blog Strings, bytes, runes and characters in Go
+  How can I iterate over a string by runes in Go?" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-string-range/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go String Range" />
+<meta property="og:description" content="索引值是返回的第二个值的当前“字符”的的一个byte的索引。它不是当前“字符”的索引，这与其他语言不同。注意真实的字符可能会由多个rune表示。如果你需要处理字符，确保你使用了“norm”包。
+string变量的for range语句将会尝试把数据翻译为UTF8文本。对于它无法理解的任何byte序列，它将返回0xfffd runes，而不是真实的数据。如果你任意（非UTF8文本）的数据保存在string变量中，确保把它们转换为byte slice，以得到所有保存的数据。
+for pos, char := range &#34;日本語&#34; { fmt.Printf(&#34;character %c starts at byte position %d\n&#34;, char, pos) } // character 日 starts at byte position 0 // character 本 starts at byte position 3 // character 語 starts at byte position 6 参考资料   The Go Blog Strings, bytes, runes and characters in Go
+  How can I iterate over a string by runes in Go?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-string-range/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-03T14:41:24+08:00" />
+<meta property="article:modified_time" content="2020-12-03T14:41:24+08:00" />
+
+<meta itemprop="name" content="Go String Range">
+<meta itemprop="description" content="索引值是返回的第二个值的当前“字符”的的一个byte的索引。它不是当前“字符”的索引，这与其他语言不同。注意真实的字符可能会由多个rune表示。如果你需要处理字符，确保你使用了“norm”包。
+string变量的for range语句将会尝试把数据翻译为UTF8文本。对于它无法理解的任何byte序列，它将返回0xfffd runes，而不是真实的数据。如果你任意（非UTF8文本）的数据保存在string变量中，确保把它们转换为byte slice，以得到所有保存的数据。
+for pos, char := range &#34;日本語&#34; { fmt.Printf(&#34;character %c starts at byte position %d\n&#34;, char, pos) } // character 日 starts at byte position 0 // character 本 starts at byte position 3 // character 語 starts at byte position 6 参考资料   The Go Blog Strings, bytes, runes and characters in Go
+  How can I iterate over a string by runes in Go?"><meta itemprop="datePublished" content="2020-12-03T14:41:24+08:00" />
+<meta itemprop="dateModified" content="2020-12-03T14:41:24+08:00" />
+<meta itemprop="wordCount" content="70">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go String Range"/>
+<meta name="twitter:description" content="索引值是返回的第二个值的当前“字符”的的一个byte的索引。它不是当前“字符”的索引，这与其他语言不同。注意真实的字符可能会由多个rune表示。如果你需要处理字符，确保你使用了“norm”包。
+string变量的for range语句将会尝试把数据翻译为UTF8文本。对于它无法理解的任何byte序列，它将返回0xfffd runes，而不是真实的数据。如果你任意（非UTF8文本）的数据保存在string变量中，确保把它们转换为byte slice，以得到所有保存的数据。
+for pos, char := range &#34;日本語&#34; { fmt.Printf(&#34;character %c starts at byte position %d\n&#34;, char, pos) } // character 日 starts at byte position 0 // character 本 starts at byte position 3 // character 語 starts at byte position 6 参考资料   The Go Blog Strings, bytes, runes and characters in Go
+  How can I iterate over a string by runes in Go?"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>索引值是返回的第二个值的当前“字符”的的一个byte的索引。它不是当前“字符”的索引，这与其他语言不同。注意真实的字符可能会由多个rune表示。如果你需要处理字符，确保你使用了“norm”包。</p>
+<p>string变量的for range语句将会尝试把数据翻译为UTF8文本。对于它无法理解的任何byte序列，它将返回0xfffd runes，而不是真实的数据。如果你任意（非UTF8文本）的数据保存在string变量中，确保把它们转换为byte slice，以得到所有保存的数据。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">pos</span>, <span style="color:#a6e22e">char</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#e6db74">&#34;日本語&#34;</span> {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;character %c starts at byte position %d\n&#34;</span>, <span style="color:#a6e22e">char</span>, <span style="color:#a6e22e">pos</span>)
+}
+
+<span style="color:#75715e">// character 日 starts at byte position 0
+</span><span style="color:#75715e">// character 本 starts at byte position 3
+</span><span style="color:#75715e">// character 語 starts at byte position 6
+</span></code></pre></div><h3 id="参考资料">参考资料</h3>
+<ul>
+<li>
+<p><a href="https://blog.golang.org/strings">The Go Blog Strings, bytes, runes and characters in Go</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/18130859/how-can-i-iterate-over-a-string-by-runes-in-go">How can I iterate over a string by runes in Go?</a></p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/fanbi/p/11956208.html">全面认识golang string</a></p>
+</li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

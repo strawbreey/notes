@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Js Has Own Property - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。
+1. 点( . )或者方括号( [ ] ) 　通过点或者方括号可以获取对象的属性值，如果对象上不存在该属性，则会返回undefined。当然，这里的“不存在”指的是对象自身和原型链上都不存在，如果原型链有该属性，则会返回原型链上的属性值。
+// 创建对象 let test = {name : &amp;#39;lei&amp;#39;} // 获取对象的自身的属性 test.name //&amp;#34;lei&amp;#34; test[&amp;#34;name&amp;#34;] //&amp;#34;lei&amp;#34;  // 获取不存在的属性 test.age //undefined  // 获取原型上的属性 test[&amp;#34;toString&amp;#34;] //toString() { [native code] }  // 新增一个值为undefined的属性 test.un = undefined test.un //undefined 不能用在属性值存在，但可能为 undefined的场景 　所以，我们可以根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性。
+这种方式很简单方便，局限性就是：不能用在x的属性值存在，但可能为 undefined的场景。 in运算符可以解决这个问题
+2. in 运算符 　MDN 上对in运算符的介绍：如果指定的属性在指定的对象或其原型链中，则in 运算符返回true。
+&amp;#39;name&amp;#39; in test //true &amp;#39;un&amp;#39; in test //true &amp;#39;toString&amp;#39; in test //true &amp;#39;age&amp;#39; in test //false 示例中可以看出，值为undefined的属性也可正常判断。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/js-has-own-property/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Js Has Own Property" />
+<meta property="og:description" content="avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。
+1. 点( . )或者方括号( [ ] ) 　通过点或者方括号可以获取对象的属性值，如果对象上不存在该属性，则会返回undefined。当然，这里的“不存在”指的是对象自身和原型链上都不存在，如果原型链有该属性，则会返回原型链上的属性值。
+// 创建对象 let test = {name : &#39;lei&#39;} // 获取对象的自身的属性 test.name //&#34;lei&#34; test[&#34;name&#34;] //&#34;lei&#34;  // 获取不存在的属性 test.age //undefined  // 获取原型上的属性 test[&#34;toString&#34;] //toString() { [native code] }  // 新增一个值为undefined的属性 test.un = undefined test.un //undefined 不能用在属性值存在，但可能为 undefined的场景 　所以，我们可以根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性。
+这种方式很简单方便，局限性就是：不能用在x的属性值存在，但可能为 undefined的场景。 in运算符可以解决这个问题
+2. in 运算符 　MDN 上对in运算符的介绍：如果指定的属性在指定的对象或其原型链中，则in 运算符返回true。
+&#39;name&#39; in test //true &#39;un&#39; in test //true &#39;toString&#39; in test //true &#39;age&#39; in test //false 示例中可以看出，值为undefined的属性也可正常判断。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/js-has-own-property/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-25T10:08:24+08:00" />
+<meta property="article:modified_time" content="2020-12-25T10:08:24+08:00" />
+
+<meta itemprop="name" content="Js Has Own Property">
+<meta itemprop="description" content="avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。
+1. 点( . )或者方括号( [ ] ) 　通过点或者方括号可以获取对象的属性值，如果对象上不存在该属性，则会返回undefined。当然，这里的“不存在”指的是对象自身和原型链上都不存在，如果原型链有该属性，则会返回原型链上的属性值。
+// 创建对象 let test = {name : &#39;lei&#39;} // 获取对象的自身的属性 test.name //&#34;lei&#34; test[&#34;name&#34;] //&#34;lei&#34;  // 获取不存在的属性 test.age //undefined  // 获取原型上的属性 test[&#34;toString&#34;] //toString() { [native code] }  // 新增一个值为undefined的属性 test.un = undefined test.un //undefined 不能用在属性值存在，但可能为 undefined的场景 　所以，我们可以根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性。
+这种方式很简单方便，局限性就是：不能用在x的属性值存在，但可能为 undefined的场景。 in运算符可以解决这个问题
+2. in 运算符 　MDN 上对in运算符的介绍：如果指定的属性在指定的对象或其原型链中，则in 运算符返回true。
+&#39;name&#39; in test //true &#39;un&#39; in test //true &#39;toString&#39; in test //true &#39;age&#39; in test //false 示例中可以看出，值为undefined的属性也可正常判断。"><meta itemprop="datePublished" content="2020-12-25T10:08:24+08:00" />
+<meta itemprop="dateModified" content="2020-12-25T10:08:24+08:00" />
+<meta itemprop="wordCount" content="100">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Has Own Property"/>
+<meta name="twitter:description" content="avaScript 判断对象中是否有某属性 判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。
+1. 点( . )或者方括号( [ ] ) 　通过点或者方括号可以获取对象的属性值，如果对象上不存在该属性，则会返回undefined。当然，这里的“不存在”指的是对象自身和原型链上都不存在，如果原型链有该属性，则会返回原型链上的属性值。
+// 创建对象 let test = {name : &#39;lei&#39;} // 获取对象的自身的属性 test.name //&#34;lei&#34; test[&#34;name&#34;] //&#34;lei&#34;  // 获取不存在的属性 test.age //undefined  // 获取原型上的属性 test[&#34;toString&#34;] //toString() { [native code] }  // 新增一个值为undefined的属性 test.un = undefined test.un //undefined 不能用在属性值存在，但可能为 undefined的场景 　所以，我们可以根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性。
+这种方式很简单方便，局限性就是：不能用在x的属性值存在，但可能为 undefined的场景。 in运算符可以解决这个问题
+2. in 运算符 　MDN 上对in运算符的介绍：如果指定的属性在指定的对象或其原型链中，则in 运算符返回true。
+&#39;name&#39; in test //true &#39;un&#39; in test //true &#39;toString&#39; in test //true &#39;age&#39; in test //false 示例中可以看出，值为undefined的属性也可正常判断。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h2 id="avascript-判断对象中是否有某属性">avaScript 判断对象中是否有某属性</h2>
+<p>判断对象中是否有某属性的常见方式总结，不同的场景要使用不同的方式。</p>
+<h3 id="1-点--或者方括号---">1. 点( . )或者方括号( [ ] )</h3>
+<p>　　通过点或者方括号可以获取对象的属性值，如果对象上不存在该属性，则会返回undefined。当然，这里的“不存在”指的是对象自身和原型链上都不存在，如果原型链有该属性，则会返回原型链上的属性值。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 创建对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;lei&#39;</span>}
+<span style="color:#75715e">// 获取对象的自身的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">name</span>            <span style="color:#75715e">//&#34;lei&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>[<span style="color:#e6db74">&#34;name&#34;</span>]         <span style="color:#75715e">//&#34;lei&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 获取不存在的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">age</span>             <span style="color:#75715e">//undefined
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 获取原型上的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>[<span style="color:#e6db74">&#34;toString&#34;</span>]     <span style="color:#75715e">//toString() { [native code] }
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 新增一个值为undefined的属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">un</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>
+
+<span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">un</span>              <span style="color:#75715e">//undefined    不能用在属性值存在，但可能为 undefined的场景
+</span></code></pre></div><p>　
+所以，我们可以根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性。</p>
+<p>这种方式很简单方便，局限性就是：不能用在x的属性值存在，但可能为 undefined的场景。 in运算符可以解决这个问题</p>
+<h3 id="2-in-运算符">2. in 运算符</h3>
+<p>　　
+MDN 上对in运算符的介绍：如果指定的属性在指定的对象或其原型链中，则in 运算符返回true。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>        <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;un&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>             <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;toString&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>    <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;age&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">test</span>           <span style="color:#75715e">//false
+</span></code></pre></div><p>示例中可以看出，值为undefined的属性也可正常判断。</p>
+<p>这种方式的局限性就是无法区分自身和原型链上的属性，在只需要判断自身属性是否存在时，这种方式就不适用了。这时需要hasOwnProperty()</p>
+<h3 id="3hasownproperty">3.hasOwnProperty()</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;name&#39;</span>)          <span style="color:#75715e">// true   自身属性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;age&#39;</span>)           <span style="color:#75715e">// false  不存在
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;toString&#39;</span>)      <span style="color:#75715e">// false  原型链上属性
+</span></code></pre></div><p>可以看到，只有自身存在该属性时，才会返回true。适用于只判断自身属性的场景。</p>
+<h3 id="总结">总结</h3>
+<p>三种方式各有优缺点，不同的场景使用不同的方式，有时还需要结合使用，比如遍历自身属性的时候，就会把 for ··· in  ···和 hasOwnProperty()结合使用。</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ts As - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="理解Typescript中的as、问号与叹号 as关键字表示断言 在Typescript中，表示断言有两种方式。一种是尖扩号表示法:
+let someValue: any = &amp;#34;this is a string&amp;#34;; let strLength: number = (&amp;lt;string&amp;gt;someValue).length; 另一种使用as关键字：
+let someValue: any = &amp;#34;this is a string&amp;#34;; let strLength: number = (someValue as string).length; 唯一区别是，在JSX中，尖扩号与JSX语法冲突，只能使用as关键字。
+问号(?)用于属性定义 准备工作：以下示例可以建立一个optional.ts的文件，然后用tsc进行编译。tsc可以用npm install -g typescript安装。
+//运行以下命令可以在同目录下生成optional.js，有错误时会报错 tsc optional.ts tsc --strictNullChecks optional.ts 问号表示可选的属性，一般用于属性定义，如，用于接口时：
+interface SquareConfig { color?: string; width?: number; } function createSquare(config: SquareConfig) { if (config.clor) { console.log(config); } } 可选属性的含义是：使用这个属性时，要么这个属性名不存在，要么必须符合属性的类型定义（官方解释）。比如上述createSquare函数编译时会报error错误：
+error TS2551: Property &amp;lsquo;clor&amp;rsquo; does not exist on type &amp;lsquo;SquareConfig&amp;rsquo;." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/js/typescript/ts-as/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Ts As" />
+<meta property="og:description" content="理解Typescript中的as、问号与叹号 as关键字表示断言 在Typescript中，表示断言有两种方式。一种是尖扩号表示法:
+let someValue: any = &#34;this is a string&#34;; let strLength: number = (&lt;string&gt;someValue).length; 另一种使用as关键字：
+let someValue: any = &#34;this is a string&#34;; let strLength: number = (someValue as string).length; 唯一区别是，在JSX中，尖扩号与JSX语法冲突，只能使用as关键字。
+问号(?)用于属性定义 准备工作：以下示例可以建立一个optional.ts的文件，然后用tsc进行编译。tsc可以用npm install -g typescript安装。
+//运行以下命令可以在同目录下生成optional.js，有错误时会报错 tsc optional.ts tsc --strictNullChecks optional.ts 问号表示可选的属性，一般用于属性定义，如，用于接口时：
+interface SquareConfig { color?: string; width?: number; } function createSquare(config: SquareConfig) { if (config.clor) { console.log(config); } } 可选属性的含义是：使用这个属性时，要么这个属性名不存在，要么必须符合属性的类型定义（官方解释）。比如上述createSquare函数编译时会报error错误：
+error TS2551: Property &lsquo;clor&rsquo; does not exist on type &lsquo;SquareConfig&rsquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/js/typescript/ts-as/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-30T17:36:54+08:00" />
+<meta property="article:modified_time" content="2021-08-30T17:36:54+08:00" />
+
+<meta itemprop="name" content="Ts As">
+<meta itemprop="description" content="理解Typescript中的as、问号与叹号 as关键字表示断言 在Typescript中，表示断言有两种方式。一种是尖扩号表示法:
+let someValue: any = &#34;this is a string&#34;; let strLength: number = (&lt;string&gt;someValue).length; 另一种使用as关键字：
+let someValue: any = &#34;this is a string&#34;; let strLength: number = (someValue as string).length; 唯一区别是，在JSX中，尖扩号与JSX语法冲突，只能使用as关键字。
+问号(?)用于属性定义 准备工作：以下示例可以建立一个optional.ts的文件，然后用tsc进行编译。tsc可以用npm install -g typescript安装。
+//运行以下命令可以在同目录下生成optional.js，有错误时会报错 tsc optional.ts tsc --strictNullChecks optional.ts 问号表示可选的属性，一般用于属性定义，如，用于接口时：
+interface SquareConfig { color?: string; width?: number; } function createSquare(config: SquareConfig) { if (config.clor) { console.log(config); } } 可选属性的含义是：使用这个属性时，要么这个属性名不存在，要么必须符合属性的类型定义（官方解释）。比如上述createSquare函数编译时会报error错误：
+error TS2551: Property &lsquo;clor&rsquo; does not exist on type &lsquo;SquareConfig&rsquo;."><meta itemprop="datePublished" content="2021-08-30T17:36:54+08:00" />
+<meta itemprop="dateModified" content="2021-08-30T17:36:54+08:00" />
+<meta itemprop="wordCount" content="385">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ts As"/>
+<meta name="twitter:description" content="理解Typescript中的as、问号与叹号 as关键字表示断言 在Typescript中，表示断言有两种方式。一种是尖扩号表示法:
+let someValue: any = &#34;this is a string&#34;; let strLength: number = (&lt;string&gt;someValue).length; 另一种使用as关键字：
+let someValue: any = &#34;this is a string&#34;; let strLength: number = (someValue as string).length; 唯一区别是，在JSX中，尖扩号与JSX语法冲突，只能使用as关键字。
+问号(?)用于属性定义 准备工作：以下示例可以建立一个optional.ts的文件，然后用tsc进行编译。tsc可以用npm install -g typescript安装。
+//运行以下命令可以在同目录下生成optional.js，有错误时会报错 tsc optional.ts tsc --strictNullChecks optional.ts 问号表示可选的属性，一般用于属性定义，如，用于接口时：
+interface SquareConfig { color?: string; width?: number; } function createSquare(config: SquareConfig) { if (config.clor) { console.log(config); } } 可选属性的含义是：使用这个属性时，要么这个属性名不存在，要么必须符合属性的类型定义（官方解释）。比如上述createSquare函数编译时会报error错误：
+error TS2551: Property &lsquo;clor&rsquo; does not exist on type &lsquo;SquareConfig&rsquo;."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h2 id="理解typescript中的as问号与叹号">理解Typescript中的as、问号与叹号</h2>
+<h3 id="as关键字表示断言">as关键字表示断言</h3>
+<p>在Typescript中，表示断言有两种方式。一种是尖扩号表示法:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someValue</span>: <span style="color:#66d9ef">any</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;this is a string&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strLength</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> (&lt;<span style="color:#f92672">string</span>&gt;<span style="color:#a6e22e">someValue</span>).<span style="color:#a6e22e">length</span>;
+
+</code></pre></div><p>另一种使用as关键字：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someValue</span>: <span style="color:#66d9ef">any</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;this is a string&#34;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strLength</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">someValue</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">string</span>).<span style="color:#a6e22e">length</span>;
+</code></pre></div><p>唯一区别是，在JSX中，尖扩号与JSX语法冲突，只能使用as关键字。</p>
+<h3 id="问号用于属性定义">问号(?)用于属性定义</h3>
+<p>准备工作：以下示例可以建立一个optional.ts的文件，然后用tsc进行编译。tsc可以用npm install -g typescript安装。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">//运行以下命令可以在同目录下生成optional.js，有错误时会报错
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">tsc</span> <span style="color:#a6e22e">optional</span>.<span style="color:#a6e22e">ts</span>
+<span style="color:#a6e22e">tsc</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">strictNullChecks</span> <span style="color:#a6e22e">optional</span>.<span style="color:#a6e22e">ts</span>
+</code></pre></div><p>问号表示可选的属性，一般用于属性定义，如，用于接口时：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SquareConfig</span> {
+    <span style="color:#a6e22e">color?</span>: <span style="color:#66d9ef">string</span>;
+    <span style="color:#a6e22e">width?</span>: <span style="color:#66d9ef">number</span>;
+}
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createSquare</span>(<span style="color:#a6e22e">config</span>: <span style="color:#66d9ef">SquareConfig</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">clor</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">config</span>);
+    }   
+}
+</code></pre></div><p>可选属性的含义是：使用这个属性时，要么这个属性名不存在，要么必须符合属性的类型定义（官方解释）。比如上述createSquare函数编译时会报error错误：</p>
+<p>error TS2551: Property &lsquo;clor&rsquo; does not exist on type &lsquo;SquareConfig&rsquo;.</p>
+<p>如果修改createSquare，将config.color的值改为undefined，会怎样？</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SquareConfig</span> {
+    <span style="color:#a6e22e">color?</span>: <span style="color:#66d9ef">string</span>;
+    <span style="color:#a6e22e">width?</span>: <span style="color:#66d9ef">number</span>;
+}
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createSquare</span>(<span style="color:#a6e22e">config</span>: <span style="color:#66d9ef">SquareConfig</span>) {
+    <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">color</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">config</span>);
+    }   
+}
+</code></pre></div><p>这时并没有编译报错！明明config.color定义的是string类型呀？</p>
+<p>即便是添加&ndash;strictNullChecks进行编译，也不会报错。可见，可选属性所定义的类型，并没有被typescript严格地对待，默认并不检查undefined。需要注意的是，将上述undefined改成null时，普通编译也不报错，&ndash;strictNullChecks编译会报如下错误：</p>
+<p>error TS2322: Type &lsquo;null&rsquo; is not assignable to type &lsquo;string | undefined&rsquo;</p>
+<p>从这句报错中，我们可以得出这样的结论：可选属性等价于一个union类型，union了undefined；不加&ndash;strictNullChecks编译时，null可以赋值给undfined类型。也就是说，SquareConfig的定义与下面的代码等价：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SquareConfig</span> {
+    <span style="color:#a6e22e">color</span>: <span style="color:#66d9ef">string</span><span style="color:#f92672">|</span><span style="color:#66d9ef">undefined</span>;
+    <span style="color:#a6e22e">width</span>: <span style="color:#66d9ef">number</span><span style="color:#f92672">|</span><span style="color:#66d9ef">undefined</span>;
+}
+</code></pre></div><p>下面比较一下可选属性与正常属性。再次修改createSquare，将color属性修改为正常属性。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SquareConfig</span> {
+    <span style="color:#a6e22e">color</span>: <span style="color:#66d9ef">string</span>;
+    <span style="color:#a6e22e">width?</span>: <span style="color:#66d9ef">number</span>;
+}
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createSquare</span>(<span style="color:#a6e22e">config</span>: <span style="color:#66d9ef">SquareConfig</span>) {
+    <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">color</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">config</span>);
+    }   
+}    
+</code></pre></div><p>以&ndash;strictNullChecks编译，报错了:</p>
+<p>error TS2322: Type &lsquo;undefined&rsquo; is not assignable to type &lsquo;string&rsquo;</p>
+<p>这个比较也验证了上述的结论。</p>
+<h3 id="问号用于属性读取">问号(?)用于属性读取</h3>
+<p>以下示例都使用&ndash;strictNullChecks编译</p>
+<p>问号用于属性读取，主要有两个场景：一是读取数组元素（如下面的node[i]），二是读取不确定的类型如any，union，可选类型（如node[i].data）等。如下例，保存为index.ts：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">VNodeData</span> {
+    <span style="color:#66d9ef">class</span><span style="color:#f92672">?:</span> <span style="color:#66d9ef">string</span>;
+}
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">VNode</span> {
+    <span style="color:#a6e22e">sel?</span>: <span style="color:#66d9ef">string</span>;
+    <span style="color:#a6e22e">data?</span>: <span style="color:#66d9ef">VNodeData</span>;
+}
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">node</span>: <span style="color:#66d9ef">VNode</span>[]) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">data</span>.<span style="color:#66d9ef">class</span>;
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
+    }   
+}
+</code></pre></div><p>用tsc &ndash;strictNullChecks index.ts，报错：</p>
+<p>error TS2532: Object is possibly &lsquo;undefined&rsquo;</p>
+<p>下面将一一展示这一行代码var b = node[i].data.class;修改改后的效果。</p>
+<ol>
+<li>修改为var b = node[i]?.data.class;，然后编译。报错：</li>
+</ol>
+<p>Object is possibly &lsquo;undefined&rsquo;</p>
+<ol start="2">
+<li>修改为var b = node[i]?.data?.class;，然后编译。编译通过，查看编译后的对应代码为：</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">node</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_a</span>, <span style="color:#a6e22e">_b</span>; 
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_b</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">_a</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">0</span> : <span style="color:#66d9ef">_a.data</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">_b</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">0</span> : <span style="color:#66d9ef">_b</span>[<span style="color:#e6db74">&#34;class&#34;</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
+    }
+}
+
+</code></pre></div><p>摘出来看，var b = node[i]?表示，如果node[i]的值为null或者undefined，则b等于undefined，否则b=node[i]。</p>
+<ol start="3">
+<li>修改为var b = (node[i] as VNode).data?.class;，然后编译。编译通过，查看编译后的对应代码为：</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">node</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_a</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">data</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">_a</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">0</span> : <span style="color:#66d9ef">_a</span>[<span style="color:#e6db74">&#34;class&#34;</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
+    }
+}
+</code></pre></div><p>此时，使用node[i]时，Typescript编译器将不再对其判断是否为null和undefined。即：var b = node[i] as VNode直接会被编成var b = node[i]。</p>
+<p>4、修改为var b = node[i]!.data?.class，然后编译。编译通过，查看编译后的对应代码为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">node</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_a</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">data</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">_a</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">0</span> : <span style="color:#66d9ef">_a</span>[<span style="color:#e6db74">&#34;class&#34;</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
+    }
+}
+</code></pre></div><p>可见，3和4的编译后代码完全一样，!的作用此时与as是等价的。然而，!只是用来判断null和undefined；as则可用于变更（缩小或者放大都可以）类型检测范围，仅当as后面跟的类型是一个非空类型时，两者才等价。如下例中，不能将as用法改为!。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Cat</span> {
+    <span style="color:#a6e22e">action</span>: <span style="color:#66d9ef">string</span>;
+}
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Dog</span> {
+    <span style="color:#a6e22e">action</span>: <span style="color:#66d9ef">string</span>;
+}
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Animal</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Cat</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Dog</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">action</span>:<span style="color:#66d9ef">Animal</span> <span style="color:#f92672">=</span> {} <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">Cat</span>;
+</code></pre></div><h3 id="结论">结论</h3>
+<ol>
+<li>
+<p>as和!用于属性的读取，都可以缩小类型检查范围，都做判空用途时是等价的。只是!具体用于告知编译器此值不可能为空值（null和undefined），而as不限于此。</p>
+</li>
+<li>
+<p>?可用于属性的定义和读取，读取时告诉编译器此值可能为空值（null和undefined），需要做判断。</p>
+</li>
+</ol>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

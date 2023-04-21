@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Math - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Math 函数 abs — 绝对值 acos — 反余弦 acosh — 反双曲余弦 asin — 反正弦 asinh — 反双曲正弦 atan2 — 两个参数的反正切 atan — 反正切 atanh — 反双曲正切 base_convert — 在任意进制之间转换数字 bindec — 二进制转换为十进制 ceil — 进一法取整 cos — 余弦 cosh — 双曲余弦 decbin — 十进制转换为二进制 dechex — 十进制转换为十六进制 decoct — 十进制转换为八进制 deg2rad — 将角度转换为弧度 exp — 计算 e 的指数 expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 fdiv — Divides two numbers, according to IEEE 754 floor — 舍去法取整 fmod — 返回除法的浮点数余数 getrandmax — 显示随机数最大的可能值 hexdec — 十六进制转换为十进制 hypot — 计算一直角三角形的斜边长度 intdiv — 对除法结果取整 is_finite — 判断是否为有限值 is_infinite — 判断是否为无限值 is_nan — 判断是否为合法数值 lcg_value — 组合线性同余发生器 log10 — 以 10 为底的对数 log1p — 返回 log(1 &#43; number)，甚至当 number 的值接近零也能计算出准确结果 log — 自然对数 max — 找出最大值 min — 找出最小值 mt_getrandmax — 显示随机数的最大可能值 mt_rand — 生成更好的随机数 mt_srand — 播下一个更好的随机数发生器种子 octdec — 八进制转换为十进制 pi — 得到圆周率值 pow — 指数表达式 rad2deg — 将弧度数转换为相应的角度数 rand — 产生一个随机整数 round — 对浮点数进行四舍五入 sin — 正弦 sinh — 双曲正弦 sqrt — 平方根 srand — 播下随机数发生器种子 tan — 正切 tanh — 双曲正切 " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-math/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Math" />
+<meta property="og:description" content="Math 函数 abs — 绝对值 acos — 反余弦 acosh — 反双曲余弦 asin — 反正弦 asinh — 反双曲正弦 atan2 — 两个参数的反正切 atan — 反正切 atanh — 反双曲正切 base_convert — 在任意进制之间转换数字 bindec — 二进制转换为十进制 ceil — 进一法取整 cos — 余弦 cosh — 双曲余弦 decbin — 十进制转换为二进制 dechex — 十进制转换为十六进制 decoct — 十进制转换为八进制 deg2rad — 将角度转换为弧度 exp — 计算 e 的指数 expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 fdiv — Divides two numbers, according to IEEE 754 floor — 舍去法取整 fmod — 返回除法的浮点数余数 getrandmax — 显示随机数最大的可能值 hexdec — 十六进制转换为十进制 hypot — 计算一直角三角形的斜边长度 intdiv — 对除法结果取整 is_finite — 判断是否为有限值 is_infinite — 判断是否为无限值 is_nan — 判断是否为合法数值 lcg_value — 组合线性同余发生器 log10 — 以 10 为底的对数 log1p — 返回 log(1 &#43; number)，甚至当 number 的值接近零也能计算出准确结果 log — 自然对数 max — 找出最大值 min — 找出最小值 mt_getrandmax — 显示随机数的最大可能值 mt_rand — 生成更好的随机数 mt_srand — 播下一个更好的随机数发生器种子 octdec — 八进制转换为十进制 pi — 得到圆周率值 pow — 指数表达式 rad2deg — 将弧度数转换为相应的角度数 rand — 产生一个随机整数 round — 对浮点数进行四舍五入 sin — 正弦 sinh — 双曲正弦 sqrt — 平方根 srand — 播下随机数发生器种子 tan — 正切 tanh — 双曲正切 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-math/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-23T13:27:18+08:00" />
+<meta property="article:modified_time" content="2021-07-23T13:27:18+08:00" />
+
+<meta itemprop="name" content="Php Math">
+<meta itemprop="description" content="Math 函数 abs — 绝对值 acos — 反余弦 acosh — 反双曲余弦 asin — 反正弦 asinh — 反双曲正弦 atan2 — 两个参数的反正切 atan — 反正切 atanh — 反双曲正切 base_convert — 在任意进制之间转换数字 bindec — 二进制转换为十进制 ceil — 进一法取整 cos — 余弦 cosh — 双曲余弦 decbin — 十进制转换为二进制 dechex — 十进制转换为十六进制 decoct — 十进制转换为八进制 deg2rad — 将角度转换为弧度 exp — 计算 e 的指数 expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 fdiv — Divides two numbers, according to IEEE 754 floor — 舍去法取整 fmod — 返回除法的浮点数余数 getrandmax — 显示随机数最大的可能值 hexdec — 十六进制转换为十进制 hypot — 计算一直角三角形的斜边长度 intdiv — 对除法结果取整 is_finite — 判断是否为有限值 is_infinite — 判断是否为无限值 is_nan — 判断是否为合法数值 lcg_value — 组合线性同余发生器 log10 — 以 10 为底的对数 log1p — 返回 log(1 &#43; number)，甚至当 number 的值接近零也能计算出准确结果 log — 自然对数 max — 找出最大值 min — 找出最小值 mt_getrandmax — 显示随机数的最大可能值 mt_rand — 生成更好的随机数 mt_srand — 播下一个更好的随机数发生器种子 octdec — 八进制转换为十进制 pi — 得到圆周率值 pow — 指数表达式 rad2deg — 将弧度数转换为相应的角度数 rand — 产生一个随机整数 round — 对浮点数进行四舍五入 sin — 正弦 sinh — 双曲正弦 sqrt — 平方根 srand — 播下随机数发生器种子 tan — 正切 tanh — 双曲正切 "><meta itemprop="datePublished" content="2021-07-23T13:27:18+08:00" />
+<meta itemprop="dateModified" content="2021-07-23T13:27:18+08:00" />
+<meta itemprop="wordCount" content="172">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Math"/>
+<meta name="twitter:description" content="Math 函数 abs — 绝对值 acos — 反余弦 acosh — 反双曲余弦 asin — 反正弦 asinh — 反双曲正弦 atan2 — 两个参数的反正切 atan — 反正切 atanh — 反双曲正切 base_convert — 在任意进制之间转换数字 bindec — 二进制转换为十进制 ceil — 进一法取整 cos — 余弦 cosh — 双曲余弦 decbin — 十进制转换为二进制 dechex — 十进制转换为十六进制 decoct — 十进制转换为八进制 deg2rad — 将角度转换为弧度 exp — 计算 e 的指数 expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 fdiv — Divides two numbers, according to IEEE 754 floor — 舍去法取整 fmod — 返回除法的浮点数余数 getrandmax — 显示随机数最大的可能值 hexdec — 十六进制转换为十进制 hypot — 计算一直角三角形的斜边长度 intdiv — 对除法结果取整 is_finite — 判断是否为有限值 is_infinite — 判断是否为无限值 is_nan — 判断是否为合法数值 lcg_value — 组合线性同余发生器 log10 — 以 10 为底的对数 log1p — 返回 log(1 &#43; number)，甚至当 number 的值接近零也能计算出准确结果 log — 自然对数 max — 找出最大值 min — 找出最小值 mt_getrandmax — 显示随机数的最大可能值 mt_rand — 生成更好的随机数 mt_srand — 播下一个更好的随机数发生器种子 octdec — 八进制转换为十进制 pi — 得到圆周率值 pow — 指数表达式 rad2deg — 将弧度数转换为相应的角度数 rand — 产生一个随机整数 round — 对浮点数进行四舍五入 sin — 正弦 sinh — 双曲正弦 sqrt — 平方根 srand — 播下随机数发生器种子 tan — 正切 tanh — 双曲正切 "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="math-函数">Math 函数</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">abs — 绝对值
+acos — 反余弦
+acosh — 反双曲余弦
+asin — 反正弦
+asinh — 反双曲正弦
+atan2 — 两个参数的反正切
+atan — 反正切
+atanh — 反双曲正切
+base_convert — 在任意进制之间转换数字
+bindec — 二进制转换为十进制
+ceil — 进一法取整
+cos — 余弦
+cosh — 双曲余弦
+decbin — 十进制转换为二进制
+dechex — 十进制转换为十六进制
+decoct — 十进制转换为八进制
+deg2rad — 将角度转换为弧度
+exp — 计算 e 的指数
+expm1 — 返回 exp<span style="color:#f92672">(</span>number<span style="color:#f92672">)</span> - 1，甚至当 number 的值接近零也能计算出准确结果
+fdiv — Divides two numbers, according to IEEE <span style="color:#ae81ff">754</span>
+floor — 舍去法取整
+fmod — 返回除法的浮点数余数
+getrandmax — 显示随机数最大的可能值
+hexdec — 十六进制转换为十进制
+hypot — 计算一直角三角形的斜边长度
+intdiv — 对除法结果取整
+is_finite — 判断是否为有限值
+is_infinite — 判断是否为无限值
+is_nan — 判断是否为合法数值
+lcg_value — 组合线性同余发生器
+log10 — 以 <span style="color:#ae81ff">10</span> 为底的对数
+log1p — 返回 log<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> + number<span style="color:#f92672">)</span>，甚至当 number 的值接近零也能计算出准确结果
+log — 自然对数
+max — 找出最大值
+min — 找出最小值
+mt_getrandmax — 显示随机数的最大可能值
+mt_rand — 生成更好的随机数
+mt_srand — 播下一个更好的随机数发生器种子
+octdec — 八进制转换为十进制
+pi — 得到圆周率值
+pow — 指数表达式
+rad2deg — 将弧度数转换为相应的角度数
+rand — 产生一个随机整数
+round — 对浮点数进行四舍五入
+sin — 正弦
+sinh — 双曲正弦
+sqrt — 平方根
+srand — 播下随机数发生器种子
+tan — 正切
+tanh — 双曲正切
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

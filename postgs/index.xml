@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgs on 如沐春风</title>
+    <link>https://note.strawbreey.com/postgs/</link>
+    <description>Recent content in Postgs on 如沐春风</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>strawbreey@qq.com (strawbreey)</managingEditor>
+    <webMaster>strawbreey@qq.com (strawbreey)</webMaster>
+    <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
+    <lastBuildDate>Mon, 09 Aug 2021 15:06:55 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/postgs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Mod Init</title>
+      <link>https://note.strawbreey.com/postgs/go/go-mod-init/</link>
+      <pubDate>Mon, 09 Aug 2021 15:06:55 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/postgs/go/go-mod-init/</guid>
+      <description>go Mod Help $ go help mod Go mod provides access to operations on modules. Note that support for modules is built into all the go commands, not just &amp;#39;go mod&amp;#39;. For example, day-to-day adding, removing, upgrading, and downgrading of dependencies should be done using &amp;#39;go get&amp;#39;. See &amp;#39;go help modules&amp;#39; for an overview of module functionality. Usage: go mod &amp;lt;command&amp;gt; [arguments] The commands are: download download modules to local</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Runes - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="字符串中的每一个元素叫做“字符”，在遍历或者单个获取字符串元素时可以获得字符。
+Go语言的字符有以下两种：
+ 一种是 uint8 类型，或者叫 byte 型，代表了 ASCII 码的一个字符。 另一种是 rune 类型，代表一个 UTF-8 字符。 rune 类型等价于 int32 类型。  byte 类型是 uint8 的别名
+在 ASCII 码表中，A 的值是 65，使用 16 进制表示则为 41，所以下面的写法是等效的：
+var ch byte = 65 或 var ch byte = &amp;lsquo;\x41&amp;rsquo; //（\x 总是紧跟着长度为 2 的 16 进制数）
+另外一种可能的写法是\后面紧跟着长度为 3 的八进制数，例如 \377。
+Go语言同样支持 Unicode（UTF-8），因此字符同样称为 Unicode 代码点或者 runes，并在内存中使用 int 来表示。在文档中，一般使用格式 U&#43;hhhh 来表示，其中 h 表示一个 16 进制数。
+在书写 Unicode 字符时，需要在 16 进制数之前加上前缀\u或者\U。因为 Unicode 至少占用 2 个字节，所以我们使用 int16 或者 int 类型来表示。如果需要使用到 4 字节，则使用\u前缀，如果需要使用到 8 个字节，则使用\U前缀。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-runes/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Runes" />
+<meta property="og:description" content="字符串中的每一个元素叫做“字符”，在遍历或者单个获取字符串元素时可以获得字符。
+Go语言的字符有以下两种：
+ 一种是 uint8 类型，或者叫 byte 型，代表了 ASCII 码的一个字符。 另一种是 rune 类型，代表一个 UTF-8 字符。 rune 类型等价于 int32 类型。  byte 类型是 uint8 的别名
+在 ASCII 码表中，A 的值是 65，使用 16 进制表示则为 41，所以下面的写法是等效的：
+var ch byte = 65 或 var ch byte = &lsquo;\x41&rsquo; //（\x 总是紧跟着长度为 2 的 16 进制数）
+另外一种可能的写法是\后面紧跟着长度为 3 的八进制数，例如 \377。
+Go语言同样支持 Unicode（UTF-8），因此字符同样称为 Unicode 代码点或者 runes，并在内存中使用 int 来表示。在文档中，一般使用格式 U&#43;hhhh 来表示，其中 h 表示一个 16 进制数。
+在书写 Unicode 字符时，需要在 16 进制数之前加上前缀\u或者\U。因为 Unicode 至少占用 2 个字节，所以我们使用 int16 或者 int 类型来表示。如果需要使用到 4 字节，则使用\u前缀，如果需要使用到 8 个字节，则使用\U前缀。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-runes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-03T14:47:36+08:00" />
+<meta property="article:modified_time" content="2020-12-03T14:47:36+08:00" />
+
+<meta itemprop="name" content="Go Runes">
+<meta itemprop="description" content="字符串中的每一个元素叫做“字符”，在遍历或者单个获取字符串元素时可以获得字符。
+Go语言的字符有以下两种：
+ 一种是 uint8 类型，或者叫 byte 型，代表了 ASCII 码的一个字符。 另一种是 rune 类型，代表一个 UTF-8 字符。 rune 类型等价于 int32 类型。  byte 类型是 uint8 的别名
+在 ASCII 码表中，A 的值是 65，使用 16 进制表示则为 41，所以下面的写法是等效的：
+var ch byte = 65 或 var ch byte = &lsquo;\x41&rsquo; //（\x 总是紧跟着长度为 2 的 16 进制数）
+另外一种可能的写法是\后面紧跟着长度为 3 的八进制数，例如 \377。
+Go语言同样支持 Unicode（UTF-8），因此字符同样称为 Unicode 代码点或者 runes，并在内存中使用 int 来表示。在文档中，一般使用格式 U&#43;hhhh 来表示，其中 h 表示一个 16 进制数。
+在书写 Unicode 字符时，需要在 16 进制数之前加上前缀\u或者\U。因为 Unicode 至少占用 2 个字节，所以我们使用 int16 或者 int 类型来表示。如果需要使用到 4 字节，则使用\u前缀，如果需要使用到 8 个字节，则使用\U前缀。"><meta itemprop="datePublished" content="2020-12-03T14:47:36+08:00" />
+<meta itemprop="dateModified" content="2020-12-03T14:47:36+08:00" />
+<meta itemprop="wordCount" content="229">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Runes"/>
+<meta name="twitter:description" content="字符串中的每一个元素叫做“字符”，在遍历或者单个获取字符串元素时可以获得字符。
+Go语言的字符有以下两种：
+ 一种是 uint8 类型，或者叫 byte 型，代表了 ASCII 码的一个字符。 另一种是 rune 类型，代表一个 UTF-8 字符。 rune 类型等价于 int32 类型。  byte 类型是 uint8 的别名
+在 ASCII 码表中，A 的值是 65，使用 16 进制表示则为 41，所以下面的写法是等效的：
+var ch byte = 65 或 var ch byte = &lsquo;\x41&rsquo; //（\x 总是紧跟着长度为 2 的 16 进制数）
+另外一种可能的写法是\后面紧跟着长度为 3 的八进制数，例如 \377。
+Go语言同样支持 Unicode（UTF-8），因此字符同样称为 Unicode 代码点或者 runes，并在内存中使用 int 来表示。在文档中，一般使用格式 U&#43;hhhh 来表示，其中 h 表示一个 16 进制数。
+在书写 Unicode 字符时，需要在 16 进制数之前加上前缀\u或者\U。因为 Unicode 至少占用 2 个字节，所以我们使用 int16 或者 int 类型来表示。如果需要使用到 4 字节，则使用\u前缀，如果需要使用到 8 个字节，则使用\U前缀。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>字符串中的每一个元素叫做“字符”，在遍历或者单个获取字符串元素时可以获得字符。</p>
+<p>Go语言的字符有以下两种：</p>
+<ul>
+<li>一种是 uint8 类型，或者叫 byte 型，代表了 ASCII 码的一个字符。</li>
+<li>另一种是 rune 类型，代表一个 UTF-8 字符。 rune 类型等价于 int32 类型。</li>
+</ul>
+<p>byte 类型是 uint8 的别名</p>
+<p>在 ASCII 码表中，A 的值是 65，使用 16 进制表示则为 41，所以下面的写法是等效的：</p>
+<p>var ch byte = 65 或 var ch byte = &lsquo;\x41&rsquo;      //（\x 总是紧跟着长度为 2 的 16 进制数）</p>
+<p>另外一种可能的写法是\后面紧跟着长度为 3 的八进制数，例如 \377。</p>
+<p>Go语言同样支持 Unicode（UTF-8），因此字符同样称为 Unicode 代码点或者 runes，并在内存中使用 int 来表示。在文档中，一般使用格式 U+hhhh 来表示，其中 h 表示一个 16 进制数。</p>
+<p>在书写 Unicode 字符时，需要在 16 进制数之前加上前缀\u或者\U。因为 Unicode 至少占用 2 个字节，所以我们使用 int16 或者 int 类型来表示。如果需要使用到 4 字节，则使用\u前缀，如果需要使用到 8 个字节，则使用\U前缀。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ch</span> <span style="color:#66d9ef">int</span> = <span style="color:#e6db74">&#39;\u0041&#39;</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ch2</span> <span style="color:#66d9ef">int</span> = <span style="color:#e6db74">&#39;\u03B2&#39;</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ch3</span> <span style="color:#66d9ef">int</span> = <span style="color:#e6db74">&#39;\U00101234&#39;</span>
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%d - %d - %d\n&#34;</span>, <span style="color:#a6e22e">ch</span>, <span style="color:#a6e22e">ch2</span>, <span style="color:#a6e22e">ch3</span>) <span style="color:#75715e">// integer
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%c - %c - %c\n&#34;</span>, <span style="color:#a6e22e">ch</span>, <span style="color:#a6e22e">ch2</span>, <span style="color:#a6e22e">ch3</span>) <span style="color:#75715e">// character
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%X - %X - %X\n&#34;</span>, <span style="color:#a6e22e">ch</span>, <span style="color:#a6e22e">ch2</span>, <span style="color:#a6e22e">ch3</span>) <span style="color:#75715e">// UTF-8 bytes
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%U - %U - %U&#34;</span>, <span style="color:#a6e22e">ch</span>, <span style="color:#a6e22e">ch2</span>, <span style="color:#a6e22e">ch3</span>)   <span style="color:#75715e">// UTF-8 code point
+</span><span style="color:#75715e"></span>
+</code></pre></div><p>输出:</p>
+<pre><code>65 - 946 - 1053236
+A - β - r
+41 - 3B2 - 101234
+U+0041 - U+03B2 - U+101234
+</code></pre><p>格式化说明符%c用于表示字符，当和字符配合使用时，%v或%d会输出用于表示该字符的整数，%U输出格式为 U+hhhh 的字符串。</p>
+<p>Unicode 包中内置了一些用于测试字符的函数，这些函数的返回值都是一个布尔值，如下所示（其中 ch 代表字符）：</p>
+<p>判断是否为字母：unicode.IsLetter(ch)
+判断是否为数字：unicode.IsDigit(ch)
+判断是否为空白符号：unicode.IsSpace(ch)</p>
+<h3 id="utf-8-和-unicode-有何区别">UTF-8 和 Unicode 有何区别？</h3>
+<p>Unicode 与 ASCII 类似，都是一种字符集。</p>
+<p>字符集为每个字符分配一个唯一的 ID，我们使用到的所有字符在 Unicode 字符集中都有一个唯一的 ID，例如上面例子中的 a 在 Unicode 与 ASCII 中的编码都是 97。汉字“你”在 Unicode 中的编码为 20320，在不同国家的字符集中，字符所对应的 ID 也会不同。而无论任何情况下，Unicode 中的字符的 ID 都是不会变化的。</p>
+<p>UTF-8 是编码规则，将 Unicode 中字符的 ID 以某种方式进行编码，UTF-8 的是一种变长编码规则，从 1 到 4 个字节不等。编码规则如下：</p>
+<ul>
+<li>0xxxxxx 表示文字符号 0～127，兼容 ASCII 字符集。</li>
+<li>从 128 到 0x10ffff 表示其他字符。</li>
+</ul>
+<p>根据这个规则，拉丁文语系的字符编码一般情况下每个字符占用一个字节，而中文每个字符占用 3 个字节。</p>
+<p>广义的 Unicode 指的是一个标准，它定义了字符集及编码规则，即 Unicode 字符集和 UTF-8、UTF-16 编码等。</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

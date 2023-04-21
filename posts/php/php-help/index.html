@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Help - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="$ php -h Usage: php [options] [-f] &amp;lt;file&amp;gt; [--] [args...] php [options] -r &amp;lt;code&amp;gt; [--] [args...] php [options] [-B &amp;lt;begin_code&amp;gt;] -R &amp;lt;code&amp;gt; [-E &amp;lt;end_code&amp;gt;] [--] [args...] php [options] [-B &amp;lt;begin_code&amp;gt;] -F &amp;lt;file&amp;gt; [-E &amp;lt;end_code&amp;gt;] [--] [args...] php [options] -S &amp;lt;addr&amp;gt;:&amp;lt;port&amp;gt; [-t docroot] [router] php [options] -- [args...] php [options] -a -a Run as interactive shell -c &amp;lt;path&amp;gt;|&amp;lt;file&amp;gt; Look for php.ini file in this directory -n No configuration (ini) files will be used -d foo[=bar] Define INI entry foo with value &amp;#39;bar&amp;#39; -e Generate extended information for debugger/profiler -f &amp;lt;file&amp;gt; Parse and execute &amp;lt;file&amp;gt;." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/php-help/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Php Help" />
+<meta property="og:description" content="$ php -h Usage: php [options] [-f] &lt;file&gt; [--] [args...] php [options] -r &lt;code&gt; [--] [args...] php [options] [-B &lt;begin_code&gt;] -R &lt;code&gt; [-E &lt;end_code&gt;] [--] [args...] php [options] [-B &lt;begin_code&gt;] -F &lt;file&gt; [-E &lt;end_code&gt;] [--] [args...] php [options] -S &lt;addr&gt;:&lt;port&gt; [-t docroot] [router] php [options] -- [args...] php [options] -a -a Run as interactive shell -c &lt;path&gt;|&lt;file&gt; Look for php.ini file in this directory -n No configuration (ini) files will be used -d foo[=bar] Define INI entry foo with value &#39;bar&#39; -e Generate extended information for debugger/profiler -f &lt;file&gt; Parse and execute &lt;file&gt;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/php-help/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-06T17:00:45+08:00" />
+<meta property="article:modified_time" content="2021-05-06T17:00:45+08:00" />
+
+<meta itemprop="name" content="Php Help">
+<meta itemprop="description" content="$ php -h Usage: php [options] [-f] &lt;file&gt; [--] [args...] php [options] -r &lt;code&gt; [--] [args...] php [options] [-B &lt;begin_code&gt;] -R &lt;code&gt; [-E &lt;end_code&gt;] [--] [args...] php [options] [-B &lt;begin_code&gt;] -F &lt;file&gt; [-E &lt;end_code&gt;] [--] [args...] php [options] -S &lt;addr&gt;:&lt;port&gt; [-t docroot] [router] php [options] -- [args...] php [options] -a -a Run as interactive shell -c &lt;path&gt;|&lt;file&gt; Look for php.ini file in this directory -n No configuration (ini) files will be used -d foo[=bar] Define INI entry foo with value &#39;bar&#39; -e Generate extended information for debugger/profiler -f &lt;file&gt; Parse and execute &lt;file&gt;."><meta itemprop="datePublished" content="2021-05-06T17:00:45+08:00" />
+<meta itemprop="dateModified" content="2021-05-06T17:00:45+08:00" />
+<meta itemprop="wordCount" content="266">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Help"/>
+<meta name="twitter:description" content="$ php -h Usage: php [options] [-f] &lt;file&gt; [--] [args...] php [options] -r &lt;code&gt; [--] [args...] php [options] [-B &lt;begin_code&gt;] -R &lt;code&gt; [-E &lt;end_code&gt;] [--] [args...] php [options] [-B &lt;begin_code&gt;] -F &lt;file&gt; [-E &lt;end_code&gt;] [--] [args...] php [options] -S &lt;addr&gt;:&lt;port&gt; [-t docroot] [router] php [options] -- [args...] php [options] -a -a Run as interactive shell -c &lt;path&gt;|&lt;file&gt; Look for php.ini file in this directory -n No configuration (ini) files will be used -d foo[=bar] Define INI entry foo with value &#39;bar&#39; -e Generate extended information for debugger/profiler -f &lt;file&gt; Parse and execute &lt;file&gt;."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ php -h
+Usage: php <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-f<span style="color:#f92672">]</span> &lt;file&gt; <span style="color:#f92672">[</span>--<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>args...<span style="color:#f92672">]</span>
+   php <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> -r &lt;code&gt; <span style="color:#f92672">[</span>--<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>args...<span style="color:#f92672">]</span>
+   php <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-B &lt;begin_code&gt;<span style="color:#f92672">]</span> -R &lt;code&gt; <span style="color:#f92672">[</span>-E &lt;end_code&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>args...<span style="color:#f92672">]</span>
+   php <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-B &lt;begin_code&gt;<span style="color:#f92672">]</span> -F &lt;file&gt; <span style="color:#f92672">[</span>-E &lt;end_code&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>args...<span style="color:#f92672">]</span>
+   php <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> -S &lt;addr&gt;:&lt;port&gt; <span style="color:#f92672">[</span>-t docroot<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>router<span style="color:#f92672">]</span>
+   php <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> -- <span style="color:#f92672">[</span>args...<span style="color:#f92672">]</span>
+   php <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> -a
+
+  -a               Run as interactive shell
+  -c &lt;path&gt;|&lt;file&gt; Look <span style="color:#66d9ef">for</span> php.ini file in this directory
+  -n               No configuration <span style="color:#f92672">(</span>ini<span style="color:#f92672">)</span> files will be used
+  -d foo<span style="color:#f92672">[=</span>bar<span style="color:#f92672">]</span>     Define INI entry foo with value <span style="color:#e6db74">&#39;bar&#39;</span>
+  -e               Generate extended information <span style="color:#66d9ef">for</span> debugger/profiler
+  -f &lt;file&gt;        Parse and execute &lt;file&gt;.
+  -h               This help
+  -i               PHP information
+  -l               Syntax check only <span style="color:#f92672">(</span>lint<span style="color:#f92672">)</span>
+  -m               Show compiled in modules
+  -r &lt;code&gt;        Run PHP &lt;code&gt; without using script tags &lt;?..?&gt;
+  -B &lt;begin_code&gt;  Run PHP &lt;begin_code&gt; before processing input lines
+  -R &lt;code&gt;        Run PHP &lt;code&gt; <span style="color:#66d9ef">for</span> every input line
+  -F &lt;file&gt;        Parse and execute &lt;file&gt; <span style="color:#66d9ef">for</span> every input line
+  -E &lt;end_code&gt;    Run PHP &lt;end_code&gt; after processing all input lines
+  -H               Hide any passed arguments from external tools.
+  -S &lt;addr&gt;:&lt;port&gt; Run with built-in web server.
+  -t &lt;docroot&gt;     Specify document root &lt;docroot&gt; <span style="color:#66d9ef">for</span> built-in web server.
+  -s               Output HTML syntax highlighted source.
+  -v               Version number
+  -w               Output source with stripped comments and whitespace.
+  -z &lt;file&gt;        Load Zend extension &lt;file&gt;.
+
+  args...          Arguments passed to script. Use -- args when first argument
+                   starts with - or script is read from stdin
+
+  --ini            Show configuration file names
+
+  --rf &lt;name&gt;      Show information about <span style="color:#66d9ef">function</span> &lt;name&gt;.
+  --rc &lt;name&gt;      Show information about class &lt;name&gt;.
+  --re &lt;name&gt;      Show information about extension &lt;name&gt;.
+  --rz &lt;name&gt;      Show information about Zend extension &lt;name&gt;.
+  --ri &lt;name&gt;      Show configuration <span style="color:#66d9ef">for</span> extension &lt;name&gt;.
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

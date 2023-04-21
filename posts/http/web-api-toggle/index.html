@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Api Toggle - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。
+tokenList.toggle(token, force); 参数列表
+ token 标记列表中你想探查并切换的 DOMString . force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。  example：
+// &amp;lt;span class=&amp;#34;a b&amp;#34;&amp;gt;classList is &amp;#39;a b&amp;#39;&amp;lt;/span&amp;gt;  var span = document.querySelector(&amp;#34;span&amp;#34;); var classes = span.classList; span.onclick = function() { // 如果有就添加, 没有删除  var result = classes.toggle(&amp;#34;c&amp;#34;); if(result) { span.textContent = &amp;#34;&amp;#39;c&amp;#39; added; classList is now &amp;#39;&amp;#34; &#43; classes &#43; &amp;#34;&amp;#39;." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/http/web-api-toggle/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Web Api Toggle" />
+<meta property="og:description" content="DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。
+tokenList.toggle(token, force); 参数列表
+ token 标记列表中你想探查并切换的 DOMString . force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。  example：
+// &lt;span class=&#34;a b&#34;&gt;classList is &#39;a b&#39;&lt;/span&gt;  var span = document.querySelector(&#34;span&#34;); var classes = span.classList; span.onclick = function() { // 如果有就添加, 没有删除  var result = classes.toggle(&#34;c&#34;); if(result) { span.textContent = &#34;&#39;c&#39; added; classList is now &#39;&#34; &#43; classes &#43; &#34;&#39;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/http/web-api-toggle/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-16T19:20:23+08:00" />
+<meta property="article:modified_time" content="2020-11-16T19:20:23+08:00" />
+
+<meta itemprop="name" content="Web Api Toggle">
+<meta itemprop="description" content="DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。
+tokenList.toggle(token, force); 参数列表
+ token 标记列表中你想探查并切换的 DOMString . force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。  example：
+// &lt;span class=&#34;a b&#34;&gt;classList is &#39;a b&#39;&lt;/span&gt;  var span = document.querySelector(&#34;span&#34;); var classes = span.classList; span.onclick = function() { // 如果有就添加, 没有删除  var result = classes.toggle(&#34;c&#34;); if(result) { span.textContent = &#34;&#39;c&#39; added; classList is now &#39;&#34; &#43; classes &#43; &#34;&#39;."><meta itemprop="datePublished" content="2020-11-16T19:20:23+08:00" />
+<meta itemprop="dateModified" content="2020-11-16T19:20:23+08:00" />
+<meta itemprop="wordCount" content="85">
+<meta itemprop="keywords" content="webApi,toggle," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web Api Toggle"/>
+<meta name="twitter:description" content="DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。
+tokenList.toggle(token, force); 参数列表
+ token 标记列表中你想探查并切换的 DOMString . force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。  example：
+// &lt;span class=&#34;a b&#34;&gt;classList is &#39;a b&#39;&lt;/span&gt;  var span = document.querySelector(&#34;span&#34;); var classes = span.classList; span.onclick = function() { // 如果有就添加, 没有删除  var result = classes.toggle(&#34;c&#34;); if(result) { span.textContent = &#34;&#39;c&#39; added; classList is now &#39;&#34; &#43; classes &#43; &#34;&#39;."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p><a href="/posts/web-api-domtokenlist">DOMTokenList</a> 接口的 toggle() 方法从列表中删除一个给定的标记 并返回 false 。 如果标记 不存在，则添加并且函数返回 true。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">tokenList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#a6e22e">token</span>, <span style="color:#a6e22e">force</span>);
+
+</code></pre></div><p>参数列表</p>
+<ul>
+<li>token 标记列表中你想探查并切换的 DOMString .</li>
+<li>force (可选) 一个Boolean 值, 设置后会将方法变成单向操作. 如设置为false, 则会删除标记列表中匹配的给定标记，且不会再度添加. 如设置为 true, 则将在标记列表中添加给定标记，且不会再度删除。</li>
+</ul>
+<p>example：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// &lt;span class=&#34;a b&#34;&gt;classList is &#39;a b&#39;&lt;/span&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">span</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;span&#34;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">classes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">span</span>.<span style="color:#a6e22e">classList</span>;
+<span style="color:#a6e22e">span</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#75715e">// 如果有就添加, 没有删除
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;c&#34;</span>);
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">result</span>) {
+    <span style="color:#a6e22e">span</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;c&#39; added; classList is now &#39;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">classes</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;.&#34;</span>;
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">span</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;c&#39; removed; classList is now &#39;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">classes</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;.&#34;</span>;
+  }
+}
+</code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

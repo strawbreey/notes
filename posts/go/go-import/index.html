@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Import - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="可以在一个 Go语言源文件包声明语句之后，其它非导入声明语句之前，包含零到多个导入包声明语句。
+每个导入声明可以单独指定一个导入路径，也可以通过圆括号同时导入多个导入路径。
+要引用其他包的标识符，可以使用 import 关键字，导入的包名使用双引号包围，包名是从 GOPATH 开始计算的路径，使用/进行路径分隔。
+默认导入的写法
+导入有两种基本格式，即单行导入和多行导入，两种导入方法的导入代码效果是一致的。
+// 1. 单行导入 单行导入格式如下： import &amp;#34;fmt&amp;#34; import &amp;#34;math&amp;#34; // 2. 多行导入 当多行导入时，包名在 import 中的顺序不影响导入效果，格式如下： import( &amp;#34;fmt&amp;#34; &amp;#34;math&amp;#34; ) Go was designed to be a language that encourages good software engineering practices. An important part of high quality software is code reuse – embodied in the principle “Don&amp;rsquo;t Repeat Yourself.”
+As we saw in chapter 7 functions are the first layer we turn to allow code reuse." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/go/go-import/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Go Import" />
+<meta property="og:description" content="可以在一个 Go语言源文件包声明语句之后，其它非导入声明语句之前，包含零到多个导入包声明语句。
+每个导入声明可以单独指定一个导入路径，也可以通过圆括号同时导入多个导入路径。
+要引用其他包的标识符，可以使用 import 关键字，导入的包名使用双引号包围，包名是从 GOPATH 开始计算的路径，使用/进行路径分隔。
+默认导入的写法
+导入有两种基本格式，即单行导入和多行导入，两种导入方法的导入代码效果是一致的。
+// 1. 单行导入 单行导入格式如下： import &#34;fmt&#34; import &#34;math&#34; // 2. 多行导入 当多行导入时，包名在 import 中的顺序不影响导入效果，格式如下： import( &#34;fmt&#34; &#34;math&#34; ) Go was designed to be a language that encourages good software engineering practices. An important part of high quality software is code reuse – embodied in the principle “Don&rsquo;t Repeat Yourself.”
+As we saw in chapter 7 functions are the first layer we turn to allow code reuse." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/go/go-import/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-14T11:29:30+08:00" />
+<meta property="article:modified_time" content="2020-12-14T11:29:30+08:00" />
+
+<meta itemprop="name" content="Go Import">
+<meta itemprop="description" content="可以在一个 Go语言源文件包声明语句之后，其它非导入声明语句之前，包含零到多个导入包声明语句。
+每个导入声明可以单独指定一个导入路径，也可以通过圆括号同时导入多个导入路径。
+要引用其他包的标识符，可以使用 import 关键字，导入的包名使用双引号包围，包名是从 GOPATH 开始计算的路径，使用/进行路径分隔。
+默认导入的写法
+导入有两种基本格式，即单行导入和多行导入，两种导入方法的导入代码效果是一致的。
+// 1. 单行导入 单行导入格式如下： import &#34;fmt&#34; import &#34;math&#34; // 2. 多行导入 当多行导入时，包名在 import 中的顺序不影响导入效果，格式如下： import( &#34;fmt&#34; &#34;math&#34; ) Go was designed to be a language that encourages good software engineering practices. An important part of high quality software is code reuse – embodied in the principle “Don&rsquo;t Repeat Yourself.”
+As we saw in chapter 7 functions are the first layer we turn to allow code reuse."><meta itemprop="datePublished" content="2020-12-14T11:29:30+08:00" />
+<meta itemprop="dateModified" content="2020-12-14T11:29:30+08:00" />
+<meta itemprop="wordCount" content="829">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Import"/>
+<meta name="twitter:description" content="可以在一个 Go语言源文件包声明语句之后，其它非导入声明语句之前，包含零到多个导入包声明语句。
+每个导入声明可以单独指定一个导入路径，也可以通过圆括号同时导入多个导入路径。
+要引用其他包的标识符，可以使用 import 关键字，导入的包名使用双引号包围，包名是从 GOPATH 开始计算的路径，使用/进行路径分隔。
+默认导入的写法
+导入有两种基本格式，即单行导入和多行导入，两种导入方法的导入代码效果是一致的。
+// 1. 单行导入 单行导入格式如下： import &#34;fmt&#34; import &#34;math&#34; // 2. 多行导入 当多行导入时，包名在 import 中的顺序不影响导入效果，格式如下： import( &#34;fmt&#34; &#34;math&#34; ) Go was designed to be a language that encourages good software engineering practices. An important part of high quality software is code reuse – embodied in the principle “Don&rsquo;t Repeat Yourself.”
+As we saw in chapter 7 functions are the first layer we turn to allow code reuse."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>可以在一个 Go语言源文件包声明语句之后，其它非导入声明语句之前，包含零到多个导入包声明语句。</p>
+<p>每个导入声明可以单独指定一个导入路径，也可以通过圆括号同时导入多个导入路径。</p>
+<p>要引用其他包的标识符，可以使用 import 关键字，导入的包名使用双引号包围，包名是从 GOPATH 开始计算的路径，使用/进行路径分隔。</p>
+<p>默认导入的写法</p>
+<p>导入有两种基本格式，即单行导入和多行导入，两种导入方法的导入代码效果是一致的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 1. 单行导入 单行导入格式如下：
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;math&#34;</span>
+
+<span style="color:#75715e">// 2. 多行导入 当多行导入时，包名在 import 中的顺序不影响导入效果，格式如下：
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span>(
+  <span style="color:#e6db74">&#34;fmt&#34;</span>
+  <span style="color:#e6db74">&#34;math&#34;</span>
+)
+
+</code></pre></div><p>Go was designed to be a language that encourages good software engineering practices. An important part of high quality software is code reuse – embodied in the principle “Don&rsquo;t Repeat Yourself.”</p>
+<p>As we saw in chapter 7 functions are the first layer we turn to allow code reuse. Go also provides another mechanism for code reuse: packages. Nearly every program we&rsquo;ve seen so far included this line:</p>
+<p>import &ldquo;fmt&rdquo;
+fmt is the name of a package that includes a variety of functions related to formatting and output to the screen. Bundling code in this way serves 3 purposes:</p>
+<p>It reduces the chance of having overlapping names. This keeps our function names short and succinct</p>
+<p>It organizes code so that its easier to find code you want to reuse.</p>
+<p>It speeds up the compiler by only requiring recompilation of smaller chunks of a program. Although we use the package fmt, we don&rsquo;t have to recompile it every time we change our program.</p>
+<p>Creating Packages
+Packages only really make sense in the context of a separate program which uses them. Without this separate program we have no way of using the package we create. Let&rsquo;s create an application that will use a package we will write. Create a folder in ~/src/golang-book called chapter11. Inside that folder create a file called main.go which contains this:</p>
+<p>package main</p>
+<p>import &ldquo;fmt&rdquo;
+import &ldquo;golang-book/chapter11/math&rdquo;</p>
+<p>func main() {
+xs := []float64{1,2,3,4}
+avg := math.Average(xs)
+fmt.Println(avg)
+}
+Now create another folder inside of the chapter11 folder called math. Inside of this folder create a file called math.go that contains this:</p>
+<p>package math</p>
+<p>func Average(xs []float64) float64 {
+total := float64(0)
+for _, x := range xs {
+total += x
+}
+return total / float64(len(xs))
+}
+Using a terminal in the math folder you just created run go install. This will compile the math.go program and create a linkable object file: ~/pkg/os_arch/golang-book/chapter11/math.a. (where os is something like windows and arch is something like amd64)</p>
+<p>Now go back to the chapter11 folder and run go run main.go. You should see 2.5. Some things to note:</p>
+<p>math is the name of a package that is part of Go&rsquo;s standard distribution, but since Go packages can be hierarchical we are safe to use the same name for our package. (The real math package is just math, ours is golang-book/chapter11/math)</p>
+<p>When we import our math library we use its full name (import &ldquo;golang-book/chapter11/math&rdquo;), but inside of the math.go file we only use the last part of the name (package math).</p>
+<p>We also only use the short name math when we reference functions from our library. If we wanted to use both libraries in the same program Go allows us to use an alias:</p>
+<p>import m &ldquo;golang-book/chapter11/math&rdquo;</p>
+<p>func main() {
+xs := []float64{1,2,3,4}
+avg := m.Average(xs)
+fmt.Println(avg)
+}
+m is the alias.</p>
+<p>You may have noticed that every function in the packages we&rsquo;ve seen start with a capital letter. In Go if something starts with a capital letter that means other packages (and programs) are able to see it. If we had named the function average instead of Average our main program would not have been able to see it.</p>
+<p>It&rsquo;s a good practice to only expose the parts of our package that we want other packages using and hide everything else. This allows us to freely change those parts later without having to worry about breaking other programs, and it makes our package easier to use.</p>
+<p>Package names match the folders they fall in. There are ways around this, but it&rsquo;s a lot easier if you stay within this pattern.</p>
+<p>Documentation
+Go has the ability to automatically generate documentation for packages we write in a similar way to the standard package documentation. In a terminal run this command:</p>
+<p>godoc golang-book/chapter11/math Average
+You should see information displayed for the function we just wrote. We can improve this documentation by adding a comment before the function:</p>
+<p>// Finds the average of a series of numbers
+func Average(xs []float64) float64 {
+If you run go install in the math folder, then re-run the godoc command you should see our comment below the function definition. This documentation is also available in web form by running this command:</p>
+<p>godoc -http=&quot;:6060&quot;
+and entering this URL into your browser:</p>
+<p>http://localhost:6060/pkg/
+You should be able to browse through all of the packages installed on your system.</p>
+<p>Problems
+Why do we use packages?</p>
+<p>What is the difference between an identifier that starts with a capital letter and one which doesn’t? (Average vs average)</p>
+<p>What is a package alias? How do you make one?</p>
+<p>We copied the average function from chapter 7 to our new package. Create Min and Max functions which find the minimum and maximum values in a slice of float64s.</p>
+<p>How would you document the functions you created in #3?</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

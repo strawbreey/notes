@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Redis Design and Implementation - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="链表和链表节点的实现 redis 链表实现
+typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表
+typedef struct list { // 表头节点  listNode *head; // 表尾节点  listNode *tail; // 节点复制函数  void *(*dup)(void *ptr); // 节点释放函数  void (*free)(void *ptr); // 节点值对比函数  int (*match)(void *ptr, void *key); // 链表所包含的节点数量  unsigned long len; } list; list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/redis/redis-design-and-implementation/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Redis Design and Implementation" />
+<meta property="og:description" content="链表和链表节点的实现 redis 链表实现
+typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表
+typedef struct list { // 表头节点  listNode *head; // 表尾节点  listNode *tail; // 节点复制函数  void *(*dup)(void *ptr); // 节点释放函数  void (*free)(void *ptr); // 节点值对比函数  int (*match)(void *ptr, void *key); // 链表所包含的节点数量  unsigned long len; } list; list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/redis/redis-design-and-implementation/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-05T15:35:26+08:00" />
+<meta property="article:modified_time" content="2020-11-05T15:35:26+08:00" />
+
+<meta itemprop="name" content="Redis Design and Implementation">
+<meta itemprop="description" content="链表和链表节点的实现 redis 链表实现
+typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表
+typedef struct list { // 表头节点  listNode *head; // 表尾节点  listNode *tail; // 节点复制函数  void *(*dup)(void *ptr); // 节点释放函数  void (*free)(void *ptr); // 节点值对比函数  int (*match)(void *ptr, void *key); // 链表所包含的节点数量  unsigned long len; } list; list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。"><meta itemprop="datePublished" content="2020-11-05T15:35:26+08:00" />
+<meta itemprop="dateModified" content="2020-11-05T15:35:26+08:00" />
+<meta itemprop="wordCount" content="91">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redis Design and Implementation"/>
+<meta name="twitter:description" content="链表和链表节点的实现 redis 链表实现
+typedef struct listNode { struct listNode * prev; struct listNode * next; void * value; } listNode; 多个listNode可以通过prev和next指针组成双端链表
+typedef struct list { // 表头节点  listNode *head; // 表尾节点  listNode *tail; // 节点复制函数  void *(*dup)(void *ptr); // 节点释放函数  void (*free)(void *ptr); // 节点值对比函数  int (*match)(void *ptr, void *key); // 链表所包含的节点数量  unsigned long len; } list; list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：
+链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。
+❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。
+❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。
+❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。
+❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。
+字典 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <h3 id="链表和链表节点的实现">链表和链表节点的实现</h3>
+<p><a href="https://github.com/redis/redis/blob/unstable/src/adlist.h">redis 链表实现</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">listNode</span> {
+  <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">listNode</span> <span style="color:#f92672">*</span> prev;
+  <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">listNode</span> <span style="color:#f92672">*</span> next;
+  <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span> value;
+} listNode;
+</code></pre></div><p>多个listNode可以通过prev和next指针组成双端链表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">list</span> {
+    <span style="color:#75715e">// 表头节点
+</span><span style="color:#75715e"></span>    listNode <span style="color:#f92672">*</span>head; 
+    <span style="color:#75715e">// 表尾节点
+</span><span style="color:#75715e"></span>    listNode <span style="color:#f92672">*</span>tail;
+    <span style="color:#75715e">// 节点复制函数
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>dup)(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>ptr);
+    <span style="color:#75715e">// 节点释放函数
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>free)(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>ptr);
+    <span style="color:#75715e">// 节点值对比函数
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> (<span style="color:#f92672">*</span>match)(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>ptr, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>key);
+    <span style="color:#75715e">// 链表所包含的节点数量
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> len;
+} list;
+</code></pre></div><p>list结构为链表提供了表头指针head、表尾指针tail，以及链表长度计数器len，而dup、free和match成员则是用于实现多态链表所需的类型特定函数：</p>
+<p>链表被广泛用于实现Redis的各种功能，比如列表键、发布与订阅、慢查询、监视器等。</p>
+<p>❑每个链表节点由一个listNode结构来表示，每个节点都有一个指向前置节点和后置节点的指针，所以Redis的链表实现是双端链表。</p>
+<p>❑每个链表使用一个list结构来表示，这个结构带有表头节点指针、表尾节点指针，以及链表长度等信息。</p>
+<p>❑因为链表表头节点的前置节点和表尾节点的后置节点都指向NULL，所以Redis的链表实现是无环链表。</p>
+<p>❑通过为链表设置不同的类型特定函数，Redis的链表可以用于保存各种不同类型的值。</p>
+<h3 id="字典">字典</h3>
+<p>字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），是一种用于保存键值对（key-value pair）的抽象数据结构。</p>
+<p>在字典中，一个键（key）可以和一个值（value）进行关联（或者说将键映射为值），这些关联的键和值就称为键值对。字典中的每个键都是独一无二的，程序可以在字典中根据键查找与之关联的值，或者通过键来更新值，又或者根据键来删除整个键值对，等等。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">dictht</span> {
+  dictEnter <span style="color:#f92672">**</span>table;
+  <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> size;
+  <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> siemask;
+  <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> used;
+} dictht;
+</code></pre></div><p>❑字典被广泛用于实现Redis的各种功能，其中包括数据库和哈希键。</p>
+<p>❑Redis中的字典使用哈希表作为底层实现，每个字典带有两个哈希表，一个平时使用，另一个仅在进行rehash时使用。</p>
+<p>❑当字典被用作数据库的底层实现，或者哈希键的底层实现时，Redis使用MurmurHash2算法来计算键的哈希值。</p>
+<p>❑哈希表使用链地址法来解决键冲突，被分配到同一个索引上的多个键值对会连接成一个单向链表。</p>
+<p>❑在对哈希表进行扩展或者收缩操作时，程序需要将现有哈希表包含的所有键值对rehash到新哈希表里面，并且这个rehash过程并不是一次性地完成的，而是渐进式地完成的</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

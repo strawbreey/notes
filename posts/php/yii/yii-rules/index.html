@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Yii Rules - My New Hugo Site</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="return array( // 必须填写  array(&amp;#39;email, username, password,agree,verifyPassword,verifyCode&amp;#39;, &amp;#39;required&amp;#39;), // 检查用户名是否重复  array(&amp;#39;email&amp;#39;,&amp;#39;unique&amp;#39;,&amp;#39;message&amp;#39;=&amp;gt;&amp;#39;用户名已占用&amp;#39;), // 用户输入最大的字符限制  array(&amp;#39;email, username&amp;#39;, &amp;#39;length&amp;#39;, &amp;#39;max&amp;#39;=&amp;gt;64), // 限制用户最小长度和最大长度  array(&amp;#39;username&amp;#39;, &amp;#39;length&amp;#39;, &amp;#39;max&amp;#39;=&amp;gt;7, &amp;#39;min&amp;#39;=&amp;gt;2, &amp;#39;tooLong&amp;#39;=&amp;gt;&amp;#39;用户名请输入长度为4-14个字符&amp;#39;, &amp;#39;tooShort&amp;#39;=&amp;gt;&amp;#39;用户名请输入长度为2-7个字&amp;#39;), // 限制密码最小长度和最大长度  array(&amp;#39;password&amp;#39;, &amp;#39;length&amp;#39;, &amp;#39;max&amp;#39;=&amp;gt;22, &amp;#39;min&amp;#39;=&amp;gt;6, &amp;#39;tooLong&amp;#39;=&amp;gt;&amp;#39;密码请输入长度为6-22位字符&amp;#39;, &amp;#39;tooShort&amp;#39;=&amp;gt;&amp;#39;密码请输入长度为6-22位字符&amp;#39;), // 判断用户输入的是否是邮件  array(&amp;#39;email&amp;#39;,&amp;#39;email&amp;#39;,&amp;#39;message&amp;#39;=&amp;gt;&amp;#39;邮箱格式错误&amp;#39;), // 检查用户输入的密码是否是一样的  array(&amp;#39;verifyPassword&amp;#39;, &amp;#39;compare&amp;#39;, &amp;#39;compareAttribute&amp;#39;=&amp;gt;&amp;#39;password&amp;#39;, &amp;#39;message&amp;#39;=&amp;gt;&amp;#39;请再输入确认密码&amp;#39;), // 检查用户是否同意协议条款  array(&amp;#39;agree&amp;#39;, &amp;#39;required&amp;#39;, &amp;#39;requiredValue&amp;#39;=&amp;gt;true,&amp;#39;message&amp;#39;=&amp;gt;&amp;#39;请确认是否同意隐私权协议条款&amp;#39;), // 判断是否是日期格式  array(&amp;#39;created&amp;#39;, &amp;#39;date&amp;#39;, &amp;#39;format&amp;#39; =&amp;gt; &amp;#39;php:&amp;#39; . \DateTime::ATOM), // 判断是否是ISO8601日期时间格式  array(&amp;#39;created&amp;#39;, &amp;#39;date&amp;#39;, &amp;#39;format&amp;#39;=&amp;gt;&amp;#39;yyyy/MM/dd/ HH:mm:ss&amp;#39;), // 判断是否包含输入的字符  array(&amp;#39;superuser&amp;#39;, &amp;#39;in&amp;#39;, &amp;#39;range&amp;#39; =&amp;gt; array(0, 1)), // 正则验证器：  array(&amp;#39;name&amp;#39;,&amp;#39;match&amp;#39;,&amp;#39;pattern&amp;#39;=&amp;gt;&amp;#39;/^[a-z0-9\-_]&#43;$/&amp;#39;), // 数字验证器：  array(&amp;#39;id&amp;#39;, &amp;#39;numerical&amp;#39;, &amp;#39;min&amp;#39;=&amp;gt;1, &amp;#39;max&amp;#39;=&amp;gt;10, &amp;#39;integerOnly&amp;#39;=&amp;gt;true), // 类型验证 integer,float,string,array,date,time,datetime  array(&amp;#39;created&amp;#39;, &amp;#39;type&amp;#39;, &amp;#39;datetime&amp;#39;), // 文件验证：  array(&amp;#39;filename&amp;#39;, &amp;#39;file&amp;#39;, &amp;#39;allowEmpty&amp;#39;=&amp;gt;true, &amp;#39;types&amp;#39;=&amp;gt;&amp;#39;zip, rar, xls, pdf, ppt&amp;#39;,&amp;#39;tooLarge&amp;#39;=&amp;gt;&amp;#39;图片不要超过800K&amp;#39;), array(&amp;#39;url&amp;#39;, &amp;#39;file&amp;#39;, //定义为file类型  &amp;#39;allowEmpty&amp;#39;=&amp;gt;true, &amp;#39;types&amp;#39;=&amp;gt;&amp;#39;jpg,png,gif,doc,docx,pdf,xls,xlsx,zip,rar,ppt,pptx&amp;#39;, //上传文件的类型  &amp;#39;maxSize&amp;#39;=&amp;gt;1024*1024*10, //上传大小限制，注意不是php." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.86.0-DEV with theme even" />
+
+
+<link rel="canonical" href="https://example.org/posts/php/yii/yii-rules/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+
+
+
+<meta property="og:title" content="Yii Rules" />
+<meta property="og:description" content="return array( // 必须填写  array(&#39;email, username, password,agree,verifyPassword,verifyCode&#39;, &#39;required&#39;), // 检查用户名是否重复  array(&#39;email&#39;,&#39;unique&#39;,&#39;message&#39;=&gt;&#39;用户名已占用&#39;), // 用户输入最大的字符限制  array(&#39;email, username&#39;, &#39;length&#39;, &#39;max&#39;=&gt;64), // 限制用户最小长度和最大长度  array(&#39;username&#39;, &#39;length&#39;, &#39;max&#39;=&gt;7, &#39;min&#39;=&gt;2, &#39;tooLong&#39;=&gt;&#39;用户名请输入长度为4-14个字符&#39;, &#39;tooShort&#39;=&gt;&#39;用户名请输入长度为2-7个字&#39;), // 限制密码最小长度和最大长度  array(&#39;password&#39;, &#39;length&#39;, &#39;max&#39;=&gt;22, &#39;min&#39;=&gt;6, &#39;tooLong&#39;=&gt;&#39;密码请输入长度为6-22位字符&#39;, &#39;tooShort&#39;=&gt;&#39;密码请输入长度为6-22位字符&#39;), // 判断用户输入的是否是邮件  array(&#39;email&#39;,&#39;email&#39;,&#39;message&#39;=&gt;&#39;邮箱格式错误&#39;), // 检查用户输入的密码是否是一样的  array(&#39;verifyPassword&#39;, &#39;compare&#39;, &#39;compareAttribute&#39;=&gt;&#39;password&#39;, &#39;message&#39;=&gt;&#39;请再输入确认密码&#39;), // 检查用户是否同意协议条款  array(&#39;agree&#39;, &#39;required&#39;, &#39;requiredValue&#39;=&gt;true,&#39;message&#39;=&gt;&#39;请确认是否同意隐私权协议条款&#39;), // 判断是否是日期格式  array(&#39;created&#39;, &#39;date&#39;, &#39;format&#39; =&gt; &#39;php:&#39; . \DateTime::ATOM), // 判断是否是ISO8601日期时间格式  array(&#39;created&#39;, &#39;date&#39;, &#39;format&#39;=&gt;&#39;yyyy/MM/dd/ HH:mm:ss&#39;), // 判断是否包含输入的字符  array(&#39;superuser&#39;, &#39;in&#39;, &#39;range&#39; =&gt; array(0, 1)), // 正则验证器：  array(&#39;name&#39;,&#39;match&#39;,&#39;pattern&#39;=&gt;&#39;/^[a-z0-9\-_]&#43;$/&#39;), // 数字验证器：  array(&#39;id&#39;, &#39;numerical&#39;, &#39;min&#39;=&gt;1, &#39;max&#39;=&gt;10, &#39;integerOnly&#39;=&gt;true), // 类型验证 integer,float,string,array,date,time,datetime  array(&#39;created&#39;, &#39;type&#39;, &#39;datetime&#39;), // 文件验证：  array(&#39;filename&#39;, &#39;file&#39;, &#39;allowEmpty&#39;=&gt;true, &#39;types&#39;=&gt;&#39;zip, rar, xls, pdf, ppt&#39;,&#39;tooLarge&#39;=&gt;&#39;图片不要超过800K&#39;), array(&#39;url&#39;, &#39;file&#39;, //定义为file类型  &#39;allowEmpty&#39;=&gt;true, &#39;types&#39;=&gt;&#39;jpg,png,gif,doc,docx,pdf,xls,xlsx,zip,rar,ppt,pptx&#39;, //上传文件的类型  &#39;maxSize&#39;=&gt;1024*1024*10, //上传大小限制，注意不是php." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/php/yii/yii-rules/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-03T15:31:02+08:00" />
+<meta property="article:modified_time" content="2021-08-03T15:31:02+08:00" />
+
+<meta itemprop="name" content="Yii Rules">
+<meta itemprop="description" content="return array( // 必须填写  array(&#39;email, username, password,agree,verifyPassword,verifyCode&#39;, &#39;required&#39;), // 检查用户名是否重复  array(&#39;email&#39;,&#39;unique&#39;,&#39;message&#39;=&gt;&#39;用户名已占用&#39;), // 用户输入最大的字符限制  array(&#39;email, username&#39;, &#39;length&#39;, &#39;max&#39;=&gt;64), // 限制用户最小长度和最大长度  array(&#39;username&#39;, &#39;length&#39;, &#39;max&#39;=&gt;7, &#39;min&#39;=&gt;2, &#39;tooLong&#39;=&gt;&#39;用户名请输入长度为4-14个字符&#39;, &#39;tooShort&#39;=&gt;&#39;用户名请输入长度为2-7个字&#39;), // 限制密码最小长度和最大长度  array(&#39;password&#39;, &#39;length&#39;, &#39;max&#39;=&gt;22, &#39;min&#39;=&gt;6, &#39;tooLong&#39;=&gt;&#39;密码请输入长度为6-22位字符&#39;, &#39;tooShort&#39;=&gt;&#39;密码请输入长度为6-22位字符&#39;), // 判断用户输入的是否是邮件  array(&#39;email&#39;,&#39;email&#39;,&#39;message&#39;=&gt;&#39;邮箱格式错误&#39;), // 检查用户输入的密码是否是一样的  array(&#39;verifyPassword&#39;, &#39;compare&#39;, &#39;compareAttribute&#39;=&gt;&#39;password&#39;, &#39;message&#39;=&gt;&#39;请再输入确认密码&#39;), // 检查用户是否同意协议条款  array(&#39;agree&#39;, &#39;required&#39;, &#39;requiredValue&#39;=&gt;true,&#39;message&#39;=&gt;&#39;请确认是否同意隐私权协议条款&#39;), // 判断是否是日期格式  array(&#39;created&#39;, &#39;date&#39;, &#39;format&#39; =&gt; &#39;php:&#39; . \DateTime::ATOM), // 判断是否是ISO8601日期时间格式  array(&#39;created&#39;, &#39;date&#39;, &#39;format&#39;=&gt;&#39;yyyy/MM/dd/ HH:mm:ss&#39;), // 判断是否包含输入的字符  array(&#39;superuser&#39;, &#39;in&#39;, &#39;range&#39; =&gt; array(0, 1)), // 正则验证器：  array(&#39;name&#39;,&#39;match&#39;,&#39;pattern&#39;=&gt;&#39;/^[a-z0-9\-_]&#43;$/&#39;), // 数字验证器：  array(&#39;id&#39;, &#39;numerical&#39;, &#39;min&#39;=&gt;1, &#39;max&#39;=&gt;10, &#39;integerOnly&#39;=&gt;true), // 类型验证 integer,float,string,array,date,time,datetime  array(&#39;created&#39;, &#39;type&#39;, &#39;datetime&#39;), // 文件验证：  array(&#39;filename&#39;, &#39;file&#39;, &#39;allowEmpty&#39;=&gt;true, &#39;types&#39;=&gt;&#39;zip, rar, xls, pdf, ppt&#39;,&#39;tooLarge&#39;=&gt;&#39;图片不要超过800K&#39;), array(&#39;url&#39;, &#39;file&#39;, //定义为file类型  &#39;allowEmpty&#39;=&gt;true, &#39;types&#39;=&gt;&#39;jpg,png,gif,doc,docx,pdf,xls,xlsx,zip,rar,ppt,pptx&#39;, //上传文件的类型  &#39;maxSize&#39;=&gt;1024*1024*10, //上传大小限制，注意不是php."><meta itemprop="datePublished" content="2021-08-03T15:31:02+08:00" />
+<meta itemprop="dateModified" content="2021-08-03T15:31:02+08:00" />
+<meta itemprop="wordCount" content="111">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Yii Rules"/>
+<meta name="twitter:description" content="return array( // 必须填写  array(&#39;email, username, password,agree,verifyPassword,verifyCode&#39;, &#39;required&#39;), // 检查用户名是否重复  array(&#39;email&#39;,&#39;unique&#39;,&#39;message&#39;=&gt;&#39;用户名已占用&#39;), // 用户输入最大的字符限制  array(&#39;email, username&#39;, &#39;length&#39;, &#39;max&#39;=&gt;64), // 限制用户最小长度和最大长度  array(&#39;username&#39;, &#39;length&#39;, &#39;max&#39;=&gt;7, &#39;min&#39;=&gt;2, &#39;tooLong&#39;=&gt;&#39;用户名请输入长度为4-14个字符&#39;, &#39;tooShort&#39;=&gt;&#39;用户名请输入长度为2-7个字&#39;), // 限制密码最小长度和最大长度  array(&#39;password&#39;, &#39;length&#39;, &#39;max&#39;=&gt;22, &#39;min&#39;=&gt;6, &#39;tooLong&#39;=&gt;&#39;密码请输入长度为6-22位字符&#39;, &#39;tooShort&#39;=&gt;&#39;密码请输入长度为6-22位字符&#39;), // 判断用户输入的是否是邮件  array(&#39;email&#39;,&#39;email&#39;,&#39;message&#39;=&gt;&#39;邮箱格式错误&#39;), // 检查用户输入的密码是否是一样的  array(&#39;verifyPassword&#39;, &#39;compare&#39;, &#39;compareAttribute&#39;=&gt;&#39;password&#39;, &#39;message&#39;=&gt;&#39;请再输入确认密码&#39;), // 检查用户是否同意协议条款  array(&#39;agree&#39;, &#39;required&#39;, &#39;requiredValue&#39;=&gt;true,&#39;message&#39;=&gt;&#39;请确认是否同意隐私权协议条款&#39;), // 判断是否是日期格式  array(&#39;created&#39;, &#39;date&#39;, &#39;format&#39; =&gt; &#39;php:&#39; . \DateTime::ATOM), // 判断是否是ISO8601日期时间格式  array(&#39;created&#39;, &#39;date&#39;, &#39;format&#39;=&gt;&#39;yyyy/MM/dd/ HH:mm:ss&#39;), // 判断是否包含输入的字符  array(&#39;superuser&#39;, &#39;in&#39;, &#39;range&#39; =&gt; array(0, 1)), // 正则验证器：  array(&#39;name&#39;,&#39;match&#39;,&#39;pattern&#39;=&gt;&#39;/^[a-z0-9\-_]&#43;$/&#39;), // 数字验证器：  array(&#39;id&#39;, &#39;numerical&#39;, &#39;min&#39;=&gt;1, &#39;max&#39;=&gt;10, &#39;integerOnly&#39;=&gt;true), // 类型验证 integer,float,string,array,date,time,datetime  array(&#39;created&#39;, &#39;type&#39;, &#39;datetime&#39;), // 文件验证：  array(&#39;filename&#39;, &#39;file&#39;, &#39;allowEmpty&#39;=&gt;true, &#39;types&#39;=&gt;&#39;zip, rar, xls, pdf, ppt&#39;,&#39;tooLarge&#39;=&gt;&#39;图片不要超过800K&#39;), array(&#39;url&#39;, &#39;file&#39;, //定义为file类型  &#39;allowEmpty&#39;=&gt;true, &#39;types&#39;=&gt;&#39;jpg,png,gif,doc,docx,pdf,xls,xlsx,zip,rar,ppt,pptx&#39;, //上传文件的类型  &#39;maxSize&#39;=&gt;1024*1024*10, //上传大小限制，注意不是php."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">My New Hugo Site</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">My New Hugo Site</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">array</span>(
+
+    <span style="color:#75715e">// 必须填写
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;email, username, password,agree,verifyPassword,verifyCode&#39;</span>, <span style="color:#e6db74">&#39;required&#39;</span>),
+
+    <span style="color:#75715e">// 检查用户名是否重复
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;email&#39;</span>,<span style="color:#e6db74">&#39;unique&#39;</span>,<span style="color:#e6db74">&#39;message&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;用户名已占用&#39;</span>),
+
+    <span style="color:#75715e">// 用户输入最大的字符限制
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;email, username&#39;</span>, <span style="color:#e6db74">&#39;length&#39;</span>, <span style="color:#e6db74">&#39;max&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">64</span>),
+
+    <span style="color:#75715e">// 限制用户最小长度和最大长度
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;username&#39;</span>, <span style="color:#e6db74">&#39;length&#39;</span>, <span style="color:#e6db74">&#39;max&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">7</span>, <span style="color:#e6db74">&#39;min&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;tooLong&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;用户名请输入长度为4-14个字符&#39;</span>, <span style="color:#e6db74">&#39;tooShort&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;用户名请输入长度为2-7个字&#39;</span>),
+
+    <span style="color:#75715e">// 限制密码最小长度和最大长度
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;password&#39;</span>, <span style="color:#e6db74">&#39;length&#39;</span>, <span style="color:#e6db74">&#39;max&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">22</span>, <span style="color:#e6db74">&#39;min&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;tooLong&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;密码请输入长度为6-22位字符&#39;</span>, <span style="color:#e6db74">&#39;tooShort&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;密码请输入长度为6-22位字符&#39;</span>),
+
+    <span style="color:#75715e">// 判断用户输入的是否是邮件
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;email&#39;</span>,<span style="color:#e6db74">&#39;email&#39;</span>,<span style="color:#e6db74">&#39;message&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;邮箱格式错误&#39;</span>),
+
+    <span style="color:#75715e">// 检查用户输入的密码是否是一样的
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;verifyPassword&#39;</span>, <span style="color:#e6db74">&#39;compare&#39;</span>, <span style="color:#e6db74">&#39;compareAttribute&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;password&#39;</span>, <span style="color:#e6db74">&#39;message&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;请再输入确认密码&#39;</span>),
+
+    <span style="color:#75715e">// 检查用户是否同意协议条款
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;agree&#39;</span>, <span style="color:#e6db74">&#39;required&#39;</span>, <span style="color:#e6db74">&#39;requiredValue&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#66d9ef">true</span>,<span style="color:#e6db74">&#39;message&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;请确认是否同意隐私权协议条款&#39;</span>),
+
+    <span style="color:#75715e">// 判断是否是日期格式
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;created&#39;</span>, <span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;format&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;php:&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">\DateTime</span><span style="color:#f92672">::</span><span style="color:#a6e22e">ATOM</span>),
+
+    <span style="color:#75715e">// 判断是否是ISO8601日期时间格式
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;created&#39;</span>, <span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;format&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;yyyy/MM/dd/ HH:mm:ss&#39;</span>),
+
+    <span style="color:#75715e">// 判断是否包含输入的字符
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;superuser&#39;</span>, <span style="color:#e6db74">&#39;in&#39;</span>, <span style="color:#e6db74">&#39;range&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)),
+
+    <span style="color:#75715e">// 正则验证器：
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;match&#39;</span>,<span style="color:#e6db74">&#39;pattern&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;/^[a-z0-9\-_]+$/&#39;</span>),
+
+    <span style="color:#75715e">// 数字验证器：
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;numerical&#39;</span>, <span style="color:#e6db74">&#39;min&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;max&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;integerOnly&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#66d9ef">true</span>),
+
+    <span style="color:#75715e">// 类型验证 integer,float,string,array,date,time,datetime
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;created&#39;</span>, <span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#e6db74">&#39;datetime&#39;</span>),
+
+    <span style="color:#75715e">// 文件验证：
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;filename&#39;</span>, <span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#e6db74">&#39;allowEmpty&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#66d9ef">true</span>, <span style="color:#e6db74">&#39;types&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;zip, rar, xls, pdf, ppt&#39;</span>,<span style="color:#e6db74">&#39;tooLarge&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;图片不要超过800K&#39;</span>),
+
+    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;url&#39;</span>,
+    <span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#75715e">//定义为file类型
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;allowEmpty&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#66d9ef">true</span>,
+    <span style="color:#e6db74">&#39;types&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;jpg,png,gif,doc,docx,pdf,xls,xlsx,zip,rar,ppt,pptx&#39;</span>, <span style="color:#75715e">//上传文件的类型
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;maxSize&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>, <span style="color:#75715e">//上传大小限制，注意不是php.ini中的上传文件大小
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;tooLarge&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;文件大于10M，上传失败！请上传小于10M的文件！&#39;</span>
+    ),
+});
+
+$news<span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">news</span>(<span style="color:#e6db74">&#39;search&#39;</span>); <span style="color:#75715e">//search关联规则
+</span></code></pre></div>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://example.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+     - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
