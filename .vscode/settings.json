@@ -89,5 +89,11 @@
         "functionBlankSpace": 0,
         "functionTypeSymbol": "*",
         "typeParamOrder": "type param"
-    }
+    },
+    "cSpell.words": [
+        "keyof",
+        "strlen",
+        "strpos",
+        "typeof"
+    ]
 }

@@ -18,23 +18,18 @@ hasCJKLanguage = true
   # 顶部导航栏
   [[menu.main]]
     identifier = "/"
-    name = "HOME"
+    name = "home"
     url = "/"
     weight = 1
   [[menu.main]]
     identifier = "/posts"
-    name = "POSTS"
+    name = "posts"
     url = "/posts"
     weight = 2
   [[menu.main]]
-    identifier = "/message"
-    name = "MESSAGE"
-    url = "/message"
-    weight = 3
-  [[menu.main]]
-    identifier = "/link"
-    name = "LINK"
-    url = "/link"
+    identifier = "/about"
+    name = "about"
+    url = "/about"
     weight = 4
   
   # 底部社交图标

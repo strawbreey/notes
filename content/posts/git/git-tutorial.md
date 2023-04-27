@@ -312,6 +312,19 @@ git checkout -b test origin/test
 # git push <远程主机名> <本地分支名>:<远程分支名>
 git push -u origin dev:release/caigou_v1.0
 
+# 切换远程源
+
+1. 修改远程仓库地址
+
+git remote set-url origin URL  # 更换远程仓库地址，URL为新地址。
+
+2. 先删除远程仓库地址，然后再添加
+
+git remote rm origin # 删除现有远程仓库
+git remote add origin url # 添加新远程仓库
+
+git remote -v  #查看远程仓库的地址
+
 ```
 
 

@@ -104,12 +104,3 @@ WebKit引擎已经对display: contents规则有了初步支持 ，但只是在�
 
 我们把那部分也重新激活了，虽然没时间做完，但之后苹果公司的Antti Koivisto完成了。到2017年11月，这个功能已在主干开发版本上设为默认启动。
 
-### 总结
-
-Igalia公司作为外部力量，致力于开放式网站平台项目，是这一领域顶尖的公司之一，所以我们有机会能在不同的开源项目中实现新的功能。这要感谢我们成员的集体参与，以及在此领域内通过几年经验积累起来的外部知识。关于display: contents的实现，如果没有Igalia公司的支持，特别是代码之旅(Coding Experience)的经历，这个功能是不可能在今天的Chromium浏览器和WebKit引擎上实现的。
-
-代码之旅(Coding Experience)取得了好的结果，我们非常高兴，我们也期望在将来能再次大获成功。
-
-当然，所有的功劳都应该归Emilio，他是一个了不起的工程师，在代码之旅(Coding Experience)期间做得非常出色。在这一过程中，他拥有了在Chromium项目和WebKit项目里提交的特权。赞！
-
-最后，感谢Antti和Rune把剩下的任务完成了，才让WebKit和Chromium用户能用到display: contents样式规则。

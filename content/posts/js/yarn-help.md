@@ -104,3 +104,38 @@ $ yarn -h
 
   Run `yarn help COMMAND` for more information on specific commands.
   Visit https://yarnpkg.com/en/docs/cli/ to learn more about Yarn.
+
+
+### yarn 的代理配置
+
+另一个方法是设置proxy，让npm或者yarn通过proxy去取得想要的资源。
+
+NPM设置代理：
+
+npm config set proxy="<http_proxy>"
+npm confit set https-proxy="<https_proxy>"
+
+
+NPM删除代理：
+
+npm config delete proxy 
+npm config delete https-proxy
+
+
+YARN设置代理:
+
+yarn config set proxy <http_proxy>
+yarn config set https-proxy <https_proxy>
+
+YARN删除代理:
+
+yarn config delete proxy  
+yarn config delete https-proxy
+
+另外，设置registry如下
+
+npm config set registry https://registry.npm.taobao.org/
+npm config set registry https://registry.npmjs.org/
+
+yarn config set registry https://registry.npm.taobao.org/
+yarn config set registry https://registry.npmjs.org/
