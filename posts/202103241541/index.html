@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,7 +108,7 @@
 <ul>
 <li>选择简短和具有描述性的名字来命名分支：</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 好</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 好</span>
 $ git checkout -b oauth-migration
 
 <span style="color:#75715e"># 不好，过于模糊</span>
@@ -116,7 +116,7 @@ $ git checkout -b login_fix
 </code></pre></div><ul>
 <li>来自外部的标识符也适合用作分支的名字，例如来自 Github 的 Issue 序号。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># GitHub issue #15</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># GitHub issue #15</span>
 $ git checkout -b issue-15
 </code></pre></div><ul>
 <li>
@@ -126,13 +126,13 @@ $ git checkout -b issue-15
 <p>当不同的人围绕同一个特性开发时，维护整个团队的特性分支与每个人的独立分支是比较方便的做法。使用如下的命名方式：</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b feature-a/master <span style="color:#75715e"># team-wide branch</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b feature-a/master <span style="color:#75715e"># team-wide branch</span>
 git checkout -b feature-a/maria <span style="color:#75715e"># Maria&#39;s branch</span>
 git checkout -b feature-a/nick <span style="color:#75715e"># Nick&#39;s branch</span>
 </code></pre></div><ul>
 <li>合并之后，除非有特殊原因，从上游仓库中删除你的分支。使用如下命令查看已合并的分支：</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch --merged | grep -v <span style="color:#e6db74">&#34;\*&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch --merged | grep -v <span style="color:#e6db74">&#34;\*&#34;</span>
 </code></pre></div><ul>
 <li>命名规范</li>
 </ul>
@@ -224,6 +224,7 @@ revert:   还原以前的提交的更改</p>
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -233,6 +234,17 @@ revert:   还原以前的提交的更改</p>
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

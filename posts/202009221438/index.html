@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -112,7 +112,7 @@
 <li>文件上传漏洞</li>
 <li>分布式拒绝服务</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> uid,username <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">WHERE</span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;plhwin&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> uid,username <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">WHERE</span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;plhwin&#39;</span>
 
 <span style="color:#75715e">-- 把plhwin 改成 plhwin&#39;;SHOW TABLES-- hack&#39;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> uid,username <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">WHERE</span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;plhwin&#39;</span>;<span style="color:#66d9ef">SHOW</span> TABLES<span style="color:#75715e">-- hack&#39;
@@ -193,14 +193,14 @@
 </ul>
 <h3 id="xss-攻击案例">XSS 攻击案例</h3>
 <h4 id="qq-邮箱-mexmailqqcom-域名反射型-xss-漏洞">QQ 邮箱 m.exmail.qq.com 域名反射型 XSS 漏洞</h4>
-<p>攻击者发现 <a href="http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb">http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb</a> 这个 URL 的参数 uin、domain 未经转义直接输出到 HTML 中。</p>
+<p>攻击者发现 <a href="http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb" target="_blank" rel="noopener">http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&domain=bbbb</a> 这个 URL 的参数 uin、domain 未经转义直接输出到 HTML 中。</p>
 <p>于是攻击者构建出一个 URL，并引导用户去点击：</p>
-<p><a href="http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb%26quot%3B%3Breturn+false%3B%26quot%3B%26lt%3B%2Fscript%26gt%3B%26lt%3Bscript%26gt%3Balert(document.cookie)%26lt%3B%2Fscript%26gt%3B">http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb%26quot%3B%3Breturn+false%3B%26quot%3B%26lt%3B%2Fscript%26gt%3B%26lt%3Bscript%26gt%3Balert(document.cookie)%26lt%3B%2Fscript%26gt%3B</a></p>
+<p><a href="http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&amp;domain=bbbb%26quot%3B%3Breturn&#43;false%3B%26quot%3B%26lt%3B%2Fscript%26gt%3B%26lt%3Bscript%26gt%3Balert%28document.cookie%29%26lt%3B%2Fscript%26gt%3B" target="_blank" rel="noopener">http://m.exmail.qq.com/cgi-bin/login?uin=aaaa&domain=bbbb%26quot%3B%3Breturn+false%3B%26quot%3B%26lt%3B%2Fscript%26gt%3B%26lt%3Bscript%26gt%3Balert(document.cookie)%26lt%3B%2Fscript%26gt%3B</a></p>
 <p>浏览器接收到响应后就会执行 alert(document.cookie)，攻击者通过 JavaScript 即可窃取当前用户在 QQ 邮箱域名下的 Cookie ，进而危害数据安全。</p>
 <h4 id="新浪微博名人堂反射型-xss-漏洞">新浪微博名人堂反射型 XSS 漏洞</h4>
-<p>攻击者发现 <a href="http://weibo.com/pub/star/g/xyyyd">http://weibo.com/pub/star/g/xyyyd</a> 这个 URL 的内容未经过滤直接输出到 HTML 中。</p>
+<p>攻击者发现 <a href="http://weibo.com/pub/star/g/xyyyd" target="_blank" rel="noopener">http://weibo.com/pub/star/g/xyyyd</a> 这个 URL 的内容未经过滤直接输出到 HTML 中。</p>
 <p>于是攻击者构建出一个 URL，然后诱导用户去点击：</p>
-<p><a href="http://weibo.com/pub/star/g/xyyyd%22%3E">http://weibo.com/pub/star/g/xyyyd&quot;&gt;</a><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="http://weibo.com/pub/star/g/xyyyd%22%3e" target="_blank" rel="noopener">http://weibo.com/pub/star/g/xyyyd"></a><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>用户点击这个 URL 时，服务端取出请求 URL，拼接到 HTML 响应中：</p>
 <h2 id="跨站点请求伪造csrf">跨站点请求伪造(csrf)</h2>
 <h2 id="点击劫持">点击劫持</h2>
@@ -285,6 +285,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -294,6 +295,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

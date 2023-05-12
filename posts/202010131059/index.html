@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,7 +108,7 @@
 <ol>
 <li>查看磁盘空间大小</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">df -hl <span style="color:#75715e"># G</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">df -hl <span style="color:#75715e"># G</span>
 </code></pre></div><p>第一列Filesystem，磁盘分区</p>
 <p>第二列Size，磁盘分区的大小</p>
 <p>第三列Used，已使用的空间</p>
@@ -135,7 +135,7 @@
 <ol start="2">
 <li>查看文件和目录大小</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 查看目录的总大小</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 查看目录的总大小</span>
 du -sh /data
 
 <span style="color:#75715e"># 或者进到/data目录后直接执行：</span>
@@ -170,7 +170,7 @@ du -ah
 <li>排序命令</li>
 </ol>
 <p>sort命令可以用于将文件内容排序并输出，也可以用于将某些查询命令的执行结果排序后输出</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 将文件夹中的文件按大小排序，可以用以下命令</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 将文件夹中的文件按大小排序，可以用以下命令</span>
 du -a|sort -rn
 </code></pre></div><p>管道前面的du –a就是列出目录下所有的文件和目录的大小，后面的sort命令就是排序。</p>
 <p>其中-r参数代表反向排序，因为sort默认是从小到大排序的，加-r是从大到小排序</p>
@@ -191,7 +191,7 @@ du -a|sort -rn
 <ol start="4">
 <li>只显示前几行的命令</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 要将文件夹中的文件按大小排序，而且只看最大的几个</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 要将文件夹中的文件按大小排序，而且只看最大的几个</span>
 du -a|sort -rn|head -5
 
 <span style="color:#75715e"># head后面的-5表示显示前5行，不加数字则默认显示前10行</span>
@@ -203,7 +203,7 @@ du -a|sort -rn|head -5
 <li>查看列表</li>
 </ol>
 <p>list 的缩写，通过 ls 命令不仅可以查看 linux 文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -l
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -l
 
 ls -a <span style="color:#75715e"># 列出目录所有文件，包含以.开始的隐藏文件</span>
 ls -A <span style="color:#75715e"># 列出除.及..的其它文件</span>
@@ -231,7 +231,7 @@ find $pwd -maxdepth <span style="color:#ae81ff">1</span> | xargs ls -ld
 </code></pre></div><ol start="6">
 <li>cd 命令</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 进入根目录</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 进入根目录</span>
 cd /
 
 <span style="color:#75715e"># 进入home 目录</span>
@@ -245,7 +245,7 @@ cd !$
 </code></pre></div><ol start="6">
 <li>pwd 命令</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 <span style="color:#75715e"># 查看当前路径</span>
 pwd
 
@@ -256,7 +256,7 @@ pwd -P
 </ol>
 <p>-m: 对新建目录设置存取权限，也可以用 chmod 命令设置;
 -p: 可以是一个路径名称。此时若路径中的某些目录尚不存在,加上此选项后，系统将自动建立好那些尚不在的目录，即一次可以建立多个目录。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 当前工作目录下创建名为 t的文件夹</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 当前工作目录下创建名为 t的文件夹</span>
 mkdir t
 
 <span style="color:#75715e"># 在 tmp 目录下创建路径为 test/t1/t 的目录，若不存在，则创建：</span>
@@ -266,7 +266,7 @@ mkdir -p /tmp/test/t1/t
 </ol>
 <p>删除一个目录中的一个或多个文件或目录，如果没有使用 -r 选项，则 rm 不会删除目录。
 如果使用 rm 来删除文件，通常仍可以将该文件恢复原状。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 删除任何 .log 文件，删除前逐一询问确认：</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 删除任何 .log 文件，删除前逐一询问确认：</span>
 rm -i *.log
 
 <span style="color:#75715e"># 删除 test 子目录及子目录中所有档案删除，并且不用一一确认：</span>
@@ -278,7 +278,7 @@ rm -- -f*
 <li>rmdir</li>
 </ol>
 <p>从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对其父目录的写权限。不能删除非空目录</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 当 parent 子目录被删除后使它也成为空目录的话，则顺便一并删除：</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 当 parent 子目录被删除后使它也成为空目录的话，则顺便一并删除：</span>
 rmdir -p parent/child/child11
 </code></pre></div><ol start="6">
 <li>mv 命令
@@ -289,7 +289,7 @@ rmdir -p parent/child/child11
 <ol start="6">
 <li>查看系统版本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 方式1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 方式1</span>
 cat /etc/redhat-release
 CentOS Linux release 7.6.1810 <span style="color:#f92672">(</span>Core<span style="color:#f92672">)</span> 
 
@@ -298,7 +298,7 @@ lsb_release -a
 </code></pre></div><ol start="7">
 <li>查看CPU和内存</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cpu:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cpu:</span>
 cat /proc/cpuinfo | grep name
 
 <span style="color:#75715e"># 内存(RAM)：</span>
@@ -306,7 +306,7 @@ $ cat /proc/meminfo | grep Mem
 </code></pre></div><ol start="8">
 <li>查看磁盘和分区</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 磁盘</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 磁盘</span>
 fdisk -l | grep -E <span style="color:#e6db74">&#39;.+/dev/&#39;</span>
 
 <span style="color:#75715e"># 分区:</span>
@@ -314,7 +314,7 @@ df -TH | grep ^/dev
 </code></pre></div><ol start="9">
 <li>查看网卡和IP地址</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 网卡:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 网卡:</span>
 lspci | grep -i eth
 
 <span style="color:#75715e"># IP</span>
@@ -322,11 +322,11 @@ ip addr | grep -E <span style="color:#e6db74">&#34;^[1-9]+|inet&#34;</span>
 </code></pre></div><ol start="10">
 <li>查看主板制造商</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  dmidecode | grep -V -A2 <span style="color:#e6db74">&#34;System Information&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  dmidecode | grep -V -A2 <span style="color:#e6db74">&#34;System Information&#34;</span>
 </code></pre></div><ol start="11">
 <li>查看防火墙服务</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看防火墙</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看防火墙</span>
 systemctl list-unit-files | grep firewalld
 
 <span style="color:#75715e"># 开启防火墙</span>
@@ -346,7 +346,7 @@ systemctl stop firewalld.service
 </code></pre></div><ol start="12">
 <li>查看用户信息</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看用户信息</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看用户信息</span>
 cat /etc/passwd | grep bash
 
 <span style="color:#75715e">#查看用户组</span>
@@ -357,7 +357,7 @@ cat /etc/shadow | grep root
 </code></pre></div><ol start="13">
 <li>查看系统运行状态</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看当前运行的进程列表</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看当前运行的进程列表</span>
 ps aux
 <span style="color:#75715e"># 加 f 以树状显示父子进程</span>
 ps aufx
@@ -449,6 +449,7 @@ dstat
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -458,6 +459,17 @@ dstat
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -113,15 +113,15 @@
 <ol>
 <li>启动Web服务器</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/public_html
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/public_html
 php -S localhost:8000
 </code></pre></div><p>终端窗口会显示:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:43:28 <span style="color:#ae81ff">2011</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:43:28 <span style="color:#ae81ff">2011</span>
 Listening on localhost:8000
 Document root is /home/me/public_html
 Press Ctrl-C to quit
 </code></pre></div><p>接着访问http://localhost:8000/和http://localhost:8000/myscript.html，窗口会显示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:43:28 <span style="color:#ae81ff">2011</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:43:28 <span style="color:#ae81ff">2011</span>
 Listening on localhost:8000
 Document root is /home/me/public_html
 Press Ctrl-C to quit.
@@ -133,10 +133,10 @@ Press Ctrl-C to quit.
 </code></pre></div><ol start="2">
 <li>启动时指定根目录</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/public_html
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/public_html
 php -S localhost:8000 -t foo/
 </code></pre></div><p>终端窗口显示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:50:26 <span style="color:#ae81ff">2011</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:50:26 <span style="color:#ae81ff">2011</span>
 Listening on localhost:8000
 Document root is /home/me/public_html/foo
 Press Ctrl-C to quit
@@ -144,7 +144,7 @@ Press Ctrl-C to quit
 <li>使用路由（Router）脚本</li>
 </ol>
 <p>请求图片直接显示图片，请求HTML则显示“Welcome to PHP”</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#75715e">// router.php
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\.(?:png|jpg|jpeg|gif)$/&#39;</span>, $_SERVER[<span style="color:#e6db74">&#34;REQUEST_URI&#34;</span>]))
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;    <span style="color:#75715e">// 直接返回请求的文件
@@ -152,9 +152,9 @@ Press Ctrl-C to quit
     <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;p&gt;Welcome to PHP&lt;/p&gt;&#34;</span>;
 }
 <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -S localhost:8000 router.php
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -S localhost:8000 router.php
 </code></pre></div><p>执行之后终端显示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:53:19 <span style="color:#ae81ff">2011</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PHP 5.4.0 Development Server started at Thu Jul <span style="color:#ae81ff">21</span> 10:53:19 <span style="color:#ae81ff">2011</span>
 Listening on localhost:8000
 Document root is /home/me/public_html
 Press Ctrl-C to quit.
@@ -237,6 +237,7 @@ Press Ctrl-C to quit.
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -246,6 +247,17 @@ Press Ctrl-C to quit.
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

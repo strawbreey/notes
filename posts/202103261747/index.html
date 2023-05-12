@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -108,15 +108,15 @@
 <ol>
 <li>升级 angular-cli 到最新你版本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install -g @angular/cli@latest
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install -g @angular/cli@latest
 </code></pre></div><ol start="2">
 <li>更新项目中angular相关的包。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng update --all
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng update --all
 </code></pre></div><h3 id="更新前">更新前</h3>
 <ul>
 <li>无论在那里使用了 Renderer，现在都使用 Renderer2</li>
-<li>如果使用了旧版的 HttpModule 和 Http 服务，请切换到 HttpClientModule 和 HttpClient 服务。HttpClient 简化了默认的 ergonomics(不再需要映射(map)到JSON)，并且现在支持类型化的返回值和拦截器。进一步了解 <a href="https://angular.io/guide/http">https://angular.io/guide/http</a></li>
+<li>如果使用了旧版的 HttpModule 和 Http 服务，请切换到 HttpClientModule 和 HttpClient 服务。HttpClient 简化了默认的 ergonomics(不再需要映射(map)到JSON)，并且现在支持类型化的返回值和拦截器。进一步了解 <a href="https://angular.io/guide/http" target="_blank" rel="noopener">https://angular.io/guide/http</a></li>
 <li>一旦所有依赖更新到 RxJS 6，请移除 rxjs-compat.</li>
 <li>如果使用了 Angular Service worker，使用 files 替代 versionedFiles</li>
 </ul>
@@ -166,7 +166,7 @@
 </li>
 </ul>
 <h3 id="升级过程中遇到的警告">升级过程中遇到的警告</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 升级angular 到 8</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 升级angular 到 8</span>
 $ ng update @angular/cli@8 @angular/core@8
 Using package manager: <span style="color:#e6db74">&#39;yarn&#39;</span>
 Collecting installed dependencies...
@@ -261,6 +261,7 @@ ng update ng-zorro-antd@8
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -270,6 +271,17 @@ ng update ng-zorro-antd@8
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

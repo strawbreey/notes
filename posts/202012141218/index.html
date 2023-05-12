@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -113,13 +113,13 @@
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="1-编译">1. 编译</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;hello world&#34;</span>)
 }
 </code></pre></div><p>要运行这个程序，将这些代码放到 hello-world.go 中并且使用 go run 命令。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run hello-world.go
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run hello-world.go
 hello world
 </code></pre></div><p>有时候我们想将我们的程序编译成二进制文件。我们可以通过 go build 命来达到目的。</p>
 <pre><code>go build hello-world.go
@@ -128,11 +128,15 @@ ls
 <p>hello-world.exe</p>
 </blockquote>
 <p>然后我们可以直接运行这个二进制文件。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 hello-world.exe	hello-world.go
 ./hello-world
 </code></pre></div><h3 id="2-字符串">2. 字符串</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
@@ -158,7 +162,7 @@ hello-world.exe	hello-world.go
 <li>声明变量且没有给出对应的初始值时，变量将会初始化为零值 。例如，一个 int 的零值是 0。</li>
 <li>:= 语句是申明并初始化变量的简写，例如这个例子中的 var f string = &ldquo;short&rdquo;。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">&#34;initial&#34;</span>
@@ -182,7 +186,7 @@ hello-world.exe	hello-world.go
 <li>常数表达式可以执行任意精度的运算</li>
 <li>数值型常量是没有确定的类型的，直到它们被给定了一个类型，比如说一次显示的类型转化</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;math&#34;</span>
 
@@ -208,7 +212,7 @@ hello-world.exe	hello-world.go
 <li>经典的初始化/条件/后续形式 for 循环</li>
 <li>不带条件的 for 循环将一直执行，直到在循环体内使用了 break 或者 return 来跳出循环</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// `for` 是 Go 中唯一的循环结构。这里有 `for` 循环的三个基本使用方式。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// `for` 是 Go 中唯一的循环结构。这里有 `for` 循环的三个基本使用方式。
 </span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
@@ -242,7 +246,7 @@ hello-world.exe	hello-world.go
 </span><span style="color:#75715e">// 9
 </span><span style="color:#75715e">// loop
 </span></code></pre></div><h3 id="6-ifelse-分支">6. if/else 分支</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// `if` 和 `else` 分支结构在 Go 中当然是直接了当的了。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// `if` 和 `else` 分支结构在 Go 中当然是直接了当的了。
 </span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
@@ -278,7 +282,7 @@ hello-world.exe	hello-world.go
 <p>Go 里没有三目运算符，所以即使你只需要基本的条件判断，你仍需要使用完整的 if 语句。</p>
 </blockquote>
 <h3 id="7-switch-分支结构">7. switch 分支结构</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _switch_ ，方便的条件分支语句。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _switch_ ，方便的条件分支语句。
 </span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;time&#34;</span>
@@ -317,7 +321,7 @@ hello-world.exe	hello-world.go
 
 <span style="color:#75715e">// todo: type switches
 </span></code></pre></div><h3 id="8-数组">8. 数组</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 在 Go 中，_数组_ 是一个固定长度的数列。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 在 Go 中，_数组_ 是一个固定长度的数列。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -354,7 +358,7 @@ hello-world.exe	hello-world.go
 }
 
 </code></pre></div><h3 id="9-切片">9. 切片</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _Slice_ 是 Go 中一个重要的数据类型，它提供了比数组更强大的序列交互方式。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _Slice_ 是 Go 中一个重要的数据类型，它提供了比数组更强大的序列交互方式。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -419,7 +423,7 @@ hello-world.exe	hello-world.go
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;2d: &#34;</span>, <span style="color:#a6e22e">twoD</span>)
 }
 </code></pre></div><h3 id="10-map">10. Map</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _map_ 是 Go 内建的[关联数据类型](http://zh.wikipedia.org/wiki/关联数组)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _map_ 是 Go 内建的[关联数据类型](http://zh.wikipedia.org/wiki/关联数组)
 </span><span style="color:#75715e">// （在一些其他的语言中也被称为 _哈希(hash)_ 或者 _字典(dict)_ ）。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -466,7 +470,7 @@ hello-world.exe	hello-world.go
 </span><span style="color:#75715e">// prs: false
 </span><span style="color:#75715e">// map: map[bar:2 foo:1]
 </span></code></pre></div><h3 id="11-range-遍历">11. Range 遍历</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _range_ 用于迭代各种各样的数据结构。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _range_ 用于迭代各种各样的数据结构。
 </span><span style="color:#75715e">// 让我们来看看如何在我们已经学过的数据结构上使用 `range`。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -513,7 +517,7 @@ hello-world.exe	hello-world.go
 
 
 </code></pre></div><h3 id="12-函数">12. 函数</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _函数_ 是 Go 的核心。我们将通过一些不同的例子来进行学习它。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// _函数_ 是 Go 的核心。我们将通过一些不同的例子来进行学习它。
 </span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
@@ -556,7 +560,7 @@ hello-world.exe	hello-world.go
 
 </code></pre></div><h3 id="13-多返回值">13. 多返回值</h3>
 <h3 id="14-可变参数函数">14. 可变参数函数</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
 <span style="color:#75715e">// [_可变参数函数_](https://zh.wikipedia.org/wiki/%E5%8F%AF%E8%AE%8A%E5%8F%83%E6%95%B8%E5%87%BD%E6%95%B8)。
 </span><span style="color:#75715e">// 在调用时可以传递任意数量的参数。
 </span><span style="color:#75715e">// 例如，`fmt.Println` 就是一个常见的变参函数。
@@ -588,7 +592,7 @@ hello-world.exe	hello-world.go
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">nums</span><span style="color:#f92672">...</span>)
 }
 </code></pre></div><h3 id="15-闭包">15. 闭包</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持[_匿名函数_](http://zh.wikipedia.org/wiki/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0)，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持[_匿名函数_](http://zh.wikipedia.org/wiki/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0)，
 </span><span style="color:#75715e">// 并能用其构造 &lt;a href=&#34;http://zh.wikipedia.org/wiki/%E9%97%AD%E5%8C%85_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)&#34;&gt;&lt;em&gt;闭包&lt;/em&gt;&lt;/a&gt;。
 </span><span style="color:#75715e">// 匿名函数在你想定义一个不需要命名的内联函数时是很实用的。
 </span><span style="color:#75715e"></span>
@@ -622,7 +626,7 @@ hello-world.exe	hello-world.go
 }
 
 </code></pre></div><h3 id="16-递归">16. 递归</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持 &lt;a href=&#34;http://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)&#34;&gt;&lt;em&gt;递归&lt;/em&gt;&lt;/a&gt;。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持 &lt;a href=&#34;http://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)&#34;&gt;&lt;em&gt;递归&lt;/em&gt;&lt;/a&gt;。
 </span><span style="color:#75715e">// 这里是一个经典的阶乘示例。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -642,7 +646,7 @@ hello-world.exe	hello-world.go
 }
 
 </code></pre></div><h3 id="17-指针">17. 指针</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持 &lt;em&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/%E6%8C%87%E6%A8%99_(%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8)&#34;&gt;指针&lt;/a&gt;&lt;/em&gt;，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持 &lt;em&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/%E6%8C%87%E6%A8%99_(%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8)&#34;&gt;指针&lt;/a&gt;&lt;/em&gt;，
 </span><span style="color:#75715e">// 允许在程序中通过 `引用传递` 来传递值和数据结构。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -682,7 +686,7 @@ hello-world.exe	hello-world.go
 </span><span style="color:#75715e">// zeroptr: 0
 </span><span style="color:#75715e">// pointer: 0xc00002c008
 </span></code></pre></div><h3 id="17-结构体">17. 结构体</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 的_结构体(struct)_ 是带类型的字段(fields)集合。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 的_结构体(struct)_ 是带类型的字段(fields)集合。
 </span><span style="color:#75715e">// 这在组织数据时非常有用。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -722,7 +726,7 @@ hello-world.exe	hello-world.go
 }
 
 </code></pre></div><h3 id="18-方法">18. 方法</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持为结构体类型定义_方法(methods)_ 。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go 支持为结构体类型定义_方法(methods)_ 。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -757,7 +761,7 @@ hello-world.exe	hello-world.go
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;perim:&#34;</span>, <span style="color:#a6e22e">rp</span>.<span style="color:#a6e22e">perim</span>())
 }
 </code></pre></div><h3 id="19-接口">19. 接口</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 方法签名的集合叫做：_接口(Interfaces)_。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 方法签名的集合叫做：_接口(Interfaces)_。
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
@@ -816,7 +820,7 @@ hello-world.exe	hello-world.go
 
 </code></pre></div><h3 id="21-错误处理">21. 错误处理</h3>
 <p>符合 Go 语言习惯的做法是使用一个独立、明确的返回值来传递错误信息。 这与 Java、Ruby 使用的异常（exception） 以及在 C 语言中有时用到的重载 (overloaded) 的单返回/错误值有着明显的不同。 Go 语言的处理方式能清楚的知道哪个函数返回了错误，并使用跟其他（无异常处理的）语言类似的方式来处理错误。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> ( <span style="color:#e6db74">&#34;errors&#34;</span> <span style="color:#e6db74">&#34;fmt&#34;</span> )
 
 
@@ -875,7 +879,7 @@ hello-world.exe	hello-world.go
 }
 </code></pre></div><h3 id="22-协程">22. 协程</h3>
 <p>协程(goroutine) 是轻量级的执行线程。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -916,7 +920,7 @@ goroutine : 2
 done</p>
 <h3 id="23-通道">23. 通道</h3>
 <p>通道(channels) 是连接多个协程的管道。 你可以从一个协程将值发送到通道，然后在另一个协程中接收。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
@@ -938,7 +942,7 @@ ping</p>
 <p>默认发送和接收操作是阻塞的，直到发送方和接收方都就绪。 这个特性允许我们，不使用任何其它的同步操作， 就可以在程序结尾处等待消息 &ldquo;ping&rdquo;。</p>
 <h3 id="24-通道缓冲">24. 通道缓冲</h3>
 <p>默认情况下，通道是 无缓冲 的，这意味着只有对应的接收（&lt;- chan） 通道准备好接收时，才允许进行发送（chan &lt;-）。 有缓冲通道 允许在没有对应接收者的情况下，缓存一定数量的值。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
@@ -954,7 +958,7 @@ ping</p>
 }
 </code></pre></div><h3 id="25-通道同步">25. 通道同步</h3>
 <p>可以使用通道来同步协程之间的执行状态。 这儿有一个例子，使用阻塞接收的方式，实现了等待另一个协程完成。 如果需要等待多个协程，WaitGroup 是一个更好的选择。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
 
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
@@ -982,7 +986,7 @@ ping</p>
 
 </code></pre></div><h3 id="26-通道方向">26. 通道方向</h3>
 <p>当使用通道作为函数的参数时，你可以指定这个通道是否为只读或只写。 该特性可以提升程序的类型安全。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
 <span style="color:#75715e">// ping 函数定义了一个只能发送数据的（只写）通道。 尝试从这个通道接收数据会是一个编译时错误。
@@ -1007,7 +1011,7 @@ ping</p>
 <span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#a6e22e">channel</span><span style="color:#f92672">-</span><span style="color:#a6e22e">directions</span>.<span style="color:#66d9ef">go</span>
 </code></pre></div><h3 id="27-通过选择器">27. 通过选择器</h3>
 <p>Go 的 选择器（select） 让你可以同时等待多个通道操作。 将协程、通道和选择器结合，是 Go 的一个强大特性。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;fmt&#34;</span>
     <span style="color:#e6db74">&#34;time&#34;</span>
@@ -1041,14 +1045,14 @@ ping</p>
 }
 
 </code></pre></div><p>// 跟预期的一样，我们首先接收到值 &ldquo;one&rdquo;，然后是 &ldquo;two&rdquo;。</p>
-<p>$ time go run select.go 
+<p>$ time go run select.go
 received one
 received two
 注意，程序总共仅运行了两秒左右。因为 1 秒 和 2 秒的 Sleeps 是并发执行的，</p>
 <p>real    0m2.245s</p>
 <h3 id="28-超时处理">28. 超时处理</h3>
 <p>超时 对于一个需要连接外部资源， 或者有耗时较长的操作的程序而言是很重要的。 得益于通道和 select，在 Go 中实现超时操作是简洁而优雅的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> ( <span style="color:#e6db74">&#34;fmt&#34;</span> <span style="color:#e6db74">&#34;time&#34;</span>)
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
 
@@ -1084,12 +1088,12 @@ received two
     }
 }
 </code></pre></div><p>运行这个程序，首先显示运行超时的操作，然后是成功接收的。</p>
-<p>$ go run timeouts.go 
+<p>$ go run timeouts.go
 timeout 1
 result 2</p>
 <h3 id="29-非阻塞通道操作">29. 非阻塞通道操作</h3>
 <p>常规的通过通道发送和接收数据是阻塞的。 然而，我们可以使用带一个 default 子句的 select 来实现 非阻塞 的发送、接收，甚至是非阻塞的多路 select。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
@@ -1125,13 +1129,13 @@ result 2</p>
             <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;no activity&#34;</span>)
     }
 }
-</code></pre></div><p>$ go run non-blocking-channel-operations.go 
+</code></pre></div><p>$ go run non-blocking-channel-operations.go
 no message received
 no message sent
 no activity</p>
 <h3 id="30-通道的关闭">30. 通道的关闭</h3>
 <p>关闭 一个通道意味着不能再向这个通道发送值了。 该特性可以向通道的接收方传达工作已经完成的信息。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang">
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
@@ -1179,7 +1183,7 @@ received all jobs
 根据 关闭通道 的思想，可以引出我们的下一个示例：遍历通道。</p>
 <h3 id="31-通道遍历">31. 通道遍历</h3>
 <p>在前面的例子中， 我们讲过 for 和 range 为基本的数据结构提供了迭代的功能。 我们也可以使用这个语法来遍历的从通道中取值。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
     <span style="color:#75715e">// 我们将遍历在 queue 通道中的两个值。
@@ -1200,7 +1204,11 @@ one
 two</p>
 <h3 id="32-timer">32. Timer</h3>
 <p>我们经常需要在未来的某个时间点运行 Go 代码，或者每隔一定时间重复运行代码。 Go 内置的 定时器 和 打点器 特性让这些变得很简单。 我们会先学习定时器，然后再学习打点器。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;fmt&#34;</span>
     <span style="color:#e6db74">&#34;time&#34;</span>
@@ -1236,7 +1244,11 @@ Timer 1 fired
 Timer 2 stopped</p>
 <h3 id="33-ticker">33. Ticker</h3>
 <p>定时器 是当你想要在未来某一刻执行一次时使用的 - 打点器 则是为你想要以固定的时间间隔重复执行而准备的。 这里是一个打点器的例子，它将定时的执行，直到我们将它停止。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;fmt&#34;</span>

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>fread</p>
 <p>fread — 读取文件（可安全用于二进制文件）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">fread</span> ( <span style="color:#a6e22e">resource</span> $handle , <span style="color:#a6e22e">int</span> $length ) <span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">fread</span> ( <span style="color:#a6e22e">resource</span> $handle , <span style="color:#a6e22e">int</span> $length ) <span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>
 
 <span style="color:#75715e">// handle 文件系统指针，是典型地由 fopen() 创建的 resource(资源)。
 </span><span style="color:#75715e">// length 最多读取 length 个字节。
@@ -117,7 +117,7 @@
 <li>a packet becomes available or the socket timeout occurs (for network streams)</li>
 <li>if the stream is read buffered and it does not represent a plain file, at most one read of up to a number of bytes equal to the chunk size (usually 8192) is made; depending on the previously buffered data, the size of the returned data may be larger than the chunk size.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/usr/local/something.txt&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/usr/local/something.txt&#34;</span>;
 $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>);
 $contents <span style="color:#f92672">=</span> <span style="color:#a6e22e">fread</span>($handle, <span style="color:#a6e22e">filesize</span>($filename));
 <span style="color:#a6e22e">fclose</span>($handle);
@@ -127,7 +127,7 @@ $contents <span style="color:#f92672">=</span> <span style="color:#a6e22e">fread
 <p>如果只是想将一个文件的内容读入到一个字符串中，用 file_get_contents()，它的性能比上面的代码好得多。</p>
 <h3 id="file_get_contents">file_get_contents</h3>
 <p>file_get_contents — 将整个文件读入一个字符串</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 <span style="color:#a6e22e">file_get_contents</span> ( <span style="color:#a6e22e">string</span> $filename [, <span style="color:#a6e22e">bool</span> $use_include_path <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> [, <span style="color:#a6e22e">resource</span> $context [, <span style="color:#a6e22e">int</span> $offset <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> [, <span style="color:#a6e22e">int</span> $maxlen ]]]] ) <span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>
 
 <span style="color:#75715e">// 参数 filename 要被写入数据的文件名。
@@ -138,7 +138,7 @@ $contents <span style="color:#f92672">=</span> <span style="color:#a6e22e">fread
 </span><span style="color:#75715e"></span>
 </code></pre></div><p>和依次调用 fopen()，fwrite() 以及 fclose() 功能一样。</p>
 <p>范例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 $file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;people.txt&#39;</span>;
 <span style="color:#75715e">// Open the file to get existing content
 </span><span style="color:#75715e"></span>$current <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>($file);
@@ -146,7 +146,7 @@ $file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;peop
 </span><span style="color:#75715e"></span>$current <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#34;John Smith</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
 <span style="color:#75715e">// Write the contents back to the file
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">file_put_contents</span>($file, $current);
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
 
 
 $fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#39;somefile.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>);
@@ -233,6 +233,7 @@ $fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -242,6 +243,17 @@ $fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

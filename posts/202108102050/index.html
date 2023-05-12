@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -109,7 +113,11 @@
 <ol>
 <li>下载安装 libiconv-1.14.tar.gz</li>
 </ol>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 tar zxvf libiconv-1.14.tar.gz
 cd libiconv-1.14
 ./configure --prefix<span style="color:#f92672">=</span>/usr/local/libiconv
@@ -117,7 +125,11 @@ make <span style="color:#f92672">&amp;&amp;</span> make install
 </code></pre></div><ol start="2">
 <li>yum安装依赖包</li>
 </ol>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum -y  install curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc gcc perl-ExtUtils-MakeMaker tcl xmlto
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum -y  install curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc gcc perl-ExtUtils-MakeMaker tcl xmlto
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#75715e"># 注：asciidoc如果无法通过yum安装，请下载包，编译安装</span>
 
 wget --no-check-certificate https://jaist.dl.sourceforge.net/project/asciidoc/asciidoc/8.6.9/asciidoc-8.6.9.zip
@@ -129,11 +141,19 @@ make <span style="color:#f92672">&amp;&amp;</span> make install
 <ol>
 <li>卸载git旧版本</li>
 </ol>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum remove git
 </code></pre></div><ol start="2">
 <li>编译按照 git 源码</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/git/git/archive/v2.2.1.tar.gz
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum remove git
+</code></pre></div><ol start="2">
+<li>编译按照 git 源码</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/git/git/archive/v2.2.1.tar.gz
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 tar zxvf v2.2.1.tar.gz
 cd git-2.2.1
 make configure
@@ -142,7 +162,11 @@ make all doc
 make install install-doc install-html
  echo <span style="color:#e6db74">&#34;export PATH=</span>$PATH<span style="color:#e6db74">:/usr/local/git/bin:/usr/local/git/libexec/git-core&#34;</span> &gt;&gt; /etc/bashrc
 </code></pre></div><h3 id="三查看新版本">三、查看新版本</h3>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git version
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git version
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#75715e"># git version 2.2.1</span>
 </code></pre></div>
           </div>
@@ -220,6 +244,7 @@ make install install-doc install-html
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -229,6 +254,17 @@ make install install-doc install-html
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -275,7 +311,11 @@ make install install-doc install-html
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

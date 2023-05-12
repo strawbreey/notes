@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -107,11 +111,19 @@
             <h2 id="css-变量">CSS 变量</h2>
 <h3 id="基本用法">基本用法</h3>
 <p>声明一个自定义属性，属性名需要以两个减号（&ndash;）开始，属性值则可以是任何有效的CSS值。和其他属性一样，自定义属性也是写在规则集之内的，如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span> {
   --main-bg-color: <span style="color:#66d9ef">brown</span>;
 }
 </code></pre></div><p>注意，规则集所指定的选择器定义了自定义属性的可见作用域。通常的最佳实践是定义在根伪类 :root 下，这样就可以在HTML文档的任何地方访问到它了：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">:<span style="color:#a6e22e">root</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span> {
+  --main-bg-color: <span style="color:#66d9ef">brown</span>;
+}
+</code></pre></div><p>注意，规则集所指定的选择器定义了自定义属性的可见作用域。通常的最佳实践是定义在根伪类 :root 下，这样就可以在HTML文档的任何地方访问到它了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">:<span style="color:#a6e22e">root</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   --main-bg-color: <span style="color:#66d9ef">brown</span>;
 }
 </code></pre></div><p>然而这条规则不是绝对的，如果有理由去限制你的自定义属性，那么就应该限制。</p>
@@ -119,12 +131,20 @@
 <p>注意：自定义属性名是大小写敏感的，&ndash;my-color 和 &ndash;My-color 会被认为是两个不同的自定义属性。</p>
 </blockquote>
 <p>如前所述，使用一个局部变量时用 var() 函数包裹以表示一个合法的属性值：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">element</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   <span style="color:#66d9ef">background-color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>main<span style="color:#f92672">-</span>bg<span style="color:#f92672">-</span><span style="color:#66d9ef">color</span>);
 }
 </code></pre></div><h3 id="使用自定义属性的第一步">使用自定义属性的第一步</h3>
 <p>我们从这个简单的CSS代码开始，它将相同的颜色应用在了不同class的元素上：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">one</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">one</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
   <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">brown</span>;
   <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
@@ -158,14 +178,22 @@
   <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">brown</span>;
 }
 </code></pre></div><p>应用在如下HTML上：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;one&#34;</span>&gt;1:&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;two&#34;</span>&gt;2: Text &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;five&#34;</span>&gt;5 - more text&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;three&#34;</span>&gt;
   &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;four&#34;</span>&gt;4: Lorem Ipsum&lt;/<span style="color:#f92672">textarea</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>注意到在CSS代码中的重复：背景色 brown 被多处设置。对于一些CSS声明，是可以在级联关系更高的位置设置，通过CSS继承自然地解决这个重复的问题。但在一般项目中，是不可能通过这样的方式去解决。通过在 :root 伪类上设置自定义属性，然后在整个文档需要的地方使用，可以减少这样的重复性：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">:<span style="color:#a6e22e">root</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">:<span style="color:#a6e22e">root</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   --main-bg-color: <span style="color:#66d9ef">brown</span>;
 }
 
@@ -205,14 +233,22 @@
 </code></pre></div><p>这里呈现的结果和前面的例子是一致的，但允许对所需属性值进行一个规范的声明。</p>
 <h3 id="自定义属性的继承性">自定义属性的继承性</h3>
 <p>自定义属性会继承。这意味着如果在一个给定的元素上，没有为这个自定义属性设置值，在其父元素上的值会被使用。看这一段HTML：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;one&#34;</span>&gt;
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;one&#34;</span>&gt;
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;two&#34;</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;three&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;four&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>配套的CSS：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">two</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">two</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   --test: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
 }
 
@@ -233,7 +269,11 @@
 <p>备用值并不是用于实现浏览器兼容性的。如果浏览器不支持CSS自定义属性，备用值也没什么用。它仅对支持CSS自定义属性的浏览器提供了一个备份机制，该机制仅当给定值未定义或是无效值的时候生效。</p>
 </blockquote>
 <p>函数的第一个参数是自定义属性的名称。如果提供了第二个参数，则表示备用值，当自定义属性值无效时生效。第二个参数可以嵌套，但是不能继续平铺展开下去了，例如：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">two</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">two</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>my<span style="color:#f92672">-</span>var, <span style="color:#66d9ef">red</span>); <span style="color:#75715e">/* Red if --my-var is not defined */</span>
 }
 
@@ -255,9 +295,15 @@
 <p>当浏览器遇到无效的 var() 时，会使用继承值或初始值代替。</p>
 <p>考虑如下代码：</p>
 <p>HTML</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;This paragraph is initial black.&lt;/<span style="color:#f92672">p</span>&gt; 
 </code></pre></div><p>CSS</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">:<span style="color:#a6e22e">root</span> { --text-color: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>; }
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;This paragraph is initial black.&lt;/<span style="color:#f92672">p</span>&gt; 
+</code></pre></div><p>CSS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">:<span style="color:#a6e22e">root</span> { --text-color: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>; }
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#f92672">p</span> { <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">blue</span>; }
 <span style="color:#f92672">p</span> { <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">text</span><span style="color:#f92672">-</span><span style="color:#66d9ef">color</span>); }
 </code></pre></div><p>毫不意外，浏览器将 &ndash;text-color 的值替换给了 var(&ndash;text-color)，但是 16px 并不是 color 的合法属性值。代换之后，该属性不会产生任何作用。浏览器会执行如下两个步骤：</p>
@@ -271,7 +317,11 @@
 </blockquote>
 <h3 id="javascript-中的值">JavaScript 中的值</h3>
 <p>在 JavaScript 中获取或者修改 CSS  变量和操作普通 CSS 属性是一样的：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 获取一个 Dom 节点上的 CSS 变量
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 获取一个 Dom 节点上的 CSS 变量
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">getPropertyValue</span>(<span style="color:#e6db74">&#34;--my-var&#34;</span>);
 
 <span style="color:#75715e">// 获取任意 Dom 节点上的 CSS 变量
@@ -355,6 +405,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -364,6 +415,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -410,7 +472,11 @@
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

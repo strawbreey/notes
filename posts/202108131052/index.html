@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -106,7 +110,11 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="如何避免回表查询-什么是索引覆盖">如何避免回表查询, 什么是索引覆盖?</h3>
 <p>数据库表结构：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">user</span> (
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">user</span> (
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     id int <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
     name varchar(<span style="color:#ae81ff">20</span>),
     sex varchar(<span style="color:#ae81ff">5</span>),
@@ -145,7 +153,11 @@
 <p>注意，不是存储行记录头指针，MyISAM的索引叶子节点存储记录指针。</p>
 </blockquote>
 <p>举个栗子，不妨设有表：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">t(id PK, name <span style="color:#66d9ef">KEY</span>, sex, flag);
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">t(id PK, name <span style="color:#66d9ef">KEY</span>, sex, flag);
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 
 <span style="color:#75715e">-- id是聚集索引，name是普通索引。
 </span></code></pre></div><p>表中有四条记录：</p>
@@ -159,7 +171,11 @@
 <p>既然从普通索引无法直接定位行记录，那普通索引的查询过程是怎么样的呢？</p>
 <p>通常情况下，需要扫码两遍索引树。</p>
 <p>例如：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> t <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lisi&#39;</span>;
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> t <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lisi&#39;</span>;
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div><p>是如何执行的呢？</p>
 <p>如粉红色路径，需要扫码两遍索引树：</p>
 <p>（1）先通过普通索引定位到主键值id=5；</p>
@@ -170,7 +186,11 @@
 <p>只需要在一棵索引树上就能获取SQL所需的所有列数据，无需回表，速度更快。</p>
 <h3 id="三如何实现索引覆盖">三、如何实现索引覆盖？</h3>
 <p>将被查询的字段，建立到联合索引里去。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#75715e">-- 创建用户表
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">user</span> (
     id int <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
@@ -201,7 +221,11 @@
 <span style="color:#75715e">-- 都能够命中索引覆盖，无需回表。
 </span></code></pre></div><h3 id="四哪些场景可以利用索引覆盖来优化sql">四、哪些场景可以利用索引覆盖来优化SQL？</h3>
 <p>场景1：全表count查询优化</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 不能利用索引覆盖
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 不能利用索引覆盖
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(name) <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span>;
 
 <span style="color:#75715e">-- 添加索引
@@ -210,12 +234,20 @@
 <span style="color:#75715e">-- 能够利用索引覆盖
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(name) <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span>;
 </code></pre></div><p>场景2：列查询回表优化</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 单列索引会导致回表
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 单列索引会导致回表
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id, name, sex <span style="color:#66d9ef">where</span> name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shenjian&#39;</span>;
 
 <span style="color:#75715e">-- 将单列索引(name)升级为联合索引(name, sex)，即可避免回表。
 </span></code></pre></div><p>场景3：分页查询</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 单列索引会导致回表
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 单列索引会导致回表
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id, name, sex <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> name <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">500</span>,<span style="color:#ae81ff">100</span>;
 
 <span style="color:#75715e">-- 将单列索引(name)升级为联合索引(name, sex)，也可以避免回表。
@@ -295,6 +327,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -304,6 +337,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -350,7 +394,11 @@
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -114,7 +114,7 @@
 <p>Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的</p>
 <h3 id="基本用法">基本用法：</h3>
 <p>tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cf all.tar *.jpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cf all.tar *.jpg
 <span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</span>
 
 tar -rf all.tar *.gif
@@ -142,7 +142,7 @@ tar -xzf all.tar.gz
 <li>tar调用bzip2</li>
 </ol>
 <p>bzip2是一个压缩能力更强的压缩程序，.bz2结尾的文件就是bzip2压缩的结果。与bzip2相对的解压程序是bunzip2。tar中使用-j这个参数来调用bzip2。下面来举例说明一下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cjf all.tar.bz2 *.jpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cjf all.tar.bz2 *.jpg
 <span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个tar包，并且调用bzip2压缩，生成一个bzip2压缩过的包，包名为all.tar.bz2</span>
 tar -xjf all.tar.bz2
 <span style="color:#75715e"># 这条命令是将上面产生的包解开。</span>
@@ -150,14 +150,14 @@ tar -xjf all.tar.bz2
 <li>tar调用compress</li>
 </ol>
 <p>compress也是一个压缩程序，但是好象使用compress的人不如gzip和bzip2的人多。.Z结尾的文件就是bzip2压缩的结果。与compress相对的解压程序是uncompress。tar中使用-Z这个参数来调用gzip。下面来举例说明一下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cZf all.tar.Z *.jpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -cZf all.tar.Z *.jpg
 <span style="color:#75715e"># 这条命令是将所有.jpg的文件打成一个tar包，并且调用compress压缩，生成一个uncompress压缩过的包，包名为all.tar.Z</span>
 
 tar -xZf all.tar.Z
 <span style="color:#75715e"># 这条命令是将上面产生的包解开</span>
 </code></pre></div><h3 id="linux下最常用的压缩工具">Linux下最常用的压缩工具</h3>
 <p>1、tar</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
 tar -zcvf too.tar.gz too
 
 <span style="color:#75715e"># 解压</span>
@@ -171,14 +171,14 @@ tar -czvf too.tar.gz --exclude<span style="color:#f92672">=</span>too/logs too
 tar -zcf api3.0_<span style="color:#e6db74">`</span>date +%Y%m%d%H%M%S<span style="color:#e6db74">`</span>.tar.gz -C /usr/local/tomcat/webapps api3.0
 </code></pre></div><p>2、gzip</p>
 <p>gzip工具是Linux中最流行、最快的文件压缩工具，Gzip工具保留原始文件名称压缩文件的扩展名.gz和时间戳。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打包</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打包</span>
 gzip filename
 
 <span style="color:#75715e"># 解压</span>
 gzip -d filename <span style="color:#75715e"># 打包的文件会被删除</span>
 </code></pre></div><p>3、bzip2</p>
 <p>Bzip2实用程序执行更快的gzip，它压缩文件和文件夹更紧凑。压缩文件时需要更多的内存，为了减少内存消耗，在选项中通过-s标志。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
 bzip2 examplefile or bzip2 -s examplefile
 
 <span style="color:#75715e"># 解压</span>
@@ -188,14 +188,14 @@ bzip2 -d examplefile.bz2 or bunzip2 examplefile.bz2
 bzip2 -v examplefile
 </code></pre></div><p>4、lzma</p>
 <p>Lzma是一种压缩工具，与zip或tar类似，但与bzip相比，它的执行速度更快，虽然lzma是一个强大的工具，但它在Linux用户中并不流行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
 lzma -c --stdout examplefile&gt; examplefile.lzma
 
 <span style="color:#75715e"># 解压</span>
 lzma -d --stdout examplefile.lzma &gt;examplefile
 </code></pre></div><p>5、xz</p>
 <p>XZ是lzma实用程序的继承者，它只能压缩单个文件，但不能在一个命令中压缩多个文件，它将自动为压缩文件添加.xz扩展名。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
 xz examplefile
 
 <span style="color:#75715e"># 解压</span>
@@ -203,7 +203,7 @@ xz -d examplefile
 
 </code></pre></div><p>6、pax</p>
 <p>Pax它的执行速度很快，而且它不仅仅是一个压缩器，它可以真正的归档它可以远程复制文件，在Ubuntu/Mint Linux中，默认情况下Pax没有安装。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
 pax -wf examplefile.tar examplefile
 pax -wf examplefile.tar.gz examplefile 
 
@@ -214,7 +214,7 @@ pax -r &lt;examplefile.tar
 pax -f examplefile.tar
 </code></pre></div><p>7、7zip</p>
 <p>7Zip文件压缩器是一个开源工具，它最初是为微软Windows开发的，它支持多种文件压缩格式和高文件压缩，它可以用一个命令压缩多个文件。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装7zip</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装7zip</span>
 wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86<span style="color:#ae81ff">\_</span>64/Packages/p/p7zip-16.02-10.el7.x86<span style="color:#ae81ff">\_</span>64.rpm
 wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86<span style="color:#ae81ff">\_</span>64/Packages/p/p7zip-plugins-16.02-10.el7.x86<span style="color:#ae81ff">\_</span>64.rpm
  
@@ -228,7 +228,7 @@ sudo rpm -U --quiet p7zip-plugins-16.02-10.el7.x86_64.rpm
 7z  a examplefile.7z examplefile
 </code></pre></div><p>8、shar</p>
 <p>Shar是一个命令行工具，可以用来压缩测试文件，Shar可以定义为“shell archive”。一个简单而快速的文件存档实用程序对于获取shell脚本的存档非常有用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装shar工具</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装shar工具</span>
 yum -y install sharutils
 
 <span style="color:#75715e"># 压缩</span>
@@ -238,20 +238,20 @@ shar examplefile &gt; examplefile.shar
 unshar examplefile.shar
 </code></pre></div><p>9、cpio</p>
 <p>可以定义为复制输入和输出，它在输入中逐行读取文件名列表，在输出中读取归档文件。这是一个内置的经典命令。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
 ls | cpio -ov &gt;/home/username/backup.cpio
 
 <span style="color:#75715e"># 解压</span>
 cpio -idv &lt;backup.cpio
 </code></pre></div><p>10、ar</p>
 <p>rar的前身，仍然在Debian及其衍生物中使用，它是一个简单的归档工具，但并不是很流行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 压缩</span>
 ar cvsr examplefile.a examplefile
 
 <span style="color:#75715e"># 解压</span>
 ar -xv examplefile.a
 </code></pre></div><p>11、iso</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ISO制作iso镜像</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ISO制作iso镜像</span>
 dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/media/dvd of<span style="color:#f92672">=</span>/home/username/filename.iso
 </code></pre></div>
           </div>
@@ -329,6 +329,7 @@ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/med
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -338,6 +339,17 @@ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/med
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

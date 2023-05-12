@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,12 +107,12 @@
             <ol>
 <li>用 file_get_contents 以get方式获取内容：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://wenda.shukaiming.com/&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://wenda.shukaiming.com/&#39;</span>;
 <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">file_get_contents</span>($url);
 </code></pre></div><ol start="2">
 <li>方法2: 用fopen打开url, 以get方式获取内容：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//r标识read，即标识只读
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//r标识read，即标识只读
 </span><span style="color:#75715e"></span>$fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($url, <span style="color:#e6db74">&#39;r&#39;</span>);
 <span style="color:#a6e22e">stream_get_meta_data</span>($fp);
 <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">feof</span>($fp)) {
@@ -121,7 +121,7 @@
 <span style="color:#66d9ef">echo</span> $body;
 <span style="color:#a6e22e">fclose</span>($fp);
 </code></pre></div><p>3：用 file_get_contents函数,以post方式获取url</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#a6e22e">‘foo</span><span style="color:#e6db74">&#39; =&gt; ‘bar&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#a6e22e">‘foo</span><span style="color:#e6db74">&#39; =&gt; ‘bar&#39;</span>);
 $data <span style="color:#f92672">=</span> <span style="color:#a6e22e">http_build_query</span>($data);
 $opts <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;http&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;method&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#e6db74">&#39;header&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Content-type: application/x-www-form-urlencodedrn&#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;Content-Length: &#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">strlen</span>($data) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;\r\n&#39;</span>, <span style="color:#e6db74">&#39;content&#39;</span> <span style="color:#f92672">=&gt;</span> $data));
 $context <span style="color:#f92672">=</span> <span style="color:#a6e22e">stream_context_create</span>($opts);
@@ -207,6 +207,7 @@ $html <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -216,6 +217,17 @@ $html <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

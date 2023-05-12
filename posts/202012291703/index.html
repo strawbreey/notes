@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -110,10 +110,17 @@
 <p>SVN 服务器配置：安装SVN服务器</p>
 <h3 id="svn-安装">svn 安装</h3>
 <p>查看svn版本</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svnserve --version
 </code></pre></div><p>ubuntu 安装svn 1.7、1.8</p>
 <p>当前 ubuntu 12.04 中的 svn 版本为 1.6，这个版本会在每个子目录新建一个.svn 的目录保存版本文件，很不爽。找到一个第三方编译的 ubuntu 源：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打开source.list源：</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svnserve --version
+</code></pre></div><p>ubuntu 安装svn 1.7、1.8</p>
+<p>当前 ubuntu 12.04 中的 svn 版本为 1.6，这个版本会在每个子目录新建一个.svn 的目录保存版本文件，很不爽。找到一个第三方编译的 ubuntu 源：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 打开source.list源：</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 sudo vi /etc/apt/sources.list   
 
 <span style="color:#75715e"># 添加源</span>
@@ -123,7 +130,11 @@ deb-src http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu precise m
 <span style="color:#75715e"># 执行安装命令</span>
 sudo apt-get install subversion
 </code></pre></div><h3 id="svn-常用命令">SVN 常用命令</h3>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#75715e"># 1. 将文件checkout到本地目录</span>
 svn checkout path
 svn co path
@@ -449,20 +460,20 @@ hello = rw
 <p>[general]
 #匿名访问的权限，可以是read,write,none,默认为read
 anon-access=none
-#使授权用户有写权限 
+#使授权用户有写权限
 auth-access=write
-#密码数据库的路径 
+#密码数据库的路径
 password-db=passwd
-#访问控制文件 
+#访问控制文件
 authz-db=authz
-#认证命名空间，subversion会在认证提示里显示，并且作为凭证缓存的关键字 
+#认证命名空间，subversion会在认证提示里显示，并且作为凭证缓存的关键字
 realm=/data/svn/repositories
 以上语句都必须顶格写, 左侧不能留空格, 否则会出错.</p>
 <p>7.启动svn服务
 查看svn的服务是否启动</p>
 <p>ps -ef|grep svn
 如果没有启动执行 下面命令即可：</p>
-<p>svnserve -d -r /data/svn/repo  &ndash;listen-port=3690 
+<p>svnserve -d -r /data/svn/repo  &ndash;listen-port=3690
 8.开启端口
 /sbin/iptables -I INPUT -p tcp &ndash;dport 3690 -j ACCEPT
 /etc/rc.d/init.d/iptables save
@@ -552,6 +563,7 @@ svn://ip地址</p>
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -561,6 +573,17 @@ svn://ip地址</p>
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -122,9 +122,9 @@
 </ul>
 <p>每一个级别会覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。</p>
 <p>查看git所有配置以及他所在的文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --list --show-origin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --list --show-origin
 </code></pre></div><h3 id="用户信息">用户信息</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 设置全局的用户信息</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 设置全局的用户信息</span>
 $ git config --global user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
 $ git config --global user.email johndoe@example.com
 
@@ -133,7 +133,7 @@ $ git config user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
 $ git config user.email johndoe@example.com
 
 </code></pre></div><h3 id="检查配置信息">检查配置信息</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 检查git配置信息</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 检查git配置信息</span>
 git config --list
 
 <span style="color:#75715e"># git config &lt;key&gt;： 来检查 Git 的某一项配置</span>
@@ -142,7 +142,7 @@ git config user.name
 <span style="color:#75715e"># 检查git配置信息和其配置地址</span>
 git config --list --show-origin
 </code></pre></div><h3 id="获取git仓库">获取Git仓库</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 <span style="color:#75715e"># 在已存在目录中初始化仓库</span>
 <span style="color:#75715e"># 该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干。</span>
 git init
@@ -161,7 +161,7 @@ git clone https://github.com/libgit2/libgit2 mylibgit
 <p>
   <p><img src="/images/lifecycle.png" alt="lifecycle" loading="lazy" /></p>
 </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 <span style="color:#75715e"># 检查当前文件状态</span>
 git status 
 
@@ -192,7 +192,7 @@ git status -short
 <p>要忽略指定模式以外的文件或目录，可以在模式前加上叹号（!）取反。</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 忽略所有的 .a 文件</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 忽略所有的 .a 文件</span>
 *.a
 
 <span style="color:#75715e"># 但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件</span>
@@ -208,11 +208,11 @@ doc/*.txt
 
 <span style="color:#75715e"># 忽略 doc/ 目录及其所有子目录下的 .pdf 文件</span>
 doc/**/*.pdf
-</code></pre></div><p>GitHub 有一个十分详细的针对数十种项目及语言的 .gitignore 文件列表， 你可以在 <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 要查看尚未暂存的文件更新了哪些部分</span>
+</code></pre></div><p>GitHub 有一个十分详细的针对数十种项目及语言的 .gitignore 文件列表， 你可以在 <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 要查看尚未暂存的文件更新了哪些部分</span>
 git diff
 </code></pre></div><h4 id="查看提交历史">查看提交历史</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log
 
 <span style="color:#75715e"># 查看最近2次提交补丁</span>
 git log -p -2
@@ -223,7 +223,7 @@ git log --stat
 <span style="color:#75715e"># </span>
 git log --pretty<span style="color:#f92672">=</span>oneline
 </code></pre></div><h4 id="撤销操作">撤销操作</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 <span style="color:#75715e"># 提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行带有 --amend 选项的提交命令来重新提交</span>
 git commit --amend
 
@@ -242,7 +242,7 @@ git reset --mixed HEAD^
 git reset --hard HEAD^
 </code></pre></div><p>记住，在 Git 中任何 已提交 的东西几乎总是可以恢复的。 甚至那些被删除的分支中的提交或使用 &ndash;amend 选项覆盖的提交也可以恢复 （阅读 数据恢复 了解数据恢复）。 然而，任何你未提交的东西丢失后很可能再也找不到了。</p>
 <h3 id="远程仓库使用">远程仓库使用</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/schacon/ticgit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/schacon/ticgit
 
 cd ticgit
 
@@ -277,7 +277,7 @@ git remote remove paul <span style="color:#75715e"># 移除一个远程仓库</s
 </code></pre></div><h3 id="打标签">打标签</h3>
 <p>像其他版本控制系统（VCS）一样，Git 可以给仓库历史中的某一个提交打上标签，以示重要。 比较有代表性的是人们会使用这个功能来标记发布结点（ v1.0 、 v2.0 等等）</p>
 <h4 id="列出标签">列出标签</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 列出标签</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 列出标签</span>
 git tag
 
 <span style="color:#75715e"># 按照特定的模式查找标签</span>
@@ -286,7 +286,7 @@ git tag -l <span style="color:#e6db74">&#34;v1.8.5*&#34;</span>
 <p>git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）</p>
 <p>轻量标签很像一个不会改变的分支——它只是某个特定提交的引用。</p>
 <p>附注标签是存储在 Git 数据库中的一个完整对象， 它们是可以被校验的，其中包含打标签者的名字、电子邮件地址、日期时间， 此外还有一个标签信息，并且可以使用 GNU Privacy Guard （GPG）签名并验证。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 轻量标签</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 轻量标签</span>
 git tag v1.4-lw
 
 <span style="color:#75715e"># 创建附注标签</span>
@@ -314,13 +314,13 @@ git push origin --delete &lt;tagname&gt;
 <span style="color:#75715e"># 从标签中迁出分支</span>
 git checkout -b version2 v2.0.0
 </code></pre></div><h3 id="别名">别名</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 设置别名</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 设置别名</span>
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
 </code></pre></div><h2 id="git-分支">Git 分支</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 追踪系统中的 #53 问题</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 追踪系统中的 #53 问题</span>
 git checkout -b iss53
 <span style="color:#75715e"># or</span>
 git branch iss53
@@ -362,7 +362,7 @@ git checkout -b test origin/test
 git push -u origin dev:release/caigou_v1.0
 
 </code></pre></div><h4 id="分支管理">分支管理</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 查看分支</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 查看分支</span>
 git branch
 
 <span style="color:#75715e"># 查看每一个分支的最后一次提交</span>
@@ -387,7 +387,7 @@ git branch --no-merged
 <h3 id="在服务器上搭建git">在服务器上搭建Git</h3>
 <h3 id="生成ssh公钥">生成ssh公钥</h3>
 <p>许多 Git 服务器都使用 SSH 公钥进行认证。 为了向 Git 服务器提供 SSH 公钥，如果某系统用户尚未拥有密钥，必须事先为其生成一份。 这个过程在所有操作系统上都是相似的。 首先，你需要确认自己是否已经拥有密钥。 默认情况下，用户的 SSH 密钥存储在其 ~/.ssh 目录下。 进入该目录并列出其中内容，你便可以快速确认自己是否已拥有密钥：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.shh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.shh
 </code></pre></div><h3 id="参考链接">参考链接</h3>
 <ul>
 <li><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">pro git book</a></li>
@@ -468,6 +468,7 @@ git branch --no-merged
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -477,6 +478,17 @@ git branch --no-merged
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -109,7 +109,7 @@
 <h3 id="last-modified-头">Last-Modified 头</h3>
 <p>Last-Modified 头使用时间戳标明页面自上次客户端缓存后是否被修改过。</p>
 <p>通过配置 yii\filters\HttpCache::$lastModified 属性向客户端发送 Last-Modified 头。 该属性的值应该为 PHP callable 类型，返回的是页面修改时的 Unix 时间戳。 该 callable 的参数和返回值应该如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">behaviors</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">behaviors</span>()
 {
     <span style="color:#66d9ef">return</span> [
         [
@@ -126,7 +126,7 @@
 <h3 id="etag-头">ETag 头</h3>
 <p>“Entity Tag”（实体标签，简称 ETag）使用一个哈希值表示页面内容。如果页面被修改过， 哈希值也会随之改变。通过对比客户端的哈希值和服务器端生成的哈希值， 浏览器就能判断页面是否被修改过，进而决定是否应该重新传输内容。</p>
 <p>通过配置 yii\filters\HttpCache::$etagSeed 属性向客户端发送 ETag 头。 该属性的值应该为 PHP callable 类型，返回的是一段种子字符用来生成 ETag 哈希值。 该 callable 的参数和返回值应该如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">behaviors</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">behaviors</span>()
 {
     <span style="color:#66d9ef">return</span> [
         [
@@ -227,6 +227,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -236,6 +237,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

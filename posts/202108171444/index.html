@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -114,7 +118,11 @@
 <p>windows下的php扩展下载地址：http://windows.php.net/downloads/pecl/releases/</p>
 <p>配置如下：</p>
 <p>打开php.ini文件，找到[opcache]</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">; dll地址</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">; dll地址</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#a6e22e">extension</span><span style="color:#f92672">=</span><span style="color:#e6db74">php_opcache.dll</span>
 <span style="color:#75715e">; 开关打开</span>
 <span style="color:#a6e22e">opcache.enable</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
@@ -133,12 +141,20 @@
 </code></pre></div><h3 id="二apc">二、APC</h3>
 <p>Alternative PHP Cache (APC) 是一个开放自由的PHP opcode缓存。它的目标是提供一个自由、 开放，和健全的框架用于缓存和优化PHP的中间代码。</p>
 <ul>
+<<<<<<< HEAD
 <li>下载apc扩展dll，选择你对应的PHP版本: <a href="http://windows.php.net/downloads/pecl/releases/apc/">http://windows.php.net/downloads/pecl/releases/apc/</a></li>
+=======
+<li>下载apc扩展dll，选择你对应的PHP版本: <a href="http://windows.php.net/downloads/pecl/releases/apc/" target="_blank" rel="noopener">http://windows.php.net/downloads/pecl/releases/apc/</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </ul>
 <p>把下载的php_apc.dll放入php的ext扩展目录下。
 打开php.ini文件，</p>
 <p>配置如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[apc]</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[apc]</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#a6e22e">extension</span><span style="color:#f92672">=</span><span style="color:#e6db74">php_apc.dll</span>
 <span style="color:#a6e22e">apc.enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
 <span style="color:#75715e">; 共享内存块的数目</span>
@@ -160,11 +176,19 @@
 </code></pre></div><h3 id="三xcache国产">三、xcache（国产）</h3>
 <p>xcache是一个开源的 opcode 缓存器/优化器。</p>
 <ul>
+<<<<<<< HEAD
 <li>下载xcache，选择对应PHP版本的xcache <a href="http://xcache.lighttpd.net/pub/Releases/">http://xcache.lighttpd.net/pub/Releases/</a></li>
 </ul>
 <p>把php_xcache.dll放到php的ext目录下。</p>
 <p>php.ini配置如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[xcache-common]</span>
+=======
+<li>下载xcache，选择对应PHP版本的xcache <a href="http://xcache.lighttpd.net/pub/Releases/" target="_blank" rel="noopener">http://xcache.lighttpd.net/pub/Releases/</a></li>
+</ul>
+<p>把php_xcache.dll放到php的ext目录下。</p>
+<p>php.ini配置如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[xcache-common]</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#a6e22e">extension</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">php_xcache.dll</span>
 <span style="color:#66d9ef">[xcache.admin]</span>
 <span style="color:#a6e22e">xcache.admin.enable_auth</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">On</span>
@@ -283,6 +307,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -292,6 +317,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -338,7 +374,11 @@
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

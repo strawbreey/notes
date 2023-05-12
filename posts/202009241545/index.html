@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -110,7 +110,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="获取值-getvalue">获取值 getValue()</h3>
 <p>用原生PHP从一个对象、数组、或者包含这两者的一个复杂数据结构中获取数据是非常繁琐的。 你首先得使用 isset 检查 key 是否存在, 然后如果存在你就获取它，如果不存在， 则提供一个默认返回值：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>
 {
     <span style="color:#66d9ef">public</span> $name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Alex&#39;</span>;
 }
@@ -141,7 +141,7 @@ $fullName <span style="color:#f92672">=</span> <span style="color:#a6e22e">Array
 <span style="color:#75715e">// 第三个可选的参数如果没有给定值，则默认为 null，如下例所示：
 </span><span style="color:#75715e"></span>$username <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getValue</span>($comment, <span style="color:#e6db74">&#39;user.username&#39;</span>, <span style="color:#e6db74">&#39;Unknown&#39;</span>);
 </code></pre></div><h3 id="设置值-setvalue">设置值 setValue()</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;key&#39;</span> <span style="color:#f92672">=&gt;</span> [
         <span style="color:#e6db74">&#39;in&#39;</span> <span style="color:#f92672">=&gt;</span> [<span style="color:#e6db74">&#39;k&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;value&#39;</span>]
     ]
@@ -177,11 +177,11 @@ $fullName <span style="color:#f92672">=</span> <span style="color:#a6e22e">Array
 ]
 </code></pre></div><h3 id="删除值-remove">删除值 remove()</h3>
 <p>如果你想获得一个值，然后立即从数组中删除它，你可以使用 remove 方法：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;options&#39;</span> <span style="color:#f92672">=&gt;</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;options&#39;</span> <span style="color:#f92672">=&gt;</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]];
 $type <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">remove</span>($array, <span style="color:#e6db74">&#39;type&#39;</span>);
 </code></pre></div><h3 id="检查键名是否存在-keyexists">检查键名是否存在 keyExists</h3>
 <p>ArrayHelper::keyExists 工作原理和 array_key_exists 差不多，除了 它还可支持大小写不敏感的键名比较</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data1 <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data1 <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;userName&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Alex&#39;</span>,
 ];
 
@@ -194,7 +194,7 @@ $data2 <span style="color:#f92672">=</span> [
 }
 </code></pre></div><h3 id="检索列--getcolumn">检索列  getColumn()</h3>
 <p>通常你要从多行数据或者多个对象构成的数组中获取某列的值，一个普通的例子是获取 id 值列表。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> [
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;123&#39;</span>, <span style="color:#e6db74">&#39;data&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;abc&#39;</span>],
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;345&#39;</span>, <span style="color:#e6db74">&#39;data&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;def&#39;</span>],
 ];
@@ -208,7 +208,7 @@ $ids <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_colu
     <span style="color:#66d9ef">return</span> $element[<span style="color:#e6db74">&#39;id&#39;</span>];
 });
 </code></pre></div><h3 id="重建数组索引-index">重建数组索引 index()</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;123&#39;</span>, <span style="color:#e6db74">&#39;data&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;abc&#39;</span>, <span style="color:#e6db74">&#39;device&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;laptop&#39;</span>],
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;345&#39;</span>, <span style="color:#e6db74">&#39;data&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;def&#39;</span>, <span style="color:#e6db74">&#39;device&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;tablet&#39;</span>],
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;345&#39;</span>, <span style="color:#e6db74">&#39;data&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;hgi&#39;</span>, <span style="color:#e6db74">&#39;device&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;smartphone&#39;</span>],
@@ -229,7 +229,7 @@ $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHe
 </code></pre></div><p>guo</p>
 <h3 id="建立哈希表-map">建立哈希表 map()</h3>
 <p>为了从一个多维数组或者一个对象数组中建立一个映射表（键值对），你可以使用 map 方法。$from 和 $to 参数分别指定了欲构建的映射表的键名和属性名。 根据需要，你可以按照一个分组字段 $group 将映射表进行分组，例如</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array <span style="color:#f92672">=</span> [
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;123&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;aaa&#39;</span>, <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;x&#39;</span>],
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;124&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;bbb&#39;</span>, <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;x&#39;</span>],
     [<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;345&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;ccc&#39;</span>, <span style="color:#e6db74">&#39;class&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;y&#39;</span>],
@@ -247,7 +247,7 @@ $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHe
 $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">map</span>($array, <span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;class&#39;</span>);
 </code></pre></div><h3 id="多维排序">多维排序</h3>
 <p>multisort 方法可用来对嵌套数组或者对象数组进行排序，可按一到多个键名排序，比如</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$data <span style="color:#f92672">=</span> [
     [<span style="color:#e6db74">&#39;age&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">30</span>, <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Alexander&#39;</span>],
     [<span style="color:#e6db74">&#39;age&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">30</span>, <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Brian&#39;</span>],
     [<span style="color:#e6db74">&#39;age&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">19</span>, <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Barney&#39;</span>],
@@ -272,7 +272,7 @@ $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHe
 
 </code></pre></div><h3 id="检测数组类型">检测数组类型</h3>
 <p>想知道一个数组是索引数组还是联合数组很方便，这有个例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 不指定键名的数组
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 不指定键名的数组
 </span><span style="color:#75715e"></span>$indexed <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Qiang&#39;</span>, <span style="color:#e6db74">&#39;Paul&#39;</span>];
 <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">isIndexed</span>($indexed);
 
@@ -280,10 +280,10 @@ $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHe
 </span><span style="color:#75715e"></span>$associative <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;framework&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Yii&#39;</span>, <span style="color:#e6db74">&#39;version&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;2.0&#39;</span>];
 <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">isAssociative</span>($associative);
 </code></pre></div><h3 id="html-编码和解码值">HTML 编码和解码值</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">$encoded = ArrayHelper::htmlEncode($data);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">$encoded = ArrayHelper::htmlEncode($data);
 $decoded = ArrayHelper::htmlDecode($data);
 </code></pre></div><h3 id="合并数组merging-arrays">合并数组（Merging Arrays）</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array1 <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$array1 <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Yii&#39;</span>,
     <span style="color:#e6db74">&#39;version&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;1.1&#39;</span>,
     <span style="color:#e6db74">&#39;ids&#39;</span> <span style="color:#f92672">=&gt;</span> [
@@ -333,7 +333,7 @@ $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHe
     ],
 ]
 </code></pre></div><h3 id="对象转换为数组">对象转换为数组</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$posts <span style="color:#f92672">=</span> <span style="color:#a6e22e">Post</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">limit</span>(<span style="color:#ae81ff">10</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$posts <span style="color:#f92672">=</span> <span style="color:#a6e22e">Post</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">limit</span>(<span style="color:#ae81ff">10</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">all</span>();
 $data <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">toArray</span>($posts, [
     <span style="color:#e6db74">&#39;app\models\Post&#39;</span> <span style="color:#f92672">=&gt;</span> [
         <span style="color:#e6db74">&#39;id&#39;</span>,
@@ -347,7 +347,7 @@ $data <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHelp
     ],
 ]);
 </code></pre></div><h3 id="测试阵列">测试阵列</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// true
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// true
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">isIn</span>(<span style="color:#e6db74">&#39;a&#39;</span>, [<span style="color:#e6db74">&#39;a&#39;</span>]);
 
 <span style="color:#75715e">// true
@@ -360,25 +360,25 @@ $data <span style="color:#f92672">=</span> <span style="color:#a6e22e">ArrayHelp
 <ol>
 <li>二维数组去重</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">array_values</span>(<span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>($array, <span style="color:#a6e22e">key</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">array_values</span>(<span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>($array, <span style="color:#a6e22e">key</span>))
 </code></pre></div><ol start="2">
 <li>数组合并并去重</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  <span style="color:#a6e22e">array_values</span>(<span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>(<span style="color:#a6e22e">array_merge</span>($a, $b), <span style="color:#a6e22e">key</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  <span style="color:#a6e22e">array_values</span>(<span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>(<span style="color:#a6e22e">array_merge</span>($a, $b), <span style="color:#a6e22e">key</span>))
 </code></pre></div><ol start="3">
 <li>数组交集</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// [1,2,3] [2,3,4] =&gt; [2,3]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// [1,2,3] [2,3,4] =&gt; [2,3]
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">array_values</span>(<span style="color:#a6e22e">array_intersect_key</span>(<span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>($a, <span style="color:#a6e22e">key</span>), <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>($b, <span style="color:#a6e22e">key</span>)))
 </code></pre></div><ol start="4">
 <li>数组并集</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// [1,2,3] [2,3,4] =&gt; [1,2,3,4]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// [1,2,3] [2,3,4] =&gt; [1,2,3,4]
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">array_merge</span>($a, $b)
 </code></pre></div><ol start="5">
 <li>数组差集</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// [1,2,3,4] [3,4,5,6] =&gt; [1,2]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// [1,2,3,4] [3,4,5,6] =&gt; [1,2]
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">array_values</span>(<span style="color:#a6e22e">array_diff_key</span>(<span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>($a, <span style="color:#a6e22e">key</span>), <span style="color:#a6e22e">ArrayHelper</span><span style="color:#f92672">::</span><span style="color:#a6e22e">index</span>($b, <span style="color:#a6e22e">key</span>)))
 
 <span style="color:#75715e">// [1,2,3,4] [3,4,5,6] =&gt; [5.6]

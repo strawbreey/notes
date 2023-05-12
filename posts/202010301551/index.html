@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="objectassign">Object.assign</h3>
 <p>Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">source</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> };
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">returnedTarget</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">source</span>);
@@ -123,7 +123,7 @@
 <span style="color:#a6e22e">returnedTarget</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">assign</span>({}, <span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">source</span>);
 
 </code></pre></div><h3 id="objectcreate方法创建一个新对象使用现有的对象来提供新创建的对象的__proto__">Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">isHuman</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
   <span style="color:#a6e22e">printIntroduction</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`My name is </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">. Am I human? </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isHuman</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
@@ -142,7 +142,7 @@
 <span style="color:#75715e">// expected output: &#34;My name is Matthew. Am I human? true&#34;
 </span></code></pre></div><h3 id="objectdefineproperties">Object.defineProperties()</h3>
 <p>方法直接在一个对象上定义新的属性或修改现有属性，并返回该对象。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
 Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a6e22e">obj</span>, {
   <span style="color:#e6db74">&#39;property1&#39;</span><span style="color:#f92672">:</span> {
     <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
@@ -155,7 +155,7 @@ Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a
   <span style="color:#75715e">// etc. etc.
 </span><span style="color:#75715e"></span>});
 </code></pre></div><p>Polyfill</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">defineProperties</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">properties</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">defineProperties</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">properties</span>) {
   <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">convertToDescriptor</span>(<span style="color:#a6e22e">desc</span>) {
 
     <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">hasProperty</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">prop</span>) {
@@ -224,7 +224,7 @@ Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a
 <p>Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。</p>
 <h3 id="objectentries">Object.entries()</h3>
 <p>方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 for&hellip;in 循环遍历该对象时返回的顺序一致（区别在于 for-in 循环还会枚举原型链中的属性）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;somestring&#39;</span>,
   <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span>
 };
@@ -273,7 +273,7 @@ Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a
 </span><span style="color:#75715e"></span>});
 
 </code></pre></div><h3 id="将object转换为map">将Object转换为Map</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#a6e22e">baz</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span> }; 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#a6e22e">baz</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span> }; 
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">obj</span>)
 <span style="color:#75715e">// [[&#39;foo&#39;, &#39;bar&#39;],[&#39;baz&#39;, 42]
@@ -281,7 +281,7 @@ Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
 <span style="color:#75715e">// Map { foo: &#34;bar&#34;, baz: 42 }
 </span></code></pre></div><p>Polyfill</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Object.<span style="color:#a6e22e">entries</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Object.<span style="color:#a6e22e">entries</span>)
   Object.<span style="color:#a6e22e">entries</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>( <span style="color:#a6e22e">obj</span> ){
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ownProps</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>( <span style="color:#a6e22e">obj</span> ),
         <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ownProps</span>.<span style="color:#a6e22e">length</span>,
@@ -293,7 +293,7 @@ Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a
   };
 </code></pre></div><h3 id="objectfreeze">Object.freeze()</h3>
 <p>可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。freeze() 返回和传入的参数相同的对象。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">prop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span>
 };
 
@@ -305,7 +305,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">prop</span>);
 <span style="color:#75715e">// expected output: 42
 </span></code></pre></div><p>例子</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">prop</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {},
   <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar&#39;</span>
@@ -380,7 +380,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 
 <span style="color:#a6e22e">obj1</span>.<span style="color:#a6e22e">internal</span>.<span style="color:#a6e22e">a</span> <span style="color:#75715e">// &#39;aValue&#39;
 </span></code></pre></div><p>deepFreeze</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 深冻结函数.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 深冻结函数.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deepFreeze</span>(<span style="color:#a6e22e">obj</span>) {
 
   <span style="color:#75715e">// 取回定义在obj上的属性名
@@ -409,7 +409,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 </span></code></pre></div><h3 id="objectfromentries">Object.fromEntries()</h3>
 <p>方法把键值对列表转换为一个对象</p>
 <p>一个由该迭代对象条目提供对应属性的新对象。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">entries</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">entries</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
   [<span style="color:#e6db74">&#39;foo&#39;</span>, <span style="color:#e6db74">&#39;bar&#39;</span>],
   [<span style="color:#e6db74">&#39;baz&#39;</span>, <span style="color:#ae81ff">42</span>]
 ]);
@@ -440,7 +440,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 <span style="color:#75715e">// { a: 2, b: 4, c: 6 }
 </span></code></pre></div><h3 id="objectgetownpropertydescriptor">Object.getOwnPropertyDescriptor()</h3>
 <p>返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">property1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span>
 };
 
@@ -453,7 +453,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 <span style="color:#75715e">// expected output: 42
 </span></code></pre></div><h3 id="objectgetownpropertydescriptors">Object.getOwnPropertyDescriptors()</h3>
 <p>获取一个对象的所有自身属性的描述符。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 浅拷贝一个对象
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 浅拷贝一个对象
 </span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">create</span>(
   Object.<span style="color:#a6e22e">getPrototypeOf</span>(<span style="color:#a6e22e">obj</span>), 
   Object.<span style="color:#a6e22e">getOwnPropertyDescriptors</span>(<span style="color:#a6e22e">obj</span>) 
@@ -470,7 +470,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 </span><span style="color:#75715e"></span>}));
 </code></pre></div><h3 id="objectgetownpropertynames">Object.getOwnPropertyNames()</h3>
 <p>返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>];
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyNames</span>(<span style="color:#a6e22e">arr</span>).<span style="color:#a6e22e">sort</span>()); <span style="color:#75715e">// [&#34;0&#34;, &#34;1&#34;, &#34;2&#34;, &#34;length&#34;]
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// 类数组对象
@@ -498,7 +498,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyNames</span>(<span style="color:#a6e22e">my_obj</span>).<span style="color:#a6e22e">sort</span>()); <span style="color:#75715e">// [&#34;foo&#34;, &#34;getFoo&#34;]
 </span></code></pre></div><h3 id="objectis">Object.is()</h3>
 <p>方法判断两个值是否为同一个值。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 语法
 </span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">is</span>(<span style="color:#a6e22e">value1</span>, <span style="color:#a6e22e">value2</span>);
 
 <span style="color:#75715e">// value1 被比较的第一个值。
@@ -518,7 +518,7 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj
 <p>与 == 运算不同。  == 运算符在判断相等前对两边的变量(如果它们不是同一类型) 进行强制转换 (这种行为的结果会将 &quot;&quot; == false 判断为 true), 而 Object.is不会强制转换两边的值。</p>
 <p>与 === 运算也不相同。 === 运算符 (也包括 == 运算符) 将数字 -0 和 +0 视为相等 ，而将Number.NaN 与NaN视为不相等.</p>
 <p>Polyfill</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Object.<span style="color:#a6e22e">is</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Object.<span style="color:#a6e22e">is</span>) {
 Object.<span style="color:#a6e22e">is</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
   <span style="color:#75715e">// SameValue algorithm
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">y</span>) { <span style="color:#75715e">// Steps 1-5, 7-10
@@ -532,7 +532,7 @@ Object.<span style="color:#a6e22e">is</span> <span style="color:#f92672">=</span
 }
 </code></pre></div><h3 id="objectisfrozen">Object.isFrozen()</h3>
 <p>法判断一个对象是否被冻结。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 一个对象默认是可扩展的,所以它也是非冻结的.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 一个对象默认是可扩展的,所以它也是非冻结的.
 </span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">isFrozen</span>({}); <span style="color:#75715e">// === false
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// 一个不可扩展的空对象同时也是一个冻结对象.
@@ -597,7 +597,7 @@ Object.<span style="color:#a6e22e">isFrozen</span>(<span style="color:#a6e22e">f
 </code></pre></div><h3 id="objectissealed">Object.isSealed()</h3>
 <p>方法判断一个对象是否被密封。</p>
 <p>如果这个对象是密封的，则返回 true，否则返回 false。密封对象是指那些不可 扩展 的，且所有自身属性都不可配置且因此不可删除（但不一定是不可写）的对象。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 新建的对象默认不是密封的.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 新建的对象默认不是密封的.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">empty</span> <span style="color:#f92672">=</span> {};
 Object.<span style="color:#a6e22e">isSealed</span>(<span style="color:#a6e22e">empty</span>); <span style="color:#75715e">// === false
 </span><span style="color:#75715e"></span>
@@ -633,7 +633,7 @@ Object.<span style="color:#a6e22e">isFrozen</span>(<span style="color:#a6e22e">s
 </span></code></pre></div><h3 id="objectkeys">Object.keys()</h3>
 <p>方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致 。</p>
 <p>Object.keys 返回一个所有元素为字符串的数组，其元素来自于从给定的object上面可直接枚举的属性。这些属性的顺序与手动遍历该对象属性时的一致。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// simple array
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// simple array
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>];
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">arr</span>)); <span style="color:#75715e">// console: [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;]
 </span><span style="color:#75715e"></span>
@@ -655,7 +655,7 @@ Object.<span style="color:#a6e22e">isFrozen</span>(<span style="color:#a6e22e">s
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">myObj</span>)); <span style="color:#75715e">// console: [&#39;foo&#39;]
 </span></code></pre></div><h3 id="objectpreventextensions方法让一个对象变的不可扩展也就是永远不能再添加新的属性">Object.preventExtensions()方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。</h3>
 <p>如果一个对象可以添加新的属性，则这个对象是可扩展的。Object.preventExtensions()将对象标记为不再可扩展，这样它将永远不会具有它被标记为不可扩展时持有的属性之外的属性。注意，一般来说，不可扩展对象的属性可能仍然可被删除。尝试将新属性添加到不可扩展对象将静默失败或抛出TypeError（最常见的情况是strict mode中，但不排除其他情况）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#75715e">// Object.preventExtensions将原对象变的不可扩展,并且返回原对象.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj2</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">preventExtensions</span>(<span style="color:#a6e22e">obj</span>);
@@ -686,7 +686,7 @@ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e
 </code></pre></div><h3 id="hasownproperty">hasOwnProperty()</h3>
 <p>方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。</p>
 <p>所有继承了 Object 的对象都会继承到 hasOwnProperty 方法。这个方法可以用来检测一个对象是否含有特定的自身属性；和 in 运算符不同，该方法会忽略掉那些从原型链上继承到的属性</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> {};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> {};
 <span style="color:#a6e22e">object1</span>.<span style="color:#a6e22e">property1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
 
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">object1</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;property1&#39;</span>));
@@ -701,7 +701,7 @@ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e
 <h3 id="tostring">toString()</h3>
 <p>方法返回一个表示该对象的字符串。</p>
 <p>每个对象都有一个 toString() 方法，当该对象被表示为一个文本值时，或者一个对象以预期的字符串方式引用时自动调用。默认情况下，toString() 方法被每个 Object 对象继承。如果此方法在自定义对象中未被覆盖，toString() 返回 &ldquo;[object type]&quot;，其中 type 是对象的类型。以下代码说明了这一点：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Dog</span>(<span style="color:#a6e22e">name</span>) {
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
 }
@@ -717,7 +717,7 @@ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e
 </span><span style="color:#75715e"></span>
 </code></pre></div><p>使用 toString() 检测对象类型</p>
 <p>可以通过 toString() 来获取每个对象的类型。为了每个对象都能通过 Object.prototype.toString() 来检测，需要以 Function.prototype.call() 或者 Function.prototype.apply() 的形式来调用，传递要检查的对象作为第一个参数，称为 thisArg。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">toString</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>;
 
 <span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">new</span> Date); <span style="color:#75715e">// [object Date]
@@ -731,7 +731,7 @@ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e
 <p>JavaScript调用valueOf方法将对象转换为原始值。你很少需要自己调用valueOf方法；当遇到要预期的原始值的对象时，JavaScript会自动调用它。</p>
 <p>默认情况下，valueOf方法由Object后面的每个对象继承。 每个内置的核心对象都会覆盖此方法以返回适当的值。如果对象没有原始值，则valueOf将返回对象本身。</p>
 <p>JavaScript的许多内置对象都重写了该函数，以实现更适合自身的功能需要。因此，不同类型对象的valueOf()方法的返回值和返回值类型均可能不同。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Array：返回数组对象本身
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Array：返回数组对象本身
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;ABC&#34;</span>, <span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">12</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>];
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">valueOf</span>() <span style="color:#f92672">===</span> <span style="color:#a6e22e">array</span>);   <span style="color:#75715e">// true
 </span><span style="color:#75715e"></span>
@@ -780,7 +780,7 @@ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">str2</span>.<span style="color:#a6e22e">valueOf</span>() <span style="color:#f92672">===</span> <span style="color:#a6e22e">str2</span> );   <span style="color:#75715e">// false
 </span></code></pre></div><h3 id="objectvalues">Object.values()</h3>
 <p>返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用for&hellip;in循环的顺序相同 ( 区别在于 for-in 循环枚举原型链中的属性 )。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar&#39;</span>, <span style="color:#a6e22e">baz</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span> };
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">obj</span>)); <span style="color:#75715e">// [&#39;bar&#39;, 42]
 </span><span style="color:#75715e"></span>
@@ -876,6 +876,7 @@ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -885,6 +886,17 @@ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

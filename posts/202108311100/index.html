@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -107,7 +111,11 @@
             <h3 id="利用ngzone-runoutsideangular优化">利用ngzone-runOutsideAngular优化</h3>
 <p>Angular依赖<code>NgZone</code>来监听异步操作，并从根部执行变化检测。换句话说，我们代码中的每一个 addEventListener都会触发脏检查。但是如果我们非常明确，有些addEventListener要执行的东西，不会（或者说可以忽略）影响数据结果，不想然他触发脏检查。比如监测scroll，监测鼠标事件等。</p>
 <p>针对这种情况， 我们可以使用zone提供的runOutsideAngular，让这些事件不触发脏检查。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zone</span>.<span style="color:#a6e22e">runOutsideAngular</span>(() <span style="color:#f92672">=&gt;</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zone</span>.<span style="color:#a6e22e">runOutsideAngular</span>(() <span style="color:#f92672">=&gt;</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     window.document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;mousemove&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">bindMouse</span>);
 });
 </code></pre></div>
@@ -186,6 +194,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -195,6 +204,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -241,7 +261,11 @@
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,25 +107,25 @@
             <h2 id="kafka">Kafka</h2>
 <h3 id="快速开始">快速开始</h3>
 <p>下载并解压</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -xzf kafka_2.11-1.0.0.tgz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -xzf kafka_2.11-1.0.0.tgz
 cd kafka_2.11-1.0.0
 </code></pre></div><h3 id="启动服务器">启动服务器</h3>
 <p>Kafka 使用 ZooKeeper 如果你还没有ZooKeeper服务器，你需要先启动一个ZooKeeper服务器。 您可以通过与kafka打包在一起的便捷脚本来快速简单地</p>
 <p>创建一个单节点ZooKeeper实例。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/zookeeper-server-start.sh config/zookeeper.properties
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/zookeeper-server-start.sh config/zookeeper.properties
 </code></pre></div><p>现在启动Kafka服务器：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> bin/kafka-server-start.sh config/server.properties
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> bin/kafka-server-start.sh config/server.properties
 </code></pre></div><p>创建一个 topic</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">1</span> --topic test
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">1</span> --topic test
 </code></pre></div><p>现在我们可以运行list（列表）命令来查看这个topic：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-topics.sh --list --zookeeper localhost:2181
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-topics.sh --list --zookeeper localhost:2181
 </code></pre></div><p>发送一些消息</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 </code></pre></div><ol start="5">
 <li>启动一个 consumer</li>
 </ol>
 <p>Kafka 还有一个命令行consumer（消费者），将消息转储到标准输出。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 </code></pre></div>
           </div>
         </div>
@@ -202,6 +202,7 @@ cd kafka_2.11-1.0.0
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -211,6 +212,17 @@ cd kafka_2.11-1.0.0
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

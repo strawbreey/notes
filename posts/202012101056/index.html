@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,11 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h2 id="介绍">介绍</h2>
 <p>Docker Desktop 是 Docker 在 Windows 10 和 macOS 操作系统上的官方安装方式，这个方法依然属于先在虚拟机中安装 Linux 然后再安装 Docker 的方法。</p>
+<<<<<<< HEAD
 <p>Docker Desktop 官方下载地址： <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">https://hub.docker.com/editions/community/docker-ce-desktop-windows</a></p>
+=======
+<p>Docker Desktop 官方下载地址： <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">https://hub.docker.com/editions/community/docker-ce-desktop-windows</a></p>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <h3 id="window-安装">window 安装</h3>
 <ol>
 <li>
@@ -129,7 +133,11 @@ Hyper-V 是微软开发的虚拟机，类似于 VMWare 或 VirtualBox，仅适�
 <p>设置代理  settings -&gt; Docker Engine</p>
 </li>
 </ol>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   <span style="color:#f92672">&#34;registry-mirrors&#34;</span>: [
     <span style="color:#e6db74">&#34;https://mirrors.tencent.com&#34;</span>,
     <span style="color:#e6db74">&#34;https://hub-mirror.c.163.com/&#34;</span>,
@@ -148,32 +156,56 @@ Hyper-V 是微软开发的虚拟机，类似于 VMWare 或 VirtualBox，仅适�
 <li>查看系统要求, 确认使用linux 版本</li>
 </ol>
 <p>Docker 要求 CentOS 系统的内核版本高于 3.10, 查看CentOS的内核版本。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># linux 查看系统信息</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># linux 查看系统信息</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 uname -a 
 
 <span style="color:#75715e"># cat /etc/tlinux-release</span>
 </code></pre></div><ol start="2">
 <li>删除旧版本</li>
 </ol>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum remove docker  docker-common docker-selinux docker-engine
 </code></pre></div><ol start="3">
 <li>安装需要的软件包</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum remove docker  docker-common docker-selinux docker-engine
+</code></pre></div><ol start="3">
+<li>安装需要的软件包</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 </code></pre></div><ol start="4">
 <li>设置Docker yum源</li>
 </ol>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div><ol start="5">
 <li>查看所有仓库中所有docker版本</li>
 </ol>
 <p>可以查看所有仓库中所有docker版本,并选择特定的版本安装。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum list docker-ce --showduplicates | sort -r
 </code></pre></div><ol start="6">
 <li>安装docker</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 由于repo中默认只开启stable仓库，故这里安装的是最新稳定版本。</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum list docker-ce --showduplicates | sort -r
+</code></pre></div><ol start="6">
+<li>安装docker</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 由于repo中默认只开启stable仓库，故这里安装的是最新稳定版本。</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 sudo yum install docker-ce
 
 <span style="color:#75715e"># or</span>
@@ -184,7 +216,11 @@ sudo yum install docker-ce-18.06.1.ce
 </code></pre></div><ol start="7">
 <li>启动</li>
 </ol>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 设置为开机启动</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 设置为开机启动</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 systemctl enable docker
 
 <span style="color:#75715e"># 开启</span>
@@ -279,6 +315,7 @@ systemctl restart docker
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -288,6 +325,17 @@ systemctl restart docker
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

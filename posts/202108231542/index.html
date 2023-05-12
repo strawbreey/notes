@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -106,6 +110,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="urlencode">urlencode</h3>
 <p>根据官方文档：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">urlencode</span>(<span style="color:#a6e22e">string</span>  $str )
 </code></pre></div><p>此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。</p>
 <p>返回字符串，此字符串中除了<code>-_.</code> 之外的所有非字母数字字符都将被替换成百分号<code>%</code>后跟两位十六进制数，空格则编码为加号<code>+</code>。</p>
@@ -114,6 +119,16 @@
 <p>解决方法：</p>
 <p>使用rawurlencode进行编码</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">rawurlencode</span>(<span style="color:#a6e22e">string</span>  $str )
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">urlencode</span>(<span style="color:#a6e22e">string</span>  $str )
+</code></pre></div><p>此函数便于将字符串编码并将其用于 URL 的请求部分，同时它还便于将变量传递给下一页。</p>
+<p>返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号（%）后跟两位十六进制数，空格则编码为加号（+）。</p>
+<p>此编码与 WWW表单 POST 数据的编码方式是一样的，同时与application/x-www-form-urlencoded的媒体类型编码方式一样。</p>
+<p>由于历史原因，此编码在将空格编码为加号（+）方面与RFC1738 编码不同。</p>
+<p>解决方法：</p>
+<p>使用rawurlencode进行编码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">rawurlencode</span>(<span style="color:#a6e22e">string</span>  $str )
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div><p>根据 RFC 3986编码指定的字符。</p>
 <p>返回字符串，此字符串中除了-_. 之外的所有非字母数字字符都将被替换成百分号（%）后跟两位十六进制数。这是在RFC 3986 中描述的编码，是为了保护原义字符以免其被解释为特殊的URL定界符，同时保护 URL格式以免其被传输媒体（像一些邮件系统）使用字符转换时弄乱。</p>
 <h3 id="特殊字符">特殊字符</h3>
@@ -121,6 +136,7 @@
 然后从网上找到了原因：URL参数中是不能出现+ % # &amp; = ? /等特殊字符的，因为这些字符在URL中有默认的含义，比如&amp;在URL中表示参数间的分隔符，如果不将&amp;转义而直接放在GET请求的参数里，后端的Tomcat就会以这个&amp;为分隔符将参数拆分掉。
 如果要传递这些特殊字符给后端，需要将它们转义。转码的格式为：%加字符的ASCII码，即一个百分号%，后面跟对应字符的ASCII（16进制）码值。例如 +号的编码值是&quot;%2B&quot;。</p>
 <p>下表中列出了一些URL特殊符号及编码：</p>
+<<<<<<< HEAD
 <pre><code>特殊字符             在URL中的默认含义               转义码
 #                   表示书签                        %23
 &amp;                   URL 中指定的参数间的分隔符       %26
@@ -134,6 +150,20 @@
 </code></pre><h3 id="参考资料">参考资料</h3>
 <ul>
 <li><a href="https://www.php.net/manual/zh/function.urlencode.php">https://www.php.net/manual/zh/function.urlencode.php</a></li>
+=======
+<pre><code>特殊字符	         在URL中的默认含义	            转义码
++	                URL 中+号表示空格	           %2B
+空格		                                       %20
+/	                分隔目录和子目录	            %2F
+?	                分隔实际的 URL 和参数	        %3F
+%	                指定特殊字符	                %25
+#	                表示书签	                    %23
+&amp;	                URL 中指定的参数间的分隔符	     %26
+=	                URL 中指定参数的值	            %3D
+</code></pre><h3 id="参考资料">参考资料</h3>
+<ul>
+<li><a href="https://www.php.net/manual/zh/function.urlencode.php" target="_blank" rel="noopener">https://www.php.net/manual/zh/function.urlencode.php</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </ul>
 
           </div>
@@ -211,6 +241,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -220,6 +251,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -266,7 +308,11 @@
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

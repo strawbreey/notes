@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -107,7 +107,7 @@
             <h3 id="什么是json-schema">什么是Json Schema？</h3>
 <p>以一个例子来说明</p>
 <p>假设有一个web api，接受一个json请求，返回某个用户在某个城市关系最近的若干个好友。一个请求的例子如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;city&#34;</span> : <span style="color:#e6db74">&#34;chicago&#34;</span>, 
     <span style="color:#f92672">&#34;number&#34;</span>: <span style="color:#ae81ff">20</span>, 
     <span style="color:#f92672">&#34;user&#34;</span> : {
@@ -117,7 +117,7 @@
 }
 </code></pre></div><p>在上面的例子中，web api要求提供city，number，user三个成员，其中city是字符串，number是数值，user是一个对象，又包含了name和age两个成员。</p>
 <p>对于api来说，需要定义什么样的请求合法，即什么样的Json对于api来说是合法的输入。这个规范可以通过Json Schema来描述，对应的Json Schema如下。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ 
     <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
     <span style="color:#f92672">&#34;properties&#34;</span>: {
         <span style="color:#f92672">&#34;city&#34;</span>: { <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span> },
@@ -309,7 +309,7 @@ Json对象是最常见的Json数据类型，合法的数据可以是</p>
 <p>4.2.1 成员的Schema
 关键字：properties</p>
 <p>规定对象各成原所应遵循的Schema。</p>
-<p>{ 
+<p>{
 &ldquo;type&rdquo;: &ldquo;object&rdquo;,  <br>
 &ldquo;properties&rdquo;: {   <br>
 &ldquo;name&rdquo;: {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
@@ -348,7 +348,7 @@ properties关键字的内容是一个key/value结构的字典，其key对应Json
 <p>4.2.3 必须出现的成员
 关键字：required</p>
 <p>规定哪些对象成员是必须的。</p>
-<p>{ 
+<p>{
 &ldquo;type&rdquo;: &ldquo;object&rdquo;,  <br>
 &ldquo;properties&rdquo;: {   <br>
 &ldquo;name&rdquo;: {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
@@ -379,7 +379,7 @@ dependencies也是一个字典结构，key是Json数据的属性名，value是�
 <p>4.2.5 是否允许额外属性
 关键字：additionaProperties</p>
 <p>规定object类型是否允许出现不在properties中规定的属性，只能取true/false。</p>
-<p>{ 
+<p>{
 &ldquo;type&rdquo;: &ldquo;object&rdquo;,  <br>
 &ldquo;properties&rdquo;: {   <br>
 &ldquo;name&rdquo;: {&ldquo;type&rdquo; : &ldquo;string&rdquo;},
@@ -471,7 +471,7 @@ Schema2,
 <p>6.1 定义
 关键字：无</p>
 <p>定义一个类型，并不需要特殊的关键字。通常的习惯是在root节点的definations下面，定义需要多次引用的schema。definations是一个json对象，key是想要定义的“类型”的名称，value是一个json schema。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;definitions&#34;</span>: {
         <span style="color:#f92672">&#34;address&#34;</span>: {
             <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
@@ -493,7 +493,7 @@ Schema2,
 <p>6.2 $id
 关键字：$id</p>
 <p>可以在上面的定义中加入id属性，这样可以通过id属性的值对该schema进行引用，而不需要完整的路径。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#e6db74">&#34;address&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#e6db74">&#34;address&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
             <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
             <span style="color:#f92672">&#34;$id&#34;</span> : <span style="color:#e6db74">&#34;address&#34;</span>,
             <span style="color:#f92672">&#34;properties&#34;</span>: {
@@ -507,14 +507,14 @@ Schema2,
 关键字：$ref</p>
 <p>关键字$ref可以用在任何需要使用json schema的地方。如上例中，billing_address的value应该是一个json schema，通过一个$ref替代了。</p>
 <p>$ref的value，是该schema的定义在json中的路径，以#开头代表根节点。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;properties&#34;</span>: {
         <span style="color:#f92672">&#34;billing_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#/definitions/address&#34;</span> },
         <span style="color:#f92672">&#34;shipping_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#/definitions/address&#34;</span> }
     }
 }
 </code></pre></div><p>如果schema定义了$id属性，也可以通过该属性的值进行引用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;properties&#34;</span>: {
         <span style="color:#f92672">&#34;billing_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#address&#34;</span> },
         <span style="color:#f92672">&#34;shipping_address&#34;</span>: { <span style="color:#f92672">&#34;$ref&#34;</span>: <span style="color:#e6db74">&#34;#address&#34;</span> }
@@ -527,14 +527,14 @@ Schema2,
 <p>7.1 enum
 关键字：enum</p>
 <p>可以在任何json schema中出现，其value是一个list，表示json数据的取值只能是list中的某个。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
     <span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;red&#34;</span>, <span style="color:#e6db74">&#34;amber&#34;</span>, <span style="color:#e6db74">&#34;green&#34;</span>]
 }
 </code></pre></div><p>上例的schema规定数据只能是一个string，且只能是&quot;red&rdquo;、&ldquo;amber&rdquo;、&ldquo;green&quot;之一。</p>
 <p>7.2 metadata</p>
 <p>关键字：title，description，default，example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;Match anything&#34;</span>,
     <span style="color:#f92672">&#34;description&#34;</span> : <span style="color:#e6db74">&#34;This is a schema that matches anything.&#34;</span>,
     <span style="color:#f92672">&#34;default&#34;</span> : <span style="color:#e6db74">&#34;Default value&#34;</span>,
@@ -546,7 +546,7 @@ Schema2,
 </code></pre></div><p>只作为描述作用，不影响对数据的校验。</p>
 <h3 id="参考资料">参考资料</h3>
 <ul>
-<li><a href="https://json-schema.org/">https://json-schema.org/</a></li>
+<li><a href="https://json-schema.org/" target="_blank" rel="noopener">https://json-schema.org/</a></li>
 </ul>
 
           </div>
@@ -624,6 +624,7 @@ Schema2,
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -633,6 +634,17 @@ Schema2,
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

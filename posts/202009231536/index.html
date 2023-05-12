@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -109,7 +109,7 @@
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h4 id="boolval--获取变量的布尔值">boolval — 获取变量的布尔值</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;0:        &#39;</span><span style="color:#f92672">.</span>(<span style="color:#a6e22e">boolval</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;false&#39;</span>)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;0:        &#39;</span><span style="color:#f92672">.</span>(<span style="color:#a6e22e">boolval</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;false&#39;</span>)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
 <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;42:       &#39;</span><span style="color:#f92672">.</span>(<span style="color:#a6e22e">boolval</span>(<span style="color:#ae81ff">42</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;false&#39;</span>)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
 <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;0.0:      &#39;</span><span style="color:#f92672">.</span>(<span style="color:#a6e22e">boolval</span>(<span style="color:#ae81ff">0.0</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;false&#39;</span>)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
 <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;4.2:      &#39;</span><span style="color:#f92672">.</span>(<span style="color:#a6e22e">boolval</span>(<span style="color:#ae81ff">4.2</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;false&#39;</span>)<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
@@ -127,11 +127,11 @@
 <p>在 PHP 5.5 之前，empty() 仅支持变量；任何其他东西将会导致一个解析错误。换言之，下列代码不会生效： empty(trim($name))。 作为替代，应该使用trim($name) == false.</p>
 <p>没有警告会产生，哪怕变量并不存在。 这意味着 empty() 本质上与 !isset($var) || $var == false 等价。</p>
 <h4 id="floatval--获取变量的浮点值">floatval — 获取变量的浮点值</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$var <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;122.34343The&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$var <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;122.34343The&#39;</span>;
 $float_value_of_var <span style="color:#f92672">=</span> <span style="color:#a6e22e">floatval</span> ($var);
 <span style="color:#66d9ef">print</span> $float_value_of_var; <span style="color:#75715e">// 打印出 122.34343 类型转换
 </span></code></pre></div><h4 id="get_defined_vars--返回由所有已定义变量所组成的数组">get_defined_vars — 返回由所有已定义变量所组成的数组</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$b <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$b <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>);
 
 $arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_defined_vars</span>();
 

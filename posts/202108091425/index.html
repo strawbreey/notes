@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -107,11 +111,19 @@
             <h2 id="活动记录active-record">活动记录（Active Record</h2>
 <p>Active Record 提供了一个面向对象的接口， 用以访问和操作数据库中的数据。Active Record 类与数据库表关联， Active Record 实例对应于该表的一行， Active Record 实例的属性表示该行中特定列的值。 您可以访问 Active Record 属性并调用 Active Record 方法来访问和操作存储在数据库表中的数据， 而不用编写原始 SQL 语句。</p>
 <p>例如，假定 Customer Active Record 类关联着 customer 表， 且该类的 name 属性代表 customer 表的 name 列。 你可以写以下代码来哉 customer 表里插入一行新的记录：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$customer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Customer</span>();
 $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Qiang&#39;</span>;
 $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
 </code></pre></div><p>对于 MySQL，上面的代码和使用下面的原生 SQL 语句是等效的，但显然前者更直观， 更不易出错，并且面对不同的数据库系统（DBMS, Database Management System）时更不容易产生兼容性问题。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createCommand</span>(<span style="color:#e6db74">&#39;INSERT INTO `customer` (`name`) VALUES (:name)&#39;</span>, [
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$customer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Customer</span>();
+$customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Qiang&#39;</span>;
+$customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+</code></pre></div><p>对于 MySQL，上面的代码和使用下面的原生 SQL 语句是等效的，但显然前者更直观， 更不易出错，并且面对不同的数据库系统（DBMS, Database Management System）时更不容易产生兼容性问题。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$db<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createCommand</span>(<span style="color:#e6db74">&#39;INSERT INTO `customer` (`name`) VALUES (:name)&#39;</span>, [
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     <span style="color:#e6db74">&#39;:name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Qiang&#39;</span>,
 ])<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">execute</span>();
 </code></pre></div><p>Yii 为以下关系数据库提供 Active Record 支持：</p>
@@ -136,7 +148,11 @@ $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">sav
 <p>此外，tablePrefix 表前缀也会起作用。例如，如果 tablePrefix 表前缀是 tbl_，Customer 的类名将转换成 tbl_customer 表名，OrderItem 转换成 tbl_order_item。</p>
 <p>如果你定义的表名是 <code>%TableName</code>，百分比字符 % 会被替换成表前缀。 例如，<code>%post</code> 会变成 <code>tbl_post</code>。表名两边的括号会被 SQL 查询引用 处理。</p>
 <p>下面的例子中，我们给 customer 数据库表定义叫 Customer 的 Active Record 类。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">app\models</span>;
 
 <span style="color:#66d9ef">use</span> <span style="color:#a6e22e">yii\db\ActiveRecord</span>;
@@ -170,7 +186,11 @@ Active Record 实例称为模型。因此, 我们通常将 Active Record 类 放
 ],
 ];
 如果你要用不同的数据库连接，而不仅仅是 db 组件， 你可以重写 getDb() 方法。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ActiveRecord</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ActiveRecord</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 {
     <span style="color:#75715e">// ...
 </span><span style="color:#75715e"></span>
@@ -187,7 +207,11 @@ Active Record 实例称为模型。因此, 我们通常将 Active Record 类 放
 调用查询生成器的查询方法来取出数据到 Active Record 实例中。
 正如你看到的，是不是跟查询生成器的步骤差不多。 唯一有区别的地方在于你用 yii\db\ActiveRecord::find() 去获得一个新的查询生成器对象，这个对象是 yii\db\ActiveQuery， 而不是使用 new 操作符创建一个查询生成器对象。</p>
 <p>下面是一些例子，介绍如何使用 Active Query 查询数据：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 返回 ID 为 123 的客户：
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 返回 ID 为 123 的客户：
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e">// SELECT * FROM `customer` WHERE `id` = 123
 </span><span style="color:#75715e"></span>$customer <span style="color:#f92672">=</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()
     <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>([<span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">123</span>])
@@ -221,7 +245,11 @@ yii\db\ActiveRecord::findAll()：返回一个 Active Record 实例的数据，�
 标量值的数组：这数组里的值都当作要查询的主键的值。
 关联数组：键值是表的列名，元素值是相应的要查询的条件值。 可以到 哈希格式 查看更多信息。
 如下代码描述如何使用这些方法：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 返回 id 为 123 的客户 
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 返回 id 为 123 的客户 
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e">// SELECT * FROM `customer` WHERE `id` = 123
 </span><span style="color:#75715e"></span>$customer <span style="color:#f92672">=</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOne</span>(<span style="color:#ae81ff">123</span>);
 
@@ -243,7 +271,11 @@ yii\db\ActiveRecord::findAll()：返回一个 Active Record 实例的数据，�
 ]);
 
 </code></pre></div><p>警告： 如果你需要将用户输入传递给这些方法，请确保输入值是标量或者是 数组条件，确保数组结构不能被外部所改变：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// yii\web\Controller 确保了 $id 是标量
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// yii\web\Controller 确保了 $id 是标量
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">actionView</span>($id)
 {
     $model <span style="color:#f92672">=</span> <span style="color:#a6e22e">Post</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOne</span>($id);
@@ -264,7 +296,11 @@ $customers = Customer::findBySql($sql, [':status' =&gt; Customer::STATUS_INACTIV
 不要在 findBySql() 方法后加其他查询方法了， 多余的查询方法都会被忽略。</p>
 <h3 id="访问数据accessing-data">访问数据（Accessing Data）</h3>
 <p>如上所述，从数据库返回的数据被填充到 Active Record 实例中， 查询结果的每一行对应于单个 Active Record 实例。 您可以通过 Active Record 实例的属性来访问列值，例如，</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// &#34;id&#34; 和 &#34;email&#34; 是 &#34;customer&#34; 表中的列名
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// &#34;id&#34; 和 &#34;email&#34; 是 &#34;customer&#34; 表中的列名
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span>$customer <span style="color:#f92672">=</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOne</span>(<span style="color:#ae81ff">123</span>);
 $id <span style="color:#f92672">=</span> $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span>;
 $email <span style="color:#f92672">=</span> $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">email</span>;
@@ -272,7 +308,11 @@ $email <span style="color:#f92672">=</span> $customer<span style="color:#f92672"
 <p>由于 Active Record 的属性以表的列名命名，可能你会发现你正在编写像这样的 PHP 代码： $customer-&gt;first_name，如果你的表的列名是使用下划线分隔的，那么属性名中的单词 以这种方式命名。 如果您担心代码风格一致性的问题，那么你应当重命名相应的表列名 （例如使用骆驼拼写法）。</p>
 <h4 id="数据转换data-transformation">数据转换（Data Transformation）</h4>
 <p>常常遇到，要输入或显示的数据是一种格式，而要将其存储在数据库中是另一种格式。 例如，在数据库中，您将客户的生日存储为 UNIX 时间戳（虽然这不是一个很好的设计）， 而在大多数情况下，你想以字符串 &lsquo;YYYY/MM/DD&rsquo; 的格式处理生日数据。 为了实现这一目标，您可以在 Customer 中定义 数据转换 方法 定义 Active Record 类如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ActiveRecord</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ActiveRecord</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 {
     <span style="color:#75715e">// ...
 </span><span style="color:#75715e"></span>
@@ -290,7 +330,11 @@ $email <span style="color:#f92672">=</span> $customer<span style="color:#f92672"
 <p>提示： 上述示例显示了以不同格式转换数据的通用方法。如果你正在使用 日期值，您可以使用 DateValidator 和 yii\jui\DatePicker 来操作， 这将更易用，更强大。</p>
 <h4 id="以数组形式获取数据retrieving-data-in-arrays">以数组形式获取数据（Retrieving Data in Arrays）</h4>
 <p>通过 Active Record 对象获取数据十分方便灵活，与此同时，当你需要返回大量的数据的时候， 这样的做法并不令人满意，因为这将导致大量内存占用。在这种情况下，您可以 在查询方法前调用 asArray() 方法，来获取 PHP 数组形式的结果：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 返回所有客户
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 返回所有客户
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e">// 每个客户返回一个关联数组
 </span><span style="color:#75715e"></span>$customers <span style="color:#f92672">=</span> <span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()
     <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">asArray</span>()
@@ -298,7 +342,11 @@ $email <span style="color:#f92672">=</span> $customer<span style="color:#f92672"
 </code></pre></div><p>提示： 虽然这种方法可以节省内存并提高性能，但它更靠近较低的 DB 抽象层 你将失去大部分的 Active Record 提供的功能。 一个非常重要的区别在于列值的数据类型。 当您在 Active Record 实例中返回数据时，列值将根据实际列类型，自动类型转换； 然而，当您以数组返回数据时，列值将为 字符串（因为它们是没有处理过的 PDO 的结果），不管它们的实际列是什么类型。</p>
 <h4 id="批量获取数据retrieving-data-in-batches">批量获取数据（Retrieving Data in Batches）</h4>
 <p>在 查询生成器 中，我们已经解释说可以使用 批处理查询 来最小化你的内存使用， 每当从数据库查询大量数据。你可以在 Active Record 中使用同样的技巧。例如，</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 每次获取 10 条客户数据
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 每次获取 10 条客户数据
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">foreach</span> (<span style="color:#a6e22e">Customer</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">batch</span>(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">as</span> $customers) {
     <span style="color:#75715e">// $customers 是个最多拥有 10 条数据的数组
 </span><span style="color:#75715e"></span>}
@@ -318,7 +366,11 @@ $email <span style="color:#f92672">=</span> $customer<span style="color:#f92672"
 将新值赋给 Active Record 的属性
 调用 yii\db\ActiveRecord::save() 保存数据到数据库中。
 例如，</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 插入新记录
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 插入新记录
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span>$customer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Customer</span>();
 $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;James&#39;</span>;
 $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;james@example.com&#39;</span>;
@@ -331,7 +383,11 @@ $customer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">sav
 
 </code></pre></div><p>save() 方法可能插入或者更新表的记录，这取决于 Active Record 实例的状态。 如果实例通过 new 操作符实例化，调用 save() 方法将插入新记录； 如果实例是一个查询方法的结果，调用 save() 方法 将更新这个实例对应的表记录行。</p>
 <p>你可以通过检查 Active Record 实例的 isNewRecord 属性值来区分这两个状态。 此属性也被使用在 save() 方法内部， 代码如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">save</span>($runValidation <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>, $attributeNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>)
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">save</span>($runValidation <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>, $attributeNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>)
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 {
     <span style="color:#66d9ef">if</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getIsNewRecord</span>()) {
         <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">insert</span>($runValidation, $attributeNames);
@@ -706,7 +762,11 @@ $orders = Order::find()-&gt;select([&lsquo;id&rsquo;, &lsquo;amount&rsquo;, &lsq
 <p>// SELECT <code>customer</code>.* FROM <code>customer</code>
 // LEFT JOIN <code>order</code> ON <code>order</code>.<code>customer_id</code> = <code>customer</code>.<code>id</code>
 // WHERE <code>order</code>.<code>status</code> = 1
+<<<<<<< HEAD
 // 
+=======
+//
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 // SELECT * FROM <code>order</code> WHERE <code>customer_id</code> IN (&hellip;)
 $customers = Customer::find()
 -&gt;select(&lsquo;customer.*')
@@ -733,8 +793,13 @@ $query-&gt;andWhere(['&gt;&rsquo;, &lsquo;subtotal&rsquo;, 100]);
 -&gt;all();
 有时，当连接两个表时，你可能需要在 JOIN 查询的 ON 部分中指定一些额外的条件。 这可以通过调用 yii\db\ActiveQuery::onCondition() 方法来完成，如下所示：</p>
 <p>// SELECT <code>customer</code>.* FROM <code>customer</code>
+<<<<<<< HEAD
 // LEFT JOIN <code>order</code> ON <code>order</code>.<code>customer_id</code> = <code>customer</code>.<code>id</code> AND <code>order</code>.<code>status</code> = 1 
 // 
+=======
+// LEFT JOIN <code>order</code> ON <code>order</code>.<code>customer_id</code> = <code>customer</code>.<code>id</code> AND <code>order</code>.<code>status</code> = 1
+//
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 // SELECT * FROM <code>order</code> WHERE <code>customer_id</code> IN (&hellip;)
 $customers = Customer::find()-&gt;joinWith([
 &lsquo;orders&rsquo; =&gt; function ($query) {
@@ -745,7 +810,11 @@ $query-&gt;onCondition([&lsquo;order.status&rsquo; =&gt; Order::STATUS_ACTIVE]);
 <p>提示： 当通过 onCondition() 修改 yii\db\ActiveQuery 时， 如果查询涉及到 JOIN 查询，那么条件将被放在 ON 部分。如果查询不涉及 JOIN ，条件将自动附加到查询的 WHERE 部分。 因此，它可以只包含 包含了关联表的列 的条件。（译者注：意思是 onCondition() 中可以只写关联表的列，主表的列写不写都行）</p>
 <p>关联表别名（Relation table aliases）
 如前所述，当在查询中使用 JOIN 时，我们需要消除列名的歧义。因此通常为一张表定义 一个别名。可以通过以下列方式自定义关联查询来设置关联查询的别名：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">joinWith</span>([
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">joinWith</span>([
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     <span style="color:#e6db74">&#39;orders&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($q) {
         $q<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">from</span>([<span style="color:#e6db74">&#39;o&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Order</span><span style="color:#f92672">::</span><span style="color:#a6e22e">tableName</span>()]);
     },
@@ -830,7 +899,11 @@ $customer-&gt;unlink(&lsquo;orders&rsquo;, $customer-&gt;orders[0]);
 <p>当关联关系中有连接表时，调用 unlink() 时， 如果 $delete 参数是 true 的话，将导致 连接表中的外键或相应的行被删除。</p>
 <p>跨数据库关联（Cross-Database Relations）
 Active Record 允许您在不同数据库驱动的 Active Record 类之间声明关联关系。 这些数据库可以是不同的类型（例如 MySQL 和 PostgreSQL ，或是 MS SQL 和 MongoDB），它们也可以运行在 不同的服务器上。你可以使用相同的语法来执行关联查询。例如，</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// Customer 对应的表是关系数据库中（比如 MySQL）的 &#34;customer&#34; 表
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// Customer 对应的表是关系数据库中（比如 MySQL）的 &#34;customer&#34; 表
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\yii\db\ActiveRecord</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tableName</span>()
@@ -878,7 +951,11 @@ return new CommentQuery(get_called_class());
 }
 现在，对于 Comment 类，不管你执行查询（比如 find()、findOne()），还是定义一个关联（比如 hasOne()）， 你都将调用到 CommentQuery 实例，而不再是 ActiveQuery 实例。</p>
 <p>现在你可以定义 CommentQuery 类了，发挥你的奇技淫巧，以改善查询构建体验。例如，</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// file CommentQuery.php
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// file CommentQuery.php
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">app\models</span>;
 
 <span style="color:#66d9ef">use</span> <span style="color:#a6e22e">yii\db\ActiveQuery</span>;
@@ -1150,6 +1227,7 @@ $customer-&gt;ordersCount; // 从延迟加载的关联中，输出聚合数据</
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -1159,6 +1237,17 @@ $customer-&gt;ordersCount; // 从延迟加载的关联中，输出聚合数据</
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -1205,7 +1294,11 @@ $customer-&gt;ordersCount; // 从延迟加载的关联中，输出聚合数据</
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

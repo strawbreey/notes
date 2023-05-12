@@ -9,7 +9,11 @@
     <managingEditor>strawbreey@qq.com (strawbreey)</managingEditor>
     <webMaster>strawbreey@qq.com (strawbreey)</webMaster>
     <copyright>© 2021 &lt;a href=&#34;https://github.com/miiiku/hugo-theme-kagome&#34;&gt;kagome&lt;/a&gt;.</copyright>
+<<<<<<< HEAD
     <lastBuildDate>Mon, 27 Sep 2021 10:35:22 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Thu, 09 Sep 2021 10:32:02 +0800</lastBuildDate><atom:link href="https://note.strawbreey.com/posts/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     <item>
       <title>Gin Start</title>
       <link>https://note.strawbreey.com/posts/202107261428/</link>
@@ -20,6 +24,7 @@
     </item>
     
     <item>
+<<<<<<< HEAD
       <title>Go Strings</title>
       <link>https://note.strawbreey.com/posts/202109271035/</link>
       <pubDate>Mon, 27 Sep 2021 10:35:22 +0800</pubDate>
@@ -128,6 +133,8 @@
     </item>
     
     <item>
+=======
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       <title>Redis Key</title>
       <link>https://note.strawbreey.com/posts/202109091032/</link>
       <pubDate>Thu, 09 Sep 2021 10:32:02 +0800</pubDate>
@@ -187,7 +194,11 @@
       <pubDate>Tue, 31 Aug 2021 11:44:00 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108311144/</guid>
+<<<<<<< HEAD
       <description>Content-Type Content-Type 实体头部用于指示资源的 MIME 类型 media type 。 在响应中，Content-Type标头告诉客户端实际返回的内容的内容类型。 浏览器会在某些情况下进行MI</description>
+=======
+      <description>Content-Type Content-Type 实体头部用于指示资源的MIME类型 media type 。 在响应中，Content-Type标头告诉客户端实际返回的内容的内容类型。浏览器会在某些情况下进</description>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     </item>
     
     <item>
@@ -268,7 +279,11 @@
       <pubDate>Tue, 24 Aug 2021 17:44:01 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108241744/</guid>
+<<<<<<< HEAD
       <description>Webpack Bundle Analyzer (分析代码) 对于 Web app 来说，高性能总是最高优先级，对于 Angular 也不例外。但是随着应用复杂度的不断增长，我们如何才能知道哪些内容打包到了应用中呢</description>
+=======
+      <description>Webpack Bundle Analyzer 对于 Web app 来说，高性能总是最高优先级，对于 Angular 也不例外。但是随着应用复杂度的不断增长，我们如何才能知道哪些内容打包到了应用中呢？如何跟踪包</description>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     </item>
     
     <item>
@@ -277,7 +292,11 @@
       <pubDate>Tue, 24 Aug 2021 14:26:42 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108241426/</guid>
+<<<<<<< HEAD
       <description>示例 1: 使用 observable 来进行 concatAll // RxJS v6+ import { map, concatAll } from &amp;#39;rxjs/operators&amp;#39;; import { of, interval } from &amp;#39;rxjs&amp;#39;; // 每2秒发出值 const source = interval(2000); const example = source.pipe( // 为了演示，增加10并作为 observable 返回 map(val =&amp;gt; of(val + 10)), // 合并内部 observables 的</description>
+=======
+      <description></description>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
     </item>
     
     <item>
@@ -462,6 +481,7 @@ Flags: -all show all documentation for package -c symbol matching honors case (p
     </item>
     
     <item>
+<<<<<<< HEAD
       <title>Gitbook Install</title>
       <link>https://note.strawbreey.com/posts/202108111853/</link>
       <pubDate>Wed, 11 Aug 2021 18:53:20 +0800</pubDate>
@@ -471,6 +491,8 @@ Flags: -all show all documentation for package -c symbol matching honors case (p
     </item>
     
     <item>
+=======
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       <title>Rxgo</title>
       <link>https://note.strawbreey.com/posts/202108111329/</link>
       <pubDate>Wed, 11 Aug 2021 13:29:03 +0800</pubDate>
@@ -557,7 +579,11 @@ Flags: -all show all documentation for package -c symbol matching honors case (p
       <pubDate>Fri, 06 Aug 2021 20:29:41 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202108062029/</guid>
+<<<<<<< HEAD
       <description>Quick setup — if you’ve done this kind of thing before or	https://github.com/strawbreey/go-admin.git
+=======
+      <description>Quick setup — if you’ve done this kind of thing before or https://github.com/strawbreey/go-admin.git
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
 …or create a new repository on the command line
 echo &amp;#34;# go-admin&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.com/strawbreey/go-admin.git git push -u origin main …or push an existing repository from the command line</description>
@@ -1253,7 +1279,7 @@ function foo(instance: MyClass | undefined) { if (instance !</description>
 Usage: yarn [command] [flags]
 Displays help information.
 Options:
---cache-folder &amp;lt;path&amp;gt; specify a custom folder that must be used to store the yarn cache--check-files install will verify file tree of packages for consistency--cwd &amp;lt;cwd&amp;gt; working directory to use (default: C:\Users\v_guancli\workspace\cpm\frontend)--disable-pnp disable the Plug&#39;n&#39;Play installation--emoji [bool] enable emoji in output (default: false)--enable-pnp, --pnp enable the Plug&#39;n&#39;Play installation--flat only allow one version of a package--focus Focus on a single workspace by installing remote copies of its sibling workspaces.</description>
+--cache-folder &amp;lt;path&amp;gt; specify a custom folder that must be used to store the yarn cache --check-files install will verify file tree of packages for consistency --cwd &amp;lt;cwd&amp;gt; working directory to use (default: C:\Users\v_guancli\workspace\cpm\frontend) --disable-pnp disable the Plug&#39;n&#39;Play installation --emoji [bool] enable emoji in output (default: false) --enable-pnp, --pnp enable the Plug&#39;n&#39;Play installation --flat only allow one version of a package --focus Focus on a single workspace by installing remote copies of its sibling workspaces.</description>
     </item>
     
     <item>
@@ -1334,7 +1360,7 @@ Options:
       <pubDate>Thu, 25 Feb 2021 19:59:14 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202102251959/</guid>
-      <description></description>
+      <description> </description>
     </item>
     
     <item>
@@ -1526,7 +1552,7 @@ Commands: build Build an image from a Dockerfile history Show the history of an 
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202101071140/</guid>
       <description>Docker is an open platform for developing, shipping, and running applications
-The Docker daemon The Docker daemon (dockerd) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes. A daemon can also communicate with other daemons to manage Docker services.
+ The Docker daemon The Docker daemon (dockerd) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes. A daemon can also communicate with other daemons to manage Docker services.
 The Docker client The Docker client (docker) is the primary way that many Docker users interact with Docker. When you use commands such as docker run, the client sends these commands to dockerd, which carries them out.</description>
     </item>
     
@@ -1572,7 +1598,7 @@ The Docker client The Docker client (docker) is the primary way that many Docker
       <pubDate>Wed, 30 Dec 2020 19:31:39 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202012301931/</guid>
-      <description> The openssl extension is required for SSL/TLS protection but is not available. If you can not enable the openssl extension, you can disable this error, at your own risk, by setting the &amp;lsquo;disable-tls&amp;rsquo; option to true.  composer config -g -- disable-tls true Your configuration does not allow connections to http://repo.packagist.org/packages.json.  extension=php_openssl.dll </description>
+      <description> The openssl extension is required for SSL/TLS protection but is not available. If you can not enable the openssl extension, you can disable this error, at your own risk, by setting the &amp;lsquo;disable-tls&amp;rsquo; option to true.  composer config -g -- disable-tls true Your configuration does not allow connections to http://repo.packagist.org/packages.json.  extension=php_openssl.dll  </description>
     </item>
     
     <item>
@@ -1901,6 +1927,18 @@ The Docker client The Docker client (docker) is the primary way that many Docker
     </item>
     
     <item>
+<<<<<<< HEAD
+=======
+      <title>Http Content Type</title>
+      <link>https://note.strawbreey.com/posts/202012161520/</link>
+      <pubDate>Wed, 16 Dec 2020 15:20:15 +0800</pubDate>
+      <author>strawbreey@qq.com (strawbreey)</author>
+      <guid>https://note.strawbreey.com/posts/202012161520/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       <title>Http 304</title>
       <link>https://note.strawbreey.com/posts/202012151937/</link>
       <pubDate>Tue, 15 Dec 2020 19:37:46 +0800</pubDate>
@@ -2371,7 +2409,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
       <pubDate>Fri, 04 Dec 2020 16:15:10 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202012041615/</guid>
-      <description>sequenceDiagramAlice-&amp;gt;&amp;gt;John: Hello John, how are you?John--&amp;gt;&amp;gt;Alice: Great! Steve Francia    </description>
+      <description>sequenceDiagram Alice-&amp;gt;&amp;gt;John: Hello John, how are you? John--&amp;gt;&amp;gt;Alice: Great!  Steve Francia    </description>
     </item>
     
     <item>
@@ -3073,7 +3111,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
       <pubDate>Wed, 11 Nov 2020 19:54:23 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202011111954/</guid>
-      <description></description>
+      <description> </description>
     </item>
     
     <item>
@@ -3154,7 +3192,7 @@ Easily clear floats by adding .clearfix to the parent element. Can also be used 
       <pubDate>Mon, 09 Nov 2020 17:44:06 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202011091744/</guid>
-      <description></description>
+      <description> </description>
     </item>
     
     <item>
@@ -4389,7 +4427,7 @@ scoop install hugo # Or install the extended version with: scoop install hugo-ex
       <pubDate>Wed, 16 Sep 2020 11:42:08 +0800</pubDate>
       <author>strawbreey@qq.com (strawbreey)</author>
       <guid>https://note.strawbreey.com/posts/202009161142/</guid>
-      <description>create a new file touch readme.txt # or  &amp;gt; &amp;#39;readme.txt&amp;#39; create a new directory mkdir documents mkdir -p docments Copy readme.txt to the documents/ directory cp readme.txt documents duplicate a file cp readme.txt readme.bak.txtcp readme{,.bak}.txt# Note: learn how the {} works with touch foo{1,2,3}.txt and see what happens.copy a direcatory cp -a myMusic myMedia/ # or cp -a myMusic myMedia/myMusic duplicate a directory cp -a myMusic/ myMedia/ # or cp -a myMusic myMedia/ move a file mv readme.</description>
+      <description>create a new file touch readme.txt # or  &amp;gt; &amp;#39;readme.txt&amp;#39; create a new directory mkdir documents mkdir -p docments Copy readme.txt to the documents/ directory cp readme.txt documents duplicate a file cp readme.txt readme.bak.txt cp readme{,.bak}.txt # Note: learn how the {} works with touch foo{1,2,3}.txt and see what happens. copy a direcatory cp -a myMusic myMedia/ # or cp -a myMusic myMedia/myMusic duplicate a directory cp -a myMusic/ myMedia/ # or cp -a myMusic myMedia/ move a file mv readme.</description>
     </item>
     
     <item>

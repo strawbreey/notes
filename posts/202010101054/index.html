@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -118,13 +118,13 @@
 alias /var/www/image/;
 }
 #若按照上述配置的话，则访问/img/目录里面的文件时，ningx会自动去/var/www/image/目录找文件</p>
-<p><a href="http://www.baidu.com/img/1">www.baidu.com/img/1</a>  =&gt; /var/www/image/1</p>
+<p><a href="http://www.baidu.com/img/1" target="_blank" rel="noopener">www.baidu.com/img/1</a>  =&gt; /var/www/image/1</p>
 <p>location /img/ {
 root /var/www/image;
 }
 #若按照这种配置的话，则访问/img/目录下的文件时，nginx会去/var/www/image/img/目录下找文件。</p>
-<p><a href="http://www.baidu.com/img/1">www.baidu.com/img/1</a>  =&gt; /var/www/image/img/1</p>
-<p><a href="http://file.waibao.woa.com/download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar">http://file.waibao.woa.com/download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar</a></p>
+<p><a href="http://www.baidu.com/img/1" target="_blank" rel="noopener">www.baidu.com/img/1</a>  =&gt; /var/www/image/img/1</p>
+<p><a href="http://file.waibao.woa.com/download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar" target="_blank" rel="noopener">http://file.waibao.woa.com/download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar</a></p>
 <p>文件 cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar</p>
 <p>root /var/www/image/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar</p>
 <p>alies //var/www/image/ + download/cfs/cpm/20201015/d5b6ed88081acffa912d1c8a5b283ce4.1602763878_2tbd.rar</p>
@@ -204,6 +204,7 @@ root /var/www/image;
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -213,6 +214,17 @@ root /var/www/image;
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

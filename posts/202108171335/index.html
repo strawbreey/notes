@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -234,7 +238,11 @@ Hello</p>
 <p>命令参数：</p>
 <p>+n      从笫 n 行开始显示
 -n       定义屏幕大小为n行
+<<<<<<< HEAD
 +/pattern 在每个档案显示前搜寻该字串（pattern），然后从该字串前两行之后开始显示 
+=======
++/pattern 在每个档案显示前搜寻该字串（pattern），然后从该字串前两行之后开始显示
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 -c       从顶部清屏，然后显示
 -d       提示“Press space to continue，’q’ to quit（按空格键继续，按q键退出）”，禁用响铃功能
 -l        忽略Ctrl+l（换页）字符
@@ -395,7 +403,11 @@ f - 普通文件</p>
 （4）查找大于 1K 的文件</p>
 <p>find -size +1000c
 查找等于 1000 字符的文件</p>
+<<<<<<< HEAD
 <p>find -size 1000c 
+=======
+<p>find -size 1000c
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 -exec 参数后面跟的是 command 命令，它的终止是以 ; 为结束标志的，所以这句命令后面的分号是不可缺少的，考虑到各个系统中分号会有不同的意义，所以前面加反斜杠。{} 花括号代表前面find查找出来的文件名。</p>
 <p>实例：</p>
 <p>（5）在当前目录中查找更改时间在10日以前的文件并删除它们(无提醒）</p>
@@ -616,18 +628,31 @@ date -d next-month +%Y%m(下个月是几月)
 -n 显示匹配内容的所在文件中行数
 -R 递归查找文件夹
 grep 的规则表达式:</p>
+<<<<<<< HEAD
 <p>^  #锚定行的开始 如：'^grep&rsquo;匹配所有以grep开头的行。 
 $  #锚定行的结束 如：&lsquo;grep$&lsquo;匹配所有以grep结尾的行。 
+=======
+<p>^  #锚定行的开始 如：'^grep&rsquo;匹配所有以grep开头的行。
+$  #锚定行的结束 如：&lsquo;grep$&lsquo;匹配所有以grep结尾的行。
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 .  #匹配一个非换行符的字符 如：&lsquo;gr.p&rsquo;匹配gr后接一个任意字符，然后是p。</p>
 <ul>
 <li>#匹配零个或多个先前字符 如：'<em>grep&rsquo;匹配所有一个或多个空格后紧跟grep的行。
 .</em>   #一起用代表任意字符。<br>
+<<<<<<< HEAD
 []   #匹配一个指定范围内的字符，如&rsquo;[Gg]rep&rsquo;匹配Grep和grep。 
+=======
+[]   #匹配一个指定范围内的字符，如&rsquo;[Gg]rep&rsquo;匹配Grep和grep。
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 [^]  #匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep&rsquo;匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。<br>
 (..)  #标记匹配字符，如&rsquo;(love)'，love被标记为1。<br>
 &lt;      #锚定单词的开始，如:'&lt;grep&rsquo;匹配包含以grep开头的单词的行。
 &gt;      #锚定单词的结束，如&rsquo;grep&gt;&lsquo;匹配包含以grep结尾的单词的行。
+<<<<<<< HEAD
 x{m}  #重复字符x，m次，如：&lsquo;0{5}&lsquo;匹配包含5个o的行。 
+=======
+x{m}  #重复字符x，m次，如：&lsquo;0{5}&lsquo;匹配包含5个o的行。
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 x{m,}  #重复字符x,至少m次，如：&lsquo;o{5,}&lsquo;匹配至少有5个o的行。<br>
 x{m,n}  #重复字符x，至少m次，不多于n次，如：&lsquo;o{5,10}&lsquo;匹配5&ndash;10个o的行。<br>
 \w    #匹配文字和数字字符，也就是[A-Za-z0-9]，如：&lsquo;G\w*p&rsquo;匹配以G后跟零个或多个文字或数字字符，然后是p。<br>
@@ -868,6 +893,7 @@ free -m
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -877,6 +903,17 @@ free -m
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -923,7 +960,11 @@ free -m
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

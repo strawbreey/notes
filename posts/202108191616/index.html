@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -106,7 +110,11 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="explode-函数">explode() 函数</h3>
 <p>explode() 函数可以基于字符串分隔符拆分字符串，即它将一个字符串根据分隔符拆分为若干个子串，然后将这些子串组合成数组并返回。其语法格式如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">explode</span>($delimiter, $string [, $limit])
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">explode</span>($delimiter, $string [, $limit])
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div><p>参数说明如下：</p>
 <p>$delimiter：用于分割字符串的分隔字符；
 $string：需要分割的字符串；
@@ -116,7 +124,11 @@ $limit：可选参数，可以为空，规定要返回数组元素的数目；</
 如果 $limit 为 0，则会被当作 1；
 如果 $limit 为空，则表示返回所有数组元素。</p>
 <p>如果 $delimiter 为空字符串&quot;&quot;，程序将会提示 Warning，并且 explode() 函数将返回 FALSE；如果 $delimiter 所包含的值在 $string 中找不到，并且使用了负数的 $limit，则会返回空的 array，否则返回包含 $string 单个元素的数组。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 使用 explode() 函数分割一个字符串。
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 使用 explode() 函数分割一个字符串。
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#75715e"></span>$str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C语言中文网,PHP教程,http://c.biancheng.net/php/,explode()函数,字符串转数组&#39;</span>;
 <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;pre&gt;&#39;</span>;
 $arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;,&#39;</span>, $str);
@@ -134,13 +146,21 @@ $arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</s
 </code></pre></div><h3 id="implode-函数">implode 函数</h3>
 <p>implode() 函数可以将一个一维数组转化为字符串，其语法格式如下：</p>
 <p>等同于 join</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">implode</span>($glue, $array) 
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">implode</span>($glue, $array) 
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#75715e">// 或者
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">implode</span>($array)
 </code></pre></div><p>其中，$glue 用来设置一个字符串，表示使用 $glue 将数组每个元素连接在一起，默认情况下 $glue 为空字符串；$array 为需要转换的数组。
 提示：implode() 函数的 $glue 参数是可选的，可以省略。</p>
 <p>使用 implode() 函数将数组转换为字符串。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;C语言中文网&#39;</span>,<span style="color:#e6db74">&#39;PHP教程&#39;</span>,<span style="color:#e6db74">&#39;http://c.biancheng.net/php/&#39;</span>,<span style="color:#e6db74">&#39;implode()函数&#39;</span>,<span style="color:#e6db74">&#39;数组转字符串&#39;</span>];
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;C语言中文网&#39;</span>,<span style="color:#e6db74">&#39;PHP教程&#39;</span>,<span style="color:#e6db74">&#39;http://c.biancheng.net/php/&#39;</span>,<span style="color:#e6db74">&#39;implode()函数&#39;</span>,<span style="color:#e6db74">&#39;数组转字符串&#39;</span>];
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 $str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</span>($arr);
 <span style="color:#66d9ef">echo</span> $str<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
 $str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</span>(<span style="color:#e6db74">&#39; &#39;</span>,$arr);
@@ -225,6 +245,7 @@ $str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</s
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -234,6 +255,17 @@ $str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</s
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -280,7 +312,11 @@ $str <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</s
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -106,31 +110,51 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="sql-join">SQL JOIN</h3>
 <p>SQL join 用于根据两个或多个表中的列之间的关系，从这些表中查询数据</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#66d9ef">FROM</span> Persons, Orders
 <span style="color:#66d9ef">WHERE</span> Persons.Id_P <span style="color:#f92672">=</span> Orders.Id_P 
 </code></pre></div><h3 id="inner-join">INNER JOIN</h3>
 <p>在表中存在至少一个匹配时，INNER JOIN 关键字返回行。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#66d9ef">FROM</span> Persons
 <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> Orders
 <span style="color:#66d9ef">ON</span> Persons.Id_P <span style="color:#f92672">=</span> Orders.Id_P
 <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> Persons.LastName
 </code></pre></div><h3 id="sql-left-join-关键字">SQL LEFT JOIN 关键字</h3>
 <p>LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">column_name</span>(s)
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">column_name</span>(s)
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#66d9ef">FROM</span> table_name1
 <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> table_name2 
 <span style="color:#66d9ef">ON</span> table_name1.<span style="color:#66d9ef">column_name</span><span style="color:#f92672">=</span>table_name2.<span style="color:#66d9ef">column_name</span>
 </code></pre></div><h3 id="sql-right-join-关键字">SQL RIGHT JOIN 关键字</h3>
 <p>RIGHT JOIN 关键字会右表 (table_name2) 那里返回所有的行，即使在左表 (table_name1) 中没有匹配的行。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">column_name</span>(s)
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">column_name</span>(s)
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#66d9ef">FROM</span> table_name1
 <span style="color:#66d9ef">RIGHT</span> <span style="color:#66d9ef">JOIN</span> table_name2 
 <span style="color:#66d9ef">ON</span> table_name1.<span style="color:#66d9ef">column_name</span><span style="color:#f92672">=</span>table_name2.<span style="color:#66d9ef">column_name</span>
 </code></pre></div><h3 id="sql-full-join-关键字">SQL FULL JOIN 关键字</h3>
 <p>只要其中某个表存在匹配，FULL JOIN 关键字就会返回行。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">column_name</span>(s)
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">column_name</span>(s)
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#66d9ef">FROM</span> table_name1
 <span style="color:#66d9ef">FULL</span> <span style="color:#66d9ef">JOIN</span> table_name2 
 <span style="color:#66d9ef">ON</span> table_name1.<span style="color:#66d9ef">column_name</span><span style="color:#f92672">=</span>table_name2.<span style="color:#66d9ef">column_name</span>
@@ -210,6 +234,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -219,6 +244,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -265,7 +301,11 @@
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -177,7 +177,7 @@ Firefox，Chrome 和 Opera 都会在 DOMContentLoaded 中自动填充表单。</
 <p>有一个值得注意的特殊情况是发送分析数据。</p>
 <p>假设我们收集有关页面使用情况的数据：鼠标点击，滚动，被查看的页面区域等。</p>
 <p>自然地，当用户要离开的时候，我们希望通过 unload 事件将数据保存到我们的服务器上。</p>
-<p>有一个特殊的 navigator.sendBeacon(url, data) 方法可以满足这种需求，详见规范 <a href="https://w3c.github.io/beacon/">https://w3c.github.io/beacon/</a>。</p>
+<p>有一个特殊的 navigator.sendBeacon(url, data) 方法可以满足这种需求，详见规范 <a href="https://w3c.github.io/beacon/" target="_blank" rel="noopener">https://w3c.github.io/beacon/</a>。</p>
 <p>它在后台发送数据，转换到另外一个页面不会有延迟：浏览器离开页面，但仍然在执行 sendBeacon。</p>
 <p>使用方式如下：</p>
 <p>let analyticsData = { /* 带有收集的数据的对象 */ };</p>
@@ -333,6 +333,7 @@ complete —— 文档和资源均已加载完成，与 window.onload 几乎同�
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -342,6 +343,17 @@ complete —— 文档和资源均已加载完成，与 window.onload 几乎同�
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

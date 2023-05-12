@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -110,10 +110,10 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>在PHP中</p>
 <p>单引号代表纯字符串，不论里面有什么东西，当字符串处理</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abc&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abc&#39;</span>;
 <span style="color:#a6e22e">ehco </span><span style="color:#e6db74">&#39;i am $a&#39;</span>; <span style="color:#75715e">// i am $a
 </span></code></pre></div><p>双引号代表可以处理的字符串，如果字符串中有变量，那么，会优先解析变量</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abc&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abc&#39;</span>;
 <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;i am </span><span style="color:#e6db74">$a</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// i am abc
 </span></code></pre></div><p>理论上, 单引号的速度 &gt; 双引号的速度，因为不用解析变量</p>
 

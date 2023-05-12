@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -105,7 +105,7 @@
         <div class="article-content">
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <p>很多时候用户需要从网站下载文件，如果文件是可以通过一个固定链接公开获取的，那么我们只需将文件存放到 webroot下的目录里就好。但大多数情况下，我们需要做权限控制，例如下载 PDF 账单，又例如下载网盘里的档案。这时，我们通常借助于脚本代码来实现，而这无疑会增加服务器的负担。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
   <span style="color:#75715e">// 用户身份认证，若验证失败跳转
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">authenticate</span>();
 
@@ -134,14 +134,14 @@
 <h3 id="使用">使用</h3>
 <p>Apache 请参考mod_xsendfile模块。下面我介绍 Nginx 的用法。</p>
 <p>Nginx 默认支持该特性，不需要加载额外的模块。只是实现有些不同，需要发送的 HTTP 头为 X-Accel-Redirect。另外，需要在配置文件中做以下设定</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 表示这个路径只能在 Nginx 内部访问，不能用浏览器直接访问防止未授权的下载。</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 表示这个路径只能在 Nginx 内部访问，不能用浏览器直接访问防止未授权的下载。</span>
 location /protected/ <span style="color:#f92672">{</span>
   <span style="color:#75715e"># 在 location 中加入 &#34;internal&#34;, 声明仅限内部调用</span>
   internal; 
   root  /some/path;
 <span style="color:#f92672">}</span>
 </code></pre></div><p>PHP 发送 X-Accel-Redirect 给 Nginx：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  $filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/protected/iso.img&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  $filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/protected/iso.img&#39;</span>;
   <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-type: application/octet-stream&#39;</span>);
   <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-Disposition: attachment; filename=&#34;&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">basename</span>($file) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&#34;&#39;</span>);
   <span style="color:#75715e">// 让Xsendfile发送文件
@@ -159,7 +159,7 @@ location /protected/ <span style="color:#f92672">{</span>
   internal;
   proxy_pass https://127.0.0.8/file/; #使用代理
 }
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//发送远程文件 最终会转发到https://127.0.0.8/file/file?path=xxx.mp4
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//发送远程文件 最终会转发到https://127.0.0.8/file/file?path=xxx.mp4
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;X-Accel-Redirect:/protected_files/file?path=xxx.mp4&#34;</span>);
 </code></pre></div><p>但是经过测试这种转发远程文件的速度，远不及，HTTP 302  (重定向) 的速度快。</p>
 <p>为了权限认证下载只能是妥协一下了。</p>
@@ -247,6 +247,7 @@ location /protected/ <span style="color:#f92672">{</span>
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -256,6 +257,17 @@ location /protected/ <span style="color:#f92672">{</span>
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

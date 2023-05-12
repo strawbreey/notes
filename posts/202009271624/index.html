@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -118,23 +118,23 @@
 <p>目前 V2.0 版本的 OpenAPI 规范（也就是 SwaggerV2.0 规范）已经发布并开源在 github 上。该文档写的非常好，结构清晰，方便随时查阅。关于规范的学习和理解，本文最后还有个彩蛋。</p>
 <h3 id="安装">安装</h3>
 <p>在项目中使用 composer 安装 swagger-php</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">composer</span> <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">zircote</span><span style="color:#f92672">/</span><span style="color:#a6e22e">swagger</span><span style="color:#f92672">-</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">composer</span> <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">zircote</span><span style="color:#f92672">/</span><span style="color:#a6e22e">swagger</span><span style="color:#f92672">-</span><span style="color:#a6e22e">php</span>
 </code></pre></div><p>使用php脚本动态生成文档</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#34;vendor/autoload.php&#34;</span>);
 $openapi <span style="color:#f92672">=</span> <span style="color:#a6e22e">\OpenApi\scan</span>(<span style="color:#e6db74">&#39;/path/to/project&#39;</span>);
 <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-Type: application/x-yaml&#39;</span>);
 <span style="color:#66d9ef">echo</span> $openapi<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">toYaml</span>();
 </code></pre></div><p>使用命令行动态生成脚本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./vendor/bin/openapi --help
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./vendor/bin/openapi --help
 
 <span style="color:#75715e"># 为了从任何地方使用cli，请在全局安装swagger-php并将~/.composer/vendor/bin目录添加到您环境中的PATH中。</span>
 composer global require zircote/swagger-php
 </code></pre></div><p>使用变量</p>
 <p>使用CLI时，您需要使用以下&ndash;bootstrap选项将php文件包含在常量中：</p>
 <p>constants.php</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#34;API_HOST&#34;</span>, ($env <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;production&#34;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;example.com&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;localhost&#34;</span>);
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openapi --bootstrap constants.php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#34;API_HOST&#34;</span>, ($env <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;production&#34;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;example.com&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;localhost&#34;</span>);
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openapi --bootstrap constants.php
 </code></pre></div><p>注解位置</p>
 <p>您不应将所有注释都放在一个大的@OA \ OpenApi（）注释块中，而应将它们分散在整个代码库中。swagger-php将扫描您的项目并将所有注释合并为一个@OA \ OpenApi注释。</p>
 <p>swagger-php提供的最大好处是文档与实现API的代码非常接近</p>
@@ -224,6 +224,7 @@ composer global require zircote/swagger-php
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -233,6 +234,17 @@ composer global require zircote/swagger-php
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -108,7 +112,11 @@
 <h3 id="设置设置服务器支持ssh-public-key登录">设置设置服务器支持ssh-public-key登录</h3>
 <p>完成代理设置之后，还需要设置服务器支持ssh-public-key以及AllowTcpForwarding</p>
 <p>登录服务器，在root账户下（或使用root权限），vim /etc/ssh/sshd_config 把以下五项配置都打开：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AllowAgentForwarding yes    <span style="color:#75715e"># vscode使用TcpForwarding模式，需要把这两项配置打开</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AllowAgentForwarding yes    <span style="color:#75715e"># vscode使用TcpForwarding模式，需要把这两项配置打开</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 AllowTcpForwarding yes      <span style="color:#75715e"># vscode使用TcpForwarding模式，需要把这两项配置打开</span>
 RSAAuthentication yes       <span style="color:#75715e"># 打开RSA签名认证模式</span>
 PubkeyAuthentication yes    <span style="color:#75715e"># 打开公钥认证模式</span>
@@ -120,7 +128,11 @@ AuthorizedKeysFile .ssh/authorized_keys
 
 <span style="color:#75715e"># 设置默认的公钥保存文件，设置的值是.ssh/authorized_keys，设置后实际读取的文件为~/.ssh/authorized_keys</span>
 </code></pre></div><h3 id="然后重启sshd使配置生效">然后重启sshd使配置生效：</h3>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo service sshd restart
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo service sshd restart
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div>
           </div>
         </div>
@@ -197,6 +209,7 @@ AuthorizedKeysFile .ssh/authorized_keys
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -206,6 +219,17 @@ AuthorizedKeysFile .ssh/authorized_keys
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -252,7 +276,11 @@ AuthorizedKeysFile .ssh/authorized_keys
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

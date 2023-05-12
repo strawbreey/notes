@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -110,6 +114,7 @@
 <p>对于简单的项目，通常我们只需要将编译后的二进制文件拷贝到服务器上，然后设置为后台守护进程运行即可。</p>
 <h3 id="编译">编译</h3>
 <p>编译可以通过以下命令或编写 makefile 来操作。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> GOOS<span style="color:#f92672">=</span>linux GOARCH<span style="color:#f92672">=</span>amd64 go build -o ./bin/bluebell
 </code></pre></div><p>下面假设我们将本地编译好的 bluebell 二进制文件、配置文件和静态文件等上传到服务器的/data/app/bluebell目录下。</p>
 <p>补充一点，如果嫌弃编译后的二进制文件太大，可以在编译的时候加上-ldflags &ldquo;-s -w&quot;参数去掉符号表和调试信息，一般能减小20%的大小。</p>
@@ -117,6 +122,15 @@
 </code></pre></div><p>如果还是嫌大的话可以继续使用 upx 工具对二进制可执行文件进行压缩。</p>
 <p>我们编译好 bluebell 项目后，相关必要文件的目录结构如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── bin
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> GOOS<span style="color:#f92672">=</span>linux GOARCH<span style="color:#f92672">=</span>amd64 go build -o ./bin/bluebell
+</code></pre></div><p>下面假设我们将本地编译好的 bluebell 二进制文件、配置文件和静态文件等上传到服务器的/data/app/bluebell目录下。</p>
+<p>补充一点，如果嫌弃编译后的二进制文件太大，可以在编译的时候加上-ldflags &ldquo;-s -w&quot;参数去掉符号表和调试信息，一般能减小20%的大小。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> GOOS<span style="color:#f92672">=</span>linux GOARCH<span style="color:#f92672">=</span>amd64 go build -ldflags <span style="color:#e6db74">&#34;-s -w&#34;</span> -o ./bin/bluebell
+</code></pre></div><p>如果还是嫌大的话可以继续使用 upx 工具对二进制可执行文件进行压缩。</p>
+<p>我们编译好 bluebell 项目后，相关必要文件的目录结构如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── bin
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 │   └── bluebell
 ├── conf
 │   └── config.yaml
@@ -139,7 +153,11 @@
 </code></pre></div><h3 id="nohup">nohup</h3>
 <p>nohup 用于在系统后台不挂断地运行命令，不挂断指的是退出执行命令的终端也不会影响程序的运行。</p>
 <p>我们可以使用 nohup 命令来运行应用程序，使其作为后台守护进程运行。由于在主流的 Linux 发行版中都会默认安装 nohup 命令工具，我们可以直接输入以下命令来启动我们的项目：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nohup ./bin/bluebell conf/config.yaml &gt; nohup_bluebell.log 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nohup ./bin/bluebell conf/config.yaml &gt; nohup_bluebell.log 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div><p>其中：</p>
 <p>./bluebell conf/config.yaml是我们应用程序的启动命令
 nohup &hellip; &amp;表示在后台不挂断的执行上述应用程序的启动命令</p>
@@ -197,7 +215,11 @@ supervisorctl reload       # 重启supervisor
 <p>正向代理可以简单理解为客户端的代理，你访问墙外的网站用的那个属于正向代理。</p>
 <p>反向代理可以简单理解为服务器的代理，通常说的 Nginx 和 Apache 就属于反向代理。</p>
 <p>Nginx 是一个免费的、开源的、高性能的 HTTP 和反向代理服务，主要负责负载一些访问量比较大的站点。Nginx 可以作为一个独立的 Web 服务，也可以用来给 Apache 或是其他的 Web 服务做反向代理。相比于 Apache，Nginx 可以处理更多的并发连接，而且每个连接的内存占用的非常小。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">使用yum安装nginx
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">使用yum安装nginx
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 EPEL 仓库中有 Nginx 的安装包。如果你还没有安装过 EPEL，可以通过运行下面的命令来完成安装：
 
 sudo yum install epel-release
@@ -373,19 +395,31 @@ router.Run()
 <p>)</p>
 <p>func main() {
 router := gin.Default()
+<<<<<<< HEAD
 // CORS for <a href="https://foo.com">https://foo.com</a> and <a href="https://github.com">https://github.com</a> origins, allowing:
+=======
+// CORS for <a href="https://foo.com" target="_blank" rel="noopener">https://foo.com</a> and <a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> origins, allowing:
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 // - PUT and PATCH methods
 // - Origin header
 // - Credentials share
 // - Preflight requests cached for 12 hours
 router.Use(cors.New(cors.Config{
+<<<<<<< HEAD
 AllowOrigins:     []string{&ldquo;<a href="https://foo.com">https://foo.com</a>&rdquo;},
+=======
+AllowOrigins:     []string{&ldquo;<a href="https://foo.com" target="_blank" rel="noopener">https://foo.com</a>&rdquo;},
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 AllowMethods:     []string{&ldquo;PUT&rdquo;, &ldquo;PATCH&rdquo;},
 AllowHeaders:     []string{&ldquo;Origin&rdquo;},
 ExposeHeaders:    []string{&ldquo;Content-Length&rdquo;},
 AllowCredentials: true,
 AllowOriginFunc: func(origin string) bool {
+<<<<<<< HEAD
 return origin == &ldquo;<a href="https://github.com">https://github.com</a>&rdquo;
+=======
+return origin == &ldquo;<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a>&rdquo;
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 },
 MaxAge: 12 * time.Hour,
 }))
@@ -393,7 +427,11 @@ router.Run()
 }</p>
 <h3 id="参考资料">参考资料</h3>
 <ul>
+<<<<<<< HEAD
 <li><a href="https://www.liwenzhou.com/posts/Go/deploy_go_app/">https://www.liwenzhou.com/posts/Go/deploy_go_app/</a></li>
+=======
+<li><a href="https://www.liwenzhou.com/posts/Go/deploy_go_app/" target="_blank" rel="noopener">https://www.liwenzhou.com/posts/Go/deploy_go_app/</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </ul>
 
           </div>
@@ -471,6 +509,7 @@ router.Run()
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -480,6 +519,17 @@ router.Run()
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -526,7 +576,11 @@ router.Run()
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

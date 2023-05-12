@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -110,7 +114,11 @@
 <p>Go 语言 JSON 标准库编码和解码的过程大量地运用了反射这一特性，你会在本节的后半部分看到大量的反射代码，这一小节就不过多介绍了。我们在这里会简单介绍 JSON 标准库中的接口和标签，这是它为开发者提供的为数不多的影响编解码过程的接口。</p>
 <p>接口 #
 JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler 两个接口分别可以影响 JSON 的序列化和反序列化结果：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Marshaler</span> <span style="color:#66d9ef">interface</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Marshaler</span> <span style="color:#66d9ef">interface</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 	<span style="color:#a6e22e">MarshalJSON</span>() ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
 }
 
@@ -118,7 +126,11 @@ JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler
 	<span style="color:#a6e22e">UnmarshalJSON</span>([]<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">error</span>
 }
 </code></pre></div><p>在 JSON 序列化和反序列化的过程中，它会使用反射判断结构体类型是否实现了上述接口，如果实现了上述接口就会优先使用对应的方法进行编码和解码操作，除了这两个方法之外，Go 语言其实还提供了另外两个用于控制编解码结果的方法，即 encoding.TextMarshaler 和 encoding.TextUnmarshaler：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TextMarshaler</span> <span style="color:#66d9ef">interface</span> {
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TextMarshaler</span> <span style="color:#66d9ef">interface</span> {
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 	<span style="color:#a6e22e">MarshalText</span>() (<span style="color:#a6e22e">text</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
 }
 
@@ -128,7 +140,11 @@ JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler
 </code></pre></div><p>一旦发现 JSON 相关的序列化方法没有被实现，上述两个方法会作为候选方法被 JSON 标准库调用并参与编解码的过程。总的来说，我们可以在任意类型上实现上述这四个方法自定义最终的结果，后面的两个方法的适用范围更广，但是不会被 JSON 标准库优先调用。</p>
 <h3 id="参考资料">参考资料</h3>
 <ul>
+<<<<<<< HEAD
 <li><a href="https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/">https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/</a></li>
+=======
+<li><a href="https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/" target="_blank" rel="noopener">https://draveness.me/golang/docs/part4-advanced/ch09-stdlib/golang-json/</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </ul>
 
           </div>
@@ -206,6 +222,7 @@ JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -215,6 +232,17 @@ JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -261,7 +289,11 @@ JSON 标准库中提供了 encoding/json.Marshaler 和 encoding/json.Unmarshaler
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

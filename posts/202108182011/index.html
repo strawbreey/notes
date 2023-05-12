@@ -20,7 +20,11 @@
 
   
 
+<<<<<<< HEAD
   <meta name="generator" content="Hugo 0.86.0-DEV" />
+=======
+  <meta name="generator" content="Hugo 0.86.0" />
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
   
   
   
@@ -110,7 +114,11 @@
 <p>想象一下你是否也会遇到下面这个场景，你在本地开发了你的应用程序，它很可能有很多的依赖环境或包，甚至对依赖的具体版本都有严格的要求，当开发过程完成后，你希望将应用程序部署到web服务器。这个时候你必须确保所有依赖项都安装正确并且版本也完全相同，否则应用程序可能会崩溃并无法运行。如果你想在另一个web服务器上也部署该应用程序，那么你必须从头开始重复这个过程。这种场景就是Docker发挥作用的地方。</p>
 <p>对于运行我们应用程序的主机，不管是笔记本电脑还是web服务器，我们唯一需要做的就是运行一个docker容器平台。从以后，你就不需要担心你使用的是MacOS，Ubuntu，Arch还是其他。你只需定义一次应用，即可随时随地运行。</p>
 <p>这里我先用一段使用net/http库编写的简单代码为例讲解如何使用Docker进行部署，后面再讲解稍微复杂一点的项目部署案例。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 
 <span style="color:#f92672">import</span> (
 	<span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -143,7 +151,11 @@
 <p>要创建Docker镜像（image）必须在配置文件中指定步骤。这个文件默认我们通常称之为Dockerfile。（虽然这个文件名可以随意命名它，但最好还是使用默认的Dockerfile。）</p>
 <p>现在我们开始编写Dockerfile，具体内容如下：</p>
 <p>注意：某些步骤不是唯一的，可以根据自己的需要修改诸如文件路径、最终可执行文件的名称等</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine</span><span style="color:#960050;background-color:#1e0010">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine</span><span style="color:#960050;background-color:#1e0010">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 为我们的镜像设置必要的环境变量</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GO111MODULE<span style="color:#f92672">=</span>on <span style="color:#ae81ff">\
@@ -200,7 +212,11 @@ Successfully tagged goweb_app:latest
 <h3 id="分阶段构建示例">分阶段构建示例</h3>
 <p>我们的Go程序编译之后会得到一个可执行的二进制文件，其实在最终的镜像中是不需要go编译器的，也就是说我们只需要一个运行最终二进制文件的容器即可。</p>
 <p>Docker的最佳实践之一是通过仅保留二进制文件来减小镜像大小，为此，我们将使用一种称为多阶段构建的技术，这意味着我们将通过多个步骤构建镜像。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 为我们的镜像设置必要的环境变量</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GO111MODULE<span style="color:#f92672">=</span>on <span style="color:#ae81ff">\
@@ -228,7 +244,11 @@ Successfully tagged goweb_app:latest
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 需要运行的命令</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [<span style="color:#e6db74">&#34;/app&#34;</span>]<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>我们的bubble项目用到了静态文件和配置文件，具体目录结构如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bubble
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bubble
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 ├── README.md
 ├── bubble
 ├── conf
@@ -262,7 +282,11 @@ Successfully tagged goweb_app:latest
     └── index.html
 
 </code></pre></div><p>我们需要将templates、static、conf三个文件夹中的内容拷贝到最终的镜像文件中。更新后的Dockerfile如下</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 为我们的镜像设置必要的环境变量</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GO111MODULE<span style="color:#f92672">=</span>on <span style="color:#ae81ff">\
@@ -302,7 +326,11 @@ Successfully tagged goweb_app:latest
 <p>Tips： 这里把COPY静态文件的步骤放在上层，把COPY二进制可执行文件放在下层，争取多使用缓存。</p>
 <h3 id="关联其他容器">关联其他容器</h3>
 <p>又因为我们的项目中使用了MySQL，我们可以选择使用如下命令启动一个MySQL容器，它的别名为mysql8019；root用户的密码为root1234；挂载容器中的/var/lib/mysql到本地的/Users/q1mi/docker/mysql目录；内部服务端口为3306，映射到外部的13306端口。</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name mysql8019 -p 13306:3306 -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>root1234 -v /Users/q1mi/docker/mysql:/var/lib/mysql -d mysql:8.0.19
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name mysql8019 -p 13306:3306 -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>root1234 -v /Users/q1mi/docker/mysql:/var/lib/mysql -d mysql:8.0.19
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div><p>这里需要修改一下我们程序中配置的MySQL的host地址为容器别名，使它们在内部通过别名（此处为mysql8019）联通。</p>
 <pre><code>[mysql]
 user = root
@@ -322,7 +350,11 @@ Docker Compose模式
 定义组成应用程序的服务，docker-compose.yml 以便它们可以在隔离的环境中一起运行。
 执行 docker-compose up命令来启动并运行整个应用程序。
 我们的项目需要两个容器分别运行mysql和bubble_app，我们编写的docker-compose.yml文件内容如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># yaml 配置</span>
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># yaml 配置</span>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 <span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.7&#34;</span>
 <span style="color:#f92672">services</span>:
   <span style="color:#f92672">mysql8019</span>:
@@ -349,14 +381,22 @@ Docker Compose模式
 <p>mysql8019
 mysql8019 服务使用 Docker Hub 的公共 mysql:8.0.19 镜像，内部端口3306，外部端口33061。</p>
 <p>这里需要注意一个问题就是，我们的bubble_app容器需要等待mysql8019容器正常启动之后再尝试启动，因为我们的web程序在启动的时候会初始化MySQL连接。这里共有两个地方要更改，第一个就是我们Dockerfile中要把最后一句注释掉：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#75715e"># Dockerfile</span><span style="color:#960050;background-color:#1e0010">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#960050;background-color:#1e0010"></span>...<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 需要运行的命令（注释掉这一句，因为需要等MySQL启动之后再启动我们的Web程序）</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ENTRYPOINT [&#34;/bubble&#34;, &#34;conf/config.ini&#34;]</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>第二个地方是在bubble_app下面添加如下命令，使用提前编写的wait-for.sh脚本检测mysql8019:3306正常后再执行后续启动Web应用程序的命令：</p>
 <p>command: sh -c &ldquo;./wait-for.sh mysql8019:3306 &ndash; ./bubble ./conf/config.ini&rdquo;
 当然，因为我们现在要在bubble_app镜像中执行sh命令，所以不能在使用scratch镜像构建了，这里改为使用debian:stretch-slim，同时还要安装wait-for.sh脚本用到的netcat，最后不要忘了把wait-for.sh脚本文件COPY到最终的镜像中，并赋予可执行权限哦。更新后的Dockerfile内容如下：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 为我们的镜像设置必要的环境变量</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GO111MODULE<span style="color:#f92672">=</span>on <span style="color:#ae81ff">\
@@ -402,7 +442,11 @@ mysql8019 服务使用 Docker Hub 的公共 mysql:8.0.19 镜像，内部端口33
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 需要运行的命令</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ENTRYPOINT [&#34;/bubble&#34;, &#34;conf/config.ini&#34;]</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>所有的条件都准备就绪后，就可以执行下面的命令跑起来了：</p>
+<<<<<<< HEAD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
+=======
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
 </code></pre></div><h3 id="总结">总结</h3>
 <p>使用Docker容器能够极大简化我们在配置依赖环境方面的操作，但同时也对我们的技术储备提了更高的要求。对于Docker不管你是熟悉抑或是不熟悉，技术发展的车轮都滚滚向前。</p>
 
@@ -481,6 +525,7 @@ mysql8019 服务使用 Docker Hub 的公共 mysql:8.0.19 镜像，内部端口33
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -490,6 +535,17 @@ mysql8019 服务使用 Docker Hub 的公共 mysql:8.0.19 镜像，内部端口33
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
@@ -536,7 +592,11 @@ mysql8019 服务使用 Docker Hub 的公共 mysql:8.0.19 镜像，内部端口33
   <div class="widget-body">
     <div class="tags-list">
       
+<<<<<<< HEAD
         <a href="https://note.strawbreey.com/tags/php/" data-count="24" class="soft-size--small soft-style--hover soft-style--active">php</a>
+=======
+        <a href="https://note.strawbreey.com/tags/php/" data-count="23" class="soft-size--small soft-style--hover soft-style--active">php</a>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
         <a href="https://note.strawbreey.com/tags/leetcode/" data-count="14" class="soft-size--small soft-style--hover soft-style--active">leetcode</a>
       

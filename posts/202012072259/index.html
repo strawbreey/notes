@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -106,7 +106,7 @@
           <div class="markdown-body content-padding-large soft-size--large soft-style--box">
             <h3 id="template-literal-types">Template Literal Types</h3>
 <p>String literal types in TypeScript allow us to model functions and APIs that expect a set of specific strings.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setVerticalAlignment</span>(<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;top&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;middle&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;bottom&#34;</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setVerticalAlignment</span>(<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;top&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;middle&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;bottom&#34;</span>) {
   <span style="color:#75715e">// ...
 </span><span style="color:#75715e"></span>}
 
@@ -115,7 +115,7 @@
 </span><span style="color:#75715e"></span>
 </code></pre></div><p>This is pretty nice because string literal types can basically spell-check our string values.</p>
 <p>We also like that string literals can be used as property names in mapped types. In this sense, they’re also usable as building blocks:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Options</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Options</span> <span style="color:#f92672">=</span> {
   [<span style="color:#a6e22e">K</span> <span style="color:#66d9ef">in</span> <span style="color:#e6db74">&#34;noImplicitAny&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;strictNullChecks&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;strictFunctionTypes&#34;</span>]<span style="color:#f92672">?:</span> <span style="color:#66d9ef">boolean</span>;
 };
 <span style="color:#75715e">// same as
@@ -126,18 +126,18 @@
 </span><span style="color:#75715e">//   };
 </span></code></pre></div><p>But there’s another place that that string literal types could be used as building blocks: building other string literal types.</p>
 <p>That’s why TypeScript 4.1 brings the template literal string type. It has the same syntax as template literal strings in JavaScript, but is used in type positions. When you use it with concrete literal types, it produces a new string literal type by concatenating the contents.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">World</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;world&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">World</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;world&#34;</span>;
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`hello </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">World</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
 <span style="color:#75715e">//   ^ = type Greeting = &#34;hello world&#34;
 </span></code></pre></div><p>What happens when you have unions in substitution positions? It produces the set of every possible string literal that could be represented by each union member.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;blue&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;blue&#34;</span>;
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Quantity</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;one&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;two&#34;</span>;
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">SeussFish</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Quantity</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Color</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> fish`</span>;
 <span style="color:#75715e">//   ^ = type SeussFish = &#34;one fish&#34; | &#34;two fish&#34; | &#34;red fish&#34; | &#34;blue fish&#34;
 </span></code></pre></div><p>This can be used beyond cute examples in release notes. For example, several libraries for UI components have a way to specify both vertical and horizontal alignment in their APIs, often with both at once using a single string like &ldquo;bottom-right&rdquo;. Between vertically aligning with &ldquo;top&rdquo;, &ldquo;middle&rdquo;, and &ldquo;bottom&rdquo;, and horizontally aligning with &ldquo;left&rdquo;, &ldquo;center&rdquo;, and &ldquo;right&rdquo;, there are 9 possible strings where each of the former strings is connected with each of the latter strings using a dash.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">VerticalAlignment</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;top&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;middle&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;bottom&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">VerticalAlignment</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;top&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;middle&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;bottom&#34;</span>;
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">HorizontalAlignment</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;center&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;right&#34;</span>;
 
 <span style="color:#75715e">// Takes
@@ -152,7 +152,7 @@
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">setAlignment</span>(<span style="color:#e6db74">&#34;top-pot&#34;</span>);  <span style="color:#75715e">// error! 
 </span></code></pre></div><p>While there are lots of examples of this sort of API in the wild, this is still a bit of a toy example since we could write these out manually. In fact, for 9 strings, this is likely fine; but when you need a ton of strings, you should consider automatically generating them ahead of time to save work on every type-check (or just use string, which will be much simpler to comprehend).</p>
 <p>Some of the real value comes from dynamically creating new string literals. For example, imagine a makeWatchedObject API that takes an object and produces a mostly identical object, but with a new on method to detect for changes to the properties.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">makeWatchedObject</span>({
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">makeWatchedObject</span>({
   <span style="color:#a6e22e">firstName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Homer&#34;</span>,
   <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">42</span>, <span style="color:#75715e">// give-or-take
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">location</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Springfield&#34;</span>,
@@ -162,7 +162,7 @@
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`firstName was changed!`</span>);
 });
 </code></pre></div><p>Notice that on listens on the event &ldquo;firstNameChanged&rdquo;, not just &ldquo;firstName&rdquo;. How would we type this?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PropEventSource</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PropEventSource</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">on</span>(<span style="color:#a6e22e">eventName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">string</span> <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span><span style="color:#e6db74">}</span><span style="color:#e6db74">Changed`</span>, <span style="color:#a6e22e">callback</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
 };
 
@@ -170,7 +170,7 @@
 </span><span style="color:#75715e">/// so that you can watch for changes to properties.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">declare</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">makeWatchedObject</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">obj</span>: <span style="color:#66d9ef">T</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">PropEventSource</span>&lt;<span style="color:#f92672">T</span>&gt;;
 </code></pre></div><p>With this, we can build something that errors when we give the wrong property!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// error!
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// error!
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;firstName&#34;</span>, () <span style="color:#f92672">=&gt;</span> {});
 <span style="color:#75715e">// Argument of type &#39;&#34;firstName&#34;&#39; is not assignable to parameter of type &#39;&#34;firstNameChanged&#34; | &#34;ageChanged&#34; | &#34;locationChanged&#34;&#39;.
 </span><span style="color:#75715e"></span>
@@ -178,7 +178,7 @@
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;frstNameChanged&#34;</span>, () <span style="color:#f92672">=&gt;</span> {});
 <span style="color:#75715e">// Argument of type &#39;&#34;frstNameChanged&#34;&#39; is not assignable to parameter of type &#39;&#34;firstNameChanged&#34; | &#34;ageChanged&#34; | &#34;locationChanged&#34;&#39;.
 </span></code></pre></div><p>We can also do something special in template literal types: we can infer from substitution positions. We can make our last example generic to infer from parts of the eventName string to figure out the associated property.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PropEventSource</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PropEventSource</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">on</span>&lt;<span style="color:#f92672">K</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span> <span style="color:#960050;background-color:#1e0010">&amp;</span> <span style="color:#a6e22e">keyof</span> <span style="color:#a6e22e">T</span>&gt;
         (<span style="color:#a6e22e">eventName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">K</span><span style="color:#e6db74">}</span><span style="color:#e6db74">Changed`</span>, <span style="color:#a6e22e">callback</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">newValue</span>: <span style="color:#66d9ef">T</span>[<span style="color:#a6e22e">K</span>]) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span> )<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
 };
@@ -205,7 +205,7 @@
 })
 </code></pre></div><p>Here we made on into a generic method. When a user calls with the string &ldquo;firstNameChanged', TypeScript will try to infer the right type for K. To do that, it will match K against the content prior to &ldquo;Changed&rdquo; and infer the string &ldquo;firstName&rdquo;. Once TypeScript figures that out, the on method can fetch the type of firstName on the original object, which is string in this case. Similarly, when we call with &ldquo;ageChanged&rdquo;, it finds the type for the property age which is number).</p>
 <p>Inference can be combined in different ways, often to deconstruct strings, and reconstruct them in different ways. In fact, to help with modifying these string literal types, we’ve added a few new utility type aliases for modifying casing in letters (i.e. converting to lowercase and uppercase characters).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">EnthusiasticGreeting</span>&lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span>&gt; <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Uppercase</span>&lt;<span style="color:#f92672">T</span>&gt;<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">EnthusiasticGreeting</span>&lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">string</span>&gt; <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Uppercase</span>&lt;<span style="color:#f92672">T</span>&gt;<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">HELLO</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">EnthusiasticGreeting</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">&gt;</span>;
 <span style="color:#75715e">//   ^ = type HELLO = &#34;HELLO&#34;s
@@ -213,7 +213,7 @@
 <p>For more details, <a href="https://github.com/microsoft/TypeScript/pull/40336" target="_blank" rel="noopener">see the original pull request</a> and <a href="https://github.com/microsoft/TypeScript/pull/40580" target="_blank" rel="noopener">the in-progress pull request to switch to type alias helpers</a>.</p>
 <h3 id="key-remapping-in-mapped-types">Key Remapping in Mapped Types</h3>
 <p>Just as a refresher, a mapped type can create new object types based on arbitrary keys</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Options</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Options</span> <span style="color:#f92672">=</span> {
   [<span style="color:#a6e22e">K</span> <span style="color:#66d9ef">in</span> <span style="color:#e6db74">&#34;noImplicitAny&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;strictNullChecks&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;strictFunctionTypes&#34;</span>]<span style="color:#f92672">?:</span> <span style="color:#66d9ef">boolean</span>;
 };
 <span style="color:#75715e">// same as
@@ -223,19 +223,19 @@
 </span><span style="color:#75715e">//       strictFunctionTypes?: boolean
 </span><span style="color:#75715e">//   };
 </span></code></pre></div><p>or new object types based on other object types.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/// &#39;Partial&lt;T&gt;&#39; is the same as &#39;T&#39;, but with each property marked optional.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/// &#39;Partial&lt;T&gt;&#39; is the same as &#39;T&#39;, but with each property marked optional.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Partial</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
   [<span style="color:#a6e22e">K</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span>]<span style="color:#f92672">?:</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">K</span>];
 };
 </code></pre></div><p>Until now, mapped types could only produce new object types with keys that you provided them; however, lots of the time you want to be able to create new keys, or filter out keys, based on the inputs.</p>
 <p>That’s why TypeScript 4.1 allows you to re-map keys in mapped types with a new as clause.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MappedTypeWithNewKeys</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MappedTypeWithNewKeys</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
     [<span style="color:#a6e22e">K</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">NewKeyType</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">K</span>]
     <span style="color:#75715e">//            ^^^^^^^^^^^^^
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">//            This is the new syntax!
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>With this new as clause, you can leverage features like template literal types to easily create property names based off of old ones.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Getters</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Getters</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
     [<span style="color:#a6e22e">K</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">as</span> <span style="color:#e6db74">`get</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Capitalize</span>&lt;<span style="color:#f92672">string</span> <span style="color:#960050;background-color:#1e0010">&amp;</span> <span style="color:#a6e22e">K</span>&gt;<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>]<span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">K</span>]
 };
 
@@ -252,7 +252,7 @@
 </span><span style="color:#75715e">//       getLocation: () =&gt; string;
 </span><span style="color:#75715e">//   }
 </span></code></pre></div><p>and you can even filter out keys by producing never. That means you don’t have to use an extra Omit helper type in some cases.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// Remove the &#39;kind&#39; property
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// Remove the &#39;kind&#39; property
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RemoveKindField</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
     [<span style="color:#a6e22e">K</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">Exclude</span>&lt;<span style="color:#f92672">K</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">kind</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;]<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">K</span>]
 };
@@ -272,7 +272,7 @@
 <p>Expressing this in TypeScript’s type system was, for all practical intents and purposes, not possible. While there were hacks to achieve this, the types ended up looking very unreasonable.</p>
 <p>That’s why TypeScript 4.1 eases some restrictions on conditional types - so that they can model these patterns. In TypeScript 4.1, conditional types can now immediately reference themselves within their branches, making it easier to write recursive type aliases.</p>
 <p>For example, if we wanted to write a type to get the element types of nested arrays, we could write the following deepFlatten type.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ElementType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ReadonlyArray</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">U</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">ElementType</span>&lt;<span style="color:#f92672">U</span>&gt; <span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ElementType</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ReadonlyArray</span>&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">U</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">ElementType</span>&lt;<span style="color:#f92672">U</span>&gt; <span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>;
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deepFlatten</span>&lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">unknown</span><span style="color:#960050;background-color:#1e0010">[]</span>&gt;(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">T</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">ElementType</span>&lt;<span style="color:#f92672">T</span>&gt;[] {
   <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;not implemented&#34;</span>;
@@ -283,7 +283,7 @@
 <span style="color:#a6e22e">deepFlatten</span>([[<span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]);
 <span style="color:#a6e22e">deepFlatten</span>([[<span style="color:#ae81ff">1</span>], [[<span style="color:#ae81ff">2</span>]], [[[<span style="color:#ae81ff">3</span>]]]]);
 </code></pre></div><p>[todo]
-<a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#recursive-conditional-types">https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#recursive-conditional-types</a></p>
+<a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#recursive-conditional-types" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#recursive-conditional-types</a></p>
 
           </div>
         </div>
@@ -360,6 +360,7 @@
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -369,6 +370,17 @@
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

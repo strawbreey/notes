@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -111,21 +111,21 @@
             <ol>
 <li>分割字符串</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$str <span style="color:#f92672">=</span> <span style="color:#a6e22e">aaa</span>,<span style="color:#a6e22e">bbb</span>,<span style="color:#a6e22e">ccc</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$str <span style="color:#f92672">=</span> <span style="color:#a6e22e">aaa</span>,<span style="color:#a6e22e">bbb</span>,<span style="color:#a6e22e">ccc</span>
 <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;,&#39;</span>, $str) <span style="color:#75715e">// [aaa, bbb, ccc]
 </span></code></pre></div><ol start="2">
 <li>数组push</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">array_push</span>($arr, $new);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">array_push</span>($arr, $new);
 </code></pre></div><ol start="3">
 <li>获取对应列</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">array_column</span>($arr, <span style="color:#e6db74">&#39;key&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">array_column</span>($arr, <span style="color:#e6db74">&#39;key&#39;</span>)
 <span style="color:#a6e22e">array_column</span>($arr, <span style="color:#ae81ff">1</span>)
 </code></pre></div><ol start="4">
 <li>array_diff 取差</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
 $newArr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]
 <span style="color:#a6e22e">array_diff</span>($arr, $newArr) <span style="color:#75715e">// [1]
 </span></code></pre></div>

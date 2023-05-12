@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -110,7 +110,7 @@
 <h4 id="angular-cli-中的原理图">Angular CLI 中的原理图</h4>
 <p>原理图是 Angular 生态系统的一部分。Angular CLI 使用原理图对 Web 应用项目进行转换。 你可以修改这些原理图，并定义新的原理图，比如更新代码以修复依赖中的重大变更，或者把新的配置项或框架添加到现有的项目中。</p>
 <h4 id="生成原理图">生成原理图</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ng generate my-schematic-collection:my-schematic-name
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ng generate my-schematic-collection:my-schematic-name
 <span style="color:#75715e"># or</span>
 ng generate my-schematic-name --collection collection-name
 </code></pre></div><h4 id="配置-cli-的原理图">配置 CLI 的原理图</h4>
@@ -130,7 +130,7 @@ ng generate my-schematic-name --collection collection-name
 </blockquote>
 <p>我们建议你不要强制更新所有的依赖项，而应该首先尝试更新特定的依赖项。</p>
 <p>如果你创建的新版本的库引入了潜在的重大更改，你可以提供一个更新原理图，让 ng update 命令能够自动解决所更新项目中的任何重大修改。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ng update @angular/material
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ng update @angular/material
 </code></pre></div><h3 id="创作原理图">创作原理图</h3>
 <h4 id="概念">概念</h4>
 <p>原理图的公共 API 定义了表达其基本概念的类。</p>
@@ -150,7 +150,7 @@ ng generate my-schematic-name --collection collection-name
 </ul>
 <h4 id="定义规则和动作">定义规则和动作</h4>
 <p>你使用 Schematics CLI 创建一个新的空白原理图时，它所生成的入口函数就是一个规则工厂。RuleFactory 对象定义了一个用于创建 Rule 的高阶函数。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Rule</span>, <span style="color:#a6e22e">SchematicContext</span>, <span style="color:#a6e22e">Tree</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular-devkit/schematics&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Rule</span>, <span style="color:#a6e22e">SchematicContext</span>, <span style="color:#a6e22e">Tree</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular-devkit/schematics&#39;</span>;
 
 <span style="color:#75715e">// You don&#39;t have to export the function as default.
 </span><span style="color:#75715e">// You can also have more than one rule factory per file.
@@ -160,7 +160,7 @@ ng generate my-schematic-name --collection collection-name
  };
 }
 </code></pre></div><p>你的这些规则可以通过调用外部工具和实现逻辑来修改你的项目。比如，你需要一个规则来定义如何将原理图中的模板合并到宿主项目中。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> {
   <span style="color:#a6e22e">JsonAstObject</span>,
   <span style="color:#a6e22e">JsonObject</span>,
   <span style="color:#a6e22e">JsonValue</span>,
@@ -245,6 +245,7 @@ ng generate my-schematic-name --collection collection-name
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -254,6 +255,17 @@ ng generate my-schematic-name --collection collection-name
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>

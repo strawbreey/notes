@@ -20,7 +20,7 @@
 
   
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   
   
   
@@ -123,7 +123,7 @@
 <!-- raw HTML omitted -->
 <p>JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。</p>
 <p>为了解决这个问题，ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {};
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>);
 
@@ -179,7 +179,7 @@
 <p>map.size —— 返回当前元素个数。</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
 
 <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;str1&#39;</span>);   <span style="color:#75715e">// 字符串键
@@ -196,7 +196,7 @@
 </code></pre></div><p>map[key] 不是使用 Map 的正确方式, 虽然 map[key] 也有效，例如我们可以设置 map[key] = 2，这样会将 map 视为 JavaScript 的 plain object，因此它暗含了所有相应的限制（没有对象键等）。</p>
 <p>所以我们应该使用 map 方法：set 和 get 等。</p>
 <p>Map 还可以使用对象作为键</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">john</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span> };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">john</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span> };
 
 <span style="color:#75715e">// 存储每个用户的来访次数
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">visitsCountMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
@@ -206,7 +206,7 @@
 
 <span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">visitsCountMap</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">john</span>) ); <span style="color:#75715e">// 123
 </span></code></pre></div><p>使用对象作为键是 Map 最值得注意和重要的功能之一。对于字符串键，Object（普通对象）也能正常使用，但对于对象键则不行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">john</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span> };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">john</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span> };
 
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">visitsCountObj</span> <span style="color:#f92672">=</span> {}; <span style="color:#75715e">// 尝试使用对象
 </span><span style="color:#75715e"></span>
@@ -215,7 +215,7 @@
 <span style="color:#75715e">// 是写成了这样!
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">visitsCountObj</span>[<span style="color:#e6db74">&#34;[object Object]&#34;</span>] ); <span style="color:#75715e">// 123
 </span></code></pre></div><p>链式调用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;str1&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;str1&#39;</span>)
   .<span style="color:#a6e22e">set</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;num1&#39;</span>)
   .<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">true</span>, <span style="color:#e6db74">&#39;bool1&#39;</span>);
 
@@ -224,7 +224,7 @@
 <p>map.keys() —— 遍历并返回所有的键（returns an iterable for keys），
 map.values() —— 遍历并返回所有的值（returns an iterable for values），
 map.entries() —— 遍历并返回所有的实体（returns an iterable for entries）[key, value]，for..of 在默认情况下使用的就是这个。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">recipeMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">recipeMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
   [<span style="color:#e6db74">&#39;cucumber&#39;</span>, <span style="color:#ae81ff">500</span>],
   [<span style="color:#e6db74">&#39;tomatoes&#39;</span>, <span style="color:#ae81ff">350</span>],
   [<span style="color:#e6db74">&#39;onion&#39;</span>,    <span style="color:#ae81ff">50</span>]
@@ -247,7 +247,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 </code></pre></div><p>迭代的顺序与插入值的顺序相同。与普通的 Object 不同，Map 保留了此顺序。</p>
 <h3 id="objectentries从对象创建-map">Object.entries：从对象创建 Map</h3>
 <p>当创建一个 Map 后，我们可以传入一个带有键值对的数组（或其它可迭代对象）来进行初始化，如下所示</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 键值对 [key, value] 数组
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 键值对 [key, value] 数组
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
   [<span style="color:#e6db74">&#39;1&#39;</span>,  <span style="color:#e6db74">&#39;str1&#39;</span>],
   [<span style="color:#ae81ff">1</span>,    <span style="color:#e6db74">&#39;num1&#39;</span>],
@@ -257,7 +257,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <span style="color:#a6e22e">alert</span>( <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;1&#39;</span>) ); <span style="color:#75715e">// str1
 </span></code></pre></div><p>如果我们想从一个已有的普通对象（plain object）来创建一个 Map，那么我们可以使用内建方法 Object.entries(obj)，该返回对象的键/值对数组，该数组格式完全按照 Map 所需的格式。</p>
 <p>所以可以像下面这样从一个对象创建一个 Map：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
   <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>
 };
@@ -269,7 +269,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 
 </code></pre></div><p>这里，Object.entries 返回键/值对数组：[ [&ldquo;name&rdquo;,&ldquo;John&rdquo;], [&ldquo;age&rdquo;, 30] ]。这就是 Map 所需要的格式。</p>
 <h3 id="objectfromentries从-map-创建对象">Object.fromEntries：从 Map 创建对象</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prices</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">fromEntries</span>([
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prices</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">fromEntries</span>([
   [<span style="color:#e6db74">&#39;banana&#39;</span>, <span style="color:#ae81ff">1</span>],
   [<span style="color:#e6db74">&#39;orange&#39;</span>, <span style="color:#ae81ff">2</span>],
   [<span style="color:#e6db74">&#39;meat&#39;</span>, <span style="color:#ae81ff">4</span>]
@@ -280,15 +280,15 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">prices</span>.<span style="color:#a6e22e">orange</span>); <span style="color:#75715e">// 2
 </span></code></pre></div><h4 id="与其他数据结构互相转化">与其他数据结构互相转化</h4>
 <p>Map 转为数组</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">7</span>).<span style="color:#a6e22e">set</span>({<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}, [<span style="color:#e6db74">&#39;abc&#39;</span>]);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">7</span>).<span style="color:#a6e22e">set</span>({<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}, [<span style="color:#e6db74">&#39;abc&#39;</span>]);
 [...<span style="color:#a6e22e">myMap</span>]
 </code></pre></div><p>数组转map</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>([
   [<span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">7</span>],
   [{<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}, [<span style="color:#e6db74">&#39;abc&#39;</span>]]
 ])
 </code></pre></div><p>Map 转为对象</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strMapToObj</span>(<span style="color:#a6e22e">strMap</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strMapToObj</span>(<span style="color:#a6e22e">strMap</span>) {
   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#66d9ef">null</span>);
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">k</span>,<span style="color:#a6e22e">v</span>] <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">strMap</span>) {
     <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">v</span>;
@@ -299,7 +299,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;yes&#39;</span>, <span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;no&#39;</span>, <span style="color:#66d9ef">false</span>);
 <span style="color:#a6e22e">strMapToObj</span>(<span style="color:#a6e22e">myMap</span>)
 </code></pre></div><p>对象转Map</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>};
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>(Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">obj</span>));
 
 <span style="color:#75715e">// or 
@@ -313,7 +313,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 
 <span style="color:#a6e22e">objToStrMap</span>({<span style="color:#a6e22e">yes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">no</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>})
 </code></pre></div><p>Map 转为 JSON</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 一种情况是，Map 的键名都是字符串
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 一种情况是，Map 的键名都是字符串
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strMapToJson</span>(<span style="color:#a6e22e">strMap</span>) {
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">strMapToObj</span>(<span style="color:#a6e22e">strMap</span>));
 }
@@ -329,7 +329,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>().<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">true</span>, <span style="color:#ae81ff">7</span>).<span style="color:#a6e22e">set</span>({<span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}, [<span style="color:#e6db74">&#39;abc&#39;</span>]);
 <span style="color:#a6e22e">mapToArrayJson</span>(<span style="color:#a6e22e">myMap</span>)
 </code></pre></div><p>JSON 转为 Map</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// JSON 转为 Map，正常情况下，所有键名都是字符串。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// JSON 转为 Map，正常情况下，所有键名都是字符串。
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">jsonToStrMap</span>(<span style="color:#a6e22e">jsonStr</span>) {
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">objToStrMap</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">jsonStr</span>));
@@ -357,7 +357,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <li>set.clear() —— 清空 set。</li>
 <li>set.size —— 返回元素个数。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">set</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">set</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>();
 
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">john</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span> };
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pete</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Pete&#34;</span> };
@@ -378,7 +378,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>Set 的替代方法可以是一个用户数组，用 arr.find 在每次插入值时检查是否重复。但是这样性能会很差，因为这个方法会遍历整个数组来检查每个元素。Set 内部对唯一性检查进行了更好的优化。</p>
 <h3 id="set-迭代iteration">Set 迭代（iteration）</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">set</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>([<span style="color:#e6db74">&#34;oranges&#34;</span>, <span style="color:#e6db74">&#34;apples&#34;</span>, <span style="color:#e6db74">&#34;bananas&#34;</span>]);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">set</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>([<span style="color:#e6db74">&#34;oranges&#34;</span>, <span style="color:#e6db74">&#34;apples&#34;</span>, <span style="color:#e6db74">&#34;bananas&#34;</span>]);
 
 <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">set</span>) {
   <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">value</span>);
@@ -398,7 +398,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
 <ol>
 <li>数组去重</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unique</span>(<span style="color:#a6e22e">arr</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unique</span>(<span style="color:#a6e22e">arr</span>) {
   <span style="color:#66d9ef">return</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>(<span style="color:#a6e22e">arr</span>));
 }
 </code></pre></div><h3 id="总结">总结</h3>
@@ -510,6 +510,7 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
       
         <li class="post-item"><a href="/posts/202107261428/">Gin Start</a></li>
       
+<<<<<<< HEAD
         <li class="post-item"><a href="/posts/202109271035/">Go Strings</a></li>
       
         <li class="post-item"><a href="/posts/202109261815/">Php Error Reporting</a></li>
@@ -519,6 +520,17 @@ map.entries() —— 遍历并返回所有的实体（returns an iterable for en
         <li class="post-item"><a href="/posts/202109261641/">Php Empty</a></li>
       
         <li class="post-item"><a href="/posts/202109242025/">Go Rune to String</a></li>
+=======
+        <li class="post-item"><a href="/posts/202109091032/">Redis Key</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091030/">Redis Help</a></li>
+      
+        <li class="post-item"><a href="/posts/202109091011/">Redis Intro</a></li>
+      
+        <li class="post-item"><a href="/posts/202109031802/">Go Rune</a></li>
+      
+        <li class="post-item"><a href="/posts/202109011729/">Go Learn</a></li>
+>>>>>>> e3903d1d6fe21876f4f938bdcbd279f8e243fc65
       
     </ul>
   </div>
