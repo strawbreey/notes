@@ -70,6 +70,13 @@ git branch
 
 git branch -a
 
+
+# 绑定远程分支
+git branch --set-upstream-to=origin/test test 
+or
+git branch -u origin/test test
+
+# git branch -u origin/test test 是 git branch --set-upstream-to=origin/test test 的简写形式。这两个命令的作用是将本地分支test与远程分支origin/test关联起来，使得在执行git push和git pull等命令时，Git会自动将本地分支与远程分支同步。其中，-u选项表示设置上游分支（即远程分支），origin/test表示远程分支的名称，test表示本地分支的名称。
 ```
 
 
